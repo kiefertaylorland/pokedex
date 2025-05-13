@@ -1,0 +1,259 @@
+:root {
+    --background-color-light: #f0f0f0;
+    --text-color-light: #333;
+    --card-background-light: #ffffff;
+    --header-background-light: #e0e0e0;
+    --accent-color-light: #ff3b30; /* A reddish accent */
+
+    --background-color-dark: #121212;
+    --text-color-dark: #e0e0e0;
+    --card-background-dark: #1e1e1e;
+    --header-background-dark: #2a2a2a;
+    --accent-color-dark: #ff453a; /* Slightly brighter red for dark mode */
+
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --card-background: var(--card-background-light);
+    --header-background: var(--header-background-light);
+    --accent-color: var(--accent-color-light);
+
+    --type-grass: #78C850; --type-poison: #A040A0; --type-fire: #F08030;
+    --type-flying: #A890F0; --type-water: #6890F0; --type-bug: #A8B820;
+    --type-normal: #A8A878; --type-electric: #F8D030; --type-ground: #E0C068;
+    --type-fairy: #EE99AC; --type-fighting: #C03028; --type-psychic: #F85888;
+    --type-rock: #B8A038; --type-steel: #B8B8D0; --type-ice: #98D8D8;
+    --type-ghost: #705898; --type-dragon: #7038F8; --type-dark: #705848;
+    /* Add more type colors as needed based on PokeAPI output */
+}
+
+body.dark-mode {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --card-background: var(--card-background-dark);
+    --header-background: var(--header-background-dark);
+    --accent-color: var(--accent-color-dark);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-background);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    min-width: 250px;
+}
+
+.toggles button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.toggles button:hover {
+    opacity: 0.8;
+}
+
+main {
+    padding: 1rem;
+}
+
+.pokedex-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.pokemon-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.pokemon-card img {
+    width: 96px; /* Default sprite size from PokeAPI */
+    height: 96px;
+    image-rendering: pixelated; /* For pixel art sprites */
+}
+
+.pokemon-card h3 { /* Name */
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1.1em;
+}
+
+.pokemon-card .pokemon-id {
+    font-size: 0.9em;
+    color: #888; /* Will need adjustment for dark mode or use text-color variant */
+}
+body.dark-mode .pokemon-card .pokemon-id {
+    color: #aaa;
+}
+
+
+.pokemon-types span {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    margin: 0.2em;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Detail View - Basic Placeholder Styles */
+.pokemon-detail-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+.detail-modal-content {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh; /* Max height to ensure close button is visible */
+    overflow-y: auto; /* Scroll inside modal if content overflows */
+    position: relative; /* For positioning the close button */
+    color: var(--text-color);
+}
+
+#close-detail-view {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#detail-content img {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 120px;
+    height: 120px;
+    image-rendering: pixelated;
+}
+#detail-content h2 { /* Pokemon Name */
+    text-align: center;
+    color: var(--accent-color);
+}
+#detail-content .detail-section {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--header-background); /* Lighter separator */
+}
+#detail-content .detail-section:last-child {
+    border-bottom: none;
+}
+#detail-content .detail-section h4 { /* Section titles like Stats, Moves */
+    margin-bottom: 0.5rem;
+}
+#detail-content .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+}
+#detail-content .stat-item {
+    background-color: var(--background-color); /* Slightly different from card bg */
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+#detail-content .moves-list li {
+    list-style: none;
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+    background-color: var(--background-color);
+    border-radius: 4px;
+}
+#detail-content .moves-list li strong { /* Move Name */
+    color: var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9em;
+    border-top: 1px solid var(--header-background);
+}
+
+/* Utility for type colors - to be applied by JS */
+.type-grass { background-color: var(--type-grass); }
+.type-poison { background-color: var(--type-poison); }
+.type-fire { background-color: var(--type-fire); }
+.type-flying { background-color: var(--type-flying); }
+.type-water { background-color: var(--type-water); }
+.type-bug { background-color: var(--type-bug); }
+.type-normal { background-color: var(--type-normal); }
+.type-electric { background-color: var(--type-electric); }
+.type-ground { background-color: var(--type-ground); }
+.type-fairy { background-color: var(--type-fairy); }
+.type-fighting { background-color: var(--type-fighting); }
+.type-psychic { background-color: var(--type-psychic); }
+.type-rock { background-color: var(--type-rock); }
+.type-steel { background-color: var(--type-steel); }
+.type-ice { background-color: var(--type-ice); }
+.type-ghost { background-color: var(--type-ghost); }
+.type-dragon { background-color: var(--type-dragon); }
+.type-dark { background-color: var(--type-dark); }

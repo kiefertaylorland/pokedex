@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Gen 1</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔴</text></svg>">
+</head>
+<body>
+    <header>
+        <h1 id="app-title">Pokédex</h1>
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search Pokémon...">
+            </div>
+            <div class="toggles">
+                <button id="theme-toggle">🌓</button> <!-- Icon can be text or SVG later -->
+                <button id="lang-toggle">EN/JP</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="pokedex-grid" class="pokedex-grid">
+            <!-- Pokémon cards will be injected here by JavaScript -->
+        </div>
+
+        <div id="pokemon-detail-view" class="pokemon-detail-view" style="display: none;">
+            <!-- Detailed Pokémon info will be injected here -->
+            <button id="close-detail-view">X</button>
+            <div id="detail-content"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p id="footer-text">Data from PokéAPI  //  App by Kiefer Land!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
