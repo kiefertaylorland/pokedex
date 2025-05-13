@@ -14,13 +14,9 @@ def fetch_pokemon(query):
     # Try id first
     try:
         pokemon_id = int(query)
-        for pokemon in POKEDEX:
-            if pokemon["id"] == pokemon_id:
-                return pokemon
+        return POKEDEX_BY_ID.get(pokemon_id)
     except ValueError:
         # Not an integer, so treat as a name
         query_lower = query.lower()
-        for pokemon in POKEDEX:
-            if pokemon["name_en"].lower() == query_lower:
-                return pokemon
+        return POKEDEX_BY_NAME.get(query_lower)
     return None
