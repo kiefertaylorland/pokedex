@@ -34,11 +34,20 @@ A simple Pokédex application using data from the [PokéAPI](https://pokeapi.co/
    ```bash
    cd pokedex
    ```
-3. Install dependencies (if any Python scripts require them):
+3. Host the application locally:
    ```bash
-   pip install -r requirements.txt
+   python3 -m http.server 8000
    ```
-4. Open `index.html` in your browser to run the application locally.
+4. Open a web browser and navigate to:
+   ```bash
+   localhost:8000
+   ```
+5. Stop the local server once you are done exploring the application:
+   ```bash
+   Ctrl + C
+   ```
+   
+
 
 ## Usage
 
