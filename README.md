@@ -1,6 +1,6 @@
-![Pokemon Pokedex logo](https://henryjimenezp.github.io/P4-Pokedex/img/pokedex-logo.png)
-
 # Pokédex
+
+![Pokemon Pokedex logo](https://henryjimenezp.github.io/P4-Pokedex/img/pokedex-logo.png)
 
 A simple Pokédex application using data from the [PokéAPI](https://pokeapi.co/).
 
@@ -26,28 +26,41 @@ A simple Pokédex application using data from the [PokéAPI](https://pokeapi.co/
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kiefertaylorland/pokedex.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd pokedex
-   ```
-3. Host the application locally:
-   ```bash
-   python3 -m http.server 8000
-   ```
-4. Open a web browser and navigate to:
-   ```bash
-   localhost:8000
-   ```
-5. Stop the local server once you are done exploring the application:
-   ```bash
-   Ctrl + C
-   ```
-   
+- Clone the repository:
 
+```bash
+git clone https://github.com/kiefertaylorland/pokedex.git
+```
+
+- Navigate to the project directory:
+
+```bash
+cd pokedex
+```
+
+- Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+- Host the application locally:
+
+```bash
+python3 -m http.server 8000
+```
+
+- Open a web browser and navigate to:
+
+```bash
+localhost:8000
+```
+
+- Stop the local server once you are done exploring the application:
+
+```bash
+Ctrl + C
+```
 
 ## Usage
 
@@ -62,6 +75,7 @@ This project uses the [PokéAPI](https://pokeapi.co/) to fetch data.
 ## Testing
 
 Run tests for the Pokémon API fetch functionality:
+
 ```bash
 python -m unittest discover -s tests
 ```
