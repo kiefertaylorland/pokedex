@@ -1,6 +1,10 @@
+![Pokemon Pokedex logo](https://henryjimenezp.github.io/P4-Pokedex/img/pokedex-logo.png)
+
 # Pokédex
 
 A simple Pokédex application using data from the [PokéAPI](https://pokeapi.co/).
+
+![PokeAPI logo](https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png)
 
 ## Features
 
