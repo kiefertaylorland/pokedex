@@ -74,7 +74,9 @@ This project uses the [PokéAPI](https://pokeapi.co/) to fetch data.
 
 ## UI Testing
 
-Run UI tests to ensure the interface behaves as expected. These tests require Selenium and a compatible browser driver (e.g., ChromeDriver):
+Run UI tests to ensure the interface behaves as expected. 
+
+These tests require Selenium and a compatible browser driver (e.g., ChromeDriver):
 
 Test cases include:
 - Verifying the Pokédex interface loads correctly.
