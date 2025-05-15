@@ -63,6 +63,7 @@ class TestPokedexUI(unittest.TestCase):
 
         # Clear search and dispatch an input event to trigger update
         search_input.clear()
+        # Manually dispatching the 'input' event is necessary to trigger JavaScript listeners
         self.driver.execute_script("arguments[0].dispatchEvent(new Event('input'));", search_input)
         # Wait until more than one card is shown after clearing search
         WebDriverWait(self.driver, 10).until(
