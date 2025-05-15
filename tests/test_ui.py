@@ -26,8 +26,10 @@ class TestPokedexUI(unittest.TestCase):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "pokedex-grid"))
         )
-        # Wait for data to load
-        time.sleep(2)
+        # Wait until at least one Pokémon card is loaded instead of fixed sleep
+        WebDriverWait(self.driver, 10).until(
+            lambda d: len(d.find_elements(By.CLASS_NAME, "pokemon-card")) > 0
+        )
 
     def test_pokedex_interface_loads(self):
         """Test that the Pokédex interface loads properly"""
@@ -47,7 +49,10 @@ class TestPokedexUI(unittest.TestCase):
 
         # Test searching for "pikachu"
         search_input.send_keys("pikachu")
-        time.sleep(1)  # Wait for filtering
+        # Wait until only one visible card is present
+        WebDriverWait(self.driver, 10).until(
+            lambda d: len(d.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")) == 1
+        )
     
         # Check that Pikachu is visible and other Pokémon are filtered out
         visible_cards = self.driver.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")
@@ -59,7 +64,10 @@ class TestPokedexUI(unittest.TestCase):
         # Clear search and dispatch an input event to trigger update
         search_input.clear()
         self.driver.execute_script("arguments[0].dispatchEvent(new Event('input'));", search_input)
-        time.sleep(1)
+        # Wait until more than one card is shown after clearing search
+        WebDriverWait(self.driver, 10).until(
+            lambda d: len(d.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")) > 1
+        )
         visible_cards = self.driver.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")
         self.assertGreater(len(visible_cards), 1, "Clearing search should show all Pokémon")
 
@@ -80,7 +88,8 @@ class TestPokedexUI(unittest.TestCase):
         # Test closing the detail view
         close_button = self.driver.find_element(By.ID, "close-detail-view")
         close_button.click()
-        time.sleep(0.5)
+        # Wait until detail view is hidden
+        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element(detail_view))
         self.assertFalse(detail_view.is_displayed(), "Detail view should be hidden after closing")
 
     def test_theme_toggle(self):
@@ -92,7 +101,10 @@ class TestPokedexUI(unittest.TestCase):
         
         # Click theme toggle
         theme_toggle.click()
-        time.sleep(0.5)
+        # Wait until theme changes
+        WebDriverWait(self.driver, 10).until(
+            lambda d: ("dark-mode" in d.find_element(By.TAG_NAME, "body").get_attribute("class")) != initial_is_dark
+        )
         
         # Verify theme changed
         new_is_dark = "dark-mode" in self.driver.find_element(By.TAG_NAME, "body").get_attribute("class")
@@ -108,7 +120,10 @@ class TestPokedexUI(unittest.TestCase):
         
         # Click language toggle
         lang_toggle.click()
-        time.sleep(0.5)
+        # Wait until the placeholder changes
+        WebDriverWait(self.driver, 10).until(
+            lambda d: search_input.get_attribute("placeholder") != initial_placeholder
+        )
         
         # Verify language changed (placeholder should be different)
         new_placeholder = search_input.get_attribute("placeholder")
