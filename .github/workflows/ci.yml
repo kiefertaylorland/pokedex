@@ -27,7 +27,8 @@ jobs:
           CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}")
           if [ -z "$CHROMEDRIVER_VERSION" ]; then
             echo "Unable to fetch ChromeDriver version for Chrome version $CHROME_VERSION"
-            exit 1
+            echo "Falling back to default ChromeDriver version"
+            CHROMEDRIVER_VERSION="114.0.5735.90" # Example fallback version, update as necessary
           fi
           wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -P /tmp/ || exit 1
           unzip /tmp/chromedriver_linux64.zip -d /tmp/
