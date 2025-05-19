@@ -18,7 +18,7 @@ jobs:
       - name: Install Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable=116.0.5845.140-1
+          sudo apt-get install -y google-chrome-stable
       - name: Install Compatible ChromeDriver
         run: |
           set -e  # Exit on error
@@ -26,9 +26,9 @@ jobs:
           # Ensure jq is installed
           sudo apt-get install -y jq
 
-          # Use a specific Chrome version
-          CHROME_VERSION="116.0.5845.140"
-          echo "Forcing Chrome version: $CHROME_VERSION"
+          # Fetch installed Chrome version
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+' | head -1)
+          echo "Detected Chrome version: $CHROME_VERSION"
 
           # Fetch ChromeDriver version
           DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
