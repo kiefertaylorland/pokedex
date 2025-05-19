@@ -22,12 +22,19 @@ jobs:
       - name: Install Compatible ChromeDriver
         run: |
           set -e  # Exit on error
+
+          # Attempt to get Chrome version
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' || echo "")
           if [ -z "$CHROME_VERSION" ]; then
-            echo "Failed to retrieve Chrome version. Ensure Google Chrome is installed properly."
-            exit 1
+            echo "Failed to retrieve Chrome version. Attempting to fetch the latest stable version."
+            CHROME_VERSION=$(curl -sS https://omahaproxy.appspot.com/all.json | jq -r '.[0].versions[] | select(.channel=="stable") | .version' || echo "")
+            if [ -z "$CHROME_VERSION" ]; then
+              echo "Failed to retrieve Chrome version. Ensure Google Chrome is installed properly."
+              exit 1
+            fi
           fi
 
+          # Fetch ChromeDriver version
           DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" || echo "")
           if [ -z "$DRIVER_VERSION" ]; then
             echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION."
@@ -35,6 +42,7 @@ jobs:
             DRIVER_VERSION="114.0.5735.90" # Replace with updated fallback version if needed
           fi
 
+          # Download and install ChromeDriver
           wget -q "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
           if [ $? -ne 0 ]; then
             echo "Failed to download ChromeDriver. Verify the DRIVER_VERSION and network connectivity."
