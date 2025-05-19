@@ -6,6 +6,10 @@ DATA_FILE = os.path.join(os.path.dirname(__file__), "pokedex_data.json")
 with open(DATA_FILE, "r", encoding="utf-8") as f:
     POKEDEX = json.load(f)
 
+# Build lookup dictionaries for fast access by id and name
+POKEDEX_BY_ID = {p["id"]: p for p in POKEDEX}
+POKEDEX_BY_NAME = {p["name_en"].lower(): p for p in POKEDEX}
+
 def fetch_pokemon(query):
     """
     Fetch a Pokemon by its English name (case-insensitive) or id.
