@@ -17,28 +17,15 @@ jobs:
           python-version: '3.12'
       - name: Install Chrome
         run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
-      - name: Setup ChromeDriver
+      - name: Install Compatible ChromeDriver
         run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          echo "Detected Chrome version: $CHROME_VERSION"
-          MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d '.' -f 1)
-          echo "Detected Chrome major version: $MAJOR_VERSION"
-          # Try to fetch the latest release for the major version, fallback to a known good version if not found
-          if wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$MAJOR_VERSION -O LATEST_RELEASE; then
-            CHROMEDRIVER_VERSION=$(cat LATEST_RELEASE)
-          else
-            echo "114.0.5735.90" > LATEST_RELEASE
-            CHROMEDRIVER_VERSION="114.0.5735.90"
-            echo "Falling back to ChromeDriver version: $CHROMEDRIVER_VERSION"
-          fi
-          echo "Using ChromeDriver version: $CHROMEDRIVER_VERSION"
-          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          DRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)
+          wget -N https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
-          rm chromedriver_linux64.zip LATEST_RELEASE
+          rm chromedriver_linux64.zip
       - name: Check Chrome Version
         run: google-chrome --version
       - name: Check ChromeDriver Version
