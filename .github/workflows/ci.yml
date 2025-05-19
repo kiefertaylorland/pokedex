@@ -38,6 +38,12 @@ jobs:
             echo "Failed to fetch specific ChromeDriver version for Chrome version $CHROME_VERSION. Using latest available version: $DRIVER_VERSION"
           fi
 
+          # Validate that DRIVER_VERSION is non-empty
+          if [ -z "$DRIVER_VERSION" ]; then
+            echo "Failed to determine a valid ChromeDriver version. Please check ChromeDriver availability."
+            exit 1
+          fi
+
           echo "Using ChromeDriver version: $DRIVER_VERSION"
 
           # Download and install ChromeDriver
