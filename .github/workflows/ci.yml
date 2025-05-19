@@ -23,6 +23,9 @@ jobs:
         run: |
           set -e  # Exit on error
 
+          # Ensure jq is installed
+          sudo apt-get install -y jq
+
           # Attempt to get Chrome version
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' || echo "")
           if [ -z "$CHROME_VERSION" ]; then
@@ -34,13 +37,16 @@ jobs:
             fi
           fi
 
-          # Fetch ChromeDriver version
-          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" || echo "")
+          echo "Detected Chrome version: $CHROME_VERSION"
+
+          # Fetch ChromeDriver version (use major.minor)
+          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
           if [ -z "$DRIVER_VERSION" ]; then
             echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION."
-            echo "Using fallback version: 114.0.5735.90"
-            DRIVER_VERSION="114.0.5735.90" # Replace with updated fallback version if needed
+            exit 1
           fi
+
+          echo "Using ChromeDriver version: $DRIVER_VERSION"
 
           # Download and install ChromeDriver
           wget -q "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
