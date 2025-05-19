@@ -1,3 +1,4 @@
+# pokedex requirements
 requests
 selenium
 pytest
