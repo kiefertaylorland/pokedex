@@ -33,8 +33,9 @@ jobs:
           # Fetch ChromeDriver version
           DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
           if [ -z "$DRIVER_VERSION" ]; then
-            echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION."
-            exit 1
+            # Fallback logic: Use the latest available ChromeDriver version
+            DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+            echo "Failed to fetch specific ChromeDriver version for Chrome version $CHROME_VERSION. Using latest available version: $DRIVER_VERSION"
           fi
 
           echo "Using ChromeDriver version: $DRIVER_VERSION"
