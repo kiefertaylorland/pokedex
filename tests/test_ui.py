@@ -11,15 +11,19 @@ from selenium.webdriver.common.keys import Keys
 class TestPokedexUI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Initialize Chrome WebDriver with file access enabled
+        # Initialize Chrome WebDriver with file access enabled and headless mode for CI
         chrome_options = Options()
         chrome_options.add_argument("--allow-file-access-from-files")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{os.getpid()}")
         cls.driver = webdriver.Chrome(options=chrome_options)
-        
+
         # Get the absolute path to index.html
         current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         cls.index_path = f"file://{os.path.join(current_dir, 'index.html')}"
-        
+
     def setUp(self):
         self.driver.get(self.index_path)
         # Wait for the page to load completely
@@ -38,7 +42,7 @@ class TestPokedexUI(unittest.TestCase):
         self.assertTrue(self.driver.find_element(By.ID, "search-input").is_displayed())
         self.assertTrue(self.driver.find_element(By.ID, "theme-toggle").is_displayed())
         self.assertTrue(self.driver.find_element(By.ID, "lang-toggle").is_displayed())
-        
+
         # Verify the grid has loaded with Pokémon cards
         pokemon_cards = self.driver.find_elements(By.CLASS_NAME, "pokemon-card")
         self.assertGreater(len(pokemon_cards), 0, "No Pokémon cards were loaded")
@@ -53,7 +57,7 @@ class TestPokedexUI(unittest.TestCase):
         WebDriverWait(self.driver, 10).until(
             lambda d: len(d.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")) == 1
         )
-    
+
         # Check that Pikachu is visible and other Pokémon are filtered out
         visible_cards = self.driver.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")
         self.assertEqual(len(visible_cards), 1, "Search should show only Pikachu")
@@ -77,15 +81,15 @@ class TestPokedexUI(unittest.TestCase):
         # Click the first Pokémon card
         first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
         first_card.click()
-        
+
         # Verify detail view is shown
         detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
         self.assertTrue(detail_view.is_displayed(), "Detail view should be visible")
-        
+
         # Verify detail content is loaded
         detail_content = self.driver.find_element(By.ID, "detail-content")
         self.assertNotEqual(detail_content.text.strip(), "", "Detail content should not be empty")
-        
+
         # Test closing the detail view
         close_button = self.driver.find_element(By.ID, "close-detail-view")
         close_button.click()
@@ -96,17 +100,17 @@ class TestPokedexUI(unittest.TestCase):
     def test_theme_toggle(self):
         """Test that the theme toggle button changes between light and dark modes"""
         theme_toggle = self.driver.find_element(By.ID, "theme-toggle")
-        
+
         # Get initial theme
         initial_is_dark = "dark-mode" in self.driver.find_element(By.TAG_NAME, "body").get_attribute("class")
-        
+
         # Click theme toggle
         theme_toggle.click()
         # Wait until theme changes
         WebDriverWait(self.driver, 10).until(
             lambda d: ("dark-mode" in d.find_element(By.TAG_NAME, "body").get_attribute("class")) != initial_is_dark
         )
-        
+
         # Verify theme changed
         new_is_dark = "dark-mode" in self.driver.find_element(By.TAG_NAME, "body").get_attribute("class")
         self.assertNotEqual(initial_is_dark, new_is_dark, "Theme should toggle between light and dark")
@@ -114,18 +118,18 @@ class TestPokedexUI(unittest.TestCase):
     def test_language_toggle(self):
         """Test that the language toggle button switches between English and Japanese"""
         lang_toggle = self.driver.find_element(By.ID, "lang-toggle")
-        
+
         # Get initial language state (check the search placeholder)
         search_input = self.driver.find_element(By.ID, "search-input")
         initial_placeholder = search_input.get_attribute("placeholder")
-        
+
         # Click language toggle
         lang_toggle.click()
         # Wait until the placeholder changes
         WebDriverWait(self.driver, 10).until(
             lambda d: search_input.get_attribute("placeholder") != initial_placeholder
         )
-        
+
         # Verify language changed (placeholder should be different)
         new_placeholder = search_input.get_attribute("placeholder")
         self.assertNotEqual(initial_placeholder, new_placeholder, "Language should toggle between EN and JP")
