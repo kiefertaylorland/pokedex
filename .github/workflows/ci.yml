@@ -23,13 +23,24 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Setup ChromeDriver
         run: |
+          # Get the Chrome version
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}")
-          if [ -z "$CHROMEDRIVER_VERSION" ]; then
-            echo "Unable to fetch ChromeDriver version for Chrome version $CHROME_VERSION"
-            echo "Falling back to default ChromeDriver version"
-            CHROMEDRIVER_VERSION="114.0.5735.90" # Example fallback version, update as necessary
+          echo "Detected Chrome version: $CHROME_VERSION"
+          # Ensure Chrome version is fetched
+          if [ -z "$CHROME_VERSION" ]; then
+            echo "Failed to determine Chrome version. Please check Chrome installation."
+            exit 1
           fi
+          # Fetch corresponding ChromeDriver version
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}")
+          echo "Resolved ChromeDriver version: $CHROMEDRIVER_VERSION"
+          # Fall back to default if ChromeDriver version is not fetched
+          if [ -z "$CHROMEDRIVER_VERSION" ]; then
+            echo "Failed to determine ChromeDriver version for Chrome version $CHROME_VERSION"
+            echo "Falling back to default ChromeDriver version"
+            CHROMEDRIVER_VERSION="114.0.5735.90" # Update this fallback version as necessary
+          fi
+          # Download, unzip, and install ChromeDriver
           wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -P /tmp/ || exit 1
           unzip /tmp/chromedriver_linux64.zip -d /tmp/
           sudo mv /tmp/chromedriver /usr/local/bin/
