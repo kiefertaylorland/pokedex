@@ -24,100 +24,39 @@ jobs:
           set -e  # Exit on error
 
           # Ensure jq is installed
-          sudo apt-get install -y jq
+          # sudo apt-get install -y jq # jq is not used in this simplified script
 
           # Fetch installed Chrome version
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+' | head -1)
           echo "Detected Chrome version: $CHROME_VERSION"
-          CHROME_MAJOR_VERSION=$(echo "$CHROME_VERSION" | cut -d '.' -f 1)
+          # CHROME_MAJOR_VERSION=$(echo "$CHROME_VERSION" | cut -d '.' -f 1) # Not used in this version
 
-          DRIVER_VERSION=""
-          DRIVER_URL=""
+          # Attempt to download ChromeDriver using the full Chrome version in the URL
+          DRIVER_URL="https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip"
 
-          # Attempt 1: CfT Milestones JSON
-          echo "Attempt 1: Trying CfT Milestones JSON for Chrome Major Version $CHROME_MAJOR_VERSION"
-          CFT_MILESTONES_URL="https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone-with-downloads.json"
-          # Use curl with -f to fail silently on server errors, preventing partial JSON output
-          MILESTONE_DATA=$(curl -fsS "$CFT_MILESTONES_URL")
+          echo "Attempting to download ChromeDriver from: $DRIVER_URL"
+          wget -q "$DRIVER_URL" -O chromedriver_linux64.zip || {
+            echo "Failed to download ChromeDriver with full version: $CHROME_VERSION. Falling back to LATEST_RELEASE."
+            # Fallback to LATEST_RELEASE
+            LATEST_DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" || echo "")
 
-          if [ -n "$MILESTONE_DATA" ] && [ "$MILESTONE_DATA" != "null" ]; then
-              TEMP_DRIVER_VERSION=$(echo "$MILESTONE_DATA" | jq -r --arg major_version "$CHROME_MAJOR_VERSION" '.milestones[$major_version].version')
-              TEMP_DRIVER_URL=$(echo "$MILESTONE_DATA" | jq -r --arg major_version "$CHROME_MAJOR_VERSION" '.milestones[$major_version].downloads.chromedriver[] | select(.platform=="linux64") | .url')
+            if [ -z "$LATEST_DRIVER_VERSION" ]; then
+              echo "Failed to fetch LATEST_RELEASE version for ChromeDriver."
+              exit 1
+            fi
 
-              if [ -n "$TEMP_DRIVER_VERSION" ] && [ "$TEMP_DRIVER_VERSION" != "null" ] && \
-                 [ -n "$TEMP_DRIVER_URL" ] && [ "$TEMP_DRIVER_URL" != "null" ]; then
-                  DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                  DRIVER_URL="$TEMP_DRIVER_URL"
-                  echo "Found ChromeDriver $DRIVER_VERSION via CfT Milestones."
-              fi
-          else
-              echo "Warning: Failed to fetch or parse CfT Milestones JSON. HTTP status might indicate an issue."
-          fi
+            DRIVER_URL="https://chromedriver.storage.googleapis.com/${LATEST_DRIVER_VERSION}/chromedriver_linux64.zip"
+            echo "Attempting to download ChromeDriver from fallback URL: $DRIVER_URL"
+            wget -q "$DRIVER_URL" -O chromedriver_linux64.zip
+          }
 
-          # Attempt 2: CfT Last Known Good (Stable) JSON, if Attempt 1 failed
-          if [ -z "$DRIVER_URL" ]; then
-              echo "Attempt 1 failed or yielded no result. Attempt 2: Trying CfT Last Known Good (Stable) JSON."
-              CFT_LKG_URL="https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json"
-              LKG_DATA=$(curl -fsS "$CFT_LKG_URL")
-
-              if [ -n "$LKG_DATA" ] && [ "$LKG_DATA" != "null" ]; then
-                  TEMP_DRIVER_VERSION=$(echo "$LKG_DATA" | jq -r '.channels.Stable.version')
-                  TEMP_DRIVER_URL=$(echo "$LKG_DATA" | jq -r '.channels.Stable.downloads.chromedriver[] | select(.platform=="linux64") | .url')
-
-                  if [ -n "$TEMP_DRIVER_VERSION" ] && [ "$TEMP_DRIVER_VERSION" != "null" ] && \
-                     [ -n "$TEMP_DRIVER_URL" ] && [ "$TEMP_DRIVER_URL" != "null" ]; then
-                      DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                      DRIVER_URL="$TEMP_DRIVER_URL"
-                      echo "Found ChromeDriver $DRIVER_VERSION via CfT Last Known Good (Stable)."
-                  fi
-              else
-                  echo "Warning: Failed to fetch or parse CfT Last Known Good JSON. HTTP status might indicate an issue."
-              fi
-          fi
-
-          # Attempt 3: Original LATEST_RELEASE mechanism, if Attempts 1 & 2 failed
-          if [ -z "$DRIVER_URL" ]; then
-              echo "Attempts 1 & 2 failed or yielded no result. Attempt 3: Trying original LATEST_RELEASE mechanism."
-              # Try LATEST_RELEASE_MAJOR_VERSION first
-              TEMP_DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION}" || echo "")
-
-              if [ -n "$TEMP_DRIVER_VERSION" ]; then
-                  DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                  echo "Found ChromeDriver $DRIVER_VERSION via LATEST_RELEASE_${CHROME_MAJOR_VERSION} (fallback)."
-              else
-                  # Fallback to absolute LATEST_RELEASE
-                  echo "LATEST_RELEASE_${CHROME_MAJOR_VERSION} failed. Trying absolute LATEST_RELEASE (fallback)."
-                  TEMP_DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" || echo "")
-                  if [ -n "$TEMP_DRIVER_VERSION" ]; then
-                      DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                      echo "Found ChromeDriver $DRIVER_VERSION via LATEST_RELEASE (fallback)."
-                  fi
-              fi
-              # If DRIVER_VERSION was found by this old mechanism, construct the URL
-              if [ -n "$DRIVER_VERSION" ]; then
-                  DRIVER_URL="https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
-              fi
-          fi
-
-          # Validate that DRIVER_VERSION and DRIVER_URL are determined
-          if [ -z "$DRIVER_VERSION" ] || [ -z "$DRIVER_URL" ]; then
-            echo "All attempts to determine a compatible ChromeDriver version and URL have failed."
-            echo "Chrome version: $CHROME_VERSION (Major: $CHROME_MAJOR_VERSION)"
-            echo "Please check network connectivity and ChromeDriver availability."
-            exit 1
-          fi
-
-          echo "Determined ChromeDriver version: $DRIVER_VERSION"
-          echo "Downloading ChromeDriver from: $DRIVER_URL"
-
-          # Download and install ChromeDriver
-          wget -q "$DRIVER_URL" -O chromedriver_linux64.zip
+          # Validate that the download was successful (wget exits 0 on success)
           if [ $? -ne 0 ]; then
-            echo "Failed to download ChromeDriver from $DRIVER_URL."
-            # Check if the downloaded file is an XML error page (common for GCS errors if old URL was used)
+            echo "Failed to download ChromeDriver even after fallback."
+            # Check if the downloaded file is an XML error page (common for GCS errors)
             if [ -f chromedriver_linux64.zip ] && grep -q "<Error>" chromedriver_linux64.zip && grep -q "<Code>NoSuchKey</Code>" chromedriver_linux64.zip; then
               echo "Error: The downloaded file appears to be a 'NoSuchKey' error from Google Cloud Storage."
-              echo "This means the specific ChromeDriver version $DRIVER_VERSION might not exist at $DRIVER_URL."
+              echo "This means the specific ChromeDriver version might not exist at the attempted URLs."
             elif [ -f chromedriver_linux64.zip ]; then
               echo "Downloaded content (first 200 bytes) that might indicate an issue:"
               head -c 200 chromedriver_linux64.zip
@@ -130,13 +69,7 @@ jobs:
           unzip -o chromedriver_linux64.zip -d /usr/local/bin/
           if [ $? -ne 0 ]; then
             echo "Failed to unzip ChromeDriver."
-            # Additional check: see if chromedriver is actually there and executable
-            if [ -f /usr/local/bin/chromedriver ] && [ -x /usr/local/bin/chromedriver ]; then
-              echo "Warning: unzip reported an error, but /usr/local/bin/chromedriver exists and is executable. Proceeding cautiously."
-            else
-              echo "Error: /usr/local/bin/chromedriver was not successfully installed after unzip."
-              exit 1
-            fi
+            exit 1
           fi
           rm chromedriver_linux64.zip
           echo "ChromeDriver installation completed successfully."
