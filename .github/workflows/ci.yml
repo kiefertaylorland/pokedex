@@ -23,15 +23,11 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Setup ChromeDriver
         run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          echo "Detected Chrome version: $CHROME_VERSION"
-          if [ -z "$CHROME_VERSION" ]; then
-            echo "Failed to determine Chrome version. Please check Chrome installation."
-            exit 1
-          fi
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%%.*}")
+          PINNED_CHROME_VERSION="114.0.5735.90"
+          echo "Using pinned Chrome version: $PINNED_CHROME_VERSION"
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${PINNED_CHROME_VERSION%%.*}")
           if [ -z "$CHROMEDRIVER_VERSION" ]; then
-            echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION"
+            echo "Failed to fetch ChromeDriver version for Chrome version $PINNED_CHROME_VERSION"
             exit 1
           fi
           wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -P /tmp/ || exit 1
