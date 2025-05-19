@@ -23,12 +23,16 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Setup ChromeDriver
         run: |
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
           echo "Detected Chrome version: $CHROME_VERSION"
-          sudo apt-get update
-          wget https://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_linux64.zip
+          MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d '.' -f 1)
+          echo "Detected Chrome major version: $MAJOR_VERSION"
+          wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$MAJOR_VERSION -O LATEST_RELEASE
+          CHROMEDRIVER_VERSION=$(cat LATEST_RELEASE)
+          echo "Using ChromeDriver version: $CHROMEDRIVER_VERSION"
+          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
-          rm chromedriver_linux64.zip
+          rm chromedriver_linux64.zip LATEST_RELEASE
       - name: Check Chrome Version
         run: google-chrome --version
       - name: Check ChromeDriver Version
