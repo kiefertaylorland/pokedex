@@ -23,17 +23,16 @@ jobs:
           sudo apt-get install -y google-chrome-stable
       - name: Setup ChromeDriver
         run: |
-          PINNED_CHROME_VERSION="114.0.5735.90"
-          echo "Using pinned Chrome version: $PINNED_CHROME_VERSION"
-          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${PINNED_CHROME_VERSION%%.*}")
-          if [ -z "$CHROMEDRIVER_VERSION" ]; then
-            echo "Failed to fetch ChromeDriver version for Chrome version $PINNED_CHROME_VERSION"
-            exit 1
-          fi
-          wget -N "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" -P /tmp/ || exit 1
-          unzip /tmp/chromedriver_linux64.zip -d /tmp/
-          sudo mv /tmp/chromedriver /usr/local/bin/
-          rm /tmp/chromedriver_linux64.zip
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+          echo "Detected Chrome version: $CHROME_VERSION"
+          sudo apt-get update
+          wget https://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip -d /usr/local/bin/
+          rm chromedriver_linux64.zip
+      - name: Check Chrome Version
+        run: google-chrome --version
+      - name: Check ChromeDriver Version
+        run: chromedriver --version
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
