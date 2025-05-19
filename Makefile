@@ -3,7 +3,7 @@
 .PHONY: test coverage
 
 test:
-	pytest -v pokedex/tests/
+	pytest -v tests/
 
 coverage:
-	coverage run -m pytest pokedex/tests/ && coverage report -m
+	coverage run -m pytest tests/ && coverage report -m
