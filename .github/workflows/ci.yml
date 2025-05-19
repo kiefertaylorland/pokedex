@@ -27,8 +27,14 @@ jobs:
           echo "Detected Chrome version: $CHROME_VERSION"
           MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d '.' -f 1)
           echo "Detected Chrome major version: $MAJOR_VERSION"
-          wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$MAJOR_VERSION -O LATEST_RELEASE
-          CHROMEDRIVER_VERSION=$(cat LATEST_RELEASE)
+          # Try to fetch the latest release for the major version, fallback to a known good version if not found
+          if wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$MAJOR_VERSION -O LATEST_RELEASE; then
+            CHROMEDRIVER_VERSION=$(cat LATEST_RELEASE)
+          else
+            echo "114.0.5735.90" > LATEST_RELEASE
+            CHROMEDRIVER_VERSION="114.0.5735.90"
+            echo "Falling back to ChromeDriver version: $CHROMEDRIVER_VERSION"
+          fi
           echo "Using ChromeDriver version: $CHROMEDRIVER_VERSION"
           wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
