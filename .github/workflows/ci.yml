@@ -43,7 +43,12 @@ jobs:
           DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
           if [ -z "$DRIVER_VERSION" ]; then
             echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION."
-            exit 1
+            echo "Falling back to latest ChromeDriver version."
+            DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" || echo "")
+            if [ -z "$DRIVER_VERSION" ]; then
+              echo "Failed to fetch the latest ChromeDriver version. Verify network connectivity."
+              exit 1
+            fi
           fi
 
           echo "Using ChromeDriver version: $DRIVER_VERSION"
