@@ -31,11 +31,12 @@ jobs:
           echo "Detected Chrome version: $CHROME_VERSION"
 
           # Fetch ChromeDriver version
-          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
+          DRIVER_MAJOR_VERSION=$(echo "$CHROME_VERSION" | cut -d '.' -f 1)
+          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${DRIVER_MAJOR_VERSION}" || echo "")
+
           if [ -z "$DRIVER_VERSION" ]; then
-            # Fallback logic: Use the latest available ChromeDriver version
+            echo "ChromeDriver for Chrome version $CHROME_VERSION is not available. Falling back to latest ChromeDriver version."
             DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-            echo "Failed to fetch specific ChromeDriver version for Chrome version $CHROME_VERSION. Using latest available version: $DRIVER_VERSION"
           fi
 
           # Validate that DRIVER_VERSION is non-empty
