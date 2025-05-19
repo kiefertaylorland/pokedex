@@ -18,7 +18,7 @@ jobs:
       - name: Install Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y google-chrome-stable=116.0.5845.140-1
       - name: Install Compatible ChromeDriver
         run: |
           set -e  # Exit on error
@@ -26,29 +26,15 @@ jobs:
           # Ensure jq is installed
           sudo apt-get install -y jq
 
-          # Attempt to get Chrome version
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' || echo "")
-          if [ -z "$CHROME_VERSION" ]; then
-            echo "Failed to retrieve Chrome version. Attempting to fetch the latest stable version."
-            CHROME_VERSION=$(curl -sS https://omahaproxy.appspot.com/all.json | jq -r '.[0].versions[] | select(.channel=="stable") | .version' || echo "")
-            if [ -z "$CHROME_VERSION" ]; then
-              echo "Failed to retrieve Chrome version. Ensure Google Chrome is installed properly."
-              exit 1
-            fi
-          fi
+          # Use a specific Chrome version
+          CHROME_VERSION="116.0.5845.140"
+          echo "Forcing Chrome version: $CHROME_VERSION"
 
-          echo "Detected Chrome version: $CHROME_VERSION"
-
-          # Fetch ChromeDriver version (use major.minor)
+          # Fetch ChromeDriver version
           DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION%.*}" || echo "")
           if [ -z "$DRIVER_VERSION" ]; then
             echo "Failed to fetch ChromeDriver version for Chrome version $CHROME_VERSION."
-            echo "Falling back to latest ChromeDriver version."
-            DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" || echo "")
-            if [ -z "$DRIVER_VERSION" ]; then
-              echo "Failed to fetch the latest ChromeDriver version. Verify network connectivity."
-              exit 1
-            fi
+            exit 1
           fi
 
           echo "Using ChromeDriver version: $DRIVER_VERSION"
