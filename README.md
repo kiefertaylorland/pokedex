@@ -74,11 +74,12 @@ This project uses the [PokéAPI](https://pokeapi.co/) to fetch data.
 
 ## UI Testing
 
-Run UI tests to ensure the interface behaves as expected. 
+Run UI tests to ensure the interface behaves as expected.
 
 These tests require Selenium and a compatible browser driver (e.g., ChromeDriver):
 
 Test cases include:
+
 - Verifying the Pokédex interface loads correctly.
 - Testing the search bar for filtering Pokémon.
 - Ensuring the Pokémon detail view displays and hides properly.
@@ -89,6 +90,17 @@ To run UI tests:
 
 ```bash
 python -m unittest tests/test_ui.py
+```
+
+## API Testing
+
+The project includes both unit tests and integration tests for API interactions:
+
+### Unit Tests
+Run the unit tests with mock API responses:
+
+```bash
+pytest tests/test_pokeapi_fetch.py
 ```
 
 ## Future Enhancements
