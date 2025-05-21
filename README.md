@@ -94,7 +94,9 @@ python -m unittest tests/test_ui.py
 
 ## API Testing
 
-The project includes both unit tests and integration tests for API interactions:
+The project includes both unit tests and integration tests for API interactions.
+
+Integration tests require network access and may run slower due to deliberate rate limiting.
 
 ### Unit Tests
 Run the unit tests with mock API responses:
