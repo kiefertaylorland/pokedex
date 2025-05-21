@@ -12,7 +12,8 @@ from pokeapi_fetch import get_data, fetch_and_build_pokedex
 class TestPokeAPIIntegration(unittest.TestCase):
     def setUp(self):
         # Add a delay between tests to avoid rate limiting
-        time.sleep(1)
+        delay = float(os.getenv("TEST_DELAY", 1))
+        time.sleep(delay)
 
     def test_get_pokemon_data(self):
         """Test that we can fetch data for a specific Pokémon"""
