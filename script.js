@@ -137,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const types = currentLanguage === 'jp' ? pokemon.types_jp : pokemon.types_en;
         const bio = currentLanguage === 'jp' ? pokemon.bio_jp : pokemon.bio_en;
 
+        // Play Pokémon cry
+        const cryAudio = new Audio(`assets/pokemon/cries/latest/${pokemon.id}.ogg`);
+        cryAudio.play().catch(error => console.error("Error playing cry:", error)); // Added error handling
+
         let typesHtml = types.map(type =>
             `<span class="type-${type.toLowerCase().replace(' ', '-')}">${type}</span>`
         ).join(' ');
@@ -191,6 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         detailView.style.display = 'flex';
+
+        // Shake the sprite
+        const spriteImage = detailContent.querySelector('img');
+        if (spriteImage) {
+            spriteImage.classList.add('sprite-shake-animation');
+            spriteImage.addEventListener('animationend', () => {
+                spriteImage.classList.remove('sprite-shake-animation');
+            }, { once: true }); // Remove listener after it runs once
+        }
     }
 
     // Close detailed view
