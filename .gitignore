@@ -1,0 +1,8 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore virtual environment
+venv/
