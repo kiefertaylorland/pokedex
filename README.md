@@ -26,7 +26,6 @@
 
 ## Project Structure
 
-``` plaintext
 pokedex/
   index.html
   Makefile
