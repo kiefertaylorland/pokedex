@@ -49,70 +49,81 @@ pokedex/
 
 To set up the project locally, follow these steps:
 
-1.  **Clone the repository:**
+1. **Clone the repository:**
 
     ```bash
     git clone https://github.com/kiefertaylorland/pokedex.git
     ```
 
-2.  **Navigate to the project directory:**
+2. **Navigate to the project directory:**
 
     ```bash
     cd pokedex
     ```
 
-3.  **Set up a Python virtual environment (recommended):**
+3. **Set up a Python virtual environment (recommended):**
 
     This helps manage project dependencies without affecting your global Python installation.
 
-    *   Create a virtual environment (e.g., named `venv`):
+    - Create a virtual environment (e.g., named `venv`):
+
         ```bash
         python3 -m venv venv
         ```
+
         (Use `python -m venv venv` if `python3` is not available)
 
-    *   Activate the virtual environment:
-        *   On macOS and Linux:
+    - Activate the virtual environment:
+        - On macOS and Linux:
+
             ```bash
             source venv/bin/activate
             ```
-        *   On Windows (Git Bash or similar):
+
+        - On Windows (Git Bash or similar):
+
             ```bash
             source venv/Scripts/activate
             ```
-        *   On Windows (Command Prompt or PowerShell):
+
+        - On Windows (Command Prompt or PowerShell):
+
             ```bash
             .\venv\Scripts\activate
             ```
+
         Your command prompt should now indicate that you are in the `(venv)` environment.
 
-    *   **Important:** Ensure `venv/` (or your chosen virtual environment directory name) is added to your `.gitignore` file to prevent it from being committed to version control.
+    - **Important:** Ensure `venv/` (or your chosen virtual environment directory name) is added to your `.gitignore` file to prevent it from being committed to version control.
 
-4.  **Install dependencies:**
+4. **Install dependencies:**
 
     With the virtual environment activated, install the required Python packages:
+
     ```bash
     pip install -r requirements.txt
     ```
 
-5.  **Host the application locally:**
+5. **Host the application locally:**
 
     ```bash
     python3 -m http.server 8000
     ```
+
     (Use `python -m http.server 8000` if `python3` is not available)
 
-6.  **Open a web browser and navigate to:**
+6. **Open a web browser and navigate to:**
 
     ```bash
     localhost:8000
     ```
 
-7.  **Stop the local server** once you are done exploring the application:
+7. **Stop the local server** once you are done exploring the application:
 
     Press `Ctrl + C` in the terminal where the server is running.
 
-8.  **Deactivate the virtual environment** when you're finished working:
+8. **Deactivate the virtual environment** when you're finished working:
+
     ```bash
     deactivate
     ```
