@@ -1,0 +1,234 @@
+"""
+Test file for Pokedex transition and animation functionality.
+This tests the new smooth transitions and user interaction enhancements.
+"""
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import os
+import unittest
+import time
+
+
+class TestPokedexTransitions(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Initialize Chrome WebDriver with file access enabled
+        chrome_options = Options()
+        chrome_options.add_argument("--allow-file-access-from-files")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{os.getpid()}")
+        cls.driver = webdriver.Chrome(options=chrome_options)
+
+        # Use localhost server instead of file:// protocol
+        cls.index_path = "http://localhost:8001"
+
+    def setUp(self):
+        self.driver.get(self.index_path)
+        # Wait for the page to load completely
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, "pokedex-grid"))
+        )
+        # Wait until at least one Pokémon card is loaded
+        WebDriverWait(self.driver, 10).until(
+            lambda d: len(d.find_elements(By.CLASS_NAME, "pokemon-card")) > 0
+        )
+
+    def test_pokemon_card_click_animation(self):
+        """Test that clicking a Pokemon card triggers the click animation"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+
+        # Click the card and check for animation class
+        first_card.click()
+
+        # Check that the detail view appears with the show class
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+        self.assertIn("show", detail_view.get_attribute("class"))
+
+        # Close the detail view
+        close_button = self.driver.find_element(By.ID, "close-detail-view")
+        close_button.click()
+
+    def test_detail_view_transition_classes(self):
+        """Test that the detail view uses transition classes properly"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+
+        # Initially, detail view should not have 'show' class
+        self.assertNotIn("show", detail_view.get_attribute("class"))
+
+        # Click card to open detail view
+        first_card.click()
+
+        # Check that 'show' class is added
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+        self.assertIn("show", detail_view.get_attribute("class"))
+
+        # Close the detail view
+        close_button = self.driver.find_element(By.ID, "close-detail-view")
+        close_button.click()
+
+        # Check that 'show' class is removed
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" not in detail_view.get_attribute("class")
+        )
+        self.assertNotIn("show", detail_view.get_attribute("class"))
+
+    def test_modal_backdrop_click_closes_detail(self):
+        """Test that clicking the modal backdrop closes the detail view"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+
+        # Open detail view
+        first_card.click()
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+
+        # Click on the backdrop (detail view element itself, not the modal content)
+        self.driver.execute_script("arguments[0].click();", detail_view)
+
+        # Check that detail view closes
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" not in detail_view.get_attribute("class")
+        )
+        self.assertNotIn("show", detail_view.get_attribute("class"))
+
+    def test_escape_key_closes_detail(self):
+        """Test that pressing Escape key closes the detail view"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+
+        # Open detail view
+        first_card.click()
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+
+        # Press Escape key
+        ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+
+        # Check that detail view closes
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" not in detail_view.get_attribute("class")
+        )
+        self.assertNotIn("show", detail_view.get_attribute("class"))
+
+    def test_keyboard_navigation_pokemon_cards(self):
+        """Test that Pokemon cards can be navigated and activated with keyboard"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+
+        # Check that card has tabindex attribute
+        tabindex = first_card.get_attribute("tabindex")
+        self.assertEqual(tabindex, "0", "Pokemon cards should be focusable")
+
+        # Check that card has proper ARIA attributes
+        role = first_card.get_attribute("role")
+        self.assertEqual(role, "button", "Pokemon cards should have button role")
+
+        aria_label = first_card.get_attribute("aria-label")
+        self.assertIsNotNone(aria_label, "Pokemon cards should have aria-label")
+        self.assertIn("View details", aria_label, "Aria label should describe the action")
+
+    def test_focus_management_in_modal(self):
+        """Test that focus is properly managed when modal opens"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+
+        # Open detail view
+        first_card.click()
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+
+        # Check that close button becomes focused (after transition delay)
+        close_button = self.driver.find_element(By.ID, "close-detail-view")
+        WebDriverWait(self.driver, 2).until(
+            lambda d: d.switch_to.active_element == close_button
+        )
+
+        # Close modal
+        close_button.click()
+
+    def test_body_scroll_prevention(self):
+        """Test that body scroll is prevented when modal is open"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+        body = self.driver.find_element(By.TAG_NAME, "body")
+
+        # Initially, body should not have modal-open class
+        self.assertNotIn("modal-open", body.get_attribute("class") or "")
+
+        # Open detail view
+        first_card.click()
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+
+        # Check that body has modal-open class
+        WebDriverWait(self.driver, 2).until(
+            lambda d: "modal-open" in (body.get_attribute("class") or "")
+        )
+        self.assertIn("modal-open", body.get_attribute("class"))
+
+        # Close detail view
+        close_button = self.driver.find_element(By.ID, "close-detail-view")
+        close_button.click()
+
+        # Check that body modal-open class is removed
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "modal-open" not in (body.get_attribute("class") or "")
+        )
+        self.assertNotIn("modal-open", body.get_attribute("class") or "")
+
+    def test_image_loading_states(self):
+        """Test that images have proper loading states"""
+        # Get first card image
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+        card_image = first_card.find_element(By.TAG_NAME, "img")
+
+        # Check that image has loading attribute
+        loading_attr = card_image.get_attribute("loading")
+        self.assertEqual(loading_attr, "lazy", "Images should have lazy loading")
+
+    def test_detail_view_content_animations(self):
+        """Test that detail view content has proper animation structure"""
+        first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
+
+        # Open detail view
+        first_card.click()
+        detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
+        WebDriverWait(self.driver, 5).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+
+        # Check that detail sections exist
+        detail_sections = self.driver.find_elements(By.CSS_SELECTOR, "#detail-content .detail-section")
+        self.assertGreater(len(detail_sections), 0, "Detail view should have sections")
+
+        # Check that stat items exist
+        stat_items = self.driver.find_elements(By.CSS_SELECTOR, "#detail-content .stat-item")
+        self.assertGreater(len(stat_items), 0, "Detail view should have stat items")
+
+        # Close detail view
+        close_button = self.driver.find_element(By.ID, "close-detail-view")
+        close_button.click()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
+
+
+if __name__ == "__main__":
+    unittest.main()
