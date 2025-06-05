@@ -165,12 +165,52 @@ jobs:
         run: google-chrome --version
       - name: Check ChromeDriver Version
         run: chromedriver --version
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install coverage
+
+      - name: Start HTTP Server for UI Tests
+        run: |
+          # Start Python HTTP server in background for Selenium tests
+          python -m http.server 8001 &
+          SERVER_PID=$!
+          echo "HTTP_SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+
+          # Wait for server to be ready
+          echo "Waiting for HTTP server to start..."
+          for i in {1..30}; do
+            if curl -s http://localhost:8001 > /dev/null; then
+              echo "HTTP server is ready!"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "Timeout waiting for HTTP server to start"
+              exit 1
+            fi
+            sleep 1
+          done
+
+      - name: Validate Chrome and ChromeDriver Compatibility
+        run: |
+          echo "Chrome version:"
+          google-chrome --version
+          echo "ChromeDriver version:"
+          chromedriver --version
+          echo "Server health check:"
+          curl -I http://localhost:8001 || echo "Server not reachable"
+
       - name: Run tests
         run: make test
+
+      - name: Stop HTTP Server
+        if: always()
+        run: |
+          if [ -n "$HTTP_SERVER_PID" ]; then
+            kill $HTTP_SERVER_PID || true
+          fi
+
       - name: Run coverage
         run: make coverage
