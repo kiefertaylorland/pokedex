@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggleButton = document.getElementById('lang-toggle');
     const detailView = document.getElementById('pokemon-detail-view');
     const detailContent = document.getElementById('detail-content');
-    const closeDetailButton = document.getElementById('close-detail-view');
 
     const appTitle = document.getElementById('app-title');
     const searchPlaceholder = document.getElementById('search-input');
@@ -15,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let allPokemonData = [];
     let currentLanguage = localStorage.getItem('pokedex-language') || 'en'; // 'en' or 'jp'
     let currentTheme = localStorage.getItem('pokedex-theme') || 'light';
+
+    // Animation constants
+    const ANIMATION_DURATION_MS = 300;
 
     // UI Text translations
     const uiText = {
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayPokemon(allPokemonData);
         }
         // If detail view is open, re-render it
-        if (detailView.style.display === 'flex' && detailView.dataset.pokemonId) {
+        if (detailView.classList.contains('show') && detailView.dataset.pokemonId) {
              const pokemon = allPokemonData.find(p => p.id === parseInt(detailView.dataset.pokemonId));
              if (pokemon) showPokemonDetail(pokemon);
         }
@@ -194,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         detailContent.innerHTML = `
             <div class="detail-modal-content">
+                <button id="close-detail-view">X</button>
                 <img src="${pokemon.sprite}" alt="${name}" style="width: 120px; height: 120px;">
                 <h2>${name} (#${String(pokemon.id).padStart(3, '0')})</h2>
 
@@ -220,9 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         // Show the detail view with transition
-        detailView.style.display = 'flex';
-        // Force reflow to ensure display:flex is applied before adding class
-        detailView.offsetHeight;
         detailView.classList.add('show');
 
         // Prevent body scroll
@@ -230,7 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Focus the close button for accessibility
         setTimeout(() => {
-            closeDetailButton.focus();
+            const closeButton = document.getElementById('close-detail-view');
+            if (closeButton) {
+                closeButton.focus();
+            }
         }, 100);
 
         // Shake the sprite
@@ -252,14 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showPokemonDetail(pokemon);
     }
 
-    // Close detailed view
-    closeDetailButton.addEventListener('click', () => {
-        closePokemonDetail();
-    });
-
-    // Also close on clicking outside the modal content
+    // Close detailed view using event delegation
     detailView.addEventListener('click', (event) => {
-        if (event.target === detailView) { // Clicked on the backdrop
+        if (event.target.id === 'close-detail-view') {
+            closePokemonDetail();
+        } else if (event.target === detailView) { // Clicked on the backdrop
             closePokemonDetail();
         }
     });
@@ -269,9 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
         detailView.classList.remove('show');
         document.body.classList.remove('modal-open');
 
-        // Wait for transition to complete before hiding
+        // Wait for transition to complete before clearing content
         setTimeout(() => {
-            detailView.style.display = 'none';
             detailView.removeAttribute('data-pokemon-id');
         }, 300);
     }
