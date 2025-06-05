@@ -36,23 +36,22 @@
 
 ## Project Structure
 
-pokedex/
-  index.html
-  Makefile
-  pokeapi_fetch.py
-  pokeapi.py
-  pokedex_data.json
-  README.md
-  requirements.txt
-  script.js
-  assets/
-    style.css
-  tests/
-    test_pokeapi_fetch.py
-    test_pokeapi_integration.py
-    test_pokeapi.py
-    test_ui.py
-```
+- `pokedex/`
+  - `index.html`
+  - `Makefile`
+  - `pokeapi_fetch.py`
+  - `pokeapi.py`
+  - `pokedex_data.json`
+  - `README.md`
+  - `requirements.txt`
+  - `script.js`
+  - `assets/`
+    - `style.css`
+  - `tests/`
+    - `test_pokeapi_fetch.py`
+    - `test_pokeapi_integration.py`
+    - `test_pokeapi.py`
+    - `test_ui.py`
 
 ## Installation
 
