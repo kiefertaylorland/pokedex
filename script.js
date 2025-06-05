@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showPokemonDetailWithAnimation(card, pokemon) {
         // Add click animation to the card
         card.classList.add('clicked');
-        setTimeout(() => card.classList.remove('clicked'), 300);
+        setTimeout(() => card.classList.remove('clicked'), ANIMATION_DURATION_MS);
 
         showPokemonDetail(pokemon);
     }
