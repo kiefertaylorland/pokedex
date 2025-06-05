@@ -104,7 +104,7 @@ main {
     padding: 1rem;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -113,10 +113,30 @@ main {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.pokemon-card:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+.pokemon-card.clicked {
+    animation: cardClick 0.3s ease;
+}
+
+@keyframes cardClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
 .pokemon-card img {
     width: 96px; /* Default sprite size from PokeAPI */
     height: 96px;
     image-rendering: pixelated; /* For pixel art sprites */
+    transition: opacity 0.3s ease;
+}
+
+.pokemon-card img.loading {
+    opacity: 0.5;
 }
 
 .pokemon-card h3 { /* Name */
@@ -141,33 +161,64 @@ body.dark-mode .pokemon-card .pokemon-id {
     font-size: 0.8em;
     color: white;
     text-transform: uppercase;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Detail View - Basic Placeholder Styles */
+.pokemon-card .pokemon-types span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.pokemon-detail-view.show .pokemon-types span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Detail View - Enhanced with Transitions */
 .pokemon-detail-view {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2000;
-    overflow-y: auto; /* Allow scrolling if content is too long */
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(0px);
+}
+
+.pokemon-detail-view.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
 }
 
 .detail-modal-content {
     background-color: var(--card-background);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 90%;
     max-width: 600px;
-    max-height: 90vh; /* Max height to ensure close button is visible */
-    overflow-y: auto; /* Scroll inside modal if content overflows */
-    position: relative; /* For positioning the close button */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
     color: var(--text-color);
+    transform: scale(0.7) translateY(50px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-detail-view.show .detail-modal-content {
+    transform: scale(1) translateY(0);
 }
 
 #close-detail-view {
@@ -178,13 +229,24 @@ body.dark-mode .pokemon-card .pokemon-id {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     font-size: 1.2em;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+#close-detail-view:hover {
+    background-color: #e03028;
+    transform: scale(1.1);
+}
+
+#close-detail-view:active {
+    transform: scale(0.95);
 }
 #detail-content img {
     display: block;
@@ -192,16 +254,49 @@ body.dark-mode .pokemon-card .pokemon-id {
     width: 120px;
     height: 120px;
     image-rendering: pixelated;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
-#detail-content h2 { /* Pokemon Name */
+
+.pokemon-detail-view.show #detail-content img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#detail-content h2 {
     text-align: center;
     color: var(--accent-color);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease 0.1s, opacity 0.4s ease 0.1s;
 }
+
+.pokemon-detail-view.show #detail-content h2 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 #detail-content .detail-section {
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--header-background); /* Lighter separator */
+    border-bottom: 1px solid var(--header-background);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
+.pokemon-detail-view.show #detail-content .detail-section {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(1) { transition-delay: 0.1s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(2) { transition-delay: 0.15s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(3) { transition-delay: 0.2s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(4) { transition-delay: 0.25s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(5) { transition-delay: 0.3s; }
+
 #detail-content .detail-section:last-child {
     border-bottom: none;
 }
@@ -214,21 +309,49 @@ body.dark-mode .pokemon-card .pokemon-id {
     gap: 0.5rem;
 }
 #detail-content .stat-item {
-    background-color: var(--background-color); /* Slightly different from card bg */
+    background-color: var(--background-color);
     padding: 0.3rem 0.5rem;
     border-radius: 4px;
     font-size: 0.9em;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
+.pokemon-detail-view.show #detail-content .stat-item {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(1) { transition-delay: 0.1s; }
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(2) { transition-delay: 0.15s; }
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(3) { transition-delay: 0.2s; }
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(4) { transition-delay: 0.25s; }
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(5) { transition-delay: 0.3s; }
+.pokemon-detail-view.show #detail-content .stat-item:nth-child(6) { transition-delay: 0.35s; }
+
+/* Moves list animation */
 #detail-content .moves-list li {
     list-style: none;
     padding: 0.3rem;
     margin-bottom: 0.3rem;
     background-color: var(--background-color);
     border-radius: 4px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
-#detail-content .moves-list li strong { /* Move Name */
-    color: var(--accent-color);
+
+.pokemon-detail-view.show #detail-content .moves-list li {
+    transform: translateY(0);
+    opacity: 1;
 }
+
+/* Progressive delay for moves - only first 10 to avoid overwhelming */
+.pokemon-detail-view.show #detail-content .moves-list li:nth-child(1) { transition-delay: 0.1s; }
+.pokemon-detail-view.show #detail-content .moves-list li:nth-child(2) { transition-delay: 0.15s; }
+.pokemon-detail-view.show #detail-content .moves-list li:nth-child(3) { transition-delay: 0.2s; }
+.pokemon-detail-view.show #detail-content .moves-list li:nth-child(4) { transition-delay: 0.25s; }
+.pokemon-detail-view.show #detail-content .moves-list li:nth-child(5) { transition-delay: 0.3s; }
 
 footer {
     text-align: center;
@@ -267,4 +390,32 @@ footer {
 
 .sprite-shake-animation {
   animation: pokemon-shake 1s ease-in-out;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Add subtle glow effect to focused elements */
+#close-detail-view:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.2);
+}
+
+/* Improve accessibility for keyboard navigation */
+.pokemon-card:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Add a subtle pulse animation for loading states */
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
 }

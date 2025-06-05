@@ -17,160 +17,60 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Install Chrome
+          python-version: '3.12'      - name: Setup Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+          install-chromedriver: true
+      - name: Verify Browser Setup
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-      - name: Install Compatible ChromeDriver
-        run: |
-          set -e  # Exit on error
+          echo "Chrome version:"
+          google-chrome --version
+          echo "ChromeDriver version:"
+          chromedriver --version
 
-          # Ensure jq is installed for parsing JSON responses
-          sudo apt-get update -y && sudo apt-get install -y jq
-
-          # Fetch installed Chrome version
-          CHROME_VERSION_FULL=$(google-chrome --version | awk '{print $3}')
-          if [ -z "$CHROME_VERSION_FULL" ]; then
-            echo "Failed to determine Chrome version."
-            exit 1
-          fi
-          echo "Detected Chrome version: $CHROME_VERSION_FULL"
-          CHROME_MAJOR_VERSION=$(echo "$CHROME_VERSION_FULL" | cut -d '.' -f 1)
-          echo "Detected Chrome major version: $CHROME_MAJOR_VERSION"
-
-          DRIVER_VERSION=""
-          DRIVER_URL=""
-
-          # Attempt 1: CfT Milestones JSON (for specific major version)
-          echo "Attempt 1: Trying CfT Milestones JSON for Chrome Major Version $CHROME_MAJOR_VERSION"
-          CFT_MILESTONES_URL="https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone-with-downloads.json"
-          # Use curl with -f to fail silently on server errors, and capture HTTP status
-          HTTP_STATUS_MILESTONES=$(curl -fsS -w "%{http_code}" -o milestone_data.json "$CFT_MILESTONES_URL")
-          MILESTONE_DATA=$(cat milestone_data.json)
-
-          if [ "$HTTP_STATUS_MILESTONES" = "200" ] && [ -n "$MILESTONE_DATA" ] && [ "$MILESTONE_DATA" != "null" ]; then
-              MILESTONE_EXISTS=$(echo "$MILESTONE_DATA" | jq -r --arg major_version "$CHROME_MAJOR_VERSION" 'if .milestones[$major_version] then "true" else "false" end')
-              if [ "$MILESTONE_EXISTS" = "true" ]; then
-                  TEMP_DRIVER_VERSION=$(echo "$MILESTONE_DATA" | jq -r --arg major_version "$CHROME_MAJOR_VERSION" '.milestones[$major_version].version // empty')
-                  TEMP_DRIVER_URL=$(echo "$MILESTONE_DATA" | jq -r --arg major_version "$CHROME_MAJOR_VERSION" '.milestones[$major_version].downloads.chromedriver[]? | select(.platform=="linux64") | .url // empty')
-
-                  if [ -n "$TEMP_DRIVER_VERSION" ] && [ "$TEMP_DRIVER_VERSION" != "null" ] && \
-                     [ -n "$TEMP_DRIVER_URL" ] && [ "$TEMP_DRIVER_URL" != "null" ]; then
-                      DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                      DRIVER_URL="$TEMP_DRIVER_URL"
-                      echo "Found ChromeDriver $DRIVER_VERSION ($DRIVER_URL) via CfT Milestones."
-                  else
-                      echo "Warning: CfT Milestones entry for major version $CHROME_MAJOR_VERSION found, but version or URL was null/empty."
-                  fi
-              else
-                  echo "Warning: CfT Milestones JSON does not have an entry for major version $CHROME_MAJOR_VERSION."
-              fi
-          else
-              echo "Warning: Failed to fetch or parse CfT Milestones JSON. HTTP status: $HTTP_STATUS_MILESTONES. Data: '$MILESTONE_DATA'"
-          fi
-          rm -f milestone_data.json
-
-          # Attempt 2: CfT Last Known Good (Stable) JSON, if Attempt 1 failed
-          if [ -z "$DRIVER_URL" ]; then
-              echo "Attempt 1 failed. Attempt 2: Trying CfT Last Known Good (Stable) JSON."
-              CFT_LKG_URL="https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json"
-              HTTP_STATUS_LKG=$(curl -fsS -w "%{http_code}" -o lkg_data.json "$CFT_LKG_URL")
-              LKG_DATA=$(cat lkg_data.json)
-
-              if [ "$HTTP_STATUS_LKG" = "200" ] && [ -n "$LKG_DATA" ] && [ "$LKG_DATA" != "null" ]; then
-                  STABLE_EXISTS=$(echo "$LKG_DATA" | jq -r 'if .channels.Stable.version and .channels.Stable.downloads.chromedriver then "true" else "false" end')
-                   if [ "$STABLE_EXISTS" = "true" ]; then
-                      TEMP_DRIVER_VERSION=$(echo "$LKG_DATA" | jq -r '.channels.Stable.version // empty')
-                      TEMP_DRIVER_URL=$(echo "$LKG_DATA" | jq -r '.channels.Stable.downloads.chromedriver[]? | select(.platform=="linux64") | .url // empty')
-
-                      if [ -n "$TEMP_DRIVER_VERSION" ] && [ "$TEMP_DRIVER_VERSION" != "null" ] && \
-                         [ -n "$TEMP_DRIVER_URL" ] && [ "$TEMP_DRIVER_URL" != "null" ]; then
-                          DRIVER_VERSION="$TEMP_DRIVER_VERSION"
-                          DRIVER_URL="$TEMP_DRIVER_URL"
-                          echo "Found ChromeDriver $DRIVER_VERSION ($DRIVER_URL) via CfT Last Known Good (Stable)."
-                      else
-                          echo "Warning: CfT Last Known Good (Stable) found, but version or URL was null/empty."
-                      fi
-                  else
-                      echo "Warning: CfT Last Known Good JSON does not have Stable channel data or chromedriver downloads."
-                  fi
-              else
-                  echo "Warning: Failed to fetch or parse CfT Last Known Good JSON. HTTP status: $HTTP_STATUS_LKG. Data: '$LKG_DATA'"
-              fi
-              rm -f lkg_data.json
-          fi
-
-          # Attempt 3: Original LATEST_RELEASE_MAJOR_VERSION mechanism, if Attempts 1 & 2 failed
-          if [ -z "$DRIVER_URL" ]; then
-              echo "Attempts 1 & 2 failed. Attempt 3: Trying LATEST_RELEASE for major version $CHROME_MAJOR_VERSION."
-              TEMP_DRIVER_VERSION_MAJOR=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION}" || echo "")
-
-              if [ -n "$TEMP_DRIVER_VERSION_MAJOR" ] && [ "$TEMP_DRIVER_VERSION_MAJOR" != "null" ]; then
-                  DRIVER_VERSION="$TEMP_DRIVER_VERSION_MAJOR"
-                  DRIVER_URL="https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
-                  echo "Found ChromeDriver $DRIVER_VERSION ($DRIVER_URL) via LATEST_RELEASE_${CHROME_MAJOR_VERSION} (fallback)."
-              else
-                  echo "LATEST_RELEASE_${CHROME_MAJOR_VERSION} failed or returned empty/null. Trying absolute LATEST_RELEASE (fallback)."
-                  # Attempt 4: Absolute LATEST_RELEASE
-                  TEMP_DRIVER_VERSION_LATEST=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE" || echo "")
-                  if [ -n "$TEMP_DRIVER_VERSION_LATEST" ] && [ "$TEMP_DRIVER_VERSION_LATEST" != "null" ]; then
-                      DRIVER_VERSION="$TEMP_DRIVER_VERSION_LATEST"
-                      DRIVER_URL="https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
-                      echo "Found ChromeDriver $DRIVER_VERSION ($DRIVER_URL) via LATEST_RELEASE (fallback)."
-                  else
-                      echo "Warning: Absolute LATEST_RELEASE also failed or returned empty/null."
-                  fi
-              fi
-          fi
-
-          # Validate that DRIVER_VERSION and DRIVER_URL are determined
-          if [ -z "$DRIVER_VERSION" ] || [ -z "$DRIVER_URL" ]; then
-            echo "All attempts to determine a compatible ChromeDriver version and URL have failed."
-            echo "Chrome version: $CHROME_VERSION_FULL (Major: $CHROME_MAJOR_VERSION)"
-            exit 1
-          fi
-
-          echo "Determined ChromeDriver version: $DRIVER_VERSION"
-          echo "Downloading ChromeDriver from: $DRIVER_URL"
-
-          wget -q "$DRIVER_URL" -O chromedriver_linux64.zip
-          if [ $? -ne 0 ]; then
-            echo "Failed to download ChromeDriver from $DRIVER_URL."
-            if [ -f chromedriver_linux64.zip ]; then
-                if grep -q "<Error>" chromedriver_linux64.zip && grep -q "<Code>NoSuchKey</Code>" chromedriver_linux64.zip; then
-                  echo "Error: Downloaded file is a 'NoSuchKey' error from GCS."
-                else
-                  echo "Downloaded content (first 200 bytes) that might indicate an issue:"
-                  head -c 200 chromedriver_linux64.zip; echo
-                fi
-                rm -f chromedriver_linux64.zip
-            fi
-            exit 1
-          fi
-
-          unzip -o chromedriver_linux64.zip -d /usr/local/bin/
-          if [ $? -ne 0 ]; then
-            echo "Failed to unzip ChromeDriver."
-            if ! ( [ -f /usr/local/bin/chromedriver ] && [ -x /usr/local/bin/chromedriver ] ); then
-                echo "Error: /usr/local/bin/chromedriver not found or not executable after unzip attempt."
-                exit 1
-            else
-                echo "Warning: unzip reported an error, but /usr/local/bin/chromedriver exists and is executable. Proceeding."
-            fi
-          fi
-          rm chromedriver_linux64.zip
-          echo "ChromeDriver installation completed successfully."
-      - name: Check Chrome Version
-        run: google-chrome --version
-      - name: Check ChromeDriver Version
-        run: chromedriver --version
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install coverage
+
+      - name: Start HTTP Server for UI Tests
+        run: |
+          # Start Python HTTP server in background for Selenium tests
+          python -m http.server 8001 &
+          SERVER_PID=$!
+          echo "HTTP_SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+
+          # Wait for server to be ready
+          echo "Waiting for HTTP server to start..."
+          for i in {1..30}; do
+            if curl -s http://localhost:8001 > /dev/null; then
+              echo "HTTP server is ready!"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "Timeout waiting for HTTP server to start"
+              exit 1
+            fi
+            sleep 1
+          done
+
+      - name: Health Check
+        run: |
+          echo "Browser setup verified"
+          echo "Server health check:"
+          curl -I http://localhost:8001 || echo "Server not reachable"
+
       - name: Run tests
         run: make test
+
+      - name: Stop HTTP Server
+        if: always()
+        run: |
+          if [ -n "$HTTP_SERVER_PID" ]; then
+            kill $HTTP_SERVER_PID || true
+          fi
+
       - name: Run coverage
         run: make coverage

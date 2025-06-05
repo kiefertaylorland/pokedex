@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggleButton = document.getElementById('lang-toggle');
     const detailView = document.getElementById('pokemon-detail-view');
     const detailContent = document.getElementById('detail-content');
-    const closeDetailButton = document.getElementById('close-detail-view');
 
     const appTitle = document.getElementById('app-title');
     const searchPlaceholder = document.getElementById('search-input');
@@ -15,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let allPokemonData = [];
     let currentLanguage = localStorage.getItem('pokedex-language') || 'en'; // 'en' or 'jp'
     let currentTheme = localStorage.getItem('pokedex-theme') || 'light';
+
+    // Animation constants
+    const ANIMATION_DURATION_MS = 300;
 
     // UI Text translations
     const uiText = {
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayPokemon(allPokemonData);
         }
         // If detail view is open, re-render it
-        if (detailView.style.display === 'flex' && detailView.dataset.pokemonId) {
+        if (detailView.classList.contains('show') && detailView.dataset.pokemonId) {
              const pokemon = allPokemonData.find(p => p.id === parseInt(detailView.dataset.pokemonId));
              if (pokemon) showPokemonDetail(pokemon);
         }
@@ -108,11 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
         pokedexGrid.innerHTML = ''; // Clear existing entries
         pokemonArray.forEach(pokemon => {
             const card = document.createElement('div');
-            card.classList.add('pokemon-card');
-            card.dataset.id = pokemon.id;
-
             const name = currentLanguage === 'jp' ? pokemon.name_jp : pokemon.name_en;
             const types = currentLanguage === 'jp' ? pokemon.types_jp : pokemon.types_en;
+
+            card.classList.add('pokemon-card');
+            card.dataset.id = pokemon.id;
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `View details for ${name}`);
 
             let typesHtml = types.map(type =>
                 `<span class="type-${type.toLowerCase().replace(' ', '-')}">${type}</span>`
@@ -120,12 +125,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             card.innerHTML = `
-                <img src="${pokemon.sprite}" alt="${name}">
+                <img src="${pokemon.sprite}" alt="${name}" loading="lazy">
                 <h3>${name}</h3>
                 <p class="pokemon-id">#${String(pokemon.id).padStart(3, '0')}</p>
                 <div class="pokemon-types">${typesHtml}</div>
             `;
-            card.addEventListener('click', () => showPokemonDetail(pokemon));
+
+            // Add image loading event listeners
+            const img = card.querySelector('img');
+            img.addEventListener('load', () => {
+                img.classList.remove('loading');
+            });
+            img.addEventListener('error', () => {
+                img.alt = `${name} (Image not available)`;
+                img.classList.remove('loading');
+            });
+            img.classList.add('loading');
+
+            card.addEventListener('click', () => {
+                showPokemonDetailWithAnimation(card, pokemon);
+            });
+
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    showPokemonDetailWithAnimation(card, pokemon);
+                }
+            });
             pokedexGrid.appendChild(card);
         });
     }
@@ -170,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         detailContent.innerHTML = `
             <div class="detail-modal-content">
+                <button id="close-detail-view">X</button>
                 <img src="${pokemon.sprite}" alt="${name}" style="width: 120px; height: 120px;">
                 <h2>${name} (#${String(pokemon.id).padStart(3, '0')})</h2>
 
@@ -194,7 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        detailView.style.display = 'flex';
+
+        // Show the detail view with transition
+        detailView.classList.add('show');
+
+        // Prevent body scroll
+        document.body.classList.add('modal-open');
+
+        // Focus the close button for accessibility
+        setTimeout(() => {
+            const closeButton = document.getElementById('close-detail-view');
+            if (closeButton) {
+                closeButton.focus();
+            }
+        }, 100);
 
         // Shake the sprite
         const spriteImage = detailContent.querySelector('img');
@@ -206,18 +246,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Close detailed view
-    closeDetailButton.addEventListener('click', () => {
-        detailView.style.display = 'none';
-        detailView.removeAttribute('data-pokemon-id'); // Clear stored ID
-    });
-    // Also close on clicking outside the modal content
+    // Helper function to show Pokemon detail with card animation
+    function showPokemonDetailWithAnimation(card, pokemon) {
+        // Add click animation to the card
+        card.classList.add('clicked');
+        setTimeout(() => card.classList.remove('clicked'), ANIMATION_DURATION_MS);
+
+        showPokemonDetail(pokemon);
+    }
+
+    // Close detailed view using event delegation
     detailView.addEventListener('click', (event) => {
-        if (event.target === detailView) { // Clicked on the backdrop
-            detailView.style.display = 'none';
-            detailView.removeAttribute('data-pokemon-id');
+        if (event.target.id === 'close-detail-view') {
+            closePokemonDetail();
+        } else if (event.target === detailView) { // Clicked on the backdrop
+            closePokemonDetail();
         }
     });
+
+    // Function to close detail view with transition
+    function closePokemonDetail() {
+        detailView.classList.remove('show');
+        document.body.classList.remove('modal-open');
+
+        // Wait for transition to complete before clearing content
+        setTimeout(() => {
+            detailView.removeAttribute('data-pokemon-id');
+        }, 300);
+    }
 
 
     // Search functionality
@@ -247,6 +303,13 @@ document.addEventListener('DOMContentLoaded', () => {
         applyLanguage(newLanguage);
     });
 
+
+    // Keyboard support for closing detail view
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && detailView.classList.contains('show')) {
+            closePokemonDetail();
+        }
+    });
 
     // Initial setup
     applyTheme(currentTheme); // Apply saved or default theme on load

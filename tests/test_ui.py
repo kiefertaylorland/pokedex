@@ -17,21 +17,26 @@ class TestPokedexUI(unittest.TestCase):
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--disable-extensions")
+        chrome_options.add_argument("--disable-background-timer-throttling")
+        chrome_options.add_argument("--disable-backgrounding-occluded-windows")
+        chrome_options.add_argument("--disable-renderer-backgrounding")
+        chrome_options.add_argument("--window-size=1920,1080")
         chrome_options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{os.getpid()}")
         cls.driver = webdriver.Chrome(options=chrome_options)
 
-        # Get the absolute path to index.html
-        current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        cls.index_path = f"file://{os.path.join(current_dir, 'index.html')}"
+        # Use localhost server instead of file:// protocol to avoid CORS issues
+        cls.index_path = "http://localhost:8001"
 
     def setUp(self):
         self.driver.get(self.index_path)
-        # Wait for the page to load completely
-        WebDriverWait(self.driver, 10).until(
+        # Wait for the page to load completely with increased timeout for CI
+        WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.ID, "pokedex-grid"))
         )
-        # Wait until at least one Pokémon card is loaded instead of fixed sleep
-        WebDriverWait(self.driver, 10).until(
+        # Wait until at least one Pokémon card is loaded with increased timeout
+        WebDriverWait(self.driver, 20).until(
             lambda d: len(d.find_elements(By.CLASS_NAME, "pokemon-card")) > 0
         )
 
@@ -54,7 +59,7 @@ class TestPokedexUI(unittest.TestCase):
         # Test searching for "pikachu"
         search_input.send_keys("pikachu")
         # Wait until only one visible card is present
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             lambda d: len(d.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")) == 1
         )
 
@@ -70,7 +75,7 @@ class TestPokedexUI(unittest.TestCase):
         # Manually dispatching the 'input' event is necessary to trigger JavaScript listeners
         self.driver.execute_script("arguments[0].dispatchEvent(new Event('input'));", search_input)
         # Wait until more than one card is shown after clearing search
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             lambda d: len(d.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")) > 1
         )
         visible_cards = self.driver.find_elements(By.CSS_SELECTOR, ".pokemon-card:not([style*='display: none'])")
@@ -82,9 +87,12 @@ class TestPokedexUI(unittest.TestCase):
         first_card = self.driver.find_element(By.CLASS_NAME, "pokemon-card")
         first_card.click()
 
-        # Verify detail view is shown
+        # Verify detail view is shown with the 'show' class
         detail_view = self.driver.find_element(By.ID, "pokemon-detail-view")
-        self.assertTrue(detail_view.is_displayed(), "Detail view should be visible")
+        WebDriverWait(self.driver, 15).until(
+            lambda d: "show" in detail_view.get_attribute("class")
+        )
+        self.assertIn("show", detail_view.get_attribute("class"), "Detail view should have 'show' class")
 
         # Verify detail content is loaded
         detail_content = self.driver.find_element(By.ID, "detail-content")
@@ -93,9 +101,12 @@ class TestPokedexUI(unittest.TestCase):
         # Test closing the detail view
         close_button = self.driver.find_element(By.ID, "close-detail-view")
         close_button.click()
-        # Wait until detail view is hidden
-        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element(detail_view))
-        self.assertFalse(detail_view.is_displayed(), "Detail view should be hidden after closing")
+
+        # Wait until detail view loses the 'show' class
+        WebDriverWait(self.driver, 15).until(
+            lambda d: "show" not in detail_view.get_attribute("class")
+        )
+        self.assertNotIn("show", detail_view.get_attribute("class"), "Detail view should not have 'show' class after closing")
 
     def test_theme_toggle(self):
         """Test that the theme toggle button changes between light and dark modes"""
@@ -107,7 +118,7 @@ class TestPokedexUI(unittest.TestCase):
         # Click theme toggle
         theme_toggle.click()
         # Wait until theme changes
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             lambda d: ("dark-mode" in d.find_element(By.TAG_NAME, "body").get_attribute("class")) != initial_is_dark
         )
 
@@ -126,7 +137,7 @@ class TestPokedexUI(unittest.TestCase):
         # Click language toggle
         lang_toggle.click()
         # Wait until the placeholder changes
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 15).until(
             lambda d: search_input.get_attribute("placeholder") != initial_placeholder
         )
 
