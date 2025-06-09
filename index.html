@@ -3,39 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex Gen 1</title>
+    <meta name="description" content="Interactive Pokédex featuring Generation 1 Pokémon with detailed stats, moves, and multilingual support">
+    <meta name="keywords" content="pokemon, pokedex, generation 1, stats, moves, japanese, english">
+    <meta name="author" content="Kiefer Land">
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#ff3b30">
+    
+    <title>Pokédex - Interactive Generation 1 Pokemon Database</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets/Poke_Ball_icon.png" type="image/png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="pokedex_data.json" as="fetch" type="application/json" crossorigin>
 </head>
 <body>
-    <header>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
         <h1 id="app-title">Pokédex</h1>
         <div class="controls">
             <div class="search-container">
-                <input type="text" id="search-input" placeholder="Search Pokémon...">
+                <label for="search-input" class="sr-only">Search Pokémon</label>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search Pokémon..." 
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-describedby="search-help"
+                >
+                <div id="search-help" class="sr-only">
+                    Search by Pokémon name, number, or type. Results update as you type.
+                </div>
             </div>
-            <div class="toggles">
-                <button id="theme-toggle">🌓</button> <!-- Icon can be text or SVG later -->
-                <button id="lang-toggle">EN/JP</button>
+            <div class="toggles" role="group" aria-label="Display options">
+                <button 
+                    id="theme-toggle" 
+                    type="button"
+                    aria-label="Toggle dark mode"
+                    title="Switch between light and dark themes"
+                >🌓</button>
+                <button 
+                    id="lang-toggle" 
+                    type="button"
+                    aria-label="Toggle language"
+                    title="Switch between English and Japanese"
+                >EN/JP</button>
             </div>
         </div>
     </header>
 
-    <main>
-        <div id="pokedex-grid" class="pokedex-grid">
+    <main id="main-content" role="main">
+        <!-- Loading indicator for better UX -->
+        <div id="loading-indicator" class="loading-indicator" aria-hidden="true">
+            <div class="loading-spinner"></div>
+            <p>Loading Pokémon data...</p>
+        </div>
+        
+        <div 
+            id="pokedex-grid" 
+            class="pokedex-grid"
+            role="grid"
+            aria-label="Pokémon collection"
+            aria-live="polite"
+        >
             <!-- Pokémon cards will be injected here by JavaScript -->
         </div>
 
-        <div id="pokemon-detail-view" class="pokemon-detail-view">
-            <!-- Detailed Pokémon info will be injected here -->
-            <div id="detail-content"></div>
+        <!-- Modal for Pokemon details -->
+        <div 
+            id="pokemon-detail-view" 
+            class="pokemon-detail-view"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+            aria-labelledby="pokemon-detail-title"
+        >
+            <div id="detail-content" class="detail-content"></div>
         </div>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p id="footer-text">Data from PokéAPI  //  App by Kiefer Land</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Screen reader only announcements -->
+    <div id="announcements" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
+
+    <!-- Error boundary for JavaScript failures -->
+    <noscript>
+        <div class="noscript-message">
+            <h2>JavaScript Required</h2>
+            <p>This Pokédex application requires JavaScript to function. Please enable JavaScript in your browser and reload the page.</p>
+        </div>
+    </noscript>
+
+    <!-- Load the new modular JavaScript -->
+    <script type="module" src="assets/js/pokedexApp.js"></script>
+    
+    <!-- Fallback error handling -->
+    <script>
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.error);
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'global-error';
+            errorDiv.innerHTML = '<p>An error occurred. Please refresh the page to try again.</p>';
+            document.body.appendChild(errorDiv);
+        });
+        
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+    </script>
 </body>
 </html>

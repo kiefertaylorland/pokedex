@@ -1,0 +1,257 @@
+/**
+ * Pokemon Card Renderer - Handles rendering Pokemon cards in the grid
+ * @module PokemonCardRenderer
+ */
+
+import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
+import { createSafeElement, sanitizeHTML } from '../utils/security.js';
+
+/**
+ * Handles rendering Pokemon cards with proper security and accessibility
+ */
+export class PokemonCardRenderer {
+    constructor(dataManager, uiController) {
+        this.dataManager = dataManager;
+        this.uiController = uiController;
+        this.pokedexGrid = document.getElementById(ELEMENT_IDS.POKEDEX_GRID);
+    }
+
+    /**
+     * Renders all Pokemon cards
+     * @param {Array} pokemonArray - Array of Pokemon data
+     * @param {Function} onCardClick - Callback for card click events
+     */
+    renderPokemonCards(pokemonArray, onCardClick) {
+        if (!this.pokedexGrid) {
+            console.error('Pokedex grid element not found');
+            return;
+        }
+
+        // Clear existing cards
+        this.pokedexGrid.innerHTML = '';
+
+        if (!Array.isArray(pokemonArray) || pokemonArray.length === 0) {
+            this._renderEmptyState();
+            return;
+        }
+
+        // Render each Pokemon card
+        pokemonArray.forEach(pokemon => {
+            if (this.dataManager.validatePokemonData(pokemon)) {
+                const card = this._createPokemonCard(pokemon, onCardClick);
+                this.pokedexGrid.appendChild(card);
+            }
+        });
+
+        // Announce to screen readers
+        const currentLang = this.uiController.getCurrentLanguage();
+        const message = `${pokemonArray.length} Pokémon loaded`;
+        this.uiController.announceToScreenReader(message);
+    }
+
+    /**
+     * Creates a single Pokemon card element
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Function} onCardClick - Click handler
+     * @returns {HTMLElement} Pokemon card element
+     */
+    _createPokemonCard(pokemon, onCardClick) {
+        const currentLang = this.uiController.getCurrentLanguage();
+        const name = this.dataManager.getPokemonName(pokemon, currentLang);
+        const types = this.dataManager.getPokemonTypes(pokemon, currentLang);
+        const uiText = this.uiController.getCurrentUIText();
+
+        // Create card container
+        const card = createSafeElement('div');
+        card.classList.add('pokemon-card');
+        card.dataset.id = pokemon.id;
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `${uiText.viewDetails} ${name}`);
+
+        // Create image element
+        const img = this._createPokemonImage(pokemon, name, uiText);
+        
+        // Create name element
+        const nameElement = createSafeElement('h3', name);
+        
+        // Create ID element
+        const idElement = createSafeElement('p', `#${String(pokemon.id).padStart(3, '0')}`);
+        idElement.classList.add('pokemon-id');
+        
+        // Create types container
+        const typesContainer = this._createTypesContainer(types);
+
+        // Assemble card
+        card.appendChild(img);
+        card.appendChild(nameElement);
+        card.appendChild(idElement);
+        card.appendChild(typesContainer);
+
+        // Add event listeners
+        this._addCardEventListeners(card, pokemon, onCardClick);
+
+        return card;
+    }
+
+    /**
+     * Creates Pokemon image element with lazy loading
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {string} name - Pokemon name
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Image element
+     */
+    _createPokemonImage(pokemon, name, uiText) {
+        const img = createSafeElement('img');
+        img.src = pokemon.sprite;
+        img.alt = name;
+        img.loading = 'lazy';
+        img.classList.add(CSS_CLASSES.LOADING);
+
+        // Add image event listeners
+        img.addEventListener('load', () => {
+            img.classList.remove(CSS_CLASSES.LOADING);
+        });
+
+        img.addEventListener('error', () => {
+            img.alt = `${name} ${uiText.imageNotAvailable}`;
+            img.classList.remove(CSS_CLASSES.LOADING);
+        });
+
+        return img;
+    }
+
+    /**
+     * Creates types container with type badges
+     * @private
+     * @param {Array} types - Pokemon types array
+     * @returns {HTMLElement} Types container
+     */
+    _createTypesContainer(types) {
+        const typesContainer = createSafeElement('div');
+        typesContainer.classList.add('pokemon-types');
+
+        types.forEach(type => {
+            const typeSpan = createSafeElement('span', type);
+            const normalizedType = type.toLowerCase().replace(/\s+/g, '-');
+            typeSpan.classList.add(`type-${normalizedType}`);
+            typesContainer.appendChild(typeSpan);
+        });
+
+        return typesContainer;
+    }
+
+    /**
+     * Adds event listeners to a Pokemon card
+     * @private
+     * @param {HTMLElement} card - Card element
+     * @param {Object} pokemon - Pokemon data
+     * @param {Function} onCardClick - Click handler
+     */
+    _addCardEventListeners(card, pokemon, onCardClick) {
+        // Click event
+        card.addEventListener('click', () => {
+            this._handleCardClick(card, pokemon, onCardClick);
+        });
+
+        // Keyboard navigation
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                this._handleCardClick(card, pokemon, onCardClick);
+            }
+        });
+
+        // Focus management for accessibility
+        card.addEventListener('focus', () => {
+            card.classList.add('focused');
+        });
+
+        card.addEventListener('blur', () => {
+            card.classList.remove('focused');
+        });
+    }
+
+    /**
+     * Handles card click with animation
+     * @private
+     * @param {HTMLElement} card - Card element
+     * @param {Object} pokemon - Pokemon data
+     * @param {Function} onCardClick - Click handler
+     */
+    _handleCardClick(card, pokemon, onCardClick) {
+        // Add visual feedback
+        card.classList.add(CSS_CLASSES.CLICKED);
+        
+        setTimeout(() => {
+            card.classList.remove(CSS_CLASSES.CLICKED);
+        }, 300);
+
+        // Call the provided click handler
+        if (typeof onCardClick === 'function') {
+            onCardClick(pokemon);
+        }
+    }
+
+    /**
+     * Renders empty state when no Pokemon found
+     * @private
+     */
+    _renderEmptyState() {
+        const currentLang = this.uiController.getCurrentLanguage();
+        const message = currentLang === 'jp' ? 'ポケモンが見つかりません' : 'No Pokémon found';
+        
+        const emptyContainer = createSafeElement('div');
+        emptyContainer.classList.add('empty-state');
+        
+        const emptyMessage = createSafeElement('p', message);
+        emptyMessage.classList.add('empty-message');
+        
+        emptyContainer.appendChild(emptyMessage);
+        this.pokedexGrid.appendChild(emptyContainer);
+    }
+
+    /**
+     * Gets the grid container element
+     * @returns {HTMLElement|null} Grid element
+     */
+    getGridElement() {
+        return this.pokedexGrid;
+    }
+
+    /**
+     * Clears all cards from the grid
+     */
+    clearGrid() {
+        if (this.pokedexGrid) {
+            this.pokedexGrid.innerHTML = '';
+        }
+    }
+
+    /**
+     * Gets card element by Pokemon ID
+     * @param {number} pokemonId - Pokemon ID
+     * @returns {HTMLElement|null} Card element or null
+     */
+    getCardById(pokemonId) {
+        if (!this.pokedexGrid) return null;
+        return this.pokedexGrid.querySelector(`[data-id="${pokemonId}"]`);
+    }
+
+    /**
+     * Scrolls to a specific Pokemon card
+     * @param {number} pokemonId - Pokemon ID
+     */
+    scrollToCard(pokemonId) {
+        const card = this.getCardById(pokemonId);
+        if (card) {
+            card.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+            card.focus();
+        }
+    }
+}
