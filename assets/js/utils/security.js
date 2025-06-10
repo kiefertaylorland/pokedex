@@ -42,16 +42,27 @@ export function createSafeElement(tagName, textContent = '', attributes = {}) {
  * Safely sets innerHTML with sanitization
  * @param {HTMLElement} element - Target element
  * @param {string} html - HTML content to set
+ * @note For best security, use DOMPurify (https://github.com/cure53/DOMPurify) in production.
  */
 export function safeSetInnerHTML(element, html) {
-    // For now, we'll use a simple approach. In production, consider using DOMPurify
-    const sanitized = html
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-        .replace(/javascript:/gi, '')
-        .replace(/data:/gi, '')
-        .replace(/vbscript:/gi, '')
-        .replace(/on\w+\s*=/gi, '');
-    
+    // Use DOMPurify if available
+    if (typeof window !== 'undefined' && window.DOMPurify && typeof window.DOMPurify.sanitize === 'function') {
+        element.innerHTML = window.DOMPurify.sanitize(html);
+        return;
+    }
+    // Fallback: repeatedly remove script tags and dangerous patterns
+    let sanitized = html;
+    let previous;
+    const scriptTagPattern = /<script\b[^<]*(?:(?!<\/script[\s>])[\s\S])*<\/script\s*>/gi;
+    do {
+        previous = sanitized;
+        sanitized = sanitized
+            .replace(scriptTagPattern, '')
+            .replace(/javascript:/gi, '')
+            .replace(/data:/gi, '')
+            .replace(/vbscript:/gi, '')
+            .replace(/on\w+\s*=/gi, '');
+    } while (sanitized !== previous);
     element.innerHTML = sanitized;
 }
 
