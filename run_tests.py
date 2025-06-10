@@ -16,7 +16,7 @@ from contextlib import contextmanager
 import requests
 
 class TestRunner:
-    def __init__(self, port=8001):
+    def __init__(self, port=8000):
         self.port = port
         self.server_process = None
         self.server_url = f"http://localhost:{port}"
@@ -116,7 +116,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(description="Run Pokedex tests with automatic server management")
-    parser.add_argument("--port", type=int, default=8001, help="HTTP server port (default: 8001)")
+    parser.add_argument("--port", type=int, default=8000, help="HTTP server port (default: 8000)")
     parser.add_argument("--keep-server", action="store_true", help="Keep server running after tests")
 
     # Parse known args to allow pytest arguments to pass through
