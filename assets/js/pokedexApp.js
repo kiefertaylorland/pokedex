@@ -44,6 +44,9 @@ export class PokedexApp {
             // Initial render
             this._renderInitialData();
             
+            // Hide loading state after successful initialization
+            this.uiController.hideLoading();
+            
             // Bind global events
             this._bindGlobalEvents();
             
