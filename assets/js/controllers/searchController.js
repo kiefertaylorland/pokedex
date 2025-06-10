@@ -4,7 +4,8 @@
  */
 
 import { ELEMENT_IDS, DATA } from '../constants.js';
-import { sanitizeSearchInput, debounce } from '../utils/security.js';
+import { sanitizeSearchInput } from '../utils/security.js';
+import { debounce } from '../utils/debounce.js';
 
 /**
  * Manages search functionality with debouncing and validation
