@@ -33,7 +33,7 @@ class TestPokedexTransitions(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=chrome_options)
 
         # Use localhost server instead of file:// protocol
-        cls.index_path = "http://localhost:8001"
+        cls.index_path = "http://localhost:8000"
 
     def setUp(self):
         self.driver.get(self.index_path)
