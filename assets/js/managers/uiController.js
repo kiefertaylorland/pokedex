@@ -37,7 +37,8 @@ export class UIController {
             themeToggle: document.getElementById(ELEMENT_IDS.THEME_TOGGLE),
             langToggle: document.getElementById(ELEMENT_IDS.LANG_TOGGLE),
             pokedexGrid: document.getElementById(ELEMENT_IDS.POKEDEX_GRID),
-            detailView: document.getElementById(ELEMENT_IDS.DETAIL_VIEW)
+            detailView: document.getElementById(ELEMENT_IDS.DETAIL_VIEW),
+            loadingIndicator: document.getElementById(ELEMENT_IDS.LOADING_INDICATOR)
         };
     }
 
@@ -143,12 +144,16 @@ export class UIController {
             LANGUAGES.JAPANESE : LANGUAGES.ENGLISH;
         this.applyLanguage(newLanguage);
     }
-
     /**
      * Shows loading state
      * @param {string} message - Loading message (optional)
      */
     showLoading(message) {
+        if (this.elements.loadingIndicator) {
+            this.elements.loadingIndicator.style.display = 'flex';
+            this.elements.loadingIndicator.setAttribute('aria-hidden', 'false');
+        }
+        
         const text = UI_TEXT[this.currentLanguage];
         const loadingMessage = message || text.loading;
         
@@ -161,7 +166,17 @@ export class UIController {
         }
     }
 
+
     /**
+     * Hides loading state
+     */
+    hideLoading() {
+        if (this.elements.loadingIndicator) {
+            this.elements.loadingIndicator.style.display = 'none';
+            this.elements.loadingIndicator.setAttribute('aria-hidden', 'true');
+        }
+    }
+
      * Shows error state
      * @param {string} message - Error message (optional)
      */
