@@ -48,6 +48,8 @@ export function safeSetInnerHTML(element, html) {
     const sanitized = html
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
         .replace(/javascript:/gi, '')
+        .replace(/data:/gi, '')
+        .replace(/vbscript:/gi, '')
         .replace(/on\w+\s*=/gi, '');
     
     element.innerHTML = sanitized;
