@@ -144,7 +144,6 @@ export class UIController {
             LANGUAGES.JAPANESE : LANGUAGES.ENGLISH;
         this.applyLanguage(newLanguage);
     }
-
     /**
      * Shows loading state
      * @param {string} message - Loading message (optional)
@@ -167,6 +166,7 @@ export class UIController {
         }
     }
 
+
     /**
      * Hides loading state
      */
@@ -177,7 +177,6 @@ export class UIController {
         }
     }
 
-    /**
      * Shows error state
      * @param {string} message - Error message (optional)
      */
