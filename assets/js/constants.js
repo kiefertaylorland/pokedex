@@ -101,6 +101,7 @@ export const CSS_CLASSES = {
 // DOM element IDs (for better maintainability)
 export const ELEMENT_IDS = {
     POKEDEX_GRID: 'pokedex-grid',
+    LOADING_INDICATOR: 'loading-indicator',
     SEARCH_INPUT: 'search-input',
     THEME_TOGGLE: 'theme-toggle',
     LANG_TOGGLE: 'lang-toggle',
