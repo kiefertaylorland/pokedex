@@ -5,6 +5,7 @@
 
 import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
 import { createSafeElement, sanitizeHTML } from '../utils/security.js';
+import { getTypeClassName } from '../utils/typeMapping.js';
 
 /**
  * Handles rendering Pokemon cards with proper security and accessibility
@@ -135,8 +136,9 @@ export class PokemonCardRenderer {
 
         types.forEach(type => {
             const typeSpan = createSafeElement('span', type);
-            const normalizedType = type.toLowerCase().replace(/\s+/g, '-');
-            typeSpan.classList.add(`type-${normalizedType}`);
+            // Use consistent CSS class name regardless of display language
+            const cssClassName = getTypeClassName(type);
+            typeSpan.classList.add(`type-${cssClassName}`);
             typesContainer.appendChild(typeSpan);
         });
 

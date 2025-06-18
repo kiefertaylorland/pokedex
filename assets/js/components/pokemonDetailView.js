@@ -5,6 +5,7 @@
 
 import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS } from '../constants.js';
 import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils/security.js';
+import { getTypeClassName } from '../utils/typeMapping.js';
 
 /**
  * Manages the Pokemon detail modal view
@@ -147,8 +148,9 @@ export class PokemonDetailView {
 
         types.forEach(type => {
             const typeSpan = createSafeElement('span', type);
-            const normalizedType = type.toLowerCase().replace(/\s+/g, '-');
-            typeSpan.classList.add(`type-${normalizedType}`);
+            // Use consistent CSS class name regardless of display language
+            const cssClassName = getTypeClassName(type);
+            typeSpan.classList.add(`type-${cssClassName}`);
             typesContainer.appendChild(typeSpan);
         });
 
