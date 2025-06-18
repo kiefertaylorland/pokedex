@@ -1,8 +1,43 @@
 # Ignore Python bytecode files
 __pycache__/
+*.pyc
+*.pyo
 
 # Ignore coverage reports
 coverage/
+.coverage
+htmlcov/
 
 # Ignore virtual environment
 venv/
+env/
+
+# Ignore test cache and artifacts
+.pytest_cache/
+.tox/
+
+# Ignore OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+*.orig
+
+# Ignore node modules if any JS tooling is added later
+node_modules/
+
+# Ignore log files
+*.log

@@ -12,11 +12,45 @@ from selenium.webdriver.common.action_chains import ActionChains
 import os
 import unittest
 import time
+import threading
+import http.server
+import socketserver
 
 
 class TestPokedexTransitions(unittest.TestCase):
+    httpd = None
+    server_thread = None
+    
     @classmethod
     def setUpClass(cls):
+        # Start a local HTTP server to serve the files
+        port = 8001  # Use different port to avoid conflicts with UI tests
+        handler = http.server.SimpleHTTPRequestHandler
+        
+        # Change to the project root directory
+        project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+        os.chdir(project_root)
+        
+        # Find an available port
+        for attempt_port in range(port, port + 10):
+            try:
+                cls.httpd = socketserver.TCPServer(("", attempt_port), handler)
+                port = attempt_port
+                break
+            except OSError:
+                continue
+        
+        if cls.httpd is None:
+            raise RuntimeError("Could not start HTTP server on any port")
+        
+        # Start the server in a separate thread
+        cls.server_thread = threading.Thread(target=cls.httpd.serve_forever)
+        cls.server_thread.daemon = True
+        cls.server_thread.start()
+        
+        # Give the server a moment to start
+        time.sleep(1)
+        
         # Initialize Chrome WebDriver with file access enabled
         chrome_options = Options()
         chrome_options.add_argument("--allow-file-access-from-files")
@@ -33,7 +67,22 @@ class TestPokedexTransitions(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=chrome_options)
 
         # Use localhost server instead of file:// protocol
-        cls.index_path = "http://localhost:8000"
+        cls.index_path = f"http://localhost:{port}"
+    
+    @classmethod
+    def tearDownClass(cls):
+        # Clean up the driver
+        if cls.driver:
+            cls.driver.quit()
+        
+        # Stop the HTTP server
+        if cls.httpd:
+            cls.httpd.shutdown()
+            cls.httpd.server_close()
+        
+        # Wait for the server thread to finish
+        if cls.server_thread:
+            cls.server_thread.join(timeout=5)
 
     def setUp(self):
         self.driver.get(self.index_path)
@@ -252,10 +301,6 @@ class TestPokedexTransitions(unittest.TestCase):
             EC.element_to_be_clickable((By.ID, "close-detail-view"))
         )
         close_button.click()
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
 
 
 if __name__ == "__main__":
