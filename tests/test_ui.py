@@ -126,9 +126,10 @@ class TestPokedexUI(unittest.TestCase):
         visible_cards = self.driver.find_elements(By.CSS_SELECTOR, ".pokemon-card:not(.hidden)")
         self.assertGreater(len(visible_cards), 0, "Should have at least one card matching 'Pikachu'")
         
-        # Verify the visible card contains "Pikachu"
-        card_names = [card.find_element(By.CLASS_NAME, "pokemon-name").text for card in visible_cards]
-        self.assertTrue(any("pikachu" in name.lower() for name in card_names), "Should find Pikachu in search results")
+        # Verify the visible card contains "Pikachu" (in either English or Japanese)
+        card_names = [card.find_element(By.CSS_SELECTOR, "h3").text for card in visible_cards]
+        has_pikachu = any("pikachu" in name.lower() or "ピカチュウ" in name for name in card_names)
+        self.assertTrue(has_pikachu, f"Should find Pikachu in search results. Found: {card_names}")
 
     def test_pokemon_detail_view(self):
         """Test that clicking a Pokémon card opens the detail view"""
@@ -138,7 +139,7 @@ class TestPokedexUI(unittest.TestCase):
 
         # Wait until detail view appears with increased timeout
         detail_view = WebDriverWait(self.driver, 15).until(
-            EC.presence_of_element_located((By.ID, "detail-view"))
+            EC.presence_of_element_located((By.ID, "pokemon-detail-view"))
         )
 
         # Wait until detail view has the 'show' class
@@ -148,8 +149,8 @@ class TestPokedexUI(unittest.TestCase):
 
         # Verify detail view is visible and contains expected elements
         self.assertIn("show", detail_view.get_attribute("class"), "Detail view should have 'show' class")
-        self.assertTrue(self.driver.find_element(By.ID, "pokemon-name").is_displayed())
-        self.assertTrue(self.driver.find_element(By.ID, "pokemon-image").is_displayed())
+        self.assertTrue(self.driver.find_element(By.CSS_SELECTOR, "#pokemon-detail-view h2").is_displayed())
+        self.assertTrue(self.driver.find_element(By.CSS_SELECTOR, "#pokemon-detail-view img").is_displayed())
 
         # Test closing the detail view
         close_button = self.driver.find_element(By.ID, "close-detail-view")
