@@ -17,7 +17,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'      - name: Setup Chrome and ChromeDriver
+          python-version: '3.12'      
+          
+      - name: Setup Chrome and ChromeDriver
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
