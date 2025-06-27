@@ -14,22 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Add Google Chrome GPG key (modern, fixed)
+      - name: Set up Google Chrome repository
         run: |
-          curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg > /dev/null
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'      
-      - name: Add Google Chrome GPG Key
-        run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google-chrome.asc
-      - name: Install latest Google Chrome
-        run: |
-          wget -q -O /usr/share/keyrings/google-chrome.gpg https://dl-ssl.google.com/linux/linux_signing_key.pub
+          wget -q -O /usr/share/keyrings/google-chrome.gpg https://dl.google.com/linux/linux_signing_key.pub
           echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable    
+          sudo apt-get install -y google-chrome-stable
       - name: Setup Chrome and ChromeDriver
         uses: browser-actions/setup-chrome@v1
         with:
