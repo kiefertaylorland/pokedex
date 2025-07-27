@@ -6,10 +6,10 @@
 
 ## Screenshots
 
-![Screenshot 2025-07-26 at 5 10 44 PM](https://github.com/user-attachments/assets/2cff54a0-4871-460f-868e-16f9c5ccd054)
-![Screenshot 2025-07-26 at 5 11 00 PM](https://github.com/user-attachments/assets/fe656e8c-2e9c-4e9f-b2ca-12dba98f2ddf)
-![Screenshot 2025-07-26 at 5 11 12 PM](https://github.com/user-attachments/assets/c6d5ca85-ff37-4371-ac62-479c10ca0608)
-![Screenshot 2025-07-26 at 5 11 08 PM](https://github.com/user-attachments/assets/5e1844f7-fc2f-4dfe-9609-99baa3ad28f6)
+![Pokédex main interface](https://github.com/user-attachments/assets/2cff54a0-4871-460f-868e-16f9c5ccd054)
+![Pokémon detail view](https://github.com/user-attachments/assets/fe656e8c-2e9f-4e9f-b2ca-12dba98f2ddf)
+![Search functionality interface](https://github.com/user-attachments/assets/c6d5ca85-ff37-4371-ac62-479c10ca0608)
+![Theme toggle and language toggle interface](https://github.com/user-attachments/assets/5e1844f7-fc2f-4dfe-9609-99baa3ad28f6)
 
 
 ## Features
