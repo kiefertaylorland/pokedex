@@ -97,14 +97,21 @@ export class PokemonCardRenderer {
     }
 
     /**
-     * Creates Pokemon image element with lazy loading
+     * Creates Pokemon image element with lazy loading and error handling
      * @private
      * @param {Object} pokemon - Pokemon data
      * @param {string} name - Pokemon name
      * @param {Object} uiText - UI text object
-     * @returns {HTMLElement} Image element
+     * @returns {HTMLElement} Image element or error container
      */
     _createPokemonImage(pokemon, name, uiText) {
+        const container = createSafeElement('div');
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
+        container.style.width = '96px';
+        container.style.height = '96px';
+        
         const img = createSafeElement('img');
         img.src = pokemon.sprite;
         img.alt = name;
@@ -117,11 +124,30 @@ export class PokemonCardRenderer {
         });
 
         img.addEventListener('error', () => {
-            img.alt = `${name} ${uiText.imageNotAvailable}`;
             img.classList.remove(CSS_CLASSES.LOADING);
+            // Create error fallback
+            const errorContainer = createSafeElement('div');
+            errorContainer.classList.add('image-error-container');
+            errorContainer.style.width = '96px';
+            errorContainer.style.height = '96px';
+            
+            const icon = createSafeElement('div', '⚠️');
+            icon.classList.add('image-error-icon');
+            icon.setAttribute('aria-hidden', 'true');
+            
+            const text = createSafeElement('div', 'No Image');
+            text.classList.add('image-error-text');
+            
+            errorContainer.appendChild(icon);
+            errorContainer.appendChild(text);
+            errorContainer.setAttribute('role', 'img');
+            errorContainer.setAttribute('aria-label', `${name} ${uiText.imageNotAvailable}`);
+            
+            container.replaceChild(errorContainer, img);
         });
 
-        return img;
+        container.appendChild(img);
+        return container;
     }
 
     /**
