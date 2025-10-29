@@ -62,36 +62,22 @@ export class PokemonDetailView {
 
         // Create and append components
         modalContent.appendChild(this._createCloseButton());
+        modalContent.appendChild(this._createPokemonImage(pokemon, name));
+        modalContent.appendChild(this._createPokemonHeader(pokemon, name));
+        modalContent.appendChild(this._createTypesSection(types, uiText));
+        modalContent.appendChild(this._createBioSection(bio, uiText));
         
-        // Header with image and basic info
-        const header = this._createCompactHeader(pokemon, name, types, uiText);
-        modalContent.appendChild(header);
-        
-        // Bio section
-        modalContent.appendChild(this._createCompactBioSection(bio, uiText));
-        
-        // Main grid with stats on left, weaknesses on right
-        const mainGrid = createSafeElement('div');
-        mainGrid.classList.add('detail-main-grid');
-        
-        // Left column - Stats
-        mainGrid.appendChild(this._createStatsSection(pokemon.stats, uiText));
-        
-        // Right column - Weaknesses and Evolution
-        const rightColumn = createSafeElement('div');
-        
-        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
-            rightColumn.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
-        }
-        
+        // Add evolution chain if available
         if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
-            rightColumn.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
         }
         
-        mainGrid.appendChild(rightColumn);
-        modalContent.appendChild(mainGrid);
+        // Add weaknesses if available
+        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
+            modalContent.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        }
         
-        // Moves section at bottom
+        modalContent.appendChild(this._createStatsSection(pokemon.stats, uiText));
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
 
         // Clear previous content and add new content
@@ -103,76 +89,12 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates compact header with image and basic info
-     * @private
-     * @param {Object} pokemon - Pokemon data
-     * @param {string} name - Pokemon name
-     * @param {Array} types - Pokemon types
-     * @param {Object} uiText - UI text object
-     * @returns {HTMLElement} Header element
-     */
-    _createCompactHeader(pokemon, name, types, uiText) {
-        const header = createSafeElement('div');
-        header.classList.add('detail-header');
-        
-        // Image section
-        const imageContainer = this._createPokemonImage(pokemon, name);
-        imageContainer.classList.add('detail-header-image');
-        
-        // Info section
-        const infoContainer = createSafeElement('div');
-        infoContainer.classList.add('detail-header-info');
-        
-        const nameElement = createSafeElement('h2', 
-            `${name} (#${String(pokemon.id).padStart(3, '0')})`);
-        nameElement.classList.add('pokemon-detail-name');
-        
-        const typesContainer = createSafeElement('div');
-        typesContainer.classList.add('pokemon-types');
-        
-        types.forEach(type => {
-            const typeSpan = createSafeElement('span', type);
-            const cssClassName = getTypeClassName(type);
-            typeSpan.classList.add(`type-${cssClassName}`);
-            typesContainer.appendChild(typeSpan);
-        });
-        
-        infoContainer.appendChild(nameElement);
-        infoContainer.appendChild(typesContainer);
-        
-        header.appendChild(imageContainer);
-        header.appendChild(infoContainer);
-        
-        return header;
-    }
-
-    /**
-     * Creates compact bio section
-     * @private
-     * @param {string} bio - Pokemon bio text
-     * @param {Object} uiText - UI text object
-     * @returns {HTMLElement} Bio section
-     */
-    _createCompactBioSection(bio, uiText) {
-        const section = createSafeElement('div');
-        section.classList.add('detail-section');
-
-        const heading = createSafeElement('h4', uiText.bio);
-        const bioText = createSafeElement('p', bio || uiText.noBio);
-        bioText.classList.add('bio-compact');
-
-        section.appendChild(heading);
-        section.appendChild(bioText);
-        return section;
-    }
-
-    /**
      * Creates close button
      * @private
      * @returns {HTMLElement} Close button element
      */
     _createCloseButton() {
-        const closeButton = createSafeElement('button');
+        const closeButton = createSafeElement('button', '×');
         closeButton.id = ELEMENT_IDS.CLOSE_DETAIL;
         closeButton.classList.add('close-button');
         closeButton.setAttribute('aria-label', 'Close detail view');
@@ -287,7 +209,7 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates stats section with progress bars
+     * Creates stats section
      * @private
      * @param {Object} stats - Pokemon stats
      * @param {Object} uiText - UI text object
@@ -315,34 +237,10 @@ export class PokemonDetailView {
                 const statItem = createSafeElement('div');
                 statItem.classList.add('stat-item');
                 
-                // Label
-                const label = createSafeElement('div', `${statLabel}:`);
-                label.classList.add('stat-item-label');
-                
-                // Progress bar container
-                const barContainer = createSafeElement('div');
-                barContainer.classList.add('stat-item-bar');
-                
-                // Progress bar fill
-                const barFill = createSafeElement('div');
-                barFill.classList.add('stat-item-fill');
-                // Max stat is typically 255 for Pokemon
-                const percentage = Math.min((stats[statKey] / 255) * 100, 100);
-                barFill.style.width = '0%'; // Start at 0 for animation
-                
-                // Animate after a short delay
-                setTimeout(() => {
-                    barFill.style.width = `${percentage}%`;
-                }, 100);
-                
-                barContainer.appendChild(barFill);
-                
-                // Value
-                const value = createSafeElement('div', `${stats[statKey]}`);
-                value.classList.add('stat-item-value');
+                const label = createSafeElement('strong', `${statLabel}:`);
+                const value = createSafeElement('span', ` ${stats[statKey]}`);
                 
                 statItem.appendChild(label);
-                statItem.appendChild(barContainer);
                 statItem.appendChild(value);
                 statsGrid.appendChild(statItem);
             }
@@ -515,7 +413,7 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates compact weaknesses section
+     * Creates weaknesses section
      * @private
      * @param {Object} weaknesses - Weaknesses object
      * @param {Object} uiText - UI text object
@@ -534,11 +432,11 @@ export class PokemonDetailView {
             weaknessItem.classList.add('weakness-item');
             weaknessItem.classList.add(`type-${type.toLowerCase()}`);
             
-            const typeText = createSafeElement('span', type);
+            const typeName = createSafeElement('div', type);
             const multiplierSpan = createSafeElement('span', `${multiplier}×`);
             multiplierSpan.classList.add('multiplier');
             
-            weaknessItem.appendChild(typeText);
+            weaknessItem.appendChild(typeName);
             weaknessItem.appendChild(multiplierSpan);
             weaknessItem.setAttribute('title', `Takes ${multiplier}× damage from ${type} type moves`);
             
