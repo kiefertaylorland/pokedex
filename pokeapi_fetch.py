@@ -63,6 +63,66 @@ def get_localized_flavor_text(flavor_text_entries, lang_code="en", version="red"
             return entry["flavor_text"].replace("\n", " ").replace("\f", " ")
     return "No description available."
 
+def calculate_weaknesses(pokemon_types):
+    """Calculate type weaknesses based on Pokemon types."""
+    weaknesses = {}
+    
+    # For each attacking type, calculate the combined effectiveness
+    all_types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", 
+                 "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", 
+                 "dragon", "dark", "steel", "fairy"]
+    
+    for attacking_type in all_types:
+        multiplier = 1.0
+        
+        # Calculate combined multiplier for all defending types
+        for defending_type in pokemon_types:
+            defending_type_lower = defending_type.lower()
+            if attacking_type in TYPE_EFFECTIVENESS:
+                type_matchup = TYPE_EFFECTIVENESS[attacking_type]
+                if defending_type_lower in type_matchup:
+                    multiplier *= type_matchup[defending_type_lower]
+        
+        # Only include weaknesses (2x or 4x damage)
+        if multiplier >= 2.0:
+            weaknesses[attacking_type.capitalize()] = multiplier
+    
+    return weaknesses
+
+def fetch_evolution_chain(evolution_chain_url):
+    """Fetch and parse evolution chain data."""
+    if not evolution_chain_url:
+        return []
+    
+    try:
+        chain_data = get_data(evolution_chain_url.replace(BASE_URL, ""))
+        if not chain_data:
+            return []
+        
+        evolution_list = []
+        
+        def parse_chain(chain_link):
+            """Recursively parse evolution chain."""
+            species_name = chain_link["species"]["name"]
+            species_id = int(chain_link["species"]["url"].rstrip('/').split('/')[-1])
+            
+            evolution_list.append({
+                "name": species_name.capitalize(),
+                "id": species_id
+            })
+            
+            # Parse evolutions
+            if chain_link.get("evolves_to"):
+                for evolution in chain_link["evolves_to"]:
+                    parse_chain(evolution)
+        
+        parse_chain(chain_data["chain"])
+        return evolution_list
+        
+    except Exception as e:
+        print(f"Error fetching evolution chain: {e}")
+        return []
+
 def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, sleep_time=0.2):
     all_pokemon_data = []
     type_cache = {}
