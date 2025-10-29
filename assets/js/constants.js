@@ -55,6 +55,8 @@ export const UI_TEXT = {
         movePower: "Power",
         moveAccuracy: "Accuracy",
         movePP: "PP",
+        evolutionChain: "Evolution Chain",
+        weaknesses: "Weaknesses",
         noBio: "No bio available.",
         noMoves: "No specific moves data available.",
         imageNotAvailable: "(Image not available)",
@@ -79,6 +81,8 @@ export const UI_TEXT = {
         movePower: "威力", // Iryoku
         moveAccuracy: "命中", // Meichuu
         movePP: "PP",
+        evolutionChain: "進化チェーン", // Shinka Chain
+        weaknesses: "弱点", // Jakuten
         noBio: "説明なし",
         noMoves: "わざデータなし",
         imageNotAvailable: "(画像なし)",
