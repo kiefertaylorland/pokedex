@@ -371,14 +371,17 @@ body.dark-mode .pokemon-card .pokemon-id {
     gap: 0.5rem;
 }
 #detail-content .stat-item {
-    background-color: var(--background-color);
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9em;
+    background-color: var(--card-background);
+    padding: 0.75rem 1rem;
+    border-radius: 15px;
+    font-size: 0.95em;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
     transform: translateX(-20px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
 .pokemon-detail-view.show #detail-content .stat-item {
     transform: translateX(0);
     opacity: 1;
