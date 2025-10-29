@@ -70,6 +70,7 @@ export class PokemonCardRenderer {
         card.setAttribute('tabindex', '0');
         card.setAttribute('role', 'button');
         card.setAttribute('aria-label', `${uiText.viewDetails} ${name}`);
+        card.setAttribute('data-testid', `pokemon-card-${pokemon.id}`);
 
         // Create image element
         const img = this._createPokemonImage(pokemon, name, uiText);
