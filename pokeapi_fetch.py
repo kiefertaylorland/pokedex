@@ -28,7 +28,15 @@ TYPE_EFFECTIVENESS = {
 }
 
 def get_data(endpoint):
-    """Helper function to get data from PokeAPI and handle errors."""
+    """
+    Retrieve and parse JSON data from the PokeAPI for a given endpoint.
+    
+    Parameters:
+        endpoint (str): API path appended to BASE_URL (for example, "pokemon/1/").
+    
+    Returns:
+        dict | list | None: Parsed JSON response (typically a dict or list) on success; `None` if the HTTP request fails or the response cannot be decoded as JSON.
+    """
     try:
         response = requests.get(BASE_URL + endpoint)
         response.raise_for_status()  # Raises an HTTPError for bad responses (4XX or 5XX)
@@ -53,7 +61,18 @@ def get_localized_name(names_list, lang_code="ja-Hrkt"): # ja-Hrkt for Katakana/
     return None
 
 def get_localized_flavor_text(flavor_text_entries, lang_code="en", version="red"):
-    """Extracts a localized Pokedex entry for a specific game version."""
+    """
+    Selects a localized Pokédex flavor text for a specified language and game version.
+    
+    Parameters:
+        flavor_text_entries (list): List of flavor text entry objects as returned by the species endpoint.
+        lang_code (str): Language code to match (e.g., "en", "ja"). Defaults to "en".
+        version (str): Game version name to prefer (e.g., "red"). Defaults to "red".
+    
+    Returns:
+        str: The matching flavor text with newlines and form feeds replaced by spaces, or
+        "No description available." if no entry exists for the requested language.
+    """
     for entry in flavor_text_entries:
         if entry["language"]["name"] == lang_code and entry["version"]["name"] == version:
             return entry["flavor_text"].replace("\n", " ").replace("\f", " ")
@@ -64,7 +83,15 @@ def get_localized_flavor_text(flavor_text_entries, lang_code="en", version="red"
     return "No description available."
 
 def calculate_weaknesses(pokemon_types):
-    """Calculate type weaknesses based on Pokemon types."""
+    """
+    Calculate which attacking types are effective weaknesses for the given Pokémon types.
+    
+    Parameters:
+        pokemon_types (list[str]): Defender type names (e.g., ["Fire"], ["Water", "Flying"]).
+    
+    Returns:
+        dict[str, float]: Mapping from capitalized attacking type (e.g., "Electric") to the combined damage multiplier (>= 2.0) against the provided defender types.
+    """
     weaknesses = {}
     
     # For each attacking type, calculate the combined effectiveness
@@ -90,7 +117,18 @@ def calculate_weaknesses(pokemon_types):
     return weaknesses
 
 def fetch_evolution_chain(evolution_chain_url):
-    """Fetch and parse evolution chain data."""
+    """
+    Parse an evolution-chain URL and return the ordered list of species in that chain.
+    
+    Parameters:
+        evolution_chain_url (str): Full or partial URL to a Pokémon evolution-chain resource; may be falsy.
+    
+    Returns:
+        list[dict]: A list of species dictionaries in evolution order, each with keys:
+            - name (str): Capitalized species name.
+            - id (int): Numerical species ID.
+        Returns an empty list if the URL is falsy, if fetching fails, or if the chain cannot be parsed.
+    """
     if not evolution_chain_url:
         return []
     
@@ -102,7 +140,12 @@ def fetch_evolution_chain(evolution_chain_url):
         evolution_list = []
         
         def parse_chain(chain_link):
-            """Recursively parse evolution chain."""
+            """
+            Extract a species entry from an evolution-chain node and append it (name and id) to the module-level `evolution_list`, then recursively process any evolutions.
+            
+            Parameters:
+                chain_link (dict): A mapping representing an evolution-chain node with a "species" entry (containing "name" and "url") and an optional "evolves_to" list. The function extracts the species name (capitalized) and numeric id parsed from the species "url", appends {"name": <Name>, "id": <id>} to `evolution_list`, and recurses into each item in "evolves_to".
+            """
             species_name = chain_link["species"]["name"]
             species_id = int(chain_link["species"]["url"].rstrip('/').split('/')[-1])
             
@@ -124,6 +167,30 @@ def fetch_evolution_chain(evolution_chain_url):
         return []
 
 def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, sleep_time=0.2):
+    """
+    Build a Pokédex by fetching, enriching, and assembling data for a range of Pokémon.
+    
+    Parameters:
+    	pokemon_count (int): Number of Pokémon to fetch (IDs 1..pokemon_count).
+    	base_url (str): Base API URL used to resolve full resource URLs.
+    	sleep_time (float): Seconds to pause between main Pokémon fetches to avoid rate limits.
+    
+    Returns:
+    	list: A list of Pokémon dictionaries. Each dictionary contains:
+    		- id (int)
+    		- name_en (str): English name, capitalized.
+    		- name_jp (str): Localized Japanese name or fallback to English.
+    		- sprite (str | None): URL to the front_default sprite.
+    		- types_en (list[str]): English type names, capitalized.
+    		- types_jp (list[str]): Localized Japanese type names (cached/looked up).
+    		- stats (dict): Keys: "hp", "attack", "defense", "special-attack", "special-defense", "speed".
+    		- bio_en (str): English flavor text with fallbacks across versions.
+    		- bio_jp (str): Japanese flavor text with fallbacks across versions.
+    		- moves (list[dict]): Up to 4 level-up moves from Red/Blue with keys:
+    			"name_en", "name_jp", "type_en", "type_jp", "power", "accuracy", "pp".
+    		- evolution_chain (list[dict]): Ordered evolution entries with "name" and "id".
+    		- weaknesses (dict): Attacking type (capitalized) -> combined multiplier (float) for multipliers >= 2.0.
+    """
     all_pokemon_data = []
     type_cache = {}
     for i in range(1, pokemon_count + 1):
