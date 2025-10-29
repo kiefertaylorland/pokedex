@@ -331,9 +331,12 @@ body.dark-mode .pokemon-card .pokemon-id {
 }
 
 #detail-content .detail-section {
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--header-background);
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 20px;
+    background-color: var(--card-background);
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
     transform: translateY(30px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -349,12 +352,18 @@ body.dark-mode .pokemon-card .pokemon-id {
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(3) { transition-delay: 0.2s; }
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(4) { transition-delay: 0.25s; }
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(5) { transition-delay: 0.3s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(6) { transition-delay: 0.35s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(7) { transition-delay: 0.4s; }
 
 #detail-content .detail-section:last-child {
     border-bottom: none;
 }
-#detail-content .detail-section h4 { /* Section titles like Stats, Moves */
-    margin-bottom: 0.5rem;
+
+#detail-content .detail-section h4 {
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+    font-size: 1.1em;
+    font-weight: 600;
 }
 #detail-content .stats-grid {
     display: grid;
