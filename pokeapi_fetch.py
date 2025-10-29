@@ -200,6 +200,16 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
                 time.sleep(0.1)
             if len(moves_data) >= 4:
                 break
+        # Fetch evolution chain
+        evolution_chain = []
+        if pokemon_species_data.get("evolution_chain"):
+            evolution_chain_url = pokemon_species_data["evolution_chain"]["url"]
+            evolution_chain = fetch_evolution_chain(evolution_chain_url)
+            time.sleep(0.1)
+        
+        # Calculate type weaknesses
+        weaknesses = calculate_weaknesses(types_en)
+        
         pokemon_obj = {
             "id": pokemon_main_data["id"],
             "name_en": name_en,
@@ -210,9 +220,12 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             "stats": stats,
             "bio_en": bio_en,
             "bio_jp": bio_jp,
-            "moves": moves_data
+            "moves": moves_data,
+            "evolution_chain": evolution_chain,
+            "weaknesses": weaknesses
         }
         all_pokemon_data.append(pokemon_obj)
+        print(f"Processed: #{i} {name_en}")
         time.sleep(sleep_time)
     return all_pokemon_data
 
