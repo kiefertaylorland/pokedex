@@ -399,12 +399,12 @@ body.dark-mode .pokemon-card .pokemon-id {
 }
 
 #detail-content .detail-section {
-    margin-bottom: 1.5rem;
-    padding: 1.25rem;
-    border-radius: 20px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
     background-color: var(--card-background);
-    box-shadow: inset 4px 4px 8px var(--shadow-inset),
-                inset -4px -4px 8px var(--highlight);
+    box-shadow: inset 3px 3px 6px var(--shadow-inset),
+                inset -3px -3px 6px var(--highlight);
     transform: translateY(30px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -428,10 +428,31 @@ body.dark-mode .pokemon-card .pokemon-id {
 }
 
 #detail-content .detail-section h4 {
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.75rem 0;
     color: var(--accent-color);
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Compact Types and Weaknesses Row */
+.types-weaknesses-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.types-weaknesses-row > div {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Compact Bio */
+.bio-compact {
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0;
 }
 #detail-content .stats-grid {
     display: grid;
