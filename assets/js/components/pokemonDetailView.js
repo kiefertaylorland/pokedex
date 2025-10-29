@@ -62,22 +62,36 @@ export class PokemonDetailView {
 
         // Create and append components
         modalContent.appendChild(this._createCloseButton());
-        modalContent.appendChild(this._createPokemonImage(pokemon, name));
-        modalContent.appendChild(this._createPokemonHeader(pokemon, name));
-        modalContent.appendChild(this._createTypesSection(types, uiText));
-        modalContent.appendChild(this._createBioSection(bio, uiText));
         
-        // Add evolution chain if available
-        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
-            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
-        }
+        // Header with image and basic info
+        const header = this._createCompactHeader(pokemon, name, types, uiText);
+        modalContent.appendChild(header);
         
-        // Add weaknesses if available
+        // Bio section
+        modalContent.appendChild(this._createCompactBioSection(bio, uiText));
+        
+        // Main grid with stats on left, weaknesses on right
+        const mainGrid = createSafeElement('div');
+        mainGrid.classList.add('detail-main-grid');
+        
+        // Left column - Stats
+        mainGrid.appendChild(this._createStatsSection(pokemon.stats, uiText));
+        
+        // Right column - Weaknesses and Evolution
+        const rightColumn = createSafeElement('div');
+        
         if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
-            modalContent.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+            rightColumn.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
         }
         
-        modalContent.appendChild(this._createStatsSection(pokemon.stats, uiText));
+        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
+            rightColumn.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        }
+        
+        mainGrid.appendChild(rightColumn);
+        modalContent.appendChild(mainGrid);
+        
+        // Moves section at bottom
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
 
         // Clear previous content and add new content
