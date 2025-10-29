@@ -1,29 +1,41 @@
 :root {
-    --background-color-light: #f0f0f0;
-    --text-color-light: #333;
-    --card-background-light: #ffffff;
-    --header-background-light: #e0e0e0;
-    --accent-color-light: #ff3b30; /* A reddish accent */
+    /* Neumorphism Light Theme */
+    --background-color-light: #e0e5ec;
+    --text-color-light: #4a5568;
+    --card-background-light: #e0e5ec;
+    --header-background-light: #e0e5ec;
+    --accent-color-light: #ff6b6b;
+    --shadow-light: #a3b1c6;
+    --shadow-light-inset: #a3b1c6;
+    --highlight-light: #ffffff;
 
-    --background-color-dark: #121212;
-    --text-color-dark: #e0e0e0;
-    --card-background-dark: #1e1e1e;
-    --header-background-dark: #2a2a2a;
-    --accent-color-dark: #ff453a; /* Slightly brighter red for dark mode */
+    /* Neumorphism Dark Theme */
+    --background-color-dark: #2d3748;
+    --text-color-dark: #e2e8f0;
+    --card-background-dark: #2d3748;
+    --header-background-dark: #2d3748;
+    --accent-color-dark: #fc8181;
+    --shadow-dark: #1a202c;
+    --shadow-dark-inset: #1a202c;
+    --highlight-dark: #4a5568;
 
+    /* Active Theme Variables */
     --background-color: var(--background-color-light);
     --text-color: var(--text-color-light);
     --card-background: var(--card-background-light);
     --header-background: var(--header-background-light);
     --accent-color: var(--accent-color-light);
+    --shadow: var(--shadow-light);
+    --shadow-inset: var(--shadow-light-inset);
+    --highlight: var(--highlight-light);
 
+    /* Type Colors */
     --type-grass: #78C850; --type-poison: #A040A0; --type-fire: #F08030;
     --type-flying: #A890F0; --type-water: #6890F0; --type-bug: #A8B820;
     --type-normal: #A8A878; --type-electric: #F8D030; --type-ground: #E0C068;
     --type-fairy: #EE99AC; --type-fighting: #C03028; --type-psychic: #F85888;
     --type-rock: #B8A038; --type-steel: #B8B8D0; --type-ice: #98D8D8;
     --type-ghost: #705898; --type-dragon: #7038F8; --type-dark: #705848;
-    /* Add more type colors as needed based on PokeAPI output */
 }
 
 body.dark-mode {
@@ -32,6 +44,9 @@ body.dark-mode {
     --card-background: var(--card-background-dark);
     --header-background: var(--header-background-dark);
     --accent-color: var(--accent-color-dark);
+    --shadow: var(--shadow-dark);
+    --shadow-inset: var(--shadow-dark-inset);
+    --highlight: var(--highlight-dark);
 }
 
 body {
@@ -45,17 +60,23 @@ body {
 
 header {
     background-color: var(--header-background);
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: none;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    border-radius: 0 0 20px 20px;
 }
 
 header h1 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
     color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .controls {
@@ -67,25 +88,47 @@ header h1 {
 }
 
 .search-container input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid var(--text-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    border: none;
     background-color: var(--card-background);
     color: var(--text-color);
-    min-width: 250px;
+    min-width: 280px;
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.search-container input:focus {
+    outline: none;
+    box-shadow: inset 6px 6px 12px var(--shadow-inset),
+                inset -6px -6px 12px var(--highlight);
 }
 
 .toggles button {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 5px;
-    background-color: var(--accent-color);
-    color: white;
+    border-radius: 20px;
+    background-color: var(--card-background);
+    color: var(--text-color);
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+    transition: all 0.3s ease;
 }
+
 .toggles button:hover {
-    opacity: 0.8;
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    transform: translateY(-2px);
+}
+
+.toggles button:active {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+    transform: translateY(0);
 }
 
 main {
@@ -100,26 +143,30 @@ main {
 
 .pokemon-card {
     background-color: var(--card-background);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 20px;
+    padding: 1.25rem;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    position: relative;
 }
 
 .pokemon-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 24px var(--shadow),
+                -12px -12px 24px var(--highlight);
 }
 
 .pokemon-card:active {
     transform: translateY(-2px) scale(0.98);
-    transition: transform 0.1s ease;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
 }
 
 .pokemon-card.clicked {
-    animation: cardClick 0.3s ease;
+    animation: cardClick 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes cardClick {
@@ -204,17 +251,18 @@ body.dark-mode .pokemon-card .pokemon-id {
 
 .detail-modal-content {
     background-color: var(--card-background);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 2rem;
+    border-radius: 30px;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
     color: var(--text-color);
     transform: scale(0.7) translateY(50px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 20px 20px 40px var(--shadow),
+                -20px -20px 40px var(--highlight);
 }
 
 .pokemon-detail-view.show .detail-modal-content {
@@ -223,29 +271,34 @@ body.dark-mode .pokemon-card .pokemon-id {
 
 #close-detail-view {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--accent-color);
-    color: white;
+    top: 15px;
+    right: 15px;
+    background: var(--card-background);
+    color: var(--accent-color);
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 1.2em;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     z-index: 10;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
 }
 
 #close-detail-view:hover {
-    background-color: #e03028;
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
     transform: scale(1.1);
 }
 
 #close-detail-view:active {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
     transform: scale(0.95);
 }
 #detail-content img {
@@ -278,9 +331,12 @@ body.dark-mode .pokemon-card .pokemon-id {
 }
 
 #detail-content .detail-section {
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--header-background);
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 20px;
+    background-color: var(--card-background);
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
     transform: translateY(30px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
@@ -296,12 +352,18 @@ body.dark-mode .pokemon-card .pokemon-id {
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(3) { transition-delay: 0.2s; }
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(4) { transition-delay: 0.25s; }
 .pokemon-detail-view.show #detail-content .detail-section:nth-child(5) { transition-delay: 0.3s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(6) { transition-delay: 0.35s; }
+.pokemon-detail-view.show #detail-content .detail-section:nth-child(7) { transition-delay: 0.4s; }
 
 #detail-content .detail-section:last-child {
     border-bottom: none;
 }
-#detail-content .detail-section h4 { /* Section titles like Stats, Moves */
-    margin-bottom: 0.5rem;
+
+#detail-content .detail-section h4 {
+    margin-bottom: 0.75rem;
+    color: var(--accent-color);
+    font-size: 1.1em;
+    font-weight: 600;
 }
 #detail-content .stats-grid {
     display: grid;
@@ -309,14 +371,17 @@ body.dark-mode .pokemon-card .pokemon-id {
     gap: 0.5rem;
 }
 #detail-content .stat-item {
-    background-color: var(--background-color);
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9em;
+    background-color: var(--card-background);
+    padding: 0.75rem 1rem;
+    border-radius: 15px;
+    font-size: 0.95em;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
     transform: translateX(-20px);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
 .pokemon-detail-view.show #detail-content .stat-item {
     transform: translateX(0);
     opacity: 1;
@@ -620,4 +685,188 @@ input:focus-visible,
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+/* Evolution Chain Styles */
+.evolution-chain-container {
+    margin-top: 1rem;
+}
+
+.evolution-chain-toggle {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.evolution-chain-toggle:hover {
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.evolution-chain-toggle:active {
+    box-shadow: inset 3px 3px 6px var(--shadow-inset),
+                inset -3px -3px 6px var(--highlight);
+}
+
+.evolution-chain-toggle .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.evolution-chain-toggle.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.evolution-chain-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.evolution-chain-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.evolution-chain-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.evolution-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: var(--card-background);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.evolution-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.evolution-item img {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+}
+
+.evolution-item.current {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+}
+
+.evolution-item .evolution-name {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.evolution-arrow {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin: 0 0.5rem;
+}
+
+/* Weaknesses Styles */
+.weaknesses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.weakness-item {
+    padding: 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: white;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.weakness-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.weakness-item .multiplier {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+/* Image Error Handling */
+.image-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 6px var(--shadow-inset),
+                inset -3px -3px 6px var(--highlight);
+}
+
+.image-error-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.image-error-text {
+    font-size: 0.7em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Smooth scrollbar for modal */
+.detail-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.detail-modal-content::-webkit-scrollbar-track {
+    background: var(--card-background);
+    border-radius: 10px;
+}
+
+.detail-modal-content::-webkit-scrollbar-thumb {
+    background: var(--shadow);
+    border-radius: 10px;
+}
+
+.detail-modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }

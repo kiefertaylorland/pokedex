@@ -66,6 +66,17 @@ export class PokemonDetailView {
         modalContent.appendChild(this._createPokemonHeader(pokemon, name));
         modalContent.appendChild(this._createTypesSection(types, uiText));
         modalContent.appendChild(this._createBioSection(bio, uiText));
+        
+        // Add evolution chain if available
+        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
+            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        }
+        
+        // Add weaknesses if available
+        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
+            modalContent.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        }
+        
         modalContent.appendChild(this._createStatsSection(pokemon.stats, uiText));
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
 
@@ -88,17 +99,24 @@ export class PokemonDetailView {
         closeButton.classList.add('close-button');
         closeButton.setAttribute('aria-label', 'Close detail view');
         closeButton.setAttribute('title', 'Close (Esc)');
+        closeButton.setAttribute('data-testid', 'close-detail-button');
         return closeButton;
     }
 
     /**
-     * Creates Pokemon image with shake animation
+     * Creates Pokemon image with shake animation and error handling
      * @private
      * @param {Object} pokemon - Pokemon data
      * @param {string} name - Pokemon name
-     * @returns {HTMLElement} Image element
+     * @returns {HTMLElement} Image element or error container
      */
     _createPokemonImage(pokemon, name) {
+        const container = createSafeElement('div');
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
+        container.style.minHeight = '120px';
+        
         const img = createSafeElement('img');
         img.src = pokemon.sprite;
         img.alt = name;
@@ -106,15 +124,26 @@ export class PokemonDetailView {
         img.style.height = '120px';
         img.classList.add('pokemon-detail-image');
         
+        // Add error handler
+        img.addEventListener('error', () => {
+            const errorFallback = this._createImageErrorFallback(name);
+            errorFallback.style.width = '120px';
+            errorFallback.style.height = '120px';
+            container.replaceChild(errorFallback, img);
+        }, { once: true });
+        
         // Add shake animation
         setTimeout(() => {
-            img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
-            img.addEventListener(EVENTS.ANIMATION_END, () => {
-                img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
-            }, { once: true });
+            if (img.parentNode) { // Check if image is still in DOM (not replaced by error)
+                img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
+                img.addEventListener(EVENTS.ANIMATION_END, () => {
+                    img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
+                }, { once: true });
+            }
         }, ANIMATION.TRANSITION_DELAY_MS);
 
-        return img;
+        container.appendChild(img);
+        return container;
     }
 
     /**
@@ -281,6 +310,167 @@ export class PokemonDetailView {
         listItem.appendChild(detailsElement);
 
         return listItem;
+    }
+
+    /**
+     * Creates evolution chain section
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Evolution chain section
+     */
+    _createEvolutionChainSection(pokemon, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'evolution-chain-container');
+
+        // Create toggle button
+        const toggleButton = createSafeElement('button');
+        toggleButton.classList.add('evolution-chain-toggle');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('aria-label', 'Toggle evolution chain');
+        toggleButton.setAttribute('data-testid', 'evolution-chain-toggle');
+        toggleButton.setAttribute('type', 'button');
+        
+        const titleSpan = createSafeElement('span', uiText.evolutionChain || 'Evolution Chain');
+        const arrowSpan = createSafeElement('span', '▶');
+        arrowSpan.classList.add('arrow');
+        
+        toggleButton.appendChild(titleSpan);
+        toggleButton.appendChild(arrowSpan);
+
+        // Create content container
+        const content = createSafeElement('div');
+        content.classList.add('evolution-chain-content');
+        content.setAttribute('role', 'region');
+        content.setAttribute('aria-label', 'Evolution chain details');
+
+        const chainList = createSafeElement('div');
+        chainList.classList.add('evolution-chain-list');
+
+        // Add evolution items
+        pokemon.evolution_chain.forEach((evo, index) => {
+            if (index > 0) {
+                const arrow = createSafeElement('span', '→');
+                arrow.classList.add('evolution-arrow');
+                arrow.setAttribute('aria-hidden', 'true');
+                chainList.appendChild(arrow);
+            }
+
+            const evoItem = this._createEvolutionItem(evo, pokemon.id);
+            chainList.appendChild(evoItem);
+        });
+
+        content.appendChild(chainList);
+
+        // Add toggle event
+        toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+            toggleButton.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        });
+
+        section.appendChild(toggleButton);
+        section.appendChild(content);
+        return section;
+    }
+
+    /**
+     * Creates individual evolution item
+     * @private
+     * @param {Object} evolution - Evolution data
+     * @param {number} currentPokemonId - Current Pokemon ID
+     * @returns {HTMLElement} Evolution item element
+     */
+    _createEvolutionItem(evolution, currentPokemonId) {
+        const item = createSafeElement('div');
+        item.classList.add('evolution-item');
+        
+        if (evolution.id === currentPokemonId) {
+            item.classList.add('current');
+            item.setAttribute('aria-current', 'true');
+        }
+
+        // Create image with error handling
+        const img = createSafeElement('img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolution.id}.png`;
+        img.alt = evolution.name;
+        img.loading = 'lazy';
+        
+        // Add error handler
+        img.addEventListener('error', () => {
+            const errorContainer = this._createImageErrorFallback(evolution.name);
+            item.replaceChild(errorContainer, img);
+        });
+
+        const nameSpan = createSafeElement('span', evolution.name);
+        nameSpan.classList.add('evolution-name');
+
+        item.appendChild(img);
+        item.appendChild(nameSpan);
+
+        return item;
+    }
+
+    /**
+     * Creates weaknesses section
+     * @private
+     * @param {Object} weaknesses - Weaknesses object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Weaknesses section
+     */
+    _createWeaknessesSection(weaknesses, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.weaknesses || 'Weaknesses');
+        const weaknessesGrid = createSafeElement('div');
+        weaknessesGrid.classList.add('weaknesses-grid');
+
+        Object.entries(weaknesses).forEach(([type, multiplier]) => {
+            const weaknessItem = createSafeElement('div');
+            weaknessItem.classList.add('weakness-item');
+            weaknessItem.classList.add(`type-${type.toLowerCase()}`);
+            
+            const typeName = createSafeElement('div', type);
+            const multiplierSpan = createSafeElement('span', `${multiplier}×`);
+            multiplierSpan.classList.add('multiplier');
+            
+            weaknessItem.appendChild(typeName);
+            weaknessItem.appendChild(multiplierSpan);
+            weaknessItem.setAttribute('title', `Takes ${multiplier}× damage from ${type} type moves`);
+            
+            weaknessesGrid.appendChild(weaknessItem);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(weaknessesGrid);
+        return section;
+    }
+
+    /**
+     * Creates image error fallback
+     * @private
+     * @param {string} pokemonName - Pokemon name
+     * @returns {HTMLElement} Error fallback element
+     */
+    _createImageErrorFallback(pokemonName) {
+        const container = createSafeElement('div');
+        container.classList.add('image-error-container');
+        
+        const icon = createSafeElement('div', '⚠️');
+        icon.classList.add('image-error-icon');
+        icon.setAttribute('aria-hidden', 'true');
+        
+        const text = createSafeElement('div', 'Image not available');
+        text.classList.add('image-error-text');
+        
+        container.appendChild(icon);
+        container.appendChild(text);
+        container.setAttribute('role', 'img');
+        container.setAttribute('aria-label', `${pokemonName} image not available`);
+        
+        return container;
     }
 
     /**

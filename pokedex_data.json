@@ -59,7 +59,27 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 2,
@@ -121,7 +141,27 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 3,
@@ -183,7 +223,27 @@
         "accuracy": 90,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 4,
@@ -243,7 +303,26 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 5,
@@ -303,7 +382,26 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 6,
@@ -365,7 +463,26 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Electric": 2.0,
+      "Rock": 4.0
+    }
   },
   {
     "id": 7,
@@ -425,7 +542,25 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 8,
@@ -485,7 +620,25 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 9,
@@ -545,7 +698,25 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 10,
@@ -587,7 +758,26 @@
         "accuracy": 95,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 11,
@@ -620,7 +810,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 12,
@@ -682,7 +891,28 @@
         "accuracy": 75,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Rock": 4.0
+    }
   },
   {
     "id": 13,
@@ -726,7 +956,27 @@
         "accuracy": 95,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 14,
@@ -761,7 +1011,27 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 15,
@@ -823,7 +1093,27 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 16,
@@ -885,7 +1175,26 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 17,
@@ -947,7 +1256,26 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 18,
@@ -1009,7 +1337,26 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 19,
@@ -1069,7 +1416,20 @@
         "accuracy": 90,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rattata",
+        "id": 19
+      },
+      {
+        "name": "Raticate",
+        "id": 20
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 20,
@@ -1129,7 +1489,20 @@
         "accuracy": 90,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rattata",
+        "id": 19
+      },
+      {
+        "name": "Raticate",
+        "id": 20
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 21,
@@ -1191,7 +1564,22 @@
         "accuracy": 85,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Spearow",
+        "id": 21
+      },
+      {
+        "name": "Fearow",
+        "id": 22
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 22,
@@ -1253,7 +1641,22 @@
         "accuracy": 85,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Spearow",
+        "id": 21
+      },
+      {
+        "name": "Fearow",
+        "id": 22
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 23,
@@ -1313,7 +1716,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ekans",
+        "id": 23
+      },
+      {
+        "name": "Arbok",
+        "id": 24
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 24,
@@ -1373,7 +1790,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ekans",
+        "id": 23
+      },
+      {
+        "name": "Arbok",
+        "id": 24
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 25,
@@ -1433,7 +1864,24 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pichu",
+        "id": 172
+      },
+      {
+        "name": "Pikachu",
+        "id": 25
+      },
+      {
+        "name": "Raichu",
+        "id": 26
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 26,
@@ -1484,7 +1932,24 @@
         "accuracy": 90,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pichu",
+        "id": 172
+      },
+      {
+        "name": "Pikachu",
+        "id": 25
+      },
+      {
+        "name": "Raichu",
+        "id": 26
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 27,
@@ -1544,7 +2009,22 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Sandshrew",
+        "id": 27
+      },
+      {
+        "name": "Sandslash",
+        "id": 28
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 28,
@@ -1604,7 +2084,22 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Sandshrew",
+        "id": 27
+      },
+      {
+        "name": "Sandslash",
+        "id": 28
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 29,
@@ -1664,7 +2159,25 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 30,
@@ -1724,7 +2237,25 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 31,
@@ -1786,7 +2317,27 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 32,
@@ -1846,7 +2397,25 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 33,
@@ -1906,7 +2475,25 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 34,
@@ -1968,7 +2555,27 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 35,
@@ -2028,7 +2635,25 @@
         "accuracy": 85,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cleffa",
+        "id": 173
+      },
+      {
+        "name": "Clefairy",
+        "id": 35
+      },
+      {
+        "name": "Clefable",
+        "id": 36
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 36,
@@ -2088,7 +2713,25 @@
         "accuracy": null,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cleffa",
+        "id": 173
+      },
+      {
+        "name": "Clefairy",
+        "id": 35
+      },
+      {
+        "name": "Clefable",
+        "id": 36
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 37,
@@ -2148,7 +2791,22 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Vulpix",
+        "id": 37
+      },
+      {
+        "name": "Ninetales",
+        "id": 38
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 38,
@@ -2208,7 +2866,22 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Vulpix",
+        "id": 37
+      },
+      {
+        "name": "Ninetales",
+        "id": 38
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 39,
@@ -2270,7 +2943,25 @@
         "accuracy": null,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Igglybuff",
+        "id": 174
+      },
+      {
+        "name": "Jigglypuff",
+        "id": 39
+      },
+      {
+        "name": "Wigglytuff",
+        "id": 40
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 40,
@@ -2332,7 +3023,25 @@
         "accuracy": null,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Igglybuff",
+        "id": 174
+      },
+      {
+        "name": "Jigglypuff",
+        "id": 39
+      },
+      {
+        "name": "Wigglytuff",
+        "id": 40
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 41,
@@ -2394,7 +3103,27 @@
         "accuracy": 100,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Zubat",
+        "id": 41
+      },
+      {
+        "name": "Golbat",
+        "id": 42
+      },
+      {
+        "name": "Crobat",
+        "id": 169
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 42,
@@ -2456,7 +3185,27 @@
         "accuracy": 55,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Zubat",
+        "id": 41
+      },
+      {
+        "name": "Golbat",
+        "id": 42
+      },
+      {
+        "name": "Crobat",
+        "id": 169
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 43,
@@ -2518,7 +3267,31 @@
         "accuracy": 75,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 44,
@@ -2580,7 +3353,31 @@
         "accuracy": 75,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 45,
@@ -2642,7 +3439,31 @@
         "accuracy": 100,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 46,
@@ -2704,7 +3525,25 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Paras",
+        "id": 46
+      },
+      {
+        "name": "Parasect",
+        "id": 47
+      }
+    ],
+    "weaknesses": {
+      "Fire": 4.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 4.0,
+      "Bug": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 47,
@@ -2766,7 +3605,25 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Paras",
+        "id": 46
+      },
+      {
+        "name": "Parasect",
+        "id": 47
+      }
+    ],
+    "weaknesses": {
+      "Fire": 4.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 4.0,
+      "Bug": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 48,
@@ -2828,7 +3685,23 @@
         "accuracy": 100,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Venonat",
+        "id": 48
+      },
+      {
+        "name": "Venomoth",
+        "id": 49
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 49,
@@ -2890,7 +3763,23 @@
         "accuracy": 100,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Venonat",
+        "id": 48
+      },
+      {
+        "name": "Venomoth",
+        "id": 49
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 50,
@@ -2950,7 +3839,22 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Diglett",
+        "id": 50
+      },
+      {
+        "name": "Dugtrio",
+        "id": 51
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 51,
@@ -3010,7 +3914,22 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Diglett",
+        "id": 50
+      },
+      {
+        "name": "Dugtrio",
+        "id": 51
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 52,
@@ -3070,7 +3989,24 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Meowth",
+        "id": 52
+      },
+      {
+        "name": "Persian",
+        "id": 53
+      },
+      {
+        "name": "Perrserker",
+        "id": 863
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 53,
@@ -3130,7 +4066,24 @@
         "accuracy": 85,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Meowth",
+        "id": 52
+      },
+      {
+        "name": "Persian",
+        "id": 53
+      },
+      {
+        "name": "Perrserker",
+        "id": 863
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 54,
@@ -3190,7 +4143,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Psyduck",
+        "id": 54
+      },
+      {
+        "name": "Golduck",
+        "id": 55
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 55,
@@ -3250,7 +4217,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Psyduck",
+        "id": 54
+      },
+      {
+        "name": "Golduck",
+        "id": 55
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 56,
@@ -3310,7 +4291,26 @@
         "accuracy": 80,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Mankey",
+        "id": 56
+      },
+      {
+        "name": "Primeape",
+        "id": 57
+      },
+      {
+        "name": "Annihilape",
+        "id": 979
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 57,
@@ -3370,7 +4370,26 @@
         "accuracy": 80,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Mankey",
+        "id": 56
+      },
+      {
+        "name": "Primeape",
+        "id": 57
+      },
+      {
+        "name": "Annihilape",
+        "id": 979
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 58,
@@ -3430,7 +4449,22 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Growlithe",
+        "id": 58
+      },
+      {
+        "name": "Arcanine",
+        "id": 59
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 59,
@@ -3490,7 +4524,22 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Growlithe",
+        "id": 58
+      },
+      {
+        "name": "Arcanine",
+        "id": 59
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 60,
@@ -3550,7 +4599,29 @@
         "accuracy": 85,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Poliwag",
+        "id": 60
+      },
+      {
+        "name": "Poliwhirl",
+        "id": 61
+      },
+      {
+        "name": "Poliwrath",
+        "id": 62
+      },
+      {
+        "name": "Politoed",
+        "id": 186
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 61,
@@ -3610,7 +4681,29 @@
         "accuracy": 85,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Poliwag",
+        "id": 60
+      },
+      {
+        "name": "Poliwhirl",
+        "id": 61
+      },
+      {
+        "name": "Poliwrath",
+        "id": 62
+      },
+      {
+        "name": "Politoed",
+        "id": 186
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 62,
@@ -3672,7 +4765,32 @@
         "accuracy": 60,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Poliwag",
+        "id": 60
+      },
+      {
+        "name": "Poliwhirl",
+        "id": 61
+      },
+      {
+        "name": "Poliwrath",
+        "id": 62
+      },
+      {
+        "name": "Politoed",
+        "id": 186
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 63,
@@ -3705,7 +4823,26 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Abra",
+        "id": 63
+      },
+      {
+        "name": "Kadabra",
+        "id": 64
+      },
+      {
+        "name": "Alakazam",
+        "id": 65
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 64,
@@ -3765,7 +4902,26 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Abra",
+        "id": 63
+      },
+      {
+        "name": "Kadabra",
+        "id": 64
+      },
+      {
+        "name": "Alakazam",
+        "id": 65
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 65,
@@ -3825,7 +4981,26 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Abra",
+        "id": 63
+      },
+      {
+        "name": "Kadabra",
+        "id": 64
+      },
+      {
+        "name": "Alakazam",
+        "id": 65
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 66,
@@ -3885,7 +5060,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Machop",
+        "id": 66
+      },
+      {
+        "name": "Machoke",
+        "id": 67
+      },
+      {
+        "name": "Machamp",
+        "id": 68
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 67,
@@ -3945,7 +5139,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Machop",
+        "id": 66
+      },
+      {
+        "name": "Machoke",
+        "id": 67
+      },
+      {
+        "name": "Machamp",
+        "id": 68
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 68,
@@ -4005,7 +5218,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Machop",
+        "id": 66
+      },
+      {
+        "name": "Machoke",
+        "id": 67
+      },
+      {
+        "name": "Machamp",
+        "id": 68
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 69,
@@ -4067,7 +5299,27 @@
         "accuracy": 75,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bellsprout",
+        "id": 69
+      },
+      {
+        "name": "Weepinbell",
+        "id": 70
+      },
+      {
+        "name": "Victreebel",
+        "id": 71
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 70,
@@ -4129,7 +5381,27 @@
         "accuracy": 75,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bellsprout",
+        "id": 69
+      },
+      {
+        "name": "Weepinbell",
+        "id": 70
+      },
+      {
+        "name": "Victreebel",
+        "id": 71
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 71,
@@ -4191,7 +5463,27 @@
         "accuracy": 75,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bellsprout",
+        "id": 69
+      },
+      {
+        "name": "Weepinbell",
+        "id": 70
+      },
+      {
+        "name": "Victreebel",
+        "id": 71
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 72,
@@ -4253,7 +5545,22 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tentacool",
+        "id": 72
+      },
+      {
+        "name": "Tentacruel",
+        "id": 73
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 73,
@@ -4315,7 +5622,22 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tentacool",
+        "id": 72
+      },
+      {
+        "name": "Tentacruel",
+        "id": 73
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 74,
@@ -4377,7 +5699,29 @@
         "accuracy": 100,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Geodude",
+        "id": 74
+      },
+      {
+        "name": "Graveler",
+        "id": 75
+      },
+      {
+        "name": "Golem",
+        "id": 76
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 75,
@@ -4439,7 +5783,29 @@
         "accuracy": 100,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Geodude",
+        "id": 74
+      },
+      {
+        "name": "Graveler",
+        "id": 75
+      },
+      {
+        "name": "Golem",
+        "id": 76
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 76,
@@ -4501,7 +5867,29 @@
         "accuracy": 100,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Geodude",
+        "id": 74
+      },
+      {
+        "name": "Graveler",
+        "id": 75
+      },
+      {
+        "name": "Golem",
+        "id": 76
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 77,
@@ -4561,7 +5949,22 @@
         "accuracy": 100,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ponyta",
+        "id": 77
+      },
+      {
+        "name": "Rapidash",
+        "id": 78
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 78,
@@ -4621,7 +6024,22 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ponyta",
+        "id": 77
+      },
+      {
+        "name": "Rapidash",
+        "id": 78
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 79,
@@ -4683,7 +6101,28 @@
         "accuracy": 100,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Slowpoke",
+        "id": 79
+      },
+      {
+        "name": "Slowbro",
+        "id": 80
+      },
+      {
+        "name": "Slowking",
+        "id": 199
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 80,
@@ -4745,7 +6184,28 @@
         "accuracy": 100,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Slowpoke",
+        "id": 79
+      },
+      {
+        "name": "Slowbro",
+        "id": 80
+      },
+      {
+        "name": "Slowking",
+        "id": 199
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 81,
@@ -4807,7 +6267,26 @@
         "accuracy": 55,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Magnemite",
+        "id": 81
+      },
+      {
+        "name": "Magneton",
+        "id": 82
+      },
+      {
+        "name": "Magnezone",
+        "id": 462
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Fighting": 2.0,
+      "Ground": 4.0
+    }
   },
   {
     "id": 82,
@@ -4869,7 +6348,26 @@
         "accuracy": 55,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Magnemite",
+        "id": 81
+      },
+      {
+        "name": "Magneton",
+        "id": 82
+      },
+      {
+        "name": "Magnezone",
+        "id": 462
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Fighting": 2.0,
+      "Ground": 4.0
+    }
   },
   {
     "id": 83,
@@ -4931,7 +6429,22 @@
         "accuracy": 85,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Farfetchd",
+        "id": 83
+      },
+      {
+        "name": "Sirfetchd",
+        "id": 865
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 84,
@@ -4993,7 +6506,22 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Doduo",
+        "id": 84
+      },
+      {
+        "name": "Dodrio",
+        "id": 85
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 85,
@@ -5055,7 +6583,22 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Doduo",
+        "id": 84
+      },
+      {
+        "name": "Dodrio",
+        "id": 85
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 86,
@@ -5115,7 +6658,21 @@
         "accuracy": null,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Seel",
+        "id": 86
+      },
+      {
+        "name": "Dewgong",
+        "id": 87
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 87,
@@ -5177,7 +6734,23 @@
         "accuracy": null,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Seel",
+        "id": 86
+      },
+      {
+        "name": "Dewgong",
+        "id": 87
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 88,
@@ -5237,7 +6810,21 @@
         "accuracy": null,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Grimer",
+        "id": 88
+      },
+      {
+        "name": "Muk",
+        "id": 89
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 89,
@@ -5297,7 +6884,21 @@
         "accuracy": null,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Grimer",
+        "id": 88
+      },
+      {
+        "name": "Muk",
+        "id": 89
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 90,
@@ -5357,7 +6958,21 @@
         "accuracy": 85,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Shellder",
+        "id": 90
+      },
+      {
+        "name": "Cloyster",
+        "id": 91
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 91,
@@ -5419,7 +7034,23 @@
         "accuracy": 85,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Shellder",
+        "id": 90
+      },
+      {
+        "name": "Cloyster",
+        "id": 91
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 92,
@@ -5481,7 +7112,27 @@
         "accuracy": 60,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Gastly",
+        "id": 92
+      },
+      {
+        "name": "Haunter",
+        "id": 93
+      },
+      {
+        "name": "Gengar",
+        "id": 94
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 93,
@@ -5543,7 +7194,27 @@
         "accuracy": 60,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Gastly",
+        "id": 92
+      },
+      {
+        "name": "Haunter",
+        "id": 93
+      },
+      {
+        "name": "Gengar",
+        "id": 94
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 94,
@@ -5605,7 +7276,27 @@
         "accuracy": 60,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Gastly",
+        "id": 92
+      },
+      {
+        "name": "Haunter",
+        "id": 93
+      },
+      {
+        "name": "Gengar",
+        "id": 94
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 95,
@@ -5667,7 +7358,25 @@
         "accuracy": 90,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Onix",
+        "id": 95
+      },
+      {
+        "name": "Steelix",
+        "id": 208
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 96,
@@ -5727,7 +7436,22 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Drowzee",
+        "id": 96
+      },
+      {
+        "name": "Hypno",
+        "id": 97
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 97,
@@ -5787,7 +7511,22 @@
         "accuracy": 60,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Drowzee",
+        "id": 96
+      },
+      {
+        "name": "Hypno",
+        "id": 97
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 98,
@@ -5847,7 +7586,21 @@
         "accuracy": 30,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Krabby",
+        "id": 98
+      },
+      {
+        "name": "Kingler",
+        "id": 99
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 99,
@@ -5907,7 +7660,21 @@
         "accuracy": 30,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Krabby",
+        "id": 98
+      },
+      {
+        "name": "Kingler",
+        "id": 99
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 100,
@@ -5967,7 +7734,20 @@
         "accuracy": 100,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Voltorb",
+        "id": 100
+      },
+      {
+        "name": "Electrode",
+        "id": 101
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 101,
@@ -6027,7 +7807,20 @@
         "accuracy": 100,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Voltorb",
+        "id": 100
+      },
+      {
+        "name": "Electrode",
+        "id": 101
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 102,
@@ -6089,7 +7882,26 @@
         "accuracy": 90,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Exeggcute",
+        "id": 102
+      },
+      {
+        "name": "Exeggutor",
+        "id": 103
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 103,
@@ -6142,7 +7954,26 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Exeggcute",
+        "id": 102
+      },
+      {
+        "name": "Exeggutor",
+        "id": 103
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 104,
@@ -6202,7 +8033,22 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cubone",
+        "id": 104
+      },
+      {
+        "name": "Marowak",
+        "id": 105
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 105,
@@ -6262,7 +8108,22 @@
         "accuracy": 85,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cubone",
+        "id": 104
+      },
+      {
+        "name": "Marowak",
+        "id": 105
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    }
   },
   {
     "id": 106,
@@ -6322,7 +8183,30 @@
         "accuracy": 95,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tyrogue",
+        "id": 236
+      },
+      {
+        "name": "Hitmonlee",
+        "id": 106
+      },
+      {
+        "name": "Hitmonchan",
+        "id": 107
+      },
+      {
+        "name": "Hitmontop",
+        "id": 237
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 107,
@@ -6382,7 +8266,30 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tyrogue",
+        "id": 236
+      },
+      {
+        "name": "Hitmonlee",
+        "id": 106
+      },
+      {
+        "name": "Hitmonchan",
+        "id": 107
+      },
+      {
+        "name": "Hitmontop",
+        "id": 237
+      }
+    ],
+    "weaknesses": {
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 108,
@@ -6442,7 +8349,20 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Lickitung",
+        "id": 108
+      },
+      {
+        "name": "Lickilicky",
+        "id": 463
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 109,
@@ -6502,7 +8422,21 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Koffing",
+        "id": 109
+      },
+      {
+        "name": "Weezing",
+        "id": 110
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 110,
@@ -6562,7 +8496,21 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Koffing",
+        "id": 109
+      },
+      {
+        "name": "Weezing",
+        "id": 110
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    }
   },
   {
     "id": 111,
@@ -6624,7 +8572,29 @@
         "accuracy": 85,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rhyhorn",
+        "id": 111
+      },
+      {
+        "name": "Rhydon",
+        "id": 112
+      },
+      {
+        "name": "Rhyperior",
+        "id": 464
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 112,
@@ -6686,7 +8656,29 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rhyhorn",
+        "id": 111
+      },
+      {
+        "name": "Rhydon",
+        "id": 112
+      },
+      {
+        "name": "Rhyperior",
+        "id": 464
+      }
+    ],
+    "weaknesses": {
+      "Water": 4.0,
+      "Grass": 4.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 113,
@@ -6746,7 +8738,24 @@
         "accuracy": 100,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Happiny",
+        "id": 440
+      },
+      {
+        "name": "Chansey",
+        "id": 113
+      },
+      {
+        "name": "Blissey",
+        "id": 242
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 114,
@@ -6806,7 +8815,24 @@
         "accuracy": 75,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tangela",
+        "id": 114
+      },
+      {
+        "name": "Tangrowth",
+        "id": 465
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
+    }
   },
   {
     "id": 115,
@@ -6866,7 +8892,16 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Kangaskhan",
+        "id": 115
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 116,
@@ -6926,7 +8961,25 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Horsea",
+        "id": 116
+      },
+      {
+        "name": "Seadra",
+        "id": 117
+      },
+      {
+        "name": "Kingdra",
+        "id": 230
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 117,
@@ -6986,7 +9039,25 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Horsea",
+        "id": 116
+      },
+      {
+        "name": "Seadra",
+        "id": 117
+      },
+      {
+        "name": "Kingdra",
+        "id": 230
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 118,
@@ -7046,7 +9117,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Goldeen",
+        "id": 118
+      },
+      {
+        "name": "Seaking",
+        "id": 119
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 119,
@@ -7106,7 +9191,21 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Goldeen",
+        "id": 118
+      },
+      {
+        "name": "Seaking",
+        "id": 119
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 120,
@@ -7166,7 +9265,21 @@
         "accuracy": null,
         "pp": 5
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Staryu",
+        "id": 120
+      },
+      {
+        "name": "Starmie",
+        "id": 121
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 121,
@@ -7219,7 +9332,24 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Staryu",
+        "id": 120
+      },
+      {
+        "name": "Starmie",
+        "id": 121
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 122,
@@ -7281,7 +9411,26 @@
         "accuracy": 85,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Mime-jr",
+        "id": 439
+      },
+      {
+        "name": "Mr-mime",
+        "id": 122
+      },
+      {
+        "name": "Mr-rime",
+        "id": 866
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Ghost": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 123,
@@ -7343,7 +9492,28 @@
         "accuracy": null,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Scyther",
+        "id": 123
+      },
+      {
+        "name": "Scizor",
+        "id": 212
+      },
+      {
+        "name": "Kleavor",
+        "id": 900
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Rock": 4.0
+    }
   },
   {
     "id": 124,
@@ -7405,7 +9575,25 @@
         "accuracy": 85,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Smoochum",
+        "id": 238
+      },
+      {
+        "name": "Jynx",
+        "id": 124
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Bug": 2.0,
+      "Rock": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 125,
@@ -7465,7 +9653,24 @@
         "accuracy": 85,
         "pp": 40
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Elekid",
+        "id": 239
+      },
+      {
+        "name": "Electabuzz",
+        "id": 125
+      },
+      {
+        "name": "Electivire",
+        "id": 466
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 126,
@@ -7525,7 +9730,26 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Magby",
+        "id": 240
+      },
+      {
+        "name": "Magmar",
+        "id": 126
+      },
+      {
+        "name": "Magmortar",
+        "id": 467
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 127,
@@ -7585,7 +9809,18 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pinsir",
+        "id": 127
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 128,
@@ -7645,7 +9880,16 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Tauros",
+        "id": 128
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 129,
@@ -7687,7 +9931,21 @@
         "accuracy": 100,
         "pp": 35
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Magikarp",
+        "id": 129
+      },
+      {
+        "name": "Gyarados",
+        "id": 130
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 130,
@@ -7749,7 +10007,21 @@
         "accuracy": 100,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Magikarp",
+        "id": 129
+      },
+      {
+        "name": "Gyarados",
+        "id": 130
+      }
+    ],
+    "weaknesses": {
+      "Electric": 4.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 131,
@@ -7811,7 +10083,19 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Lapras",
+        "id": 131
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 132,
@@ -7844,7 +10128,16 @@
         "accuracy": null,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ditto",
+        "id": 132
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 133,
@@ -7904,7 +10197,48 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Eevee",
+        "id": 133
+      },
+      {
+        "name": "Vaporeon",
+        "id": 134
+      },
+      {
+        "name": "Jolteon",
+        "id": 135
+      },
+      {
+        "name": "Flareon",
+        "id": 136
+      },
+      {
+        "name": "Espeon",
+        "id": 196
+      },
+      {
+        "name": "Umbreon",
+        "id": 197
+      },
+      {
+        "name": "Leafeon",
+        "id": 470
+      },
+      {
+        "name": "Glaceon",
+        "id": 471
+      },
+      {
+        "name": "Sylveon",
+        "id": 700
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 134,
@@ -7964,7 +10298,49 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Eevee",
+        "id": 133
+      },
+      {
+        "name": "Vaporeon",
+        "id": 134
+      },
+      {
+        "name": "Jolteon",
+        "id": 135
+      },
+      {
+        "name": "Flareon",
+        "id": 136
+      },
+      {
+        "name": "Espeon",
+        "id": 196
+      },
+      {
+        "name": "Umbreon",
+        "id": 197
+      },
+      {
+        "name": "Leafeon",
+        "id": 470
+      },
+      {
+        "name": "Glaceon",
+        "id": 471
+      },
+      {
+        "name": "Sylveon",
+        "id": 700
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    }
   },
   {
     "id": 135,
@@ -8024,7 +10400,48 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Eevee",
+        "id": 133
+      },
+      {
+        "name": "Vaporeon",
+        "id": 134
+      },
+      {
+        "name": "Jolteon",
+        "id": 135
+      },
+      {
+        "name": "Flareon",
+        "id": 136
+      },
+      {
+        "name": "Espeon",
+        "id": 196
+      },
+      {
+        "name": "Umbreon",
+        "id": 197
+      },
+      {
+        "name": "Leafeon",
+        "id": 470
+      },
+      {
+        "name": "Glaceon",
+        "id": 471
+      },
+      {
+        "name": "Sylveon",
+        "id": 700
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    }
   },
   {
     "id": 136,
@@ -8084,7 +10501,50 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Eevee",
+        "id": 133
+      },
+      {
+        "name": "Vaporeon",
+        "id": 134
+      },
+      {
+        "name": "Jolteon",
+        "id": 135
+      },
+      {
+        "name": "Flareon",
+        "id": 136
+      },
+      {
+        "name": "Espeon",
+        "id": 196
+      },
+      {
+        "name": "Umbreon",
+        "id": 197
+      },
+      {
+        "name": "Leafeon",
+        "id": 470
+      },
+      {
+        "name": "Glaceon",
+        "id": 471
+      },
+      {
+        "name": "Sylveon",
+        "id": 700
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 137,
@@ -8144,7 +10604,24 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Porygon",
+        "id": 137
+      },
+      {
+        "name": "Porygon2",
+        "id": 233
+      },
+      {
+        "name": "Porygon-z",
+        "id": 474
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 138,
@@ -8206,7 +10683,23 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Omanyte",
+        "id": 138
+      },
+      {
+        "name": "Omastar",
+        "id": 139
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 4.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
+    }
   },
   {
     "id": 139,
@@ -8268,7 +10761,23 @@
         "accuracy": 100,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Omanyte",
+        "id": 138
+      },
+      {
+        "name": "Omastar",
+        "id": 139
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 4.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
+    }
   },
   {
     "id": 140,
@@ -8330,7 +10839,23 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Kabuto",
+        "id": 140
+      },
+      {
+        "name": "Kabutops",
+        "id": 141
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 4.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
+    }
   },
   {
     "id": 141,
@@ -8392,7 +10917,23 @@
         "accuracy": 100,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Kabuto",
+        "id": 140
+      },
+      {
+        "name": "Kabutops",
+        "id": 141
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 4.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
+    }
   },
   {
     "id": 142,
@@ -8454,7 +10995,20 @@
         "accuracy": 100,
         "pp": 25
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Aerodactyl",
+        "id": 142
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 143,
@@ -8514,7 +11068,20 @@
         "accuracy": 100,
         "pp": 15
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Munchlax",
+        "id": 446
+      },
+      {
+        "name": "Snorlax",
+        "id": 143
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    }
   },
   {
     "id": 144,
@@ -8576,7 +11143,19 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Articuno",
+        "id": 144
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Electric": 2.0,
+      "Rock": 4.0,
+      "Steel": 2.0
+    }
   },
   {
     "id": 145,
@@ -8638,7 +11217,17 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Zapdos",
+        "id": 145
+      }
+    ],
+    "weaknesses": {
+      "Ice": 2.0,
+      "Rock": 2.0
+    }
   },
   {
     "id": 146,
@@ -8700,7 +11289,18 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Moltres",
+        "id": 146
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Electric": 2.0,
+      "Rock": 4.0
+    }
   },
   {
     "id": 147,
@@ -8760,7 +11360,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Dratini",
+        "id": 147
+      },
+      {
+        "name": "Dragonair",
+        "id": 148
+      },
+      {
+        "name": "Dragonite",
+        "id": 149
+      }
+    ],
+    "weaknesses": {
+      "Ice": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 148,
@@ -8820,7 +11439,26 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Dratini",
+        "id": 147
+      },
+      {
+        "name": "Dragonair",
+        "id": 148
+      },
+      {
+        "name": "Dragonite",
+        "id": 149
+      }
+    ],
+    "weaknesses": {
+      "Ice": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 149,
@@ -8882,7 +11520,27 @@
         "accuracy": null,
         "pp": 30
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Dratini",
+        "id": 147
+      },
+      {
+        "name": "Dragonair",
+        "id": 148
+      },
+      {
+        "name": "Dragonite",
+        "id": 149
+      }
+    ],
+    "weaknesses": {
+      "Ice": 4.0,
+      "Rock": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
+    }
   },
   {
     "id": 150,
@@ -8942,7 +11600,18 @@
         "accuracy": null,
         "pp": 20
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Mewtwo",
+        "id": 150
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   },
   {
     "id": 151,
@@ -9002,6 +11671,17 @@
         "accuracy": null,
         "pp": 10
       }
-    ]
+    ],
+    "evolution_chain": [
+      {
+        "name": "Mew",
+        "id": 151
+      }
+    ],
+    "weaknesses": {
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
+    }
   }
 ]
