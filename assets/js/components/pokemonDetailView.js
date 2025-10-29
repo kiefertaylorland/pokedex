@@ -66,6 +66,17 @@ export class PokemonDetailView {
         modalContent.appendChild(this._createPokemonHeader(pokemon, name));
         modalContent.appendChild(this._createTypesSection(types, uiText));
         modalContent.appendChild(this._createBioSection(bio, uiText));
+        
+        // Add evolution chain if available
+        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
+            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        }
+        
+        // Add weaknesses if available
+        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
+            modalContent.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        }
+        
         modalContent.appendChild(this._createStatsSection(pokemon.stats, uiText));
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
 
