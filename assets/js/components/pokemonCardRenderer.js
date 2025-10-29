@@ -145,7 +145,7 @@ export class PokemonCardRenderer {
             errorContainer.setAttribute('aria-label', `${name} ${uiText.imageNotAvailable}`);
             
             container.replaceChild(errorContainer, img);
-        }, { once: true });
+        });
 
         container.appendChild(img);
         return container;
