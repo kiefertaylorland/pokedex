@@ -143,26 +143,30 @@ main {
 
 .pokemon-card {
     background-color: var(--card-background);
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 20px;
+    padding: 1.25rem;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    position: relative;
 }
 
 .pokemon-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 24px var(--shadow),
+                -12px -12px 24px var(--highlight);
 }
 
 .pokemon-card:active {
     transform: translateY(-2px) scale(0.98);
-    transition: transform 0.1s ease;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
 }
 
 .pokemon-card.clicked {
-    animation: cardClick 0.3s ease;
+    animation: cardClick 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes cardClick {
