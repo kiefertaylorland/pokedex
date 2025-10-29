@@ -295,6 +295,165 @@ export class PokemonDetailView {
     }
 
     /**
+     * Creates evolution chain section
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Evolution chain section
+     */
+    _createEvolutionChainSection(pokemon, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'evolution-chain-container');
+
+        // Create toggle button
+        const toggleButton = createSafeElement('button');
+        toggleButton.classList.add('evolution-chain-toggle');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('aria-label', 'Toggle evolution chain');
+        
+        const titleSpan = createSafeElement('span', uiText.evolutionChain || 'Evolution Chain');
+        const arrowSpan = createSafeElement('span', '▶');
+        arrowSpan.classList.add('arrow');
+        
+        toggleButton.appendChild(titleSpan);
+        toggleButton.appendChild(arrowSpan);
+
+        // Create content container
+        const content = createSafeElement('div');
+        content.classList.add('evolution-chain-content');
+        content.setAttribute('role', 'region');
+        content.setAttribute('aria-label', 'Evolution chain details');
+
+        const chainList = createSafeElement('div');
+        chainList.classList.add('evolution-chain-list');
+
+        // Add evolution items
+        pokemon.evolution_chain.forEach((evo, index) => {
+            if (index > 0) {
+                const arrow = createSafeElement('span', '→');
+                arrow.classList.add('evolution-arrow');
+                arrow.setAttribute('aria-hidden', 'true');
+                chainList.appendChild(arrow);
+            }
+
+            const evoItem = this._createEvolutionItem(evo, pokemon.id);
+            chainList.appendChild(evoItem);
+        });
+
+        content.appendChild(chainList);
+
+        // Add toggle event
+        toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            toggleButton.setAttribute('aria-expanded', !isExpanded);
+            toggleButton.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        });
+
+        section.appendChild(toggleButton);
+        section.appendChild(content);
+        return section;
+    }
+
+    /**
+     * Creates individual evolution item
+     * @private
+     * @param {Object} evolution - Evolution data
+     * @param {number} currentPokemonId - Current Pokemon ID
+     * @returns {HTMLElement} Evolution item element
+     */
+    _createEvolutionItem(evolution, currentPokemonId) {
+        const item = createSafeElement('div');
+        item.classList.add('evolution-item');
+        
+        if (evolution.id === currentPokemonId) {
+            item.classList.add('current');
+            item.setAttribute('aria-current', 'true');
+        }
+
+        // Create image with error handling
+        const img = createSafeElement('img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolution.id}.png`;
+        img.alt = evolution.name;
+        img.loading = 'lazy';
+        
+        // Add error handler
+        img.addEventListener('error', () => {
+            const errorContainer = this._createImageErrorFallback(evolution.name);
+            item.replaceChild(errorContainer, img);
+        });
+
+        const nameSpan = createSafeElement('span', evolution.name);
+        nameSpan.classList.add('evolution-name');
+
+        item.appendChild(img);
+        item.appendChild(nameSpan);
+
+        return item;
+    }
+
+    /**
+     * Creates weaknesses section
+     * @private
+     * @param {Object} weaknesses - Weaknesses object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Weaknesses section
+     */
+    _createWeaknessesSection(weaknesses, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.weaknesses || 'Weaknesses');
+        const weaknessesGrid = createSafeElement('div');
+        weaknessesGrid.classList.add('weaknesses-grid');
+
+        Object.entries(weaknesses).forEach(([type, multiplier]) => {
+            const weaknessItem = createSafeElement('div');
+            weaknessItem.classList.add('weakness-item');
+            weaknessItem.classList.add(`type-${type.toLowerCase()}`);
+            
+            const typeName = createSafeElement('div', type);
+            const multiplierSpan = createSafeElement('span', `${multiplier}×`);
+            multiplierSpan.classList.add('multiplier');
+            
+            weaknessItem.appendChild(typeName);
+            weaknessItem.appendChild(multiplierSpan);
+            weaknessItem.setAttribute('title', `Takes ${multiplier}× damage from ${type} type moves`);
+            
+            weaknessesGrid.appendChild(weaknessItem);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(weaknessesGrid);
+        return section;
+    }
+
+    /**
+     * Creates image error fallback
+     * @private
+     * @param {string} pokemonName - Pokemon name
+     * @returns {HTMLElement} Error fallback element
+     */
+    _createImageErrorFallback(pokemonName) {
+        const container = createSafeElement('div');
+        container.classList.add('image-error-container');
+        
+        const icon = createSafeElement('div', '⚠️');
+        icon.classList.add('image-error-icon');
+        icon.setAttribute('aria-hidden', 'true');
+        
+        const text = createSafeElement('div', 'Image not available');
+        text.classList.add('image-error-text');
+        
+        container.appendChild(icon);
+        container.appendChild(text);
+        container.setAttribute('role', 'img');
+        container.setAttribute('aria-label', `${pokemonName} image not available`);
+        
+        return container;
+    }
+
+    /**
      * Shows the modal with transition
      * @private
      */
