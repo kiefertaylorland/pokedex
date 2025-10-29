@@ -518,16 +518,26 @@ body.dark-mode .pokemon-card .pokemon-id {
 .pokemon-detail-view.show #detail-content .stat-item:nth-child(5) { transition-delay: 0.3s; }
 .pokemon-detail-view.show #detail-content .stat-item:nth-child(6) { transition-delay: 0.35s; }
 
-/* Moves list animation */
-#detail-content .moves-list li {
+/* Moves list animation - Compact */
+#detail-content .moves-list {
     list-style: none;
-    padding: 0.3rem;
-    margin-bottom: 0.3rem;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+#detail-content .moves-list li {
+    padding: 0.5rem 0.75rem;
     background-color: var(--background-color);
-    border-radius: 4px;
+    border-radius: 10px;
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 0.85em;
+    box-shadow: 2px 2px 4px var(--shadow),
+                -2px -2px 4px var(--highlight);
 }
 
 .pokemon-detail-view.show #detail-content .moves-list li {
