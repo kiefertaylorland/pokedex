@@ -686,3 +686,187 @@ input:focus-visible,
     height: 1px;
     overflow: hidden;
 }
+
+/* Evolution Chain Styles */
+.evolution-chain-container {
+    margin-top: 1rem;
+}
+
+.evolution-chain-toggle {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.evolution-chain-toggle:hover {
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.evolution-chain-toggle:active {
+    box-shadow: inset 3px 3px 6px var(--shadow-inset),
+                inset -3px -3px 6px var(--highlight);
+}
+
+.evolution-chain-toggle .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.evolution-chain-toggle.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.evolution-chain-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.evolution-chain-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.evolution-chain-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.evolution-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: var(--card-background);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.evolution-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.evolution-item img {
+    width: 80px;
+    height: 80px;
+    image-rendering: pixelated;
+}
+
+.evolution-item.current {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+}
+
+.evolution-item .evolution-name {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.evolution-arrow {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin: 0 0.5rem;
+}
+
+/* Weaknesses Styles */
+.weaknesses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.weakness-item {
+    padding: 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: white;
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.weakness-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+}
+
+.weakness-item .multiplier {
+    display: block;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+/* Image Error Handling */
+.image-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 6px var(--shadow-inset),
+                inset -3px -3px 6px var(--highlight);
+}
+
+.image-error-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.image-error-text {
+    font-size: 0.7em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Smooth scrollbar for modal */
+.detail-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.detail-modal-content::-webkit-scrollbar-track {
+    background: var(--card-background);
+    border-radius: 10px;
+}
+
+.detail-modal-content::-webkit-scrollbar-thumb {
+    background: var(--shadow);
+    border-radius: 10px;
+}
+
+.detail-modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
