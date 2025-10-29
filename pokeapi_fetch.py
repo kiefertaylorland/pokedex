@@ -99,25 +99,24 @@ def fetch_evolution_chain(evolution_chain_url):
         if not chain_data:
             return []
         
-        evolution_list = []
         
         def parse_chain(chain_link):
             """Recursively parse evolution chain."""
             species_name = chain_link["species"]["name"]
             species_id = int(chain_link["species"]["url"].rstrip('/').split('/')[-1])
             
-            evolution_list.append({
+            current = [{
                 "name": species_name.capitalize(),
                 "id": species_id
-            })
+            }]
             
             # Parse evolutions
             if chain_link.get("evolves_to"):
                 for evolution in chain_link["evolves_to"]:
-                    parse_chain(evolution)
+                    current.extend(parse_chain(evolution))
+            return current
         
-        parse_chain(chain_data["chain"])
-        return evolution_list
+        return parse_chain(chain_data["chain"])
         
     except Exception as e:
         print(f"Error fetching evolution chain: {e}")
