@@ -515,7 +515,7 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates weaknesses section
+     * Creates compact weaknesses section
      * @private
      * @param {Object} weaknesses - Weaknesses object
      * @param {Object} uiText - UI text object
@@ -534,11 +534,11 @@ export class PokemonDetailView {
             weaknessItem.classList.add('weakness-item');
             weaknessItem.classList.add(`type-${type.toLowerCase()}`);
             
-            const typeName = createSafeElement('div', type);
+            const typeText = createSafeElement('span', type);
             const multiplierSpan = createSafeElement('span', `${multiplier}×`);
             multiplierSpan.classList.add('multiplier');
             
-            weaknessItem.appendChild(typeName);
+            weaknessItem.appendChild(typeText);
             weaknessItem.appendChild(multiplierSpan);
             weaknessItem.setAttribute('title', `Takes ${multiplier}× damage from ${type} type moves`);
             
