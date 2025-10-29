@@ -130,7 +130,7 @@ export class PokemonDetailView {
             errorFallback.style.width = '120px';
             errorFallback.style.height = '120px';
             container.replaceChild(errorFallback, img);
-        });
+        }, { once: true });
         
         // Add shake animation
         setTimeout(() => {
