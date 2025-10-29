@@ -103,13 +103,19 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates Pokemon image with shake animation
+     * Creates Pokemon image with shake animation and error handling
      * @private
      * @param {Object} pokemon - Pokemon data
      * @param {string} name - Pokemon name
-     * @returns {HTMLElement} Image element
+     * @returns {HTMLElement} Image element or error container
      */
     _createPokemonImage(pokemon, name) {
+        const container = createSafeElement('div');
+        container.style.display = 'flex';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
+        container.style.minHeight = '120px';
+        
         const img = createSafeElement('img');
         img.src = pokemon.sprite;
         img.alt = name;
@@ -117,15 +123,26 @@ export class PokemonDetailView {
         img.style.height = '120px';
         img.classList.add('pokemon-detail-image');
         
+        // Add error handler
+        img.addEventListener('error', () => {
+            const errorFallback = this._createImageErrorFallback(name);
+            errorFallback.style.width = '120px';
+            errorFallback.style.height = '120px';
+            container.replaceChild(errorFallback, img);
+        });
+        
         // Add shake animation
         setTimeout(() => {
-            img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
-            img.addEventListener(EVENTS.ANIMATION_END, () => {
-                img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
-            }, { once: true });
+            if (img.parentNode) { // Check if image is still in DOM (not replaced by error)
+                img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
+                img.addEventListener(EVENTS.ANIMATION_END, () => {
+                    img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
+                }, { once: true });
+            }
         }, ANIMATION.TRANSITION_DELAY_MS);
 
-        return img;
+        container.appendChild(img);
+        return container;
     }
 
     /**
