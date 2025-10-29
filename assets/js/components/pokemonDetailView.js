@@ -103,12 +103,76 @@ export class PokemonDetailView {
     }
 
     /**
+     * Creates compact header with image and basic info
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {string} name - Pokemon name
+     * @param {Array} types - Pokemon types
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Header element
+     */
+    _createCompactHeader(pokemon, name, types, uiText) {
+        const header = createSafeElement('div');
+        header.classList.add('detail-header');
+        
+        // Image section
+        const imageContainer = this._createPokemonImage(pokemon, name);
+        imageContainer.classList.add('detail-header-image');
+        
+        // Info section
+        const infoContainer = createSafeElement('div');
+        infoContainer.classList.add('detail-header-info');
+        
+        const nameElement = createSafeElement('h2', 
+            `${name} (#${String(pokemon.id).padStart(3, '0')})`);
+        nameElement.classList.add('pokemon-detail-name');
+        
+        const typesContainer = createSafeElement('div');
+        typesContainer.classList.add('pokemon-types');
+        
+        types.forEach(type => {
+            const typeSpan = createSafeElement('span', type);
+            const cssClassName = getTypeClassName(type);
+            typeSpan.classList.add(`type-${cssClassName}`);
+            typesContainer.appendChild(typeSpan);
+        });
+        
+        infoContainer.appendChild(nameElement);
+        infoContainer.appendChild(typesContainer);
+        
+        header.appendChild(imageContainer);
+        header.appendChild(infoContainer);
+        
+        return header;
+    }
+
+    /**
+     * Creates compact bio section
+     * @private
+     * @param {string} bio - Pokemon bio text
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Bio section
+     */
+    _createCompactBioSection(bio, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.bio);
+        const bioText = createSafeElement('p', bio || uiText.noBio);
+        bioText.classList.add('bio-compact');
+
+        section.appendChild(heading);
+        section.appendChild(bioText);
+        return section;
+    }
+
+    /**
      * Creates close button
      * @private
      * @returns {HTMLElement} Close button element
      */
     _createCloseButton() {
-        const closeButton = createSafeElement('button', '×');
+        const closeButton = createSafeElement('button');
         closeButton.id = ELEMENT_IDS.CLOSE_DETAIL;
         closeButton.classList.add('close-button');
         closeButton.setAttribute('aria-label', 'Close detail view');
