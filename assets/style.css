@@ -1,29 +1,41 @@
 :root {
-    --background-color-light: #f0f0f0;
-    --text-color-light: #333;
-    --card-background-light: #ffffff;
-    --header-background-light: #e0e0e0;
-    --accent-color-light: #ff3b30; /* A reddish accent */
+    /* Neumorphism Light Theme */
+    --background-color-light: #e0e5ec;
+    --text-color-light: #4a5568;
+    --card-background-light: #e0e5ec;
+    --header-background-light: #e0e5ec;
+    --accent-color-light: #ff6b6b;
+    --shadow-light: #a3b1c6;
+    --shadow-light-inset: #a3b1c6;
+    --highlight-light: #ffffff;
 
-    --background-color-dark: #121212;
-    --text-color-dark: #e0e0e0;
-    --card-background-dark: #1e1e1e;
-    --header-background-dark: #2a2a2a;
-    --accent-color-dark: #ff453a; /* Slightly brighter red for dark mode */
+    /* Neumorphism Dark Theme */
+    --background-color-dark: #2d3748;
+    --text-color-dark: #e2e8f0;
+    --card-background-dark: #2d3748;
+    --header-background-dark: #2d3748;
+    --accent-color-dark: #fc8181;
+    --shadow-dark: #1a202c;
+    --shadow-dark-inset: #1a202c;
+    --highlight-dark: #4a5568;
 
+    /* Active Theme Variables */
     --background-color: var(--background-color-light);
     --text-color: var(--text-color-light);
     --card-background: var(--card-background-light);
     --header-background: var(--header-background-light);
     --accent-color: var(--accent-color-light);
+    --shadow: var(--shadow-light);
+    --shadow-inset: var(--shadow-light-inset);
+    --highlight: var(--highlight-light);
 
+    /* Type Colors */
     --type-grass: #78C850; --type-poison: #A040A0; --type-fire: #F08030;
     --type-flying: #A890F0; --type-water: #6890F0; --type-bug: #A8B820;
     --type-normal: #A8A878; --type-electric: #F8D030; --type-ground: #E0C068;
     --type-fairy: #EE99AC; --type-fighting: #C03028; --type-psychic: #F85888;
     --type-rock: #B8A038; --type-steel: #B8B8D0; --type-ice: #98D8D8;
     --type-ghost: #705898; --type-dragon: #7038F8; --type-dark: #705848;
-    /* Add more type colors as needed based on PokeAPI output */
 }
 
 body.dark-mode {
