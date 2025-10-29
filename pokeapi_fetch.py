@@ -161,8 +161,8 @@ def fetch_evolution_chain(evolution_chain_url):
         
         return parse_chain(chain_data["chain"])
         
-    except Exception as e:
-        print(f"Error fetching evolution chain: {e}")
+    except (KeyError, ValueError, TypeError, AttributeError, IndexError) as e:
+        print(f"Error parsing evolution chain: {e}")
         return []
 
 def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, sleep_time=0.2):
