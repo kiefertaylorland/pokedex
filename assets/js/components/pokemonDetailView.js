@@ -287,7 +287,7 @@ export class PokemonDetailView {
     }
 
     /**
-     * Creates stats section
+     * Creates stats section with progress bars
      * @private
      * @param {Object} stats - Pokemon stats
      * @param {Object} uiText - UI text object
@@ -315,10 +315,34 @@ export class PokemonDetailView {
                 const statItem = createSafeElement('div');
                 statItem.classList.add('stat-item');
                 
-                const label = createSafeElement('strong', `${statLabel}:`);
-                const value = createSafeElement('span', ` ${stats[statKey]}`);
+                // Label
+                const label = createSafeElement('div', `${statLabel}:`);
+                label.classList.add('stat-item-label');
+                
+                // Progress bar container
+                const barContainer = createSafeElement('div');
+                barContainer.classList.add('stat-item-bar');
+                
+                // Progress bar fill
+                const barFill = createSafeElement('div');
+                barFill.classList.add('stat-item-fill');
+                // Max stat is typically 255 for Pokemon
+                const percentage = Math.min((stats[statKey] / 255) * 100, 100);
+                barFill.style.width = '0%'; // Start at 0 for animation
+                
+                // Animate after a short delay
+                setTimeout(() => {
+                    barFill.style.width = `${percentage}%`;
+                }, 100);
+                
+                barContainer.appendChild(barFill);
+                
+                // Value
+                const value = createSafeElement('div', `${stats[statKey]}`);
+                value.classList.add('stat-item-value');
                 
                 statItem.appendChild(label);
+                statItem.appendChild(barContainer);
                 statItem.appendChild(value);
                 statsGrid.appendChild(statItem);
             }
