@@ -44,6 +44,9 @@ body.dark-mode {
     --card-background: var(--card-background-dark);
     --header-background: var(--header-background-dark);
     --accent-color: var(--accent-color-dark);
+    --shadow: var(--shadow-dark);
+    --shadow-inset: var(--shadow-dark-inset);
+    --highlight: var(--highlight-dark);
 }
 
 body {
