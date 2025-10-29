@@ -917,37 +917,38 @@ input:focus-visible,
     margin: 0 0.5rem;
 }
 
-/* Weaknesses Styles */
+/* Weaknesses Styles - Compact */
 .weaknesses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 0.75rem;
-    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .weakness-item {
-    padding: 0.75rem;
-    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
     text-align: center;
     font-weight: 600;
-    font-size: 0.85em;
+    font-size: 0.8em;
     color: white;
-    box-shadow: 4px 4px 8px var(--shadow),
-                -4px -4px 8px var(--highlight);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .weakness-item:hover {
     transform: translateY(-2px);
-    box-shadow: 6px 6px 12px var(--shadow),
-                -6px -6px 12px var(--highlight);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
 }
 
 .weakness-item .multiplier {
-    display: block;
-    font-size: 0.9em;
-    margin-top: 0.25rem;
-    opacity: 0.9;
+    font-size: 0.85em;
+    opacity: 0.95;
+    font-weight: 700;
 }
 
 /* Image Error Handling */
