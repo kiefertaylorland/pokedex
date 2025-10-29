@@ -238,8 +238,8 @@ export class PokemonDetailView {
                 statItem.classList.add('stat-item');
                 
                 const label = createSafeElement('strong', `${statLabel}:`);
-                const value = createSafeElement('span', ` ${stats[statKey]}`);
-                
+                const value = createSafeElement('span', `${stats[statKey]}`);
+                value.classList.add('stat-value');
                 statItem.appendChild(label);
                 statItem.appendChild(value);
                 statsGrid.appendChild(statItem);
