@@ -99,6 +99,7 @@ export class PokemonDetailView {
         closeButton.classList.add('close-button');
         closeButton.setAttribute('aria-label', 'Close detail view');
         closeButton.setAttribute('title', 'Close (Esc)');
+        closeButton.setAttribute('data-testid', 'close-detail-button');
         return closeButton;
     }
 
