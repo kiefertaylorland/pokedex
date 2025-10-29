@@ -251,17 +251,18 @@ body.dark-mode .pokemon-card .pokemon-id {
 
 .detail-modal-content {
     background-color: var(--card-background);
-    padding: 20px;
-    border-radius: 15px;
+    padding: 2rem;
+    border-radius: 30px;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
     color: var(--text-color);
     transform: scale(0.7) translateY(50px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 20px 20px 40px var(--shadow),
+                -20px -20px 40px var(--highlight);
 }
 
 .pokemon-detail-view.show .detail-modal-content {
@@ -270,29 +271,34 @@ body.dark-mode .pokemon-card .pokemon-id {
 
 #close-detail-view {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--accent-color);
-    color: white;
+    top: 15px;
+    right: 15px;
+    background: var(--card-background);
+    color: var(--accent-color);
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 1.2em;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     z-index: 10;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
 }
 
 #close-detail-view:hover {
-    background-color: #e03028;
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
     transform: scale(1.1);
 }
 
 #close-detail-view:active {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
     transform: scale(0.95);
 }
 #detail-content img {
