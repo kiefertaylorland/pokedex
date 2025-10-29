@@ -60,17 +60,23 @@ body {
 
 header {
     background-color: var(--header-background);
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: none;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    border-radius: 0 0 20px 20px;
 }
 
 header h1 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
     color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .controls {
