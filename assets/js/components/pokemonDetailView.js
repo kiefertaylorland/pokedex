@@ -328,6 +328,8 @@ export class PokemonDetailView {
         toggleButton.classList.add('evolution-chain-toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('aria-label', 'Toggle evolution chain');
+        toggleButton.setAttribute('data-testid', 'evolution-chain-toggle');
+        toggleButton.setAttribute('type', 'button');
         
         const titleSpan = createSafeElement('span', uiText.evolutionChain || 'Evolution Chain');
         const arrowSpan = createSafeElement('span', '▶');
