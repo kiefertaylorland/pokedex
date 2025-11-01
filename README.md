@@ -124,7 +124,7 @@ python validate_frontend.py
 
 ## Deployment
 
-This Pokedex is deployed at **[pokedex.tech](https://pokedex.tech)** using GitHub Pages.
+This Pokedex is deployed at **[www.pokedex.tech](https://www.pokedex.tech)** using GitHub Pages.
 
 ### Deploy Your Own
 
@@ -137,7 +137,13 @@ This Pokedex is deployed at **[pokedex.tech](https://pokedex.tech)** using GitHu
 
 3. **Configure Custom Domain (Optional):**
    - Update the `CNAME` file with your domain
-   - In your DNS provider, add these records:
+   - **For www subdomain (recommended):**
+     ```
+     Type: CNAME
+     Name: www
+     Value: kiefertaylorland.github.io
+     ```
+   - **To redirect apex domain (optional):**
      ```
      Type: A
      Name: @
@@ -154,12 +160,6 @@ This Pokedex is deployed at **[pokedex.tech](https://pokedex.tech)** using GitHu
      Type: A
      Name: @
      Value: 185.199.111.153
-     ```
-   - Or for a subdomain (e.g., `www`):
-     ```
-     Type: CNAME
-     Name: www
-     Value: yourusername.github.io
      ```
    - Wait for DNS propagation (can take up to 24-48 hours)
    - In GitHub repository Settings → Pages, enter your custom domain
