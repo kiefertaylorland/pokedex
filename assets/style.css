@@ -1005,3 +1005,92 @@ input:focus-visible,
 .detail-modal-content::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+
+/* ===================================
+   Romaji Support Styles
+   =================================== */
+
+/* Pokemon name romaji on cards */
+.pokemon-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.pokemon-name-romaji {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Type romaji styling */
+.type-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    margin: 0 4px;
+}
+
+.type-romaji {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    text-align: center;
+    margin-top: 1px;
+}
+
+/* Detail view name romaji */
+.detail-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pokemon-detail-name-romaji {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* Move item romaji */
+.move-item {
+    margin-bottom: 0.75rem;
+}
+
+.move-name-container {
+    display: inline;
+}
+
+.move-name-romaji,
+.move-type-romaji {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    opacity: 0.75;
+    font-style: italic;
+}
+
+/* Responsive adjustments for romaji */
+@media (max-width: 768px) {
+    .pokemon-name-romaji {
+        font-size: 0.6rem;
+    }
+    
+    .type-romaji {
+        font-size: 0.55rem;
+    }
+    
+    .pokemon-detail-name-romaji {
+        font-size: 0.8rem;
+    }
+    
+    .move-name-romaji,
+    .move-type-romaji {
+        font-size: 0.7rem;
+    }
+}

@@ -112,6 +112,7 @@ export class PokemonDetailView {
      * @returns {HTMLElement} Header element
      */
     _createCompactHeader(pokemon, name, types, uiText) {
+        const currentLang = this.uiController.getCurrentLanguage();
         const header = createSafeElement('div');
         header.classList.add('detail-header');
         
@@ -123,21 +124,44 @@ export class PokemonDetailView {
         const infoContainer = createSafeElement('div');
         infoContainer.classList.add('detail-header-info');
         
+        // Name with romaji if in Japanese mode
+        const nameContainer = createSafeElement('div');
+        nameContainer.classList.add('detail-name-container');
+        
         const nameElement = createSafeElement('h2', 
             `${name} (#${String(pokemon.id).padStart(3, '0')})`);
         nameElement.classList.add('pokemon-detail-name');
+        nameContainer.appendChild(nameElement);
+        
+        if (currentLang === 'jp' && pokemon.name_romaji) {
+            const romajiElement = createSafeElement('div', pokemon.name_romaji);
+            romajiElement.classList.add('pokemon-detail-name-romaji');
+            nameContainer.appendChild(romajiElement);
+        }
         
         const typesContainer = createSafeElement('div');
         typesContainer.classList.add('pokemon-types');
         
-        types.forEach(type => {
+        types.forEach((type, index) => {
+            const typeWrapper = createSafeElement('div');
+            typeWrapper.classList.add('type-wrapper');
+            
             const typeSpan = createSafeElement('span', type);
             const cssClassName = getTypeClassName(type);
             typeSpan.classList.add(`type-${cssClassName}`);
-            typesContainer.appendChild(typeSpan);
+            typeWrapper.appendChild(typeSpan);
+            
+            // Add romaji if in Japanese mode
+            if (currentLang === 'jp' && pokemon.types_romaji && pokemon.types_romaji[index]) {
+                const romajiSpan = createSafeElement('span', pokemon.types_romaji[index]);
+                romajiSpan.classList.add('type-romaji');
+                typeWrapper.appendChild(romajiSpan);
+            }
+            
+            typesContainer.appendChild(typeWrapper);
         });
         
-        infoContainer.appendChild(nameElement);
+        infoContainer.appendChild(nameContainer);
         infoContainer.appendChild(typesContainer);
         
         header.appendChild(imageContainer);
@@ -396,9 +420,32 @@ export class PokemonDetailView {
         const moveType = currentLang === 'jp' ? (move.type_jp || move.type_en) : move.type_en;
 
         const listItem = createSafeElement('li');
+        listItem.classList.add('move-item');
+        
+        const moveNameContainer = createSafeElement('div');
+        moveNameContainer.classList.add('move-name-container');
         
         const nameElement = createSafeElement('strong', moveName);
-        const typeElement = createSafeElement('span', ` (${moveType})`);
+        moveNameContainer.appendChild(nameElement);
+        
+        // Add romaji for move name if in Japanese mode
+        if (currentLang === 'jp' && move.name_romaji) {
+            const romajiElement = createSafeElement('span', ` (${move.name_romaji})`);
+            romajiElement.classList.add('move-name-romaji');
+            moveNameContainer.appendChild(romajiElement);
+        }
+        
+        const typeElement = createSafeElement('span', ` `);
+        const typeTextSpan = createSafeElement('span', moveType);
+        typeElement.appendChild(typeTextSpan);
+        
+        // Add romaji for move type if in Japanese mode
+        if (currentLang === 'jp' && move.type_romaji) {
+            const typeRomajiSpan = createSafeElement('span', ` (${move.type_romaji})`);
+            typeRomajiSpan.classList.add('move-type-romaji');
+            typeElement.appendChild(typeRomajiSpan);
+        }
+        
         const detailsElement = createSafeElement('small');
         
         const power = move.power || 'N/A';
@@ -407,7 +454,7 @@ export class PokemonDetailView {
         
         detailsElement.innerHTML = `<br>${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}`;
 
-        listItem.appendChild(nameElement);
+        listItem.appendChild(moveNameContainer);
         listItem.appendChild(typeElement);
         listItem.appendChild(detailsElement);
 

@@ -30,7 +30,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -39,7 +41,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leech Seed",
@@ -48,7 +52,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 90,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yadoriginotane",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Vine Whip",
@@ -57,7 +63,9 @@
         "type_jp": "くさ",
         "power": 45,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsurunomuchi",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -79,7 +87,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Fushigidane",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 2,
@@ -112,7 +125,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -121,7 +136,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leech Seed",
@@ -130,7 +147,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 90,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yadoriginotane",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Vine Whip",
@@ -139,7 +158,9 @@
         "type_jp": "くさ",
         "power": 45,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsurunomuchi",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -161,7 +182,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Fushigisou",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 3,
@@ -194,7 +220,9 @@
         "type_jp": "くさ",
         "power": 45,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsurunomuchi",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Tackle",
@@ -203,7 +231,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -212,7 +242,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leech Seed",
@@ -221,7 +253,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 90,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yadoriginotane",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -243,7 +277,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Fushigibana",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 4,
@@ -274,7 +313,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -283,7 +324,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -292,7 +335,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Leer",
@@ -301,7 +346,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -322,7 +369,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Hitokage",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 5,
@@ -353,7 +404,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -362,7 +415,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -371,7 +426,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Leer",
@@ -380,7 +437,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -401,7 +460,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Riza-do",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 6,
@@ -434,7 +497,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -443,7 +508,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -452,7 +519,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -461,7 +530,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       }
     ],
     "evolution_chain": [
@@ -482,7 +553,12 @@
       "Water": 2.0,
       "Electric": 2.0,
       "Rock": 4.0
-    }
+    },
+    "name_romaji": "Riza-don",
+    "types_romaji": [
+      "Honoo",
+      "Hikou"
+    ]
   },
   {
     "id": 7,
@@ -513,7 +589,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -522,7 +600,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bubble",
@@ -531,7 +611,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Water Gun",
@@ -540,7 +622,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -560,7 +644,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Zenigame",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 8,
@@ -591,7 +679,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -600,7 +690,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bubble",
@@ -609,7 +701,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Water Gun",
@@ -618,7 +712,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -638,7 +734,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Kame-ru",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 9,
@@ -669,7 +769,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -678,7 +780,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -687,7 +791,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Bubble",
@@ -696,7 +802,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -716,7 +824,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Kamekkusu",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 10,
@@ -747,7 +859,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "String Shot",
@@ -756,7 +870,9 @@
         "type_jp": "むし",
         "power": null,
         "accuracy": 95,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Itowohaku",
+        "type_romaji": "Mushi"
       }
     ],
     "evolution_chain": [
@@ -777,7 +893,11 @@
       "Fire": 2.0,
       "Flying": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Kyatapi-",
+    "types_romaji": [
+      "Mushi"
+    ]
   },
   {
     "id": 11,
@@ -808,7 +928,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -829,7 +951,11 @@
       "Fire": 2.0,
       "Flying": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Toranseru",
+    "types_romaji": [
+      "Mushi"
+    ]
   },
   {
     "id": 12,
@@ -862,7 +988,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Poison Powder",
@@ -871,7 +999,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Stun Spore",
@@ -880,7 +1010,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Sleep Powder",
@@ -889,7 +1021,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Nemurigona",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -912,7 +1046,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Rock": 4.0
-    }
+    },
+    "name_romaji": "Batafuri-",
+    "types_romaji": [
+      "Mushi",
+      "Hikou"
+    ]
   },
   {
     "id": 13,
@@ -945,7 +1084,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "String Shot",
@@ -954,7 +1095,9 @@
         "type_jp": "むし",
         "power": null,
         "accuracy": 95,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Itowohaku",
+        "type_romaji": "Mushi"
       }
     ],
     "evolution_chain": [
@@ -976,7 +1119,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Bi-doru",
+    "types_romaji": [
+      "Mushi",
+      "Doku"
+    ]
   },
   {
     "id": 14,
@@ -1009,7 +1157,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1031,7 +1181,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Koku-n",
+    "types_romaji": [
+      "Mushi",
+      "Doku"
+    ]
   },
   {
     "id": 15,
@@ -1064,7 +1219,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -1073,7 +1230,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Twineedle",
@@ -1082,7 +1241,9 @@
         "type_jp": "むし",
         "power": 25,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Daburuni-doru",
+        "type_romaji": "Mushi"
       },
       {
         "name_en": "Rage",
@@ -1091,7 +1252,9 @@
         "type_jp": "ノーマル",
         "power": 20,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Ikari",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1113,7 +1276,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Supia-",
+    "types_romaji": [
+      "Mushi",
+      "Doku"
+    ]
   },
   {
     "id": 16,
@@ -1146,7 +1314,9 @@
         "type_jp": "ひこう",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Kazeokoshi",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Sand Attack",
@@ -1155,7 +1325,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Quick Attack",
@@ -1164,7 +1336,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Whirlwind",
@@ -1173,7 +1347,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fukitobashi",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1194,7 +1370,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Poppo",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 17,
@@ -1227,7 +1408,9 @@
         "type_jp": "ひこう",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Kazeokoshi",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Sand Attack",
@@ -1236,7 +1419,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Quick Attack",
@@ -1245,7 +1430,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Whirlwind",
@@ -1254,7 +1441,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fukitobashi",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1275,7 +1464,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Pijon",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 18,
@@ -1308,7 +1502,9 @@
         "type_jp": "ひこう",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Kazeokoshi",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Sand Attack",
@@ -1317,7 +1513,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Quick Attack",
@@ -1326,7 +1524,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Whirlwind",
@@ -1335,7 +1535,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fukitobashi",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1356,7 +1558,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Pijotto",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 19,
@@ -1387,7 +1594,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -1396,7 +1605,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Quick Attack",
@@ -1405,7 +1616,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Hyper Fang",
@@ -1414,7 +1627,9 @@
         "type_jp": "ノーマル",
         "power": 80,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Hissatsumaeba",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1429,7 +1644,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Koratta",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 20,
@@ -1460,7 +1679,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -1469,7 +1690,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Quick Attack",
@@ -1478,7 +1701,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Hyper Fang",
@@ -1487,7 +1712,9 @@
         "type_jp": "ノーマル",
         "power": 80,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Hissatsumaeba",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1502,7 +1729,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Ratta",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 21,
@@ -1535,7 +1766,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Peck",
@@ -1544,7 +1777,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Leer",
@@ -1553,7 +1788,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Attack",
@@ -1562,7 +1799,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1579,7 +1818,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Onisuzume",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 22,
@@ -1612,7 +1856,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -1621,7 +1867,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Peck",
@@ -1630,7 +1878,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Fury Attack",
@@ -1639,7 +1889,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1656,7 +1908,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Onidoriru",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 23,
@@ -1687,7 +1944,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -1696,7 +1955,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -1705,7 +1966,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Bite",
@@ -1714,7 +1977,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       }
     ],
     "evolution_chain": [
@@ -1730,7 +1995,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "A-bo",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 24,
@@ -1761,7 +2030,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -1770,7 +2041,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Leer",
@@ -1779,7 +2052,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -1788,7 +2063,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       }
     ],
     "evolution_chain": [
@@ -1804,7 +2081,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "A-bokku",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 25,
@@ -1835,7 +2116,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -1844,7 +2127,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Thunder Wave",
@@ -1853,7 +2138,9 @@
         "type_jp": "でんき",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Denjiha",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Quick Attack",
@@ -1862,7 +2149,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -1881,7 +2170,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Pikachuu",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 26,
@@ -1912,7 +2205,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -1921,7 +2216,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Thunder Wave",
@@ -1930,7 +2227,9 @@
         "type_jp": "でんき",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Denjiha",
+        "type_romaji": "Denki"
       }
     ],
     "evolution_chain": [
@@ -1949,7 +2248,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Raichuu",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 27,
@@ -1980,7 +2283,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sand Attack",
@@ -1989,7 +2294,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Slash",
@@ -1998,7 +2305,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kirisaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2007,7 +2316,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2024,7 +2335,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Sando",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 28,
@@ -2055,7 +2370,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sand Attack",
@@ -2064,7 +2381,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Slash",
@@ -2073,7 +2392,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kirisaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2082,7 +2403,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2099,7 +2422,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Sandopan",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 29,
@@ -2130,7 +2457,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -2139,7 +2468,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Scratch",
@@ -2148,7 +2479,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2157,7 +2490,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2177,7 +2512,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidoran(f)",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 30,
@@ -2208,7 +2547,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tackle",
@@ -2217,7 +2558,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -2226,7 +2569,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2235,7 +2580,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2255,7 +2602,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidori-na",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 31,
@@ -2288,7 +2639,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tackle",
@@ -2297,7 +2650,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Body Slam",
@@ -2306,7 +2661,9 @@
         "type_jp": "ノーマル",
         "power": 85,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Noshikakari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -2315,7 +2672,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2337,7 +2696,12 @@
       "Ice": 2.0,
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidokuin",
+    "types_romaji": [
+      "Doku",
+      "Jimen"
+    ]
   },
   {
     "id": 32,
@@ -2368,7 +2732,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -2377,7 +2743,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Horn Attack",
@@ -2386,7 +2754,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2395,7 +2765,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2415,7 +2787,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidoran(m)",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 33,
@@ -2446,7 +2822,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tackle",
@@ -2455,7 +2833,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -2464,7 +2844,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2473,7 +2855,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2493,7 +2877,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidori-no",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 34,
@@ -2526,7 +2914,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tackle",
@@ -2535,7 +2925,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thrash",
@@ -2544,7 +2936,9 @@
         "type_jp": "ノーマル",
         "power": 120,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Abareru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -2553,7 +2947,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -2575,7 +2971,12 @@
       "Ice": 2.0,
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nidokingu",
+    "types_romaji": [
+      "Doku",
+      "Jimen"
+    ]
   },
   {
     "id": 35,
@@ -2606,7 +3007,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -2615,7 +3018,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sing",
@@ -2624,7 +3029,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Double Slap",
@@ -2633,7 +3040,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2653,7 +3062,11 @@
     "weaknesses": {
       "Poison": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Pippi",
+    "types_romaji": [
+      "Feari-"
+    ]
   },
   {
     "id": 36,
@@ -2684,7 +3097,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sing",
@@ -2693,7 +3108,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Minimize",
@@ -2702,7 +3119,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Chiisakunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Metronome",
@@ -2711,7 +3130,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yubiwofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2731,7 +3152,11 @@
     "weaknesses": {
       "Poison": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Pikushi-",
+    "types_romaji": [
+      "Feari-"
+    ]
   },
   {
     "id": 37,
@@ -2762,7 +3187,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -2771,7 +3198,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Quick Attack",
@@ -2780,7 +3209,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Roar",
@@ -2789,7 +3220,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hoeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2806,7 +3239,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Rokon",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 38,
@@ -2837,7 +3274,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Roar",
@@ -2846,7 +3285,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hoeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -2855,7 +3296,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Quick Attack",
@@ -2864,7 +3307,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2881,7 +3326,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Kyuukon",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 39,
@@ -2914,7 +3363,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Pound",
@@ -2923,7 +3374,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -2932,7 +3385,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Defense Curl",
@@ -2941,7 +3396,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Marukunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -2961,7 +3418,12 @@
     "weaknesses": {
       "Poison": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Purin",
+    "types_romaji": [
+      "No-maru",
+      "Feari-"
+    ]
   },
   {
     "id": 40,
@@ -2994,7 +3456,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sing",
@@ -3003,7 +3467,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -3012,7 +3478,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Defense Curl",
@@ -3021,7 +3489,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Marukunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -3041,7 +3511,12 @@
     "weaknesses": {
       "Poison": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Pukurin",
+    "types_romaji": [
+      "No-maru",
+      "Feari-"
+    ]
   },
   {
     "id": 41,
@@ -3074,7 +3549,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       },
       {
         "name_en": "Supersonic",
@@ -3083,7 +3560,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -3092,7 +3571,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Confuse Ray",
@@ -3101,7 +3582,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ayashiihikari",
+        "type_romaji": "Go-suto"
       }
     ],
     "evolution_chain": [
@@ -3123,7 +3606,12 @@
       "Ice": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Zubatto",
+    "types_romaji": [
+      "Doku",
+      "Hikou"
+    ]
   },
   {
     "id": 42,
@@ -3156,7 +3644,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Screech",
@@ -3165,7 +3655,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leech Life",
@@ -3174,7 +3666,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       },
       {
         "name_en": "Supersonic",
@@ -3183,7 +3677,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -3205,7 +3701,12 @@
       "Ice": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Gorubatto",
+    "types_romaji": [
+      "Doku",
+      "Hikou"
+    ]
   },
   {
     "id": 43,
@@ -3238,7 +3739,9 @@
         "type_jp": "くさ",
         "power": 20,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Suitoru",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Poison Powder",
@@ -3247,7 +3750,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Stun Spore",
@@ -3256,7 +3761,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Sleep Powder",
@@ -3265,7 +3772,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Nemurigona",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -3291,7 +3800,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Nazonokusa",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 44,
@@ -3324,7 +3838,9 @@
         "type_jp": "くさ",
         "power": 20,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Suitoru",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Poison Powder",
@@ -3333,7 +3849,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Stun Spore",
@@ -3342,7 +3860,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Sleep Powder",
@@ -3351,7 +3871,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Nemurigona",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -3377,7 +3899,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Kusaihana",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 45,
@@ -3410,7 +3937,9 @@
         "type_jp": "どく",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Youkaieki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Stun Spore",
@@ -3419,7 +3948,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Sleep Powder",
@@ -3428,7 +3959,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Nemurigona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Petal Dance",
@@ -3437,7 +3970,9 @@
         "type_jp": "くさ",
         "power": 120,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Hanabiranomai",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -3463,7 +3998,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Rafureshia",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 46,
@@ -3496,7 +4036,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stun Spore",
@@ -3505,7 +4047,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Leech Life",
@@ -3514,7 +4058,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       },
       {
         "name_en": "Spore",
@@ -3523,7 +4069,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Kinokonohoushi",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -3543,7 +4091,12 @@
       "Flying": 4.0,
       "Bug": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Parasu",
+    "types_romaji": [
+      "Mushi",
+      "Kusa"
+    ]
   },
   {
     "id": 47,
@@ -3576,7 +4129,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stun Spore",
@@ -3585,7 +4140,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Leech Life",
@@ -3594,7 +4151,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       },
       {
         "name_en": "Spore",
@@ -3603,7 +4162,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Kinokonohoushi",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -3623,7 +4184,12 @@
       "Flying": 4.0,
       "Bug": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Parasekuto",
+    "types_romaji": [
+      "Mushi",
+      "Kusa"
+    ]
   },
   {
     "id": 48,
@@ -3656,7 +4222,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -3665,7 +4233,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Powder",
@@ -3674,7 +4244,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Leech Life",
@@ -3683,7 +4255,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       }
     ],
     "evolution_chain": [
@@ -3701,7 +4275,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Konpan",
+    "types_romaji": [
+      "Mushi",
+      "Doku"
+    ]
   },
   {
     "id": 49,
@@ -3734,7 +4313,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -3743,7 +4324,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Powder",
@@ -3752,7 +4335,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Leech Life",
@@ -3761,7 +4346,9 @@
         "type_jp": "むし",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kyuuketsu",
+        "type_romaji": "Mushi"
       }
     ],
     "evolution_chain": [
@@ -3779,7 +4366,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Morufon",
+    "types_romaji": [
+      "Mushi",
+      "Doku"
+    ]
   },
   {
     "id": 50,
@@ -3810,7 +4402,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -3819,7 +4413,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Dig",
@@ -3828,7 +4424,9 @@
         "type_jp": "じめん",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Anawohoru",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Sand Attack",
@@ -3837,7 +4435,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       }
     ],
     "evolution_chain": [
@@ -3854,7 +4454,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Deiguda",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 51,
@@ -3885,7 +4489,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -3894,7 +4500,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Dig",
@@ -3903,7 +4511,9 @@
         "type_jp": "じめん",
         "power": 80,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Anawohoru",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Sand Attack",
@@ -3912,7 +4522,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       }
     ],
     "evolution_chain": [
@@ -3929,7 +4541,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Dagutorio",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 52,
@@ -3960,7 +4576,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -3969,7 +4587,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -3978,7 +4598,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Pay Day",
@@ -3987,7 +4609,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Nekonikoban",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4006,7 +4630,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Nya-su",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 53,
@@ -4037,7 +4665,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -4046,7 +4676,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Growl",
@@ -4055,7 +4687,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Screech",
@@ -4064,7 +4698,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4083,7 +4719,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Perushian",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 54,
@@ -4114,7 +4754,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -4123,7 +4765,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -4132,7 +4776,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -4141,7 +4787,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -4157,7 +4805,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Kodakku",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 55,
@@ -4188,7 +4840,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -4197,7 +4851,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -4206,7 +4862,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -4215,7 +4873,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -4231,7 +4891,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Gorudakku",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 56,
@@ -4262,7 +4926,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -4271,7 +4937,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Karate Chop",
@@ -4280,7 +4948,9 @@
         "type_jp": "かくとう",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Karatechoppu",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Fury Swipes",
@@ -4289,7 +4959,9 @@
         "type_jp": "ノーマル",
         "power": 18,
         "accuracy": 80,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Midarehikkaki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4310,7 +4982,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Manki-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 57,
@@ -4341,7 +5017,9 @@
         "type_jp": "かくとう",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Karatechoppu",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Scratch",
@@ -4350,7 +5028,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -4359,7 +5039,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Swipes",
@@ -4368,7 +5050,9 @@
         "type_jp": "ノーマル",
         "power": 18,
         "accuracy": 80,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Midarehikkaki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4389,7 +5073,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Okorizaru",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 58,
@@ -4420,7 +5108,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Roar",
@@ -4429,7 +5119,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hoeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -4438,7 +5130,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Leer",
@@ -4447,7 +5141,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4464,7 +5160,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Ga-dei",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 59,
@@ -4495,7 +5195,9 @@
         "type_jp": "ノーマル",
         "power": 90,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Tosshin",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -4504,7 +5206,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Roar",
@@ -4513,7 +5217,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hoeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -4522,7 +5228,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       }
     ],
     "evolution_chain": [
@@ -4539,7 +5247,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Uindei",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 60,
@@ -4570,7 +5282,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Hypnosis",
@@ -4579,7 +5293,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Water Gun",
@@ -4588,7 +5304,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Double Slap",
@@ -4597,7 +5315,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4621,7 +5341,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Nyoromo",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 61,
@@ -4652,7 +5376,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Hypnosis",
@@ -4661,7 +5387,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Bubble",
@@ -4670,7 +5398,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Double Slap",
@@ -4679,7 +5409,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -4703,7 +5435,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Nyorozo",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 62,
@@ -4736,7 +5472,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Body Slam",
@@ -4745,7 +5483,9 @@
         "type_jp": "ノーマル",
         "power": 85,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Noshikakari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -4754,7 +5494,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Hypnosis",
@@ -4763,7 +5505,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -4790,7 +5534,12 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Nyorobon",
+    "types_romaji": [
+      "Mizu",
+      "Kakutou"
+    ]
   },
   {
     "id": 63,
@@ -4821,7 +5570,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Terepo-to",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -4842,7 +5593,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Ke-shii",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 64,
@@ -4873,7 +5628,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -4882,7 +5639,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Teleport",
@@ -4891,7 +5650,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Terepo-to",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Psybeam",
@@ -4900,7 +5661,9 @@
         "type_jp": "エスパー",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saikekousen",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -4921,7 +5684,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Yungera-",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 65,
@@ -4952,7 +5719,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -4961,7 +5730,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Teleport",
@@ -4970,7 +5741,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Terepo-to",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Psybeam",
@@ -4979,7 +5752,9 @@
         "type_jp": "エスパー",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saikekousen",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -5000,7 +5775,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Fu-dein",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 66,
@@ -5031,7 +5810,9 @@
         "type_jp": "かくとう",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Karatechoppu",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Low Kick",
@@ -5040,7 +5821,9 @@
         "type_jp": "かくとう",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Ketaguri",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Leer",
@@ -5049,7 +5832,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -5058,7 +5843,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5079,7 +5866,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Wanriki-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 67,
@@ -5110,7 +5901,9 @@
         "type_jp": "かくとう",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Karatechoppu",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Leer",
@@ -5119,7 +5912,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Low Kick",
@@ -5128,7 +5923,9 @@
         "type_jp": "かくとう",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Ketaguri",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Focus Energy",
@@ -5137,7 +5934,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5158,7 +5957,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Go-riki-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 68,
@@ -5189,7 +5992,9 @@
         "type_jp": "かくとう",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Karatechoppu",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Leer",
@@ -5198,7 +6003,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Low Kick",
@@ -5207,7 +6014,9 @@
         "type_jp": "かくとう",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Ketaguri",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Focus Energy",
@@ -5216,7 +6025,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5237,7 +6048,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Kairiki-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 69,
@@ -5270,7 +6085,9 @@
         "type_jp": "くさ",
         "power": 45,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsurunomuchi",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Growth",
@@ -5279,7 +6096,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Seichou",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Wrap",
@@ -5288,7 +6107,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Powder",
@@ -5297,7 +6118,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -5319,7 +6142,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Madatsubomi",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 70,
@@ -5352,7 +6180,9 @@
         "type_jp": "くさ",
         "power": 45,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsurunomuchi",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Wrap",
@@ -5361,7 +6191,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growth",
@@ -5370,7 +6202,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Seichou",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Powder",
@@ -5379,7 +6213,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -5401,7 +6237,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Utsudon",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 71,
@@ -5434,7 +6275,9 @@
         "type_jp": "どく",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Youkaieki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Razor Leaf",
@@ -5443,7 +6286,9 @@
         "type_jp": "くさ",
         "power": 55,
         "accuracy": 95,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Happakatta-",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Stun Spore",
@@ -5452,7 +6297,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shibiregona",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Sleep Powder",
@@ -5461,7 +6308,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 75,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Nemurigona",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -5483,7 +6332,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Utsubotto",
+    "types_romaji": [
+      "Kusa",
+      "Doku"
+    ]
   },
   {
     "id": 72,
@@ -5516,7 +6370,9 @@
         "type_jp": "どく",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Youkaieki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Supersonic",
@@ -5525,7 +6381,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Wrap",
@@ -5534,7 +6392,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Sting",
@@ -5543,7 +6403,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -5560,7 +6422,12 @@
       "Electric": 2.0,
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Menokurage",
+    "types_romaji": [
+      "Mizu",
+      "Doku"
+    ]
   },
   {
     "id": 73,
@@ -5593,7 +6460,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Supersonic",
@@ -5602,7 +6471,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Acid",
@@ -5611,7 +6482,9 @@
         "type_jp": "どく",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Youkaieki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Poison Sting",
@@ -5620,7 +6493,9 @@
         "type_jp": "どく",
         "power": 15,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokubari",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -5637,7 +6512,12 @@
       "Electric": 2.0,
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Dokukurage",
+    "types_romaji": [
+      "Mizu",
+      "Doku"
+    ]
   },
   {
     "id": 74,
@@ -5670,7 +6550,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Defense Curl",
@@ -5679,7 +6561,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Marukunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Rock Throw",
@@ -5688,7 +6572,9 @@
         "type_jp": "いわ",
         "power": 50,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Iwaotoshi",
+        "type_romaji": "Iwa"
       },
       {
         "name_en": "Self Destruct",
@@ -5697,7 +6583,9 @@
         "type_jp": "ノーマル",
         "power": 200,
         "accuracy": 100,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jibaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5721,7 +6609,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Ishitsubute",
+    "types_romaji": [
+      "Iwa",
+      "Jimen"
+    ]
   },
   {
     "id": 75,
@@ -5754,7 +6647,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Defense Curl",
@@ -5763,7 +6658,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Marukunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Rock Throw",
@@ -5772,7 +6669,9 @@
         "type_jp": "いわ",
         "power": 50,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Iwaotoshi",
+        "type_romaji": "Iwa"
       },
       {
         "name_en": "Self Destruct",
@@ -5781,7 +6680,9 @@
         "type_jp": "ノーマル",
         "power": 200,
         "accuracy": 100,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jibaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5805,7 +6706,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Goro-n",
+    "types_romaji": [
+      "Iwa",
+      "Jimen"
+    ]
   },
   {
     "id": 76,
@@ -5838,7 +6744,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Defense Curl",
@@ -5847,7 +6755,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Marukunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Rock Throw",
@@ -5856,7 +6766,9 @@
         "type_jp": "いわ",
         "power": 50,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Iwaotoshi",
+        "type_romaji": "Iwa"
       },
       {
         "name_en": "Self Destruct",
@@ -5865,7 +6777,9 @@
         "type_jp": "ノーマル",
         "power": 200,
         "accuracy": 100,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jibaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5889,7 +6803,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Goro-nya",
+    "types_romaji": [
+      "Iwa",
+      "Jimen"
+    ]
   },
   {
     "id": 77,
@@ -5920,7 +6839,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Tail Whip",
@@ -5929,7 +6850,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stomp",
@@ -5938,7 +6861,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -5947,7 +6872,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -5964,7 +6891,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Poni-ta",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 78,
@@ -5995,7 +6926,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -6004,7 +6937,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -6013,7 +6948,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -6022,7 +6959,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       }
     ],
     "evolution_chain": [
@@ -6039,7 +6978,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Gyaroppu",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 79,
@@ -6072,7 +7015,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Disable",
@@ -6081,7 +7026,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Headbutt",
@@ -6090,7 +7037,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Zutsuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -6099,7 +7048,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6122,7 +7073,12 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Yadon",
+    "types_romaji": [
+      "Mizu",
+      "Esupa-"
+    ]
   },
   {
     "id": 80,
@@ -6155,7 +7111,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Zutsuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -6164,7 +7122,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -6173,7 +7133,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Growl",
@@ -6182,7 +7144,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6205,7 +7169,12 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Yadoran",
+    "types_romaji": [
+      "Mizu",
+      "Esupa-"
+    ]
   },
   {
     "id": 81,
@@ -6238,7 +7207,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sonic Boom",
@@ -6247,7 +7218,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sonikkubu-mu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -6256,7 +7229,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Supersonic",
@@ -6265,7 +7240,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6286,7 +7263,12 @@
       "Fire": 2.0,
       "Fighting": 2.0,
       "Ground": 4.0
-    }
+    },
+    "name_romaji": "Koiru",
+    "types_romaji": [
+      "Denki",
+      "Hagane"
+    ]
   },
   {
     "id": 82,
@@ -6319,7 +7301,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sonic Boom",
@@ -6328,7 +7312,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sonikkubu-mu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -6337,7 +7323,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Supersonic",
@@ -6346,7 +7334,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6367,7 +7357,12 @@
       "Fire": 2.0,
       "Fighting": 2.0,
       "Ground": 4.0
-    }
+    },
+    "name_romaji": "Reakoiru",
+    "types_romaji": [
+      "Denki",
+      "Hagane"
+    ]
   },
   {
     "id": 83,
@@ -6400,7 +7395,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Peck",
@@ -6409,7 +7406,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Leer",
@@ -6418,7 +7417,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Attack",
@@ -6427,7 +7428,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6444,7 +7447,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Kamonegi",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 84,
@@ -6477,7 +7485,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Growl",
@@ -6486,7 +7496,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Attack",
@@ -6495,7 +7507,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Drill Peck",
@@ -6504,7 +7518,9 @@
         "type_jp": "ひこう",
         "power": 80,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Dorirukuchibashi",
+        "type_romaji": "Hikou"
       }
     ],
     "evolution_chain": [
@@ -6521,7 +7537,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Do-do-",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 85,
@@ -6554,7 +7575,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -6563,7 +7586,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Peck",
@@ -6572,7 +7597,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Drill Peck",
@@ -6581,7 +7608,9 @@
         "type_jp": "ひこう",
         "power": 80,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Dorirukuchibashi",
+        "type_romaji": "Hikou"
       }
     ],
     "evolution_chain": [
@@ -6598,7 +7627,12 @@
       "Electric": 2.0,
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Do-dorio",
+    "types_romaji": [
+      "No-maru",
+      "Hikou"
+    ]
   },
   {
     "id": 86,
@@ -6629,7 +7663,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Zutsuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -6638,7 +7674,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Aurora Beam",
@@ -6647,7 +7685,9 @@
         "type_jp": "こおり",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "O-rorabi-mu",
+        "type_romaji": "Koori"
       },
       {
         "name_en": "Rest",
@@ -6656,7 +7696,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Nemuru",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -6672,7 +7714,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Pauwau",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 87,
@@ -6705,7 +7751,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Zutsuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -6714,7 +7762,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Aurora Beam",
@@ -6723,7 +7773,9 @@
         "type_jp": "こおり",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "O-rorabi-mu",
+        "type_romaji": "Koori"
       },
       {
         "name_en": "Rest",
@@ -6732,7 +7784,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Nemuru",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -6750,7 +7804,12 @@
       "Grass": 2.0,
       "Fighting": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Jugon",
+    "types_romaji": [
+      "Mizu",
+      "Koori"
+    ]
   },
   {
     "id": 88,
@@ -6781,7 +7840,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -6790,7 +7851,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Gas",
@@ -6799,7 +7862,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 90,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Dokugasu",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Minimize",
@@ -6808,7 +7873,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Chiisakunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6824,7 +7891,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Betobeta-",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 89,
@@ -6855,7 +7926,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -6864,7 +7937,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Poison Gas",
@@ -6873,7 +7948,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 90,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Dokugasu",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Minimize",
@@ -6882,7 +7959,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Chiisakunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -6898,7 +7977,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Betobeton",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 90,
@@ -6929,7 +8012,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Withdraw",
@@ -6938,7 +8023,9 @@
         "type_jp": "みず",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Karanikomoru",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Supersonic",
@@ -6947,7 +8034,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Clamp",
@@ -6956,7 +8045,9 @@
         "type_jp": "みず",
         "power": 35,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Karadehasamu",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -6972,7 +8063,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Shieruda-",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 91,
@@ -7005,7 +8100,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Aurora Beam",
@@ -7014,7 +8111,9 @@
         "type_jp": "こおり",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "O-rorabi-mu",
+        "type_romaji": "Koori"
       },
       {
         "name_en": "Withdraw",
@@ -7023,7 +8122,9 @@
         "type_jp": "みず",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Karanikomoru",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Clamp",
@@ -7032,7 +8133,9 @@
         "type_jp": "みず",
         "power": 35,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Karadehasamu",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -7050,7 +8153,12 @@
       "Grass": 2.0,
       "Fighting": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Parushien",
+    "types_romaji": [
+      "Mizu",
+      "Koori"
+    ]
   },
   {
     "id": 92,
@@ -7083,7 +8191,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Naitoheddo",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Confuse Ray",
@@ -7092,7 +8202,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ayashiihikari",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Lick",
@@ -7101,7 +8213,9 @@
         "type_jp": "ゴースト",
         "power": 30,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shitadenameru",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Hypnosis",
@@ -7110,7 +8224,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -7132,7 +8248,12 @@
       "Psychic": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Go-su",
+    "types_romaji": [
+      "Go-suto",
+      "Doku"
+    ]
   },
   {
     "id": 93,
@@ -7165,7 +8286,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Naitoheddo",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Confuse Ray",
@@ -7174,7 +8297,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ayashiihikari",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Lick",
@@ -7183,7 +8308,9 @@
         "type_jp": "ゴースト",
         "power": 30,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shitadenameru",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Hypnosis",
@@ -7192,7 +8319,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -7214,7 +8343,12 @@
       "Psychic": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Go-suto",
+    "types_romaji": [
+      "Go-suto",
+      "Doku"
+    ]
   },
   {
     "id": 94,
@@ -7247,7 +8381,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Naitoheddo",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Confuse Ray",
@@ -7256,7 +8392,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ayashiihikari",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Lick",
@@ -7265,7 +8403,9 @@
         "type_jp": "ゴースト",
         "power": 30,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shitadenameru",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Hypnosis",
@@ -7274,7 +8414,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -7296,7 +8438,12 @@
       "Psychic": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Genga-",
+    "types_romaji": [
+      "Go-suto",
+      "Doku"
+    ]
   },
   {
     "id": 95,
@@ -7329,7 +8476,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Screech",
@@ -7338,7 +8487,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bind",
@@ -7347,7 +8498,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Shimetsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Rock Throw",
@@ -7356,7 +8509,9 @@
         "type_jp": "いわ",
         "power": 50,
         "accuracy": 90,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Iwaotoshi",
+        "type_romaji": "Iwa"
       }
     ],
     "evolution_chain": [
@@ -7376,7 +8531,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Iwa-ku",
+    "types_romaji": [
+      "Iwa",
+      "Jimen"
+    ]
   },
   {
     "id": 96,
@@ -7407,7 +8567,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Hypnosis",
@@ -7416,7 +8578,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Disable",
@@ -7425,7 +8589,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -7434,7 +8600,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -7451,7 +8619,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Suri-pu",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 97,
@@ -7482,7 +8654,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -7491,7 +8665,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -7500,7 +8676,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Hypnosis",
@@ -7509,7 +8687,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -7526,7 +8706,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Suri-pa-",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 98,
@@ -7557,7 +8741,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bubble",
@@ -7566,7 +8752,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Vice Grip",
@@ -7575,7 +8763,9 @@
         "type_jp": "ノーマル",
         "power": 55,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Hasamu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Guillotine",
@@ -7584,7 +8774,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 30,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Hasamigirochin",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -7600,7 +8792,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Kurabu",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 99,
@@ -7631,7 +8827,9 @@
         "type_jp": "ノーマル",
         "power": 55,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Hasamu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -7640,7 +8838,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bubble",
@@ -7649,7 +8849,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Guillotine",
@@ -7658,7 +8860,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 30,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Hasamigirochin",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -7674,7 +8878,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Kingura-",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 100,
@@ -7705,7 +8913,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Screech",
@@ -7714,7 +8924,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sonic Boom",
@@ -7723,7 +8935,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sonikkubu-mu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Self Destruct",
@@ -7732,7 +8946,9 @@
         "type_jp": "ノーマル",
         "power": 200,
         "accuracy": 100,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jibaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -7747,7 +8963,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Biriridama",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 101,
@@ -7778,7 +8998,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sonic Boom",
@@ -7787,7 +9009,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sonikkubu-mu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Screech",
@@ -7796,7 +9020,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Self Destruct",
@@ -7805,7 +9031,9 @@
         "type_jp": "ノーマル",
         "power": 200,
         "accuracy": 100,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jibaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -7820,7 +9048,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Marumain",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 102,
@@ -7853,7 +9085,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Barrage",
@@ -7862,7 +9096,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Tamanage",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Reflect",
@@ -7871,7 +9107,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Rifurekuta-",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Leech Seed",
@@ -7880,7 +9118,9 @@
         "type_jp": "くさ",
         "power": null,
         "accuracy": 90,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yadoriginotane",
+        "type_romaji": "Kusa"
       }
     ],
     "evolution_chain": [
@@ -7901,7 +9141,12 @@
       "Bug": 4.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Tamatama",
+    "types_romaji": [
+      "Kusa",
+      "Esupa-"
+    ]
   },
   {
     "id": 103,
@@ -7934,7 +9179,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": 60,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saiminjutsu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Barrage",
@@ -7943,7 +9190,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Tamanage",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stomp",
@@ -7952,7 +9201,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -7973,7 +9224,12 @@
       "Bug": 4.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Nasshi-",
+    "types_romaji": [
+      "Kusa",
+      "Esupa-"
+    ]
   },
   {
     "id": 104,
@@ -8004,7 +9260,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bone Club",
@@ -8013,7 +9271,9 @@
         "type_jp": "じめん",
         "power": 65,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Honekonbou",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Leer",
@@ -8022,7 +9282,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -8031,7 +9293,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8048,7 +9312,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Karakara",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 105,
@@ -8079,7 +9347,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -8088,7 +9358,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -8097,7 +9369,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bone Club",
@@ -8106,7 +9380,9 @@
         "type_jp": "じめん",
         "power": 65,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Honekonbou",
+        "type_romaji": "Jimen"
       }
     ],
     "evolution_chain": [
@@ -8123,7 +9399,11 @@
       "Water": 2.0,
       "Grass": 2.0,
       "Ice": 2.0
-    }
+    },
+    "name_romaji": "Garagara",
+    "types_romaji": [
+      "Jimen"
+    ]
   },
   {
     "id": 106,
@@ -8154,7 +9434,9 @@
         "type_jp": "かくとう",
         "power": 30,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Nidogeri",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Meditate",
@@ -8163,7 +9445,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Yoganopo-zu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Rolling Kick",
@@ -8172,7 +9456,9 @@
         "type_jp": "かくとう",
         "power": 60,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Mawashigeri",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Jump Kick",
@@ -8181,7 +9467,9 @@
         "type_jp": "かくとう",
         "power": 100,
         "accuracy": 95,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Tobigeri",
+        "type_romaji": "Kakutou"
       }
     ],
     "evolution_chain": [
@@ -8206,7 +9494,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Sawamura-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 107,
@@ -8237,7 +9529,9 @@
         "type_jp": "ノーマル",
         "power": 18,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Renzokupanchi",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Agility",
@@ -8246,7 +9540,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Fire Punch",
@@ -8255,7 +9551,9 @@
         "type_jp": "ほのお",
         "power": 75,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Honoonopanchi",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Ice Punch",
@@ -8264,7 +9562,9 @@
         "type_jp": "こおり",
         "power": 75,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Reitoupanchi",
+        "type_romaji": "Koori"
       }
     ],
     "evolution_chain": [
@@ -8289,7 +9589,11 @@
       "Flying": 2.0,
       "Psychic": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Ebiwara-",
+    "types_romaji": [
+      "Kakutou"
+    ]
   },
   {
     "id": 108,
@@ -8320,7 +9624,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Supersonic",
@@ -8329,7 +9635,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stomp",
@@ -8338,7 +9646,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Disable",
@@ -8347,7 +9657,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8362,7 +9674,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Beroringa",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 109,
@@ -8393,7 +9709,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Smog",
@@ -8402,7 +9720,9 @@
         "type_jp": "どく",
         "power": 30,
         "accuracy": 70,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sumoggu",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Sludge",
@@ -8411,7 +9731,9 @@
         "type_jp": "どく",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hedorokougeki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Smokescreen",
@@ -8420,7 +9742,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Enmaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8436,7 +9760,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Doga-su",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 110,
@@ -8467,7 +9795,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Smog",
@@ -8476,7 +9806,9 @@
         "type_jp": "どく",
         "power": 30,
         "accuracy": 70,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Sumoggu",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Sludge",
@@ -8485,7 +9817,9 @@
         "type_jp": "どく",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Hedorokougeki",
+        "type_romaji": "Doku"
       },
       {
         "name_en": "Smokescreen",
@@ -8494,7 +9828,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Enmaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8510,7 +9846,11 @@
     "weaknesses": {
       "Ground": 2.0,
       "Psychic": 2.0
-    }
+    },
+    "name_romaji": "Matadogasu",
+    "types_romaji": [
+      "Doku"
+    ]
   },
   {
     "id": 111,
@@ -8543,7 +9883,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stomp",
@@ -8552,7 +9894,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -8561,7 +9905,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Attack",
@@ -8570,7 +9916,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8594,7 +9942,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Saiho-n",
+    "types_romaji": [
+      "Jimen",
+      "Iwa"
+    ]
   },
   {
     "id": 112,
@@ -8627,7 +9980,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Horn Attack",
@@ -8636,7 +9991,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Fury Attack",
@@ -8645,7 +10002,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Midarezuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -8654,7 +10013,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8678,7 +10039,12 @@
       "Fighting": 2.0,
       "Ground": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Saidon",
+    "types_romaji": [
+      "Jimen",
+      "Iwa"
+    ]
   },
   {
     "id": 113,
@@ -8709,7 +10075,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Double Slap",
@@ -8718,7 +10086,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sing",
@@ -8727,7 +10097,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Growl",
@@ -8736,7 +10108,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8755,7 +10129,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Rakki-",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 114,
@@ -8786,7 +10164,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Shimetsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Constrict",
@@ -8795,7 +10175,9 @@
         "type_jp": "ノーマル",
         "power": 10,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Karamitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Absorb",
@@ -8804,7 +10186,9 @@
         "type_jp": "くさ",
         "power": 20,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Suitoru",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Poison Powder",
@@ -8813,7 +10197,9 @@
         "type_jp": "どく",
         "power": null,
         "accuracy": 75,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Dokunokona",
+        "type_romaji": "Doku"
       }
     ],
     "evolution_chain": [
@@ -8832,7 +10218,11 @@
       "Poison": 2.0,
       "Flying": 2.0,
       "Bug": 2.0
-    }
+    },
+    "name_romaji": "Monjara",
+    "types_romaji": [
+      "Kusa"
+    ]
   },
   {
     "id": 115,
@@ -8863,7 +10253,9 @@
         "type_jp": "ノーマル",
         "power": 18,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Renzokupanchi",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Rage",
@@ -8872,7 +10264,9 @@
         "type_jp": "ノーマル",
         "power": 20,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Ikari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -8881,7 +10275,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Tail Whip",
@@ -8890,7 +10286,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -8901,7 +10299,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Garu-ra",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 116,
@@ -8932,7 +10334,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Smokescreen",
@@ -8941,7 +10345,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Enmaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -8950,7 +10356,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -8959,7 +10367,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -8979,7 +10389,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Tattsu-",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 117,
@@ -9010,7 +10424,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Enmaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bubble",
@@ -9019,7 +10435,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Awa",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Leer",
@@ -9028,7 +10446,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -9037,7 +10457,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       }
     ],
     "evolution_chain": [
@@ -9057,7 +10479,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Shi-dora",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 118,
@@ -9088,7 +10514,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Peck",
@@ -9097,7 +10525,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Supersonic",
@@ -9106,7 +10536,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Horn Attack",
@@ -9115,7 +10547,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9131,7 +10565,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Tosakinto",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 119,
@@ -9162,7 +10600,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Supersonic",
@@ -9171,7 +10611,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Peck",
@@ -9180,7 +10622,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Horn Attack",
@@ -9189,7 +10633,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9205,7 +10651,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Azumaou",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 120,
@@ -9236,7 +10686,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -9245,7 +10697,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Harden",
@@ -9254,7 +10708,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Recover",
@@ -9263,7 +10719,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Jikosaisei",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9279,7 +10737,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Hitodeman",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 121,
@@ -9312,7 +10774,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -9321,7 +10785,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Harden",
@@ -9330,7 +10796,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9349,7 +10817,12 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Suta-mi-",
+    "types_romaji": [
+      "Mizu",
+      "Esupa-"
+    ]
   },
   {
     "id": 122,
@@ -9382,7 +10855,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Barrier",
@@ -9391,7 +10866,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Baria-",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Light Screen",
@@ -9400,7 +10877,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Hikarinokabe",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Double Slap",
@@ -9409,7 +10888,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9430,7 +10911,12 @@
       "Poison": 2.0,
       "Ghost": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Bariya-do",
+    "types_romaji": [
+      "Esupa-",
+      "Feari-"
+    ]
   },
   {
     "id": 123,
@@ -9463,7 +10949,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -9472,7 +10960,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -9481,7 +10971,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Double Team",
@@ -9490,7 +10982,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Kagebunshin",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9513,7 +11007,12 @@
       "Ice": 2.0,
       "Flying": 2.0,
       "Rock": 4.0
-    }
+    },
+    "name_romaji": "Sutoraiku",
+    "types_romaji": [
+      "Mushi",
+      "Hikou"
+    ]
   },
   {
     "id": 124,
@@ -9546,7 +11045,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Lovely Kiss",
@@ -9555,7 +11056,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 75,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Akumanokissu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Lick",
@@ -9564,7 +11067,9 @@
         "type_jp": "ゴースト",
         "power": 30,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shitadenameru",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Double Slap",
@@ -9573,7 +11078,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 85,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Oufukubinta",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9593,7 +11100,12 @@
       "Ghost": 2.0,
       "Dark": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Ru-jura",
+    "types_romaji": [
+      "Koori",
+      "Esupa-"
+    ]
   },
   {
     "id": 125,
@@ -9624,7 +11136,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Quick Attack",
@@ -9633,7 +11147,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -9642,7 +11158,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Screech",
@@ -9651,7 +11169,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 85,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Iyanaoto",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9670,7 +11190,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Erebu-",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 126,
@@ -9701,7 +11225,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Leer",
@@ -9710,7 +11236,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confuse Ray",
@@ -9719,7 +11247,9 @@
         "type_jp": "ゴースト",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ayashiihikari",
+        "type_romaji": "Go-suto"
       },
       {
         "name_en": "Fire Punch",
@@ -9728,7 +11258,9 @@
         "type_jp": "ほのお",
         "power": 75,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Honoonopanchi",
+        "type_romaji": "Honoo"
       }
     ],
     "evolution_chain": [
@@ -9749,7 +11281,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Bu-ba-",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 127,
@@ -9780,7 +11316,9 @@
         "type_jp": "ノーマル",
         "power": 55,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Hasamu",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Seismic Toss",
@@ -9789,7 +11327,9 @@
         "type_jp": "かくとう",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chikyuunage",
+        "type_romaji": "Kakutou"
       },
       {
         "name_en": "Guillotine",
@@ -9798,7 +11338,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 30,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Hasamigirochin",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Focus Energy",
@@ -9807,7 +11349,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kiaidame",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9820,7 +11364,11 @@
       "Fire": 2.0,
       "Flying": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Kairosu",
+    "types_romaji": [
+      "Mushi"
+    ]
   },
   {
     "id": 128,
@@ -9851,7 +11399,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Stomp",
@@ -9860,7 +11410,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Fumitsuke",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -9869,7 +11421,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -9878,7 +11432,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9889,7 +11445,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Kentarosu",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 129,
@@ -9920,7 +11480,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Haneru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tackle",
@@ -9929,7 +11491,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -9945,7 +11509,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Koikingu",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 130,
@@ -9978,7 +11546,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -9987,7 +11557,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       },
       {
         "name_en": "Hydro Pump",
@@ -9996,7 +11568,9 @@
         "type_jp": "みず",
         "power": 110,
         "accuracy": 80,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Haidoroponpu",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Dragon Rage",
@@ -10005,7 +11579,9 @@
         "type_jp": "ドラゴン",
         "power": null,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Ryuunoikari",
+        "type_romaji": "Doragon"
       }
     ],
     "evolution_chain": [
@@ -10021,7 +11597,12 @@
     "weaknesses": {
       "Electric": 4.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Gyaradosu",
+    "types_romaji": [
+      "Mizu",
+      "Hikou"
+    ]
   },
   {
     "id": 131,
@@ -10054,7 +11635,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Nakigoe",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -10063,7 +11646,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Sing",
@@ -10072,7 +11657,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Utau",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Mist",
@@ -10081,7 +11668,9 @@
         "type_jp": "こおり",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shiroikiri",
+        "type_romaji": "Koori"
       }
     ],
     "evolution_chain": [
@@ -10095,7 +11684,12 @@
       "Grass": 2.0,
       "Fighting": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Rapurasu",
+    "types_romaji": [
+      "Mizu",
+      "Koori"
+    ]
   },
   {
     "id": 132,
@@ -10126,7 +11720,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Henshin",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10137,7 +11733,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Metamon",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 133,
@@ -10168,7 +11768,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Tackle",
@@ -10177,7 +11779,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Quick Attack",
@@ -10186,7 +11790,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Tail Whip",
@@ -10195,7 +11801,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Shippowofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10238,7 +11846,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "I-bui",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 134,
@@ -10269,7 +11881,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Tackle",
@@ -10278,7 +11892,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -10287,7 +11903,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Quick Attack",
@@ -10296,7 +11914,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10340,7 +11960,11 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    }
+    },
+    "name_romaji": "Shawa-zu",
+    "types_romaji": [
+      "Mizu"
+    ]
   },
   {
     "id": 135,
@@ -10371,7 +11995,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Tackle",
@@ -10380,7 +12006,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Shock",
@@ -10389,7 +12017,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Quick Attack",
@@ -10398,7 +12028,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10441,7 +12073,11 @@
     ],
     "weaknesses": {
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Sanda-su",
+    "types_romaji": [
+      "Denki"
+    ]
   },
   {
     "id": 136,
@@ -10472,7 +12108,9 @@
         "type_jp": "じめん",
         "power": null,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Sunakake",
+        "type_romaji": "Jimen"
       },
       {
         "name_en": "Tackle",
@@ -10481,7 +12119,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Ember",
@@ -10490,7 +12130,9 @@
         "type_jp": "ほのお",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Hinoko",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Quick Attack",
@@ -10499,7 +12141,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkousekka",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10544,7 +12188,11 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Bu-suta-",
+    "types_romaji": [
+      "Honoo"
+    ]
   },
   {
     "id": 137,
@@ -10575,7 +12223,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Taiatari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Sharpen",
@@ -10584,7 +12234,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kakubaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Conversion",
@@ -10593,7 +12245,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Tekusucha-",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Psybeam",
@@ -10602,7 +12256,9 @@
         "type_jp": "エスパー",
         "power": 65,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Saikekousen",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -10621,7 +12277,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Porigon",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 138,
@@ -10654,7 +12314,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Withdraw",
@@ -10663,7 +12325,9 @@
         "type_jp": "みず",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Karanikomoru",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Horn Attack",
@@ -10672,7 +12336,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -10681,7 +12347,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10699,7 +12367,12 @@
       "Grass": 4.0,
       "Fighting": 2.0,
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Omunaito",
+    "types_romaji": [
+      "Iwa",
+      "Mizu"
+    ]
   },
   {
     "id": 139,
@@ -10732,7 +12405,9 @@
         "type_jp": "ノーマル",
         "power": 65,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Tsunodetsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Water Gun",
@@ -10741,7 +12416,9 @@
         "type_jp": "みず",
         "power": 40,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Mizudeppou",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Withdraw",
@@ -10750,7 +12427,9 @@
         "type_jp": "みず",
         "power": null,
         "accuracy": null,
-        "pp": 40
+        "pp": 40,
+        "name_romaji": "Karanikomoru",
+        "type_romaji": "Mizu"
       },
       {
         "name_en": "Leer",
@@ -10759,7 +12438,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10777,7 +12458,12 @@
       "Grass": 4.0,
       "Fighting": 2.0,
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Omusuta-",
+    "types_romaji": [
+      "Iwa",
+      "Mizu"
+    ]
   },
   {
     "id": 140,
@@ -10810,7 +12496,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Harden",
@@ -10819,7 +12507,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Absorb",
@@ -10828,7 +12518,9 @@
         "type_jp": "くさ",
         "power": 20,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Suitoru",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Slash",
@@ -10837,7 +12529,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kirisaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10855,7 +12549,12 @@
       "Grass": 4.0,
       "Fighting": 2.0,
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Kabuto",
+    "types_romaji": [
+      "Iwa",
+      "Mizu"
+    ]
   },
   {
     "id": 141,
@@ -10888,7 +12587,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hikkaku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Absorb",
@@ -10897,7 +12598,9 @@
         "type_jp": "くさ",
         "power": 20,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Suitoru",
+        "type_romaji": "Kusa"
       },
       {
         "name_en": "Harden",
@@ -10906,7 +12609,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Katakunaru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Slash",
@@ -10915,7 +12620,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kirisaku",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -10933,7 +12640,12 @@
       "Grass": 4.0,
       "Fighting": 2.0,
       "Ground": 2.0
-    }
+    },
+    "name_romaji": "Kabutopusu",
+    "types_romaji": [
+      "Iwa",
+      "Mizu"
+    ]
   },
   {
     "id": 142,
@@ -10966,7 +12678,9 @@
         "type_jp": "ひこう",
         "power": 60,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsubasadeutsu",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Agility",
@@ -10975,7 +12689,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Supersonic",
@@ -10984,7 +12700,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 55,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Chouonpa",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Bite",
@@ -10993,7 +12711,9 @@
         "type_jp": "あく",
         "power": 60,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Kamitsuku",
+        "type_romaji": "Aku"
       }
     ],
     "evolution_chain": [
@@ -11008,7 +12728,12 @@
       "Ice": 2.0,
       "Rock": 2.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Putera",
+    "types_romaji": [
+      "Iwa",
+      "Hikou"
+    ]
   },
   {
     "id": 143,
@@ -11039,7 +12764,9 @@
         "type_jp": "ノーマル",
         "power": 70,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Zutsuki",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Amnesia",
@@ -11048,7 +12775,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Dowasure",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Rest",
@@ -11057,7 +12786,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Nemuru",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Body Slam",
@@ -11066,7 +12797,9 @@
         "type_jp": "ノーマル",
         "power": 85,
         "accuracy": 100,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Noshikakari",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -11081,7 +12814,11 @@
     ],
     "weaknesses": {
       "Fighting": 2.0
-    }
+    },
+    "name_romaji": "Kabigon",
+    "types_romaji": [
+      "No-maru"
+    ]
   },
   {
     "id": 144,
@@ -11114,7 +12851,9 @@
         "type_jp": "こおり",
         "power": 90,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Reitoubi-mu",
+        "type_romaji": "Koori"
       },
       {
         "name_en": "Peck",
@@ -11123,7 +12862,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Blizzard",
@@ -11132,7 +12873,9 @@
         "type_jp": "こおり",
         "power": 110,
         "accuracy": 70,
-        "pp": 5
+        "pp": 5,
+        "name_romaji": "Fubuki",
+        "type_romaji": "Koori"
       },
       {
         "name_en": "Agility",
@@ -11141,7 +12884,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11155,7 +12900,12 @@
       "Electric": 2.0,
       "Rock": 4.0,
       "Steel": 2.0
-    }
+    },
+    "name_romaji": "Furi-za-",
+    "types_romaji": [
+      "Koori",
+      "Hikou"
+    ]
   },
   {
     "id": 145,
@@ -11188,7 +12938,9 @@
         "type_jp": "ひこう",
         "power": 80,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Dorirukuchibashi",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Thunder Shock",
@@ -11197,7 +12949,9 @@
         "type_jp": "でんき",
         "power": 40,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Denkishokku",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Thunder",
@@ -11206,7 +12960,9 @@
         "type_jp": "でんき",
         "power": 110,
         "accuracy": 70,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Kaminari",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Agility",
@@ -11215,7 +12971,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11227,7 +12985,12 @@
     "weaknesses": {
       "Ice": 2.0,
       "Rock": 2.0
-    }
+    },
+    "name_romaji": "Sanda-",
+    "types_romaji": [
+      "Denki",
+      "Hikou"
+    ]
   },
   {
     "id": 146,
@@ -11260,7 +13023,9 @@
         "type_jp": "ひこう",
         "power": 35,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Tsutsuku",
+        "type_romaji": "Hikou"
       },
       {
         "name_en": "Fire Spin",
@@ -11269,7 +13034,9 @@
         "type_jp": "ほのお",
         "power": 35,
         "accuracy": 85,
-        "pp": 15
+        "pp": 15,
+        "name_romaji": "Honoonouzu",
+        "type_romaji": "Honoo"
       },
       {
         "name_en": "Leer",
@@ -11278,7 +13045,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Agility",
@@ -11287,7 +13056,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11300,7 +13071,12 @@
       "Water": 2.0,
       "Electric": 2.0,
       "Rock": 4.0
-    }
+    },
+    "name_romaji": "Faiya-",
+    "types_romaji": [
+      "Honoo",
+      "Hikou"
+    ]
   },
   {
     "id": 147,
@@ -11331,7 +13107,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -11340,7 +13118,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Wave",
@@ -11349,7 +13129,9 @@
         "type_jp": "でんき",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Denjiha",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Agility",
@@ -11358,7 +13140,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11379,7 +13163,11 @@
       "Ice": 2.0,
       "Dragon": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Miniryuu",
+    "types_romaji": [
+      "Doragon"
+    ]
   },
   {
     "id": 148,
@@ -11410,7 +13198,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -11419,7 +13209,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Wave",
@@ -11428,7 +13220,9 @@
         "type_jp": "でんき",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Denjiha",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Agility",
@@ -11437,7 +13231,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11458,7 +13254,11 @@
       "Ice": 2.0,
       "Dragon": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Hakuryu-",
+    "types_romaji": [
+      "Doragon"
+    ]
   },
   {
     "id": 149,
@@ -11491,7 +13291,9 @@
         "type_jp": "ノーマル",
         "power": 15,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Makitsuku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Leer",
@@ -11500,7 +13302,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Niramitsukeru",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Thunder Wave",
@@ -11509,7 +13313,9 @@
         "type_jp": "でんき",
         "power": null,
         "accuracy": 90,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Denjiha",
+        "type_romaji": "Denki"
       },
       {
         "name_en": "Agility",
@@ -11518,7 +13324,9 @@
         "type_jp": "エスパー",
         "power": null,
         "accuracy": null,
-        "pp": 30
+        "pp": 30,
+        "name_romaji": "Kousokuidou",
+        "type_romaji": "Esupa-"
       }
     ],
     "evolution_chain": [
@@ -11540,7 +13348,12 @@
       "Rock": 2.0,
       "Dragon": 2.0,
       "Fairy": 2.0
-    }
+    },
+    "name_romaji": "Kairyu-",
+    "types_romaji": [
+      "Doragon",
+      "Hikou"
+    ]
   },
   {
     "id": 150,
@@ -11571,7 +13384,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": 100,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Kanashibari",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Confusion",
@@ -11580,7 +13395,9 @@
         "type_jp": "エスパー",
         "power": 50,
         "accuracy": 100,
-        "pp": 25
+        "pp": 25,
+        "name_romaji": "Nenriki",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Psychic",
@@ -11589,7 +13406,9 @@
         "type_jp": "エスパー",
         "power": 90,
         "accuracy": 100,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Saikokineshisu",
+        "type_romaji": "Esupa-"
       },
       {
         "name_en": "Swift",
@@ -11598,7 +13417,9 @@
         "type_jp": "ノーマル",
         "power": 60,
         "accuracy": null,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Supi-dosuta-",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -11611,7 +13432,11 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Myuutsu-",
+    "types_romaji": [
+      "Esupa-"
+    ]
   },
   {
     "id": 151,
@@ -11642,7 +13467,9 @@
         "type_jp": "ノーマル",
         "power": 40,
         "accuracy": 100,
-        "pp": 35
+        "pp": 35,
+        "name_romaji": "Hataku",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Transform",
@@ -11651,7 +13478,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Henshin",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Mega Punch",
@@ -11660,7 +13489,9 @@
         "type_jp": "ノーマル",
         "power": 80,
         "accuracy": 85,
-        "pp": 20
+        "pp": 20,
+        "name_romaji": "Megatonpanchi",
+        "type_romaji": "No-maru"
       },
       {
         "name_en": "Metronome",
@@ -11669,7 +13500,9 @@
         "type_jp": "ノーマル",
         "power": null,
         "accuracy": null,
-        "pp": 10
+        "pp": 10,
+        "name_romaji": "Yubiwofuru",
+        "type_romaji": "No-maru"
       }
     ],
     "evolution_chain": [
@@ -11682,6 +13515,10 @@
       "Bug": 2.0,
       "Ghost": 2.0,
       "Dark": 2.0
-    }
+    },
+    "name_romaji": "Myuu",
+    "types_romaji": [
+      "Esupa-"
+    ]
   }
 ]

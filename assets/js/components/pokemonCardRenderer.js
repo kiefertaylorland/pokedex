@@ -75,19 +75,29 @@ export class PokemonCardRenderer {
         // Create image element
         const img = this._createPokemonImage(pokemon, name, uiText);
         
-        // Create name element
+        // Create name element with optional romaji
+        const nameContainer = createSafeElement('div');
+        nameContainer.classList.add('pokemon-name-container');
         const nameElement = createSafeElement('h3', name);
+        nameContainer.appendChild(nameElement);
+        
+        // Add romaji if in Japanese mode
+        if (currentLang === 'jp' && pokemon.name_romaji) {
+            const romajiElement = createSafeElement('span', pokemon.name_romaji);
+            romajiElement.classList.add('pokemon-name-romaji');
+            nameContainer.appendChild(romajiElement);
+        }
         
         // Create ID element
         const idElement = createSafeElement('p', `#${String(pokemon.id).padStart(3, '0')}`);
         idElement.classList.add('pokemon-id');
         
-        // Create types container
-        const typesContainer = this._createTypesContainer(types);
+        // Create types container with romaji
+        const typesContainer = this._createTypesContainer(types, pokemon, currentLang);
 
         // Assemble card
         card.appendChild(img);
-        card.appendChild(nameElement);
+        card.appendChild(nameContainer);
         card.appendChild(idElement);
         card.appendChild(typesContainer);
 
@@ -155,18 +165,32 @@ export class PokemonCardRenderer {
      * Creates types container with type badges
      * @private
      * @param {Array} types - Pokemon types array
+     * @param {Object} pokemon - Full pokemon object (optional, for romaji)
+     * @param {string} currentLang - Current language setting
      * @returns {HTMLElement} Types container
      */
-    _createTypesContainer(types) {
+    _createTypesContainer(types, pokemon = null, currentLang = 'en') {
         const typesContainer = createSafeElement('div');
         typesContainer.classList.add('pokemon-types');
 
-        types.forEach(type => {
+        types.forEach((type, index) => {
+            const typeWrapper = createSafeElement('div');
+            typeWrapper.classList.add('type-wrapper');
+            
             const typeSpan = createSafeElement('span', type);
             // Use consistent CSS class name regardless of display language
             const cssClassName = getTypeClassName(type);
             typeSpan.classList.add(`type-${cssClassName}`);
-            typesContainer.appendChild(typeSpan);
+            typeWrapper.appendChild(typeSpan);
+            
+            // Add romaji if in Japanese mode and romaji is available
+            if (currentLang === 'jp' && pokemon && pokemon.types_romaji && pokemon.types_romaji[index]) {
+                const romajiSpan = createSafeElement('span', pokemon.types_romaji[index]);
+                romajiSpan.classList.add('type-romaji');
+                typeWrapper.appendChild(romajiSpan);
+            }
+            
+            typesContainer.appendChild(typeWrapper);
         });
 
         return typesContainer;
