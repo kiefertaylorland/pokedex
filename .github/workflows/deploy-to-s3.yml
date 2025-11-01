@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy static files to S3
         run: |
-          aws s3 sync . s3://pokedex-tech-app-bucket/ \
+          aws s3 sync . s3://${{ vars.S3_BUCKET_NAME }}/ \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "*.py" \
