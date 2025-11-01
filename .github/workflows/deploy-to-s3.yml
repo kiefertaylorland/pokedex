@@ -8,7 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,6 +18,24 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+
+      - name: Dry-run S3 sync (preview changes)
+        run: |
+          echo "::notice::Previewing changes with dry-run..."
+          aws s3 sync . s3://${{ vars.S3_BUCKET_NAME }}/ \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.py" \
+            --exclude "*.pkg" \
+            --exclude "requirements.txt" \
+            --exclude "tests/*" \
+            --exclude "Makefile" \
+            --exclude ".gitignore" \
+            --exclude ".gitconfig" \
+            --exclude ".pre-commit-config.yaml" \
+            --exclude "*.md" \
+            --delete \
+            --dryrun
 
       - name: Deploy static files to S3
         run: |
