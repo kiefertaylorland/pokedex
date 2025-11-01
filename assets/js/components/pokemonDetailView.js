@@ -425,24 +425,12 @@ export class PokemonDetailView {
         const section = createSafeElement('div');
         section.classList.add('detail-section', 'evolution-chain-container');
 
-        // Create toggle button
-        const toggleButton = createSafeElement('button');
-        toggleButton.classList.add('evolution-chain-toggle');
-        toggleButton.setAttribute('aria-expanded', 'false');
-        toggleButton.setAttribute('aria-label', 'Toggle evolution chain');
-        toggleButton.setAttribute('data-testid', 'evolution-chain-toggle');
-        toggleButton.setAttribute('type', 'button');
-        
-        const titleSpan = createSafeElement('span', uiText.evolutionChain || 'Evolution Chain');
-        const arrowSpan = createSafeElement('span', '▶');
-        arrowSpan.classList.add('arrow');
-        
-        toggleButton.appendChild(titleSpan);
-        toggleButton.appendChild(arrowSpan);
+        // Create heading
+        const heading = createSafeElement('h4', uiText.evolutionChain || 'Evolution Chain');
 
-        // Create content container
+        // Create content container (always visible)
         const content = createSafeElement('div');
-        content.classList.add('evolution-chain-content');
+        content.classList.add('evolution-chain-content', 'expanded');
         content.setAttribute('role', 'region');
         content.setAttribute('aria-label', 'Evolution chain details');
 
@@ -464,15 +452,7 @@ export class PokemonDetailView {
 
         content.appendChild(chainList);
 
-        // Add toggle event
-        toggleButton.addEventListener('click', () => {
-            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-            toggleButton.setAttribute('aria-expanded', !isExpanded);
-            toggleButton.classList.toggle('expanded');
-            content.classList.toggle('expanded');
-        });
-
-        section.appendChild(toggleButton);
+        section.appendChild(heading);
         section.appendChild(content);
         return section;
     }

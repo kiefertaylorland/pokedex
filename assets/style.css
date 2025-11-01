@@ -826,53 +826,11 @@ input:focus-visible,
     margin-top: 1rem;
 }
 
-.evolution-chain-toggle {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    background-color: var(--card-background);
-    color: var(--text-color);
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 4px 4px 8px var(--shadow),
-                -4px -4px 8px var(--highlight);
-    transition: all 0.3s ease;
-}
-
-.evolution-chain-toggle:hover {
-    box-shadow: 6px 6px 12px var(--shadow),
-                -6px -6px 12px var(--highlight);
-}
-
-.evolution-chain-toggle:active {
-    box-shadow: inset 3px 3px 6px var(--shadow-inset),
-                inset -3px -3px 6px var(--highlight);
-}
-
-.evolution-chain-toggle .arrow {
-    transition: transform 0.3s ease;
-    font-size: 1.2em;
-}
-
-.evolution-chain-toggle.expanded .arrow {
-    transform: rotate(90deg);
-}
-
 .evolution-chain-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, opacity 0.3s ease;
-    opacity: 0;
-}
-
-.evolution-chain-content.expanded {
-    max-height: 500px;
+    max-height: none;
+    overflow: visible;
     opacity: 1;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .evolution-chain-list {
