@@ -1,178 +1,63 @@
 # Pokédex
 
-![Pokemon Pokedex logo](https://henryjimenezp.github.io/P4-Pokedex/img/pokedex-logo.png)
+An interactive web application showcasing all 151 Generation I Pokémon with detailed information, bilingual support, and modern accessibility features.
 
-**An interactive Pokédex application showcasing Generation I Pokémon with modern web features.**
+**Live Demo:** [www.pokedex.tech](https://www.pokedex.tech)
 
 ## Screenshots
 
-![](https://github.com/user-attachments/assets/2cff54a0-4871-460f-868e-16f9c5ccd054)
-![](https://github.com/user-attachments/assets/fe656e8c-2e9f-4e9f-b2ca-12dba98f2ddf)
-![](https://github.com/user-attachments/assets/c6d5ca85-ff37-4371-ac62-479c10ca0608)
-![](https://github.com/user-attachments/assets/5e1844f7-fc2f-4dfe-9609-99baa3ad28f6)
+### Main Interface
+![Pokedex Main UI](assets/screenshots/pokedex-main-ui.png)
+
+### Pokemon Details
+![Pokemon Detail View](assets/screenshots/pokedex-detail-view.png)
 
 ## Features
 
-- **Complete Gen I Data**: All 151 original Pokémon with detailed information
-- **Bilingual Support**: English and Japanese names, types, and descriptions
-- **Interactive UI**: Responsive design with light/dark themes
-- **Smooth Animations**: Fluid transitions and loading states
-- **Accessibility**: Full keyboard navigation and screen reader support
-- **Search**: Find Pokémon by name, ID, or type
-- **Audio**: Authentic Pokémon cries
-
-## Technologies
-
-- **Frontend**: HTML5, CSS3, Modern JavaScript (ES6 modules)
-- **Data Source**: [PokéAPI](https://pokeapi.co/)
-- **Backend**: Python for data processing
-- **Testing**: Python unittest and pytest
+- 🎮 All 151 original Pokémon with comprehensive data
+- 🌍 Bilingual support (English/Japanese)
+- 🎨 Light and dark theme toggle
+- 🔍 Search by name, ID, or type
+- ♿ Full keyboard navigation and screen reader support
+- 📱 Responsive design for all devices
 
 ## Quick Start
 
-1. **Clone the repository:**
+```bash
+# Clone the repository
+git clone https://github.com/kiefertaylorland/pokedex.git
+cd pokedex
 
-   ```bash
-   git clone https://github.com/kiefertaylorland/pokedex.git
-   cd pokedex
-   ```
+# Start local server
+python3 -m http.server 8000
 
-2. **Install Python dependencies:**
+# Open in browser
+# http://localhost:8000
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Development
 
-3. **Start the local server:**
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-   ```bash
-   python3 -m http.server 8000
-   ```
-
-4. **Open in browser:**
-
-   ```text
-   http://localhost:8000
-   ```
-
-## Usage
-
-- **Search**: Type Pokémon names, IDs, or types in the search bar
-- **Navigate**: Click cards to view detailed information
-- **Controls**: Use theme toggle (🌙) and language toggle (🌐) in the header
-- **Keyboard**: Tab to navigate, Enter/Space to select, Escape to close modals
-
-## Testing
-
-Run all tests with the automated test runner:
-
+**Run tests:**
 ```bash
 python run_tests.py
 ```
 
-For specific test categories:
-
-```bash
-pytest tests/test_ui.py          # UI functionality
-pytest tests/test_pokeapi.py     # API integration
-python validate_frontend.py     # Code quality & security
-```
-
-## Architecture
-
-The application uses a modern modular JavaScript architecture:
-
-- **Frontend**: ES6 modules with separation of concerns
-- **Security**: XSS protection and input validation
-- **Accessibility**: WCAG 2.1 AA compliance with full keyboard support
-- **Performance**: Debounced search, lazy loading, and DOM optimization
-
-### Key Files
-
-- `index.html` - Main application entry point
-- `assets/js/pokedexApp.js` - Main application controller
-- `assets/js/managers/dataManager.js` - Data handling and search
-- `assets/js/components/` - UI components (cards, modals, etc.)
-- `pokedex_data.json` - Pre-fetched Pokémon data
-- `tests/` - Comprehensive test suite
-
-## Development
-
-### Data Generation
-
-To regenerate the Pokémon data from PokéAPI:
-
+**Regenerate data from PokéAPI:**
 ```bash
 python pokeapi_fetch.py
 ```
 
-### Code Quality
+## Technology Stack
 
-Validate frontend code quality and security:
-
-```bash
-python validate_frontend.py
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests with `python run_tests.py`
-5. Submit a pull request
-
-## Deployment
-
-This Pokedex is deployed at **[www.pokedex.tech](https://www.pokedex.tech)** using GitHub Pages.
-
-### Deploy Your Own
-
-1. **Fork or clone this repository**
-
-2. **Enable GitHub Pages:**
-   - Go to repository Settings → Pages
-   - Source: Deploy from a branch → `main` branch
-   - The GitHub Actions workflow will automatically deploy on push
-
-3. **Configure Custom Domain (Optional):**
-   - Update the `CNAME` file with your domain
-   - **For www subdomain (recommended):**
-     ```
-     Type: CNAME
-     Name: www
-     Value: kiefertaylorland.github.io
-     ```
-   - **To redirect apex domain (optional):**
-     ```
-     Type: A
-     Name: @
-     Value: 185.199.108.153
-     
-     Type: A
-     Name: @
-     Value: 185.199.109.153
-     
-     Type: A
-     Name: @
-     Value: 185.199.110.153
-     
-     Type: A
-     Name: @
-     Value: 185.199.111.153
-     ```
-   - Wait for DNS propagation (can take up to 24-48 hours)
-   - In GitHub repository Settings → Pages, enter your custom domain
-   - Enable "Enforce HTTPS"
-
-4. **Push to GitHub:**
-   ```bash
-   git add .
-   git commit -m "Deploy to GitHub Pages"
-   git push origin main
-   ```
-
-The site will automatically deploy via GitHub Actions whenever you push to the `main` branch.
+- HTML5, CSS3, JavaScript (ES6 modules)
+- Data from [PokéAPI](https://pokeapi.co/)
+- Python for data processing and testing
+- GitHub Pages for deployment
 
 ## License
 
