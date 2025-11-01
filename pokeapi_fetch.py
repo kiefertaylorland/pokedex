@@ -3,7 +3,7 @@ import json
 import time
 
 BASE_URL = "https://pokeapi.co/api/v2/"
-POKEMON_COUNT = 151 # First generation
+POKEMON_COUNT = 1025 # All generations (1-9)
 
 # Type effectiveness chart - damage multipliers
 TYPE_EFFECTIVENESS = {
