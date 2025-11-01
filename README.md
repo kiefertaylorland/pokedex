@@ -122,6 +122,58 @@ python validate_frontend.py
 4. Run tests with `python run_tests.py`
 5. Submit a pull request
 
+## Deployment
+
+This Pokedex is deployed at **[pokedex.tech](https://pokedex.tech)** using GitHub Pages.
+
+### Deploy Your Own
+
+1. **Fork or clone this repository**
+
+2. **Enable GitHub Pages:**
+   - Go to repository Settings → Pages
+   - Source: Deploy from a branch → `main` branch
+   - The GitHub Actions workflow will automatically deploy on push
+
+3. **Configure Custom Domain (Optional):**
+   - Update the `CNAME` file with your domain
+   - In your DNS provider, add these records:
+     ```
+     Type: A
+     Name: @
+     Value: 185.199.108.153
+     
+     Type: A
+     Name: @
+     Value: 185.199.109.153
+     
+     Type: A
+     Name: @
+     Value: 185.199.110.153
+     
+     Type: A
+     Name: @
+     Value: 185.199.111.153
+     ```
+   - Or for a subdomain (e.g., `www`):
+     ```
+     Type: CNAME
+     Name: www
+     Value: yourusername.github.io
+     ```
+   - Wait for DNS propagation (can take up to 24-48 hours)
+   - In GitHub repository Settings → Pages, enter your custom domain
+   - Enable "Enforce HTTPS"
+
+4. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push origin main
+   ```
+
+The site will automatically deploy via GitHub Actions whenever you push to the `main` branch.
+
 ## License
 
 This project is not currently licensed. Feel free to use for personal projects.
