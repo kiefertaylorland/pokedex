@@ -183,7 +183,9 @@ export function compareTwoPokemons(pokemon1Stats, pokemon2Stats) {
             pokemon1: value1,
             pokemon2: value2,
             difference,
-            percentDifference: value2 !== 0 ? Math.round((difference / value2) * 100) : 0,
+            percentDifference: (value1 !== 0 || value2 !== 0)
+                ? Math.round((Math.abs(difference) / ((value1 + value2) / 2)) * 100)
+                : 0,
             winner: difference > 0 ? 1 : difference < 0 ? 2 : 0
         };
     });
