@@ -11,6 +11,8 @@ import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
 import { SearchController } from './controllers/searchController.js';
 import { SortController } from './controllers/sortController.js';
+import { URLRouter } from './utils/urlRouter.js';
+import { StructuredDataGenerator } from './utils/structuredData.js';
 
 /**
  * Main application class that coordinates all components
