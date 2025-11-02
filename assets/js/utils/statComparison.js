@@ -143,10 +143,6 @@ export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
         return { total: 0, average: 0, rating: 'unknown' };
     }
     
-    // Use default benchmarks if null or undefined is passed
-    if (!benchmarks) {
-        benchmarks = STAT_BENCHMARKS;
-    }
     
     const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
     const averageTotal = Object.values(benchmarks.averages).reduce((sum, val) => sum + val, 0);
