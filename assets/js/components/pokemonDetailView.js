@@ -6,18 +6,23 @@
 import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS } from '../constants.js';
 import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
+import { TypeMatchupChart } from './typeMatchupChart.js';
+import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
+import { EvolutionTreeView } from './evolutionTreeView.js';
 
 /**
  * Manages the Pokemon detail modal view
  */
 export class PokemonDetailView {
-    constructor(dataManager, uiController) {
+    constructor(dataManager, uiController, teamBuilder = null, pokemonComparison = null) {
         this.dataManager = dataManager;
         this.uiController = uiController;
         this.detailView = document.getElementById(ELEMENT_IDS.DETAIL_VIEW);
         this.detailContent = document.getElementById(ELEMENT_IDS.DETAIL_CONTENT);
         this.currentPokemon = null;
         this.isVisible = false;
+        this.teamBuilder = teamBuilder;
+        this.pokemonComparison = pokemonComparison;
         
         this._bindEvents();
     }
@@ -67,29 +72,41 @@ export class PokemonDetailView {
         const header = this._createCompactHeader(pokemon, name, types, uiText);
         modalContent.appendChild(header);
         
+        // Action buttons (Add to Team, Compare)
+        modalContent.appendChild(this._createActionButtons(pokemon));
+        
         // Bio section
         modalContent.appendChild(this._createCompactBioSection(bio, uiText));
         
-        // Main grid with stats on left, weaknesses on right
+        // Main grid with enhanced stats and type matchups
         const mainGrid = createSafeElement('div');
         mainGrid.classList.add('detail-main-grid');
         
-        // Left column - Stats
-        mainGrid.appendChild(this._createStatsSection(pokemon.stats, uiText));
+        // Left column - Enhanced Stats with comparison
+        const enhancedStats = EnhancedStatsDisplay.createStatsSection(pokemon.stats, uiText);
+        mainGrid.appendChild(enhancedStats);
         
-        // Right column - Weaknesses and Evolution
+        // Right column - Type Matchups
         const rightColumn = createSafeElement('div');
         
-        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
-            rightColumn.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
-        }
-        
-        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
-            rightColumn.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        // Type Matchup Chart (replaces simple weaknesses)
+        if (types && types.length > 0) {
+            const matchupChart = TypeMatchupChart.createChart(types, uiText);
+            rightColumn.appendChild(matchupChart);
         }
         
         mainGrid.appendChild(rightColumn);
         modalContent.appendChild(mainGrid);
+        
+        // Evolution Tree Visualization
+        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
+            const evolutionTree = EvolutionTreeView.createEvolutionTree(
+                pokemon.evolution_chain,
+                pokemon.id,
+                (pokemonId) => this._handleEvolutionClick(pokemonId)
+            );
+            modalContent.appendChild(evolutionTree);
+        }
         
         // Moves section at bottom
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
@@ -203,6 +220,66 @@ export class PokemonDetailView {
         closeButton.setAttribute('title', 'Close (Esc)');
         closeButton.setAttribute('data-testid', 'close-detail-button');
         return closeButton;
+    }
+
+    /**
+     * Creates action buttons (Add to Team, Compare)
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @returns {HTMLElement} Action buttons container
+     */
+    _createActionButtons(pokemon) {
+        const container = createSafeElement('div');
+        container.classList.add('detail-action-buttons');
+        
+        // Add to Team button
+        if (this.teamBuilder) {
+            const addToTeamBtn = createSafeElement('button', 
+                this.teamBuilder.isInTeam(pokemon.id) ? '✓ In Team' : '+ Add to Team'
+            );
+            addToTeamBtn.classList.add('action-button', 'add-to-team-button');
+            if (this.teamBuilder.isInTeam(pokemon.id)) {
+                addToTeamBtn.classList.add('in-team');
+            }
+            addToTeamBtn.addEventListener('click', () => {
+                if (this.teamBuilder.isInTeam(pokemon.id)) {
+                    this.teamBuilder.removeFromTeam(pokemon.id);
+                    addToTeamBtn.textContent = '+ Add to Team';
+                    addToTeamBtn.classList.remove('in-team');
+                } else {
+                    if (this.teamBuilder.addToTeam(pokemon.id)) {
+                        addToTeamBtn.textContent = '✓ In Team';
+                        addToTeamBtn.classList.add('in-team');
+                    }
+                }
+            });
+            container.appendChild(addToTeamBtn);
+        }
+        
+        // Compare button
+        if (this.pokemonComparison) {
+            const compareBtn = createSafeElement('button', '⚖ Compare');
+            compareBtn.classList.add('action-button', 'compare-button');
+            compareBtn.addEventListener('click', () => {
+                this.pokemonComparison.startComparison(pokemon.id);
+                this.hideModal();
+            });
+            container.appendChild(compareBtn);
+        }
+        
+        return container;
+    }
+
+    /**
+     * Handles evolution click
+     * @private
+     * @param {number} pokemonId - Pokemon ID to show
+     */
+    _handleEvolutionClick(pokemonId) {
+        const pokemon = this.dataManager.getPokemonById(pokemonId);
+        if (pokemon) {
+            this.showPokemonDetail(pokemon);
+        }
     }
 
     /**
