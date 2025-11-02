@@ -2,6 +2,7 @@
     /* Neumorphism Light Theme */
     --background-color-light: #e0e5ec;
     --text-color-light: #4a5568;
+    --text-secondary-light: #718096;
     --card-background-light: #e0e5ec;
     --header-background-light: #e0e5ec;
     --accent-color-light: #ff6b6b;
@@ -12,6 +13,7 @@
     /* Neumorphism Dark Theme */
     --background-color-dark: #2d3748;
     --text-color-dark: #e2e8f0;
+    --text-secondary-dark: #a0aec0;
     --card-background-dark: #2d3748;
     --header-background-dark: #2d3748;
     --accent-color-dark: #fc8181;
@@ -22,6 +24,7 @@
     /* Active Theme Variables */
     --background-color: var(--background-color-light);
     --text-color: var(--text-color-light);
+    --text-secondary: var(--text-secondary-light);
     --card-background: var(--card-background-light);
     --header-background: var(--header-background-light);
     --accent-color: var(--accent-color-light);
@@ -41,6 +44,7 @@
 body.dark-mode {
     --background-color: var(--background-color-dark);
     --text-color: var(--text-color-dark);
+    --text-secondary: var(--text-secondary-dark);
     --card-background: var(--card-background-dark);
     --header-background: var(--header-background-dark);
     --accent-color: var(--accent-color-dark);
@@ -104,6 +108,33 @@ header h1 {
     outline: none;
     box-shadow: inset 6px 6px 12px var(--shadow-inset),
                 inset -6px -6px 12px var(--highlight);
+}
+
+.sort-container select {
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.sort-container select:hover {
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    transform: translateY(-2px);
+}
+
+.sort-container select:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
 }
 
 .toggles button {
@@ -173,6 +204,16 @@ main {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+/* Pokemon image container for centering */
+.pokemon-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto; /* Center the container itself */
 }
 
 .pokemon-card img {
@@ -1056,5 +1097,252 @@ input:focus-visible,
     .move-name-romaji,
     .move-type-romaji {
         font-size: 0.7rem;
+    }
+}
+
+/* Physical Info Section */
+.physical-info-section {
+    margin-bottom: 1rem;
+}
+
+.physical-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+}
+
+.info-label {
+    font-weight: 600;
+    font-size: 0.85em;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Abilities Section */
+.abilities-section {
+    margin-bottom: 1rem;
+}
+
+.abilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.ability-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.ability-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+.ability-name {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.hidden-ability {
+    background: linear-gradient(135deg, 
+        rgba(255, 107, 107, 0.1) 0%, 
+        rgba(252, 129, 129, 0.1) 100%);
+    border: 1px solid var(--accent-color);
+}
+
+.hidden-badge {
+    font-size: 0.7em;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* Sprites Section */
+.sprites-section {
+    margin-bottom: 1rem;
+}
+
+.sprites-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.sprite-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.sprite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.sprite-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+.artwork-item {
+    min-width: 150px;
+}
+
+.sprite-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.sprite-image {
+    width: 96px;
+    height: 96px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.artwork-image {
+    width: 150px;
+    height: 150px;
+    image-rendering: auto;
+}
+
+.shiny-sprite {
+    position: relative;
+}
+
+.shiny-sprite::before {
+    content: '✨';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2em;
+}
+
+/* Type Effectiveness Sections */
+.type-effectiveness-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resistance-item,
+.immunity-item {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8em;
+    color: white;
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.resistance-item {
+    opacity: 0.85;
+}
+
+.immunity-item {
+    opacity: 0.9;
+    border: 2px solid white;
+}
+
+.resistance-item:hover,
+.immunity-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+/* Move Header and Level Badge */
+.move-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.move-name-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.move-level-badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .physical-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sprites-grid {
+        justify-content: center;
+    }
+    
+    .sprite-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .artwork-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .ability-item {
+        font-size: 0.85em;
     }
 }
