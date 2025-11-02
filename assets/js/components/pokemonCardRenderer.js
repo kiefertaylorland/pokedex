@@ -117,11 +117,7 @@ export class PokemonCardRenderer {
      */
     _createPokemonImage(pokemon, name, uiText) {
         const container = createSafeElement('div');
-        container.style.display = 'flex';
-        container.style.justifyContent = 'center';
-        container.style.alignItems = 'center';
-        container.style.width = '96px';
-        container.style.height = '96px';
+        container.classList.add('pokemon-image-container');
         
         const img = createSafeElement('img');
         img.src = pokemon.sprite;
@@ -139,8 +135,6 @@ export class PokemonCardRenderer {
             // Create error fallback
             const errorContainer = createSafeElement('div');
             errorContainer.classList.add('image-error-container');
-            errorContainer.style.width = '96px';
-            errorContainer.style.height = '96px';
             
             const icon = createSafeElement('div', '⚠️');
             icon.classList.add('image-error-icon');
