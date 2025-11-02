@@ -249,11 +249,15 @@ main {
     margin: 0.2em;
     border-radius: 4px;
     font-size: 0.8em;
-    color: white;
+    color: black;
     text-transform: uppercase;
     transform: scale(0.9);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+body.dark-mode .pokemon-types span {
+    color: white;
 }
 
 .pokemon-card .pokemon-types span {
