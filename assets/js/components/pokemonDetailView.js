@@ -14,15 +14,15 @@ import { EvolutionTreeView } from './evolutionTreeView.js';
  * Manages the Pokemon detail modal view
  */
 export class PokemonDetailView {
-    constructor(dataManager, uiController, teamBuilder = null, pokemonComparison = null) {
+    constructor(dataManager, uiController, options = {}) {
         this.dataManager = dataManager;
         this.uiController = uiController;
         this.detailView = document.getElementById(ELEMENT_IDS.DETAIL_VIEW);
         this.detailContent = document.getElementById(ELEMENT_IDS.DETAIL_CONTENT);
         this.currentPokemon = null;
         this.isVisible = false;
-        this.teamBuilder = teamBuilder;
-        this.pokemonComparison = pokemonComparison;
+        this.teamBuilder = options.teamBuilder || null;
+        this.pokemonComparison = options.pokemonComparison || null;
         
         this._bindEvents();
     }
