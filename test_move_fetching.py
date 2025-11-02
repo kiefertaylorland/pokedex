@@ -5,6 +5,8 @@ This demonstrates that the updated pokeapi_fetch.py will fetch moves
 from all game versions, not just red-blue.
 """
 
+from pokeapi_fetch import VERSION_PRIORITY
+
 def test_version_priority_logic():
     """
     Test that the version priority logic correctly selects moves from
@@ -64,7 +66,7 @@ def test_version_priority_logic():
         }
     ]
     
-    # Simulate Gen 9 Pokemon that only exists in Scarlet/Violet
+    # Simulate Gen 9 Pokémon that only exists in Scarlet/Violet
     mock_gen9_move_entries = [
         {
             "move": {"name": "tackle", "url": "https://pokeapi.co/api/v2/move/33/"},
@@ -88,22 +90,13 @@ def test_version_priority_logic():
         }
     ]
     
-    # Version priority (same as in pokeapi_fetch.py)
-    version_priority = [
-        "scarlet-violet", "sword-shield", "ultra-sun-ultra-moon", "sun-moon",
-        "omega-ruby-alpha-sapphire", "x-y", "black-2-white-2", "black-white",
-        "heartgold-soulsilver", "platinum", "diamond-pearl",
-        "firered-leafgreen", "emerald", "ruby-sapphire",
-        "crystal", "gold-silver", "yellow", "red-blue"
-    ]
-    
     def process_moves(move_entries):
         """Process moves using the same logic as pokeapi_fetch.py"""
         level_up_moves = []
         
         for move_entry in move_entries:
             best_version = None
-            best_priority = len(version_priority)
+            best_priority = len(VERSION_PRIORITY)
             best_level = 0
             
             for version_group_detail in move_entry["version_group_details"]:
@@ -113,9 +106,9 @@ def test_version_priority_logic():
                     
                     # Find priority for this version
                     try:
-                        priority = version_priority.index(version_name)
+                        priority = VERSION_PRIORITY.index(version_name)
                     except ValueError:
-                        priority = len(version_priority)
+                        priority = len(VERSION_PRIORITY)
                     
                     # Prefer versions with higher priority (lower index) and level > 0
                     if level > 0 and priority < best_priority:
@@ -135,27 +128,27 @@ def test_version_priority_logic():
         level_up_moves.sort(key=lambda m: m["level"])
         return level_up_moves[:4]
     
-    # Test Case 1: Gen 1 Pokemon (should find moves from red-blue or newer)
-    print("Test Case 1: Gen 1 Pokemon (e.g., Bulbasaur)")
+    # Test Case 1: Gen 1 Pokémon (should find moves from red-blue or newer)
+    print("Test Case 1: Gen 1 Pokémon (e.g., Bulbasaur)")
     print("=" * 60)
     gen1_moves = process_moves(mock_move_entries)
     print(f"Found {len(gen1_moves)} moves:")
     for move in gen1_moves:
         print(f"  - {move['name']:15s} at level {move['level']:2d} (from {move['version']})")
-    assert len(gen1_moves) > 0, "Should find moves for Gen 1 Pokemon"
-    print("✓ PASS: Gen 1 Pokemon can have moves\n")
+    assert len(gen1_moves) > 0, "Should find moves for Gen 1 Pokémon"
+    print("✓ PASS: Gen 1 Pokémon can have moves\n")
     
-    # Test Case 2: Gen 9 Pokemon (should find moves from scarlet-violet)
-    print("Test Case 2: Gen 9 Pokemon (e.g., Sprigatito)")
+    # Test Case 2: Gen 9 Pokémon (should find moves from scarlet-violet)
+    print("Test Case 2: Gen 9 Pokémon (e.g., Sprigatito)")
     print("=" * 60)
     gen9_moves = process_moves(mock_gen9_move_entries)
     print(f"Found {len(gen9_moves)} moves:")
     for move in gen9_moves:
         print(f"  - {move['name']:15s} at level {move['level']:2d} (from {move['version']})")
-    assert len(gen9_moves) > 0, "Should find moves for Gen 9 Pokemon"
+    assert len(gen9_moves) > 0, "Should find moves for Gen 9 Pokémon"
     assert all(m['version'] == 'scarlet-violet' for m in gen9_moves), \
-        "Gen 9 Pokemon should use Scarlet/Violet moves"
-    print("✓ PASS: Gen 9 Pokemon can have moves\n")
+        "Gen 9 Pokémon should use Scarlet/Violet moves"
+    print("✓ PASS: Gen 9 Pokémon can have moves\n")
     
     # Test Case 3: Priority system (prefers newer versions)
     print("Test Case 3: Version priority (prefers Scarlet/Violet over Red/Blue)")
@@ -173,11 +166,11 @@ def test_version_priority_logic():
     print("=" * 60)
     print("\nConclusion:")
     print("The updated pokeapi_fetch.py will correctly fetch moves for:")
-    print("  1. Gen 1 Pokemon (from appropriate game versions)")
-    print("  2. Gen 9 Pokemon (from Scarlet/Violet)")
+    print("  1. Gen 1 Pokémon (from appropriate game versions)")
+    print("  2. Gen 9 Pokémon (from Scarlet/Violet)")
     print("  3. All generations in between")
     print("  4. Prioritizes moves from more recent game versions")
-    print("\nTo regenerate the complete Pokedex data with moves:")
+    print("\nTo regenerate the complete Pokédex data with moves:")
     print("  python pokeapi_fetch.py")
     print("\nNote: This requires internet access to fetch data from PokeAPI.")
 

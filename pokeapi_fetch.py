@@ -5,6 +5,16 @@ import time
 BASE_URL = "https://pokeapi.co/api/v2/"
 POKEMON_COUNT = 1025 # All generations (1-9)
 
+# Version groups in priority order (latest to oldest within each generation)
+# Used for selecting which game version to fetch moves from
+VERSION_PRIORITY = [
+    "scarlet-violet", "sword-shield", "ultra-sun-ultra-moon", "sun-moon",
+    "omega-ruby-alpha-sapphire", "x-y", "black-2-white-2", "black-white",
+    "heartgold-soulsilver", "platinum", "diamond-pearl",
+    "firered-leafgreen", "emerald", "ruby-sapphire",
+    "crystal", "gold-silver", "yellow", "red-blue"
+]
+
 # Type effectiveness chart - damage multipliers
 TYPE_EFFECTIVENESS = {
     "normal": {"rock": 0.5, "ghost": 0, "steel": 0.5},
@@ -165,18 +175,9 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         level_up_moves = []
         
         # Try to get level-up moves from any version, prioritizing more recent games
-        # Version groups in priority order (latest to oldest within each generation)
-        version_priority = [
-            "scarlet-violet", "sword-shield", "ultra-sun-ultra-moon", "sun-moon",
-            "omega-ruby-alpha-sapphire", "x-y", "black-2-white-2", "black-white",
-            "heartgold-soulsilver", "platinum", "diamond-pearl",
-            "firered-leafgreen", "emerald", "ruby-sapphire",
-            "crystal", "gold-silver", "yellow", "red-blue"
-        ]
-        
         for move_entry in pokemon_main_data["moves"]:
             best_version = None
-            best_priority = len(version_priority)
+            best_priority = len(VERSION_PRIORITY)
             best_level = 0
             
             for version_group_detail in move_entry["version_group_details"]:
@@ -186,9 +187,9 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
                     
                     # Find priority for this version
                     try:
-                        priority = version_priority.index(version_name)
+                        priority = VERSION_PRIORITY.index(version_name)
                     except ValueError:
-                        priority = len(version_priority)  # Unknown version gets lowest priority
+                        priority = len(VERSION_PRIORITY)  # Unknown version gets lowest priority
                     
                     # Prefer versions with higher priority (lower index) and level > 0
                     if level > 0 and priority < best_priority:
