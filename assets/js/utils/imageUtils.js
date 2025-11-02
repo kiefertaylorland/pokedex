@@ -75,7 +75,7 @@ export function createImageWithFallback(primaryUrl, alt, options = {}) {
         }
     };
     
-    img.addEventListener('error', tryNextUrl, { once: false });
+    img.addEventListener('error', tryNextUrl, { once: true });
     
     if (options.onLoad) {
         img.addEventListener('load', () => options.onLoad(img), { once: true });
