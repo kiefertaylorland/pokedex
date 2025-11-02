@@ -3,7 +3,6 @@
  * @module FilterController
  */
 
-import { ELEMENT_IDS } from '../constants.js';
 
 /**
  * Manages advanced filtering functionality
