@@ -146,7 +146,6 @@ export class PokedexApp {
     _handleFilterResults(results, filters) {
         // If there's an active search, apply it to filter results
         if (this.currentSearchTerm) {
-            const currentLanguage = this.uiController.getCurrentLanguage();
             const searchFiltered = this.searchController.search(
                 this.currentSearchTerm,
                 results,
