@@ -175,6 +175,16 @@ main {
     100% { transform: scale(1); }
 }
 
+/* Pokemon image container for centering */
+.pokemon-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto; /* Center the container itself */
+}
+
 .pokemon-card img {
     width: 96px; /* Default sprite size from PokeAPI */
     height: 96px;
