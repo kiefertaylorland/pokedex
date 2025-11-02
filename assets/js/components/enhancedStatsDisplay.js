@@ -4,7 +4,7 @@
  */
 
 import { createSafeElement } from '../utils/security.js';
-import { compareStatToBenchmark, getOverallStatRating } from '../utils/statComparison.js';
+import { compareStatToBenchmark, getOverallStatRating, STAT_BENCHMARKS } from '../utils/statComparison.js';
 
 /**
  * Creates an enhanced stats display with comparisons
@@ -17,7 +17,7 @@ export class EnhancedStatsDisplay {
      * @param {Object} benchmarks - Optional stat benchmarks
      * @returns {HTMLElement} Enhanced stats section
      */
-    static createStatsSection(stats, uiText, benchmarks = null) {
+    static createStatsSection(stats, uiText, benchmarks = STAT_BENCHMARKS) {
         const section = createSafeElement('div');
         section.classList.add('detail-section', 'enhanced-stats-section');
         

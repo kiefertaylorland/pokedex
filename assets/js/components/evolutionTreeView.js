@@ -4,6 +4,7 @@
  */
 
 import { createSafeElement } from '../utils/security.js';
+import { createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
  * Creates a visual evolution tree
@@ -84,18 +85,19 @@ export class EvolutionTreeView {
         const imageContainer = createSafeElement('div');
         imageContainer.classList.add('evolution-image-container');
         
-        const img = createSafeElement('img');
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolution.id}.png`;
-        img.alt = evolution.name;
-        img.classList.add('evolution-image');
-        
-        // Error handling for missing images
-        img.addEventListener('error', () => {
-            img.style.display = 'none';
-            const fallback = createSafeElement('div', '?');
-            fallback.classList.add('evolution-image-fallback');
-            imageContainer.appendChild(fallback);
-        });
+        const img = createImageWithFallback(
+            `https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/${evolution.id}.png`,
+            evolution.name,
+            {
+                className: 'evolution-image',
+                onError: (failedImg) => {
+                    failedImg.style.display = 'none';
+                    const fallback = createSafeElement('div', '?');
+                    fallback.classList.add('evolution-image-fallback');
+                    imageContainer.appendChild(fallback);
+                }
+            }
+        );
         
         imageContainer.appendChild(img);
         stage.appendChild(imageContainer);

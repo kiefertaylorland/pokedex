@@ -229,13 +229,21 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         height_m = height_dm / 10  # convert to meters
         weight_kg = weight_hg / 10  # convert to kilograms
         
-        # Get additional sprites
+        # Get additional sprites and convert to jsDelivr CDN
+        def convert_sprite_url(url):
+            if url and "raw.githubusercontent.com" in url:
+                return url.replace(
+                    "https://raw.githubusercontent.com/",
+                    "https://cdn.jsdelivr.net/gh/"
+                ).replace("/master/", "@master/")
+            return url
+        
         sprites = {
-            "front_default": pokemon_main_data["sprites"]["front_default"],
-            "front_shiny": pokemon_main_data["sprites"]["front_shiny"],
-            "back_default": pokemon_main_data["sprites"]["back_default"],
-            "back_shiny": pokemon_main_data["sprites"]["back_shiny"],
-            "official_artwork": pokemon_main_data["sprites"]["other"]["official-artwork"]["front_default"] if pokemon_main_data["sprites"].get("other", {}).get("official-artwork") else None
+            "front_default": convert_sprite_url(pokemon_main_data["sprites"]["front_default"]),
+            "front_shiny": convert_sprite_url(pokemon_main_data["sprites"]["front_shiny"]),
+            "back_default": convert_sprite_url(pokemon_main_data["sprites"]["back_default"]),
+            "back_shiny": convert_sprite_url(pokemon_main_data["sprites"]["back_shiny"]),
+            "official_artwork": convert_sprite_url(pokemon_main_data["sprites"]["other"]["official-artwork"]["front_default"]) if pokemon_main_data["sprites"].get("other", {}).get("official-artwork") else None
         }
         
         moves_data = []
@@ -308,11 +316,19 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         weaknesses = calculate_weaknesses(types_en)
         resistances, immunities = calculate_resistances(types_en)
         
+        # Convert sprite URLs to jsDelivr CDN for better reliability
+        sprite_url = pokemon_main_data["sprites"]["front_default"]
+        if sprite_url and "raw.githubusercontent.com" in sprite_url:
+            sprite_url = sprite_url.replace(
+                "https://raw.githubusercontent.com/",
+                "https://cdn.jsdelivr.net/gh/"
+            ).replace("/master/", "@master/")
+        
         pokemon_obj = {
             "id": pokemon_main_data["id"],
             "name_en": name_en,
             "name_jp": name_jp,
-            "sprite": pokemon_main_data["sprites"]["front_default"],
+            "sprite": sprite_url,
             "sprites": sprites,
             "types_en": types_en,
             "types_jp": types_jp,
