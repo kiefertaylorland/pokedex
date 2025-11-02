@@ -76,7 +76,13 @@ export const UI_TEXT = {
         imageNotAvailable: "(Image not available)",
         loading: "Loading...",
         error: "Error loading Pokémon data. Please try again later.",
-        viewDetails: "View details for"
+        viewDetails: "View details for",
+        sortBy: "Sort by",
+        sortNumberAsc: "Number (Low to High)",
+        sortNumberDesc: "Number (High to Low)",
+        sortNameAsc: "Name (A-Z)",
+        sortNameDesc: "Name (Z-A)",
+        sortStatTotal: "Stat Total"
     },
     [LANGUAGES.JAPANESE]: {
         title: "ポケモン図鑑", // Pokemon Zukan
@@ -116,7 +122,13 @@ export const UI_TEXT = {
         imageNotAvailable: "(画像なし)",
         loading: "読み込み中...",
         error: "ポケモンデータの読み込みエラー。再試行してください。",
-        viewDetails: "詳細を見る"
+        viewDetails: "詳細を見る",
+        sortBy: "並び替え",
+        sortNumberAsc: "番号 (昇順)",
+        sortNumberDesc: "番号 (降順)",
+        sortNameAsc: "名前 (A-Z)",
+        sortNameDesc: "名前 (Z-A)",
+        sortStatTotal: "合計能力値"
     }
 };
 
@@ -137,6 +149,7 @@ export const ELEMENT_IDS = {
     SEARCH_INPUT: 'search-input',
     THEME_TOGGLE: 'theme-toggle',
     LANG_TOGGLE: 'lang-toggle',
+    SORT_SELECT: 'sort-select',
     DETAIL_VIEW: 'pokemon-detail-view',
     DETAIL_CONTENT: 'detail-content',
     APP_TITLE: 'app-title',
@@ -160,4 +173,18 @@ export const KEYS = {
     ENTER: 'Enter',
     SPACE: ' ',
     ESCAPE: 'Escape'
+};
+
+// Sort options
+export const SORT_OPTIONS = {
+    NUMBER_ASC: 'number-asc',
+    NUMBER_DESC: 'number-desc',
+    NAME_ASC: 'name-asc',
+    NAME_DESC: 'name-desc',
+    STAT_TOTAL: 'stat-total'
+};
+
+// Local storage keys for sort
+export const STORAGE_KEYS_SORT = {
+    SORT_ORDER: 'pokedex-sort-order'
 };
