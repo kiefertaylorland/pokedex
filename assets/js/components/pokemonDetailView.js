@@ -9,7 +9,7 @@ import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
 import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
 import { EvolutionTreeView } from './evolutionTreeView.js';
-import { convertToJsDelivrUrl, createImageWithFallback } from '../utils/imageUtils.js';
+import { createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
  * Manages the Pokemon detail modal view
