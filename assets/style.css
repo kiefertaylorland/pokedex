@@ -1,8 +1,8 @@
 :root {
     /* Neumorphism Light Theme */
     --background-color-light: #e0e5ec;
-    --text-color-light: #4a5568;
-    --text-secondary-light: #718096;
+    --text-color-light: #000000;
+    --text-secondary-light: #000000;
     --card-background-light: #e0e5ec;
     --header-background-light: #e0e5ec;
     --accent-color-light: #ff6b6b;
@@ -12,8 +12,8 @@
 
     /* Neumorphism Dark Theme */
     --background-color-dark: #2d3748;
-    --text-color-dark: #e2e8f0;
-    --text-secondary-dark: #a0aec0;
+    --text-color-dark: #ffffff;
+    --text-secondary-dark: #ffffff;
     --card-background-dark: #2d3748;
     --header-background-dark: #2d3748;
     --accent-color-dark: #fc8181;
@@ -236,10 +236,7 @@ main {
 
 .pokemon-card .pokemon-id {
     font-size: 0.9em;
-    color: #888; /* Will need adjustment for dark mode or use text-color variant */
-}
-body.dark-mode .pokemon-card .pokemon-id {
-    color: #aaa;
+    color: var(--text-color);
 }
 
 .pokemon-types {
