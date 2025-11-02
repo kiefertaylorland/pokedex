@@ -237,6 +237,7 @@ export class TeamBuilder {
             const typeSpan = createSafeElement('span');
             const cssClass = getTypeClassName(type);
             typeSpan.classList.add('team-type-badge', `type-${cssClass}`);
+            typeSpan.textContent = type;
             typesContainer.appendChild(typeSpan);
         });
         slot.appendChild(typesContainer);
