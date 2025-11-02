@@ -1,6 +1,6 @@
 # Pokédex
 
-An interactive web application showcasing all 151 Generation I Pokémon with detailed information, bilingual support, and modern accessibility features.
+An interactive web application showcasing all 1025 Pokémon (Generations I-IX) with detailed information, bilingual support, and modern accessibility features.
 
 **Live Demo:** [www.pokedex.tech](https://www.pokedex.tech)
 
@@ -14,7 +14,8 @@ An interactive web application showcasing all 151 Generation I Pokémon with det
 
 ## Features
 
-- 🎮 All 151 original Pokémon with comprehensive data
+- 🎮 All 1025 Pokémon (Generations I-IX) with comprehensive data
+- 🔊 Pokémon cries for authentic experience
 - 🌍 Bilingual support (English/Japanese)
 - 🎨 Light and dark theme toggle
 - 🔍 Search by name, ID, or type
@@ -51,6 +52,7 @@ python run_tests.py
 ```bash
 python pokeapi_fetch.py
 ```
+This will fetch data for all 1025 Pokémon (Generations I-IX) from the PokeAPI, including their stats, types, moves, evolution chains, and cries.
 
 ## Technology Stack
 
