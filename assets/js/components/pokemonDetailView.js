@@ -518,6 +518,27 @@ export class PokemonDetailView {
         if (evolution.id === currentPokemonId) {
             item.classList.add('current');
             item.setAttribute('aria-current', 'true');
+        } else {
+            // Make non-current evolution items clickable
+            item.setAttribute('role', 'button');
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `View ${evolution.name} details`);
+            item.style.cursor = 'pointer';
+            
+            // Add click handler
+            item.addEventListener(EVENTS.CLICK, (event) => {
+                event.stopPropagation();
+                this._handleEvolutionClick(evolution.id);
+            });
+            
+            // Add keyboard handler for accessibility
+            item.addEventListener(EVENTS.KEYDOWN, (event) => {
+                if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    this._handleEvolutionClick(evolution.id);
+                }
+            });
         }
 
         // Create image with error handling
@@ -539,6 +560,18 @@ export class PokemonDetailView {
         item.appendChild(nameSpan);
 
         return item;
+    }
+
+    /**
+     * Handles evolution item click
+     * @private
+     * @param {number} pokemonId - Pokemon ID to show
+     */
+    _handleEvolutionClick(pokemonId) {
+        const pokemon = this.dataManager.getPokemonById(pokemonId);
+        if (pokemon) {
+            this.showPokemonDetail(pokemon);
+        }
     }
 
     /**
