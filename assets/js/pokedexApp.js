@@ -40,6 +40,9 @@ export class PokedexApp {
             // Initialize components
             this._initializeComponents();
             
+            // Initialize structured data for SEO
+            StructuredDataGenerator.initialize();
+            
             // Load Pokemon data
             await this.dataManager.loadPokemonData();
             
@@ -51,6 +54,9 @@ export class PokedexApp {
             
             // Bind global events
             this._bindGlobalEvents();
+            
+            // Check if URL has a Pokemon route and show it
+            this._checkInitialRoute();
             
             this.isInitialized = true;
             
@@ -67,16 +73,22 @@ export class PokedexApp {
      * @private
      */
     _initializeComponents() {
+        // Initialize URL router
+        this.urlRouter = new URLRouter((pokemonId) => {
+            this._handlePokemonRoute(pokemonId);
+        });
+
         // Initialize card renderer
         this.cardRenderer = new PokemonCardRenderer(
             this.dataManager, 
             this.uiController
         );
 
-        // Initialize detail view
+        // Initialize detail view with close callback
         this.detailView = new PokemonDetailView(
             this.dataManager, 
-            this.uiController
+            this.uiController,
+            () => this._handleDetailViewClose()
         );
 
         // Initialize search controller
@@ -151,7 +163,66 @@ export class PokedexApp {
     _handlePokemonCardClick(pokemon) {
         if (this.detailView) {
             this.detailView.showPokemonDetail(pokemon);
+            
+            // Update URL and SEO metadata
+            const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
+            this.urlRouter.pushPokemonRoute(pokemon.id, name);
+            
+            // Update meta description
+            const metaDesc = this.urlRouter.generateMetaDescription(pokemon, this.uiController.getCurrentLanguage());
+            this.urlRouter.updateMetaDescription(metaDesc);
+            
+            // Update structured data
+            StructuredDataGenerator.updateForPokemon(pokemon, this.uiController.getCurrentLanguage());
         }
+    }
+
+    /**
+     * Handles Pokemon route from URL
+     * @private
+     * @param {number} pokemonId - Pokemon ID from URL
+     */
+    _handlePokemonRoute(pokemonId) {
+        const pokemon = this.dataManager.getPokemonById(pokemonId);
+        if (pokemon && this.detailView) {
+            this.detailView.showPokemonDetail(pokemon);
+            
+            // Update SEO metadata
+            const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
+            const metaDesc = this.urlRouter.generateMetaDescription(pokemon, this.uiController.getCurrentLanguage());
+            this.urlRouter.updateMetaDescription(metaDesc);
+            this.urlRouter.updatePageTitle(pokemon.id, name);
+            
+            // Update structured data
+            StructuredDataGenerator.updateForPokemon(pokemon, this.uiController.getCurrentLanguage());
+        }
+    }
+
+    /**
+     * Checks initial route on app load
+     * @private
+     */
+    _checkInitialRoute() {
+        if (this.urlRouter && this.urlRouter.hasPokemonRoute()) {
+            const pokemonId = this.urlRouter.getPokemonIdFromURL();
+            if (pokemonId) {
+                this._handlePokemonRoute(pokemonId);
+            }
+        }
+    }
+
+    /**
+     * Handles detail view close event
+     * @private
+     */
+    _handleDetailViewClose() {
+        // Update URL when closing detail view
+        if (this.urlRouter) {
+            this.urlRouter.popPokemonRoute();
+        }
+        
+        // Update structured data back to main view
+        StructuredDataGenerator.updateForMainView();
     }
 
     /**

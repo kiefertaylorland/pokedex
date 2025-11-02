@@ -1123,6 +1123,11 @@ export class PokemonDetailView {
         this.uiController.disableModalState();
         this.isVisible = false;
 
+        // Notify parent app that detail view is closing
+        if (this.onClose && typeof this.onClose === 'function') {
+            this.onClose();
+        }
+
         // Clean up after transition
         setTimeout(() => {
             this.detailView.removeAttribute('data-pokemon-id');

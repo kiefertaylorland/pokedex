@@ -4,6 +4,7 @@
  */
 
 import { DATA } from '../constants.js';
+import { CacheManager } from '../utils/cacheManager.js';
 
 /**
  * Manages Pokemon data operations including fetching and caching
@@ -13,6 +14,7 @@ export class PokemonDataManager {
         this.allPokemonData = [];
         this.isLoaded = false;
         this.loadingPromise = null;
+        this.searchCache = new Map(); // In-memory search cache for current session
     }
 
     /**
@@ -48,7 +50,15 @@ export class PokemonDataManager {
      * @returns {Promise<Array>} Pokemon data array
      */
     async _fetchPokemonData() {
+        // Try to get data from cache first
+        const cachedData = CacheManager.getCachedPokemonData();
+        if (cachedData && cachedData.length > 0) {
+            return cachedData;
+        }
+
+        // Cache miss - fetch from network
         try {
+            console.log('📡 Fetching Pokemon data from network...');
             const response = await fetch(DATA.JSON_FILE);
             
             if (!response.ok) {
@@ -60,6 +70,9 @@ export class PokemonDataManager {
             if (!Array.isArray(data)) {
                 throw new Error('Invalid data format: expected array');
             }
+
+            // Cache the fetched data
+            CacheManager.savePokemonData(data);
 
             return data;
         } catch (error) {
@@ -167,6 +180,7 @@ export class PokemonDataManager {
         }
 
         const normalizedTerm = searchTerm.toLowerCase().trim();
+        const cacheKey = `${normalizedTerm}:${language}`;
         
         // Create array of pokemon with match scores
         const pokemonWithScores = this.allPokemonData.map(pokemon => {
@@ -280,5 +294,7 @@ export class PokemonDataManager {
         this.allPokemonData = [];
         this.isLoaded = false;
         this.loadingPromise = null;
+        this.searchCache.clear();
+        CacheManager.clearAllCaches();
     }
 }
