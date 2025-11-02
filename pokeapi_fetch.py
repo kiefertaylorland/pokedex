@@ -99,6 +99,35 @@ def calculate_weaknesses(pokemon_types):
     
     return weaknesses
 
+def calculate_resistances(pokemon_types):
+    """Calculate type resistances and immunities based on Pokemon types."""
+    resistances = {}
+    immunities = {}
+    
+    # For each attacking type, calculate the combined effectiveness
+    all_types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", 
+                 "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", 
+                 "dragon", "dark", "steel", "fairy"]
+    
+    for attacking_type in all_types:
+        multiplier = 1.0
+        
+        # Calculate combined multiplier for all defending types
+        for defending_type in pokemon_types:
+            defending_type_lower = defending_type.lower()
+            if attacking_type in TYPE_EFFECTIVENESS:
+                type_matchup = TYPE_EFFECTIVENESS[attacking_type]
+                if defending_type_lower in type_matchup:
+                    multiplier *= type_matchup[defending_type_lower]
+        
+        # Separate immunities (0x) and resistances (0.25x or 0.5x)
+        if multiplier == 0:
+            immunities[attacking_type.capitalize()] = 0
+        elif multiplier < 1.0:
+            resistances[attacking_type.capitalize()] = multiplier
+    
+    return resistances, immunities
+
 def fetch_evolution_chain(evolution_chain_url):
     """Fetch and parse evolution chain data."""
     if not evolution_chain_url:
@@ -171,6 +200,44 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             bio_jp = get_localized_flavor_text(pokemon_species_data["flavor_text_entries"], "ja", "blue")
         if bio_jp == "No description available.":
             bio_jp = get_localized_flavor_text(pokemon_species_data["flavor_text_entries"], "ja", "yellow")
+        # Fetch abilities
+        abilities_data = []
+        for ability_entry in pokemon_main_data["abilities"]:
+            ability_detail = get_data(ability_entry["ability"]["url"].replace(base_url, ""))
+            if ability_detail:
+                ability_name_en = ability_detail["name"].replace("-", " ").title()
+                ability_name_jp = get_localized_name(ability_detail["names"]) or ability_name_en
+                abilities_data.append({
+                    "name_en": ability_name_en,
+                    "name_jp": ability_name_jp,
+                    "is_hidden": ability_entry["is_hidden"]
+                })
+                time.sleep(0.1)
+        
+        # Fetch genus (category) like "Seed Pokemon"
+        genus_en = "Unknown"
+        genus_jp = "Unknown"
+        for genus_entry in pokemon_species_data.get("genera", []):
+            if genus_entry["language"]["name"] == "en":
+                genus_en = genus_entry["genus"]
+            elif genus_entry["language"]["name"] == "ja":
+                genus_jp = genus_entry["genus"]
+        
+        # Get height (in decimeters) and weight (in hectograms)
+        height_dm = pokemon_main_data["height"]  # decimeters
+        weight_hg = pokemon_main_data["weight"]  # hectograms
+        height_m = height_dm / 10  # convert to meters
+        weight_kg = weight_hg / 10  # convert to kilograms
+        
+        # Get additional sprites
+        sprites = {
+            "front_default": pokemon_main_data["sprites"]["front_default"],
+            "front_shiny": pokemon_main_data["sprites"]["front_shiny"],
+            "back_default": pokemon_main_data["sprites"]["back_default"],
+            "back_shiny": pokemon_main_data["sprites"]["back_shiny"],
+            "official_artwork": pokemon_main_data["sprites"]["other"]["official-artwork"]["front_default"] if pokemon_main_data["sprites"].get("other", {}).get("official-artwork") else None
+        }
+        
         moves_data = []
         level_up_moves = []
         
@@ -226,11 +293,10 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
                     "type_jp": move_type_jp,
                     "power": move_detail_data["power"],
                     "accuracy": move_detail_data["accuracy"],
-                    "pp": move_detail_data["pp"]
+                    "pp": move_detail_data["pp"],
+                    "level": move_info["level"]
                 })
                 time.sleep(0.1)
-            if len(moves_data) >= 4:
-                break
         # Fetch evolution chain
         evolution_chain = []
         if pokemon_species_data.get("evolution_chain"):
@@ -238,22 +304,31 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             evolution_chain = fetch_evolution_chain(evolution_chain_url)
             time.sleep(0.1)
         
-        # Calculate type weaknesses
+        # Calculate type weaknesses, resistances, and immunities
         weaknesses = calculate_weaknesses(types_en)
+        resistances, immunities = calculate_resistances(types_en)
         
         pokemon_obj = {
             "id": pokemon_main_data["id"],
             "name_en": name_en,
             "name_jp": name_jp,
             "sprite": pokemon_main_data["sprites"]["front_default"],
+            "sprites": sprites,
             "types_en": types_en,
             "types_jp": types_jp,
             "stats": stats,
             "bio_en": bio_en,
             "bio_jp": bio_jp,
+            "abilities": abilities_data,
+            "height": height_m,
+            "weight": weight_kg,
+            "genus_en": genus_en,
+            "genus_jp": genus_jp,
             "moves": moves_data,
             "evolution_chain": evolution_chain,
-            "weaknesses": weaknesses
+            "weaknesses": weaknesses,
+            "resistances": resistances,
+            "immunities": immunities
         }
         all_pokemon_data.append(pokemon_obj)
         print(f"Processed: #{i} {name_en}")

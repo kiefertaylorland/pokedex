@@ -70,18 +70,35 @@ export class PokemonDetailView {
         // Bio section
         modalContent.appendChild(this._createCompactBioSection(bio, uiText));
         
-        // Main grid with stats on left, weaknesses on right
+        // Physical info section (height, weight, category)
+        if (pokemon.height || pokemon.weight || pokemon.genus_en || pokemon.genus_jp) {
+            modalContent.appendChild(this._createPhysicalInfoSection(pokemon, uiText));
+        }
+        
+        // Abilities section
+        if (pokemon.abilities && pokemon.abilities.length > 0) {
+            modalContent.appendChild(this._createAbilitiesSection(pokemon.abilities, uiText));
+        }
+        
+        // Sprites section
+        if (pokemon.sprites) {
+            modalContent.appendChild(this._createSpritesSection(pokemon.sprites, name, uiText));
+        }
+        
+        // Main grid with stats on left, type effectiveness on right
         const mainGrid = createSafeElement('div');
         mainGrid.classList.add('detail-main-grid');
         
         // Left column - Stats
         mainGrid.appendChild(this._createStatsSection(pokemon.stats, uiText));
         
-        // Right column - Weaknesses and Evolution
+        // Right column - Type effectiveness and Evolution
         const rightColumn = createSafeElement('div');
         
-        if (pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0) {
-            rightColumn.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        // Type effectiveness (weaknesses, resistances, immunities)
+        const typeEffectivenessSection = this._createTypeEffectivenessSection(pokemon, uiText);
+        if (typeEffectivenessSection) {
+            rightColumn.appendChild(typeEffectivenessSection);
         }
         
         if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
@@ -422,6 +439,9 @@ export class PokemonDetailView {
         const listItem = createSafeElement('li');
         listItem.classList.add('move-item');
         
+        const moveHeader = createSafeElement('div');
+        moveHeader.classList.add('move-header');
+        
         const moveNameContainer = createSafeElement('div');
         moveNameContainer.classList.add('move-name-container');
         
@@ -435,6 +455,15 @@ export class PokemonDetailView {
             moveNameContainer.appendChild(romajiElement);
         }
         
+        // Add level indicator if available
+        if (move.level !== undefined && move.level !== null) {
+            const levelBadge = createSafeElement('span', 
+                move.level === 0 ? '—' : `${uiText.moveLevel || 'Lv.'} ${move.level}`
+            );
+            levelBadge.classList.add('move-level-badge');
+            moveNameContainer.appendChild(levelBadge);
+        }
+        
         const typeElement = createSafeElement('span', ` `);
         const typeTextSpan = createSafeElement('span', moveType);
         typeElement.appendChild(typeTextSpan);
@@ -446,16 +475,18 @@ export class PokemonDetailView {
             typeElement.appendChild(typeRomajiSpan);
         }
         
+        moveHeader.appendChild(moveNameContainer);
+        moveHeader.appendChild(typeElement);
+        
         const detailsElement = createSafeElement('small');
         
         const power = move.power || 'N/A';
         const accuracy = move.accuracy || 'N/A';
         const pp = move.pp || 'N/A';
         
-        detailsElement.innerHTML = `<br>${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}`;
+        detailsElement.textContent = `${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}`;
 
-        listItem.appendChild(moveNameContainer);
-        listItem.appendChild(typeElement);
+        listItem.appendChild(moveHeader);
         listItem.appendChild(detailsElement);
 
         return listItem;
@@ -608,6 +639,354 @@ export class PokemonDetailView {
         section.appendChild(heading);
         section.appendChild(weaknessesGrid);
         return section;
+    }
+
+    /**
+     * Creates type effectiveness section with weaknesses, resistances, and immunities
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement|null} Type effectiveness section or null
+     */
+    _createTypeEffectivenessSection(pokemon, uiText) {
+        const hasWeaknesses = pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0;
+        const hasResistances = pokemon.resistances && Object.keys(pokemon.resistances).length > 0;
+        const hasImmunities = pokemon.immunities && Object.keys(pokemon.immunities).length > 0;
+        
+        if (!hasWeaknesses && !hasResistances && !hasImmunities) {
+            return null;
+        }
+        
+        const container = createSafeElement('div');
+        container.classList.add('type-effectiveness-container');
+        
+        if (hasWeaknesses) {
+            container.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        }
+        
+        if (hasResistances) {
+            container.appendChild(this._createResistancesSection(pokemon.resistances, uiText));
+        }
+        
+        if (hasImmunities) {
+            container.appendChild(this._createImmunitiesSection(pokemon.immunities, uiText));
+        }
+        
+        return container;
+    }
+
+    /**
+     * Creates resistances section
+     * @private
+     * @param {Object} resistances - Resistances object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Resistances section
+     */
+    _createResistancesSection(resistances, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.resistances || 'Resistances');
+        const resistancesGrid = createSafeElement('div');
+        resistancesGrid.classList.add('weaknesses-grid'); // Reuse same styling
+
+        Object.entries(resistances).forEach(([type, multiplier]) => {
+            const resistanceItem = createSafeElement('div');
+            resistanceItem.classList.add('resistance-item');
+            resistanceItem.classList.add(`type-${type.toLowerCase()}`);
+            
+            const typeText = createSafeElement('span', type);
+            const multiplierSpan = createSafeElement('span', `${multiplier}×`);
+            multiplierSpan.classList.add('multiplier');
+            
+            resistanceItem.appendChild(typeText);
+            resistanceItem.appendChild(multiplierSpan);
+            resistanceItem.setAttribute('title', `Takes ${multiplier}× damage from ${type} type moves`);
+            
+            resistancesGrid.appendChild(resistanceItem);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(resistancesGrid);
+        return section;
+    }
+
+    /**
+     * Creates immunities section
+     * @private
+     * @param {Object} immunities - Immunities object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Immunities section
+     */
+    _createImmunitiesSection(immunities, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.immunities || 'Immunities');
+        const immunitiesGrid = createSafeElement('div');
+        immunitiesGrid.classList.add('weaknesses-grid'); // Reuse same styling
+
+        Object.entries(immunities).forEach(([type, multiplier]) => {
+            const immunityItem = createSafeElement('div');
+            immunityItem.classList.add('immunity-item');
+            immunityItem.classList.add(`type-${type.toLowerCase()}`);
+            
+            const typeText = createSafeElement('span', type);
+            const multiplierSpan = createSafeElement('span', `0×`);
+            multiplierSpan.classList.add('multiplier');
+            
+            immunityItem.appendChild(typeText);
+            immunityItem.appendChild(multiplierSpan);
+            immunityItem.setAttribute('title', `Immune to ${type} type moves`);
+            
+            immunitiesGrid.appendChild(immunityItem);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(immunitiesGrid);
+        return section;
+    }
+
+    /**
+     * Creates abilities section
+     * @private
+     * @param {Array} abilities - Abilities array
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Abilities section
+     */
+    _createAbilitiesSection(abilities, uiText) {
+        const currentLang = this.uiController.getCurrentLanguage();
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'abilities-section');
+
+        const heading = createSafeElement('h4', uiText.abilities || 'Abilities');
+        const abilitiesList = createSafeElement('div');
+        abilitiesList.classList.add('abilities-list');
+
+        abilities.forEach(ability => {
+            const abilityItem = createSafeElement('div');
+            abilityItem.classList.add('ability-item');
+            
+            if (ability.is_hidden) {
+                abilityItem.classList.add('hidden-ability');
+            }
+            
+            const abilityName = currentLang === 'jp' ? 
+                (ability.name_jp || ability.name_en) : ability.name_en;
+            
+            const nameSpan = createSafeElement('span', abilityName);
+            nameSpan.classList.add('ability-name');
+            
+            abilityItem.appendChild(nameSpan);
+            
+            if (ability.is_hidden) {
+                const hiddenBadge = createSafeElement('span', uiText.hiddenAbility || 'Hidden');
+                hiddenBadge.classList.add('hidden-badge');
+                abilityItem.appendChild(hiddenBadge);
+            }
+            
+            abilitiesList.appendChild(abilityItem);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(abilitiesList);
+        return section;
+    }
+
+    /**
+     * Creates physical info section (height, weight, category)
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Physical info section
+     */
+    _createPhysicalInfoSection(pokemon, uiText) {
+        const currentLang = this.uiController.getCurrentLanguage();
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'physical-info-section');
+
+        const heading = createSafeElement('h4', uiText.physicalInfo || 'Physical Info');
+        const infoGrid = createSafeElement('div');
+        infoGrid.classList.add('physical-info-grid');
+
+        if (pokemon.genus_en || pokemon.genus_jp) {
+            const categoryItem = createSafeElement('div');
+            categoryItem.classList.add('info-item');
+            
+            const categoryLabel = createSafeElement('span', `${uiText.category}:`);
+            categoryLabel.classList.add('info-label');
+            
+            const genus = currentLang === 'jp' ? 
+                (pokemon.genus_jp || pokemon.genus_en) : pokemon.genus_en;
+            const categoryValue = createSafeElement('span', genus);
+            categoryValue.classList.add('info-value');
+            
+            categoryItem.appendChild(categoryLabel);
+            categoryItem.appendChild(categoryValue);
+            infoGrid.appendChild(categoryItem);
+        }
+
+        if (pokemon.height !== undefined && pokemon.height !== null) {
+            const heightItem = createSafeElement('div');
+            heightItem.classList.add('info-item');
+            
+            const heightLabel = createSafeElement('span', `${uiText.height}:`);
+            heightLabel.classList.add('info-label');
+            
+            const heightValue = createSafeElement('span', `${pokemon.height} m`);
+            heightValue.classList.add('info-value');
+            
+            heightItem.appendChild(heightLabel);
+            heightItem.appendChild(heightValue);
+            infoGrid.appendChild(heightItem);
+        }
+
+        if (pokemon.weight !== undefined && pokemon.weight !== null) {
+            const weightItem = createSafeElement('div');
+            weightItem.classList.add('info-item');
+            
+            const weightLabel = createSafeElement('span', `${uiText.weight}:`);
+            weightLabel.classList.add('info-label');
+            
+            const weightValue = createSafeElement('span', `${pokemon.weight} kg`);
+            weightValue.classList.add('info-value');
+            
+            weightItem.appendChild(weightLabel);
+            weightItem.appendChild(weightValue);
+            infoGrid.appendChild(weightItem);
+        }
+
+        section.appendChild(heading);
+        section.appendChild(infoGrid);
+        return section;
+    }
+
+    /**
+     * Creates sprites section
+     * @private
+     * @param {Object} sprites - Sprites object
+     * @param {string} name - Pokemon name
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Sprites section
+     */
+    _createSpritesSection(sprites, name, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'sprites-section');
+
+        const heading = createSafeElement('h4', uiText.sprites || 'Sprites');
+        const spritesGrid = createSafeElement('div');
+        spritesGrid.classList.add('sprites-grid');
+
+        // Official artwork (if available)
+        if (sprites.official_artwork) {
+            const artworkContainer = createSafeElement('div');
+            artworkContainer.classList.add('sprite-item', 'artwork-item');
+            
+            const artworkLabel = createSafeElement('div', uiText.officialArtwork || 'Official Artwork');
+            artworkLabel.classList.add('sprite-label');
+            
+            const artworkImg = createSafeElement('img');
+            artworkImg.src = sprites.official_artwork;
+            artworkImg.alt = `${name} official artwork`;
+            artworkImg.classList.add('sprite-image', 'artwork-image');
+            
+            artworkImg.addEventListener('error', () => {
+                artworkContainer.style.display = 'none';
+            });
+            
+            artworkContainer.appendChild(artworkLabel);
+            artworkContainer.appendChild(artworkImg);
+            spritesGrid.appendChild(artworkContainer);
+        }
+
+        // Normal sprites
+        const normalContainer = createSafeElement('div');
+        normalContainer.classList.add('sprite-group');
+        
+        if (sprites.front_default) {
+            const frontItem = this._createSpriteItem(
+                sprites.front_default, 
+                `${name} front`, 
+                uiText.normalSprite || 'Normal'
+            );
+            normalContainer.appendChild(frontItem);
+        }
+        
+        if (sprites.back_default) {
+            const backItem = this._createSpriteItem(
+                sprites.back_default, 
+                `${name} back`, 
+                `${uiText.normalSprite || 'Normal'} (Back)`
+            );
+            normalContainer.appendChild(backItem);
+        }
+        
+        if (normalContainer.children.length > 0) {
+            spritesGrid.appendChild(normalContainer);
+        }
+
+        // Shiny sprites
+        const shinyContainer = createSafeElement('div');
+        shinyContainer.classList.add('sprite-group');
+        
+        if (sprites.front_shiny) {
+            const shinyFrontItem = this._createSpriteItem(
+                sprites.front_shiny, 
+                `${name} shiny front`, 
+                uiText.shinySprite || 'Shiny'
+            );
+            shinyFrontItem.classList.add('shiny-sprite');
+            shinyContainer.appendChild(shinyFrontItem);
+        }
+        
+        if (sprites.back_shiny) {
+            const shinyBackItem = this._createSpriteItem(
+                sprites.back_shiny, 
+                `${name} shiny back`, 
+                `${uiText.shinySprite || 'Shiny'} (Back)`
+            );
+            shinyBackItem.classList.add('shiny-sprite');
+            shinyContainer.appendChild(shinyBackItem);
+        }
+        
+        if (shinyContainer.children.length > 0) {
+            spritesGrid.appendChild(shinyContainer);
+        }
+
+        section.appendChild(heading);
+        section.appendChild(spritesGrid);
+        return section;
+    }
+
+    /**
+     * Creates individual sprite item
+     * @private
+     * @param {string} src - Image source URL
+     * @param {string} alt - Alt text
+     * @param {string} label - Sprite label
+     * @returns {HTMLElement} Sprite item element
+     */
+    _createSpriteItem(src, alt, label) {
+        const item = createSafeElement('div');
+        item.classList.add('sprite-item');
+        
+        const labelDiv = createSafeElement('div', label);
+        labelDiv.classList.add('sprite-label');
+        
+        const img = createSafeElement('img');
+        img.src = src;
+        img.alt = alt;
+        img.classList.add('sprite-image');
+        img.loading = 'lazy';
+        
+        img.addEventListener('error', () => {
+            item.style.display = 'none';
+        });
+        
+        item.appendChild(labelDiv);
+        item.appendChild(img);
+        
+        return item;
     }
 
     /**
