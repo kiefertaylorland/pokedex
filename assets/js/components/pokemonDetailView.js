@@ -533,7 +533,7 @@ export class PokemonDetailView {
             
             // Add keyboard handler for accessibility
             item.addEventListener(EVENTS.KEYDOWN, (event) => {
-                if (event.key === KEYS.ENTER || event.key === ' ') {
+                if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
                     event.preventDefault();
                     event.stopPropagation();
                     this._handleEvolutionClick(evolution.id);
