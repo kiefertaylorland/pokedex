@@ -166,6 +166,7 @@ export const ELEMENT_IDS = {
     THEME_TOGGLE: 'theme-toggle',
     LANG_TOGGLE: 'lang-toggle',
     SORT_SELECT: 'sort-select',
+    SURPRISE_BUTTON: 'surprise-button',
     DETAIL_VIEW: 'pokemon-detail-view',
     DETAIL_CONTENT: 'detail-content',
     APP_TITLE: 'app-title',
