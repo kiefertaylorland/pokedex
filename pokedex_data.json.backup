@@ -22,48 +22,7 @@
     },
     "bio_en": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun’s rays, the seed grows progressively larger.",
     "bio_jp": "フシギダネ。Seed Pokémon。",
-    "moves": [
-      {
-        "name_en": "Tackle",
-        "name_jp": "たいあたり",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": 40,
-        "accuracy": 100,
-        "pp": 35,
-        "level": 1
-      },
-      {
-        "name_en": "Growl",
-        "name_jp": "なきごえ",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": null,
-        "accuracy": 100,
-        "pp": 40,
-        "level": 1
-      },
-      {
-        "name_en": "Vine Whip",
-        "name_jp": "つるのムチ",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": 45,
-        "accuracy": 100,
-        "pp": 25,
-        "level": 9
-      },
-      {
-        "name_en": "Leech Seed",
-        "name_jp": "やどりぎのたね",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": null,
-        "accuracy": 90,
-        "pp": 10,
-        "level": 13
-      }
-    ],
+    "moves": [],
     "evolution_chain": [
       {
         "name": "Bulbasaur",
@@ -82,38 +41,7 @@
       "Bug": 2.0,
       "Ground": 2.0,
       "Psychic": 2.0
-    },
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png",
-      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
-      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-    },
-    "abilities": [
-      {
-        "name_en": "Overgrow",
-        "name_jp": "しんりょく",
-        "is_hidden": false
-      },
-      {
-        "name_en": "Chlorophyll",
-        "name_jp": "ようりょくそ",
-        "is_hidden": true
-      }
-    ],
-    "height": 0.7,
-    "weight": 6.9,
-    "genus_en": "Seed Pokémon",
-    "genus_jp": "たねポケモン",
-    "resistances": {
-      "Water": 0.5,
-      "Electric": 0.5,
-      "Grass": 0.25,
-      "Fighting": 0.5,
-      "Fairy": 0.5
-    },
-    "immunities": {}
+    }
   },
   {
     "id": 2,
@@ -220,48 +148,7 @@
     },
     "bio_en": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
     "bio_jp": "ヒトカゲ。Lizard Pokémon。",
-    "moves": [
-      {
-        "name_en": "Tackle",
-        "name_jp": "たいあたり",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": 40,
-        "accuracy": 100,
-        "pp": 35,
-        "level": 1
-      },
-      {
-        "name_en": "Growl",
-        "name_jp": "なきごえ",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": null,
-        "accuracy": 100,
-        "pp": 40,
-        "level": 1
-      },
-      {
-        "name_en": "Vine Whip",
-        "name_jp": "つるのムチ",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": 45,
-        "accuracy": 100,
-        "pp": 25,
-        "level": 9
-      },
-      {
-        "name_en": "Leech Seed",
-        "name_jp": "やどりぎのたね",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": null,
-        "accuracy": 90,
-        "pp": 10,
-        "level": 13
-      }
-    ],
+    "moves": [],
     "evolution_chain": [
       {
         "name": "Charmander",
@@ -276,39 +163,7 @@
       "Water": 2.0,
       "Ground": 2.0,
       "Rock": 2.0
-    },
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png",
-      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png",
-      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/4.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
-    },
-    "abilities": [
-      {
-        "name_en": "Blaze",
-        "name_jp": "もうか",
-        "is_hidden": false
-      },
-      {
-        "name_en": "Solar Power",
-        "name_jp": "サンパワー",
-        "is_hidden": true
-      }
-    ],
-    "height": 0.6,
-    "weight": 8.5,
-    "genus_en": "Lizard Pokémon",
-    "genus_jp": "とかげポケモン",
-    "resistances": {
-      "Fire": 0.5,
-      "Grass": 0.5,
-      "Ice": 0.5,
-      "Bug": 0.5,
-      "Steel": 0.5,
-      "Fairy": 0.5
-    },
-    "immunities": {}
+    }
   },
   {
     "id": 5,
@@ -407,48 +262,7 @@
     },
     "bio_en": "Squirtle’s shell is not merely used for protection. The shell’s rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
     "bio_jp": "ゼニガメ。Tiny Turtle Pokémon。",
-    "moves": [
-      {
-        "name_en": "Tackle",
-        "name_jp": "たいあたり",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": 40,
-        "accuracy": 100,
-        "pp": 35,
-        "level": 1
-      },
-      {
-        "name_en": "Growl",
-        "name_jp": "なきごえ",
-        "type_en": "Normal",
-        "type_jp": "ノーマル",
-        "power": null,
-        "accuracy": 100,
-        "pp": 40,
-        "level": 1
-      },
-      {
-        "name_en": "Vine Whip",
-        "name_jp": "つるのムチ",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": 45,
-        "accuracy": 100,
-        "pp": 25,
-        "level": 9
-      },
-      {
-        "name_en": "Leech Seed",
-        "name_jp": "やどりぎのたね",
-        "type_en": "Grass",
-        "type_jp": "くさ",
-        "power": null,
-        "accuracy": 90,
-        "pp": 10,
-        "level": 13
-      }
-    ],
+    "moves": [],
     "evolution_chain": [
       {
         "name": "Squirtle",
@@ -462,37 +276,7 @@
     "weaknesses": {
       "Electric": 2.0,
       "Grass": 2.0
-    },
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png",
-      "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png",
-      "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/7.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
-    },
-    "abilities": [
-      {
-        "name_en": "Torrent",
-        "name_jp": "げきりゅう",
-        "is_hidden": false
-      },
-      {
-        "name_en": "Rain Dish",
-        "name_jp": "あめうけざら",
-        "is_hidden": true
-      }
-    ],
-    "height": 0.5,
-    "weight": 9.0,
-    "genus_en": "Tiny Turtle Pokémon",
-    "genus_jp": "こがめポケモン",
-    "resistances": {
-      "Fire": 0.5,
-      "Water": 0.5,
-      "Ice": 0.5,
-      "Steel": 0.5
-    },
-    "immunities": {}
+    }
   },
   {
     "id": 8,
