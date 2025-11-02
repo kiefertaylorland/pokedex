@@ -141,7 +141,7 @@ export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
     const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
     const averageTotal = Object.values(benchmarks.averages).reduce((sum, val) => sum + val, 0);
     
-    let rating = 'average';
+    let rating;
     if (total >= averageTotal * 1.4) {
         rating = 'legendary';
     } else if (total >= averageTotal * 1.2) {
