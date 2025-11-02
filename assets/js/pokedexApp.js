@@ -10,6 +10,7 @@ import { UIController } from './managers/uiController.js';
 import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
 import { SearchController } from './controllers/searchController.js';
+import { SortController } from './controllers/sortController.js';
 
 /**
  * Main application class that coordinates all components
@@ -21,6 +22,7 @@ export class PokedexApp {
         this.cardRenderer = null;
         this.detailView = null;
         this.searchController = null;
+        this.sortController = null;
         this.isInitialized = false;
     }
 
@@ -83,6 +85,13 @@ export class PokedexApp {
             this.uiController,
             (results, searchTerm) => this._handleSearchResults(results, searchTerm)
         );
+
+        // Initialize sort controller
+        this.sortController = new SortController(
+            this.dataManager,
+            this.uiController,
+            (sortOption) => this._handleSortChange(sortOption)
+        );
     }
 
     /**
@@ -91,13 +100,15 @@ export class PokedexApp {
      */
     _renderInitialData() {
         const allPokemon = this.dataManager.getAllPokemon();
+        const sortedPokemon = this.sortController.sortPokemon(allPokemon);
         this.cardRenderer.renderPokemonCards(
-            allPokemon, 
+            sortedPokemon, 
             (pokemon) => this._handlePokemonCardClick(pokemon)
         );
         
-        // Enable search
+        // Enable search and sort
         this.searchController.enable();
+        this.sortController.enable();
     }
 
     /**
@@ -107,8 +118,27 @@ export class PokedexApp {
      * @param {string} searchTerm - Search term used
      */
     _handleSearchResults(results, searchTerm) {
+        const sortedResults = this.sortController.sortPokemon(results);
         this.cardRenderer.renderPokemonCards(
-            results, 
+            sortedResults, 
+            (pokemon) => this._handlePokemonCardClick(pokemon)
+        );
+    }
+
+    /**
+     * Handles sort change
+     * @private
+     * @param {string} sortOption - Sort option that was selected
+     */
+    _handleSortChange(sortOption) {
+        // Re-apply current search with new sort
+        const currentSearchTerm = this.searchController.getCurrentSearchTerm();
+        const currentLanguage = this.uiController.getCurrentLanguage();
+        const results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
+        const sortedResults = this.sortController.sortPokemon(results);
+        
+        this.cardRenderer.renderPokemonCards(
+            sortedResults, 
             (pokemon) => this._handlePokemonCardClick(pokemon)
         );
     }
@@ -129,6 +159,14 @@ export class PokedexApp {
      * @private
      */
     _bindGlobalEvents() {
+        // Surprise button
+        const surpriseButton = document.getElementById(ELEMENT_IDS.SURPRISE_BUTTON);
+        if (surpriseButton) {
+            surpriseButton.addEventListener(EVENTS.CLICK, () => {
+                this._handleSurpriseClick();
+            });
+        }
+
         // Theme toggle
         const themeToggle = document.getElementById(ELEMENT_IDS.THEME_TOGGLE);
         if (themeToggle) {
@@ -157,28 +195,62 @@ export class PokedexApp {
     }
 
     /**
+     * Handles surprise button click to show random Pokemon
+     * @private
+     */
+    _handleSurpriseClick() {
+        const randomPokemon = this.dataManager.getRandomPokemon();
+        if (randomPokemon) {
+            // Show the Pokemon detail view
+            this.detailView.showPokemonDetail(randomPokemon);
+            
+            // Announce to screen readers
+            const currentLanguage = this.uiController.getCurrentLanguage();
+            const pokemonName = this.dataManager.getPokemonName(randomPokemon, currentLanguage);
+            const message = currentLanguage === 'jp' 
+                ? `${pokemonName}が表示されました！`
+                : `Showing ${pokemonName}!`;
+            this.uiController.announceToScreenReader(message);
+        }
+    }
+
+    /**
      * Handles language toggle with UI updates
      * @private
      */
     _handleLanguageToggle() {
         this.uiController.toggleLanguage();
         
-        // Update search placeholder
+        // Update search placeholder and sort labels
         this.searchController.updatePlaceholder();
+        this.sortController.updateSortLabels();
         
-        // Re-render current search results
+        // Re-render current search results with sort
         const currentSearchTerm = this.searchController.getCurrentSearchTerm();
         const currentLanguage = this.uiController.getCurrentLanguage();
         const results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
+        const sortedResults = this.sortController.sortPokemon(results);
         
         this.cardRenderer.renderPokemonCards(
-            results, 
+            sortedResults, 
             (pokemon) => this._handlePokemonCardClick(pokemon)
         );
         
         // Refresh detail view if open
         if (this.detailView.isDetailVisible()) {
             this.detailView.refreshContent();
+        }
+    }
+
+    /**
+     * Updates the surprise button text based on current language
+     * @private
+     */
+    _updateSurpriseButtonText() {
+        const surpriseButton = document.getElementById(ELEMENT_IDS.SURPRISE_BUTTON);
+        if (surpriseButton) {
+            const uiText = this.uiController.getCurrentUIText();
+            surpriseButton.textContent = `🎲 ${uiText.surpriseButton}`;
         }
     }
 
@@ -272,6 +344,7 @@ export class PokedexApp {
             currentLanguage: this.uiController.getCurrentLanguage(),
             currentTheme: this.uiController.getCurrentTheme(),
             searchTerm: this.searchController ? this.searchController.getCurrentSearchTerm() : '',
+            sortOption: this.sortController ? this.sortController.getCurrentSortOption() : 'number-asc',
             detailViewVisible: this.detailView ? this.detailView.isDetailVisible() : false,
             currentPokemon: this.detailView ? this.detailView.getCurrentPokemon() : null
         };
