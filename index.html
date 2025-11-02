@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets/Poke_Ball_icon.png" type="image/png">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Pokédex">
+    <link rel="apple-touch-icon" href="assets/Poke_Ball_icon.png">
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="pokedex_data.json" as="fetch" type="application/json" crossorigin>
 </head>
@@ -91,7 +98,11 @@
     </main>
 
     <footer role="contentinfo">
-        <p id="footer-text">Data from PokéAPI  //  App by Kiefer Land</p>
+        <p id="footer-text">
+            Data from <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a> // 
+            App by Kiefer Land // 
+            <a href="https://github.com/kiefertaylorland/pokedex" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </p>
     </footer>
 
     <!-- Screen reader only announcements -->
@@ -107,6 +118,33 @@
 
     <!-- Load the new modular JavaScript -->
     <script type="module" src="assets/js/pokedexApp.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker registered:', registration.scope);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New service worker available, notify user
+                                    console.log('🔄 New version available! Refresh to update.');
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.warn('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
     
     <!-- Fallback error handling -->
     <script>

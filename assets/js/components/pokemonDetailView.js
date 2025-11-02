@@ -11,13 +11,14 @@ import { getTypeClassName } from '../utils/typeMapping.js';
  * Manages the Pokemon detail modal view
  */
 export class PokemonDetailView {
-    constructor(dataManager, uiController) {
+    constructor(dataManager, uiController, onClose = null) {
         this.dataManager = dataManager;
         this.uiController = uiController;
         this.detailView = document.getElementById(ELEMENT_IDS.DETAIL_VIEW);
         this.detailContent = document.getElementById(ELEMENT_IDS.DETAIL_CONTENT);
         this.currentPokemon = null;
         this.isVisible = false;
+        this.onClose = onClose; // Callback for when detail view closes
         
         this._bindEvents();
     }
@@ -631,6 +632,11 @@ export class PokemonDetailView {
         this.detailView.classList.remove(CSS_CLASSES.SHOW);
         this.uiController.disableModalState();
         this.isVisible = false;
+
+        // Notify parent app that detail view is closing
+        if (this.onClose && typeof this.onClose === 'function') {
+            this.onClose();
+        }
 
         // Clean up after transition
         setTimeout(() => {

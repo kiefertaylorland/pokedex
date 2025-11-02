@@ -18,10 +18,24 @@ export const DATA = {
     SEARCH_DEBOUNCE_MS: 250
 };
 
+// App version for cache management and update notifications
+export const APP_VERSION = '1.1.0';
+
+// Cache settings
+export const CACHE = {
+    POKEMON_DATA_KEY: 'pokedex-pokemon-data',
+    POKEMON_DATA_VERSION_KEY: 'pokedex-data-version',
+    SEARCH_CACHE_KEY: 'pokedex-search-cache',
+    CACHE_EXPIRY_DAYS: 7,
+    MAX_SEARCH_CACHE_SIZE: 50
+};
+
 // Local storage keys
 export const STORAGE_KEYS = {
     LANGUAGE: 'pokedex-language',
-    THEME: 'pokedex-theme'
+    THEME: 'pokedex-theme',
+    APP_VERSION: 'pokedex-app-version',
+    LAST_UPDATE_CHECK: 'pokedex-last-update-check'
 };
 
 // Supported languages
