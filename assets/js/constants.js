@@ -163,6 +163,7 @@ export const ELEMENT_IDS = {
     POKEDEX_GRID: 'pokedex-grid',
     LOADING_INDICATOR: 'loading-indicator',
     SEARCH_INPUT: 'search-input',
+    SURPRISE_BUTTON: 'surprise-button',
     THEME_TOGGLE: 'theme-toggle',
     LANG_TOGGLE: 'lang-toggle',
     SORT_SELECT: 'sort-select',
