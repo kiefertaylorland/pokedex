@@ -180,6 +180,8 @@ main {
     height: 96px;
     image-rendering: pixelated; /* For pixel art sprites */
     transition: opacity 0.3s ease;
+    display: block; /* Makes the image behave as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
 }
 
 .pokemon-card img.loading {
@@ -199,6 +201,9 @@ body.dark-mode .pokemon-card .pokemon-id {
     color: #aaa;
 }
 
+.pokemon-types {
+    text-align: center; /* Centers the type badges */
+}
 
 .pokemon-types span {
     display: inline-block;
@@ -931,6 +936,7 @@ input:focus-visible,
     border-radius: 10px;
     box-shadow: inset 3px 3px 6px var(--shadow-inset),
                 inset -3px -3px 6px var(--highlight);
+    margin: 0 auto; /* Centers the error container horizontally */
 }
 
 .image-error-icon {
