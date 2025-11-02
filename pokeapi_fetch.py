@@ -5,6 +5,16 @@ import time
 BASE_URL = "https://pokeapi.co/api/v2/"
 POKEMON_COUNT = 1025 # All generations (1-9)
 
+# Version groups in priority order (latest to oldest within each generation)
+# Used for selecting which game version to fetch moves from
+VERSION_PRIORITY = [
+    "scarlet-violet", "sword-shield", "ultra-sun-ultra-moon", "sun-moon",
+    "omega-ruby-alpha-sapphire", "x-y", "black-2-white-2", "black-white",
+    "heartgold-soulsilver", "platinum", "diamond-pearl",
+    "firered-leafgreen", "emerald", "ruby-sapphire",
+    "crystal", "gold-silver", "yellow", "red-blue"
+]
+
 # Type effectiveness chart - damage multipliers
 TYPE_EFFECTIVENESS = {
     "normal": {"rock": 0.5, "ghost": 0, "steel": 0.5},
@@ -162,20 +172,41 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         if bio_jp == "No description available.":
             bio_jp = get_localized_flavor_text(pokemon_species_data["flavor_text_entries"], "ja", "yellow")
         moves_data = []
-        gen1_level_up_moves = []
+        level_up_moves = []
+        
+        # Try to get level-up moves from any version, prioritizing more recent games
         for move_entry in pokemon_main_data["moves"]:
+            best_version = None
+            best_priority = len(VERSION_PRIORITY)
+            best_level = 0
+            
             for version_group_detail in move_entry["version_group_details"]:
-                if version_group_detail["version_group"]["name"] == "red-blue" and \
-                   version_group_detail["move_learn_method"]["name"] == "level-up" and \
-                   version_group_detail["level_learned_at"] > 0:
-                    gen1_level_up_moves.append({
-                        "name": move_entry["move"]["name"],
-                        "url": move_entry["move"]["url"],
-                        "level": version_group_detail["level_learned_at"]
-                    })
-                    break
-        gen1_level_up_moves.sort(key=lambda m: m["level"])
-        for move_info in gen1_level_up_moves[:4]:
+                if version_group_detail["move_learn_method"]["name"] == "level-up":
+                    version_name = version_group_detail["version_group"]["name"]
+                    level = version_group_detail["level_learned_at"]
+                    
+                    # Find priority for this version
+                    try:
+                        priority = VERSION_PRIORITY.index(version_name)
+                    except ValueError:
+                        priority = len(VERSION_PRIORITY)  # Unknown version gets lowest priority
+                    
+                    # Prefer versions with higher priority (lower index) and level > 0
+                    if level > 0 and priority < best_priority:
+                        best_version = version_name
+                        best_priority = priority
+                        best_level = level
+            
+            # If we found a valid level-up move, add it
+            if best_version is not None:
+                level_up_moves.append({
+                    "name": move_entry["move"]["name"],
+                    "url": move_entry["move"]["url"],
+                    "level": best_level
+                })
+        
+        level_up_moves.sort(key=lambda m: m["level"])
+        for move_info in level_up_moves[:4]:
             move_detail_data = get_data(move_info["url"].replace(base_url, ""))
             if move_detail_data:
                 move_name_en = move_detail_data["name"].replace("-", " ").title()
