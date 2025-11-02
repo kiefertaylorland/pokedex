@@ -210,6 +210,25 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         # Calculate type weaknesses
         weaknesses = calculate_weaknesses(types_en)
         
+        # Fetch abilities
+        abilities_en = []
+        abilities_jp = []
+        for ability_entry in pokemon_main_data.get("abilities", []):
+            ability_name_en = ability_entry["ability"]["name"].replace("-", " ").title()
+            abilities_en.append(ability_name_en)
+            
+            # Fetch localized ability name
+            ability_detail_data = get_data(f"ability/{ability_entry['ability']['name']}")
+            if ability_detail_data:
+                ability_name_jp = get_localized_name(ability_detail_data["names"]) or ability_name_en
+                abilities_jp.append(ability_name_jp)
+            else:
+                abilities_jp.append(ability_name_en)
+            time.sleep(0.1)
+        
+        # Calculate base stat total
+        base_stat_total = sum(stats.values())
+        
         pokemon_obj = {
             "id": pokemon_main_data["id"],
             "name_en": name_en,
@@ -218,11 +237,14 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             "types_en": types_en,
             "types_jp": types_jp,
             "stats": stats,
+            "base_stat_total": base_stat_total,
             "bio_en": bio_en,
             "bio_jp": bio_jp,
             "moves": moves_data,
             "evolution_chain": evolution_chain,
-            "weaknesses": weaknesses
+            "weaknesses": weaknesses,
+            "abilities_en": abilities_en,
+            "abilities_jp": abilities_jp
         }
         all_pokemon_data.append(pokemon_obj)
         print(f"Processed: #{i} {name_en}")

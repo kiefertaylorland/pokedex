@@ -56,6 +56,71 @@
                     aria-label="Toggle language"
                     title="Switch between English and Japanese"
                 >EN/JP</button>
+                <button 
+                    id="filter-toggle" 
+                    type="button"
+                    aria-label="Toggle filters"
+                    aria-expanded="false"
+                    aria-controls="filter-panel"
+                    title="Show/hide advanced filters"
+                >⚙️ Filters</button>
+            </div>
+        </div>
+        
+        <!-- Advanced Filters Panel -->
+        <div id="filter-panel" class="filter-panel" role="region" aria-label="Advanced filters" hidden>
+            <div class="filter-panel-content">
+                <div class="filter-group">
+                    <label for="filter-ability">Ability:</label>
+                    <select id="filter-ability" aria-label="Filter by ability">
+                        <option value="all">All Abilities</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-min-stat">Base Stat Total:</label>
+                    <div class="stat-range-inputs">
+                        <input 
+                            type="number" 
+                            id="filter-min-stat" 
+                            min="0" 
+                            max="999" 
+                            value="0"
+                            aria-label="Minimum base stat total"
+                        >
+                        <span>-</span>
+                        <input 
+                            type="number" 
+                            id="filter-max-stat" 
+                            min="0" 
+                            max="999" 
+                            value="999"
+                            aria-label="Maximum base stat total"
+                        >
+                    </div>
+                    <div id="stat-range-display" class="stat-range-display">0 - 999</div>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-move-type">Move Type:</label>
+                    <select id="filter-move-type" aria-label="Filter by move type">
+                        <option value="all">All Move Types</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-evolution-stage">Evolution Stage:</label>
+                    <select id="filter-evolution-stage" aria-label="Filter by evolution stage">
+                        <option value="all">All Stages</option>
+                        <option value="basic">Basic (First Stage)</option>
+                        <option value="stage1">Stage 1 (Second Stage)</option>
+                        <option value="stage2">Stage 2 (Third Stage+)</option>
+                    </select>
+                </div>
+                
+                <button id="clear-filters-btn" class="clear-filters-btn" type="button">
+                    Clear Filters
+                </button>
             </div>
         </div>
     </header>

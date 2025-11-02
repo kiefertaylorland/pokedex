@@ -10,6 +10,7 @@ import { UIController } from './managers/uiController.js';
 import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
 import { SearchController } from './controllers/searchController.js';
+import { FilterController } from './controllers/filterController.js';
 
 /**
  * Main application class that coordinates all components
@@ -21,7 +22,9 @@ export class PokedexApp {
         this.cardRenderer = null;
         this.detailView = null;
         this.searchController = null;
+        this.filterController = null;
         this.isInitialized = false;
+        this.currentSearchTerm = '';
     }
 
     /**
@@ -83,6 +86,13 @@ export class PokedexApp {
             this.uiController,
             (results, searchTerm) => this._handleSearchResults(results, searchTerm)
         );
+
+        // Initialize filter controller
+        this.filterController = new FilterController(
+            this.dataManager,
+            this.uiController,
+            (results, filters) => this._handleFilterResults(results, filters)
+        );
     }
 
     /**
@@ -98,6 +108,9 @@ export class PokedexApp {
         
         // Enable search
         this.searchController.enable();
+        
+        // Populate filter options
+        this.filterController.populateFilterOptions();
     }
 
     /**
@@ -107,10 +120,143 @@ export class PokedexApp {
      * @param {string} searchTerm - Search term used
      */
     _handleSearchResults(results, searchTerm) {
-        this.cardRenderer.renderPokemonCards(
-            results, 
-            (pokemon) => this._handlePokemonCardClick(pokemon)
-        );
+        this.currentSearchTerm = searchTerm;
+        
+        // Apply filters to search results
+        if (this.filterController && this.filterController.hasActiveFilters()) {
+            const filtered = this._applyFiltersToResults(results);
+            this.cardRenderer.renderPokemonCards(
+                filtered, 
+                (pokemon) => this._handlePokemonCardClick(pokemon)
+            );
+        } else {
+            this.cardRenderer.renderPokemonCards(
+                results, 
+                (pokemon) => this._handlePokemonCardClick(pokemon)
+            );
+        }
+    }
+
+    /**
+     * Handles filter results
+     * @private
+     * @param {Array} results - Filtered results
+     * @param {Object} filters - Applied filters
+     */
+    _handleFilterResults(results, filters) {
+        // If there's an active search, apply it to filter results
+        if (this.currentSearchTerm) {
+            const currentLanguage = this.uiController.getCurrentLanguage();
+            const searchFiltered = results.filter(pokemon => {
+                const normalizedTerm = this.currentSearchTerm.toLowerCase().trim();
+                const nameEn = pokemon.name_en?.toLowerCase() || '';
+                const nameJp = pokemon.name_jp?.toLowerCase() || '';
+                const idString = String(pokemon.id).padStart(3, '0');
+                const typesEn = pokemon.types_en?.join(' ').toLowerCase() || '';
+                const typesJp = pokemon.types_jp?.join(' ').toLowerCase() || '';
+
+                return nameEn.includes(normalizedTerm) ||
+                       nameJp.includes(normalizedTerm) ||
+                       idString.includes(normalizedTerm) ||
+                       typesEn.includes(normalizedTerm) ||
+                       typesJp.includes(normalizedTerm);
+            });
+            
+            this.cardRenderer.renderPokemonCards(
+                searchFiltered, 
+                (pokemon) => this._handlePokemonCardClick(pokemon)
+            );
+        } else {
+            this.cardRenderer.renderPokemonCards(
+                results, 
+                (pokemon) => this._handlePokemonCardClick(pokemon)
+            );
+        }
+    }
+
+    /**
+     * Applies filters to a result set
+     * @private
+     * @param {Array} results - Results to filter
+     * @returns {Array} Filtered results
+     */
+    _applyFiltersToResults(results) {
+        if (!this.filterController || !this.filterController.hasActiveFilters()) {
+            return results;
+        }
+
+        const filters = this.filterController.getCurrentFilters();
+        const currentLanguage = this.uiController.getCurrentLanguage();
+
+        return results.filter(pokemon => {
+            // Filter by ability
+            if (filters.ability && filters.ability !== 'all') {
+                const abilities = currentLanguage === 'jp' ? pokemon.abilities_jp : pokemon.abilities_en;
+                if (!abilities || !abilities.some(ability => 
+                    ability.toLowerCase().includes(filters.ability.toLowerCase())
+                )) {
+                    return false;
+                }
+            }
+
+            // Filter by base stat total
+            const baseStatTotal = pokemon.base_stat_total || 0;
+            if (baseStatTotal < filters.minStatTotal || baseStatTotal > filters.maxStatTotal) {
+                return false;
+            }
+
+            // Filter by move type
+            if (filters.moveType && filters.moveType !== 'all') {
+                const moves = pokemon.moves || [];
+                const moveTypes = currentLanguage === 'jp' 
+                    ? moves.map(m => m.type_jp) 
+                    : moves.map(m => m.type_en);
+                
+                if (!moveTypes.some(type => 
+                    type && type.toLowerCase() === filters.moveType.toLowerCase()
+                )) {
+                    return false;
+                }
+            }
+
+            // Filter by evolution stage
+            if (filters.evolutionStage && filters.evolutionStage !== 'all') {
+                const stage = this._getEvolutionStage(pokemon);
+                if (stage !== filters.evolutionStage) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+    }
+
+    /**
+     * Gets evolution stage for a Pokemon
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @returns {string} Evolution stage
+     */
+    _getEvolutionStage(pokemon) {
+        const evolutionChain = pokemon.evolution_chain || [];
+        
+        if (evolutionChain.length === 0) {
+            return 'basic';
+        }
+
+        const position = evolutionChain.findIndex(evo => evo.id === pokemon.id);
+        
+        if (position === -1) {
+            return 'basic';
+        }
+
+        if (position === 0) {
+            return 'basic';
+        } else if (position === 1) {
+            return 'stage1';
+        } else {
+            return 'stage2';
+        }
     }
 
     /**
@@ -145,6 +291,22 @@ export class PokedexApp {
             });
         }
 
+        // Filter toggle
+        const filterToggle = document.getElementById('filter-toggle');
+        const filterPanel = document.getElementById('filter-panel');
+        if (filterToggle && filterPanel) {
+            filterToggle.addEventListener(EVENTS.CLICK, () => {
+                const isHidden = filterPanel.hasAttribute('hidden');
+                if (isHidden) {
+                    filterPanel.removeAttribute('hidden');
+                    filterToggle.setAttribute('aria-expanded', 'true');
+                } else {
+                    filterPanel.setAttribute('hidden', '');
+                    filterToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
         // Window resize handling for responsive design
         window.addEventListener('resize', this._debounce(() => {
             this._handleWindowResize();
@@ -166,10 +328,20 @@ export class PokedexApp {
         // Update search placeholder
         this.searchController.updatePlaceholder();
         
-        // Re-render current search results
+        // Repopulate filter options for new language
+        if (this.filterController) {
+            this.filterController.populateFilterOptions();
+        }
+        
+        // Re-render current search results with filters
         const currentSearchTerm = this.searchController.getCurrentSearchTerm();
         const currentLanguage = this.uiController.getCurrentLanguage();
-        const results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
+        let results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
+        
+        // Apply filters if active
+        if (this.filterController && this.filterController.hasActiveFilters()) {
+            results = this._applyFiltersToResults(results);
+        }
         
         this.cardRenderer.renderPokemonCards(
             results, 
