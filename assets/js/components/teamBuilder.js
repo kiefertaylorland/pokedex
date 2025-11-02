@@ -184,7 +184,7 @@ export class TeamBuilder {
         if (!slotsContainer || !countSpan) return;
         
         // Clear existing slots
-        slotsContainer.innerHTML = '';
+        slotsContainer.replaceChildren();
         
         // Create slots
         for (let i = 0; i < this.maxTeamSize; i++) {
