@@ -16,10 +16,10 @@ export class FilterController {
         
         // Current filter state
         this.filters = {
-            ability: '',
+            ability: 'all',
             minStatTotal: 0,
             maxStatTotal: 999,
-            moveType: '',
+            moveType: 'all',
             evolutionStage: 'all'
         };
         
