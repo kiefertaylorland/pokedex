@@ -125,7 +125,7 @@ export class EvolutionTreeView {
     static _createEvolutionArrow() {
         const arrow = createSafeElement('div');
         arrow.classList.add('evolution-arrow');
-        arrow.innerHTML = '→';
+        arrow.textContent = '→';
         arrow.setAttribute('aria-hidden', 'true');
         return arrow;
     }
