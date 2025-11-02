@@ -102,17 +102,13 @@ export class PokemonDetailView {
         const enhancedStats = EnhancedStatsDisplay.createStatsSection(pokemon.stats, uiText);
         mainGrid.appendChild(enhancedStats);
         
-        // Right column - Type effectiveness and Evolution
+        // Right column - Type effectiveness
         const rightColumn = createSafeElement('div');
         
         // Type effectiveness (weaknesses, resistances, immunities)
         const typeEffectivenessSection = this._createTypeEffectivenessSection(pokemon, uiText);
         if (typeEffectivenessSection) {
             rightColumn.appendChild(typeEffectivenessSection);
-        }
-        
-        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
-            rightColumn.appendChild(this._createEvolutionChainSection(pokemon, uiText));
         }
         
         mainGrid.appendChild(rightColumn);
