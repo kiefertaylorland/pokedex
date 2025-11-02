@@ -239,7 +239,7 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             for version_group_detail in move_entry["version_group_details"]:
                 if version_group_detail["move_learn_method"]["name"] == "level-up":
                     level = version_group_detail["level_learned_at"]
-                    if move_name not in latest_moves or level > 0:
+                    if (move_name not in latest_moves) or (level < latest_moves[move_name]["level"]):
                         latest_moves[move_name] = {
                             "url": move_url,
                             "level": level,
