@@ -263,6 +263,8 @@ export class SortController {
             this.sortSelect.disabled = false;
             // Set initial value
             this.sortSelect.value = this.currentSortOption;
+            // Ensure labels are in the correct language
+            this.updateSortLabels();
         }
     }
 
