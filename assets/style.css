@@ -2,6 +2,7 @@
     /* Neumorphism Light Theme */
     --background-color-light: #e0e5ec;
     --text-color-light: #4a5568;
+    --text-secondary-light: #718096;
     --card-background-light: #e0e5ec;
     --header-background-light: #e0e5ec;
     --accent-color-light: #ff6b6b;
@@ -12,6 +13,7 @@
     /* Neumorphism Dark Theme */
     --background-color-dark: #2d3748;
     --text-color-dark: #e2e8f0;
+    --text-secondary-dark: #a0aec0;
     --card-background-dark: #2d3748;
     --header-background-dark: #2d3748;
     --accent-color-dark: #fc8181;
@@ -22,6 +24,7 @@
     /* Active Theme Variables */
     --background-color: var(--background-color-light);
     --text-color: var(--text-color-light);
+    --text-secondary: var(--text-secondary-light);
     --card-background: var(--card-background-light);
     --header-background: var(--header-background-light);
     --accent-color: var(--accent-color-light);
@@ -41,6 +44,7 @@
 body.dark-mode {
     --background-color: var(--background-color-dark);
     --text-color: var(--text-color-dark);
+    --text-secondary: var(--text-secondary-dark);
     --card-background: var(--card-background-dark);
     --header-background: var(--header-background-dark);
     --accent-color: var(--accent-color-dark);
@@ -104,6 +108,33 @@ header h1 {
     outline: none;
     box-shadow: inset 6px 6px 12px var(--shadow-inset),
                 inset -6px -6px 12px var(--highlight);
+}
+
+.sort-container select {
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.sort-container select:hover {
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    transform: translateY(-2px);
+}
+
+.sort-container select:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
 }
 
 .toggles button {
@@ -173,6 +204,16 @@ main {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+/* Pokemon image container for centering */
+.pokemon-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto; /* Center the container itself */
 }
 
 .pokemon-card img {

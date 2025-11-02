@@ -43,6 +43,20 @@
                     Search by Pokémon name, number, or type. Results update as you type.
                 </div>
             </div>
+            <div class="sort-container">
+                <label for="sort-select" class="sr-only">Sort Pokémon</label>
+                <select 
+                    id="sort-select" 
+                    aria-label="Sort Pokémon by"
+                    title="Sort Pokémon"
+                >
+                    <option value="number-asc">Number (Low to High)</option>
+                    <option value="number-desc">Number (High to Low)</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="stat-total">Stat Total</option>
+                </select>
+            </div>
             <div class="toggles" role="group" aria-label="Display options">
                 <button 
                     id="surprise-button" 

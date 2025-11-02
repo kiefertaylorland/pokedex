@@ -54,6 +54,8 @@ python pokeapi_fetch.py
 ```
 This will fetch data for all 1025 Pokémon (Generations I-IX) from the PokeAPI, including their stats, types, moves, evolution chains, and cries.
 
+> ⚠️ **Important:** The current `pokedex_data.json` is missing move data for all Pokémon. You must run `python pokeapi_fetch.py` to regenerate complete data. See `IMPORTANT_DATA_UPDATE_REQUIRED.md` for details.
+
 ## Technology Stack
 
 - HTML5, CSS3, JavaScript (ES6 modules)
