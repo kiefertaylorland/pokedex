@@ -119,7 +119,7 @@ export class EnhancedStatsDisplay {
         // Average indicator line
         const averageIndicator = createSafeElement('div');
         averageIndicator.classList.add('stat-average-indicator');
-        averageIndicator.style.left = `${(comparison.average / comparison.max) * 100}%`;
+        averageIndicator.style.setProperty('--average-position', `${(comparison.average / comparison.max) * 100}%`);
         averageIndicator.title = `Average: ${comparison.average}`;
         
         // Stat bar
