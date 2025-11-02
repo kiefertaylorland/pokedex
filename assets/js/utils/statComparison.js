@@ -95,10 +95,10 @@ export function calculateStatBenchmarks(allPokemon) {
  * @returns {Object} Comparison data
  */
 export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BENCHMARKS) {
-    // Use default benchmarks if null or undefined is passed
-    if (!benchmarks) {
-        benchmarks = STAT_BENCHMARKS;
-    }
+    
+    
+    
+    
     
     const average = benchmarks.averages[statName];
     const max = benchmarks.max[statName];
