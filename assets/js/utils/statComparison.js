@@ -95,6 +95,11 @@ export function calculateStatBenchmarks(allPokemon) {
  * @returns {Object} Comparison data
  */
 export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BENCHMARKS) {
+    // Use default benchmarks if null or undefined is passed
+    if (!benchmarks) {
+        benchmarks = STAT_BENCHMARKS;
+    }
+    
     const average = benchmarks.averages[statName];
     const max = benchmarks.max[statName];
     const topTier = benchmarks.topTier[statName];
@@ -136,6 +141,11 @@ export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BE
 export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
     if (!stats) {
         return { total: 0, average: 0, rating: 'unknown' };
+    }
+    
+    // Use default benchmarks if null or undefined is passed
+    if (!benchmarks) {
+        benchmarks = STAT_BENCHMARKS;
     }
     
     const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
