@@ -110,6 +110,33 @@ header h1 {
                 inset -6px -6px 12px var(--highlight);
 }
 
+.sort-container select {
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--card-background);
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.sort-container select:hover {
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    transform: translateY(-2px);
+}
+
+.sort-container select:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+}
+
 .toggles button {
     padding: 0.75rem 1.5rem;
     border: none;
