@@ -6,6 +6,7 @@
 import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
 import { createSafeElement, sanitizeHTML } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
+import { createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
  * Handles rendering Pokemon cards with proper security and accessibility
@@ -119,37 +120,34 @@ export class PokemonCardRenderer {
         const container = createSafeElement('div');
         container.classList.add('pokemon-image-container');
         
-        const img = createSafeElement('img');
-        img.src = pokemon.sprite;
-        img.alt = name;
+        const img = createImageWithFallback(pokemon.sprite, name, {
+            className: CSS_CLASSES.LOADING,
+            onLoad: (loadedImg) => {
+                loadedImg.classList.remove(CSS_CLASSES.LOADING);
+            },
+            onError: (failedImg) => {
+                failedImg.classList.remove(CSS_CLASSES.LOADING);
+                // Create error fallback
+                const errorContainer = createSafeElement('div');
+                errorContainer.classList.add('image-error-container');
+                
+                const icon = createSafeElement('div', '⚠️');
+                icon.classList.add('image-error-icon');
+                icon.setAttribute('aria-hidden', 'true');
+                
+                const text = createSafeElement('div', 'No Image');
+                text.classList.add('image-error-text');
+                
+                errorContainer.appendChild(icon);
+                errorContainer.appendChild(text);
+                errorContainer.setAttribute('role', 'img');
+                errorContainer.setAttribute('aria-label', `${name} ${uiText.imageNotAvailable}`);
+                
+                container.replaceChild(errorContainer, failedImg);
+            }
+        });
+        
         img.loading = 'lazy';
-        img.classList.add(CSS_CLASSES.LOADING);
-
-        // Add image event listeners
-        img.addEventListener('load', () => {
-            img.classList.remove(CSS_CLASSES.LOADING);
-        });
-
-        img.addEventListener('error', () => {
-            img.classList.remove(CSS_CLASSES.LOADING);
-            // Create error fallback
-            const errorContainer = createSafeElement('div');
-            errorContainer.classList.add('image-error-container');
-            
-            const icon = createSafeElement('div', '⚠️');
-            icon.classList.add('image-error-icon');
-            icon.setAttribute('aria-hidden', 'true');
-            
-            const text = createSafeElement('div', 'No Image');
-            text.classList.add('image-error-text');
-            
-            errorContainer.appendChild(icon);
-            errorContainer.appendChild(text);
-            errorContainer.setAttribute('role', 'img');
-            errorContainer.setAttribute('aria-label', `${name} ${uiText.imageNotAvailable}`);
-            
-            container.replaceChild(errorContainer, img);
-        });
 
         container.appendChild(img);
         return container;

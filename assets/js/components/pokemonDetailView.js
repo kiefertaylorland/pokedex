@@ -9,6 +9,7 @@ import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
 import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
 import { EvolutionTreeView } from './evolutionTreeView.js';
+import { convertToJsDelivrUrl, createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
  * Manages the Pokemon detail modal view
@@ -315,30 +316,30 @@ export class PokemonDetailView {
         container.style.alignItems = 'center';
         container.style.minHeight = '120px';
         
-        const img = createSafeElement('img');
-        img.src = pokemon.sprite;
-        img.alt = name;
-        img.style.width = '120px';
-        img.style.height = '120px';
-        img.classList.add('pokemon-detail-image');
-        
-        // Add error handler
-        img.addEventListener('error', () => {
-            const errorFallback = this._createImageErrorFallback(name);
-            errorFallback.style.width = '120px';
-            errorFallback.style.height = '120px';
-            container.replaceChild(errorFallback, img);
+        const img = createImageWithFallback(pokemon.sprite, name, {
+            className: 'pokemon-detail-image',
+            onError: (failedImg, attemptedUrls) => {
+                console.error(`Failed to load Pokemon image after trying: ${attemptedUrls.join(', ')}`);
+                const errorFallback = this._createImageErrorFallback(name);
+                errorFallback.style.width = '120px';
+                errorFallback.style.height = '120px';
+                container.replaceChild(errorFallback, failedImg);
+            },
+            onLoad: () => {
+                // Add shake animation after successful load
+                setTimeout(() => {
+                    if (img.parentNode) {
+                        img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
+                        img.addEventListener(EVENTS.ANIMATION_END, () => {
+                            img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
+                        }, { once: true });
+                    }
+                }, ANIMATION.TRANSITION_DELAY_MS);
+            }
         });
         
-        // Add shake animation
-        setTimeout(() => {
-            if (img.parentNode) { // Check if image is still in DOM (not replaced by error)
-                img.classList.add(CSS_CLASSES.SPRITE_SHAKE);
-                img.addEventListener(EVENTS.ANIMATION_END, () => {
-                    img.classList.remove(CSS_CLASSES.SPRITE_SHAKE);
-                }, { once: true });
-            }
-        }, ANIMATION.TRANSITION_DELAY_MS);
+        img.style.width = '120px';
+        img.style.height = '120px';
 
         container.appendChild(img);
         return container;
@@ -651,17 +652,18 @@ export class PokemonDetailView {
             });
         }
 
-        // Create image with error handling
-        const img = createSafeElement('img');
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolution.id}.png`;
-        img.alt = evolution.name;
+        // Create image with error handling and CDN fallback
+        const img = createImageWithFallback(
+            `https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/${evolution.id}.png`,
+            evolution.name,
+            {
+                onError: (failedImg) => {
+                    const errorContainer = this._createImageErrorFallback(evolution.name);
+                    item.replaceChild(errorContainer, failedImg);
+                }
+            }
+        );
         img.loading = 'lazy';
-        
-        // Add error handler
-        img.addEventListener('error', () => {
-            const errorContainer = this._createImageErrorFallback(evolution.name);
-            item.replaceChild(errorContainer, img);
-        });
 
         const nameSpan = createSafeElement('span', evolution.name);
         nameSpan.classList.add('evolution-name');
