@@ -41,6 +41,7 @@ export const UI_TEXT = {
     [LANGUAGES.ENGLISH]: {
         title: "Pokédex",
         searchPlaceholder: "Search Pokémon by name or #...",
+        surpriseButton: "Surprise me!",
         footer: "Data from PokéAPI. App by You!",
         hp: "HP",
         attack: "Attack",
@@ -87,6 +88,7 @@ export const UI_TEXT = {
     [LANGUAGES.JAPANESE]: {
         title: "ポケモン図鑑", // Pokemon Zukan
         searchPlaceholder: "名前または番号で検索...",
+        surpriseButton: "ランダム", // Random
         footer: "データ元: PokéAPI。作成者: あなた！",
         hp: "HP",
         attack: "こうげき", // Kougeki
