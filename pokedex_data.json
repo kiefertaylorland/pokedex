@@ -29,7 +29,7 @@
         "id": 1
       },
       {
-        "name": "Pokemon0002",
+        "name": "Ivysaur",
         "id": 2
       }
     ],
@@ -73,7 +73,7 @@
         "id": 2
       },
       {
-        "name": "Pokemon0003",
+        "name": "Venusaur",
         "id": 3
       }
     ],
@@ -155,7 +155,7 @@
         "id": 4
       },
       {
-        "name": "Pokemon0005",
+        "name": "Charmeleon",
         "id": 5
       }
     ],
@@ -193,7 +193,7 @@
         "id": 5
       },
       {
-        "name": "Pokemon0006",
+        "name": "Charizard",
         "id": 6
       }
     ],
@@ -269,7 +269,7 @@
         "id": 7
       },
       {
-        "name": "Pokemon0008",
+        "name": "Wartortle",
         "id": 8
       }
     ],
@@ -306,7 +306,7 @@
         "id": 8
       },
       {
-        "name": "Pokemon0009",
+        "name": "Blastoise",
         "id": 9
       }
     ],
@@ -376,7 +376,7 @@
         "id": 10
       },
       {
-        "name": "Pokemon0011",
+        "name": "Metapod",
         "id": 11
       }
     ],
@@ -414,7 +414,7 @@
         "id": 11
       },
       {
-        "name": "Pokemon0012",
+        "name": "Butterfree",
         "id": 12
       }
     ],
@@ -492,7 +492,7 @@
         "id": 13
       },
       {
-        "name": "Pokemon0014",
+        "name": "Kakuna",
         "id": 14
       }
     ],
@@ -534,7 +534,7 @@
         "id": 14
       },
       {
-        "name": "Pokemon0015",
+        "name": "Beedrill",
         "id": 15
       }
     ],
@@ -614,7 +614,7 @@
         "id": 16
       },
       {
-        "name": "Pokemon0017",
+        "name": "Pidgeotto",
         "id": 17
       }
     ],
@@ -655,7 +655,7 @@
         "id": 17
       },
       {
-        "name": "Pokemon0018",
+        "name": "Pidgeot",
         "id": 18
       }
     ],
@@ -731,7 +731,7 @@
         "id": 19
       },
       {
-        "name": "Pokemon0020",
+        "name": "Raticate",
         "id": 20
       }
     ],
@@ -801,7 +801,7 @@
         "id": 21
       },
       {
-        "name": "Pokemon0022",
+        "name": "Fearow",
         "id": 22
       }
     ],
@@ -877,7 +877,7 @@
         "id": 23
       },
       {
-        "name": "Pokemon0024",
+        "name": "Arbok",
         "id": 24
       }
     ],
@@ -947,7 +947,7 @@
         "id": 25
       },
       {
-        "name": "Pokemon0026",
+        "name": "Raichu",
         "id": 26
       }
     ],
@@ -1015,7 +1015,7 @@
         "id": 27
       },
       {
-        "name": "Pokemon0028",
+        "name": "Sandslash",
         "id": 28
       }
     ],
@@ -1087,7 +1087,7 @@
         "id": 29
       },
       {
-        "name": "Pokemon0030",
+        "name": "Nidorina",
         "id": 30
       }
     ],
@@ -1124,7 +1124,7 @@
         "id": 30
       },
       {
-        "name": "Pokemon0031",
+        "name": "Nidoqueen",
         "id": 31
       }
     ],
@@ -1199,7 +1199,7 @@
         "id": 32
       },
       {
-        "name": "Pokemon0033",
+        "name": "Nidorino",
         "id": 33
       }
     ],
@@ -1236,7 +1236,7 @@
         "id": 33
       },
       {
-        "name": "Pokemon0034",
+        "name": "Nidoking",
         "id": 34
       }
     ],
@@ -1311,7 +1311,7 @@
         "id": 35
       },
       {
-        "name": "Pokemon0036",
+        "name": "Clefable",
         "id": 36
       }
     ],
@@ -1381,7 +1381,7 @@
         "id": 37
       },
       {
-        "name": "Pokemon0038",
+        "name": "Ninetales",
         "id": 38
       }
     ],
@@ -1455,7 +1455,7 @@
         "id": 39
       },
       {
-        "name": "Pokemon0040",
+        "name": "Wigglytuff",
         "id": 40
       }
     ],
@@ -1531,7 +1531,7 @@
         "id": 41
       },
       {
-        "name": "Pokemon0042",
+        "name": "Golbat",
         "id": 42
       }
     ],
@@ -1573,7 +1573,7 @@
         "id": 42
       },
       {
-        "name": "Pokemon0169",
+        "name": "Crobat",
         "id": 169
       }
     ],
@@ -1615,7 +1615,7 @@
         "id": 43
       },
       {
-        "name": "Pokemon0044",
+        "name": "Gloom",
         "id": 44
       }
     ],
@@ -1659,11 +1659,11 @@
         "id": 44
       },
       {
-        "name": "Pokemon0045",
+        "name": "Vileplume",
         "id": 45
       },
       {
-        "name": "Pokemon0182",
+        "name": "Bellossom",
         "id": 182
       }
     ],
@@ -1747,7 +1747,7 @@
         "id": 46
       },
       {
-        "name": "Pokemon0047",
+        "name": "Parasect",
         "id": 47
       }
     ],
@@ -1829,7 +1829,7 @@
         "id": 48
       },
       {
-        "name": "Pokemon0049",
+        "name": "Venomoth",
         "id": 49
       }
     ],
@@ -1907,7 +1907,7 @@
         "id": 50
       },
       {
-        "name": "Pokemon0051",
+        "name": "Dugtrio",
         "id": 51
       }
     ],
@@ -1979,7 +1979,7 @@
         "id": 52
       },
       {
-        "name": "Pokemon0053",
+        "name": "Persian",
         "id": 53
       }
     ],
@@ -2047,7 +2047,7 @@
         "id": 54
       },
       {
-        "name": "Pokemon0055",
+        "name": "Golduck",
         "id": 55
       }
     ],
@@ -2117,7 +2117,7 @@
         "id": 56
       },
       {
-        "name": "Pokemon0057",
+        "name": "Primeape",
         "id": 57
       }
     ],
@@ -2189,7 +2189,7 @@
         "id": 58
       },
       {
-        "name": "Pokemon0059",
+        "name": "Arcanine",
         "id": 59
       }
     ],
@@ -2261,7 +2261,7 @@
         "id": 60
       },
       {
-        "name": "Pokemon0061",
+        "name": "Poliwhirl",
         "id": 61
       }
     ],
@@ -2298,11 +2298,11 @@
         "id": 61
       },
       {
-        "name": "Pokemon0062",
+        "name": "Poliwrath",
         "id": 62
       },
       {
-        "name": "Pokemon0186",
+        "name": "Politoed",
         "id": 186
       }
     ],
@@ -2377,7 +2377,7 @@
         "id": 63
       },
       {
-        "name": "Pokemon0064",
+        "name": "Kadabra",
         "id": 64
       }
     ],
@@ -2415,7 +2415,7 @@
         "id": 64
       },
       {
-        "name": "Pokemon0065",
+        "name": "Alakazam",
         "id": 65
       }
     ],
@@ -2487,7 +2487,7 @@
         "id": 66
       },
       {
-        "name": "Pokemon0067",
+        "name": "Machoke",
         "id": 67
       }
     ],
@@ -2525,7 +2525,7 @@
         "id": 67
       },
       {
-        "name": "Pokemon0068",
+        "name": "Machamp",
         "id": 68
       }
     ],
@@ -2599,7 +2599,7 @@
         "id": 69
       },
       {
-        "name": "Pokemon0070",
+        "name": "Weepinbell",
         "id": 70
       }
     ],
@@ -2643,7 +2643,7 @@
         "id": 70
       },
       {
-        "name": "Pokemon0071",
+        "name": "Victreebel",
         "id": 71
       }
     ],
@@ -2727,7 +2727,7 @@
         "id": 72
       },
       {
-        "name": "Pokemon0073",
+        "name": "Tentacruel",
         "id": 73
       }
     ],
@@ -2805,7 +2805,7 @@
         "id": 74
       },
       {
-        "name": "Pokemon0075",
+        "name": "Graveler",
         "id": 75
       }
     ],
@@ -2848,7 +2848,7 @@
         "id": 75
       },
       {
-        "name": "Pokemon0076",
+        "name": "Golem",
         "id": 76
       }
     ],
@@ -2928,7 +2928,7 @@
         "id": 77
       },
       {
-        "name": "Pokemon0078",
+        "name": "Rapidash",
         "id": 78
       }
     ],
@@ -3002,11 +3002,11 @@
         "id": 79
       },
       {
-        "name": "Pokemon0080",
+        "name": "Slowbro",
         "id": 80
       },
       {
-        "name": "Pokemon0199",
+        "name": "Slowking",
         "id": 199
       }
     ],
@@ -3086,7 +3086,7 @@
         "id": 81
       },
       {
-        "name": "Pokemon0082",
+        "name": "Magneton",
         "id": 82
       }
     ],
@@ -3126,7 +3126,7 @@
         "id": 82
       },
       {
-        "name": "Pokemon0462",
+        "name": "Magnezone",
         "id": 462
       }
     ],
@@ -3203,7 +3203,7 @@
         "id": 84
       },
       {
-        "name": "Pokemon0085",
+        "name": "Dodrio",
         "id": 85
       }
     ],
@@ -3279,7 +3279,7 @@
         "id": 86
       },
       {
-        "name": "Pokemon0087",
+        "name": "Dewgong",
         "id": 87
       }
     ],
@@ -3355,7 +3355,7 @@
         "id": 88
       },
       {
-        "name": "Pokemon0089",
+        "name": "Muk",
         "id": 89
       }
     ],
@@ -3425,7 +3425,7 @@
         "id": 90
       },
       {
-        "name": "Pokemon0091",
+        "name": "Cloyster",
         "id": 91
       }
     ],
@@ -3503,7 +3503,7 @@
         "id": 92
       },
       {
-        "name": "Pokemon0093",
+        "name": "Haunter",
         "id": 93
       }
     ],
@@ -3544,7 +3544,7 @@
         "id": 93
       },
       {
-        "name": "Pokemon0094",
+        "name": "Gengar",
         "id": 94
       }
     ],
@@ -3622,7 +3622,7 @@
         "id": 95
       },
       {
-        "name": "Pokemon0208",
+        "name": "Steelix",
         "id": 208
       }
     ],
@@ -3663,7 +3663,7 @@
         "id": 96
       },
       {
-        "name": "Pokemon0097",
+        "name": "Hypno",
         "id": 97
       }
     ],
@@ -3735,7 +3735,7 @@
         "id": 98
       },
       {
-        "name": "Pokemon0099",
+        "name": "Kingler",
         "id": 99
       }
     ],
@@ -3805,7 +3805,7 @@
         "id": 100
       },
       {
-        "name": "Pokemon0101",
+        "name": "Electrode",
         "id": 101
       }
     ],
@@ -3875,7 +3875,7 @@
         "id": 102
       },
       {
-        "name": "Pokemon0103",
+        "name": "Exeggutor",
         "id": 103
       }
     ],
@@ -3957,7 +3957,7 @@
         "id": 104
       },
       {
-        "name": "Pokemon0105",
+        "name": "Marowak",
         "id": 105
       }
     ],
@@ -4097,7 +4097,7 @@
         "id": 108
       },
       {
-        "name": "Pokemon0463",
+        "name": "Lickilicky",
         "id": 463
       }
     ],
@@ -4133,7 +4133,7 @@
         "id": 109
       },
       {
-        "name": "Pokemon0110",
+        "name": "Weezing",
         "id": 110
       }
     ],
@@ -4205,7 +4205,7 @@
         "id": 111
       },
       {
-        "name": "Pokemon0112",
+        "name": "Rhydon",
         "id": 112
       }
     ],
@@ -4248,7 +4248,7 @@
         "id": 112
       },
       {
-        "name": "Pokemon0464",
+        "name": "Rhyperior",
         "id": 464
       }
     ],
@@ -4289,7 +4289,7 @@
         "id": 113
       },
       {
-        "name": "Pokemon0242",
+        "name": "Blissey",
         "id": 242
       }
     ],
@@ -4325,7 +4325,7 @@
         "id": 114
       },
       {
-        "name": "Pokemon0465",
+        "name": "Tangrowth",
         "id": 465
       }
     ],
@@ -4397,7 +4397,7 @@
         "id": 116
       },
       {
-        "name": "Pokemon0117",
+        "name": "Seadra",
         "id": 117
       }
     ],
@@ -4434,7 +4434,7 @@
         "id": 117
       },
       {
-        "name": "Pokemon0230",
+        "name": "Kingdra",
         "id": 230
       }
     ],
@@ -4471,7 +4471,7 @@
         "id": 118
       },
       {
-        "name": "Pokemon0119",
+        "name": "Seaking",
         "id": 119
       }
     ],
@@ -4541,7 +4541,7 @@
         "id": 120
       },
       {
-        "name": "Pokemon0121",
+        "name": "Starmie",
         "id": 121
       }
     ],
@@ -4656,7 +4656,7 @@
         "id": 123
       },
       {
-        "name": "Pokemon0212",
+        "name": "Scizor",
         "id": 212
       }
     ],
@@ -4736,7 +4736,7 @@
         "id": 125
       },
       {
-        "name": "Pokemon0466",
+        "name": "Electivire",
         "id": 466
       }
     ],
@@ -4772,7 +4772,7 @@
         "id": 126
       },
       {
-        "name": "Pokemon0467",
+        "name": "Magmortar",
         "id": 467
       }
     ],
@@ -4876,7 +4876,7 @@
         "id": 129
       },
       {
-        "name": "Pokemon0130",
+        "name": "Gyarados",
         "id": 130
       }
     ],
@@ -5021,35 +5021,35 @@
         "id": 133
       },
       {
-        "name": "Pokemon0134",
+        "name": "Vaporeon",
         "id": 134
       },
       {
-        "name": "Pokemon0135",
+        "name": "Jolteon",
         "id": 135
       },
       {
-        "name": "Pokemon0136",
+        "name": "Flareon",
         "id": 136
       },
       {
-        "name": "Pokemon0196",
+        "name": "Espeon",
         "id": 196
       },
       {
-        "name": "Pokemon0197",
+        "name": "Umbreon",
         "id": 197
       },
       {
-        "name": "Pokemon0470",
+        "name": "Leafeon",
         "id": 470
       },
       {
-        "name": "Pokemon0471",
+        "name": "Glaceon",
         "id": 471
       },
       {
-        "name": "Pokemon0700",
+        "name": "Sylveon",
         "id": 700
       }
     ],
@@ -5184,7 +5184,7 @@
         "id": 137
       },
       {
-        "name": "Pokemon0233",
+        "name": "Porygon2",
         "id": 233
       }
     ],
@@ -5222,7 +5222,7 @@
         "id": 138
       },
       {
-        "name": "Pokemon0139",
+        "name": "Omastar",
         "id": 139
       }
     ],
@@ -5304,7 +5304,7 @@
         "id": 140
       },
       {
-        "name": "Pokemon0141",
+        "name": "Kabutops",
         "id": 141
       }
     ],
@@ -5571,7 +5571,7 @@
         "id": 147
       },
       {
-        "name": "Pokemon0148",
+        "name": "Dragonair",
         "id": 148
       }
     ],
@@ -5609,7 +5609,7 @@
         "id": 148
       },
       {
-        "name": "Pokemon0149",
+        "name": "Dragonite",
         "id": 149
       }
     ],
@@ -5753,7 +5753,7 @@
         "id": 152
       },
       {
-        "name": "Pokemon0153",
+        "name": "Bayleef",
         "id": 153
       }
     ],
@@ -5793,7 +5793,7 @@
         "id": 153
       },
       {
-        "name": "Pokemon0154",
+        "name": "Meganium",
         "id": 154
       }
     ],
@@ -5869,7 +5869,7 @@
         "id": 155
       },
       {
-        "name": "Pokemon0156",
+        "name": "Quilava",
         "id": 156
       }
     ],
@@ -5907,7 +5907,7 @@
         "id": 156
       },
       {
-        "name": "Pokemon0157",
+        "name": "Typhlosion",
         "id": 157
       }
     ],
@@ -5979,7 +5979,7 @@
         "id": 158
       },
       {
-        "name": "Pokemon0159",
+        "name": "Croconaw",
         "id": 159
       }
     ],
@@ -6016,7 +6016,7 @@
         "id": 159
       },
       {
-        "name": "Pokemon0160",
+        "name": "Feraligatr",
         "id": 160
       }
     ],
@@ -6086,7 +6086,7 @@
         "id": 161
       },
       {
-        "name": "Pokemon0162",
+        "name": "Furret",
         "id": 162
       }
     ],
@@ -6156,7 +6156,7 @@
         "id": 163
       },
       {
-        "name": "Pokemon0164",
+        "name": "Noctowl",
         "id": 164
       }
     ],
@@ -6234,7 +6234,7 @@
         "id": 165
       },
       {
-        "name": "Pokemon0166",
+        "name": "Ledian",
         "id": 166
       }
     ],
@@ -6314,7 +6314,7 @@
         "id": 167
       },
       {
-        "name": "Pokemon0168",
+        "name": "Ariados",
         "id": 168
       }
     ],
@@ -6432,7 +6432,7 @@
         "id": 170
       },
       {
-        "name": "Pokemon0171",
+        "name": "Lanturn",
         "id": 171
       }
     ],
@@ -6506,7 +6506,7 @@
         "id": 172
       },
       {
-        "name": "Pokemon0025",
+        "name": "Pikachu",
         "id": 25
       }
     ],
@@ -6542,7 +6542,7 @@
         "id": 173
       },
       {
-        "name": "Pokemon0035",
+        "name": "Clefairy",
         "id": 35
       }
     ],
@@ -6581,7 +6581,7 @@
         "id": 174
       },
       {
-        "name": "Pokemon0039",
+        "name": "Jigglypuff",
         "id": 39
       }
     ],
@@ -6619,7 +6619,7 @@
         "id": 175
       },
       {
-        "name": "Pokemon0176",
+        "name": "Togetic",
         "id": 176
       }
     ],
@@ -6658,7 +6658,7 @@
         "id": 176
       },
       {
-        "name": "Pokemon0468",
+        "name": "Togekiss",
         "id": 468
       }
     ],
@@ -6700,7 +6700,7 @@
         "id": 177
       },
       {
-        "name": "Pokemon0178",
+        "name": "Xatu",
         "id": 178
       }
     ],
@@ -6780,7 +6780,7 @@
         "id": 179
       },
       {
-        "name": "Pokemon0180",
+        "name": "Flaaffy",
         "id": 180
       }
     ],
@@ -6816,7 +6816,7 @@
         "id": 180
       },
       {
-        "name": "Pokemon0181",
+        "name": "Ampharos",
         "id": 181
       }
     ],
@@ -6922,7 +6922,7 @@
         "id": 183
       },
       {
-        "name": "Pokemon0184",
+        "name": "Azumarill",
         "id": 184
       }
     ],
@@ -7069,7 +7069,7 @@
         "id": 187
       },
       {
-        "name": "Pokemon0188",
+        "name": "Skiploom",
         "id": 188
       }
     ],
@@ -7113,7 +7113,7 @@
         "id": 188
       },
       {
-        "name": "Pokemon0189",
+        "name": "Jumpluff",
         "id": 189
       }
     ],
@@ -7195,7 +7195,7 @@
         "id": 190
       },
       {
-        "name": "Pokemon0424",
+        "name": "Ambipom",
         "id": 424
       }
     ],
@@ -7231,7 +7231,7 @@
         "id": 191
       },
       {
-        "name": "Pokemon0192",
+        "name": "Sunflora",
         "id": 192
       }
     ],
@@ -7309,7 +7309,7 @@
         "id": 193
       },
       {
-        "name": "Pokemon0469",
+        "name": "Yanmega",
         "id": 469
       }
     ],
@@ -7351,7 +7351,7 @@
         "id": 194
       },
       {
-        "name": "Pokemon0195",
+        "name": "Quagsire",
         "id": 195
       }
     ],
@@ -7497,7 +7497,7 @@
         "id": 198
       },
       {
-        "name": "Pokemon0430",
+        "name": "Honchkrow",
         "id": 430
       }
     ],
@@ -7576,7 +7576,7 @@
         "id": 200
       },
       {
-        "name": "Pokemon0429",
+        "name": "Mismagius",
         "id": 429
       }
     ],
@@ -7718,7 +7718,7 @@
         "id": 204
       },
       {
-        "name": "Pokemon0205",
+        "name": "Forretress",
         "id": 205
       }
     ],
@@ -7828,7 +7828,7 @@
         "id": 207
       },
       {
-        "name": "Pokemon0472",
+        "name": "Gliscor",
         "id": 472
       }
     ],
@@ -7907,7 +7907,7 @@
         "id": 209
       },
       {
-        "name": "Pokemon0210",
+        "name": "Granbull",
         "id": 210
       }
     ],
@@ -8133,7 +8133,7 @@
         "id": 215
       },
       {
-        "name": "Pokemon0461",
+        "name": "Weavile",
         "id": 461
       }
     ],
@@ -8174,7 +8174,7 @@
         "id": 216
       },
       {
-        "name": "Pokemon0217",
+        "name": "Ursaring",
         "id": 217
       }
     ],
@@ -8242,7 +8242,7 @@
         "id": 218
       },
       {
-        "name": "Pokemon0219",
+        "name": "Magcargo",
         "id": 219
       }
     ],
@@ -8321,7 +8321,7 @@
         "id": 220
       },
       {
-        "name": "Pokemon0221",
+        "name": "Piloswine",
         "id": 221
       }
     ],
@@ -8365,7 +8365,7 @@
         "id": 221
       },
       {
-        "name": "Pokemon0473",
+        "name": "Mamoswine",
         "id": 473
       }
     ],
@@ -8446,7 +8446,7 @@
         "id": 223
       },
       {
-        "name": "Pokemon0224",
+        "name": "Octillery",
         "id": 224
       }
     ],
@@ -8633,7 +8633,7 @@
         "id": 228
       },
       {
-        "name": "Pokemon0229",
+        "name": "Houndoom",
         "id": 229
       }
     ],
@@ -8751,7 +8751,7 @@
         "id": 231
       },
       {
-        "name": "Pokemon0232",
+        "name": "Donphan",
         "id": 232
       }
     ],
@@ -8823,7 +8823,7 @@
         "id": 233
       },
       {
-        "name": "Pokemon0474",
+        "name": "Porygon-Z",
         "id": 474
       }
     ],
@@ -8923,15 +8923,15 @@
         "id": 236
       },
       {
-        "name": "Pokemon0106",
+        "name": "Hitmonlee",
         "id": 106
       },
       {
-        "name": "Pokemon0107",
+        "name": "Hitmonchan",
         "id": 107
       },
       {
-        "name": "Pokemon0237",
+        "name": "Hitmontop",
         "id": 237
       }
     ],
@@ -9005,7 +9005,7 @@
         "id": 238
       },
       {
-        "name": "Pokemon0124",
+        "name": "Jynx",
         "id": 124
       }
     ],
@@ -9047,7 +9047,7 @@
         "id": 239
       },
       {
-        "name": "Pokemon0125",
+        "name": "Electabuzz",
         "id": 125
       }
     ],
@@ -9083,7 +9083,7 @@
         "id": 240
       },
       {
-        "name": "Pokemon0126",
+        "name": "Magmar",
         "id": 126
       }
     ],
@@ -9286,7 +9286,7 @@
         "id": 246
       },
       {
-        "name": "Pokemon0247",
+        "name": "Pupitar",
         "id": 247
       }
     ],
@@ -9329,7 +9329,7 @@
         "id": 247
       },
       {
-        "name": "Pokemon0248",
+        "name": "Tyranitar",
         "id": 248
       }
     ],
@@ -9527,7 +9527,7 @@
         "id": 252
       },
       {
-        "name": "Pokemon0253",
+        "name": "Grovyle",
         "id": 253
       }
     ],
@@ -9567,7 +9567,7 @@
         "id": 253
       },
       {
-        "name": "Pokemon0254",
+        "name": "Sceptile",
         "id": 254
       }
     ],
@@ -9643,7 +9643,7 @@
         "id": 255
       },
       {
-        "name": "Pokemon0256",
+        "name": "Combusken",
         "id": 256
       }
     ],
@@ -9683,7 +9683,7 @@
         "id": 256
       },
       {
-        "name": "Pokemon0257",
+        "name": "Blaziken",
         "id": 257
       }
     ],
@@ -9763,7 +9763,7 @@
         "id": 258
       },
       {
-        "name": "Pokemon0259",
+        "name": "Marshtomp",
         "id": 259
       }
     ],
@@ -9802,7 +9802,7 @@
         "id": 259
       },
       {
-        "name": "Pokemon0260",
+        "name": "Swampert",
         "id": 260
       }
     ],
@@ -9878,7 +9878,7 @@
         "id": 261
       },
       {
-        "name": "Pokemon0262",
+        "name": "Mightyena",
         "id": 262
       }
     ],
@@ -9950,7 +9950,7 @@
         "id": 263
       },
       {
-        "name": "Pokemon0264",
+        "name": "Linoone",
         "id": 264
       }
     ],
@@ -9986,7 +9986,7 @@
         "id": 264
       },
       {
-        "name": "Pokemon0862",
+        "name": "Obstagoon",
         "id": 862
       }
     ],
@@ -10022,11 +10022,11 @@
         "id": 265
       },
       {
-        "name": "Pokemon0266",
+        "name": "Silcoon",
         "id": 266
       },
       {
-        "name": "Pokemon0268",
+        "name": "Cascoon",
         "id": 268
       }
     ],
@@ -10064,7 +10064,7 @@
         "id": 266
       },
       {
-        "name": "Pokemon0267",
+        "name": "Beautifly",
         "id": 267
       }
     ],
@@ -10140,7 +10140,7 @@
         "id": 268
       },
       {
-        "name": "Pokemon0269",
+        "name": "Dustox",
         "id": 269
       }
     ],
@@ -10218,7 +10218,7 @@
         "id": 270
       },
       {
-        "name": "Pokemon0271",
+        "name": "Lombre",
         "id": 271
       }
     ],
@@ -10262,7 +10262,7 @@
         "id": 271
       },
       {
-        "name": "Pokemon0272",
+        "name": "Ludicolo",
         "id": 272
       }
     ],
@@ -10344,7 +10344,7 @@
         "id": 273
       },
       {
-        "name": "Pokemon0274",
+        "name": "Nuzleaf",
         "id": 274
       }
     ],
@@ -10386,7 +10386,7 @@
         "id": 274
       },
       {
-        "name": "Pokemon0275",
+        "name": "Shiftry",
         "id": 275
       }
     ],
@@ -10470,7 +10470,7 @@
         "id": 276
       },
       {
-        "name": "Pokemon0277",
+        "name": "Swellow",
         "id": 277
       }
     ],
@@ -10548,7 +10548,7 @@
         "id": 278
       },
       {
-        "name": "Pokemon0279",
+        "name": "Pelipper",
         "id": 279
       }
     ],
@@ -10626,7 +10626,7 @@
         "id": 280
       },
       {
-        "name": "Pokemon0281",
+        "name": "Kirlia",
         "id": 281
       }
     ],
@@ -10668,7 +10668,7 @@
         "id": 281
       },
       {
-        "name": "Pokemon0282",
+        "name": "Gardevoir",
         "id": 282
       }
     ],
@@ -10748,7 +10748,7 @@
         "id": 283
       },
       {
-        "name": "Pokemon0284",
+        "name": "Masquerain",
         "id": 284
       }
     ],
@@ -10826,7 +10826,7 @@
         "id": 285
       },
       {
-        "name": "Pokemon0286",
+        "name": "Breloom",
         "id": 286
       }
     ],
@@ -10906,7 +10906,7 @@
         "id": 287
       },
       {
-        "name": "Pokemon0288",
+        "name": "Vigoroth",
         "id": 288
       }
     ],
@@ -10942,7 +10942,7 @@
         "id": 288
       },
       {
-        "name": "Pokemon0289",
+        "name": "Slaking",
         "id": 289
       }
     ],
@@ -11012,11 +11012,11 @@
         "id": 290
       },
       {
-        "name": "Pokemon0291",
+        "name": "Ninjask",
         "id": 291
       },
       {
-        "name": "Pokemon0292",
+        "name": "Shedinja",
         "id": 292
       }
     ],
@@ -11133,7 +11133,7 @@
         "id": 293
       },
       {
-        "name": "Pokemon0294",
+        "name": "Loudred",
         "id": 294
       }
     ],
@@ -11169,7 +11169,7 @@
         "id": 294
       },
       {
-        "name": "Pokemon0295",
+        "name": "Exploud",
         "id": 295
       }
     ],
@@ -11237,7 +11237,7 @@
         "id": 296
       },
       {
-        "name": "Pokemon0297",
+        "name": "Hariyama",
         "id": 297
       }
     ],
@@ -11311,7 +11311,7 @@
         "id": 298
       },
       {
-        "name": "Pokemon0183",
+        "name": "Marill",
         "id": 183
       }
     ],
@@ -11349,7 +11349,7 @@
         "id": 299
       },
       {
-        "name": "Pokemon0476",
+        "name": "Probopass",
         "id": 476
       }
     ],
@@ -11389,7 +11389,7 @@
         "id": 300
       },
       {
-        "name": "Pokemon0301",
+        "name": "Delcatty",
         "id": 301
       }
     ],
@@ -11535,7 +11535,7 @@
         "id": 304
       },
       {
-        "name": "Pokemon0305",
+        "name": "Lairon",
         "id": 305
       }
     ],
@@ -11578,7 +11578,7 @@
         "id": 305
       },
       {
-        "name": "Pokemon0306",
+        "name": "Aggron",
         "id": 306
       }
     ],
@@ -11660,7 +11660,7 @@
         "id": 307
       },
       {
-        "name": "Pokemon0308",
+        "name": "Medicham",
         "id": 308
       }
     ],
@@ -11740,7 +11740,7 @@
         "id": 309
       },
       {
-        "name": "Pokemon0310",
+        "name": "Manectric",
         "id": 310
       }
     ],
@@ -11942,7 +11942,7 @@
         "id": 315
       },
       {
-        "name": "Pokemon0407",
+        "name": "Roserade",
         "id": 407
       }
     ],
@@ -11984,7 +11984,7 @@
         "id": 316
       },
       {
-        "name": "Pokemon0317",
+        "name": "Swalot",
         "id": 317
       }
     ],
@@ -12056,7 +12056,7 @@
         "id": 318
       },
       {
-        "name": "Pokemon0319",
+        "name": "Sharpedo",
         "id": 319
       }
     ],
@@ -12134,7 +12134,7 @@
         "id": 320
       },
       {
-        "name": "Pokemon0321",
+        "name": "Wailord",
         "id": 321
       }
     ],
@@ -12206,7 +12206,7 @@
         "id": 322
       },
       {
-        "name": "Pokemon0323",
+        "name": "Camerupt",
         "id": 323
       }
     ],
@@ -12318,7 +12318,7 @@
         "id": 325
       },
       {
-        "name": "Pokemon0326",
+        "name": "Grumpig",
         "id": 326
       }
     ],
@@ -12422,7 +12422,7 @@
         "id": 328
       },
       {
-        "name": "Pokemon0329",
+        "name": "Vibrava",
         "id": 329
       }
     ],
@@ -12462,7 +12462,7 @@
         "id": 329
       },
       {
-        "name": "Pokemon0330",
+        "name": "Flygon",
         "id": 330
       }
     ],
@@ -12540,7 +12540,7 @@
         "id": 331
       },
       {
-        "name": "Pokemon0332",
+        "name": "Cacturne",
         "id": 332
       }
     ],
@@ -12622,7 +12622,7 @@
         "id": 333
       },
       {
-        "name": "Pokemon0334",
+        "name": "Altaria",
         "id": 334
       }
     ],
@@ -12848,7 +12848,7 @@
         "id": 339
       },
       {
-        "name": "Pokemon0340",
+        "name": "Whiscash",
         "id": 340
       }
     ],
@@ -12924,7 +12924,7 @@
         "id": 341
       },
       {
-        "name": "Pokemon0342",
+        "name": "Crawdaunt",
         "id": 342
       }
     ],
@@ -13001,7 +13001,7 @@
         "id": 343
       },
       {
-        "name": "Pokemon0344",
+        "name": "Claydol",
         "id": 344
       }
     ],
@@ -13083,7 +13083,7 @@
         "id": 345
       },
       {
-        "name": "Pokemon0346",
+        "name": "Cradily",
         "id": 346
       }
     ],
@@ -13173,7 +13173,7 @@
         "id": 347
       },
       {
-        "name": "Pokemon0348",
+        "name": "Armaldo",
         "id": 348
       }
     ],
@@ -13257,7 +13257,7 @@
         "id": 349
       },
       {
-        "name": "Pokemon0350",
+        "name": "Milotic",
         "id": 350
       }
     ],
@@ -13391,7 +13391,7 @@
         "id": 353
       },
       {
-        "name": "Pokemon0354",
+        "name": "Banette",
         "id": 354
       }
     ],
@@ -13461,7 +13461,7 @@
         "id": 355
       },
       {
-        "name": "Pokemon0356",
+        "name": "Dusclops",
         "id": 356
       }
     ],
@@ -13498,7 +13498,7 @@
         "id": 356
       },
       {
-        "name": "Pokemon0477",
+        "name": "Dusknoir",
         "id": 477
       }
     ],
@@ -13643,7 +13643,7 @@
         "id": 360
       },
       {
-        "name": "Pokemon0202",
+        "name": "Wobbuffet",
         "id": 202
       }
     ],
@@ -13681,11 +13681,11 @@
         "id": 361
       },
       {
-        "name": "Pokemon0362",
+        "name": "Glalie",
         "id": 362
       },
       {
-        "name": "Pokemon0478",
+        "name": "Froslass",
         "id": 478
       }
     ],
@@ -13761,7 +13761,7 @@
         "id": 363
       },
       {
-        "name": "Pokemon0364",
+        "name": "Sealeo",
         "id": 364
       }
     ],
@@ -13804,7 +13804,7 @@
         "id": 364
       },
       {
-        "name": "Pokemon0365",
+        "name": "Walrein",
         "id": 365
       }
     ],
@@ -13884,11 +13884,11 @@
         "id": 366
       },
       {
-        "name": "Pokemon0367",
+        "name": "Huntail",
         "id": 367
       },
       {
-        "name": "Pokemon0368",
+        "name": "Gorebyss",
         "id": 368
       }
     ],
@@ -14063,7 +14063,7 @@
         "id": 371
       },
       {
-        "name": "Pokemon0372",
+        "name": "Shelgon",
         "id": 372
       }
     ],
@@ -14101,7 +14101,7 @@
         "id": 372
       },
       {
-        "name": "Pokemon0373",
+        "name": "Salamence",
         "id": 373
       }
     ],
@@ -14179,7 +14179,7 @@
         "id": 374
       },
       {
-        "name": "Pokemon0375",
+        "name": "Metang",
         "id": 375
       }
     ],
@@ -14222,7 +14222,7 @@
         "id": 375
       },
       {
-        "name": "Pokemon0376",
+        "name": "Metagross",
         "id": 376
       }
     ],
@@ -14663,7 +14663,7 @@
         "id": 387
       },
       {
-        "name": "Pokemon0388",
+        "name": "Grotle",
         "id": 388
       }
     ],
@@ -14703,7 +14703,7 @@
         "id": 388
       },
       {
-        "name": "Pokemon0389",
+        "name": "Torterra",
         "id": 389
       }
     ],
@@ -14783,7 +14783,7 @@
         "id": 390
       },
       {
-        "name": "Pokemon0391",
+        "name": "Monferno",
         "id": 391
       }
     ],
@@ -14823,7 +14823,7 @@
         "id": 391
       },
       {
-        "name": "Pokemon0392",
+        "name": "Infernape",
         "id": 392
       }
     ],
@@ -14903,7 +14903,7 @@
         "id": 393
       },
       {
-        "name": "Pokemon0394",
+        "name": "Prinplup",
         "id": 394
       }
     ],
@@ -14940,7 +14940,7 @@
         "id": 394
       },
       {
-        "name": "Pokemon0395",
+        "name": "Empoleon",
         "id": 395
       }
     ],
@@ -15017,7 +15017,7 @@
         "id": 396
       },
       {
-        "name": "Pokemon0397",
+        "name": "Staravia",
         "id": 397
       }
     ],
@@ -15058,7 +15058,7 @@
         "id": 397
       },
       {
-        "name": "Pokemon0398",
+        "name": "Staraptor",
         "id": 398
       }
     ],
@@ -15134,7 +15134,7 @@
         "id": 399
       },
       {
-        "name": "Pokemon0400",
+        "name": "Bibarel",
         "id": 400
       }
     ],
@@ -15206,7 +15206,7 @@
         "id": 401
       },
       {
-        "name": "Pokemon0402",
+        "name": "Kricketune",
         "id": 402
       }
     ],
@@ -15278,7 +15278,7 @@
         "id": 403
       },
       {
-        "name": "Pokemon0404",
+        "name": "Luxio",
         "id": 404
       }
     ],
@@ -15314,7 +15314,7 @@
         "id": 404
       },
       {
-        "name": "Pokemon0405",
+        "name": "Luxray",
         "id": 405
       }
     ],
@@ -15384,7 +15384,7 @@
         "id": 406
       },
       {
-        "name": "Pokemon0315",
+        "name": "Roselia",
         "id": 315
       }
     ],
@@ -15466,7 +15466,7 @@
         "id": 408
       },
       {
-        "name": "Pokemon0409",
+        "name": "Rampardos",
         "id": 409
       }
     ],
@@ -15544,7 +15544,7 @@
         "id": 410
       },
       {
-        "name": "Pokemon0411",
+        "name": "Bastiodon",
         "id": 411
       }
     ],
@@ -15624,11 +15624,11 @@
         "id": 412
       },
       {
-        "name": "Pokemon0413",
+        "name": "Wormadam",
         "id": 413
       },
       {
-        "name": "Pokemon0414",
+        "name": "Mothim",
         "id": 414
       }
     ],
@@ -15745,7 +15745,7 @@
         "id": 415
       },
       {
-        "name": "Pokemon0416",
+        "name": "Vespiquen",
         "id": 416
       }
     ],
@@ -15855,7 +15855,7 @@
         "id": 418
       },
       {
-        "name": "Pokemon0419",
+        "name": "Floatzel",
         "id": 419
       }
     ],
@@ -15925,7 +15925,7 @@
         "id": 420
       },
       {
-        "name": "Pokemon0421",
+        "name": "Cherrim",
         "id": 421
       }
     ],
@@ -16001,7 +16001,7 @@
         "id": 422
       },
       {
-        "name": "Pokemon0423",
+        "name": "Gastrodon",
         "id": 423
       }
     ],
@@ -16109,7 +16109,7 @@
         "id": 425
       },
       {
-        "name": "Pokemon0426",
+        "name": "Drifblim",
         "id": 426
       }
     ],
@@ -16187,7 +16187,7 @@
         "id": 427
       },
       {
-        "name": "Pokemon0428",
+        "name": "Lopunny",
         "id": 428
       }
     ],
@@ -16327,7 +16327,7 @@
         "id": 431
       },
       {
-        "name": "Pokemon0432",
+        "name": "Purugly",
         "id": 432
       }
     ],
@@ -16395,7 +16395,7 @@
         "id": 433
       },
       {
-        "name": "Pokemon0358",
+        "name": "Chimecho",
         "id": 358
       }
     ],
@@ -16435,7 +16435,7 @@
         "id": 434
       },
       {
-        "name": "Pokemon0435",
+        "name": "Skuntank",
         "id": 435
       }
     ],
@@ -16515,7 +16515,7 @@
         "id": 436
       },
       {
-        "name": "Pokemon0437",
+        "name": "Bronzong",
         "id": 437
       }
     ],
@@ -16595,7 +16595,7 @@
         "id": 438
       },
       {
-        "name": "Pokemon0185",
+        "name": "Sudowoodo",
         "id": 185
       }
     ],
@@ -16637,7 +16637,7 @@
         "id": 439
       },
       {
-        "name": "Pokemon0122",
+        "name": "Mr. Mime",
         "id": 122
       }
     ],
@@ -16677,7 +16677,7 @@
         "id": 440
       },
       {
-        "name": "Pokemon0113",
+        "name": "Chansey",
         "id": 113
       }
     ],
@@ -16790,7 +16790,7 @@
         "id": 443
       },
       {
-        "name": "Pokemon0444",
+        "name": "Gabite",
         "id": 444
       }
     ],
@@ -16832,7 +16832,7 @@
         "id": 444
       },
       {
-        "name": "Pokemon0445",
+        "name": "Garchomp",
         "id": 445
       }
     ],
@@ -16910,7 +16910,7 @@
         "id": 446
       },
       {
-        "name": "Pokemon0143",
+        "name": "Snorlax",
         "id": 143
       }
     ],
@@ -16946,7 +16946,7 @@
         "id": 447
       },
       {
-        "name": "Pokemon0448",
+        "name": "Lucario",
         "id": 448
       }
     ],
@@ -17023,7 +17023,7 @@
         "id": 449
       },
       {
-        "name": "Pokemon0450",
+        "name": "Hippowdon",
         "id": 450
       }
     ],
@@ -17097,7 +17097,7 @@
         "id": 451
       },
       {
-        "name": "Pokemon0452",
+        "name": "Drapion",
         "id": 452
       }
     ],
@@ -17177,7 +17177,7 @@
         "id": 453
       },
       {
-        "name": "Pokemon0454",
+        "name": "Toxicroak",
         "id": 454
       }
     ],
@@ -17289,7 +17289,7 @@
         "id": 456
       },
       {
-        "name": "Pokemon0457",
+        "name": "Lumineon",
         "id": 457
       }
     ],
@@ -17361,7 +17361,7 @@
         "id": 458
       },
       {
-        "name": "Pokemon0226",
+        "name": "Mantine",
         "id": 226
       }
     ],
@@ -17402,7 +17402,7 @@
         "id": 459
       },
       {
-        "name": "Pokemon0460",
+        "name": "Abomasnow",
         "id": 460
       }
     ],
@@ -18705,7 +18705,7 @@
         "id": 495
       },
       {
-        "name": "Pokemon0496",
+        "name": "Servine",
         "id": 496
       }
     ],
@@ -18745,7 +18745,7 @@
         "id": 496
       },
       {
-        "name": "Pokemon0497",
+        "name": "Serperior",
         "id": 497
       }
     ],
@@ -18821,7 +18821,7 @@
         "id": 498
       },
       {
-        "name": "Pokemon0499",
+        "name": "Pignite",
         "id": 499
       }
     ],
@@ -18861,7 +18861,7 @@
         "id": 499
       },
       {
-        "name": "Pokemon0500",
+        "name": "Emboar",
         "id": 500
       }
     ],
@@ -18941,7 +18941,7 @@
         "id": 501
       },
       {
-        "name": "Pokemon0502",
+        "name": "Dewott",
         "id": 502
       }
     ],
@@ -18978,7 +18978,7 @@
         "id": 502
       },
       {
-        "name": "Pokemon0503",
+        "name": "Samurott",
         "id": 503
       }
     ],
@@ -19048,7 +19048,7 @@
         "id": 504
       },
       {
-        "name": "Pokemon0505",
+        "name": "Watchog",
         "id": 505
       }
     ],
@@ -19116,7 +19116,7 @@
         "id": 506
       },
       {
-        "name": "Pokemon0507",
+        "name": "Herdier",
         "id": 507
       }
     ],
@@ -19152,7 +19152,7 @@
         "id": 507
       },
       {
-        "name": "Pokemon0508",
+        "name": "Stoutland",
         "id": 508
       }
     ],
@@ -19220,7 +19220,7 @@
         "id": 509
       },
       {
-        "name": "Pokemon0510",
+        "name": "Liepard",
         "id": 510
       }
     ],
@@ -19292,7 +19292,7 @@
         "id": 511
       },
       {
-        "name": "Pokemon0512",
+        "name": "Simisage",
         "id": 512
       }
     ],
@@ -19368,7 +19368,7 @@
         "id": 513
       },
       {
-        "name": "Pokemon0514",
+        "name": "Simisear",
         "id": 514
       }
     ],
@@ -19440,7 +19440,7 @@
         "id": 515
       },
       {
-        "name": "Pokemon0516",
+        "name": "Simipour",
         "id": 516
       }
     ],
@@ -19510,7 +19510,7 @@
         "id": 517
       },
       {
-        "name": "Pokemon0518",
+        "name": "Musharna",
         "id": 518
       }
     ],
@@ -19584,7 +19584,7 @@
         "id": 519
       },
       {
-        "name": "Pokemon0520",
+        "name": "Tranquill",
         "id": 520
       }
     ],
@@ -19625,7 +19625,7 @@
         "id": 520
       },
       {
-        "name": "Pokemon0521",
+        "name": "Unfezant",
         "id": 521
       }
     ],
@@ -19701,7 +19701,7 @@
         "id": 522
       },
       {
-        "name": "Pokemon0523",
+        "name": "Zebstrika",
         "id": 523
       }
     ],
@@ -19769,7 +19769,7 @@
         "id": 524
       },
       {
-        "name": "Pokemon0525",
+        "name": "Boldore",
         "id": 525
       }
     ],
@@ -19809,7 +19809,7 @@
         "id": 525
       },
       {
-        "name": "Pokemon0526",
+        "name": "Gigalith",
         "id": 526
       }
     ],
@@ -19887,7 +19887,7 @@
         "id": 527
       },
       {
-        "name": "Pokemon0528",
+        "name": "Swoobat",
         "id": 528
       }
     ],
@@ -19967,7 +19967,7 @@
         "id": 529
       },
       {
-        "name": "Pokemon0530",
+        "name": "Excadrill",
         "id": 530
       }
     ],
@@ -20076,7 +20076,7 @@
         "id": 532
       },
       {
-        "name": "Pokemon0533",
+        "name": "Gurdurr",
         "id": 533
       }
     ],
@@ -20114,7 +20114,7 @@
         "id": 533
       },
       {
-        "name": "Pokemon0534",
+        "name": "Conkeldurr",
         "id": 534
       }
     ],
@@ -20186,7 +20186,7 @@
         "id": 535
       },
       {
-        "name": "Pokemon0536",
+        "name": "Palpitoad",
         "id": 536
       }
     ],
@@ -20225,7 +20225,7 @@
         "id": 536
       },
       {
-        "name": "Pokemon0537",
+        "name": "Seismitoad",
         "id": 537
       }
     ],
@@ -20371,7 +20371,7 @@
         "id": 540
       },
       {
-        "name": "Pokemon0541",
+        "name": "Swadloon",
         "id": 541
       }
     ],
@@ -20414,7 +20414,7 @@
         "id": 541
       },
       {
-        "name": "Pokemon0542",
+        "name": "Leavanny",
         "id": 542
       }
     ],
@@ -20496,7 +20496,7 @@
         "id": 543
       },
       {
-        "name": "Pokemon0544",
+        "name": "Whirlipede",
         "id": 544
       }
     ],
@@ -20538,7 +20538,7 @@
         "id": 544
       },
       {
-        "name": "Pokemon0545",
+        "name": "Scolipede",
         "id": 545
       }
     ],
@@ -20618,7 +20618,7 @@
         "id": 546
       },
       {
-        "name": "Pokemon0547",
+        "name": "Whimsicott",
         "id": 547
       }
     ],
@@ -20698,7 +20698,7 @@
         "id": 548
       },
       {
-        "name": "Pokemon0549",
+        "name": "Lilligant",
         "id": 549
       }
     ],
@@ -20809,7 +20809,7 @@
         "id": 551
       },
       {
-        "name": "Pokemon0552",
+        "name": "Krokorok",
         "id": 552
       }
     ],
@@ -20852,7 +20852,7 @@
         "id": 552
       },
       {
-        "name": "Pokemon0553",
+        "name": "Krookodile",
         "id": 553
       }
     ],
@@ -20932,7 +20932,7 @@
         "id": 554
       },
       {
-        "name": "Pokemon0555",
+        "name": "Darmanitan",
         "id": 555
       }
     ],
@@ -21042,7 +21042,7 @@
         "id": 557
       },
       {
-        "name": "Pokemon0558",
+        "name": "Crustle",
         "id": 558
       }
     ],
@@ -21128,7 +21128,7 @@
         "id": 559
       },
       {
-        "name": "Pokemon0560",
+        "name": "Scrafty",
         "id": 560
       }
     ],
@@ -21245,7 +21245,7 @@
         "id": 562
       },
       {
-        "name": "Pokemon0867",
+        "name": "Runerigus",
         "id": 867
       }
     ],
@@ -21317,7 +21317,7 @@
         "id": 564
       },
       {
-        "name": "Pokemon0565",
+        "name": "Carracosta",
         "id": 565
       }
     ],
@@ -21399,7 +21399,7 @@
         "id": 566
       },
       {
-        "name": "Pokemon0567",
+        "name": "Archeops",
         "id": 567
       }
     ],
@@ -21483,7 +21483,7 @@
         "id": 568
       },
       {
-        "name": "Pokemon0569",
+        "name": "Garbodor",
         "id": 569
       }
     ],
@@ -21553,7 +21553,7 @@
         "id": 570
       },
       {
-        "name": "Pokemon0571",
+        "name": "Zoroark",
         "id": 571
       }
     ],
@@ -21625,7 +21625,7 @@
         "id": 572
       },
       {
-        "name": "Pokemon0573",
+        "name": "Cinccino",
         "id": 573
       }
     ],
@@ -21693,7 +21693,7 @@
         "id": 574
       },
       {
-        "name": "Pokemon0575",
+        "name": "Gothorita",
         "id": 575
       }
     ],
@@ -21731,7 +21731,7 @@
         "id": 575
       },
       {
-        "name": "Pokemon0576",
+        "name": "Gothitelle",
         "id": 576
       }
     ],
@@ -21803,7 +21803,7 @@
         "id": 577
       },
       {
-        "name": "Pokemon0578",
+        "name": "Duosion",
         "id": 578
       }
     ],
@@ -21841,7 +21841,7 @@
         "id": 578
       },
       {
-        "name": "Pokemon0579",
+        "name": "Reuniclus",
         "id": 579
       }
     ],
@@ -21915,7 +21915,7 @@
         "id": 580
       },
       {
-        "name": "Pokemon0581",
+        "name": "Swanna",
         "id": 581
       }
     ],
@@ -21991,7 +21991,7 @@
         "id": 582
       },
       {
-        "name": "Pokemon0583",
+        "name": "Vanillish",
         "id": 583
       }
     ],
@@ -22030,7 +22030,7 @@
         "id": 583
       },
       {
-        "name": "Pokemon0584",
+        "name": "Vanilluxe",
         "id": 584
       }
     ],
@@ -22106,7 +22106,7 @@
         "id": 585
       },
       {
-        "name": "Pokemon0586",
+        "name": "Sawsbuck",
         "id": 586
       }
     ],
@@ -22223,7 +22223,7 @@
         "id": 588
       },
       {
-        "name": "Pokemon0589",
+        "name": "Escavalier",
         "id": 589
       }
     ],
@@ -22301,7 +22301,7 @@
         "id": 590
       },
       {
-        "name": "Pokemon0591",
+        "name": "Amoonguss",
         "id": 591
       }
     ],
@@ -22385,7 +22385,7 @@
         "id": 592
       },
       {
-        "name": "Pokemon0593",
+        "name": "Jellicent",
         "id": 593
       }
     ],
@@ -22496,7 +22496,7 @@
         "id": 595
       },
       {
-        "name": "Pokemon0596",
+        "name": "Galvantula",
         "id": 596
       }
     ],
@@ -22574,7 +22574,7 @@
         "id": 597
       },
       {
-        "name": "Pokemon0598",
+        "name": "Ferrothorn",
         "id": 598
       }
     ],
@@ -22656,7 +22656,7 @@
         "id": 599
       },
       {
-        "name": "Pokemon0600",
+        "name": "Klang",
         "id": 600
       }
     ],
@@ -22694,7 +22694,7 @@
         "id": 600
       },
       {
-        "name": "Pokemon0601",
+        "name": "Klinklang",
         "id": 601
       }
     ],
@@ -22766,7 +22766,7 @@
         "id": 602
       },
       {
-        "name": "Pokemon0603",
+        "name": "Eelektrik",
         "id": 603
       }
     ],
@@ -22802,7 +22802,7 @@
         "id": 603
       },
       {
-        "name": "Pokemon0604",
+        "name": "Eelektross",
         "id": 604
       }
     ],
@@ -22870,7 +22870,7 @@
         "id": 605
       },
       {
-        "name": "Pokemon0606",
+        "name": "Beheeyem",
         "id": 606
       }
     ],
@@ -22944,7 +22944,7 @@
         "id": 607
       },
       {
-        "name": "Pokemon0608",
+        "name": "Lampent",
         "id": 608
       }
     ],
@@ -22986,7 +22986,7 @@
         "id": 608
       },
       {
-        "name": "Pokemon0609",
+        "name": "Chandelure",
         "id": 609
       }
     ],
@@ -23064,7 +23064,7 @@
         "id": 610
       },
       {
-        "name": "Pokemon0611",
+        "name": "Fraxure",
         "id": 611
       }
     ],
@@ -23102,7 +23102,7 @@
         "id": 611
       },
       {
-        "name": "Pokemon0612",
+        "name": "Haxorus",
         "id": 612
       }
     ],
@@ -23174,7 +23174,7 @@
         "id": 613
       },
       {
-        "name": "Pokemon0614",
+        "name": "Beartic",
         "id": 614
       }
     ],
@@ -23283,7 +23283,7 @@
         "id": 616
       },
       {
-        "name": "Pokemon0617",
+        "name": "Accelgor",
         "id": 617
       }
     ],
@@ -23392,7 +23392,7 @@
         "id": 619
       },
       {
-        "name": "Pokemon0620",
+        "name": "Mienshao",
         "id": 620
       }
     ],
@@ -23500,7 +23500,7 @@
         "id": 622
       },
       {
-        "name": "Pokemon0623",
+        "name": "Golurk",
         "id": 623
       }
     ],
@@ -23580,7 +23580,7 @@
         "id": 624
       },
       {
-        "name": "Pokemon0625",
+        "name": "Bisharp",
         "id": 625
       }
     ],
@@ -23692,7 +23692,7 @@
         "id": 627
       },
       {
-        "name": "Pokemon0628",
+        "name": "Braviary",
         "id": 628
       }
     ],
@@ -23770,7 +23770,7 @@
         "id": 629
       },
       {
-        "name": "Pokemon0630",
+        "name": "Mandibuzz",
         "id": 630
       }
     ],
@@ -23924,7 +23924,7 @@
         "id": 633
       },
       {
-        "name": "Pokemon0634",
+        "name": "Zweilous",
         "id": 634
       }
     ],
@@ -23966,7 +23966,7 @@
         "id": 634
       },
       {
-        "name": "Pokemon0635",
+        "name": "Hydreigon",
         "id": 635
       }
     ],
@@ -24046,7 +24046,7 @@
         "id": 636
       },
       {
-        "name": "Pokemon0637",
+        "name": "Volcarona",
         "id": 637
       }
     ],
@@ -24582,7 +24582,7 @@
         "id": 650
       },
       {
-        "name": "Pokemon0651",
+        "name": "Quilladin",
         "id": 651
       }
     ],
@@ -24622,7 +24622,7 @@
         "id": 651
       },
       {
-        "name": "Pokemon0652",
+        "name": "Chesnaught",
         "id": 652
       }
     ],
@@ -24702,7 +24702,7 @@
         "id": 653
       },
       {
-        "name": "Pokemon0654",
+        "name": "Braixen",
         "id": 654
       }
     ],
@@ -24740,7 +24740,7 @@
         "id": 654
       },
       {
-        "name": "Pokemon0655",
+        "name": "Delphox",
         "id": 655
       }
     ],
@@ -24817,7 +24817,7 @@
         "id": 656
       },
       {
-        "name": "Pokemon0657",
+        "name": "Frogadier",
         "id": 657
       }
     ],
@@ -24854,7 +24854,7 @@
         "id": 657
       },
       {
-        "name": "Pokemon0658",
+        "name": "Greninja",
         "id": 658
       }
     ],
@@ -24929,7 +24929,7 @@
         "id": 659
       },
       {
-        "name": "Pokemon0660",
+        "name": "Diggersby",
         "id": 660
       }
     ],
@@ -25004,7 +25004,7 @@
         "id": 661
       },
       {
-        "name": "Pokemon0662",
+        "name": "Fletchinder",
         "id": 662
       }
     ],
@@ -25045,7 +25045,7 @@
         "id": 662
       },
       {
-        "name": "Pokemon0663",
+        "name": "Talonflame",
         "id": 663
       }
     ],
@@ -25123,7 +25123,7 @@
         "id": 664
       },
       {
-        "name": "Pokemon0665",
+        "name": "Spewpa",
         "id": 665
       }
     ],
@@ -25161,7 +25161,7 @@
         "id": 665
       },
       {
-        "name": "Pokemon0666",
+        "name": "Vivillon",
         "id": 666
       }
     ],
@@ -25239,7 +25239,7 @@
         "id": 667
       },
       {
-        "name": "Pokemon0668",
+        "name": "Pyroar",
         "id": 668
       }
     ],
@@ -25315,7 +25315,7 @@
         "id": 669
       },
       {
-        "name": "Pokemon0670",
+        "name": "Floette",
         "id": 670
       }
     ],
@@ -25352,7 +25352,7 @@
         "id": 670
       },
       {
-        "name": "Pokemon0671",
+        "name": "Florges",
         "id": 671
       }
     ],
@@ -25422,7 +25422,7 @@
         "id": 672
       },
       {
-        "name": "Pokemon0673",
+        "name": "Gogoat",
         "id": 673
       }
     ],
@@ -25498,7 +25498,7 @@
         "id": 674
       },
       {
-        "name": "Pokemon0675",
+        "name": "Pangoro",
         "id": 675
       }
     ],
@@ -25606,7 +25606,7 @@
         "id": 677
       },
       {
-        "name": "Pokemon0678",
+        "name": "Meowstic",
         "id": 678
       }
     ],
@@ -25680,7 +25680,7 @@
         "id": 679
       },
       {
-        "name": "Pokemon0680",
+        "name": "Doublade",
         "id": 680
       }
     ],
@@ -25722,7 +25722,7 @@
         "id": 680
       },
       {
-        "name": "Pokemon0681",
+        "name": "Aegislash",
         "id": 681
       }
     ],
@@ -25800,7 +25800,7 @@
         "id": 682
       },
       {
-        "name": "Pokemon0683",
+        "name": "Aromatisse",
         "id": 683
       }
     ],
@@ -25870,7 +25870,7 @@
         "id": 684
       },
       {
-        "name": "Pokemon0685",
+        "name": "Slurpuff",
         "id": 685
       }
     ],
@@ -25942,7 +25942,7 @@
         "id": 686
       },
       {
-        "name": "Pokemon0687",
+        "name": "Malamar",
         "id": 687
       }
     ],
@@ -26022,7 +26022,7 @@
         "id": 688
       },
       {
-        "name": "Pokemon0689",
+        "name": "Barbaracle",
         "id": 689
       }
     ],
@@ -26104,7 +26104,7 @@
         "id": 690
       },
       {
-        "name": "Pokemon0691",
+        "name": "Dragalge",
         "id": 691
       }
     ],
@@ -26181,7 +26181,7 @@
         "id": 692
       },
       {
-        "name": "Pokemon0693",
+        "name": "Clawitzer",
         "id": 693
       }
     ],
@@ -26253,7 +26253,7 @@
         "id": 694
       },
       {
-        "name": "Pokemon0695",
+        "name": "Heliolisk",
         "id": 695
       }
     ],
@@ -26327,7 +26327,7 @@
         "id": 696
       },
       {
-        "name": "Pokemon0697",
+        "name": "Tyrantrum",
         "id": 697
       }
     ],
@@ -26413,7 +26413,7 @@
         "id": 698
       },
       {
-        "name": "Pokemon0699",
+        "name": "Aurorus",
         "id": 699
       }
     ],
@@ -26642,7 +26642,7 @@
         "id": 704
       },
       {
-        "name": "Pokemon0705",
+        "name": "Sliggoo",
         "id": 705
       }
     ],
@@ -26680,7 +26680,7 @@
         "id": 705
       },
       {
-        "name": "Pokemon0706",
+        "name": "Goodra",
         "id": 706
       }
     ],
@@ -26792,7 +26792,7 @@
         "id": 708
       },
       {
-        "name": "Pokemon0709",
+        "name": "Trevenant",
         "id": 709
       }
     ],
@@ -26876,7 +26876,7 @@
         "id": 710
       },
       {
-        "name": "Pokemon0711",
+        "name": "Gourgeist",
         "id": 711
       }
     ],
@@ -26958,7 +26958,7 @@
         "id": 712
       },
       {
-        "name": "Pokemon0713",
+        "name": "Avalugg",
         "id": 713
       }
     ],
@@ -27034,7 +27034,7 @@
         "id": 714
       },
       {
-        "name": "Pokemon0715",
+        "name": "Noivern",
         "id": 715
       }
     ],
@@ -27337,7 +27337,7 @@
         "id": 722
       },
       {
-        "name": "Pokemon0723",
+        "name": "Dartrix",
         "id": 723
       }
     ],
@@ -27381,7 +27381,7 @@
         "id": 723
       },
       {
-        "name": "Pokemon0724",
+        "name": "Decidueye",
         "id": 724
       }
     ],
@@ -27463,7 +27463,7 @@
         "id": 725
       },
       {
-        "name": "Pokemon0726",
+        "name": "Torracat",
         "id": 726
       }
     ],
@@ -27501,7 +27501,7 @@
         "id": 726
       },
       {
-        "name": "Pokemon0727",
+        "name": "Incineroar",
         "id": 727
       }
     ],
@@ -27578,7 +27578,7 @@
         "id": 728
       },
       {
-        "name": "Pokemon0729",
+        "name": "Brionne",
         "id": 729
       }
     ],
@@ -27615,7 +27615,7 @@
         "id": 729
       },
       {
-        "name": "Pokemon0730",
+        "name": "Primarina",
         "id": 730
       }
     ],
@@ -27691,7 +27691,7 @@
         "id": 731
       },
       {
-        "name": "Pokemon0732",
+        "name": "Trumbeak",
         "id": 732
       }
     ],
@@ -27732,7 +27732,7 @@
         "id": 732
       },
       {
-        "name": "Pokemon0733",
+        "name": "Toucannon",
         "id": 733
       }
     ],
@@ -27808,7 +27808,7 @@
         "id": 734
       },
       {
-        "name": "Pokemon0735",
+        "name": "Gumshoos",
         "id": 735
       }
     ],
@@ -27876,7 +27876,7 @@
         "id": 736
       },
       {
-        "name": "Pokemon0737",
+        "name": "Charjabug",
         "id": 737
       }
     ],
@@ -27916,7 +27916,7 @@
         "id": 737
       },
       {
-        "name": "Pokemon0738",
+        "name": "Vikavolt",
         "id": 738
       }
     ],
@@ -27992,7 +27992,7 @@
         "id": 739
       },
       {
-        "name": "Pokemon0740",
+        "name": "Crabominable",
         "id": 740
       }
     ],
@@ -28110,7 +28110,7 @@
         "id": 742
       },
       {
-        "name": "Pokemon0743",
+        "name": "Ribombee",
         "id": 743
       }
     ],
@@ -28188,7 +28188,7 @@
         "id": 744
       },
       {
-        "name": "Pokemon0745",
+        "name": "Lycanroc",
         "id": 745
       }
     ],
@@ -28299,7 +28299,7 @@
         "id": 747
       },
       {
-        "name": "Pokemon0748",
+        "name": "Toxapex",
         "id": 748
       }
     ],
@@ -28375,7 +28375,7 @@
         "id": 749
       },
       {
-        "name": "Pokemon0750",
+        "name": "Mudsdale",
         "id": 750
       }
     ],
@@ -28449,7 +28449,7 @@
         "id": 751
       },
       {
-        "name": "Pokemon0752",
+        "name": "Araquanid",
         "id": 752
       }
     ],
@@ -28527,7 +28527,7 @@
         "id": 753
       },
       {
-        "name": "Pokemon0754",
+        "name": "Lurantis",
         "id": 754
       }
     ],
@@ -28605,7 +28605,7 @@
         "id": 755
       },
       {
-        "name": "Pokemon0756",
+        "name": "Shiinotic",
         "id": 756
       }
     ],
@@ -28687,7 +28687,7 @@
         "id": 757
       },
       {
-        "name": "Pokemon0758",
+        "name": "Salazzle",
         "id": 758
       }
     ],
@@ -28765,7 +28765,7 @@
         "id": 759
       },
       {
-        "name": "Pokemon0760",
+        "name": "Bewear",
         "id": 760
       }
     ],
@@ -28841,7 +28841,7 @@
         "id": 761
       },
       {
-        "name": "Pokemon0762",
+        "name": "Steenee",
         "id": 762
       }
     ],
@@ -28881,7 +28881,7 @@
         "id": 762
       },
       {
-        "name": "Pokemon0763",
+        "name": "Tsareena",
         "id": 763
       }
     ],
@@ -29063,7 +29063,7 @@
         "id": 767
       },
       {
-        "name": "Pokemon0768",
+        "name": "Golisopod",
         "id": 768
       }
     ],
@@ -29143,7 +29143,7 @@
         "id": 769
       },
       {
-        "name": "Pokemon0770",
+        "name": "Palossand",
         "id": 770
       }
     ],
@@ -29254,7 +29254,7 @@
         "id": 772
       },
       {
-        "name": "Pokemon0773",
+        "name": "Silvally",
         "id": 773
       }
     ],
@@ -29622,7 +29622,7 @@
         "id": 782
       },
       {
-        "name": "Pokemon0783",
+        "name": "Hakamo-o",
         "id": 783
       }
     ],
@@ -29662,7 +29662,7 @@
         "id": 783
       },
       {
-        "name": "Pokemon0784",
+        "name": "Kommo-o",
         "id": 784
       }
     ],
@@ -29890,7 +29890,7 @@
         "id": 789
       },
       {
-        "name": "Pokemon0790",
+        "name": "Cosmoem",
         "id": 790
       }
     ],
@@ -29928,11 +29928,11 @@
         "id": 790
       },
       {
-        "name": "Pokemon0791",
+        "name": "Solgaleo",
         "id": 791
       },
       {
-        "name": "Pokemon0792",
+        "name": "Lunala",
         "id": 792
       }
     ],
@@ -30419,7 +30419,7 @@
         "id": 803
       },
       {
-        "name": "Pokemon0804",
+        "name": "Naganadel",
         "id": 804
       }
     ],
@@ -30603,7 +30603,7 @@
         "id": 808
       },
       {
-        "name": "Pokemon0809",
+        "name": "Melmetal",
         "id": 809
       }
     ],
@@ -30675,7 +30675,7 @@
         "id": 810
       },
       {
-        "name": "Pokemon0811",
+        "name": "Thwackey",
         "id": 811
       }
     ],
@@ -30715,7 +30715,7 @@
         "id": 811
       },
       {
-        "name": "Pokemon0812",
+        "name": "Rillaboom",
         "id": 812
       }
     ],
@@ -30791,7 +30791,7 @@
         "id": 813
       },
       {
-        "name": "Pokemon0814",
+        "name": "Raboot",
         "id": 814
       }
     ],
@@ -30829,7 +30829,7 @@
         "id": 814
       },
       {
-        "name": "Pokemon0815",
+        "name": "Cinderace",
         "id": 815
       }
     ],
@@ -30901,7 +30901,7 @@
         "id": 816
       },
       {
-        "name": "Pokemon0817",
+        "name": "Drizzile",
         "id": 817
       }
     ],
@@ -30938,7 +30938,7 @@
         "id": 817
       },
       {
-        "name": "Pokemon0818",
+        "name": "Inteleon",
         "id": 818
       }
     ],
@@ -31008,7 +31008,7 @@
         "id": 819
       },
       {
-        "name": "Pokemon0820",
+        "name": "Greedent",
         "id": 820
       }
     ],
@@ -31076,7 +31076,7 @@
         "id": 821
       },
       {
-        "name": "Pokemon0822",
+        "name": "Corvisquire",
         "id": 822
       }
     ],
@@ -31114,7 +31114,7 @@
         "id": 822
       },
       {
-        "name": "Pokemon0823",
+        "name": "Corviknight",
         "id": 823
       }
     ],
@@ -31191,7 +31191,7 @@
         "id": 824
       },
       {
-        "name": "Pokemon0825",
+        "name": "Dottler",
         "id": 825
       }
     ],
@@ -31231,7 +31231,7 @@
         "id": 825
       },
       {
-        "name": "Pokemon0826",
+        "name": "Orbeetle",
         "id": 826
       }
     ],
@@ -31311,7 +31311,7 @@
         "id": 827
       },
       {
-        "name": "Pokemon0828",
+        "name": "Thievul",
         "id": 828
       }
     ],
@@ -31383,7 +31383,7 @@
         "id": 829
       },
       {
-        "name": "Pokemon0830",
+        "name": "Eldegoss",
         "id": 830
       }
     ],
@@ -31459,7 +31459,7 @@
         "id": 831
       },
       {
-        "name": "Pokemon0832",
+        "name": "Dubwool",
         "id": 832
       }
     ],
@@ -31527,7 +31527,7 @@
         "id": 833
       },
       {
-        "name": "Pokemon0834",
+        "name": "Drednaw",
         "id": 834
       }
     ],
@@ -31603,7 +31603,7 @@
         "id": 835
       },
       {
-        "name": "Pokemon0836",
+        "name": "Boltund",
         "id": 836
       }
     ],
@@ -31671,7 +31671,7 @@
         "id": 837
       },
       {
-        "name": "Pokemon0838",
+        "name": "Carkol",
         "id": 838
       }
     ],
@@ -31713,7 +31713,7 @@
         "id": 838
       },
       {
-        "name": "Pokemon0839",
+        "name": "Coalossal",
         "id": 839
       }
     ],
@@ -31795,11 +31795,11 @@
         "id": 840
       },
       {
-        "name": "Pokemon0841",
+        "name": "Flapple",
         "id": 841
       },
       {
-        "name": "Pokemon0842",
+        "name": "Appletun",
         "id": 842
       }
     ],
@@ -31921,7 +31921,7 @@
         "id": 843
       },
       {
-        "name": "Pokemon0844",
+        "name": "Sandaconda",
         "id": 844
       }
     ],
@@ -32030,7 +32030,7 @@
         "id": 846
       },
       {
-        "name": "Pokemon0847",
+        "name": "Barraskewda",
         "id": 847
       }
     ],
@@ -32102,7 +32102,7 @@
         "id": 848
       },
       {
-        "name": "Pokemon0849",
+        "name": "Toxtricity",
         "id": 849
       }
     ],
@@ -32141,7 +32141,7 @@
         "id": 849
       },
       {
-        "name": "Pokemon0849",
+        "name": "Toxtricity",
         "id": 849
       }
     ],
@@ -32180,7 +32180,7 @@
         "id": 850
       },
       {
-        "name": "Pokemon0851",
+        "name": "Centiskorch",
         "id": 851
       }
     ],
@@ -32258,7 +32258,7 @@
         "id": 852
       },
       {
-        "name": "Pokemon0853",
+        "name": "Grapploct",
         "id": 853
       }
     ],
@@ -32330,7 +32330,7 @@
         "id": 854
       },
       {
-        "name": "Pokemon0855",
+        "name": "Polteageist",
         "id": 855
       }
     ],
@@ -32400,7 +32400,7 @@
         "id": 856
       },
       {
-        "name": "Pokemon0857",
+        "name": "Hattrem",
         "id": 857
       }
     ],
@@ -32438,7 +32438,7 @@
         "id": 857
       },
       {
-        "name": "Pokemon0858",
+        "name": "Hatterene",
         "id": 858
       }
     ],
@@ -32516,7 +32516,7 @@
         "id": 859
       },
       {
-        "name": "Pokemon0860",
+        "name": "Morgrem",
         "id": 860
       }
     ],
@@ -32558,7 +32558,7 @@
         "id": 860
       },
       {
-        "name": "Pokemon0861",
+        "name": "Grimmsnarl",
         "id": 861
       }
     ],
@@ -32851,7 +32851,7 @@
         "id": 868
       },
       {
-        "name": "Pokemon0869",
+        "name": "Alcremie",
         "id": 869
       }
     ],
@@ -32989,7 +32989,7 @@
         "id": 872
       },
       {
-        "name": "Pokemon0873",
+        "name": "Frosmoth",
         "id": 873
       }
     ],
@@ -33212,7 +33212,7 @@
         "id": 878
       },
       {
-        "name": "Pokemon0879",
+        "name": "Copperajah",
         "id": 879
       }
     ],
@@ -33477,7 +33477,7 @@
         "id": 885
       },
       {
-        "name": "Pokemon0886",
+        "name": "Drakloak",
         "id": 886
       }
     ],
@@ -33519,7 +33519,7 @@
         "id": 886
       },
       {
-        "name": "Pokemon0887",
+        "name": "Dragapult",
         "id": 887
       }
     ],
@@ -33702,11 +33702,11 @@
         "id": 891
       },
       {
-        "name": "Pokemon0892",
+        "name": "Urshifu",
         "id": 892
       },
       {
-        "name": "Pokemon0892",
+        "name": "Urshifu",
         "id": 892
       }
     ],
@@ -33970,14 +33970,16 @@
   },
   {
     "id": 899,
-    "name_en": "Pokemon 899",
-    "name_jp": "ポケモン899",
+    "name_en": "Wyrdeer",
+    "name_jp": "アヤシシ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/899.png",
     "types_en": [
-      "Normal"
+      "Normal",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "ノーマル",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -33987,29 +33989,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #899. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #899。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Wyrdeer is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アヤシシは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 899",
+        "name": "Wyrdeer",
         "id": 899
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Bug": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 900,
-    "name_en": "Pokemon 900",
-    "name_jp": "ポケモン900",
+    "name_en": "Kleavor",
+    "name_jp": "バサギリ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/900.png",
     "types_en": [
-      "Normal"
+      "Bug",
+      "Rock"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし",
+      "いわ"
     ],
     "stats": {
       "hp": 50,
@@ -34019,28 +34024,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #900. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #900。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Kleavor is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "バサギリは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 900",
+        "name": "Kleavor",
         "id": 900
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 901,
-    "name_en": "Pokemon 901",
-    "name_jp": "ポケモン901",
+    "name_en": "Ursaluna",
+    "name_jp": "ガチグマ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/901.png",
     "types_en": [
+      "Ground",
       "Normal"
     ],
     "types_jp": [
+      "じめん",
       "ノーマル"
     ],
     "stats": {
@@ -34051,29 +34060,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #901. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #901。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Ursaluna is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ガチグマは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 901",
+        "name": "Ursaluna",
         "id": 901
       }
     ],
     "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0,
       "Fighting": 2.0
     }
   },
   {
     "id": 902,
-    "name_en": "Pokemon 902",
-    "name_jp": "ポケモン902",
+    "name_en": "Basculegion",
+    "name_jp": "イダイトウ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
     "types_en": [
-      "Normal"
+      "Water",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -34083,29 +34097,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #902. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #902。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Basculegion is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イダイトウは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 902",
+        "name": "Basculegion",
         "id": 902
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 903,
-    "name_en": "Pokemon 903",
-    "name_jp": "ポケモン903",
+    "name_en": "Sneasler",
+    "name_jp": "オオニューラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/903.png",
     "types_en": [
-      "Normal"
+      "Fighting",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "かくとう",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -34115,29 +34134,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #903. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #903。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Sneasler is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オオニューラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 903",
+        "name": "Sneasler",
         "id": 903
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Flying": 2.0,
+      "Psychic": 4.0
     }
   },
   {
     "id": 904,
-    "name_en": "Pokemon 904",
-    "name_jp": "ポケモン904",
+    "name_en": "Overqwil",
+    "name_jp": "ハリーマン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/904.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -34147,29 +34170,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #904. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #904。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Overqwil is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ハリーマンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 904",
+        "name": "Overqwil",
         "id": 904
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0
     }
   },
   {
     "id": 905,
-    "name_en": "Pokemon 905",
-    "name_jp": "ポケモン905",
+    "name_en": "Enamorus",
+    "name_jp": "ラブトロス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/905.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Flying"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "ひこう"
     ],
     "stats": {
       "hp": 50,
@@ -34179,29 +34204,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #905. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #905。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Enamorus is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ラブトロスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 905",
+        "name": "Enamorus",
         "id": 905
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 906,
-    "name_en": "Pokemon 906",
-    "name_jp": "ポケモン906",
+    "name_en": "Sprigatito",
+    "name_jp": "ニャオハ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png",
     "types_en": [
-      "Normal"
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -34211,29 +34240,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #906. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #906。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Sprigatito is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ニャオハは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 906",
+        "name": "Sprigatito",
         "id": 906
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 907,
-    "name_en": "Pokemon 907",
-    "name_jp": "ポケモン907",
+    "name_en": "Floragato",
+    "name_jp": "ニャローテ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/907.png",
     "types_en": [
-      "Normal"
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -34243,29 +34276,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #907. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #907。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Floragato is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ニャローテは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 907",
+        "name": "Floragato",
         "id": 907
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 908,
-    "name_en": "Pokemon 908",
-    "name_jp": "ポケモン908",
+    "name_en": "Meowscarada",
+    "name_jp": "マスカーニャ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/908.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -34275,29 +34314,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #908. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #908。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Meowscarada is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "マスカーニャは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 908",
+        "name": "Meowscarada",
         "id": 908
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 909,
-    "name_en": "Pokemon 909",
-    "name_jp": "ポケモン909",
+    "name_en": "Fuecoco",
+    "name_jp": "ホゲータ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/909.png",
     "types_en": [
-      "Normal"
+      "Fire"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお"
     ],
     "stats": {
       "hp": 50,
@@ -34307,29 +34352,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #909. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #909。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Fuecoco is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ホゲータは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 909",
+        "name": "Fuecoco",
         "id": 909
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 910,
-    "name_en": "Pokemon 910",
-    "name_jp": "ポケモン910",
+    "name_en": "Crocalor",
+    "name_jp": "アチゲータ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/910.png",
     "types_en": [
-      "Normal"
+      "Fire"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお"
     ],
     "stats": {
       "hp": 50,
@@ -34339,29 +34386,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #910. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #910。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Crocalor is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アチゲータは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 910",
+        "name": "Crocalor",
         "id": 910
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 911,
-    "name_en": "Pokemon 911",
-    "name_jp": "ポケモン911",
+    "name_en": "Skeledirge",
+    "name_jp": "ラウドボーン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png",
     "types_en": [
-      "Normal"
+      "Fire",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -34371,29 +34422,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #911. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #911。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Skeledirge is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ラウドボーンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 911",
+        "name": "Skeledirge",
         "id": 911
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 912,
-    "name_en": "Pokemon 912",
-    "name_jp": "ポケモン912",
+    "name_en": "Quaxly",
+    "name_jp": "クワッス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/912.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -34403,29 +34458,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #912. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #912。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Quaxly is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "クワッスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 912",
+        "name": "Quaxly",
         "id": 912
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 913,
-    "name_en": "Pokemon 913",
-    "name_jp": "ポケモン913",
+    "name_en": "Quaxwell",
+    "name_jp": "ウェルカモ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/913.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -34435,29 +34491,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #913. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #913。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Quaxwell is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウェルカモは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 913",
+        "name": "Quaxwell",
         "id": 913
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 914,
-    "name_en": "Pokemon 914",
-    "name_jp": "ポケモン914",
+    "name_en": "Quaquaval",
+    "name_jp": "ウェーニバル",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
     "types_en": [
-      "Normal"
+      "Water",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -34467,23 +34526,27 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #914. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #914。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Quaquaval is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウェーニバルは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 914",
+        "name": "Quaquaval",
         "id": 914
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 915,
-    "name_en": "Pokemon 915",
-    "name_jp": "ポケモン915",
+    "name_en": "Lechonk",
+    "name_jp": "グルトン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/915.png",
     "types_en": [
       "Normal"
@@ -34499,12 +34562,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #915. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #915。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Lechonk is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "グルトンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 915",
+        "name": "Lechonk",
         "id": 915
       }
     ],
@@ -34514,8 +34577,8 @@
   },
   {
     "id": 916,
-    "name_en": "Pokemon 916",
-    "name_jp": "ポケモン916",
+    "name_en": "Oinkologne",
+    "name_jp": "パフュートン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/916.png",
     "types_en": [
       "Normal"
@@ -34531,12 +34594,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #916. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #916。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Oinkologne is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パフュートンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 916",
+        "name": "Oinkologne",
         "id": 916
       }
     ],
@@ -34546,14 +34609,14 @@
   },
   {
     "id": 917,
-    "name_en": "Pokemon 917",
-    "name_jp": "ポケモン917",
+    "name_en": "Tarountula",
+    "name_jp": "タマンチュラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/917.png",
     "types_en": [
-      "Normal"
+      "Bug"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし"
     ],
     "stats": {
       "hp": 50,
@@ -34563,29 +34626,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #917. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #917。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tarountula is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "タマンチュラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 917",
+        "name": "Tarountula",
         "id": 917
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 918,
-    "name_en": "Pokemon 918",
-    "name_jp": "ポケモン918",
+    "name_en": "Spidops",
+    "name_jp": "ワナイダー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/918.png",
     "types_en": [
-      "Normal"
+      "Bug"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし"
     ],
     "stats": {
       "hp": 50,
@@ -34595,29 +34660,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #918. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #918。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Spidops is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ワナイダーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 918",
+        "name": "Spidops",
         "id": 918
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 919,
-    "name_en": "Pokemon 919",
-    "name_jp": "ポケモン919",
+    "name_en": "Nymble",
+    "name_jp": "マメバッタ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/919.png",
     "types_en": [
-      "Normal"
+      "Bug"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし"
     ],
     "stats": {
       "hp": 50,
@@ -34627,29 +34694,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #919. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #919。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Nymble is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "マメバッタは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 919",
+        "name": "Nymble",
         "id": 919
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 920,
-    "name_en": "Pokemon 920",
-    "name_jp": "ポケモン920",
+    "name_en": "Lokix",
+    "name_jp": "エクスレッグ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/920.png",
     "types_en": [
-      "Normal"
+      "Bug",
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし",
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -34659,29 +34730,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #920. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #920。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Lokix is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "エクスレッグは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 920",
+        "name": "Lokix",
         "id": 920
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0,
+      "Rock": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 921,
-    "name_en": "Pokemon 921",
-    "name_jp": "ポケモン921",
+    "name_en": "Pawmi",
+    "name_jp": "パモ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/921.png",
     "types_en": [
-      "Normal"
+      "Electric"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき"
     ],
     "stats": {
       "hp": 50,
@@ -34691,29 +34766,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #921. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #921。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Pawmi is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パモは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 921",
+        "name": "Pawmi",
         "id": 921
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0
     }
   },
   {
     "id": 922,
-    "name_en": "Pokemon 922",
-    "name_jp": "ポケモン922",
+    "name_en": "Pawmo",
+    "name_jp": "パモット",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/922.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -34723,29 +34800,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #922. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #922。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Pawmo is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パモットは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 922",
+        "name": "Pawmo",
         "id": 922
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 923,
-    "name_en": "Pokemon 923",
-    "name_jp": "ポケモン923",
+    "name_en": "Pawmot",
+    "name_jp": "パーモット",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/923.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -34755,23 +34836,25 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #923. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #923。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Pawmot is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パーモットは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 923",
+        "name": "Pawmot",
         "id": 923
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 924,
-    "name_en": "Pokemon 924",
-    "name_jp": "ポケモン924",
+    "name_en": "Tandemaus",
+    "name_jp": "ワッカネズミ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/924.png",
     "types_en": [
       "Normal"
@@ -34787,12 +34870,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #924. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #924。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tandemaus is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ワッカネズミは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 924",
+        "name": "Tandemaus",
         "id": 924
       }
     ],
@@ -34802,8 +34885,8 @@
   },
   {
     "id": 925,
-    "name_en": "Pokemon 925",
-    "name_jp": "ポケモン925",
+    "name_en": "Maushold",
+    "name_jp": "イッカネズミ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/925.png",
     "types_en": [
       "Normal"
@@ -34819,12 +34902,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #925. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #925。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Maushold is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イッカネズミは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 925",
+        "name": "Maushold",
         "id": 925
       }
     ],
@@ -34834,14 +34917,14 @@
   },
   {
     "id": 926,
-    "name_en": "Pokemon 926",
-    "name_jp": "ポケモン926",
+    "name_en": "Fidough",
+    "name_jp": "パピモッチ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/926.png",
     "types_en": [
-      "Normal"
+      "Fairy"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー"
     ],
     "stats": {
       "hp": 50,
@@ -34851,29 +34934,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #926. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #926。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Fidough is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パピモッチは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 926",
+        "name": "Fidough",
         "id": 926
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Poison": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 927,
-    "name_en": "Pokemon 927",
-    "name_jp": "ポケモン927",
+    "name_en": "Dachsbun",
+    "name_jp": "バウッツェル",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/927.png",
     "types_en": [
-      "Normal"
+      "Fairy"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー"
     ],
     "stats": {
       "hp": 50,
@@ -34883,28 +34967,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #927. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #927。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Dachsbun is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "バウッツェルは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 927",
+        "name": "Dachsbun",
         "id": 927
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Poison": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 928,
-    "name_en": "Pokemon 928",
-    "name_jp": "ポケモン928",
+    "name_en": "Smoliv",
+    "name_jp": "ミニーブ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/928.png",
     "types_en": [
+      "Grass",
       "Normal"
     ],
     "types_jp": [
+      "くさ",
       "ノーマル"
     ],
     "stats": {
@@ -34915,28 +35002,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #928. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #928。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Smoliv is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ミニーブは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 928",
+        "name": "Smoliv",
         "id": 928
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 929,
-    "name_en": "Pokemon 929",
-    "name_jp": "ポケモン929",
+    "name_en": "Dolliv",
+    "name_jp": "オリーニョ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/929.png",
     "types_en": [
+      "Grass",
       "Normal"
     ],
     "types_jp": [
+      "くさ",
       "ノーマル"
     ],
     "stats": {
@@ -34947,28 +35041,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #929. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #929。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Dolliv is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オリーニョは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 929",
+        "name": "Dolliv",
         "id": 929
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 930,
-    "name_en": "Pokemon 930",
-    "name_jp": "ポケモン930",
+    "name_en": "Arboliva",
+    "name_jp": "オリーヴァ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/930.png",
     "types_en": [
+      "Grass",
       "Normal"
     ],
     "types_jp": [
+      "くさ",
       "ノーマル"
     ],
     "stats": {
@@ -34979,29 +35080,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #930. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #930。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Arboliva is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オリーヴァは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 930",
+        "name": "Arboliva",
         "id": 930
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 931,
-    "name_en": "Pokemon 931",
-    "name_jp": "ポケモン931",
+    "name_en": "Squawkabilly",
+    "name_jp": "イキリンコ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/931.png",
     "types_en": [
-      "Normal"
+      "Normal",
+      "Flying"
     ],
     "types_jp": [
-      "ノーマル"
+      "ノーマル",
+      "ひこう"
     ],
     "stats": {
       "hp": 50,
@@ -35011,29 +35119,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #931. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #931。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Squawkabilly is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イキリンコは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 931",
+        "name": "Squawkabilly",
         "id": 931
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 932,
-    "name_en": "Pokemon 932",
-    "name_jp": "ポケモン932",
+    "name_en": "Nacli",
+    "name_jp": "コジオ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/932.png",
     "types_en": [
-      "Normal"
+      "Rock"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ"
     ],
     "stats": {
       "hp": 50,
@@ -35043,29 +35153,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #932. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #932。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Nacli is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "コジオは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 932",
+        "name": "Nacli",
         "id": 932
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 933,
-    "name_en": "Pokemon 933",
-    "name_jp": "ポケモン933",
+    "name_en": "Naclstack",
+    "name_jp": "ジオヅム",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/933.png",
     "types_en": [
-      "Normal"
+      "Rock"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ"
     ],
     "stats": {
       "hp": 50,
@@ -35075,29 +35189,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #933. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #933。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Naclstack is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ジオヅムは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 933",
+        "name": "Naclstack",
         "id": 933
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 934,
-    "name_en": "Pokemon 934",
-    "name_jp": "ポケモン934",
+    "name_en": "Garganacl",
+    "name_jp": "キョジオーン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/934.png",
     "types_en": [
-      "Normal"
+      "Rock"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ"
     ],
     "stats": {
       "hp": 50,
@@ -35107,29 +35225,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #934. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #934。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Garganacl is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "キョジオーンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 934",
+        "name": "Garganacl",
         "id": 934
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 935,
-    "name_en": "Pokemon 935",
-    "name_jp": "ポケモン935",
+    "name_en": "Charcadet",
+    "name_jp": "カルボウ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/935.png",
     "types_en": [
-      "Normal"
+      "Fire"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお"
     ],
     "stats": {
       "hp": 50,
@@ -35139,29 +35261,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #935. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #935。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Charcadet is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カルボウは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 935",
+        "name": "Charcadet",
         "id": 935
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 936,
-    "name_en": "Pokemon 936",
-    "name_jp": "ポケモン936",
+    "name_en": "Armarouge",
+    "name_jp": "グレンアルマ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/936.png",
     "types_en": [
-      "Normal"
+      "Fire",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -35171,29 +35297,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #936. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #936。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Armarouge is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "グレンアルマは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 936",
+        "name": "Armarouge",
         "id": 936
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 937,
-    "name_en": "Pokemon 937",
-    "name_jp": "ポケモン937",
+    "name_en": "Ceruledge",
+    "name_jp": "ソウブレイズ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/937.png",
     "types_en": [
-      "Normal"
+      "Fire",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -35203,29 +35335,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #937. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #937。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Ceruledge is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ソウブレイズは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 937",
+        "name": "Ceruledge",
         "id": 937
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 938,
-    "name_en": "Pokemon 938",
-    "name_jp": "ポケモン938",
+    "name_en": "Tadbulb",
+    "name_jp": "ズピカ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/938.png",
     "types_en": [
-      "Normal"
+      "Electric"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき"
     ],
     "stats": {
       "hp": 50,
@@ -35235,29 +35371,29 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #938. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #938。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tadbulb is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ズピカは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 938",
+        "name": "Tadbulb",
         "id": 938
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0
     }
   },
   {
     "id": 939,
-    "name_en": "Pokemon 939",
-    "name_jp": "ポケモン939",
+    "name_en": "Bellibolt",
+    "name_jp": "ハラバリー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png",
     "types_en": [
-      "Normal"
+      "Electric"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき"
     ],
     "stats": {
       "hp": 50,
@@ -35267,29 +35403,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #939. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #939。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Bellibolt is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ハラバリーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 939",
+        "name": "Bellibolt",
         "id": 939
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0
     }
   },
   {
     "id": 940,
-    "name_en": "Pokemon 940",
-    "name_jp": "ポケモン940",
+    "name_en": "Wattrel",
+    "name_jp": "カイデン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/940.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Flying"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "ひこう"
     ],
     "stats": {
       "hp": 50,
@@ -35299,29 +35437,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #940. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #940。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Wattrel is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カイデンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 940",
+        "name": "Wattrel",
         "id": 940
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 941,
-    "name_en": "Pokemon 941",
-    "name_jp": "ポケモン941",
+    "name_en": "Kilowattrel",
+    "name_jp": "タイカイデン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/941.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Flying"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "ひこう"
     ],
     "stats": {
       "hp": 50,
@@ -35331,29 +35472,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #941. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #941。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Kilowattrel is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "タイカイデンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 941",
+        "name": "Kilowattrel",
         "id": 941
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 942,
-    "name_en": "Pokemon 942",
-    "name_jp": "ポケモン942",
+    "name_en": "Maschiff",
+    "name_jp": "オラチフ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/942.png",
     "types_en": [
-      "Normal"
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -35363,29 +35505,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #942. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #942。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Maschiff is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オラチフは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 942",
+        "name": "Maschiff",
         "id": 942
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Bug": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 943,
-    "name_en": "Pokemon 943",
-    "name_jp": "ポケモン943",
+    "name_en": "Mabosstiff",
+    "name_jp": "マフィティフ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/943.png",
     "types_en": [
-      "Normal"
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -35395,28 +35539,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #943. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #943。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Mabosstiff is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "マフィティフは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 943",
+        "name": "Mabosstiff",
         "id": 943
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Bug": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 944,
-    "name_en": "Pokemon 944",
-    "name_jp": "ポケモン944",
+    "name_en": "Shroodle",
+    "name_jp": "シルシュルー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/944.png",
     "types_en": [
+      "Poison",
       "Normal"
     ],
     "types_jp": [
+      "どく",
       "ノーマル"
     ],
     "stats": {
@@ -35427,28 +35575,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #944. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #944。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Shroodle is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "シルシュルーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 944",
+        "name": "Shroodle",
         "id": 944
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0
     }
   },
   {
     "id": 945,
-    "name_en": "Pokemon 945",
-    "name_jp": "ポケモン945",
+    "name_en": "Grafaiai",
+    "name_jp": "タギングル",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/945.png",
     "types_en": [
+      "Poison",
       "Normal"
     ],
     "types_jp": [
+      "どく",
       "ノーマル"
     ],
     "stats": {
@@ -35459,29 +35610,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #945. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #945。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Grafaiai is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "タギングルは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 945",
+        "name": "Grafaiai",
         "id": 945
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0
     }
   },
   {
     "id": 946,
-    "name_en": "Pokemon 946",
-    "name_jp": "ポケモン946",
+    "name_en": "Bramblin",
+    "name_jp": "アノクサ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/946.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -35491,29 +35645,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #946. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #946。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Bramblin is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アノクサは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 946",
+        "name": "Bramblin",
         "id": 946
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 947,
-    "name_en": "Pokemon 947",
-    "name_jp": "ポケモン947",
+    "name_en": "Brambleghast",
+    "name_jp": "アノホラグサ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/947.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -35523,29 +35683,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #947. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #947。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Brambleghast is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アノホラグサは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 947",
+        "name": "Brambleghast",
         "id": 947
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 948,
-    "name_en": "Pokemon 948",
-    "name_jp": "ポケモン948",
+    "name_en": "Toedscool",
+    "name_jp": "ノノクラゲ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/948.png",
     "types_en": [
-      "Normal"
+      "Ground",
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "じめん",
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -35555,29 +35721,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #948. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #948。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Toedscool is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ノノクラゲは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 948",
+        "name": "Toedscool",
         "id": 948
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 4.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 949,
-    "name_en": "Pokemon 949",
-    "name_jp": "ポケモン949",
+    "name_en": "Toedscruel",
+    "name_jp": "リククラゲ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/949.png",
     "types_en": [
-      "Normal"
+      "Ground",
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "じめん",
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -35587,29 +35758,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #949. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #949。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Toedscruel is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "リククラゲは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 949",
+        "name": "Toedscruel",
         "id": 949
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 4.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 950,
-    "name_en": "Pokemon 950",
-    "name_jp": "ポケモン950",
+    "name_en": "Klawf",
+    "name_jp": "ガケガニ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/950.png",
     "types_en": [
-      "Normal"
+      "Rock"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ"
     ],
     "stats": {
       "hp": 50,
@@ -35619,29 +35793,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #950. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #950。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Klawf is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ガケガニは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 950",
+        "name": "Klawf",
         "id": 950
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 951,
-    "name_en": "Pokemon 951",
-    "name_jp": "ポケモン951",
+    "name_en": "Capsakid",
+    "name_jp": "カプサイジ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/951.png",
     "types_en": [
-      "Normal"
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -35651,29 +35829,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #951. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #951。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Capsakid is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カプサイジは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 951",
+        "name": "Capsakid",
         "id": 951
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 952,
-    "name_en": "Pokemon 952",
-    "name_jp": "ポケモン952",
+    "name_en": "Scovillain",
+    "name_jp": "スコヴィラン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/952.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Fire"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ほのお"
     ],
     "stats": {
       "hp": 50,
@@ -35683,29 +35867,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #952. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #952。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Scovillain is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "スコヴィランは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 952",
+        "name": "Scovillain",
         "id": 952
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 953,
-    "name_en": "Pokemon 953",
-    "name_jp": "ポケモン953",
+    "name_en": "Rellor",
+    "name_jp": "シガロコ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/953.png",
     "types_en": [
-      "Normal"
+      "Bug"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし"
     ],
     "stats": {
       "hp": 50,
@@ -35715,29 +35901,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #953. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #953。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Rellor is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "シガロコは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 953",
+        "name": "Rellor",
         "id": 953
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 954,
-    "name_en": "Pokemon 954",
-    "name_jp": "ポケモン954",
+    "name_en": "Rabsca",
+    "name_jp": "ベラカッサ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/954.png",
     "types_en": [
-      "Normal"
+      "Bug",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -35747,29 +35937,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #954. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #954。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Rabsca is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ベラカッサは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 954",
+        "name": "Rabsca",
         "id": 954
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0,
+      "Rock": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 955,
-    "name_en": "Pokemon 955",
-    "name_jp": "ポケモン955",
+    "name_en": "Flittle",
+    "name_jp": "ヒラヒナ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/955.png",
     "types_en": [
-      "Normal"
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -35779,29 +35974,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #955. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #955。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Flittle is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ヒラヒナは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 955",
+        "name": "Flittle",
         "id": 955
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 956,
-    "name_en": "Pokemon 956",
-    "name_jp": "ポケモン956",
+    "name_en": "Espathra",
+    "name_jp": "クエスパトラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/956.png",
     "types_en": [
-      "Normal"
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -35811,29 +36008,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #956. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #956。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Espathra is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "クエスパトラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 956",
+        "name": "Espathra",
         "id": 956
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 957,
-    "name_en": "Pokemon 957",
-    "name_jp": "ポケモン957",
+    "name_en": "Tinkatink",
+    "name_jp": "カヌチャン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/957.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -35843,29 +36044,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #957. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #957。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tinkatink is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カヌチャンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 957",
+        "name": "Tinkatink",
         "id": 957
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 958,
-    "name_en": "Pokemon 958",
-    "name_jp": "ポケモン958",
+    "name_en": "Tinkatuff",
+    "name_jp": "ナカヌチャン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/958.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -35875,29 +36079,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #958. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #958。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tinkatuff is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ナカヌチャンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 958",
+        "name": "Tinkatuff",
         "id": 958
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 959,
-    "name_en": "Pokemon 959",
-    "name_jp": "ポケモン959",
+    "name_en": "Tinkaton",
+    "name_jp": "デカヌチャン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -35907,29 +36114,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #959. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #959。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tinkaton is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "デカヌチャンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 959",
+        "name": "Tinkaton",
         "id": 959
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 960,
-    "name_en": "Pokemon 960",
-    "name_jp": "ポケモン960",
+    "name_en": "Wiglett",
+    "name_jp": "ウミディグダ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/960.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -35939,29 +36147,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #960. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #960。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Wiglett is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウミディグダは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 960",
+        "name": "Wiglett",
         "id": 960
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 961,
-    "name_en": "Pokemon 961",
-    "name_jp": "ポケモン961",
+    "name_en": "Wugtrio",
+    "name_jp": "ウミトリオ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/961.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -35971,29 +36180,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #961. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #961。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Wugtrio is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウミトリオは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 961",
+        "name": "Wugtrio",
         "id": 961
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 962,
-    "name_en": "Pokemon 962",
-    "name_jp": "ポケモン962",
+    "name_en": "Bombirdier",
+    "name_jp": "オトシドリ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/962.png",
     "types_en": [
-      "Normal"
+      "Flying",
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "ひこう",
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -36003,29 +36215,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #962. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #962。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Bombirdier is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オトシドリは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 962",
+        "name": "Bombirdier",
         "id": 962
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 963,
-    "name_en": "Pokemon 963",
-    "name_jp": "ポケモン963",
+    "name_en": "Finizen",
+    "name_jp": "ナミイルカ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/963.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -36035,29 +36250,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #963. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #963。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Finizen is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ナミイルカは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 963",
+        "name": "Finizen",
         "id": 963
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 964,
-    "name_en": "Pokemon 964",
-    "name_jp": "ポケモン964",
+    "name_en": "Palafin",
+    "name_jp": "イルカマン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/964.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -36067,29 +36283,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #964. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #964。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Palafin is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イルカマンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 964",
+        "name": "Palafin",
         "id": 964
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 965,
-    "name_en": "Pokemon 965",
-    "name_jp": "ポケモン965",
+    "name_en": "Varoom",
+    "name_jp": "ブロロン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
     "types_en": [
-      "Normal"
+      "Steel",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -36099,29 +36318,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #965. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #965。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Varoom is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ブロロンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 965",
+        "name": "Varoom",
         "id": 965
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 4.0
     }
   },
   {
     "id": 966,
-    "name_en": "Pokemon 966",
-    "name_jp": "ポケモン966",
+    "name_en": "Revavroom",
+    "name_jp": "ブロロローム",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/966.png",
     "types_en": [
-      "Normal"
+      "Steel",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -36131,28 +36353,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #966. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #966。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Revavroom is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ブロロロームは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 966",
+        "name": "Revavroom",
         "id": 966
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 4.0
     }
   },
   {
     "id": 967,
-    "name_en": "Pokemon 967",
-    "name_jp": "ポケモン967",
+    "name_en": "Cyclizar",
+    "name_jp": "モトトカゲ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/967.png",
     "types_en": [
+      "Dragon",
       "Normal"
     ],
     "types_jp": [
+      "ドラゴン",
       "ノーマル"
     ],
     "stats": {
@@ -36163,29 +36388,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #967. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #967。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Cyclizar is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "モトトカゲは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 967",
+        "name": "Cyclizar",
         "id": 967
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 968,
-    "name_en": "Pokemon 968",
-    "name_jp": "ポケモン968",
+    "name_en": "Orthworm",
+    "name_jp": "シャリタツ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png",
     "types_en": [
-      "Normal"
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -36195,29 +36423,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #968. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #968。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Orthworm is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "シャリタツは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 968",
+        "name": "Orthworm",
         "id": 968
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 969,
-    "name_en": "Pokemon 969",
-    "name_jp": "ポケモン969",
+    "name_en": "Glimmet",
+    "name_jp": "キラーメ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/969.png",
     "types_en": [
-      "Normal"
+      "Rock",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -36227,29 +36459,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #969. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #969。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Glimmet is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "キラーメは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 969",
+        "name": "Glimmet",
         "id": 969
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 4.0,
+      "Psychic": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 970,
-    "name_en": "Pokemon 970",
-    "name_jp": "ポケモン970",
+    "name_en": "Glimmora",
+    "name_jp": "キラフロル",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/970.png",
     "types_en": [
-      "Normal"
+      "Rock",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -36259,29 +36496,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #970. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #970。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Glimmora is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "キラフロルは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 970",
+        "name": "Glimmora",
         "id": 970
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 4.0,
+      "Psychic": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 971,
-    "name_en": "Pokemon 971",
-    "name_jp": "ポケモン971",
+    "name_en": "Greavard",
+    "name_jp": "ボチ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/971.png",
     "types_en": [
-      "Normal"
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -36291,29 +36531,30 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #971. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #971。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Greavard is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ボチは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 971",
+        "name": "Greavard",
         "id": 971
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 972,
-    "name_en": "Pokemon 972",
-    "name_jp": "ポケモン972",
+    "name_en": "Houndstone",
+    "name_jp": "ハカドッグ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
     "types_en": [
-      "Normal"
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -36323,29 +36564,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #972. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #972。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Houndstone is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ハカドッグは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 972",
+        "name": "Houndstone",
         "id": 972
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 973,
-    "name_en": "Pokemon 973",
-    "name_jp": "ポケモン973",
+    "name_en": "Flamigo",
+    "name_jp": "カラミンゴ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/973.png",
     "types_en": [
-      "Normal"
+      "Flying",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "ひこう",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -36355,29 +36599,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #973. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #973。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Flamigo is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カラミンゴは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 973",
+        "name": "Flamigo",
         "id": 973
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 974,
-    "name_en": "Pokemon 974",
-    "name_jp": "ポケモン974",
+    "name_en": "Cetoddle",
+    "name_jp": "アルクジラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/974.png",
     "types_en": [
-      "Normal"
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -36387,29 +36635,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #974. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #974。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Cetoddle is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アルクジラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 974",
+        "name": "Cetoddle",
         "id": 974
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 975,
-    "name_en": "Pokemon 975",
-    "name_jp": "ポケモン975",
+    "name_en": "Cetitan",
+    "name_jp": "ハルクジラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/975.png",
     "types_en": [
-      "Normal"
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -36419,29 +36670,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #975. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #975。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Cetitan is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ハルクジラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 975",
+        "name": "Cetitan",
         "id": 975
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 976,
-    "name_en": "Pokemon 976",
-    "name_jp": "ポケモン976",
+    "name_en": "Veluza",
+    "name_jp": "ミガルーサ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/976.png",
     "types_en": [
-      "Normal"
+      "Water",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -36451,29 +36707,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #976. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #976。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Veluza is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ミガルーサは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 976",
+        "name": "Veluza",
         "id": 976
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 977,
-    "name_en": "Pokemon 977",
-    "name_jp": "ポケモン977",
+    "name_en": "Dondozo",
+    "name_jp": "ヘイラッシャ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/977.png",
     "types_en": [
-      "Normal"
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -36483,29 +36743,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #977. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #977。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Dondozo is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ヘイラッシャは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 977",
+        "name": "Dondozo",
         "id": 977
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0
     }
   },
   {
     "id": 978,
-    "name_en": "Pokemon 978",
-    "name_jp": "ポケモン978",
+    "name_en": "Tatsugiri",
+    "name_jp": "シャリタツ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/978.png",
     "types_en": [
-      "Normal"
+      "Dragon",
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "ドラゴン",
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -36515,29 +36778,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #978. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #978。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Tatsugiri is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "シャリタツは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 978",
+        "name": "Tatsugiri",
         "id": 978
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 979,
-    "name_en": "Pokemon 979",
-    "name_jp": "ポケモン979",
+    "name_en": "Annihilape",
+    "name_jp": "コノヨザル",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/979.png",
     "types_en": [
-      "Normal"
+      "Fighting",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "かくとう",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -36547,29 +36813,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #979. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #979。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Annihilape is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "コノヨザルは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 979",
+        "name": "Annihilape",
         "id": 979
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Ghost": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 980,
-    "name_en": "Pokemon 980",
-    "name_jp": "ポケモン980",
+    "name_en": "Clodsire",
+    "name_jp": "ドオー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/980.png",
     "types_en": [
-      "Normal"
+      "Poison",
+      "Ground"
     ],
     "types_jp": [
-      "ノーマル"
+      "どく",
+      "じめん"
     ],
     "stats": {
       "hp": 50,
@@ -36579,29 +36850,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #980. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #980。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Clodsire is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ドオーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 980",
+        "name": "Clodsire",
         "id": 980
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
     }
   },
   {
     "id": 981,
-    "name_en": "Pokemon 981",
-    "name_jp": "ポケモン981",
+    "name_en": "Farigiraf",
+    "name_jp": "リキキリン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/981.png",
     "types_en": [
-      "Normal"
+      "Normal",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "ノーマル",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -36611,23 +36887,24 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #981. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #981。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Farigiraf is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "リキキリンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 981",
+        "name": "Farigiraf",
         "id": 981
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Bug": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 982,
-    "name_en": "Pokemon 982",
-    "name_jp": "ポケモン982",
+    "name_en": "Dudunsparce",
+    "name_jp": "ノココッチ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/982.png",
     "types_en": [
       "Normal"
@@ -36643,12 +36920,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #982. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #982。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Dudunsparce is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ノココッチは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 982",
+        "name": "Dudunsparce",
         "id": 982
       }
     ],
@@ -36658,14 +36935,16 @@
   },
   {
     "id": 983,
-    "name_en": "Pokemon 983",
-    "name_jp": "ポケモン983",
+    "name_en": "Kingambit",
+    "name_jp": "ドドゲザン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/983.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -36675,29 +36954,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #983. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #983。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Kingambit is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ドドゲザンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 983",
+        "name": "Kingambit",
         "id": 983
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Fighting": 4.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 984,
-    "name_en": "Pokemon 984",
-    "name_jp": "ポケモン984",
+    "name_en": "Great Tusk",
+    "name_jp": "イダイナキバ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/984.png",
     "types_en": [
-      "Normal"
+      "Ground",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "じめん",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -36707,29 +36990,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #984. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #984。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Great Tusk is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イダイナキバは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 984",
+        "name": "Great Tusk",
         "id": 984
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 985,
-    "name_en": "Pokemon 985",
-    "name_jp": "ポケモン985",
+    "name_en": "Scream Tail",
+    "name_jp": "サケブシッポ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/985.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -36739,29 +37029,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #985. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #985。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Scream Tail is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "サケブシッポは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 985",
+        "name": "Scream Tail",
         "id": 985
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Poison": 2.0,
+      "Ghost": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 986,
-    "name_en": "Pokemon 986",
-    "name_jp": "ポケモン986",
+    "name_en": "Brute Bonnet",
+    "name_jp": "アラブルタケ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/986.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -36771,29 +37065,37 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #986. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #986。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Brute Bonnet is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "アラブルタケは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 986",
+        "name": "Brute Bonnet",
         "id": 986
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 987,
-    "name_en": "Pokemon 987",
-    "name_jp": "ポケモン987",
+    "name_en": "Flutter Mane",
+    "name_jp": "ハバタクカミ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/987.png",
     "types_en": [
-      "Normal"
+      "Ghost",
+      "Fairy"
     ],
     "types_jp": [
-      "ノーマル"
+      "ゴースト",
+      "フェアリー"
     ],
     "stats": {
       "hp": 50,
@@ -36803,29 +37105,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #987. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #987。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Flutter Mane is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ハバタクカミは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 987",
+        "name": "Flutter Mane",
         "id": 987
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ghost": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 988,
-    "name_en": "Pokemon 988",
-    "name_jp": "ポケモン988",
+    "name_en": "Slither Wing",
+    "name_jp": "チヲハウハネ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/988.png",
     "types_en": [
-      "Normal"
+      "Bug",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "むし",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -36835,29 +37140,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #988. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #988。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Slither Wing is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "チヲハウハネは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 988",
+        "name": "Slither Wing",
         "id": 988
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Flying": 4.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 989,
-    "name_en": "Pokemon 989",
-    "name_jp": "ポケモン989",
+    "name_en": "Sandy Shocks",
+    "name_jp": "スナノケガワ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/989.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Ground"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "じめん"
     ],
     "stats": {
       "hp": 50,
@@ -36867,29 +37177,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #989. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #989。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Sandy Shocks is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "スナノケガワは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 989",
+        "name": "Sandy Shocks",
         "id": 989
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 990,
-    "name_en": "Pokemon 990",
-    "name_jp": "ポケモン990",
+    "name_en": "Iron Treads",
+    "name_jp": "テツノワダチ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/990.png",
     "types_en": [
-      "Normal"
+      "Ground",
+      "Steel"
     ],
     "types_jp": [
-      "ノーマル"
+      "じめん",
+      "はがね"
     ],
     "stats": {
       "hp": 50,
@@ -36899,29 +37214,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #990. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #990。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Treads is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノワダチは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 990",
+        "name": "Iron Treads",
         "id": 990
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Water": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 991,
-    "name_en": "Pokemon 991",
-    "name_jp": "ポケモン991",
+    "name_en": "Iron Bundle",
+    "name_jp": "テツノツツミ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/991.png",
     "types_en": [
-      "Normal"
+      "Ice",
+      "Water"
     ],
     "types_jp": [
-      "ノーマル"
+      "こおり",
+      "みず"
     ],
     "stats": {
       "hp": 50,
@@ -36931,29 +37251,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #991. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #991。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Bundle is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノツツミは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 991",
+        "name": "Iron Bundle",
         "id": 991
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 992,
-    "name_en": "Pokemon 992",
-    "name_jp": "ポケモン992",
+    "name_en": "Iron Hands",
+    "name_jp": "テツノカイナ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
     "types_en": [
-      "Normal"
+      "Fighting",
+      "Electric"
     ],
     "types_jp": [
-      "ノーマル"
+      "かくとう",
+      "でんき"
     ],
     "stats": {
       "hp": 50,
@@ -36963,29 +37288,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #992. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #992。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Hands is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノカイナは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 992",
+        "name": "Iron Hands",
         "id": 992
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 993,
-    "name_en": "Pokemon 993",
-    "name_jp": "ポケモン993",
+    "name_en": "Iron Jugulis",
+    "name_jp": "テツノコウベ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/993.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Flying"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "ひこう"
     ],
     "stats": {
       "hp": 50,
@@ -36995,29 +37324,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #993. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #993。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Jugulis is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノコウベは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 993",
+        "name": "Iron Jugulis",
         "id": 993
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 994,
-    "name_en": "Pokemon 994",
-    "name_jp": "ポケモン994",
+    "name_en": "Iron Moth",
+    "name_jp": "テツノドクガ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/994.png",
     "types_en": [
-      "Normal"
+      "Fire",
+      "Poison"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお",
+      "どく"
     ],
     "stats": {
       "hp": 50,
@@ -37027,29 +37361,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #994. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #994。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Moth is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノドクガは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 994",
+        "name": "Iron Moth",
         "id": 994
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Ground": 4.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 995,
-    "name_en": "Pokemon 995",
-    "name_jp": "ポケモン995",
+    "name_en": "Iron Thorns",
+    "name_jp": "テツノイバラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/995.png",
     "types_en": [
-      "Normal"
+      "Rock",
+      "Electric"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ",
+      "でんき"
     ],
     "stats": {
       "hp": 50,
@@ -37059,29 +37398,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #995. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #995。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Thorns is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノイバラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 995",
+        "name": "Iron Thorns",
         "id": 995
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Fighting": 2.0,
+      "Ground": 4.0
     }
   },
   {
     "id": 996,
-    "name_en": "Pokemon 996",
-    "name_jp": "ポケモン996",
+    "name_en": "Frigibax",
+    "name_jp": "セビエ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/996.png",
     "types_en": [
-      "Normal"
+      "Dragon",
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "ドラゴン",
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -37091,29 +37435,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #996. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #996。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Frigibax is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "セビエは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 996",
+        "name": "Frigibax",
         "id": 996
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Rock": 2.0,
+      "Dragon": 2.0,
+      "Steel": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 997,
-    "name_en": "Pokemon 997",
-    "name_jp": "ポケモン997",
+    "name_en": "Arctibax",
+    "name_jp": "セゴール",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/997.png",
     "types_en": [
-      "Normal"
+      "Dragon",
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "ドラゴン",
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -37123,29 +37473,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #997. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #997。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Arctibax is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "セゴールは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 997",
+        "name": "Arctibax",
         "id": 997
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Rock": 2.0,
+      "Dragon": 2.0,
+      "Steel": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 998,
-    "name_en": "Pokemon 998",
-    "name_jp": "ポケモン998",
+    "name_en": "Baxcalibur",
+    "name_jp": "セグレイブ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/998.png",
     "types_en": [
-      "Normal"
+      "Dragon",
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "ドラゴン",
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -37155,29 +37511,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #998. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #998。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Baxcalibur is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "セグレイブは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 998",
+        "name": "Baxcalibur",
         "id": 998
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Rock": 2.0,
+      "Dragon": 2.0,
+      "Steel": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 999,
-    "name_en": "Pokemon 999",
-    "name_jp": "ポケモン999",
+    "name_en": "Gimmighoul",
+    "name_jp": "コレクレー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/999.png",
     "types_en": [
-      "Normal"
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -37187,29 +37547,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #999. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #999。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Gimmighoul is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "コレクレーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 999",
+        "name": "Gimmighoul",
         "id": 999
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1000,
-    "name_en": "Pokemon 1000",
-    "name_jp": "ポケモン1000",
+    "name_en": "Gholdengo",
+    "name_jp": "サーフゴー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1000.png",
     "types_en": [
-      "Normal"
+      "Steel",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -37219,29 +37582,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1000. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1000。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Gholdengo is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "サーフゴーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1000",
+        "name": "Gholdengo",
         "id": 1000
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1001,
-    "name_en": "Pokemon 1001",
-    "name_jp": "ポケモン1001",
+    "name_en": "Wo Chien",
+    "name_jp": "チオンジェン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1001.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -37251,29 +37619,37 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1001. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1001。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Wo Chien is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "チオンジェンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1001",
+        "name": "Wo Chien",
         "id": 1001
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1002,
-    "name_en": "Pokemon 1002",
-    "name_jp": "ポケモン1002",
+    "name_en": "Chien Pao",
+    "name_jp": "パオジアン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1002.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Ice"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "こおり"
     ],
     "stats": {
       "hp": 50,
@@ -37283,29 +37659,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1002. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1002。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Chien Pao is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "パオジアンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1002",
+        "name": "Chien Pao",
         "id": 1002
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Fighting": 4.0,
+      "Bug": 2.0,
+      "Rock": 2.0,
+      "Steel": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1003,
-    "name_en": "Pokemon 1003",
-    "name_jp": "ポケモン1003",
+    "name_en": "Ting Lu",
+    "name_jp": "ディンルー",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1003.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Ground"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "じめん"
     ],
     "stats": {
       "hp": 50,
@@ -37315,29 +37698,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1003. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1003。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Ting Lu is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ディンルーは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1003",
+        "name": "Ting Lu",
         "id": 1003
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Bug": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1004,
-    "name_en": "Pokemon 1004",
-    "name_jp": "ポケモン1004",
+    "name_en": "Chi Yu",
+    "name_jp": "イーユイ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1004.png",
     "types_en": [
-      "Normal"
+      "Dark",
+      "Fire"
     ],
     "types_jp": [
-      "ノーマル"
+      "あく",
+      "ほのお"
     ],
     "stats": {
       "hp": 50,
@@ -37347,29 +37737,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1004. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1004。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Chi Yu is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イーユイは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1004",
+        "name": "Chi Yu",
         "id": 1004
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Fighting": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
     }
   },
   {
     "id": 1005,
-    "name_en": "Pokemon 1005",
-    "name_jp": "ポケモン1005",
+    "name_en": "Roaring Moon",
+    "name_jp": "トドロクツキ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1005.png",
     "types_en": [
-      "Normal"
+      "Dragon",
+      "Dark"
     ],
     "types_jp": [
-      "ノーマル"
+      "ドラゴン",
+      "あく"
     ],
     "stats": {
       "hp": 50,
@@ -37379,29 +37774,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1005. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1005。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Roaring Moon is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "トドロクツキは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1005",
+        "name": "Roaring Moon",
         "id": 1005
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Fighting": 2.0,
+      "Bug": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 4.0
     }
   },
   {
     "id": 1006,
-    "name_en": "Pokemon 1006",
-    "name_jp": "ポケモン1006",
+    "name_en": "Iron Valiant",
+    "name_jp": "テツノブジン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1006.png",
     "types_en": [
-      "Normal"
+      "Fairy",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "フェアリー",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -37411,29 +37812,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1006. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1006。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Valiant is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノブジンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1006",
+        "name": "Iron Valiant",
         "id": 1006
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Steel": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1007,
-    "name_en": "Pokemon 1007",
-    "name_jp": "ポケモン1007",
+    "name_en": "Koraidon",
+    "name_jp": "コライドン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1007.png",
     "types_en": [
-      "Normal"
+      "Fighting",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "かくとう",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37443,29 +37850,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1007. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1007。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Koraidon is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "コライドンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1007",
+        "name": "Koraidon",
         "id": 1007
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 4.0
     }
   },
   {
     "id": 1008,
-    "name_en": "Pokemon 1008",
-    "name_jp": "ポケモン1008",
+    "name_en": "Miraidon",
+    "name_jp": "ミライドン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1008.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37475,29 +37888,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1008. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1008。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Miraidon is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ミライドンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1008",
+        "name": "Miraidon",
         "id": 1008
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1009,
-    "name_en": "Pokemon 1009",
-    "name_jp": "ポケモン1009",
+    "name_en": "Walking Wake",
+    "name_jp": "ウネルミナモ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
     "types_en": [
-      "Normal"
+      "Water",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "みず",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37507,29 +37925,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1009. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1009。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Walking Wake is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウネルミナモは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1009",
+        "name": "Walking Wake",
         "id": 1009
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1010,
-    "name_en": "Pokemon 1010",
-    "name_jp": "ポケモン1010",
+    "name_en": "Iron Leaves",
+    "name_jp": "テツノイサハ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -37539,29 +37960,37 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1010. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1010。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Leaves is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノイサハは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1010",
+        "name": "Iron Leaves",
         "id": 1010
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 4.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1011,
-    "name_en": "Pokemon 1011",
-    "name_jp": "ポケモン1011",
+    "name_en": "Dipplin",
+    "name_jp": "カミッチュ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1011.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37571,29 +38000,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1011. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1011。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Dipplin is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カミッチュは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1011",
+        "name": "Dipplin",
         "id": 1011
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 4.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1012,
-    "name_en": "Pokemon 1012",
-    "name_jp": "ポケモン1012",
+    "name_en": "Poltchageist",
+    "name_jp": "チャデス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1012.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -37603,29 +38039,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1012. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1012。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Poltchageist is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "チャデスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1012",
+        "name": "Poltchageist",
         "id": 1012
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1013,
-    "name_en": "Pokemon 1013",
-    "name_jp": "ポケモン1013",
+    "name_en": "Sinistcha",
+    "name_jp": "ヤバソチャ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -37635,29 +38077,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1013. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1013。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Sinistcha is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ヤバソチャは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1013",
+        "name": "Sinistcha",
         "id": 1013
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1014,
-    "name_en": "Pokemon 1014",
-    "name_jp": "ポケモン1014",
+    "name_en": "Okidogi",
+    "name_jp": "イイネイヌ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
     "types_en": [
-      "Normal"
+      "Poison",
+      "Fighting"
     ],
     "types_jp": [
-      "ノーマル"
+      "どく",
+      "かくとう"
     ],
     "stats": {
       "hp": 50,
@@ -37667,29 +38115,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1014. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1014。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Okidogi is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "イイネイヌは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1014",
+        "name": "Okidogi",
         "id": 1014
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Flying": 2.0,
+      "Psychic": 4.0
     }
   },
   {
     "id": 1015,
-    "name_en": "Pokemon 1015",
-    "name_jp": "ポケモン1015",
+    "name_en": "Munkidori",
+    "name_jp": "マシマシラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
     "types_en": [
-      "Normal"
+      "Poison",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "どく",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -37699,29 +38151,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1015. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1015。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Munkidori is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "マシマシラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1015",
+        "name": "Munkidori",
         "id": 1015
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1016,
-    "name_en": "Pokemon 1016",
-    "name_jp": "ポケモン1016",
+    "name_en": "Fezandipiti",
+    "name_jp": "キチキギス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
     "types_en": [
-      "Normal"
+      "Poison",
+      "Fairy"
     ],
     "types_jp": [
-      "ノーマル"
+      "どく",
+      "フェアリー"
     ],
     "stats": {
       "hp": 50,
@@ -37731,29 +38187,31 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1016. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1016。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Fezandipiti is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "キチキギスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1016",
+        "name": "Fezandipiti",
         "id": 1016
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 1017,
-    "name_en": "Pokemon 1017",
-    "name_jp": "ポケモン1017",
+    "name_en": "Ogerpon",
+    "name_jp": "オーガポン",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
     "types_en": [
-      "Normal"
+      "Grass"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ"
     ],
     "stats": {
       "hp": 50,
@@ -37763,29 +38221,35 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1017. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1017。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Ogerpon is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "オーガポンは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1017",
+        "name": "Ogerpon",
         "id": 1017
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0
     }
   },
   {
     "id": 1018,
-    "name_en": "Pokemon 1018",
-    "name_jp": "ポケモン1018",
+    "name_en": "Archaludon",
+    "name_jp": "ブリジュラス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
     "types_en": [
-      "Normal"
+      "Steel",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37795,29 +38259,32 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1018. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1018。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Archaludon is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ブリジュラスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1018",
+        "name": "Archaludon",
         "id": 1018
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fighting": 2.0,
+      "Ground": 2.0
     }
   },
   {
     "id": 1019,
-    "name_en": "Pokemon 1019",
-    "name_jp": "ポケモン1019",
+    "name_en": "Hydrapple",
+    "name_jp": "カミツオロチ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
     "types_en": [
-      "Normal"
+      "Grass",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "くさ",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37827,29 +38294,36 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1019. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1019。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Hydrapple is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "カミツオロチは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1019",
+        "name": "Hydrapple",
         "id": 1019
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 4.0,
+      "Poison": 2.0,
+      "Flying": 2.0,
+      "Bug": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1020,
-    "name_en": "Pokemon 1020",
-    "name_jp": "ポケモン1020",
+    "name_en": "Gouging Fire",
+    "name_jp": "ウガツホムラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
     "types_en": [
-      "Normal"
+      "Fire",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "ほのお",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37859,29 +38333,33 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1020. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1020。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Gouging Fire is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "ウガツホムラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1020",
+        "name": "Gouging Fire",
         "id": 1020
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Rock": 2.0,
+      "Dragon": 2.0
     }
   },
   {
     "id": 1021,
-    "name_en": "Pokemon 1021",
-    "name_jp": "ポケモン1021",
+    "name_en": "Raging Bolt",
+    "name_jp": "タケルライコ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
     "types_en": [
-      "Normal"
+      "Electric",
+      "Dragon"
     ],
     "types_jp": [
-      "ノーマル"
+      "でんき",
+      "ドラゴン"
     ],
     "stats": {
       "hp": 50,
@@ -37891,29 +38369,34 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1021. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1021。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Raging Bolt is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "タケルライコは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1021",
+        "name": "Raging Bolt",
         "id": 1021
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Dragon": 2.0,
+      "Fairy": 2.0
     }
   },
   {
     "id": 1022,
-    "name_en": "Pokemon 1022",
-    "name_jp": "ポケモン1022",
+    "name_en": "Iron Boulder",
+    "name_jp": "テツノイワオ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
     "types_en": [
-      "Normal"
+      "Rock",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "いわ",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -37923,29 +38406,37 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1022. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1022。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Boulder is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノイワオは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1022",
+        "name": "Iron Boulder",
         "id": 1022
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ground": 2.0,
+      "Bug": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0,
+      "Steel": 2.0
     }
   },
   {
     "id": 1023,
-    "name_en": "Pokemon 1023",
-    "name_jp": "ポケモン1023",
+    "name_en": "Iron Crown",
+    "name_jp": "テツノカシラ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
     "types_en": [
-      "Normal"
+      "Steel",
+      "Psychic"
     ],
     "types_jp": [
-      "ノーマル"
+      "はがね",
+      "エスパー"
     ],
     "stats": {
       "hp": 50,
@@ -37955,23 +38446,26 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1023. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1023。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Iron Crown is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テツノカシラは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1023",
+        "name": "Iron Crown",
         "id": 1023
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Fire": 2.0,
+      "Ground": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   },
   {
     "id": 1024,
-    "name_en": "Pokemon 1024",
-    "name_jp": "ポケモン1024",
+    "name_en": "Terapagos",
+    "name_jp": "テラパゴス",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
     "types_en": [
       "Normal"
@@ -37987,12 +38481,12 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1024. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1024。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Terapagos is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "テラパゴスは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1024",
+        "name": "Terapagos",
         "id": 1024
       }
     ],
@@ -38002,14 +38496,16 @@
   },
   {
     "id": 1025,
-    "name_en": "Pokemon 1025",
-    "name_jp": "ポケモン1025",
+    "name_en": "Pecharunt",
+    "name_jp": "モモワロウ",
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
     "types_en": [
-      "Normal"
+      "Poison",
+      "Ghost"
     ],
     "types_jp": [
-      "ノーマル"
+      "どく",
+      "ゴースト"
     ],
     "stats": {
       "hp": 50,
@@ -38019,17 +38515,20 @@
       "special-defense": 50,
       "speed": 50
     },
-    "bio_en": "Pokemon #1025. Full data will be available when fetched from PokeAPI.",
-    "bio_jp": "ポケモン #1025。完全なデータはPokeAPIから取得可能です。",
+    "bio_en": "Pecharunt is a Generation 8-9 Pokemon. Full details available from Pokemon games.",
+    "bio_jp": "モモワロウは第8-9世代のポケモンです。",
     "moves": [],
     "evolution_chain": [
       {
-        "name": "Pokemon 1025",
+        "name": "Pecharunt",
         "id": 1025
       }
     ],
     "weaknesses": {
-      "Fighting": 2.0
+      "Ground": 2.0,
+      "Psychic": 2.0,
+      "Ghost": 2.0,
+      "Dark": 2.0
     }
   }
 ]
