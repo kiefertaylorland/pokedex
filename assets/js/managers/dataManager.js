@@ -151,6 +151,19 @@ export class PokemonDataManager {
     }
 
     /**
+     * Gets a random Pokemon from the loaded data
+     * @returns {Object|null} Random Pokemon data or null if no data loaded
+     */
+    getRandomPokemon() {
+        if (!this.isLoaded || this.allPokemonData.length === 0) {
+            return null;
+        }
+        
+        const randomIndex = Math.floor(Math.random() * this.allPokemonData.length);
+        return this.allPokemonData[randomIndex];
+    }
+
+    /**
      * Validates Pokemon data structure
      * @param {Object} pokemon - Pokemon data to validate
      * @returns {boolean} True if valid

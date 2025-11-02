@@ -98,6 +98,9 @@ export class PokedexApp {
         
         // Enable search
         this.searchController.enable();
+        
+        // Initialize surprise button text
+        this._updateSurpriseButtonText();
     }
 
     /**
@@ -129,6 +132,14 @@ export class PokedexApp {
      * @private
      */
     _bindGlobalEvents() {
+        // Surprise button
+        const surpriseButton = document.getElementById(ELEMENT_IDS.SURPRISE_BUTTON);
+        if (surpriseButton) {
+            surpriseButton.addEventListener(EVENTS.CLICK, () => {
+                this._handleSurpriseClick();
+            });
+        }
+
         // Theme toggle
         const themeToggle = document.getElementById(ELEMENT_IDS.THEME_TOGGLE);
         if (themeToggle) {
@@ -157,6 +168,26 @@ export class PokedexApp {
     }
 
     /**
+     * Handles surprise button click to show random Pokemon
+     * @private
+     */
+    _handleSurpriseClick() {
+        const randomPokemon = this.dataManager.getRandomPokemon();
+        if (randomPokemon) {
+            // Show the Pokemon detail view
+            this.detailView.showPokemonDetail(randomPokemon);
+            
+            // Announce to screen readers
+            const currentLanguage = this.uiController.getCurrentLanguage();
+            const pokemonName = this.dataManager.getPokemonName(randomPokemon, currentLanguage);
+            const message = currentLanguage === 'jp' 
+                ? `${pokemonName}が表示されました！`
+                : `Showing ${pokemonName}!`;
+            this.uiController.announceToScreenReader(message);
+        }
+    }
+
+    /**
      * Handles language toggle with UI updates
      * @private
      */
@@ -165,6 +196,9 @@ export class PokedexApp {
         
         // Update search placeholder
         this.searchController.updatePlaceholder();
+        
+        // Update surprise button text
+        this._updateSurpriseButtonText();
         
         // Re-render current search results
         const currentSearchTerm = this.searchController.getCurrentSearchTerm();
@@ -179,6 +213,18 @@ export class PokedexApp {
         // Refresh detail view if open
         if (this.detailView.isDetailVisible()) {
             this.detailView.refreshContent();
+        }
+    }
+
+    /**
+     * Updates the surprise button text based on current language
+     * @private
+     */
+    _updateSurpriseButtonText() {
+        const surpriseButton = document.getElementById(ELEMENT_IDS.SURPRISE_BUTTON);
+        if (surpriseButton) {
+            const uiText = this.uiController.getCurrentUIText();
+            surpriseButton.textContent = `🎲 ${uiText.surpriseButton}`;
         }
     }
 
