@@ -147,21 +147,11 @@ export class PokedexApp {
         // If there's an active search, apply it to filter results
         if (this.currentSearchTerm) {
             const currentLanguage = this.uiController.getCurrentLanguage();
-            const searchFiltered = results.filter(pokemon => {
-                const normalizedTerm = this.currentSearchTerm.toLowerCase().trim();
-                const nameEn = pokemon.name_en?.toLowerCase() || '';
-                const nameJp = pokemon.name_jp?.toLowerCase() || '';
-                const idString = String(pokemon.id).padStart(3, '0');
-                const typesEn = pokemon.types_en?.join(' ').toLowerCase() || '';
-                const typesJp = pokemon.types_jp?.join(' ').toLowerCase() || '';
-
-                return nameEn.includes(normalizedTerm) ||
-                       nameJp.includes(normalizedTerm) ||
-                       idString.includes(normalizedTerm) ||
-                       typesEn.includes(normalizedTerm) ||
-                       typesJp.includes(normalizedTerm);
-            });
-            
+            const searchFiltered = this.searchController.search(
+                this.currentSearchTerm,
+                results,
+                currentLanguage
+            );
             this.cardRenderer.renderPokemonCards(
                 searchFiltered, 
                 (pokemon) => this._handlePokemonCardClick(pokemon)
