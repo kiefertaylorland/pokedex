@@ -1058,3 +1058,250 @@ input:focus-visible,
         font-size: 0.7rem;
     }
 }
+
+/* Physical Info Section */
+.physical-info-section {
+    margin-bottom: 1rem;
+}
+
+.physical-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+}
+
+.info-label {
+    font-weight: 600;
+    font-size: 0.85em;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Abilities Section */
+.abilities-section {
+    margin-bottom: 1rem;
+}
+
+.abilities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.ability-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.ability-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+.ability-name {
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.hidden-ability {
+    background: linear-gradient(135deg, 
+        rgba(255, 107, 107, 0.1) 0%, 
+        rgba(252, 129, 129, 0.1) 100%);
+    border: 1px solid var(--accent-color);
+}
+
+.hidden-badge {
+    font-size: 0.7em;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* Sprites Section */
+.sprites-section {
+    margin-bottom: 1rem;
+}
+
+.sprites-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.sprite-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.sprite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+}
+
+.sprite-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+.artwork-item {
+    min-width: 150px;
+}
+
+.sprite-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.sprite-image {
+    width: 96px;
+    height: 96px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.artwork-image {
+    width: 150px;
+    height: 150px;
+    image-rendering: auto;
+}
+
+.shiny-sprite {
+    position: relative;
+}
+
+.shiny-sprite::before {
+    content: '✨';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2em;
+}
+
+/* Type Effectiveness Sections */
+.type-effectiveness-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resistance-item,
+.immunity-item {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.8em;
+    color: white;
+    box-shadow: 3px 3px 6px var(--shadow),
+                -3px -3px 6px var(--highlight);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.resistance-item {
+    opacity: 0.85;
+}
+
+.immunity-item {
+    opacity: 0.9;
+    border: 2px solid white;
+}
+
+.resistance-item:hover,
+.immunity-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--shadow),
+                -4px -4px 8px var(--highlight);
+}
+
+/* Move Header and Level Badge */
+.move-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.25rem;
+}
+
+.move-name-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.move-level-badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .physical-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sprites-grid {
+        justify-content: center;
+    }
+    
+    .sprite-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .artwork-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .ability-item {
+        font-size: 0.85em;
+    }
+}

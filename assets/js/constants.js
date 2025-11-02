@@ -55,10 +55,24 @@ export const UI_TEXT = {
         movePower: "Power",
         moveAccuracy: "Accuracy",
         movePP: "PP",
+        moveLevel: "Lv.",
         evolutionChain: "Evolution Chain",
         weaknesses: "Weaknesses",
+        resistances: "Resistances",
+        immunities: "Immunities",
+        abilities: "Abilities",
+        hiddenAbility: "Hidden Ability",
+        physicalInfo: "Physical Info",
+        height: "Height",
+        weight: "Weight",
+        category: "Category",
+        sprites: "Sprites",
+        officialArtwork: "Official Artwork",
+        normalSprite: "Normal",
+        shinySprite: "Shiny",
         noBio: "No bio available.",
         noMoves: "No specific moves data available.",
+        noAbilities: "No abilities data available.",
         imageNotAvailable: "(Image not available)",
         loading: "Loading...",
         error: "Error loading Pokémon data. Please try again later.",
@@ -81,10 +95,24 @@ export const UI_TEXT = {
         movePower: "威力", // Iryoku
         moveAccuracy: "命中", // Meichuu
         movePP: "PP",
+        moveLevel: "Lv.",
         evolutionChain: "進化チェーン", // Shinka Chain
         weaknesses: "弱点", // Jakuten
+        resistances: "耐性", // Taisei
+        immunities: "無効", // Mukou
+        abilities: "とくせい", // Tokusei
+        hiddenAbility: "かくれとくせい", // Kakure Tokusei
+        physicalInfo: "基本情報", // Kihon Jouhou
+        height: "高さ", // Takasa
+        weight: "重さ", // Omosa
+        category: "分類", // Bunrui
+        sprites: "スプライト", // Supuraito
+        officialArtwork: "公式アート", // Koushiki Aato
+        normalSprite: "通常", // Tsuujou
+        shinySprite: "色違い", // Irochigai
         noBio: "説明なし",
         noMoves: "わざデータなし",
+        noAbilities: "とくせいデータなし",
         imageNotAvailable: "(画像なし)",
         loading: "読み込み中...",
         error: "ポケモンデータの読み込みエラー。再試行してください。",
