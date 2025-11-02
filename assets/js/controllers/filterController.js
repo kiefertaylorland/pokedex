@@ -329,10 +329,10 @@ export class FilterController {
      * @returns {boolean} True if filters are active
      */
     hasActiveFilters() {
-        return this.filters.ability !== '' ||
+        return this.filters.ability !== 'all' ||
                this.filters.minStatTotal > 0 ||
                this.filters.maxStatTotal < 999 ||
-               this.filters.moveType !== '' ||
+               this.filters.moveType !== 'all' ||
                this.filters.evolutionStage !== 'all';
     }
 }
