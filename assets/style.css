@@ -405,6 +405,41 @@ body.dark-mode .pokemon-types span {
     transform: scale(0.95) rotate(90deg);
 }
 
+/* Volume Button */
+#volume-toggle {
+    position: absolute;
+    top: 15px;
+    right: 75px;
+    background: linear-gradient(145deg, var(--card-background), var(--background-color));
+    color: var(--accent-color);
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    box-shadow: 6px 6px 12px var(--shadow),
+                -6px -6px 12px var(--highlight);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#volume-toggle:hover {
+    box-shadow: 8px 8px 16px var(--shadow),
+                -8px -8px 16px var(--highlight);
+    transform: scale(1.05);
+}
+
+#volume-toggle:active {
+    box-shadow: inset 4px 4px 8px var(--shadow-inset),
+                inset -4px -4px 8px var(--highlight);
+    transform: scale(0.95);
+}
+
 /* Detail View Layout - Condensed */
 .detail-header {
     display: flex;
@@ -853,6 +888,12 @@ body.modal-open {
 
 /* Add subtle glow effect to focused elements */
 #close-detail-view:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.2);
+}
+
+#volume-toggle:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
     box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.2);
@@ -1554,4 +1595,33 @@ input:focus-visible,
     .ability-item {
         font-size: 0.85em;
     }
+}
+
+/* Volume button styling */
+.volume-button {
+    position: fixed;
+    top: 20px;
+    right: 70px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.volume-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.volume-button:active {
+    transform: scale(0.95);
 }

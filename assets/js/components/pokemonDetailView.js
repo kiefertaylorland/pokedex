@@ -3,7 +3,7 @@
  * @module PokemonDetailView
  */
 
-import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS } from '../constants.js';
+import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS, VOLUME_LEVELS, STORAGE_KEYS } from '../constants.js';
 import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
@@ -23,6 +23,9 @@ export class PokemonDetailView {
         this.isVisible = false;
         this.teamBuilder = options.teamBuilder || null;
         this.pokemonComparison = options.pokemonComparison || null;
+        
+        // Initialize volume state from localStorage, default to LOW
+        this.cryVolume = this._loadVolumePreference();
         
         this._bindEvents();
     }
@@ -67,6 +70,7 @@ export class PokemonDetailView {
 
         // Create and append components
         modalContent.appendChild(this._createCloseButton());
+        modalContent.appendChild(this._createVolumeButton());
         
         // Header with image and basic info
         const header = this._createCompactHeader(pokemon, name, types, uiText);
@@ -230,6 +234,115 @@ export class PokemonDetailView {
         closeButton.setAttribute('title', 'Close (Esc)');
         closeButton.setAttribute('data-testid', 'close-detail-button');
         return closeButton;
+    }
+
+    /**
+     * Creates volume toggle button
+     * @private
+     * @returns {HTMLElement} Volume button element
+     */
+    _createVolumeButton() {
+        const uiText = this.uiController.getCurrentUIText();
+        const volumeButton = createSafeElement('button');
+        volumeButton.id = ELEMENT_IDS.VOLUME_TOGGLE;
+        volumeButton.classList.add('volume-button');
+        
+        // Set initial icon and label based on current volume
+        const { icon, label } = this._getVolumeIconAndLabel();
+        volumeButton.innerHTML = icon;
+        volumeButton.setAttribute('aria-label', label);
+        volumeButton.setAttribute('title', label);
+        volumeButton.setAttribute('data-testid', 'volume-toggle-button');
+        
+        // Add click handler
+        volumeButton.addEventListener('click', () => this._toggleVolume());
+        
+        return volumeButton;
+    }
+
+    /**
+     * Gets volume icon and label based on current volume
+     * @private
+     * @returns {Object} Object with icon and label properties
+     */
+    _getVolumeIconAndLabel() {
+        const uiText = this.uiController.getCurrentUIText();
+        
+        if (this.cryVolume === VOLUME_LEVELS.MUTE) {
+            return { icon: '🔇', label: uiText.volumeMute };
+        } else if (this.cryVolume === VOLUME_LEVELS.LOW) {
+            return { icon: '🔉', label: uiText.volumeLow };
+        } else {
+            return { icon: '🔊', label: uiText.volumeHigh };
+        }
+    }
+
+    /**
+     * Toggles volume between mute, low, and high
+     * @private
+     */
+    _toggleVolume() {
+        // Cycle through volume levels: low -> high -> mute -> low
+        if (this.cryVolume === VOLUME_LEVELS.LOW) {
+            this.cryVolume = VOLUME_LEVELS.HIGH;
+        } else if (this.cryVolume === VOLUME_LEVELS.HIGH) {
+            this.cryVolume = VOLUME_LEVELS.MUTE;
+        } else {
+            this.cryVolume = VOLUME_LEVELS.LOW;
+        }
+        
+        // Save preference
+        this._saveVolumePreference();
+        
+        // Update button
+        this._updateVolumeButton();
+    }
+
+    /**
+     * Updates volume button icon and label
+     * @private
+     */
+    _updateVolumeButton() {
+        const volumeButton = document.getElementById(ELEMENT_IDS.VOLUME_TOGGLE);
+        if (!volumeButton) return;
+        
+        const { icon, label } = this._getVolumeIconAndLabel();
+        volumeButton.innerHTML = icon;
+        volumeButton.setAttribute('aria-label', label);
+        volumeButton.setAttribute('title', label);
+    }
+
+    /**
+     * Loads volume preference from localStorage
+     * @private
+     * @returns {number} Volume level
+     */
+    _loadVolumePreference() {
+        try {
+            const stored = localStorage.getItem(STORAGE_KEYS.CRY_VOLUME);
+            if (stored !== null) {
+                const volume = parseFloat(stored);
+                // Validate it's one of our known volume levels
+                if ([VOLUME_LEVELS.MUTE, VOLUME_LEVELS.LOW, VOLUME_LEVELS.HIGH].includes(volume)) {
+                    return volume;
+                }
+            }
+        } catch (error) {
+            console.warn('Could not load volume preference:', error);
+        }
+        return VOLUME_LEVELS.LOW; // Default to low
+    }
+
+    /**
+     * Saves volume preference to localStorage
+     * @private
+     */
+    _saveVolumePreference() {
+        try {
+            localStorage.setItem(STORAGE_KEYS.CRY_VOLUME, this.cryVolume.toString());
+        } catch (error) {
+            console.warn('Could not save volume preference:', error);
+        }
     }
 
     /**
@@ -1128,7 +1241,7 @@ export class PokemonDetailView {
 
         try {
             const cryAudio = new Audio(`${DATA.CRY_AUDIO_PATH}${validId}.ogg`);
-            cryAudio.volume = 0.3; // Set reasonable volume
+            cryAudio.volume = this.cryVolume; // Use current volume setting
             cryAudio.play().catch(error => {
                 console.warn('Could not play Pokemon cry:', error);
             });

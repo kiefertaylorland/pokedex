@@ -35,7 +35,8 @@ export const STORAGE_KEYS = {
     LANGUAGE: 'pokedex-language',
     THEME: 'pokedex-theme',
     APP_VERSION: 'pokedex-app-version',
-    LAST_UPDATE_CHECK: 'pokedex-last-update-check'
+    LAST_UPDATE_CHECK: 'pokedex-last-update-check',
+    CRY_VOLUME: 'pokedex-cry-volume'
 };
 
 // Supported languages
@@ -48,6 +49,13 @@ export const LANGUAGES = {
 export const THEMES = {
     LIGHT: 'light',
     DARK: 'dark'
+};
+
+// Volume levels for Pokemon cries
+export const VOLUME_LEVELS = {
+    MUTE: 0,
+    LOW: 0.3,
+    HIGH: 1.0
 };
 
 // UI text translations
@@ -97,7 +105,10 @@ export const UI_TEXT = {
         sortNumberDesc: "Number (High to Low)",
         sortNameAsc: "Name (A-Z)",
         sortNameDesc: "Name (Z-A)",
-        sortStatTotal: "Stat Total"
+        sortStatTotal: "Stat Total",
+        volumeMute: "Mute",
+        volumeLow: "Low Volume",
+        volumeHigh: "High Volume"
     },
     [LANGUAGES.JAPANESE]: {
         title: "ポケモン図鑑", // Pokemon Zukan
@@ -144,7 +155,10 @@ export const UI_TEXT = {
         sortNumberDesc: "番号 (降順)",
         sortNameAsc: "名前 (A-Z)",
         sortNameDesc: "名前 (Z-A)",
-        sortStatTotal: "合計能力値"
+        sortStatTotal: "合計能力値",
+        volumeMute: "ミュート",
+        volumeLow: "小音量",
+        volumeHigh: "大音量"
     }
 };
 
@@ -171,7 +185,8 @@ export const ELEMENT_IDS = {
     DETAIL_CONTENT: 'detail-content',
     APP_TITLE: 'app-title',
     FOOTER_TEXT: 'footer-text',
-    CLOSE_DETAIL: 'close-detail-view'
+    CLOSE_DETAIL: 'close-detail-view',
+    VOLUME_TOGGLE: 'volume-toggle'
 };
 
 // Event types
