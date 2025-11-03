@@ -8,7 +8,6 @@ import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils
 import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
 import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
-import { EvolutionTreeView } from './evolutionTreeView.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
@@ -114,18 +113,13 @@ export class PokemonDetailView {
         mainGrid.appendChild(rightColumn);
         modalContent.appendChild(mainGrid);
         
-        // Evolution Tree Visualization
-        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 1) {
-            const evolutionTree = EvolutionTreeView.createEvolutionTree(
-                pokemon.evolution_chain,
-                pokemon.id,
-                (pokemonId) => this._handleEvolutionClick(pokemonId)
-            );
-            modalContent.appendChild(evolutionTree);
-        }
-        
         // Moves section at bottom
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
+        
+        // Evolution chain section
+        if (pokemon.evolution_chain && pokemon.evolution_chain.length > 0) {
+            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        }
 
         // Clear previous content and add new content
         this.detailContent.innerHTML = '';
@@ -286,17 +280,7 @@ export class PokemonDetailView {
         return container;
     }
 
-    /**
-     * Handles evolution click
-     * @private
-     * @param {number} pokemonId - Pokemon ID to show
-     */
-    _handleEvolutionClick(pokemonId) {
-        const pokemon = this.dataManager.getPokemonById(pokemonId);
-        if (pokemon) {
-            this.showPokemonDetail(pokemon);
-        }
-    }
+
 
     /**
      * Creates Pokemon image with shake animation and error handling

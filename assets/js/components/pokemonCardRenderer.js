@@ -126,7 +126,6 @@ export class PokemonCardRenderer {
                 loadedImg.classList.remove(CSS_CLASSES.LOADING);
             },
             onError: (failedImg) => {
-                failedImg.classList.remove(CSS_CLASSES.LOADING);
                 // Create error fallback
                 const errorContainer = createSafeElement('div');
                 errorContainer.classList.add('image-error-container');
@@ -147,7 +146,9 @@ export class PokemonCardRenderer {
             }
         });
         
+        // Use native lazy loading for better browser support
         img.loading = 'lazy';
+        img.alt = name;
 
         container.appendChild(img);
         return container;

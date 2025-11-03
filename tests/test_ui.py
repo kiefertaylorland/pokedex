@@ -1,84 +1,19 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import os
+import pytest
 import unittest
-import time
-import threading
-import http.server
-import socketserver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
 
+
+@pytest.mark.usefixtures("driver", "http_server")
 class TestPokedexUI(unittest.TestCase):
-    httpd = None
-    server_thread = None
+    """UI tests for the Pokedex application using pytest fixtures from conftest.py"""
     
-    @classmethod
-    def setUpClass(cls):
-        # Start a local HTTP server to serve the files
-        port = 8000
-        handler = http.server.SimpleHTTPRequestHandler
-        
-        # Change to the project root directory
-        project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-        os.chdir(project_root)
-        
-        # Find an available port
-        for attempt_port in range(port, port + 10):
-            try:
-                cls.httpd = socketserver.TCPServer(("", attempt_port), handler)
-                port = attempt_port
-                break
-            except OSError:
-                continue
-        
-        if cls.httpd is None:
-            raise RuntimeError("Could not start HTTP server on any port")
-        
-        # Start the server in a separate thread
-        cls.server_thread = threading.Thread(target=cls.httpd.serve_forever)
-        cls.server_thread.daemon = True
-        cls.server_thread.start()
-        
-        # Give the server a moment to start
-        time.sleep(1)
-        
-        # Initialize Chrome WebDriver with file access enabled and headless mode for CI
-        chrome_options = Options()
-        chrome_options.add_argument("--allow-file-access-from-files")
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument("--disable-gpu")
-        chrome_options.add_argument("--disable-extensions")
-        chrome_options.add_argument("--disable-background-timer-throttling")
-        chrome_options.add_argument("--disable-backgrounding-occluded-windows")
-        chrome_options.add_argument("--disable-renderer-backgrounding")
-        chrome_options.add_argument("--window-size=1920,1080")
-        chrome_options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{os.getpid()}")
-        cls.driver = webdriver.Chrome(options=chrome_options)
-
-        # Use localhost server instead of file:// protocol to avoid CORS issues
-        cls.index_path = f"http://localhost:{port}"
-    
-    @classmethod
-    def tearDownClass(cls):
-        # Clean up the driver
-        if cls.driver:
-            cls.driver.quit()
-        
-        # Stop the HTTP server
-        if cls.httpd:
-            cls.httpd.shutdown()
-            cls.httpd.server_close()
-        
-        # Wait for the server thread to finish
-        if cls.server_thread:
-            cls.server_thread.join(timeout=5)
-
-    def setUp(self):
+    @pytest.fixture(autouse=True)
+    def _setup_test_environment(self, driver, http_server):
+        """Setup fixture that runs before each test, using pytest fixtures"""
+        self.driver = driver
+        self.index_path = http_server
         self.driver.get(self.index_path)
         # Wait for the page to load completely with increased timeout for CI
         WebDriverWait(self.driver, 20).until(

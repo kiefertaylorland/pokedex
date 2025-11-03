@@ -1,9 +1,81 @@
 import requests
 import json
 import time
+import argparse
+import logging
+from typing import Dict, List, Any, Optional, Tuple
+from datetime import datetime, timedelta
 
-BASE_URL = "https://pokeapi.co/api/v2/"
-POKEMON_COUNT = 1025 # All generations (1-9)
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+BASE_URL: str = "https://pokeapi.co/api/v2/"
+POKEMON_COUNT: int = 1025  # All generations (1-9) - default value
+
+
+class RateLimiter:
+    """Rate limiter to prevent API abuse and respect rate limits.
+    
+    Tracks API calls over time and introduces delays when necessary
+    to stay within specified rate limits.
+    """
+    
+    def __init__(self, calls_per_minute: int = 100):
+        """Initialize rate limiter.
+        
+        Args:
+            calls_per_minute: Maximum number of API calls allowed per minute
+        """
+        self.calls_per_minute = calls_per_minute
+        self.calls: List[datetime] = []
+        
+    def wait_if_needed(self) -> None:
+        """Wait if necessary to respect rate limits.
+        
+        Removes old calls outside the time window and sleeps if
+        we've reached the rate limit.
+        """
+        now = datetime.now()
+        
+        # Remove calls older than 1 minute
+        self.calls = [call_time for call_time in self.calls 
+                      if now - call_time < timedelta(minutes=1)]
+        
+        # If we've hit the limit, wait until the oldest call is > 1 minute old
+        if len(self.calls) >= self.calls_per_minute:
+            oldest_call = self.calls[0]
+            sleep_time = 60 - (now - oldest_call).total_seconds()
+            if sleep_time > 0:
+                logger.warning(f"Rate limit reached. Waiting {sleep_time:.1f} seconds...")
+                time.sleep(sleep_time)
+                # Re-check after sleeping
+                now = datetime.now()
+                self.calls = [call_time for call_time in self.calls 
+                             if now - call_time < timedelta(minutes=1)]
+        
+        # Record this call
+        self.calls.append(now)
+        
+    def get_stats(self) -> Dict[str, Any]:
+        """Get current rate limiter statistics.
+        
+        Returns:
+            Dictionary with calls_in_window and calls_per_minute
+        """
+        now = datetime.now()
+        recent_calls = [call_time for call_time in self.calls 
+                       if now - call_time < timedelta(minutes=1)]
+        
+        return {
+            'calls_in_window': len(recent_calls),
+            'calls_per_minute': self.calls_per_minute,
+            'window_utilization': f"{len(recent_calls) / self.calls_per_minute * 100:.1f}%"
+        }
 
 # Version groups in priority order (latest to oldest within each generation)
 # Used for selecting which game version to fetch moves from
@@ -37,21 +109,77 @@ TYPE_EFFECTIVENESS = {
     "fairy": {"fire": 0.5, "fighting": 2, "poison": 0.5, "dragon": 2, "dark": 2, "steel": 0.5}
 }
 
-def get_data(endpoint):
-    """Helper function to get data from PokeAPI and handle errors."""
+# Global rate limiter instance (100 calls per minute by default)
+rate_limiter = RateLimiter(calls_per_minute=100)
+
+def get_data(endpoint: str, use_rate_limiter: bool = True) -> Optional[Dict[str, Any]]:
+    """Helper function to get data from PokeAPI and handle errors.
+    
+    Args:
+        endpoint: API endpoint to fetch from
+        use_rate_limiter: Whether to apply rate limiting (default: True)
+        
+    Returns:
+        JSON data as dictionary if successful, None otherwise
+    """
     try:
+        # Apply rate limiting before making the request
+        if use_rate_limiter:
+            rate_limiter.wait_if_needed()
+            
         response = requests.get(BASE_URL + endpoint)
         response.raise_for_status()  # Raises an HTTPError for bad responses (4XX or 5XX)
         return response.json()
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching {endpoint}: {e}")
+        logger.error(f"Error fetching {endpoint}: {e}")
         return None
     except json.JSONDecodeError as e:
-        print(f"Error decoding JSON from {endpoint}: {e}")
+        logger.error(f"Error decoding JSON from {endpoint}: {e}")
         return None
 
-def get_localized_name(names_list, lang_code="ja-Hrkt"): # ja-Hrkt for Katakana/Hiragana
-    """Extracts a localized name from a list of names."""
+def validate_pokemon_data(pokemon_data: Dict[str, Any]) -> Tuple[bool, List[str]]:
+    """Validate that pokemon data has all required fields.
+    
+    Args:
+        pokemon_data: Dictionary containing pokemon data
+        
+    Returns:
+        Tuple of (is_valid, missing_fields) where is_valid is bool and missing_fields is list
+    """
+    required_fields = [
+        'id', 'name_en', 'name_jp', 'sprite', 'sprites', 
+        'types_en', 'types_jp', 'stats', 'bio_en', 'bio_jp',
+        'abilities', 'height', 'weight', 'genus_en', 'genus_jp',
+        'moves', 'evolution_chain', 'weaknesses', 'resistances', 'immunities'
+    ]
+    
+    missing_fields = [field for field in required_fields if field not in pokemon_data]
+    
+    # Additional validation for nested structures
+    if 'stats' in pokemon_data and pokemon_data['stats']:
+        required_stats = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed']
+        missing_stats = [stat for stat in required_stats if stat not in pokemon_data['stats']]
+        if missing_stats:
+            missing_fields.append(f"stats.{', stats.'.join(missing_stats)}")
+    
+    if 'sprites' in pokemon_data and pokemon_data['sprites']:
+        required_sprites = ['front_default', 'front_shiny', 'back_default', 'back_shiny', 'official_artwork']
+        missing_sprites = [sprite for sprite in required_sprites if sprite not in pokemon_data['sprites']]
+        if missing_sprites:
+            missing_fields.append(f"sprites.{', sprites.'.join(missing_sprites)}")
+    
+    return (len(missing_fields) == 0, missing_fields)
+
+def get_localized_name(names_list: List[Dict[str, Any]], lang_code: str = "ja-Hrkt") -> Optional[str]:
+    """Extracts a localized name from a list of names.
+    
+    Args:
+        names_list: List of name dictionaries from API
+        lang_code: Language code (default: "ja-Hrkt" for Katakana/Hiragana)
+        
+    Returns:
+        Localized name string if found, None otherwise
+    """
     for name_entry in names_list:
         if name_entry["language"]["name"] == lang_code:
             return name_entry["name"]
@@ -62,8 +190,17 @@ def get_localized_name(names_list, lang_code="ja-Hrkt"): # ja-Hrkt for Katakana/
                 return name_entry["name"]
     return None
 
-def get_localized_flavor_text(flavor_text_entries, lang_code="en", version="red"):
-    """Extracts a localized Pokedex entry for a specific game version."""
+def get_localized_flavor_text(flavor_text_entries: List[Dict[str, Any]], lang_code: str = "en", version: str = "red") -> Optional[str]:
+    """Extracts a localized Pokedex entry for a specific game version.
+    
+    Args:
+        flavor_text_entries: List of flavor text dictionaries from API
+        lang_code: Language code (default: "en")
+        version: Game version (default: "red")
+        
+    Returns:
+        Localized flavor text if found, None otherwise
+    """
     for entry in flavor_text_entries:
         if entry["language"]["name"] == lang_code and entry["version"]["name"] == version:
             return entry["flavor_text"].replace("\n", " ").replace("\f", " ")
@@ -159,12 +296,15 @@ def fetch_evolution_chain(evolution_chain_url):
         return evolution_list
         
     except Exception as e:
-        print(f"Error fetching evolution chain: {e}")
+        logger.error(f"Error fetching evolution chain: {e}")
         return []
 
 def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, sleep_time=0.2):
     all_pokemon_data = []
     type_cache = {}
+    evolution_chain_cache = {}  # Cache to store complete evolution chains
+    validation_errors = []  # Track validation errors
+    
     for i in range(1, pokemon_count + 1):
         pokemon_main_data = get_data(f"pokemon/{i}")
         pokemon_species_data = get_data(f"pokemon-species/{i}")
@@ -305,12 +445,18 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
                     "level": move_info["level"]
                 })
                 time.sleep(0.1)
-        # Fetch evolution chain
+        # Fetch evolution chain (use cache to avoid duplicate fetches)
         evolution_chain = []
         if pokemon_species_data.get("evolution_chain"):
             evolution_chain_url = pokemon_species_data["evolution_chain"]["url"]
-            evolution_chain = fetch_evolution_chain(evolution_chain_url)
-            time.sleep(0.1)
+            
+            # Check if we've already fetched this evolution chain
+            if evolution_chain_url not in evolution_chain_cache:
+                evolution_chain_cache[evolution_chain_url] = fetch_evolution_chain(evolution_chain_url)
+                time.sleep(0.1)
+            
+            # Get the complete chain from cache
+            evolution_chain = evolution_chain_cache[evolution_chain_url]
         
         # Calculate type weaknesses, resistances, and immunities
         weaknesses = calculate_weaknesses(types_en)
@@ -346,18 +492,90 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
             "resistances": resistances,
             "immunities": immunities
         }
+        # Validate Pokemon data before adding
+        is_valid, missing_fields = validate_pokemon_data(pokemon_obj)
+        if not is_valid:
+            validation_errors.append({
+                "id": pokemon_obj.get("id", i),
+                "name": pokemon_obj.get("name_en", "Unknown"),
+                "missing_fields": missing_fields
+            })
+            logger.warning(f"Validation warning for #{i} {name_en}: Missing fields: {', '.join(missing_fields)}")
+        
         all_pokemon_data.append(pokemon_obj)
-        print(f"Processed: #{i} {name_en}")
+        logger.info(f"Processed: #{i} {name_en}")
         time.sleep(sleep_time)
+    
+    # Log validation summary
+    if validation_errors:
+        logger.warning(f"\nValidation Summary: {len(validation_errors)} Pokemon had missing or incomplete data")
+        for error in validation_errors[:5]:  # Show first 5 errors
+            logger.warning(f"  - #{error['id']} {error['name']}: {', '.join(error['missing_fields'])}")
+        if len(validation_errors) > 5:
+            logger.warning(f"  ... and {len(validation_errors) - 5} more")
+    else:
+        logger.info("\n✓ All Pokemon data validated successfully!")
+    
     return all_pokemon_data
 
-def save_pokedex_to_json(pokedex_data, output_filename="pokedex_data.json"):
+def save_pokedex_to_json(pokedex_data: List[Dict[str, Any]], output_filename: str = "pokedex_data.json") -> None:
+    """Save Pokemon data to JSON file.
+    
+    Args:
+        pokedex_data: List of Pokemon dictionaries
+        output_filename: Output file path (default: "pokedex_data.json")
+    """
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(pokedex_data, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
-    print("Starting data fetching process...")
-    pokedex_data = fetch_and_build_pokedex()
-    save_pokedex_to_json(pokedex_data)
-    print(f"\nAll Pokemon data fetched and saved to pokedex_data.json")
-    print(f"Total Pokemon processed: {len(pokedex_data)}")
+    parser = argparse.ArgumentParser(
+        description='Fetch Pokemon data from PokeAPI and save to JSON file',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python pokeapi_fetch.py                    # Fetch all 1025 Pokemon (default)
+  python pokeapi_fetch.py --count 151        # Fetch first 151 Pokemon (Gen 1)
+  python pokeapi_fetch.py --count 251        # Fetch first 251 Pokemon (Gen 1-2)
+  python pokeapi_fetch.py --output test.json # Save to custom filename
+  python pokeapi_fetch.py --count 10 --sleep 0.5  # Fetch 10 with longer delay
+        """
+    )
+    parser.add_argument(
+        '--count', '-c',
+        type=int,
+        default=POKEMON_COUNT,
+        help=f'Number of Pokemon to fetch (default: {POKEMON_COUNT})'
+    )
+    parser.add_argument(
+        '--output', '-o',
+        type=str,
+        default='pokedex_data.json',
+        help='Output filename (default: pokedex_data.json)'
+    )
+    parser.add_argument(
+        '--sleep', '-s',
+        type=float,
+        default=0.2,
+        help='Sleep time between requests in seconds (default: 0.2)'
+    )
+    
+    args = parser.parse_args()
+    
+    logger.info(f"Starting data fetching process...")
+    logger.info(f"Fetching {args.count} Pokemon with {args.sleep}s delay between requests")
+    logger.info(f"Output file: {args.output}")
+    logger.info("-" * 60)
+    
+    pokedex_data = fetch_and_build_pokedex(
+        pokemon_count=args.count,
+        sleep_time=args.sleep
+    )
+    save_pokedex_to_json(pokedex_data, args.output)
+    
+    # Log rate limiter statistics
+    stats = rate_limiter.get_stats()
+    logger.info(f"\nAll Pokemon data fetched and saved to {args.output}")
+    logger.info(f"Total Pokemon processed: {len(pokedex_data)}")
+    logger.info(f"Rate limiter stats: {stats['calls_in_window']} calls in current window "
+                f"(utilization: {stats['window_utilization']})")

@@ -1,6 +1,13 @@
 /**
  * Image utility functions for handling sprite URLs and fallbacks
  * @module ImageUtils
+ * 
+ * NOTE: SRI (Subresource Integrity) hashes are not applicable to dynamically
+ * loaded Pokemon sprite images, as each image has a unique hash. SRI is typically
+ * used for fixed library files (JS/CSS frameworks). Instead, we rely on:
+ * 1. Content Security Policy (CSP) to restrict allowed CDN domains
+ * 2. Multiple CDN fallbacks for reliability
+ * 3. Error handling and graceful degradation
  */
 
 /**
@@ -52,7 +59,6 @@ export function createImageWithFallback(primaryUrl, alt, options = {}) {
         // Try jsDelivr CDN if we haven't already
         const jsdelivrUrl = convertToJsDelivrUrl(primaryUrl);
         if (jsdelivrUrl !== primaryUrl && !attemptedUrls.includes(jsdelivrUrl)) {
-            console.log(`Falling back to jsDelivr CDN: ${jsdelivrUrl}`);
             img.src = jsdelivrUrl;
             return;
         }
@@ -63,7 +69,6 @@ export function createImageWithFallback(primaryUrl, alt, options = {}) {
             const pokemonId = idMatch[1];
             const backupUrl = `https://cdn.jsdelivr.net/gh/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
             if (!attemptedUrls.includes(backupUrl)) {
-                console.log(`Falling back to constructed URL: ${backupUrl}`);
                 img.src = backupUrl;
                 return;
             }

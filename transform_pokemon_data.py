@@ -8,6 +8,15 @@ to the format used by this Pokédex application.
 import json
 import sys
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 def transform_pokemon(raw_pokemon):
     """Transform a Pokemon entry from external format to our format"""
@@ -145,16 +154,16 @@ def main():
     output_file = 'pokedex_data.json'
     
     if not os.path.exists(input_file):
-        print(f"Error: {input_file} not found.")
-        print("Please download Pokemon data first using:")
-        print('curl -L -o /tmp/pokemon_raw.json "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/pokedex.json"')
+        logger.error(f"Error: {input_file} not found.")
+        logger.info("Please download Pokemon data first using:")
+        logger.info('curl -L -o /tmp/pokemon_raw.json "https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/pokedex.json"')
         sys.exit(1)
     
-    print("Loading external Pokemon data...")
+    logger.info("Loading external Pokemon data...")
     with open(input_file, 'r', encoding='utf-8') as f:
         raw_data = json.load(f)
     
-    print(f"Found {len(raw_data)} Pokemon in external data")
+    logger.info(f"Found {len(raw_data)} Pokemon in external data")
     
     # Transform all Pokemon from external source
     transformed_data = []
@@ -163,34 +172,34 @@ def main():
             pokemon = transform_pokemon(raw_pokemon)
             transformed_data.append(pokemon)
             if pokemon['id'] % 100 == 0:
-                print(f"Processed Pokemon #{pokemon['id']}: {pokemon['name_en']}")
+                logger.info(f"Processed Pokemon #{pokemon['id']}: {pokemon['name_en']}")
         except Exception as e:
-            print(f"Error processing Pokemon ID {raw_pokemon.get('id', '?')}: {e}")
+            logger.error(f"Error processing Pokemon ID {raw_pokemon.get('id', '?')}: {e}")
     
     # Get the maximum ID we have
     max_id = max(p['id'] for p in transformed_data)
-    print(f"Maximum Pokemon ID from external data: {max_id}")
+    logger.info(f"Maximum Pokemon ID from external data: {max_id}")
     
     # Add minimal entries for Pokemon beyond what we have (up to 1025)
     if max_id < 1025:
-        print(f"Adding minimal entries for Pokemon {max_id + 1} to 1025...")
+        logger.info(f"Adding minimal entries for Pokemon {max_id + 1} to 1025...")
         for pokemon_id in range(max_id + 1, 1026):
             minimal_pokemon = create_minimal_pokemon(pokemon_id)
             transformed_data.append(minimal_pokemon)
             if pokemon_id % 100 == 0:
-                print(f"Added minimal entry for Pokemon #{pokemon_id}")
+                logger.info(f"Added minimal entry for Pokemon #{pokemon_id}")
     
     # Sort by ID
     transformed_data.sort(key=lambda p: p['id'])
     
     # Save to output file
-    print(f"\nSaving {len(transformed_data)} Pokemon to {output_file}...")
+    logger.info(f"\nSaving {len(transformed_data)} Pokemon to {output_file}...")
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(transformed_data, f, ensure_ascii=False, indent=2)
     
-    print(f"✓ Successfully created {output_file} with {len(transformed_data)} Pokemon")
-    print(f"  - Pokemon 1-{max_id}: Full data from external source")
-    print(f"  - Pokemon {max_id+1}-1025: Minimal data (run pokeapi_fetch.py to complete)")
+    logger.info(f"✓ Successfully created {output_file} with {len(transformed_data)} Pokemon")
+    logger.info(f"  - Pokemon 1-{max_id}: Full data from external source")
+    logger.info(f"  - Pokemon {max_id+1}-1025: Minimal data (run pokeapi_fetch.py to complete)")
 
 if __name__ == '__main__':
     main()
