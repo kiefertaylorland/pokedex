@@ -1,4 +1,12 @@
-# pokedex requirements
+# Core dependencies
 requests
 selenium
+
+# Testing
 pytest
+coverage
+
+# Code quality
+black
+flake8
+pre-commit

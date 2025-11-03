@@ -33,6 +33,7 @@ export class SearchController {
      */
     _bindEvents() {
         if (!this.searchInput) {
+            // Critical error - search input element not found
             console.error('Search input element not found');
             return;
         }
@@ -80,7 +81,6 @@ export class SearchController {
      */
     _performSearch(searchTerm) {
         if (!this.dataManager.isDataLoaded()) {
-            console.warn('Cannot search: Pokemon data not loaded');
             return;
         }
 
@@ -97,6 +97,7 @@ export class SearchController {
             this._announceSearchResults(results.length, searchTerm);
 
         } catch (error) {
+            // Critical error during search
             console.error('Search error:', error);
             this.uiController.showError('Search failed. Please try again.');
         }

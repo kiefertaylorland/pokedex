@@ -1,19 +1,25 @@
 import json
 import os
+from typing import Dict, List, Any, Optional, Union
 
-DATA_FILE = os.path.join(os.path.dirname(__file__), "pokedex_data.json")
+DATA_FILE: str = os.path.join(os.path.dirname(__file__), "pokedex_data.json")
 
 with open(DATA_FILE, "r", encoding="utf-8") as f:
-    POKEDEX = json.load(f)
+    POKEDEX: List[Dict[str, Any]] = json.load(f)
 
 # Build lookup dictionaries for fast access by id and name
-POKEDEX_BY_ID = {p["id"]: p for p in POKEDEX}
-POKEDEX_BY_NAME = {p["name_en"].lower(): p for p in POKEDEX}
+POKEDEX_BY_ID: Dict[int, Dict[str, Any]] = {p["id"]: p for p in POKEDEX}
+POKEDEX_BY_NAME: Dict[str, Dict[str, Any]] = {p["name_en"].lower(): p for p in POKEDEX}
 
-def fetch_pokemon(query):
+def fetch_pokemon(query: Union[int, str]) -> Optional[Dict[str, Any]]:
     """
     Fetch a Pokemon by its English name (case-insensitive) or id.
-    Returns the Pokemon data dictionary if found; otherwise returns None.
+    
+    Args:
+        query: Pokemon name (str) or ID (int)
+        
+    Returns:
+        Pokemon data dictionary if found; otherwise None.
     """
     # Try id first
     try:

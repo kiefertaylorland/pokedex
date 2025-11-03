@@ -11,6 +11,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://cdn.jsdelivr.net data:; media-src 'self' https://raw.githubusercontent.com; connect-src 'self' https://pokeapi.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
     
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ff3b30">
@@ -136,6 +137,9 @@
         </div>
     </noscript>
 
+    <!-- Error Boundary - Load first to catch all errors -->
+    <script type="module" src="assets/js/utils/errorBoundary.js"></script>
+    
     <!-- Load the new modular JavaScript -->
     <script type="module" src="assets/js/pokedexApp.js"></script>
     
@@ -164,21 +168,6 @@
                     });
             });
         }
-    </script>
-    
-    <!-- Fallback error handling -->
-    <script>
-        window.addEventListener('error', function(event) {
-            console.error('Global error:', event.error);
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'global-error';
-            errorDiv.innerHTML = '<p>An error occurred. Please refresh the page to try again.</p>';
-            document.body.appendChild(errorDiv);
-        });
-        
-        window.addEventListener('unhandledrejection', function(event) {
-            console.error('Unhandled promise rejection:', event.reason);
-        });
     </script>
 </body>
 </html>

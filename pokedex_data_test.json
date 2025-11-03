@@ -1,0 +1,5721 @@
+[
+  {
+    "id": 1,
+    "name_en": "Bulbasaur",
+    "name_jp": "フシギダネ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/1.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/1.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/1.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/1.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/1.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/1.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "special-attack": 65,
+      "special-defense": 65,
+      "speed": 45
+    },
+    "bio_en": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
+    "bio_jp": "生まれたときから　背中に 不思議な　タネが　植えてあって 体と　ともに　育つという。",
+    "abilities": [
+      {
+        "name_en": "Overgrow",
+        "name_jp": "しんりょく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.7,
+    "weight": 6.9,
+    "genus_en": "Seed Pokémon",
+    "genus_jp": "たねポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Vine Whip",
+        "name_jp": "つるのムチ",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 45,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 3
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 6
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 2,
+    "name_en": "Ivysaur",
+    "name_jp": "フシギソウ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/2.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/2.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/2.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/2.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/2.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/2.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 62,
+      "defense": 63,
+      "special-attack": 80,
+      "special-defense": 80,
+      "speed": 60
+    },
+    "bio_en": "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
+    "bio_jp": "つぼみが　背中に　ついていて 養分を　吸収していくと 大きな　花が　咲くという。",
+    "abilities": [
+      {
+        "name_en": "Overgrow",
+        "name_jp": "しんりょく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 13.0,
+    "genus_en": "Seed Pokémon",
+    "genus_jp": "たねポケモン",
+    "moves": [
+      {
+        "name_en": "Vine Whip",
+        "name_jp": "つるのムチ",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 45,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 3,
+    "name_en": "Venusaur",
+    "name_jp": "フシギバナ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/3.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/3.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/3.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/3.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/3.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/3.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 80,
+      "attack": 82,
+      "defense": 83,
+      "special-attack": 100,
+      "special-defense": 100,
+      "speed": 80
+    },
+    "bio_en": "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+    "bio_jp": "大きな　花びらを　広げ 太陽の　光を　浴びていると 体に　元気が　みなぎっていく。",
+    "abilities": [
+      {
+        "name_en": "Overgrow",
+        "name_jp": "しんりょく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": true
+      }
+    ],
+    "height": 2.0,
+    "weight": 100.0,
+    "genus_en": "Seed Pokémon",
+    "genus_jp": "たねポケモン",
+    "moves": [
+      {
+        "name_en": "Vine Whip",
+        "name_jp": "つるのムチ",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 45,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      },
+      {
+        "name": "Ivysaur",
+        "id": 2
+      },
+      {
+        "name": "Venusaur",
+        "id": 3
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 4,
+    "name_en": "Charmander",
+    "name_jp": "ヒトカゲ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/4.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/4.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/4.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/4.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/4.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/4.png"
+    },
+    "types_en": [
+      "Fire"
+    ],
+    "types_jp": [
+      "ほのお"
+    ],
+    "stats": {
+      "hp": 39,
+      "attack": 52,
+      "defense": 43,
+      "special-attack": 60,
+      "special-defense": 50,
+      "speed": 65
+    },
+    "bio_en": "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.",
+    "bio_jp": "尻尾の　炎は ヒトカゲの　生命力の　証。 元気だと　さかんに　燃えさかる。",
+    "abilities": [
+      {
+        "name_en": "Blaze",
+        "name_jp": "もうか",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Solar Power",
+        "name_jp": "サンパワー",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.6,
+    "weight": 8.5,
+    "genus_en": "Lizard Pokémon",
+    "genus_jp": "とかげポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Ember",
+        "name_jp": "ひのこ",
+        "type_en": "Fire",
+        "type_jp": "ほのお",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 4
+      },
+      {
+        "name_en": "Smokescreen",
+        "name_jp": "えんまく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 8
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Grass": 0.5,
+      "Ice": 0.5,
+      "Bug": 0.5,
+      "Steel": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 5,
+    "name_en": "Charmeleon",
+    "name_jp": "リザード",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/5.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/5.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/5.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/5.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/5.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/5.png"
+    },
+    "types_en": [
+      "Fire"
+    ],
+    "types_jp": [
+      "ほのお"
+    ],
+    "stats": {
+      "hp": 58,
+      "attack": 64,
+      "defense": 58,
+      "special-attack": 80,
+      "special-defense": 65,
+      "speed": 80
+    },
+    "bio_en": "When it swings its burning tail, it elevates the temperature to unbearably high levels.",
+    "bio_jp": "尻尾を　振り回して 相手を　なぎ倒し　鋭い　ツメで ズタズタに　ひきさいてしまう。",
+    "abilities": [
+      {
+        "name_en": "Blaze",
+        "name_jp": "もうか",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Solar Power",
+        "name_jp": "サンパワー",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.1,
+    "weight": 19.0,
+    "genus_en": "Flame Pokémon",
+    "genus_jp": "かえんポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Ember",
+        "name_jp": "ひのこ",
+        "type_en": "Fire",
+        "type_jp": "ほのお",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Smokescreen",
+        "name_jp": "えんまく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Grass": 0.5,
+      "Ice": 0.5,
+      "Bug": 0.5,
+      "Steel": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 6,
+    "name_en": "Charizard",
+    "name_jp": "リザードン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/6.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/6.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/6.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/6.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/6.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/6.png"
+    },
+    "types_en": [
+      "Fire",
+      "Flying"
+    ],
+    "types_jp": [
+      "ほのお",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "special-attack": 109,
+      "special-defense": 85,
+      "speed": 100
+    },
+    "bio_en": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
+    "bio_jp": "口から　灼熱の　炎を　吐き出すとき 尻尾の　先は より　赤く　激しく　燃え上がる。",
+    "abilities": [
+      {
+        "name_en": "Blaze",
+        "name_jp": "もうか",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Solar Power",
+        "name_jp": "サンパワー",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.7,
+    "weight": 90.5,
+    "genus_en": "Flame Pokémon",
+    "genus_jp": "かえんポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Wing Attack",
+        "name_jp": "つばさでうつ",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Charmander",
+        "id": 4
+      },
+      {
+        "name": "Charmeleon",
+        "id": 5
+      },
+      {
+        "name": "Charizard",
+        "id": 6
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Electric": 2.0,
+      "Rock": 4.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Bug": 0.25,
+      "Steel": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {
+      "Ground": 0
+    }
+  },
+  {
+    "id": 7,
+    "name_en": "Squirtle",
+    "name_jp": "ゼニガメ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/7.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/7.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/7.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/7.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/7.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/7.png"
+    },
+    "types_en": [
+      "Water"
+    ],
+    "types_jp": [
+      "みず"
+    ],
+    "stats": {
+      "hp": 44,
+      "attack": 48,
+      "defense": 65,
+      "special-attack": 50,
+      "special-defense": 64,
+      "speed": 43
+    },
+    "bio_en": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
+    "bio_jp": "甲羅に　閉じこもり　身を　守る。 相手の　すきを　見逃さず 水を　噴き出して　反撃する。",
+    "abilities": [
+      {
+        "name_en": "Torrent",
+        "name_jp": "げきりゅう",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rain Dish",
+        "name_jp": "あめうけざら",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.5,
+    "weight": 9.0,
+    "genus_en": "Tiny Turtle Pokémon",
+    "genus_jp": "かめのこポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Water Gun",
+        "name_jp": "みずでっぽう",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 3
+      },
+      {
+        "name_en": "Withdraw",
+        "name_jp": "からにこもる",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 6
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Water": 0.5,
+      "Ice": 0.5,
+      "Steel": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 8,
+    "name_en": "Wartortle",
+    "name_jp": "カメール",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/8.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/8.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/8.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/8.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/8.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/8.png"
+    },
+    "types_en": [
+      "Water"
+    ],
+    "types_jp": [
+      "みず"
+    ],
+    "stats": {
+      "hp": 59,
+      "attack": 63,
+      "defense": 80,
+      "special-attack": 65,
+      "special-defense": 80,
+      "speed": 58
+    },
+    "bio_en": "Often hides in water to stalk unwary prey. For swimming fast, it moves its ears to maintain balance.",
+    "bio_jp": "ポカンと　頭を　たたかれるとき 甲羅に　引っこんで　避ける。でも ちょっとだけ　尻尾が　出ているよ。",
+    "abilities": [
+      {
+        "name_en": "Torrent",
+        "name_jp": "げきりゅう",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rain Dish",
+        "name_jp": "あめうけざら",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 22.5,
+    "genus_en": "Turtle Pokémon",
+    "genus_jp": "かめポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Water Gun",
+        "name_jp": "みずでっぽう",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Withdraw",
+        "name_jp": "からにこもる",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Water": 0.5,
+      "Ice": 0.5,
+      "Steel": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 9,
+    "name_en": "Blastoise",
+    "name_jp": "カメックス",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/9.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/9.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/9.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/9.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/9.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/9.png"
+    },
+    "types_en": [
+      "Water"
+    ],
+    "types_jp": [
+      "みず"
+    ],
+    "stats": {
+      "hp": 79,
+      "attack": 83,
+      "defense": 100,
+      "special-attack": 85,
+      "special-defense": 105,
+      "speed": 78
+    },
+    "bio_en": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
+    "bio_jp": "体が　重たく　のしかかって 相手を　気絶させる。 ピンチのときは　殻に　隠れる。",
+    "abilities": [
+      {
+        "name_en": "Torrent",
+        "name_jp": "げきりゅう",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rain Dish",
+        "name_jp": "あめうけざら",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.6,
+    "weight": 85.5,
+    "genus_en": "Shellfish Pokémon",
+    "genus_jp": "こうらポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Water Gun",
+        "name_jp": "みずでっぽう",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Withdraw",
+        "name_jp": "からにこもる",
+        "type_en": "Water",
+        "type_jp": "みず",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Squirtle",
+        "id": 7
+      },
+      {
+        "name": "Wartortle",
+        "id": 8
+      },
+      {
+        "name": "Blastoise",
+        "id": 9
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Grass": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Water": 0.5,
+      "Ice": 0.5,
+      "Steel": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 10,
+    "name_en": "Caterpie",
+    "name_jp": "キャタピー",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/10.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/10.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/10.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/10.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/10.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/10.png"
+    },
+    "types_en": [
+      "Bug"
+    ],
+    "types_jp": [
+      "むし"
+    ],
+    "stats": {
+      "hp": 45,
+      "attack": 30,
+      "defense": 35,
+      "special-attack": 20,
+      "special-defense": 20,
+      "speed": 45
+    },
+    "bio_en": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
+    "bio_jp": "頭の　触覚から 強烈な　においを　出して 敵を　追い払い　身を守る。",
+    "abilities": [
+      {
+        "name_en": "Shield Dust",
+        "name_jp": "りんぷん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 2.9,
+    "genus_en": "Worm Pokémon",
+    "genus_jp": "いもむしポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "String Shot",
+        "name_jp": "いとをはく",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": null,
+        "accuracy": 95,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Bug Bite",
+        "name_jp": "むしくい",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 9
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Ground": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 11,
+    "name_en": "Metapod",
+    "name_jp": "トランセル",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/11.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/11.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/11.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/11.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/11.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/11.png"
+    },
+    "types_en": [
+      "Bug"
+    ],
+    "types_jp": [
+      "むし"
+    ],
+    "stats": {
+      "hp": 50,
+      "attack": 20,
+      "defense": 55,
+      "special-attack": 25,
+      "special-defense": 25,
+      "speed": 30
+    },
+    "bio_en": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
+    "bio_jp": "鋼鉄のように　硬い　殻で やわらかい　中身を　守っている。 進化するまで　じっと　耐えている。",
+    "abilities": [
+      {
+        "name_en": "Shed Skin",
+        "name_jp": "だっぴ",
+        "is_hidden": false
+      }
+    ],
+    "height": 0.7,
+    "weight": 9.9,
+    "genus_en": "Cocoon Pokémon",
+    "genus_jp": "さなぎポケモン",
+    "moves": [
+      {
+        "name_en": "Harden",
+        "name_jp": "かたくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Ground": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 12,
+    "name_en": "Butterfree",
+    "name_jp": "バタフリー",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/12.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/12.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/12.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/12.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/12.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/12.png"
+    },
+    "types_en": [
+      "Bug",
+      "Flying"
+    ],
+    "types_jp": [
+      "むし",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 45,
+      "defense": 50,
+      "special-attack": 90,
+      "special-defense": 80,
+      "speed": 70
+    },
+    "bio_en": "In battle, it flaps its wings at high speed to release highly toxic dust into the air.",
+    "bio_jp": "花の　ミツが　大好物。 わずかな　花粉で　花畑の 場所を　探し出すことが　できる。",
+    "abilities": [
+      {
+        "name_en": "Compound Eyes",
+        "name_jp": "ふくがん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tinted Lens",
+        "name_jp": "いろめがね",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.1,
+    "weight": 32.0,
+    "genus_en": "Butterfly Pokémon",
+    "genus_jp": "ちょうちょポケモン",
+    "moves": [
+      {
+        "name_en": "Gust",
+        "name_jp": "かぜおこし",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "String Shot",
+        "name_jp": "いとをはく",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": null,
+        "accuracy": 95,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Harden",
+        "name_jp": "かたくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Caterpie",
+        "id": 10
+      },
+      {
+        "name": "Metapod",
+        "id": 11
+      },
+      {
+        "name": "Butterfree",
+        "id": 12
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Rock": 4.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0
+    }
+  },
+  {
+    "id": 13,
+    "name_en": "Weedle",
+    "name_jp": "ビードル",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/13.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/13.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/13.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/13.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/13.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/13.png"
+    },
+    "types_en": [
+      "Bug",
+      "Poison"
+    ],
+    "types_jp": [
+      "むし",
+      "どく"
+    ],
+    "stats": {
+      "hp": 40,
+      "attack": 35,
+      "defense": 30,
+      "special-attack": 20,
+      "special-defense": 20,
+      "speed": 50
+    },
+    "bio_en": "Often found in forests, eating leaves. It has a sharp venomous stinger on its head.",
+    "bio_jp": "森や　草地に　多く　生息。 頭の　先に　５センチぐらいの 小さく　鋭い　毒針を持つ。",
+    "abilities": [
+      {
+        "name_en": "Shield Dust",
+        "name_jp": "りんぷん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 3.2,
+    "genus_en": "Hairy Bug Pokémon",
+    "genus_jp": "けむしポケモン",
+    "moves": [
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "String Shot",
+        "name_jp": "いとをはく",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": null,
+        "accuracy": 95,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Bug Bite",
+        "name_jp": "むしくい",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 9
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 14,
+    "name_en": "Kakuna",
+    "name_jp": "コクーン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/14.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/14.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/14.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/14.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/14.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/14.png"
+    },
+    "types_en": [
+      "Bug",
+      "Poison"
+    ],
+    "types_jp": [
+      "むし",
+      "どく"
+    ],
+    "stats": {
+      "hp": 45,
+      "attack": 25,
+      "defense": 50,
+      "special-attack": 25,
+      "special-defense": 25,
+      "speed": 35
+    },
+    "bio_en": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.",
+    "bio_jp": "自分では　ほとんど　動けないが 危ないときは　硬くなって 身を守っているようだ。",
+    "abilities": [
+      {
+        "name_en": "Shed Skin",
+        "name_jp": "だっぴ",
+        "is_hidden": false
+      }
+    ],
+    "height": 0.6,
+    "weight": 10.0,
+    "genus_en": "Cocoon Pokémon",
+    "genus_jp": "さなぎポケモン",
+    "moves": [
+      {
+        "name_en": "Harden",
+        "name_jp": "かたくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 15,
+    "name_en": "Beedrill",
+    "name_jp": "スピアー",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/15.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/15.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/15.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/15.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/15.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/15.png"
+    },
+    "types_en": [
+      "Bug",
+      "Poison"
+    ],
+    "types_jp": [
+      "むし",
+      "どく"
+    ],
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 40,
+      "special-attack": 45,
+      "special-defense": 80,
+      "speed": 75
+    },
+    "bio_en": "Flies at high speed and attacks using its large venomous stingers on its forelegs and tail.",
+    "bio_jp": "両手と　お尻にある　３本の　毒針で 相手を　刺して　刺して 刺しまくって　攻撃する。",
+    "abilities": [
+      {
+        "name_en": "Swarm",
+        "name_jp": "むしのしらせ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sniper",
+        "name_jp": "スナイパー",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 29.5,
+    "genus_en": "Poison Bee Pokémon",
+    "genus_jp": "どくばちポケモン",
+    "moves": [
+      {
+        "name_en": "Fury Attack",
+        "name_jp": "みだれづき",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 85,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Twineedle",
+        "name_jp": "ダブルニードル",
+        "type_en": "Bug",
+        "type_jp": "むし",
+        "power": 25,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Rage",
+        "name_jp": "いかり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 14
+      },
+      {
+        "name_en": "Pursuit",
+        "name_jp": "おいうち",
+        "type_en": "Dark",
+        "type_jp": "あく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 17
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Weedle",
+        "id": 13
+      },
+      {
+        "name": "Kakuna",
+        "id": 14
+      },
+      {
+        "name": "Beedrill",
+        "id": 15
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 16,
+    "name_en": "Pidgey",
+    "name_jp": "ポッポ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/16.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/16.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/16.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/16.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/16.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/16.png"
+    },
+    "types_en": [
+      "Normal",
+      "Flying"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 40,
+      "special-attack": 35,
+      "special-defense": 35,
+      "speed": 56
+    },
+    "bio_en": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.",
+    "bio_jp": "森や　林に　多く　分布。 地上でも　激しく　はばたいて 砂を　かけたりする。",
+    "abilities": [
+      {
+        "name_en": "Keen Eye",
+        "name_jp": "するどいめ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tangled Feet",
+        "name_jp": "ちどりあし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Big Pecks",
+        "name_jp": "はとむね",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 1.8,
+    "genus_en": "Tiny Bird Pokémon",
+    "genus_jp": "ことりポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 5
+      },
+      {
+        "name_en": "Gust",
+        "name_jp": "かぜおこし",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 9
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 13
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0,
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 17,
+    "name_en": "Pidgeotto",
+    "name_jp": "ピジョン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/17.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/17.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/17.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/17.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/17.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/17.png"
+    },
+    "types_en": [
+      "Normal",
+      "Flying"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 63,
+      "attack": 60,
+      "defense": 55,
+      "special-attack": 50,
+      "special-defense": 50,
+      "speed": 71
+    },
+    "bio_en": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.",
+    "bio_jp": "足の　ツメが　発達している。 エサの　タマタマを　つかんで １００キロ先の　巣まで　運ぶ。",
+    "abilities": [
+      {
+        "name_en": "Keen Eye",
+        "name_jp": "するどいめ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tangled Feet",
+        "name_jp": "ちどりあし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Big Pecks",
+        "name_jp": "はとむね",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.1,
+    "weight": 30.0,
+    "genus_en": "Bird Pokémon",
+    "genus_jp": "とりポケモン",
+    "moves": [
+      {
+        "name_en": "Gust",
+        "name_jp": "かぜおこし",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 13
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0,
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 18,
+    "name_en": "Pidgeot",
+    "name_jp": "ピジョット",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/18.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/18.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/18.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/18.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/18.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/18.png"
+    },
+    "types_en": [
+      "Normal",
+      "Flying"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 83,
+      "attack": 80,
+      "defense": 75,
+      "special-attack": 70,
+      "special-defense": 70,
+      "speed": 101
+    },
+    "bio_en": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as MAGIKARP.",
+    "bio_jp": "エサを　探すとき　水面　すれすれを 滑るように　飛んで コイキングなどを　わしづかみにする。",
+    "abilities": [
+      {
+        "name_en": "Keen Eye",
+        "name_jp": "するどいめ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tangled Feet",
+        "name_jp": "ちどりあし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Big Pecks",
+        "name_jp": "はとむね",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.5,
+    "weight": 39.5,
+    "genus_en": "Bird Pokémon",
+    "genus_jp": "とりポケモン",
+    "moves": [
+      {
+        "name_en": "Gust",
+        "name_jp": "かぜおこし",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pidgey",
+        "id": 16
+      },
+      {
+        "name": "Pidgeotto",
+        "id": 17
+      },
+      {
+        "name": "Pidgeot",
+        "id": 18
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0,
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 19,
+    "name_en": "Rattata",
+    "name_jp": "コラッタ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/19.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/19.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/19.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/19.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/19.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/19.png"
+    },
+    "types_en": [
+      "Normal"
+    ],
+    "types_jp": [
+      "ノーマル"
+    ],
+    "stats": {
+      "hp": 30,
+      "attack": 56,
+      "defense": 35,
+      "special-attack": 25,
+      "special-defense": 35,
+      "speed": 72
+    },
+    "bio_en": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+    "bio_jp": "食べるものが　あるところなら どこにだって　生息する。 １日中　エサを　探している。",
+    "abilities": [
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Guts",
+        "name_jp": "こんじょう",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 3.5,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 4
+      },
+      {
+        "name_en": "Focus Energy",
+        "name_jp": "きあいだめ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 30,
+        "level": 7
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rattata",
+        "id": 19
+      },
+      {
+        "name": "Raticate",
+        "id": 20
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    },
+    "resistances": {},
+    "immunities": {
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 20,
+    "name_en": "Raticate",
+    "name_jp": "ラッタ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/20.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/20.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/20.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/20.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/20.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/20.png"
+    },
+    "types_en": [
+      "Normal"
+    ],
+    "types_jp": [
+      "ノーマル"
+    ],
+    "stats": {
+      "hp": 55,
+      "attack": 81,
+      "defense": 60,
+      "special-attack": 50,
+      "special-defense": 70,
+      "speed": 97
+    },
+    "bio_en": "It uses its whis­ kers to maintain its balance. It apparently slows down if they are cut off.",
+    "bio_jp": "伸び続ける　前歯を　削るため 硬い　ものを　かじる　習性。 ブロック塀も　かじって　壊す。",
+    "abilities": [
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Guts",
+        "name_jp": "こんじょう",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.7,
+    "weight": 18.5,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Swords Dance",
+        "name_jp": "つるぎのまい",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Rattata",
+        "id": 19
+      },
+      {
+        "name": "Raticate",
+        "id": 20
+      }
+    ],
+    "weaknesses": {
+      "Fighting": 2.0
+    },
+    "resistances": {},
+    "immunities": {
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 21,
+    "name_en": "Spearow",
+    "name_jp": "オニスズメ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/21.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/21.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/21.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/21.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/21.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/21.png"
+    },
+    "types_en": [
+      "Normal",
+      "Flying"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 40,
+      "attack": 60,
+      "defense": 30,
+      "special-attack": 31,
+      "special-defense": 31,
+      "speed": 70
+    },
+    "bio_en": "Eats bugs in grassy areas. It has to flap its short wings at high speed to stay airborne.",
+    "bio_jp": "自分の　テリトリーを　守るため 短い　羽を　はばたかせて 忙しく　飛び回っている。",
+    "abilities": [
+      {
+        "name_en": "Keen Eye",
+        "name_jp": "するどいめ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sniper",
+        "name_jp": "スナイパー",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 2.0,
+    "genus_en": "Tiny Bird Pokémon",
+    "genus_jp": "ことりポケモン",
+    "moves": [
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Peck",
+        "name_jp": "つつく",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 35,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 4
+      },
+      {
+        "name_en": "Pursuit",
+        "name_jp": "おいうち",
+        "type_en": "Dark",
+        "type_jp": "あく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 8
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Spearow",
+        "id": 21
+      },
+      {
+        "name": "Fearow",
+        "id": 22
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0,
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 22,
+    "name_en": "Fearow",
+    "name_jp": "オニドリル",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/22.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/22.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/22.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/22.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/22.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/22.png"
+    },
+    "types_en": [
+      "Normal",
+      "Flying"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 65,
+      "special-attack": 61,
+      "special-defense": 61,
+      "speed": 100
+    },
+    "bio_en": "With its huge and magnificent wings, it can keep aloft without ever having to land for rest.",
+    "bio_jp": "大きな　翼で　大空を 飛び続けることが　できる。 １回も　降りなくても　平気だ。",
+    "abilities": [
+      {
+        "name_en": "Keen Eye",
+        "name_jp": "するどいめ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sniper",
+        "name_jp": "スナイパー",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.2,
+    "weight": 38.0,
+    "genus_en": "Beak Pokémon",
+    "genus_jp": "くちばしポケモン",
+    "moves": [
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Peck",
+        "name_jp": "つつく",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 35,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Pursuit",
+        "name_jp": "おいうち",
+        "type_en": "Dark",
+        "type_jp": "あく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Spearow",
+        "id": 21
+      },
+      {
+        "name": "Fearow",
+        "id": 22
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Bug": 0.5
+    },
+    "immunities": {
+      "Ground": 0,
+      "Ghost": 0
+    }
+  },
+  {
+    "id": 23,
+    "name_en": "Ekans",
+    "name_jp": "アーボ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/23.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/23.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/23.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/23.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/23.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/23.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 35,
+      "attack": 60,
+      "defense": 44,
+      "special-attack": 40,
+      "special-defense": 54,
+      "speed": 55
+    },
+    "bio_en": "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole.",
+    "bio_jp": "育つほどに　どんどん　長くなる。 そして　夜中は　木の枝に グルグルと　絡まって　休む。",
+    "abilities": [
+      {
+        "name_en": "Intimidate",
+        "name_jp": "いかく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Shed Skin",
+        "name_jp": "だっぴ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Unnerve",
+        "name_jp": "きんちょうかん",
+        "is_hidden": true
+      }
+    ],
+    "height": 2.0,
+    "weight": 6.9,
+    "genus_en": "Snake Pokémon",
+    "genus_jp": "へびポケモン",
+    "moves": [
+      {
+        "name_en": "Wrap",
+        "name_jp": "まきつく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 90,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 4
+      },
+      {
+        "name_en": "Bite",
+        "name_jp": "かみつく",
+        "type_en": "Dark",
+        "type_jp": "あく",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 9
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ekans",
+        "id": 23
+      },
+      {
+        "name": "Arbok",
+        "id": 24
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 24,
+    "name_en": "Arbok",
+    "name_jp": "アーボック",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/24.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/24.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/24.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/24.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/24.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/24.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 95,
+      "defense": 69,
+      "special-attack": 65,
+      "special-defense": 79,
+      "speed": 80
+    },
+    "bio_en": "It is rumored that the ferocious warning markings on its belly differ from area to area.",
+    "bio_jp": "お腹の　模様が　怖い　顔に　見える。 弱い　敵は　その模様を 見ただけで　逃げ出してしまう。",
+    "abilities": [
+      {
+        "name_en": "Intimidate",
+        "name_jp": "いかく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Shed Skin",
+        "name_jp": "だっぴ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Unnerve",
+        "name_jp": "きんちょうかん",
+        "is_hidden": true
+      }
+    ],
+    "height": 3.5,
+    "weight": 65.0,
+    "genus_en": "Cobra Pokémon",
+    "genus_jp": "コブラポケモン",
+    "moves": [
+      {
+        "name_en": "Wrap",
+        "name_jp": "まきつく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 90,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Bite",
+        "name_jp": "かみつく",
+        "type_en": "Dark",
+        "type_jp": "あく",
+        "power": 60,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Ekans",
+        "id": 23
+      },
+      {
+        "name": "Arbok",
+        "id": 24
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 25,
+    "name_en": "Pikachu",
+    "name_jp": "ピカチュウ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/25.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/25.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/25.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/25.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/25.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/25.png"
+    },
+    "types_en": [
+      "Electric"
+    ],
+    "types_jp": [
+      "でんき"
+    ],
+    "stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "special-attack": 50,
+      "special-defense": 50,
+      "speed": 90
+    },
+    "bio_en": "When several of these POKéMON gather, their electricity could build and cause lightning storms.",
+    "bio_jp": "尻尾を　立てて　まわりの　様子を 探っていると　ときどき 雷が　尻尾に　落ちてくる。",
+    "abilities": [
+      {
+        "name_en": "Static",
+        "name_jp": "せいでんき",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Lightning Rod",
+        "name_jp": "ひらいしん",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.4,
+    "weight": 6.0,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Thunder Shock",
+        "name_jp": "でんきショック",
+        "type_en": "Electric",
+        "type_jp": "でんき",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Quick Attack",
+        "name_jp": "でんこうせっか",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pichu",
+        "id": 172
+      },
+      {
+        "name": "Pikachu",
+        "id": 25
+      },
+      {
+        "name": "Raichu",
+        "id": 26
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    },
+    "resistances": {
+      "Electric": 0.5,
+      "Flying": 0.5,
+      "Steel": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 26,
+    "name_en": "Raichu",
+    "name_jp": "ライチュウ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/26.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/26.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/26.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/26.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/26.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/26.png"
+    },
+    "types_en": [
+      "Electric"
+    ],
+    "types_jp": [
+      "でんき"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 55,
+      "special-attack": 90,
+      "special-defense": 80,
+      "speed": 110
+    },
+    "bio_en": "Its long tail serves as a ground to protect itself from its own high voltage power.",
+    "bio_jp": "電気が　たまってくると 筋肉が　刺激され いつもより　攻撃的に　なってしまう。",
+    "abilities": [
+      {
+        "name_en": "Static",
+        "name_jp": "せいでんき",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Lightning Rod",
+        "name_jp": "ひらいしん",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.8,
+    "weight": 30.0,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Thunder Punch",
+        "name_jp": "かみなりパンチ",
+        "type_en": "Electric",
+        "type_jp": "でんき",
+        "power": 75,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Slam",
+        "name_jp": "たたきつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 80,
+        "accuracy": 75,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Pichu",
+        "id": 172
+      },
+      {
+        "name": "Pikachu",
+        "id": 25
+      },
+      {
+        "name": "Raichu",
+        "id": 26
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0
+    },
+    "resistances": {
+      "Electric": 0.5,
+      "Flying": 0.5,
+      "Steel": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 27,
+    "name_en": "Sandshrew",
+    "name_jp": "サンド",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/27.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/27.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/27.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/27.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/27.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/27.png"
+    },
+    "types_en": [
+      "Ground"
+    ],
+    "types_jp": [
+      "じめん"
+    ],
+    "stats": {
+      "hp": 50,
+      "attack": 75,
+      "defense": 85,
+      "special-attack": 20,
+      "special-defense": 30,
+      "speed": 40
+    },
+    "bio_en": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+    "bio_jp": "地面に　穴を　掘って　住む。 自分に　危険が　迫ると まるくなって　身を　守る。",
+    "abilities": [
+      {
+        "name_en": "Sand Veil",
+        "name_jp": "すながくれ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sand Rush",
+        "name_jp": "すなかき",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.6,
+    "weight": 12.0,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Defense Curl",
+        "name_jp": "まるくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 3
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 6
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Sandshrew",
+        "id": 27
+      },
+      {
+        "name": "Sandslash",
+        "id": 28
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    },
+    "resistances": {
+      "Poison": 0.5,
+      "Rock": 0.5
+    },
+    "immunities": {
+      "Electric": 0
+    }
+  },
+  {
+    "id": 28,
+    "name_en": "Sandslash",
+    "name_jp": "サンドパン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/28.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/28.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/28.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/28.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/28.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/28.png"
+    },
+    "types_en": [
+      "Ground"
+    ],
+    "types_jp": [
+      "じめん"
+    ],
+    "stats": {
+      "hp": 75,
+      "attack": 100,
+      "defense": 110,
+      "special-attack": 45,
+      "special-defense": 55,
+      "speed": 65
+    },
+    "bio_en": "Curls up into a spiny ball when threatened. It can roll while curled up to attack or escape.",
+    "bio_jp": "すごい　勢いで　地面を掘ると トゲや　ツメが　折れてしまうが 次の日には　生えそろっている。",
+    "abilities": [
+      {
+        "name_en": "Sand Veil",
+        "name_jp": "すながくれ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sand Rush",
+        "name_jp": "すなかき",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 29.5,
+    "genus_en": "Mouse Pokémon",
+    "genus_jp": "ねずみポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Defense Curl",
+        "name_jp": "まるくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Sandshrew",
+        "id": 27
+      },
+      {
+        "name": "Sandslash",
+        "id": 28
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    },
+    "resistances": {
+      "Poison": 0.5,
+      "Rock": 0.5
+    },
+    "immunities": {
+      "Electric": 0
+    }
+  },
+  {
+    "id": 29,
+    "name_en": "Nidoran-f",
+    "name_jp": "ニドラン♀",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/29.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/29.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/29.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/29.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/29.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/29.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 55,
+      "attack": 47,
+      "defense": 52,
+      "special-attack": 40,
+      "special-defense": 40,
+      "speed": 41
+    },
+    "bio_en": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.",
+    "bio_jp": "体は　小さくても　毒針を 持つため　注意が　必要だ。 メスのほうが　ツノが　小さい。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.4,
+    "weight": 7.0,
+    "genus_en": "Poison Pin Pokémon",
+    "genus_jp": "どくばりポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 5
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 30,
+    "name_en": "Nidorina",
+    "name_jp": "ニドリーナ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/30.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/30.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/30.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/30.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/30.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/30.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 70,
+      "attack": 62,
+      "defense": 67,
+      "special-attack": 55,
+      "special-defense": 55,
+      "speed": 56
+    },
+    "bio_en": "The female's horn develops slowly. Prefers physical attacks such as clawing and biting.",
+    "bio_jp": "メスなので　性格は　温厚。 口から　出す　超音波は 相手を　まどわす　力がある。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.8,
+    "weight": 20.0,
+    "genus_en": "Poison Pin Pokémon",
+    "genus_jp": "どくばりポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 31,
+    "name_en": "Nidoqueen",
+    "name_jp": "ニドクイン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/31.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/31.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/31.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/31.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/31.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/31.png"
+    },
+    "types_en": [
+      "Poison",
+      "Ground"
+    ],
+    "types_jp": [
+      "どく",
+      "じめん"
+    ],
+    "stats": {
+      "hp": 90,
+      "attack": 92,
+      "defense": 87,
+      "special-attack": 75,
+      "special-defense": 85,
+      "speed": 76
+    },
+    "bio_en": "Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves.",
+    "bio_jp": "ウロコで　覆われた　頑丈な　体で 巣穴の　入り口を　ふさぎ 敵から　子供たちを　守る。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sheer Force",
+        "name_jp": "ちからずく",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.3,
+    "weight": 60.0,
+    "genus_en": "Drill Pokémon",
+    "genus_jp": "ドリルポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Double Kick",
+        "name_jp": "にどげり",
+        "type_en": "Fighting",
+        "type_jp": "かくとう",
+        "power": 30,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-f",
+        "id": 29
+      },
+      {
+        "name": "Nidorina",
+        "id": 30
+      },
+      {
+        "name": "Nidoqueen",
+        "id": 31
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Fighting": 0.5,
+      "Poison": 0.25,
+      "Bug": 0.5,
+      "Rock": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {
+      "Electric": 0
+    }
+  },
+  {
+    "id": 32,
+    "name_en": "Nidoran-m",
+    "name_jp": "ニドラン♂",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/32.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/32.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/32.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/32.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/32.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/32.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 46,
+      "attack": 57,
+      "defense": 40,
+      "special-attack": 40,
+      "special-defense": 40,
+      "speed": 50
+    },
+    "bio_en": "Stiffens its ears to sense danger. The larger its horns, the more powerful its secreted venom.",
+    "bio_jp": "草むらの　上に　耳だけ　出して まわりの　気配を　探る。 猛毒の　ツノで　身を　守る。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.5,
+    "weight": 9.0,
+    "genus_en": "Poison Pin Pokémon",
+    "genus_jp": "どくばりポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Peck",
+        "name_jp": "つつく",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 35,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 5
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 33,
+    "name_en": "Nidorino",
+    "name_jp": "ニドリーノ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/33.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/33.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/33.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/33.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/33.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/33.png"
+    },
+    "types_en": [
+      "Poison"
+    ],
+    "types_jp": [
+      "どく"
+    ],
+    "stats": {
+      "hp": 61,
+      "attack": 72,
+      "defense": 57,
+      "special-attack": 55,
+      "special-defense": 55,
+      "speed": 65
+    },
+    "bio_en": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.",
+    "bio_jp": "発達した　耳を　立てて まわりの　気配を　探る。 なにかあると　すぐに　飛びかかる。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Hustle",
+        "name_jp": "はりきり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.9,
+    "weight": 19.5,
+    "genus_en": "Poison Pin Pokémon",
+    "genus_jp": "どくばりポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Sting",
+        "name_jp": "どくばり",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 15,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Leer",
+        "name_jp": "にらみつける",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Peck",
+        "name_jp": "つつく",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 35,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Grass": 0.5,
+      "Fighting": 0.5,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 34,
+    "name_en": "Nidoking",
+    "name_jp": "ニドキング",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/34.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/34.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/34.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/34.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/34.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/34.png"
+    },
+    "types_en": [
+      "Poison",
+      "Ground"
+    ],
+    "types_jp": [
+      "どく",
+      "じめん"
+    ],
+    "stats": {
+      "hp": 81,
+      "attack": 102,
+      "defense": 77,
+      "special-attack": 85,
+      "special-defense": 75,
+      "speed": 85
+    },
+    "bio_en": "It uses its powerful tail in battle to smash, constrict, then break the prey's bones.",
+    "bio_jp": "石のように　硬い　皮膚と 長く　伸びた　ツノが　特徴。 ツノには　毒も　あるので　注意。",
+    "abilities": [
+      {
+        "name_en": "Poison Point",
+        "name_jp": "どくのトゲ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Rivalry",
+        "name_jp": "とうそうしん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sheer Force",
+        "name_jp": "ちからずく",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.4,
+    "weight": 62.0,
+    "genus_en": "Drill Pokémon",
+    "genus_jp": "ドリルポケモン",
+    "moves": [
+      {
+        "name_en": "Double Kick",
+        "name_jp": "にどげり",
+        "type_en": "Fighting",
+        "type_jp": "かくとう",
+        "power": 30,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Horn Attack",
+        "name_jp": "つのでつく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 65,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Fury Attack",
+        "name_jp": "みだれづき",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 85,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Nidoran-m",
+        "id": 32
+      },
+      {
+        "name": "Nidorino",
+        "id": 33
+      },
+      {
+        "name": "Nidoking",
+        "id": 34
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ice": 2.0,
+      "Ground": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Fighting": 0.5,
+      "Poison": 0.25,
+      "Bug": 0.5,
+      "Rock": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {
+      "Electric": 0
+    }
+  },
+  {
+    "id": 35,
+    "name_en": "Clefairy",
+    "name_jp": "ピッピ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/35.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/35.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/35.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/35.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/35.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/35.png"
+    },
+    "types_en": [
+      "Fairy"
+    ],
+    "types_jp": [
+      "フェアリー"
+    ],
+    "stats": {
+      "hp": 70,
+      "attack": 45,
+      "defense": 48,
+      "special-attack": 60,
+      "special-defense": 65,
+      "speed": 35
+    },
+    "bio_en": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
+    "bio_jp": "満月の夜　ピッピが　集まって ダンスを　踊る様子を　見ると 幸せに　なれると　言われている。",
+    "abilities": [
+      {
+        "name_en": "Cute Charm",
+        "name_jp": "メロメロボディ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Magic Guard",
+        "name_jp": "マジックガード",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Friend Guard",
+        "name_jp": "フレンドガード",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.6,
+    "weight": 7.5,
+    "genus_en": "Fairy Pokémon",
+    "genus_jp": "ようせいポケモン",
+    "moves": [
+      {
+        "name_en": "Pound",
+        "name_jp": "はたく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Sing",
+        "name_jp": "うたう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Defense Curl",
+        "name_jp": "まるくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cleffa",
+        "id": 173
+      },
+      {
+        "name": "Clefairy",
+        "id": 35
+      },
+      {
+        "name": "Clefable",
+        "id": 36
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    },
+    "resistances": {
+      "Fighting": 0.5,
+      "Bug": 0.5,
+      "Dark": 0.5
+    },
+    "immunities": {
+      "Dragon": 0
+    }
+  },
+  {
+    "id": 36,
+    "name_en": "Clefable",
+    "name_jp": "ピクシー",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/36.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/36.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/36.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/36.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/36.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/36.png"
+    },
+    "types_en": [
+      "Fairy"
+    ],
+    "types_jp": [
+      "フェアリー"
+    ],
+    "stats": {
+      "hp": 95,
+      "attack": 70,
+      "defense": 73,
+      "special-attack": 95,
+      "special-defense": 90,
+      "speed": 60
+    },
+    "bio_en": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.",
+    "bio_jp": "１キロ先で　落ちた　針の　音も 聞き分ける　優れた　耳を　持つ。 静かな　山奥に　住んでいる。",
+    "abilities": [
+      {
+        "name_en": "Cute Charm",
+        "name_jp": "メロメロボディ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Magic Guard",
+        "name_jp": "マジックガード",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Unaware",
+        "name_jp": "てんねん",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.3,
+    "weight": 40.0,
+    "genus_en": "Fairy Pokémon",
+    "genus_jp": "ようせいポケモン",
+    "moves": [
+      {
+        "name_en": "Pound",
+        "name_jp": "はたく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Double Slap",
+        "name_jp": "おうふくビンタ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 85,
+        "pp": 10,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Sing",
+        "name_jp": "うたう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 15,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Cleffa",
+        "id": 173
+      },
+      {
+        "name": "Clefairy",
+        "id": 35
+      },
+      {
+        "name": "Clefable",
+        "id": 36
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    },
+    "resistances": {
+      "Fighting": 0.5,
+      "Bug": 0.5,
+      "Dark": 0.5
+    },
+    "immunities": {
+      "Dragon": 0
+    }
+  },
+  {
+    "id": 37,
+    "name_en": "Vulpix",
+    "name_jp": "ロコン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/37.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/37.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/37.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/37.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/37.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/37.png"
+    },
+    "types_en": [
+      "Fire"
+    ],
+    "types_jp": [
+      "ほのお"
+    ],
+    "stats": {
+      "hp": 38,
+      "attack": 41,
+      "defense": 40,
+      "special-attack": 50,
+      "special-defense": 65,
+      "speed": 65
+    },
+    "bio_en": "At the time of birth, it has just one tail. The tail splits from its tip as it grows older.",
+    "bio_jp": "生まれたとき　尻尾は　真っ白で １本しかない。育つと　やがて 先が　分かれて　尻尾が　増える。",
+    "abilities": [
+      {
+        "name_en": "Flash Fire",
+        "name_jp": "もらいび",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Drought",
+        "name_jp": "ひでり",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.6,
+    "weight": 9.9,
+    "genus_en": "Fox Pokémon",
+    "genus_jp": "きつねポケモン",
+    "moves": [
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Ember",
+        "name_jp": "ひのこ",
+        "type_en": "Fire",
+        "type_jp": "ほのお",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Disable",
+        "name_jp": "かなしばり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 4
+      },
+      {
+        "name_en": "Roar",
+        "name_jp": "ほえる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 7
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Vulpix",
+        "id": 37
+      },
+      {
+        "name": "Ninetales",
+        "id": 38
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Grass": 0.5,
+      "Ice": 0.5,
+      "Bug": 0.5,
+      "Steel": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 38,
+    "name_en": "Ninetales",
+    "name_jp": "キュウコン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/38.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/38.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/38.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/38.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/38.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/38.png"
+    },
+    "types_en": [
+      "Fire"
+    ],
+    "types_jp": [
+      "ほのお"
+    ],
+    "stats": {
+      "hp": 73,
+      "attack": 76,
+      "defense": 75,
+      "special-attack": 81,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "bio_en": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1000-year curse.",
+    "bio_jp": "黄金に　輝く　体毛と ９本の　長い　尻尾を　持つ。 １０００年は　生きると　言われる。",
+    "abilities": [
+      {
+        "name_en": "Flash Fire",
+        "name_jp": "もらいび",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Drought",
+        "name_jp": "ひでり",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.1,
+    "weight": 19.9,
+    "genus_en": "Fox Pokémon",
+    "genus_jp": "きつねポケモン",
+    "moves": [
+      {
+        "name_en": "Tail Whip",
+        "name_jp": "しっぽをふる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Roar",
+        "name_jp": "ほえる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Disable",
+        "name_jp": "かなしばり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Ember",
+        "name_jp": "ひのこ",
+        "type_en": "Fire",
+        "type_jp": "ほのお",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Vulpix",
+        "id": 37
+      },
+      {
+        "name": "Ninetales",
+        "id": 38
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Ground": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Fire": 0.5,
+      "Grass": 0.5,
+      "Ice": 0.5,
+      "Bug": 0.5,
+      "Steel": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 39,
+    "name_en": "Jigglypuff",
+    "name_jp": "プリン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/39.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/39.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/39.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/39.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/39.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/39.png"
+    },
+    "types_en": [
+      "Normal",
+      "Fairy"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "フェアリー"
+    ],
+    "stats": {
+      "hp": 115,
+      "attack": 45,
+      "defense": 20,
+      "special-attack": 45,
+      "special-defense": 25,
+      "speed": 20
+    },
+    "bio_en": "When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.",
+    "bio_jp": "まるくて　大きい　瞳で　誘いこみ 心地よい　歌を　歌い 相手を　眠らせる。",
+    "abilities": [
+      {
+        "name_en": "Cute Charm",
+        "name_jp": "メロメロボディ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Competitive",
+        "name_jp": "かちき",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Friend Guard",
+        "name_jp": "フレンドガード",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.5,
+    "weight": 5.5,
+    "genus_en": "Balloon Pokémon",
+    "genus_jp": "ふうせんポケモン",
+    "moves": [
+      {
+        "name_en": "Pound",
+        "name_jp": "はたく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sing",
+        "name_jp": "うたう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Disable",
+        "name_jp": "かなしばり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Defense Curl",
+        "name_jp": "まるくなる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Igglybuff",
+        "id": 174
+      },
+      {
+        "name": "Jigglypuff",
+        "id": 39
+      },
+      {
+        "name": "Wigglytuff",
+        "id": 40
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    },
+    "resistances": {
+      "Bug": 0.5,
+      "Dark": 0.5
+    },
+    "immunities": {
+      "Ghost": 0,
+      "Dragon": 0
+    }
+  },
+  {
+    "id": 40,
+    "name_en": "Wigglytuff",
+    "name_jp": "プクリン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/40.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/40.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/40.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/40.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/40.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/40.png"
+    },
+    "types_en": [
+      "Normal",
+      "Fairy"
+    ],
+    "types_jp": [
+      "ノーマル",
+      "フェアリー"
+    ],
+    "stats": {
+      "hp": 140,
+      "attack": 70,
+      "defense": 45,
+      "special-attack": 85,
+      "special-defense": 50,
+      "speed": 45
+    },
+    "bio_en": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
+    "bio_jp": "２匹　寄り添いあうと　お互いの 毛皮が　気持ち良すぎて 離れられなく　なってしまう。",
+    "abilities": [
+      {
+        "name_en": "Cute Charm",
+        "name_jp": "メロメロボディ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Competitive",
+        "name_jp": "かちき",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Frisk",
+        "name_jp": "おみとおし",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 12.0,
+    "genus_en": "Balloon Pokémon",
+    "genus_jp": "ふうせんポケモン",
+    "moves": [
+      {
+        "name_en": "Pound",
+        "name_jp": "はたく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Double Slap",
+        "name_jp": "おうふくビンタ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 15,
+        "accuracy": 85,
+        "pp": 10,
+        "level": 1
+      },
+      {
+        "name_en": "Body Slam",
+        "name_jp": "のしかかり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 85,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Double Edge",
+        "name_jp": "すてみタックル",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 120,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Igglybuff",
+        "id": 174
+      },
+      {
+        "name": "Jigglypuff",
+        "id": 39
+      },
+      {
+        "name": "Wigglytuff",
+        "id": 40
+      }
+    ],
+    "weaknesses": {
+      "Poison": 2.0,
+      "Steel": 2.0
+    },
+    "resistances": {
+      "Bug": 0.5,
+      "Dark": 0.5
+    },
+    "immunities": {
+      "Ghost": 0,
+      "Dragon": 0
+    }
+  },
+  {
+    "id": 41,
+    "name_en": "Zubat",
+    "name_jp": "ズバット",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/41.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/41.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/41.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/41.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/41.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/41.png"
+    },
+    "types_en": [
+      "Poison",
+      "Flying"
+    ],
+    "types_jp": [
+      "どく",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 35,
+      "special-attack": 30,
+      "special-defense": 40,
+      "speed": 55
+    },
+    "bio_en": "Forms colonies in perpetually dark places. Uses ultrasonic waves to identify and approach targets.",
+    "bio_jp": "口から　出す　超音波で 両目が　なくても まわりの　障害物を　察知できる。",
+    "abilities": [
+      {
+        "name_en": "Inner Focus",
+        "name_jp": "せいしんりょく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Infiltrator",
+        "name_jp": "すりぬけ",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.8,
+    "weight": 7.5,
+    "genus_en": "Bat Pokémon",
+    "genus_jp": "こうもりポケモン",
+    "moves": [
+      {
+        "name_en": "Supersonic",
+        "name_jp": "ちょうおんぱ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Astonish",
+        "name_jp": "おどろかす",
+        "type_en": "Ghost",
+        "type_jp": "ゴースト",
+        "power": 30,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 5
+      },
+      {
+        "name_en": "Mean Look",
+        "name_jp": "くろいまなざし",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 5,
+        "level": 10
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Zubat",
+        "id": 41
+      },
+      {
+        "name": "Golbat",
+        "id": 42
+      },
+      {
+        "name": "Crobat",
+        "id": 169
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.25,
+      "Fairy": 0.5
+    },
+    "immunities": {
+      "Ground": 0
+    }
+  },
+  {
+    "id": 42,
+    "name_en": "Golbat",
+    "name_jp": "ゴルバット",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/42.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/42.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/42.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/42.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/42.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/42.png"
+    },
+    "types_en": [
+      "Poison",
+      "Flying"
+    ],
+    "types_jp": [
+      "どく",
+      "ひこう"
+    ],
+    "stats": {
+      "hp": 75,
+      "attack": 80,
+      "defense": 70,
+      "special-attack": 65,
+      "special-defense": 75,
+      "speed": 90
+    },
+    "bio_en": "Once it strikes, it will not stop draining energy from the victim even if it gets too heavy to fly.",
+    "bio_jp": "かみついたら　最後。死ぬほど 血を　吸いまくるので　重たくなって 自分で　飛べなくなることもある。",
+    "abilities": [
+      {
+        "name_en": "Inner Focus",
+        "name_jp": "せいしんりょく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Infiltrator",
+        "name_jp": "すりぬけ",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.6,
+    "weight": 55.0,
+    "genus_en": "Bat Pokémon",
+    "genus_jp": "こうもりポケモン",
+    "moves": [
+      {
+        "name_en": "Supersonic",
+        "name_jp": "ちょうおんぱ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Screech",
+        "name_jp": "いやなおと",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 85,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Mean Look",
+        "name_jp": "くろいまなざし",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 5,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Zubat",
+        "id": 41
+      },
+      {
+        "name": "Golbat",
+        "id": 42
+      },
+      {
+        "name": "Crobat",
+        "id": 169
+      }
+    ],
+    "weaknesses": {
+      "Electric": 2.0,
+      "Ice": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.25,
+      "Fairy": 0.5
+    },
+    "immunities": {
+      "Ground": 0
+    }
+  },
+  {
+    "id": 43,
+    "name_en": "Oddish",
+    "name_jp": "ナゾノクサ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/43.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/43.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/43.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/43.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/43.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/43.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 45,
+      "attack": 50,
+      "defense": 55,
+      "special-attack": 75,
+      "special-defense": 65,
+      "speed": 30
+    },
+    "bio_en": "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.",
+    "bio_jp": "昼間は　太陽を　避けるため 冷たい　地面に　潜っている。 月の　光を　浴びて　育つ。",
+    "abilities": [
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.5,
+    "weight": 5.4,
+    "genus_en": "Weed Pokémon",
+    "genus_jp": "ざっそうポケモン",
+    "moves": [
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Acid",
+        "name_jp": "ようかいえき",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 4
+      },
+      {
+        "name_en": "Sweet Scent",
+        "name_jp": "あまいかおり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 8
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 44,
+    "name_en": "Gloom",
+    "name_jp": "クサイハナ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/44.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/44.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/44.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/44.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/44.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/44.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 70,
+      "special-attack": 85,
+      "special-defense": 75,
+      "speed": 40
+    },
+    "bio_en": "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.",
+    "bio_jp": "猛烈な　クサさ！　それなのに １０００人に　１人ぐらい これを　好んで　かぐ　人がいる。",
+    "abilities": [
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Stench",
+        "name_jp": "あくしゅう",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.8,
+    "weight": 8.6,
+    "genus_en": "Weed Pokémon",
+    "genus_jp": "ざっそうポケモン",
+    "moves": [
+      {
+        "name_en": "Acid",
+        "name_jp": "ようかいえき",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Sweet Scent",
+        "name_jp": "あまいかおり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 45,
+    "name_en": "Vileplume",
+    "name_jp": "ラフレシア",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/45.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/45.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/45.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/45.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/45.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/45.png"
+    },
+    "types_en": [
+      "Grass",
+      "Poison"
+    ],
+    "types_jp": [
+      "くさ",
+      "どく"
+    ],
+    "stats": {
+      "hp": 75,
+      "attack": 80,
+      "defense": 85,
+      "special-attack": 110,
+      "special-defense": 90,
+      "speed": 50
+    },
+    "bio_en": "The larger its petals, the more toxic pollen it contains. Its big head is heavy and hard to hold up.",
+    "bio_jp": "世界一　大きな　花びらは 歩くたびに　揺れて　大量の 毒花粉を　ばらまいてしまう。",
+    "abilities": [
+      {
+        "name_en": "Chlorophyll",
+        "name_jp": "ようりょくそ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Effect Spore",
+        "name_jp": "ほうし",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.2,
+    "weight": 18.6,
+    "genus_en": "Flower Pokémon",
+    "genus_jp": "フラワーポケモン",
+    "moves": [
+      {
+        "name_en": "Acid",
+        "name_jp": "ようかいえき",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 30,
+        "level": 1
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Mega Drain",
+        "name_jp": "メガドレイン",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Growth",
+        "name_jp": "せいちょう",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Oddish",
+        "id": 43
+      },
+      {
+        "name": "Gloom",
+        "id": 44
+      },
+      {
+        "name": "Vileplume",
+        "id": 45
+      },
+      {
+        "name": "Bellossom",
+        "id": 182
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Ice": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 46,
+    "name_en": "Paras",
+    "name_jp": "パラス",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/46.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/46.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/46.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/46.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/46.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/46.png"
+    },
+    "types_en": [
+      "Bug",
+      "Grass"
+    ],
+    "types_jp": [
+      "むし",
+      "くさ"
+    ],
+    "stats": {
+      "hp": 35,
+      "attack": 70,
+      "defense": 55,
+      "special-attack": 45,
+      "special-defense": 55,
+      "speed": 25
+    },
+    "bio_en": "Burrows to suck tree roots. The mushrooms on its back grow by draw­ ing nutrients from the bug host.",
+    "bio_jp": "虫の　背中に　生えているのは 冬虫夏草　という　キノコ。 育つと　キノコも　大きくなる。",
+    "abilities": [
+      {
+        "name_en": "Effect Spore",
+        "name_jp": "ほうし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Dry Skin",
+        "name_jp": "かんそうはだ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Damp",
+        "name_jp": "しめりけ",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.3,
+    "weight": 5.4,
+    "genus_en": "Mushroom Pokémon",
+    "genus_jp": "きのこポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Powder",
+        "name_jp": "どくのこな",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": null,
+        "accuracy": 75,
+        "pp": 35,
+        "level": 6
+      },
+      {
+        "name_en": "Stun Spore",
+        "name_jp": "しびれごな",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": null,
+        "accuracy": 75,
+        "pp": 30,
+        "level": 6
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 11
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Paras",
+        "id": 46
+      },
+      {
+        "name": "Parasect",
+        "id": 47
+      }
+    ],
+    "weaknesses": {
+      "Fire": 4.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 4.0,
+      "Bug": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Ground": 0.25
+    },
+    "immunities": {}
+  },
+  {
+    "id": 47,
+    "name_en": "Parasect",
+    "name_jp": "パラセクト",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/47.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/47.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/47.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/47.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/47.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/47.png"
+    },
+    "types_en": [
+      "Bug",
+      "Grass"
+    ],
+    "types_jp": [
+      "むし",
+      "くさ"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 95,
+      "defense": 80,
+      "special-attack": 60,
+      "special-defense": 80,
+      "speed": 30
+    },
+    "bio_en": "A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places.",
+    "bio_jp": "体よりも　大きな　キノコが パラセクトを　操っている。 毒の　胞子を　ばらまく。",
+    "abilities": [
+      {
+        "name_en": "Effect Spore",
+        "name_jp": "ほうし",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Dry Skin",
+        "name_jp": "かんそうはだ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Damp",
+        "name_jp": "しめりけ",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 29.5,
+    "genus_en": "Mushroom Pokémon",
+    "genus_jp": "きのこポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Absorb",
+        "name_jp": "すいとる",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": 20,
+        "accuracy": 100,
+        "pp": 25,
+        "level": 1
+      },
+      {
+        "name_en": "Poison Powder",
+        "name_jp": "どくのこな",
+        "type_en": "Poison",
+        "type_jp": "どく",
+        "power": null,
+        "accuracy": 75,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Stun Spore",
+        "name_jp": "しびれごな",
+        "type_en": "Grass",
+        "type_jp": "くさ",
+        "power": null,
+        "accuracy": 75,
+        "pp": 30,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Paras",
+        "id": 46
+      },
+      {
+        "name": "Parasect",
+        "id": 47
+      }
+    ],
+    "weaknesses": {
+      "Fire": 4.0,
+      "Ice": 2.0,
+      "Poison": 2.0,
+      "Flying": 4.0,
+      "Bug": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Water": 0.5,
+      "Electric": 0.5,
+      "Grass": 0.25,
+      "Fighting": 0.5,
+      "Ground": 0.25
+    },
+    "immunities": {}
+  },
+  {
+    "id": 48,
+    "name_en": "Venonat",
+    "name_jp": "コンパン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/48.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/48.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/48.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/48.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/48.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/48.png"
+    },
+    "types_en": [
+      "Bug",
+      "Poison"
+    ],
+    "types_jp": [
+      "むし",
+      "どく"
+    ],
+    "stats": {
+      "hp": 60,
+      "attack": 55,
+      "defense": 50,
+      "special-attack": 40,
+      "special-defense": 55,
+      "speed": 45
+    },
+    "bio_en": "Lives in the shadows of tall trees where it eats insects. It is attracted by light at night.",
+    "bio_jp": "小さな　目が　たくさん　集まって 大きな　目に　なっている。 夜になると　明かりに　集まる。",
+    "abilities": [
+      {
+        "name_en": "Compound Eyes",
+        "name_jp": "ふくがん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tinted Lens",
+        "name_jp": "いろめがね",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Run Away",
+        "name_jp": "にげあし",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.0,
+    "weight": 30.0,
+    "genus_en": "Insect Pokémon",
+    "genus_jp": "こんちゅうポケモン",
+    "moves": [
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Disable",
+        "name_jp": "かなしばり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Foresight",
+        "name_jp": "みやぶる",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": null,
+        "pp": 40,
+        "level": 1
+      },
+      {
+        "name_en": "Supersonic",
+        "name_jp": "ちょうおんぱ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 20,
+        "level": 5
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Venonat",
+        "id": 48
+      },
+      {
+        "name": "Venomoth",
+        "id": 49
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 49,
+    "name_en": "Venomoth",
+    "name_jp": "モルフォン",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/49.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/49.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/49.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/49.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/49.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/49.png"
+    },
+    "types_en": [
+      "Bug",
+      "Poison"
+    ],
+    "types_jp": [
+      "むし",
+      "どく"
+    ],
+    "stats": {
+      "hp": 70,
+      "attack": 65,
+      "defense": 60,
+      "special-attack": 90,
+      "special-defense": 75,
+      "speed": 90
+    },
+    "bio_en": "The dust-like scales covering its wings are color coded to indicate the kinds of poison it has.",
+    "bio_jp": "ばらまかれた　りんぷんに　触れると 体の　感覚が　おかしくなって まっすぐ　立っていられなくなる。",
+    "abilities": [
+      {
+        "name_en": "Shield Dust",
+        "name_jp": "りんぷん",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Tinted Lens",
+        "name_jp": "いろめがね",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Wonder Skin",
+        "name_jp": "ミラクルスキン",
+        "is_hidden": true
+      }
+    ],
+    "height": 1.5,
+    "weight": 12.5,
+    "genus_en": "Poison Moth Pokémon",
+    "genus_jp": "どくがポケモン",
+    "moves": [
+      {
+        "name_en": "Gust",
+        "name_jp": "かぜおこし",
+        "type_en": "Flying",
+        "type_jp": "ひこう",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Tackle",
+        "name_jp": "たいあたり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Supersonic",
+        "name_jp": "ちょうおんぱ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 55,
+        "pp": 20,
+        "level": 1
+      },
+      {
+        "name_en": "Disable",
+        "name_jp": "かなしばり",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 20,
+        "level": 1
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Venonat",
+        "id": 48
+      },
+      {
+        "name": "Venomoth",
+        "id": 49
+      }
+    ],
+    "weaknesses": {
+      "Fire": 2.0,
+      "Flying": 2.0,
+      "Psychic": 2.0,
+      "Rock": 2.0
+    },
+    "resistances": {
+      "Grass": 0.25,
+      "Fighting": 0.25,
+      "Poison": 0.5,
+      "Bug": 0.5,
+      "Fairy": 0.5
+    },
+    "immunities": {}
+  },
+  {
+    "id": 50,
+    "name_en": "Diglett",
+    "name_jp": "ディグダ",
+    "sprite": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/50.png",
+    "sprites": {
+      "front_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/50.png",
+      "front_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/shiny/50.png",
+      "back_default": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/50.png",
+      "back_shiny": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/back/shiny/50.png",
+      "official_artwork": "https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/other/official-artwork/50.png"
+    },
+    "types_en": [
+      "Ground"
+    ],
+    "types_jp": [
+      "じめん"
+    ],
+    "stats": {
+      "hp": 10,
+      "attack": 55,
+      "defense": 25,
+      "special-attack": 35,
+      "special-defense": 45,
+      "speed": 95
+    },
+    "bio_en": "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.",
+    "bio_jp": "地下１メートルくらいを　掘りすすみ 木の根っこなどを　かじって　生きる。 たまに　地上に　顔を出す。",
+    "abilities": [
+      {
+        "name_en": "Sand Veil",
+        "name_jp": "すながくれ",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Arena Trap",
+        "name_jp": "ありじごく",
+        "is_hidden": false
+      },
+      {
+        "name_en": "Sand Force",
+        "name_jp": "すなのちから",
+        "is_hidden": true
+      }
+    ],
+    "height": 0.2,
+    "weight": 0.8,
+    "genus_en": "Mole Pokémon",
+    "genus_jp": "もぐらポケモン",
+    "moves": [
+      {
+        "name_en": "Scratch",
+        "name_jp": "ひっかく",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": 40,
+        "accuracy": 100,
+        "pp": 35,
+        "level": 1
+      },
+      {
+        "name_en": "Sand Attack",
+        "name_jp": "すなかけ",
+        "type_en": "Ground",
+        "type_jp": "じめん",
+        "power": null,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 1
+      },
+      {
+        "name_en": "Growl",
+        "name_jp": "なきごえ",
+        "type_en": "Normal",
+        "type_jp": "ノーマル",
+        "power": null,
+        "accuracy": 100,
+        "pp": 40,
+        "level": 4
+      },
+      {
+        "name_en": "Astonish",
+        "name_jp": "おどろかす",
+        "type_en": "Ghost",
+        "type_jp": "ゴースト",
+        "power": 30,
+        "accuracy": 100,
+        "pp": 15,
+        "level": 8
+      }
+    ],
+    "evolution_chain": [
+      {
+        "name": "Diglett",
+        "id": 50
+      },
+      {
+        "name": "Dugtrio",
+        "id": 51
+      }
+    ],
+    "weaknesses": {
+      "Water": 2.0,
+      "Grass": 2.0,
+      "Ice": 2.0
+    },
+    "resistances": {
+      "Poison": 0.5,
+      "Rock": 0.5
+    },
+    "immunities": {
+      "Electric": 0
+    }
+  }
+]

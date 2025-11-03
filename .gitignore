@@ -40,7 +40,16 @@ desktop.ini
 node_modules/
 
 # Ignore log files
-*.log-e 
+*.log
+*.log-*
+
 # Environment files
 *.env
 *.env.*
+
+# Tool-specific directories
+.emergent/
+
+# Backup files
+*.backup
+*.bak

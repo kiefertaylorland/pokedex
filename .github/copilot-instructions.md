@@ -1,256 +1,258 @@
 # Copilot Instructions for Pokedex Project
 
-## Project Overview
+## Architecture Overview
 
-This is an interactive web application showcasing all 1025 Pokémon (Generations I-IX) with detailed information, bilingual support (English/Japanese), and modern accessibility features. The application is deployed on GitHub Pages at [www.pokedex.tech](https://www.pokedex.tech).
+**Tech Stack:** Vanilla JavaScript ES6 modules + Python 3.12+ scripts  
+**Data Flow:** PokéAPI → `pokeapi_fetch.py` → `pokedex_data.json` → Frontend  
+**Deployment:** Static site on GitHub Pages (no build step)
 
-## Technology Stack
+### Key Architectural Decisions
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6 modules)
-- **Data Source**: [PokéAPI](https://pokeapi.co/)
-- **Backend/Scripts**: Python 3.12+
-- **Testing**: pytest with Selenium for UI tests
-- **Deployment**: GitHub Pages (automated via GitHub Actions)
+1. **No frontend frameworks** - Vanilla JS for lightweight, dependency-free operation
+2. **Module-based architecture** - Components, managers, controllers, and utils organized by responsibility
+3. **Two-phase data pipeline** - Generate once (Python), consume many times (JavaScript)
+4. **Service Worker PWA** - Offline-first with versioned caching (`v1.1.0`)
 
 ## Project Structure
 
 ```
-pokedex/
-├── .github/
-│   ├── workflows/deploy.yml    # GitHub Pages deployment workflow
-│   └── agents/                 # Custom agent configurations
-├── assets/
-│   ├── pokemon/               # Pokémon images and cries
-│   └── screenshots/           # Documentation screenshots
-├── tests/                     # Test suite (pytest + Selenium)
-├── index.html                 # Main application entry point
-├── script.js                  # Frontend JavaScript logic
-├── pokedex_data.json         # Pokémon data (generated from PokéAPI)
-├── pokeapi_fetch.py          # Script to fetch data from PokéAPI
-├── transform_pokemon_data.py # Data transformation utilities
-├── add_romaji.py             # Adds Japanese romanization to data
-├── run_tests.py              # Test runner with automatic server management
-└── requirements.txt          # Python dependencies
+assets/js/
+├── pokedexApp.js           # Main orchestrator - initializes all components
+├── constants.js            # Single source of truth for configs, IDs, events
+├── components/             # UI components (cards, detail views, comparisons)
+├── controllers/            # User input handlers (search, sort)
+├── managers/               # Core services (data, UI state)
+└── utils/                  # Helpers (caching, routing, type effectiveness)
+
+Python Scripts:
+├── pokeapi_fetch.py        # [372 lines] Full API fetcher - generates pokedex_data.json
+├── pokeapi.py              # [30 lines] Simple loader - fast read-only access
+├── run_tests.py            # Test runner with HTTP server lifecycle management
+└── transform_pokemon_data.py, add_romaji.py  # Data transformation utilities
 ```
 
-## Key Features
+### Module Dependencies
 
-- 1025 Pokémon with comprehensive data (stats, types, moves, evolution chains)
-- Pokémon cries for authentic experience
-- Bilingual support (English/Japanese)
-- Light and dark theme toggle
-- Search by name, ID, or type
-- Full keyboard navigation and screen reader support
-- Responsive design for all devices
+```
+PokedexApp (orchestrator)
+├── PokemonDataManager (data loading + caching)
+├── UIController (theme, language, DOM state)
+├── PokemonCardRenderer (grid view rendering)
+├── PokemonDetailView (detail modal - 1200+ lines, largest file)
+├── SearchController (search + filtering)
+├── SortController (sorting logic)
+├── URLRouter (deep linking)
+└── StructuredDataGenerator (SEO metadata)
+```
 
-## Development Workflow
+**Critical:** All JS modules use named exports. Import from `constants.js` for all IDs, events, and configs.
 
-### Initial Setup
+## Data Management
 
+### Two Python Modules (Complementary, Not Redundant)
+
+**`pokeapi.py`** - Simple data loader for quick queries:
+```python
+from pokeapi import fetch_pokemon
+pokemon = fetch_pokemon(25)  # Returns Pikachu from pokedex_data.json
+```
+
+**`pokeapi_fetch.py`** - Full API fetcher for data generation:
 ```bash
-# Install Python dependencies
-pip install -r requirements.txt
+python pokeapi_fetch.py  # Fetches all 1025 Pokémon, takes several minutes
+```
 
-# Start local development server
+See `POKEAPI_MODULES.md` and `DATA_FILES.md` for complete documentation.
+
+### Data Files
+
+- **`pokedex_data.json`** (2.9MB) - Production data, loaded by frontend
+- **`pokedex_data_test.json`** (146KB) - Test subset for faster testing
+- **`pokedex_data.json.backup`** - Auto-generated backup (in `.gitignore`)
+- **`pokedex_data_original_backup.json`** - Historical backup (consider removing)
+
+**Never manually edit JSON files** - regenerate via `python pokeapi_fetch.py`
+
+## Development Workflows
+
+### Setup & Testing
+```bash
+# One-time setup
+pip install -r requirements.txt
+python pokeapi_fetch.py  # If pokedex_data.json doesn't exist
+
+# Development server (always port 8000)
 python3 -m http.server 8000
 
-# Access the application
-# Open http://localhost:8000 in your browser
-```
-
-### Running Tests
-
-```bash
-# Run all tests (automatically starts/stops HTTP server)
+# Run tests (auto-manages HTTP server)
 python run_tests.py
-
-# Run specific test file
-python run_tests.py tests/test_ui.py
-
-# Keep server running after tests
-python run_tests.py --keep-server
-
-# Run tests with custom port
-python run_tests.py --port 8080
+python run_tests.py tests/test_ui.py  # Specific file
+python run_tests.py --keep-server --port 8080  # Custom options
 ```
-
-### Data Management
-
-```bash
-# Regenerate Pokémon data from PokéAPI
-# This fetches data for all 1025 Pokémon including stats, types, moves, evolution chains, and cries
-python pokeapi_fetch.py
-```
-
-### Code Quality
-
-```bash
-# Run linting with pre-commit hooks
-pre-commit run --all-files
-
-# The project uses:
-# - trailing-whitespace: Ensures no trailing whitespace
-# - end-of-file-fixer: Ensures files end with a newline
-```
-
-## Testing Guidelines
 
 ### Test Infrastructure
 
-- **Framework**: pytest with Selenium WebDriver
-- **Browser**: Chrome/Chromium (headless mode in CI)
-- **Test Runner**: `run_tests.py` provides automatic HTTP server lifecycle management
-- **Test Location**: All tests are in the `tests/` directory
+- **Framework:** pytest + Selenium WebDriver (Chrome/Chromium)
+- **Pattern:** Tests use `unittest.TestCase` despite pytest being installed (known inconsistency)
+- **Server Management:** `run_tests.py` handles HTTP server lifecycle automatically
+- **Known Issue:** Tests have hardcoded ports (8000, 8001, 8003) and duplicate server setup code
 
-### Test Categories
+**Test files:**
+- `test_ui.py` - Search, theme switching, UI interactions
+- `test_transitions.py` - Animations, image loading
+- `test_pokeapi.py` - Data loader tests
+- `test_pokeapi_fetch.py`, `test_pokeapi_integration.py` - API fetching
+- `test_evolution_chain.py` - Evolution chain logic
 
-1. **UI Tests** (`test_ui.py`): Test the main user interface, search functionality, theme switching
-2. **Transitions** (`test_transitions.py`): Test animations, image loading, and view transitions
-3. **API Tests** (`test_pokeapi.py`, `test_pokeapi_fetch.py`): Test data fetching and API integration
-4. **Integration Tests** (`test_pokeapi_integration.py`): Test end-to-end data flows
+**Some tests may fail** due to timing/environment issues. Focus on tests related to your changes.
 
-### Known Test Status
+## Critical Patterns & Conventions
 
-Some tests may fail due to timing issues or environment-specific conditions. Focus on:
-- Not breaking passing tests
-- Fixing only tests related to your changes
-- Using appropriate wait conditions for Selenium tests
+### JavaScript Module Pattern
+```javascript
+// All modules export named classes/constants
+export class MyComponent {
+    constructor() {
+        // Cache DOM elements in constructor
+        this.elements = {};
+    }
+}
 
-## Coding Conventions
+// Always import from constants.js
+import { EVENTS, ELEMENT_IDS, CSS_CLASSES } from './constants.js';
+```
 
-### JavaScript
+### Event-Driven Communication
+Components communicate via custom events defined in `constants.js`:
+```javascript
+// constants.js defines all events
+export const EVENTS = {
+    POKEMON_SELECTED: 'pokemon-selected',
+    SEARCH_UPDATE: 'search-update',
+    // ...
+};
 
-- Use ES6 modules and modern JavaScript features
-- Use `const` and `let` instead of `var`
-- Follow existing naming conventions:
-  - camelCase for functions and variables
-  - kebab-case for CSS classes and HTML IDs
-- Add JSDoc comments for complex functions
-- Maintain accessibility features (ARIA labels, keyboard navigation)
+// Dispatch events instead of direct coupling
+document.dispatchEvent(new CustomEvent(EVENTS.POKEMON_SELECTED, { 
+    detail: { pokemon } 
+}));
+```
 
-### Python
+### Accessibility Requirements (Non-Negotiable)
+- **ARIA labels** on all interactive elements
+- **Keyboard navigation**: Tab, Enter, Escape, Arrow keys
+- **Screen reader support**: Use `sr-only` class for visually hidden labels
+- **Theme support**: All styles work in both light and dark themes
+- **Semantic HTML**: Use proper heading hierarchy (h1 → h2 → h3)
 
-- Follow PEP 8 style guidelines
-- Use type hints where appropriate
-- Write docstrings for classes and functions
-- Keep functions focused and single-purpose
+Example from `index.html`:
+```html
+<label for="search-input" class="sr-only">Search Pokémon</label>
+<input id="search-input" aria-describedby="search-help" />
+<div id="search-help" class="sr-only">Search by name, number, or type</div>
+```
 
-### HTML/CSS
+### Bilingual Support Pattern
+All text must support English/Japanese toggle:
+```javascript
+// Store both languages in data
+{ name_en: "pikachu", name_ja: "ピカチュウ", name_ja_romaji: "pikachuu" }
 
-- Use semantic HTML5 elements
-- Maintain responsive design principles
-- Support both light and dark themes
-- Ensure accessibility (WCAG 2.1 AA compliance)
-- Use BEM-like naming for CSS classes when adding new components
+// Use UIController.currentLanguage to select
+const name = this.uiController.currentLanguage === 'en' 
+    ? pokemon.name_en 
+    : pokemon.name_ja;
+```
 
-### Accessibility Requirements
+### Service Worker Caching Strategy
+- **Static assets** cached on install (HTML, CSS, JS, icons)
+- **Data files** cached separately with versioning
+- **Cache version** in `service-worker.js` must be bumped on updates
+- Current version: `v1.1.0`
 
-- Always include proper ARIA labels and roles
-- Ensure keyboard navigation works (Tab, Enter, Escape, Arrow keys)
-- Support screen readers
-- Maintain proper heading hierarchy
-- Provide text alternatives for images
+## Common Tasks
 
-## Common Development Tasks
+### Adding a UI Feature
+1. Create component in `assets/js/components/myFeature.js`
+2. Export named class: `export class MyFeature { }`
+3. Import in `pokedexApp.js` and initialize
+4. Add custom event to `constants.js` if needed
+5. Update `service-worker.js` to cache new file
+6. Test keyboard navigation and screen reader support
 
-### Adding a New Pokémon Feature
+### Modifying Pokemon Data
+1. Update `pokeapi_fetch.py` to fetch new fields
+2. Run `python pokeapi_fetch.py` to regenerate (takes ~10 minutes)
+3. Backup existing data first: `cp pokedex_data.json pokedex_data.json.backup`
+4. Update frontend code to use new fields
+5. Update `pokedex_data_test.json` if tests need new fields
 
-1. Update data fetching logic in `pokeapi_fetch.py` if needed
-2. Modify data transformation in `transform_pokemon_data.py`
-3. Update frontend JavaScript in `script.js`
-4. Add/update HTML structure in `index.html` if needed
-5. Write tests in appropriate test file
-6. Verify accessibility features
+### Fixing Type Effectiveness Issues
+Type effectiveness data exists in TWO places (known duplication):
+- `pokeapi_fetch.py` - Python dict `TYPE_EFFECTIVENESS`
+- `assets/js/utils/typeEffectiveness.js` - JavaScript object
 
-### Modifying the UI
-
-1. Make changes to HTML/CSS/JavaScript
-2. Test in both light and dark themes
-3. Verify keyboard navigation still works
-4. Test on different screen sizes (responsive design)
-5. Add/update Selenium tests if needed
-6. Run full test suite to ensure nothing broke
-
-### Updating Data
-
-1. Modify `pokeapi_fetch.py` to change what data is fetched
-2. Update `transform_pokemon_data.py` if data structure changes
-3. Run `python pokeapi_fetch.py` to regenerate `pokedex_data.json`
-4. Update frontend code to handle new data structure
-5. Test thoroughly with real data
-
-## Important Files
-
-- **index.html**: Main application structure and layout
-- **script.js**: All frontend JavaScript logic, event handlers, search, filtering
-- **pokedex_data.json**: Pre-generated Pokémon data (don't manually edit)
-- **pokeapi_fetch.py**: Data fetching script (run to update data)
-- **run_tests.py**: Test runner with built-in HTTP server management
-
-## Dependencies
-
-### Python Dependencies
-
-- `requests`: HTTP library for API calls
-- `selenium`: Browser automation for UI testing
-- `pytest`: Testing framework
-
-### Frontend Dependencies
-
-No external JavaScript libraries - vanilla JavaScript only. This is intentional to:
-- Keep the application lightweight
-- Minimize external dependencies
-- Maintain full control over functionality
+**Keep both in sync** when modifying type matchups.
 
 ## Deployment
 
-The application is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. The deployment workflow is defined in `.github/workflows/deploy.yml`.
+GitHub Actions auto-deploys on push to `main`:
+```yaml
+# .github/workflows/deploy.yml
+# No tests run before deploy (known issue - see issues.md #38)
+# No build step - static files deployed as-is
+```
 
-### Deployment Process
+**Service Worker Cache Busting:** Update version in `service-worker.js` when deploying changes:
+```javascript
+const CACHE_NAME = 'pokedex-v1.1.0'; // Increment this
+```
 
-1. Push to `main` branch
-2. GitHub Actions runs the deploy workflow
-3. Static files are uploaded to GitHub Pages
-4. Site is live at www.pokedex.tech
+## Known Issues & Constraints
 
-No build step is required as the application uses vanilla HTML/CSS/JavaScript.
+See `issues.md` for comprehensive list (45 tracked issues). Key ones:
 
-## Best Practices for Changes
+- **Issue #7:** Console logging in production code (remove debug statements)
+- **Issue #11:** Tests use unittest despite pytest in requirements
+- **Issue #17:** `pokemonDetailView.js` is 1200+ lines (needs refactoring)
+- **Issue #25:** No lazy loading - all 1025 cards render at once
+- **Issue #29:** Type effectiveness duplicated in Python and JavaScript
+- **Issue #38:** No pre-deploy tests in CI/CD pipeline
 
-1. **Keep it minimal**: Make the smallest possible changes to achieve your goal
-2. **Test early and often**: Run tests after making changes
-3. **Maintain accessibility**: Never compromise keyboard navigation or screen reader support
-4. **Preserve bilingual support**: Ensure both English and Japanese text work correctly
-5. **Check both themes**: Test changes in both light and dark mode
-6. **Verify responsiveness**: Test on different screen sizes
-7. **Don't break the data pipeline**: If modifying data scripts, verify `pokeapi_fetch.py` still works
-8. **Follow existing patterns**: Look at existing code for style and structure guidance
+**Don't fix unrelated issues** - focus on the task at hand.
 
-## Troubleshooting
+## Style Guide
 
-### Tests Failing
+- **JavaScript:** camelCase (functions/vars), kebab-case (HTML IDs/classes)
+- **Python:** snake_case, PEP 8 compliant
+- **JSDoc comments** for all exported functions
+- **No type hints in Python** (known gap, low priority to add)
+- **Async/await** preferred over `.then()/.catch()`
 
-- Ensure HTTP server is running (run_tests.py handles this automatically)
-- Check that Chrome/Chromium is installed for Selenium tests
-- Some tests may have timing issues - focus on tests related to your changes
+## Documentation Files
 
-### Data Issues
+- `README.md` - User-facing setup and features
+- `DATA_FILES.md` - Explains all data file variants
+- `POKEAPI_MODULES.md` - Explains pokeapi.py vs pokeapi_fetch.py
+- `issues.md` - Comprehensive issue tracker (45 issues documented)
+- `.github/copilot-instructions.md` - This file
 
-- Regenerate data with `python pokeapi_fetch.py` if data seems corrupted
-- Check network connectivity for PokéAPI access
-- Verify `pokedex_data.json` is valid JSON
+## Quick Reference
 
-### UI Issues
+```bash
+# Essential Commands
+python3 -m http.server 8000      # Dev server (always port 8000)
+python run_tests.py               # Run all tests
+python pokeapi_fetch.py          # Regenerate data (~10 min)
+pre-commit run --all-files       # Lint (whitespace only)
 
-- Check browser console for JavaScript errors
-- Verify data is loading correctly (check Network tab)
-- Test in different browsers if behavior is inconsistent
+# Key Files
+assets/js/constants.js           # All IDs, events, configs
+assets/js/pokedexApp.js          # Main orchestrator
+assets/js/components/pokemonDetailView.js  # Largest component (1200+ lines)
+pokedex_data.json                # Production data (2.9MB)
+run_tests.py                     # Test runner (manages HTTP server)
+```
 
-## Notes for AI Assistants
-
-- The project has some existing test failures unrelated to new changes - don't fix unrelated issues
-- Always verify accessibility features when modifying the UI
-- The application uses vanilla JavaScript intentionally - don't add frameworks like React or Vue
-- Data in `pokedex_data.json` is generated - modify the fetch scripts instead of editing directly
-- Pre-commit hooks check for trailing whitespace and end-of-file issues
-- The custom doc-sync-agent handles documentation-related tasks
+**Live Site:** [www.pokedex.tech](https://www.pokedex.tech)  
+**Repo:** github.com/kiefertaylorland/pokedex

@@ -13,6 +13,7 @@ import { SearchController } from './controllers/searchController.js';
 import { SortController } from './controllers/sortController.js';
 import { URLRouter } from './utils/urlRouter.js';
 import { StructuredDataGenerator } from './utils/structuredData.js';
+import { KeyboardShortcutsModal } from './components/keyboardShortcutsModal.js';
 
 /**
  * Main application class that coordinates all components
@@ -25,6 +26,7 @@ export class PokedexApp {
         this.detailView = null;
         this.searchController = null;
         this.sortController = null;
+        this.keyboardShortcutsModal = null;
         this.isInitialized = false;
     }
 
@@ -106,6 +108,9 @@ export class PokedexApp {
             this.uiController,
             (sortOption) => this._handleSortChange(sortOption)
         );
+        
+        // Initialize keyboard shortcuts modal
+        this.keyboardShortcutsModal = new KeyboardShortcutsModal();
     }
 
     /**
@@ -460,6 +465,7 @@ if (typeof window !== 'undefined' && document.readyState === 'loading') {
         try {
             window.pokedexApp = await createPokedexApp();
         } catch (error) {
+            // Critical error - app failed to initialize
             console.error('Failed to auto-initialize Pokedex app:', error);
         }
     });
@@ -469,6 +475,7 @@ if (typeof window !== 'undefined' && document.readyState === 'loading') {
         try {
             window.pokedexApp = await createPokedexApp();
         } catch (error) {
+            // Critical error - app failed to initialize
             console.error('Failed to auto-initialize Pokedex app:', error);
         }
     }, 0);

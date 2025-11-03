@@ -7,6 +7,15 @@ This script creates a sitemap with all Pokemon URLs for better SEO
 import json
 from datetime import datetime
 from pathlib import Path
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 
 def generate_sitemap():
@@ -21,10 +30,10 @@ def generate_sitemap():
         with open(data_file, 'r', encoding='utf-8') as f:
             pokemon_data = json.load(f)
     except FileNotFoundError:
-        print(f"Error: {data_file} not found. Run pokeapi_fetch.py first.")
+        logger.error(f"Error: {data_file} not found. Run pokeapi_fetch.py first.")
         return False
     except json.JSONDecodeError as e:
-        print(f"Error parsing JSON: {e}")
+        logger.error(f"Error parsing JSON: {e}")
         return False
     
     # Start sitemap XML
@@ -69,12 +78,12 @@ def generate_sitemap():
         with open(sitemap_file, 'w', encoding='utf-8') as f:
             f.write('\n'.join(sitemap))
         
-        print(f"✅ Generated sitemap.xml with {len(pokemon_data) + 1} URLs")
-        print(f"   Location: {sitemap_file}")
+        logger.info(f"✅ Generated sitemap.xml with {len(pokemon_data) + 1} URLs")
+        logger.info(f"   Location: {sitemap_file}")
         return True
         
     except IOError as e:
-        print(f"Error writing sitemap: {e}")
+        logger.error(f"Error writing sitemap: {e}")
         return False
 
 

@@ -229,6 +229,34 @@ main {
     opacity: 0.5;
 }
 
+/* Lazy loading states */
+.pokemon-card img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pokemon-card img.lazy-loading {
+    opacity: 0.5;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pokemon-card img.lazy-loaded {
+    opacity: 1;
+}
+
+.pokemon-card img.lazy-error {
+    opacity: 0.3;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
 .pokemon-card h3 { /* Name */
     margin: 0.5rem 0 0.2rem;
     font-size: 1.1em;
