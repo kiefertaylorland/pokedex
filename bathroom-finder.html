@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the nearest public restroom or bathroom near your current location">
+    <meta name="keywords" content="bathroom finder, restroom locator, public toilet, nearby restroom">
+    <meta name="author" content="Kiefer Land">
+    
+    <!-- Security headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#4CAF50">
+    
+    <title>Bathroom Finder - Find Nearest Restrooms</title>
+    <link rel="stylesheet" href="assets/bathroom-finder.css">
+    <link rel="icon" href="assets/Poke_Ball_icon.png" type="image/png">
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+</head>
+<body>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <h1 id="app-title">🚻 Bathroom Finder</h1>
+        <p class="subtitle">Find the nearest restroom near you</p>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Status messages -->
+        <div id="status-container" class="status-container" role="status" aria-live="polite">
+            <p id="status-message">Click the button below to find nearby bathrooms</p>
+        </div>
+
+        <!-- Action button -->
+        <div class="action-container">
+            <button 
+                id="find-bathrooms-btn" 
+                type="button"
+                class="find-btn"
+                aria-label="Find nearest bathrooms"
+            >
+                📍 Find Bathrooms Near Me
+            </button>
+        </div>
+
+        <!-- Map container -->
+        <div id="map-container" class="map-container" style="display: none;">
+            <div id="map" role="application" aria-label="Map showing bathroom locations"></div>
+        </div>
+
+        <!-- Results list -->
+        <div id="results-container" class="results-container" style="display: none;">
+            <h2>Nearby Bathrooms</h2>
+            <div id="results-list" class="results-list" role="list">
+                <!-- Results will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loading-indicator" class="loading-indicator" style="display: none;" role="status" aria-live="polite">
+            <div class="loading-spinner"></div>
+            <p>Searching for nearby bathrooms...</p>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>
+            Data from <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> // 
+            App by Kiefer Land // 
+            <a href="https://github.com/kiefertaylorland/pokedex" target="_blank" rel="noopener noreferrer">View on GitHub</a> //
+            <a href="index.html">Back to Pokédex</a>
+        </p>
+    </footer>
+
+    <!-- Screen reader only announcements -->
+    <div id="announcements" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
+
+    <!-- Error boundary for JavaScript failures -->
+    <noscript>
+        <div class="noscript-message">
+            <h2>JavaScript Required</h2>
+            <p>This Bathroom Finder application requires JavaScript to function. Please enable JavaScript in your browser and reload the page.</p>
+        </div>
+    </noscript>
+
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Bathroom Finder JavaScript -->
+    <script type="module" src="assets/js/bathroomFinder.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
  * Provides offline support and caching strategies with size limits
  */
 
-const CACHE_NAME = 'pokedex-v1.1.1';
-const DATA_CACHE_NAME = 'pokedex-data-v1.1.1';
+const CACHE_NAME = 'pokedex-v1.1.2';
+const DATA_CACHE_NAME = 'pokedex-data-v1.1.2';
 
 // Cache configuration
 const CACHE_CONFIG = {
@@ -20,8 +20,11 @@ const CACHE_CONFIG = {
 const STATIC_ASSETS = [
     '/',
     '/index.html',
+    '/bathroom-finder.html',
     '/assets/style.css',
+    '/assets/bathroom-finder.css',
     '/assets/js/pokedexApp.js',
+    '/assets/js/bathroomFinder.js',
     '/assets/js/constants.js',
     '/assets/js/managers/dataManager.js',
     '/assets/js/managers/uiController.js',
