@@ -10,12 +10,13 @@ An interactive web application showcasing all 1025 Pokémon (Generations I-IX) w
 ![Pokedex Main UI](assets/screenshots/pokedex-main-ui.png)
 
 ### Pokemon Details
-![Pokemon Detail View](assets/screenshots/pokedex-detail-view.png)
+![Pokemon Detail View](https://github.com/user-attachments/assets/01ff5d8e-d20b-4201-8e04-bbb99ae207dd)
 
 ## Features
 
 ### Core Features
-- 🎮 **Complete Pokédex**: All 1025 Pokémon (Generations I-IX) with comprehensive data
+- 🎮 **Complete Pokédex**: All 1025 Pokémon (Generations I-IX) with comprehensive information
+- 📖 **Detailed Pokémon Info**: View physical stats (category, height, weight), abilities, sprites (including shinies), stats with comparison indicators, type effectiveness, learnable moves, and evolution chains
 - 🔊 **Authentic Cries**: Pokémon cries for authentic experience
 - 🌍 **Bilingual Support**: Full English/Japanese language toggle with romaji
 - 🎨 **Theme Support**: Light and dark theme toggle with persistent preferences
@@ -27,13 +28,13 @@ An interactive web application showcasing all 1025 Pokémon (Generations I-IX) w
 ### Advanced Features
 - ⚔️ **Pokémon Comparison**: Side-by-side comparison of stats, types, and abilities (compare up to 3 Pokémon)
 - 👥 **Team Builder**: Build and manage teams of up to 6 Pokémon with type coverage analysis
-- 🔗 **URL Routing**: Deep linking support with shareable URLs for specific Pokémon details
-- 🔄 **Evolution Chains**: Visual evolution trees with branching paths and evolution methods
-- 📈 **Type Matchup Chart**: Interactive type effectiveness calculator showing strengths and weaknesses
-- 🎯 **Move Details**: Complete move lists with power, accuracy, type, and damage class
-- 🔍 **SEO Optimized**: Structured data (JSON-LD) for search engine indexing and rich snippets
-- 💾 **Offline Support**: Progressive Web App with service worker caching for offline access
-- ⌨️ **Keyboard Shortcuts**: Full keyboard navigation with shortcut help (press '?' for help)
+- 🔗 **URL Routing**: Deep linking support with shareable URLs for specific Pokémon
+- 🔄 **Evolution Chains**: Interactive evolution trees with branching paths and evolution methods
+- 📈 **Type Effectiveness**: Visual weaknesses and resistances for each Pokémon type
+- 🎯 **Move Details**: Complete learnable moves with power, accuracy, and damage class
+- 🔍 **SEO Optimized**: Structured data for search engine indexing and rich snippets
+- 💾 **Offline Support**: Progressive Web App with service worker caching
+- ⌨️ **Keyboard Shortcuts**: Full keyboard navigation (press '?' for help)
 
 ## Quick Start
 
