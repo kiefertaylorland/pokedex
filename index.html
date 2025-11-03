@@ -3,171 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive Pokédex featuring all Pokémon across all generations with detailed stats, types, and multilingual support">
-    <meta name="keywords" content="pokemon, pokedex, all generations, stats, types, japanese, english, complete">
-    <meta name="author" content="Kiefer Land">
-    
-    <!-- Security headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://cdn.jsdelivr.net data:; media-src 'self' https://raw.githubusercontent.com; connect-src 'self' https://pokeapi.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
-    
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#ff3b30">
-    
-    <title>Pokédex - Complete Pokemon Database (All Generations)</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <meta name="description" content="Find bars with the cheapest drinks near you">
+    <title>Cheap Drinks Finder - Find Affordable Bars Near You</title>
+    <link rel="stylesheet" href="bar-finder-style.css">
     <link rel="icon" href="assets/Poke_Ball_icon.png" type="image/png">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Pokédex">
-    <link rel="apple-touch-icon" href="assets/Poke_Ball_icon.png">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="pokedex_data.json" as="fetch" type="application/json" crossorigin>
 </head>
 <body>
-    <!-- Skip link for keyboard navigation -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <header role="banner">
-        <h1 id="app-title">Pokédex</h1>
-        <div class="controls">
-            <div class="search-container">
-                <label for="search-input" class="sr-only">Search Pokémon</label>
-                <input 
-                    type="text" 
-                    id="search-input" 
-                    placeholder="Search Pokémon..." 
-                    autocomplete="off"
-                    spellcheck="false"
-                    aria-describedby="search-help"
-                >
-                <div id="search-help" class="sr-only">
-                    Search by Pokémon name, number, or type. Results update as you type.
-                </div>
-            </div>
-            <div class="sort-container">
-                <label for="sort-select" class="sr-only">Sort Pokémon</label>
-                <select 
-                    id="sort-select" 
-                    aria-label="Sort Pokémon by"
-                    title="Sort Pokémon"
-                >
-                    <option value="number-asc">Number (Low to High)</option>
-                    <option value="number-desc">Number (High to Low)</option>
-                    <option value="name-asc">Name (A-Z)</option>
-                    <option value="name-desc">Name (Z-A)</option>
-                    <option value="stat-total">Stat Total</option>
-                </select>
-            </div>
-            <div class="toggles" role="group" aria-label="Display options">
-                <button 
-                    id="surprise-button" 
-                    type="button"
-                    aria-label="Show random Pokémon"
-                    title="Surprise me with a random Pokémon"
-                >🎲 Surprise me!</button>
-                <button 
-                    id="theme-toggle" 
-                    type="button"
-                    aria-label="Toggle dark mode"
-                    title="Switch between light and dark themes"
-                >🌓</button>
-                <button 
-                    id="lang-toggle" 
-                    type="button"
-                    aria-label="Toggle language"
-                    title="Switch between English and Japanese"
-                >EN/JP</button>
-            </div>
-        </div>
+    <header>
+        <h1>🍺 Cheap Drinks Finder</h1>
+        <p class="tagline">Find the best drink deals near you</p>
     </header>
 
-    <main id="main-content" role="main">
-        <!-- Loading indicator for better UX -->
-        <div id="loading-indicator" class="loading-indicator" role="status" aria-live="polite">
-            <div class="loading-spinner"></div>
-            <p>Loading Pokémon data...</p>
-        </div>
-        
-        <div 
-            id="pokedex-grid" 
-            class="pokedex-grid"
-            role="grid"
-            aria-label="Pokémon collection"
-            aria-live="polite"
-        >
-            <!-- Pokémon cards will be injected here by JavaScript -->
+    <main>
+        <div class="location-section">
+            <button id="find-location-btn" class="primary-btn">
+                📍 Find Bars Near Me
+            </button>
+            <div id="location-status" class="status-message"></div>
         </div>
 
-        <!-- Modal for Pokemon details -->
-        <div 
-            id="pokemon-detail-view" 
-            class="pokemon-detail-view"
-            role="dialog"
-            aria-modal="true"
-            aria-hidden="true"
-            aria-labelledby="pokemon-detail-title"
-        >
-            <div id="detail-content" class="detail-content"></div>
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Finding bars near you...</p>
+        </div>
+
+        <div id="results-container" class="results-container hidden">
+            <div class="filter-section">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select">
+                    <option value="price-asc">Cheapest Drinks First</option>
+                    <option value="price-desc">Most Expensive First</option>
+                    <option value="distance">Closest First</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+
+            <div id="bars-list" class="bars-list"></div>
+        </div>
+
+        <div id="error-message" class="error-message hidden"></div>
+
+        <div class="info-section">
+            <h2>About This App</h2>
+            <p>
+                This app helps you find bars with the cheapest drink prices near your location.
+                Click the button above to share your location and discover great drink deals!
+            </p>
+            <p class="note">
+                <strong>Note:</strong> This is a demo version with sample data.
+                In a production version, this would connect to a real database of bars and prices.
+            </p>
+            <p class="note">
+                <a href="pokedex-app/">Looking for the Pokédex instead?</a>
+            </p>
         </div>
     </main>
 
-    <footer role="contentinfo">
-        <p id="footer-text">
-            Data from <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokéAPI</a> // 
-            App by Kiefer Land // 
-            <a href="https://github.com/kiefertaylorland/pokedex" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        </p>
+    <footer>
+        <p>Cheap Drinks Finder &copy; 2025 | <a href="https://github.com/kiefertaylorland/pokedex" target="_blank">View on GitHub</a></p>
     </footer>
 
-    <!-- Screen reader only announcements -->
-    <div id="announcements" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
-
-    <!-- Error boundary for JavaScript failures -->
-    <noscript>
-        <div class="noscript-message">
-            <h2>JavaScript Required</h2>
-            <p>This Pokédex application requires JavaScript to function. Please enable JavaScript in your browser and reload the page.</p>
-        </div>
-    </noscript>
-
-    <!-- Error Boundary - Load first to catch all errors -->
-    <script type="module" src="assets/js/utils/errorBoundary.js"></script>
-    
-    <!-- Load the new modular JavaScript -->
-    <script type="module" src="assets/js/pokedexApp.js"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-        // Register service worker for offline support
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(registration => {
-                        console.log('✅ Service Worker registered:', registration.scope);
-                        
-                        // Check for updates
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // New service worker available, notify user
-                                    console.log('🔄 New version available! Refresh to update.');
-                                }
-                            });
-                        });
-                    })
-                    .catch(error => {
-                        console.warn('Service Worker registration failed:', error);
-                    });
-            });
-        }
-    </script>
+    <script src="bar-finder-app.js"></script>
 </body>
 </html>
