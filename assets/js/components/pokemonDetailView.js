@@ -3,7 +3,7 @@
  * @module PokemonDetailView
  */
 
-import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS } from '../constants.js';
+import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS, LANGUAGES } from '../constants.js';
 import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
@@ -166,7 +166,7 @@ export class PokemonDetailView {
         nameElement.classList.add('pokemon-detail-name');
         nameContainer.appendChild(nameElement);
         
-        if (currentLang === 'jp' && pokemon.name_romaji) {
+        if (currentLang === LANGUAGES.JAPANESE && pokemon.name_romaji) {
             const romajiElement = createSafeElement('div', pokemon.name_romaji);
             romajiElement.classList.add('pokemon-detail-name-romaji');
             nameContainer.appendChild(romajiElement);
@@ -185,7 +185,7 @@ export class PokemonDetailView {
             typeWrapper.appendChild(typeSpan);
             
             // Add romaji if in Japanese mode
-            if (currentLang === 'jp' && pokemon.types_romaji && pokemon.types_romaji[index]) {
+            if (currentLang === LANGUAGES.JAPANESE && pokemon.types_romaji && pokemon.types_romaji[index]) {
                 const romajiSpan = createSafeElement('span', pokemon.types_romaji[index]);
                 romajiSpan.classList.add('type-romaji');
                 typeWrapper.appendChild(romajiSpan);
@@ -509,8 +509,8 @@ export class PokemonDetailView {
      */
     _createMoveItem(move, uiText) {
         const currentLang = this.uiController.getCurrentLanguage();
-        const moveName = currentLang === 'jp' ? (move.name_jp || move.name_en) : move.name_en;
-        const moveType = currentLang === 'jp' ? (move.type_jp || move.type_en) : move.type_en;
+        const moveName = currentLang === LANGUAGES.JAPANESE ? (move.name_jp || move.name_en) : move.name_en;
+        const moveType = currentLang === LANGUAGES.JAPANESE ? (move.type_jp || move.type_en) : move.type_en;
 
         const listItem = createSafeElement('li');
         listItem.classList.add('move-item');
@@ -525,7 +525,7 @@ export class PokemonDetailView {
         moveNameContainer.appendChild(nameElement);
         
         // Add romaji for move name if in Japanese mode
-        if (currentLang === 'jp' && move.name_romaji) {
+        if (currentLang === LANGUAGES.JAPANESE && move.name_romaji) {
             const romajiElement = createSafeElement('span', ` (${move.name_romaji})`);
             romajiElement.classList.add('move-name-romaji');
             moveNameContainer.appendChild(romajiElement);
@@ -545,7 +545,7 @@ export class PokemonDetailView {
         typeElement.appendChild(typeTextSpan);
         
         // Add romaji for move type if in Japanese mode
-        if (currentLang === 'jp' && move.type_romaji) {
+        if (currentLang === LANGUAGES.JAPANESE && move.type_romaji) {
             const typeRomajiSpan = createSafeElement('span', ` (${move.type_romaji})`);
             typeRomajiSpan.classList.add('move-type-romaji');
             typeElement.appendChild(typeRomajiSpan);
@@ -848,7 +848,7 @@ export class PokemonDetailView {
                 abilityItem.classList.add('hidden-ability');
             }
             
-            const abilityName = currentLang === 'jp' ? 
+            const abilityName = currentLang === LANGUAGES.JAPANESE ? 
                 (ability.name_jp || ability.name_en) : ability.name_en;
             
             const nameSpan = createSafeElement('span', abilityName);
@@ -893,7 +893,7 @@ export class PokemonDetailView {
             const categoryLabel = createSafeElement('span', `${uiText.category}:`);
             categoryLabel.classList.add('info-label');
             
-            const genus = currentLang === 'jp' ? 
+            const genus = currentLang === LANGUAGES.JAPANESE ? 
                 (pokemon.genus_jp || pokemon.genus_en) : pokemon.genus_en;
             const categoryValue = createSafeElement('span', genus);
             categoryValue.classList.add('info-value');

@@ -3,7 +3,7 @@
  * @module PokemonCardRenderer
  */
 
-import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
+import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT, LANGUAGES } from '../constants.js';
 import { createSafeElement, sanitizeHTML } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
@@ -83,7 +83,7 @@ export class PokemonCardRenderer {
         nameContainer.appendChild(nameElement);
         
         // Add romaji if in Japanese mode
-        if (currentLang === 'jp' && pokemon.name_romaji) {
+        if (currentLang === LANGUAGES.JAPANESE && pokemon.name_romaji) {
             const romajiElement = createSafeElement('span', pokemon.name_romaji);
             romajiElement.classList.add('pokemon-name-romaji');
             nameContainer.appendChild(romajiElement);
@@ -176,7 +176,7 @@ export class PokemonCardRenderer {
             typeWrapper.appendChild(typeSpan);
             
             // Add romaji if in Japanese mode and romaji is available
-            if (currentLang === 'jp' && pokemon && pokemon.types_romaji && pokemon.types_romaji[index]) {
+            if (currentLang === LANGUAGES.JAPANESE && pokemon && pokemon.types_romaji && pokemon.types_romaji[index]) {
                 const romajiSpan = createSafeElement('span', pokemon.types_romaji[index]);
                 romajiSpan.classList.add('type-romaji');
                 typeWrapper.appendChild(romajiSpan);
@@ -246,7 +246,7 @@ export class PokemonCardRenderer {
      */
     _renderEmptyState() {
         const currentLang = this.uiController.getCurrentLanguage();
-        const message = currentLang === 'jp' ? 'ポケモンが見つかりません' : 'No Pokémon found';
+        const message = currentLang === LANGUAGES.JAPANESE ? 'ポケモンが見つかりません' : 'No Pokémon found';
         
         const emptyContainer = createSafeElement('div');
         emptyContainer.classList.add('empty-state');
