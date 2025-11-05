@@ -5,6 +5,7 @@ import argparse
 import logging
 from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime, timedelta
+from urllib.parse import urlparse
 
 # Configure logging
 logging.basicConfig(
@@ -464,11 +465,13 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         
         # Convert sprite URLs to jsDelivr CDN for better reliability
         sprite_url = pokemon_main_data["sprites"]["front_default"]
-        if sprite_url and "raw.githubusercontent.com" in sprite_url:
-            sprite_url = sprite_url.replace(
-                "https://raw.githubusercontent.com/",
-                "https://cdn.jsdelivr.net/gh/"
-            ).replace("/master/", "@master/")
+        if sprite_url:
+            parsed_url = urlparse(sprite_url)
+            if parsed_url.hostname == "raw.githubusercontent.com":
+                sprite_url = sprite_url.replace(
+                    "https://raw.githubusercontent.com/",
+                    "https://cdn.jsdelivr.net/gh/"
+                ).replace("/master/", "@master/")
         
         pokemon_obj = {
             "id": pokemon_main_data["id"],
