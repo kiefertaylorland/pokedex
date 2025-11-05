@@ -372,11 +372,13 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
         
         # Get additional sprites and convert to jsDelivr CDN
         def convert_sprite_url(url):
-            if url and "raw.githubusercontent.com" in url:
-                return url.replace(
-                    "https://raw.githubusercontent.com/",
-                    "https://cdn.jsdelivr.net/gh/"
-                ).replace("/master/", "@master/")
+            if url:
+                parsed = urlparse(url)
+                if parsed.hostname == "raw.githubusercontent.com":
+                    return url.replace(
+                        "https://raw.githubusercontent.com/",
+                        "https://cdn.jsdelivr.net/gh/"
+                    ).replace("/master/", "@master/")
             return url
         
         sprites = {
