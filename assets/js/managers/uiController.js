@@ -14,6 +14,7 @@ export class UIController {
         this.currentLanguage = this._getStoredLanguage();
         this.currentTheme = this._getStoredTheme();
         this.elements = {};
+        this.announcementEl = null;
         this._cacheElements();
     }
 
@@ -255,17 +256,31 @@ export class UIController {
      * @param {string} message - Message to announce
      */
     announceToScreenReader(message) {
-        const announcement = document.createElement('div');
-        announcement.setAttribute('aria-live', 'polite');
-        announcement.setAttribute('aria-atomic', 'true');
-        announcement.className = 'sr-only';
-        announcement.textContent = message;
-        
-        document.body.appendChild(announcement);
-        
-        // Remove after announcement
-        setTimeout(() => {
-            document.body.removeChild(announcement);
-        }, 1000);
+        if (!message) {
+            return;
+        }
+
+        if (!this.announcementEl) {
+            this.announcementEl = document.createElement('div');
+            this.announcementEl.setAttribute('aria-live', 'polite');
+            this.announcementEl.setAttribute('aria-atomic', 'true');
+            this.announcementEl.className = 'sr-only';
+            document.body.appendChild(this.announcementEl);
+        }
+
+        this.announcementEl.textContent = '';
+        requestAnimationFrame(() => {
+            this.announcementEl.textContent = message;
+        });
     }
+    /**
+     * Removes runtime-created elements and references
+     */
+    destroy() {
+        if (this.announcementEl && this.announcementEl.parentNode) {
+            this.announcementEl.parentNode.removeChild(this.announcementEl);
+        }
+        this.announcementEl = null;
+    }
+
 }

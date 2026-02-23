@@ -491,6 +491,9 @@ export class PokedexApp {
         // Reset UI
         if (this.uiController) {
             this.uiController.disableModalState();
+            if (typeof this.uiController.destroy === 'function') {
+                this.uiController.destroy();
+            }
         }
 
         this.isInitialized = false;
