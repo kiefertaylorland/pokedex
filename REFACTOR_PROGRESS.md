@@ -29,3 +29,17 @@
 3. Add smoke test for app bootstrap + controller wiring
 4. Introduce lint-baseline strategy (pre-existing repo debt)
 5. Normalize constants/text ownership to reduce cross-module coupling
+
+
+## Finalized in this pass
+
+- Added JS unit tests for core pure modules and bootstrap smoke checks
+- Added incremental lint workflow (`lint:changed`) and linting policy docs
+- Simplified sort controller with pure sort strategy utilities
+- Extracted search announcement text helper
+- Restored and deduplicated type effectiveness section builders in detail view
+
+## Current status
+
+Refactor objectives completed for architecture, lifecycle cleanup, and testable utility boundaries.
+Remaining work is optional polish (legacy lint debt reduction and UI micro-optimizations).
