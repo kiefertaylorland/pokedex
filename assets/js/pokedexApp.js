@@ -187,27 +187,49 @@ export class PokedexApp {
         this._applyFiltersAndRender();
     }
 
+
+    /**
+     * Opens pokemon detail and updates related app state
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     */
+    _openPokemonDetail(pokemon) {
+        if (!pokemon || !this.detailView) {
+            return;
+        }
+
+        this.detailView.showPokemonDetail(pokemon);
+        this.appState.set({ detailViewVisible: true, currentPokemon: pokemon });
+    }
+
+    /**
+     * Updates URL and SEO metadata for the selected pokemon
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {boolean} updateRoute - Whether to push route history
+     */
+    _updatePokemonSeoAndRoute(pokemon, updateRoute = true) {
+        const currentLanguage = this.uiController.getCurrentLanguage();
+        const name = this.dataManager.getPokemonName(pokemon, currentLanguage);
+        const metaDesc = this.urlRouter.generateMetaDescription(pokemon, currentLanguage);
+
+        if (updateRoute) {
+            this.urlRouter.pushPokemonRoute(pokemon.id, name);
+        }
+
+        this.urlRouter.updateMetaDescription(metaDesc);
+        this.urlRouter.updatePageTitle(pokemon.id, name);
+        StructuredDataGenerator.updateForPokemon(pokemon, currentLanguage);
+    }
+
     /**
      * Handles Pokemon card click events
      * @private
      * @param {Object} pokemon - Pokemon data
      */
     _handlePokemonCardClick(pokemon) {
-        if (this.detailView) {
-            this.detailView.showPokemonDetail(pokemon);
-            this.appState.set({ detailViewVisible: true, currentPokemon: pokemon });
-            
-            // Update URL and SEO metadata
-            const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
-            this.urlRouter.pushPokemonRoute(pokemon.id, name);
-            
-            // Update meta description
-            const metaDesc = this.urlRouter.generateMetaDescription(pokemon, this.uiController.getCurrentLanguage());
-            this.urlRouter.updateMetaDescription(metaDesc);
-            
-            // Update structured data
-            StructuredDataGenerator.updateForPokemon(pokemon, this.uiController.getCurrentLanguage());
-        }
+        this._openPokemonDetail(pokemon);
+        this._updatePokemonSeoAndRoute(pokemon, true);
     }
 
     /**
@@ -217,19 +239,12 @@ export class PokedexApp {
      */
     _handlePokemonRoute(pokemonId) {
         const pokemon = this.dataManager.getPokemonById(pokemonId);
-        if (pokemon && this.detailView) {
-            this.detailView.showPokemonDetail(pokemon);
-            this.appState.set({ detailViewVisible: true, currentPokemon: pokemon });
-            
-            // Update SEO metadata
-            const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
-            const metaDesc = this.urlRouter.generateMetaDescription(pokemon, this.uiController.getCurrentLanguage());
-            this.urlRouter.updateMetaDescription(metaDesc);
-            this.urlRouter.updatePageTitle(pokemon.id, name);
-            
-            // Update structured data
-            StructuredDataGenerator.updateForPokemon(pokemon, this.uiController.getCurrentLanguage());
+        if (!pokemon) {
+            return;
         }
+
+        this._openPokemonDetail(pokemon);
+        this._updatePokemonSeoAndRoute(pokemon, false);
     }
 
     /**
@@ -395,9 +410,12 @@ export class PokedexApp {
      */
     showPokemonDetails(pokemonId) {
         const pokemon = this.dataManager.getPokemonById(pokemonId);
-        if (pokemon && this.detailView) {
-            this.detailView.showPokemonDetail(pokemon);
+        if (!pokemon) {
+            return;
         }
+
+        this._openPokemonDetail(pokemon);
+        this._updatePokemonSeoAndRoute(pokemon, true);
     }
 
     /**
