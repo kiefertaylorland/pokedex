@@ -22,9 +22,27 @@ export class PokemonDetailView {
         this.detailContent = document.getElementById(ELEMENT_IDS.DETAIL_CONTENT);
         this.currentPokemon = null;
         this.isVisible = false;
-        this.teamBuilder = options.teamBuilder || null;
-        this.pokemonComparison = options.pokemonComparison || null;
-        
+
+        const normalizedOptions = typeof options === 'function'
+            ? { onClose: options }
+            : options;
+
+        this.teamBuilder = normalizedOptions.teamBuilder || null;
+        this.pokemonComparison = normalizedOptions.pokemonComparison || null;
+        this.onClose = normalizedOptions.onClose || null;
+
+        this._boundModalClick = (event) => {
+            if (event.target.id === ELEMENT_IDS.CLOSE_DETAIL || event.target === this.detailView) {
+                this.closeDetailView();
+            }
+        };
+
+        this._boundKeydown = (event) => {
+            if (event.key === KEYS.ESCAPE && this.isVisible) {
+                this.closeDetailView();
+            }
+        };
+
         this._bindEvents();
     }
 
@@ -720,21 +738,24 @@ export class PokemonDetailView {
      * @private
      */
     _bindEvents() {
-        if (!this.detailView) return;
+        if (!this.detailView) {
+            return;
+        }
 
-        // Modal click handling (delegation)
-        this.detailView.addEventListener(EVENTS.CLICK, (event) => {
-            if (event.target.id === ELEMENT_IDS.CLOSE_DETAIL || event.target === this.detailView) {
-                this.closeDetailView();
-            }
-        });
+        this.detailView.addEventListener(EVENTS.CLICK, this._boundModalClick);
+        document.addEventListener(EVENTS.KEYDOWN, this._boundKeydown);
+    }
 
-        // Keyboard handling
-        document.addEventListener(EVENTS.KEYDOWN, (event) => {
-            if (event.key === KEYS.ESCAPE && this.isVisible) {
-                this.closeDetailView();
-            }
-        });
+    /**
+     * Removes event listeners and clears references
+     */
+    destroy() {
+        if (this.detailView) {
+            this.detailView.removeEventListener(EVENTS.CLICK, this._boundModalClick);
+        }
+        document.removeEventListener(EVENTS.KEYDOWN, this._boundKeydown);
+        this.currentPokemon = null;
+        this.isVisible = false;
     }
 
     /**

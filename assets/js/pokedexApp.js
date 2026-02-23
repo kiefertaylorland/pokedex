@@ -471,11 +471,15 @@ export class PokedexApp {
             this.dataManager.clearCache();
         }
         
+        if (this.detailView && typeof this.detailView.destroy === 'function') {
+            this.detailView.destroy();
+        }
+
         // Reset UI
         if (this.uiController) {
             this.uiController.disableModalState();
         }
-        
+
         this.isInitialized = false;
     }
 }
