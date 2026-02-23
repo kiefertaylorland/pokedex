@@ -5,6 +5,7 @@
 
 import { ELEMENT_IDS, SORT_OPTIONS, STORAGE_KEYS_SORT } from '../constants.js';
 import { Storage } from '../utils/storage.js';
+import { sortByNumberAsc, sortByNumberDesc, sortByName, sortByStatTotal } from '../utils/sorters.js';
 
 /**
  * Manages sorting functionality for Pokemon display
@@ -21,130 +22,8 @@ export class SortController {
         this._bindEvents();
     }
 
-    /**
-     * Binds sort select events
-     * @private
-     */
-    _bindEvents() {
-        if (!this.sortSelect) {
-            console.error('Sort select element not found');
-            return;
-        }
 
-        this.boundChangeHandler = (event) => {
-            this._handleSortChange(event.target.value);
-        };
 
-        this.sortSelect.addEventListener('change', this.boundChangeHandler);
-    }
-
-    /**
-     * Handles sort option change
-     * @private
-     * @param {string} sortOption - Selected sort option
-     */
-    _handleSortChange(sortOption) {
-        if (!sortOption || sortOption === this.currentSortOption) {
-            return;
-        }
-
-        this.currentSortOption = sortOption;
-        this._saveSortPreference(sortOption);
-
-        // Trigger sort callback
-        if (typeof this.onSortChange === 'function') {
-            this.onSortChange(sortOption);
-        }
-
-        // Announce to screen readers
-        this._announceSortChange(sortOption);
-    }
-
-    /**
-     * Sorts an array of Pokemon based on current sort option
-     * @param {Array} pokemonArray - Array of Pokemon to sort
-     * @returns {Array} Sorted array
-     */
-    sortPokemon(pokemonArray) {
-        if (!pokemonArray || pokemonArray.length === 0) {
-            return pokemonArray;
-        }
-
-        const sorted = [...pokemonArray]; // Create a copy to avoid mutating original
-
-        switch (this.currentSortOption) {
-            case SORT_OPTIONS.NUMBER_ASC:
-                return sorted.sort((a, b) => a.id - b.id);
-            
-            case SORT_OPTIONS.NUMBER_DESC:
-                return sorted.sort((a, b) => b.id - a.id);
-            
-            case SORT_OPTIONS.NAME_ASC:
-                return this._sortByName(sorted, true);
-            
-            case SORT_OPTIONS.NAME_DESC:
-                return this._sortByName(sorted, false);
-            
-            case SORT_OPTIONS.STAT_TOTAL:
-                return this._sortByStatTotal(sorted);
-            
-            default:
-                return sorted.sort((a, b) => a.id - b.id); // Default to number ascending
-        }
-    }
-
-    /**
-     * Sorts Pokemon by name based on current language
-     * @private
-     * @param {Array} pokemonArray - Array to sort
-     * @param {boolean} ascending - Sort ascending or descending
-     * @returns {Array} Sorted array
-     */
-    _sortByName(pokemonArray, ascending = true) {
-        const currentLanguage = this.uiController.getCurrentLanguage();
-        const nameKey = currentLanguage === 'jp' ? 'name_jp' : 'name_en';
-
-        return pokemonArray.sort((a, b) => {
-            const nameA = (a[nameKey] || '').toLowerCase();
-            const nameB = (b[nameKey] || '').toLowerCase();
-            
-            if (ascending) {
-                return nameA.localeCompare(nameB);
-            } else {
-                return nameB.localeCompare(nameA);
-            }
-        });
-    }
-
-    /**
-     * Sorts Pokemon by total stats (descending - highest first)
-     * @private
-     * @param {Array} pokemonArray - Array to sort
-     * @returns {Array} Sorted array
-     */
-    _sortByStatTotal(pokemonArray) {
-        return pokemonArray.sort((a, b) => {
-            const totalA = this._calculateStatTotal(a);
-            const totalB = this._calculateStatTotal(b);
-            return totalB - totalA; // Descending order
-        });
-    }
-
-    /**
-     * Calculates total stats for a Pokemon
-     * @private
-     * @param {Object} pokemon - Pokemon object
-     * @returns {number} Total stats
-     */
-    _calculateStatTotal(pokemon) {
-        if (!pokemon.stats) {
-            return 0;
-        }
-
-        return Object.values(pokemon.stats).reduce((total, stat) => {
-            return total + (typeof stat === 'number' ? stat : 0);
-        }, 0);
-    }
 
     /**
      * Announces sort change to screen readers
@@ -221,6 +100,10 @@ export class SortController {
      * @param {string} sortOption - Sort option to set
      */
     setSortOption(sortOption) {
+        if (!Object.values(SORT_OPTIONS).includes(sortOption)) {
+            return;
+        }
+
         if (this.sortSelect) {
             this.sortSelect.value = sortOption;
             this._handleSortChange(sortOption);
