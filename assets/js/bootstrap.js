@@ -1,3 +1,3 @@
-import { bootPokedexApp } from './pokedexApp.js?v=1.1.3';
+import { bootPokedexApp } from './pokedexApp.js?v=1.1.5';
 
 bootPokedexApp(window);
