@@ -4,9 +4,8 @@
  */
 
 import { ELEMENT_IDS, CSS_CLASSES, DATA, ANIMATION, EVENTS, KEYS } from '../constants.js';
-import { createSafeElement, safeSetInnerHTML, validatePokemonId } from '../utils/security.js';
+import { createSafeElement, validatePokemonId } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
-import { TypeMatchupChart } from './typeMatchupChart.js';
 import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
 import { formatPokemonHeader, getLocalizedPokemonSnapshot } from '../utils/pokemonPresentation.js';

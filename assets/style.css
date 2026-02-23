@@ -1688,6 +1688,20 @@ footer {
   color: var(--oc-muted);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pokemon-card:hover,
+  .sort-container select:hover,
+  .toggles button:hover {
+    transform: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .pokedex-grid { grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
   main { padding: .9rem; }

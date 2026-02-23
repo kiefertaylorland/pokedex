@@ -3,8 +3,8 @@
  * @module PokemonCardRenderer
  */
 
-import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
-import { createSafeElement, sanitizeHTML } from '../utils/security.js';
+import { ELEMENT_IDS, CSS_CLASSES } from '../constants.js';
+import { createSafeElement } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
 import { getLocalizedPokemonSnapshot } from '../utils/pokemonPresentation.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
