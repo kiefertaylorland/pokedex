@@ -6,6 +6,7 @@
 import { ELEMENT_IDS, DATA } from '../constants.js';
 import { sanitizeSearchInput } from '../utils/security.js';
 import { debounce } from '../utils/debounce.js';
+import { buildSearchAnnouncement } from '../utils/searchAnnouncements.js';
 
 /**
  * Manages search functionality with debouncing and validation
@@ -113,22 +114,11 @@ export class SearchController {
      * @param {string} searchTerm - Search term used
      */
     _announceSearchResults(resultCount, searchTerm) {
-        const currentLang = this.uiController.getCurrentLanguage();
-        let message;
-
-        if (searchTerm && searchTerm.trim() !== '') {
-            if (currentLang === 'jp') {
-                message = `「${searchTerm}」で${resultCount}匹のポケモンが見つかりました`;
-            } else {
-                message = `Found ${resultCount} Pokémon for "${searchTerm}"`;
-            }
-        } else {
-            if (currentLang === 'jp') {
-                message = `${resultCount}匹のポケモンを表示中`;
-            } else {
-                message = `Showing ${resultCount} Pokémon`;
-            }
-        }
+        const message = buildSearchAnnouncement({
+            language: this.uiController.getCurrentLanguage(),
+            resultCount,
+            searchTerm
+        });
 
         this.uiController.announceToScreenReader(message);
     }
