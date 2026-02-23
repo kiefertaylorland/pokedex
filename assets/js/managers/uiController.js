@@ -4,6 +4,7 @@
  */
 
 import { STORAGE_KEYS, THEMES, LANGUAGES, UI_TEXT, CSS_CLASSES, ELEMENT_IDS } from '../constants.js';
+import { Storage } from '../utils/storage.js';
 
 /**
  * Manages UI state, theme switching, and language switching
@@ -48,7 +49,7 @@ export class UIController {
      * @returns {string} Language code
      */
     _getStoredLanguage() {
-        const stored = localStorage.getItem(STORAGE_KEYS.LANGUAGE);
+        const stored = Storage.get(STORAGE_KEYS.LANGUAGE);
         return stored === LANGUAGES.JAPANESE ? LANGUAGES.JAPANESE : LANGUAGES.ENGLISH;
     }
 
@@ -58,7 +59,7 @@ export class UIController {
      * @returns {string} Theme name
      */
     _getStoredTheme() {
-        const stored = localStorage.getItem(STORAGE_KEYS.THEME);
+        const stored = Storage.get(STORAGE_KEYS.THEME);
         return stored === THEMES.DARK ? THEMES.DARK : THEMES.LIGHT;
     }
 
@@ -72,7 +73,7 @@ export class UIController {
         this.elements.body.classList.toggle(CSS_CLASSES.DARK_MODE, isDark);
         this.currentTheme = theme;
         
-        localStorage.setItem(STORAGE_KEYS.THEME, theme);
+        Storage.set(STORAGE_KEYS.THEME, theme);
         
         if (this.elements.themeToggle) {
             this.elements.themeToggle.textContent = isDark ? '☀️' : '🌓';
@@ -95,7 +96,7 @@ export class UIController {
      */
     applyLanguage(language) {
         this.currentLanguage = language;
-        localStorage.setItem(STORAGE_KEYS.LANGUAGE, language);
+        Storage.set(STORAGE_KEYS.LANGUAGE, language);
         
         this._updateUIText(language);
         this._updateLanguageToggle(language);
