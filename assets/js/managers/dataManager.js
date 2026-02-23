@@ -16,6 +16,8 @@ export class PokemonDataManager {
         this.isLoaded = false;
         this.loadingPromise = null;
         this.searchCache = new Map(); // In-memory search cache for current session
+        this.pokemonById = new Map();
+        this.searchCorpus = [];
     }
 
     /**
@@ -38,6 +40,7 @@ export class PokemonDataManager {
         try {
             this.allPokemonData = await this.loadingPromise;
             this.isLoaded = true;
+            this._rebuildIndexes();
             this.searchCache.clear();
             return this.allPokemonData;
         } catch (error) {
@@ -83,6 +86,26 @@ export class PokemonDataManager {
         }
     }
 
+
+    /**
+     * Rebuilds lookup indexes after data load
+     * @private
+     */
+    _rebuildIndexes() {
+        this.pokemonById.clear();
+        this.searchCorpus = this.allPokemonData.map(pokemon => {
+            this.pokemonById.set(pokemon.id, pokemon);
+            return {
+                pokemon,
+                idString: String(pokemon.id).padStart(3, '0'),
+                nameEn: (pokemon.name_en || '').toLowerCase(),
+                nameJp: (pokemon.name_jp || '').toLowerCase(),
+                typesEn: (pokemon.types_en || []).join(' ').toLowerCase(),
+                typesJp: (pokemon.types_jp || []).join(' ').toLowerCase()
+            };
+        });
+    }
+
     /**
      * Gets all Pokemon data (must call loadPokemonData first)
      * @returns {Array} Array of Pokemon data
@@ -97,7 +120,7 @@ export class PokemonDataManager {
      * @returns {Object|null} Pokemon data or null if not found
      */
     getPokemonById(id) {
-        return this.allPokemonData.find(pokemon => pokemon.id === parseInt(id, 10)) || null;
+        return this.pokemonById.get(parseInt(id, 10)) || null;
     }
 
     /**
@@ -119,35 +142,18 @@ export class PokemonDataManager {
         }
 
         // Create array of pokemon with match scores
-        const pokemonWithScores = this.allPokemonData.map(pokemon => {
-            // Search by English name
-            const nameEn = pokemon.name_en?.toLowerCase() || '';
-            
-            // Search by Japanese name
-            const nameJp = pokemon.name_jp?.toLowerCase() || '';
-            
-            // Search by ID (with zero padding)
-            const idString = String(pokemon.id).padStart(3, '0');
-            
-            // Search by types
-            const typesEn = pokemon.types_en?.join(' ').toLowerCase() || '';
-            const typesJp = pokemon.types_jp?.join(' ').toLowerCase() || '';
-
-            // Calculate match scores for each field
+        const pokemonWithScores = this.searchCorpus.map(({ pokemon, idString, nameEn, nameJp, typesEn, typesJp }) => {
             const scores = [
                 fuzzyMatchScore(normalizedTerm, nameEn),
                 fuzzyMatchScore(normalizedTerm, nameJp),
-                idString.includes(normalizedTerm) ? 950 : 0, // ID matches are prioritized
-                fuzzyMatchScore(normalizedTerm, typesEn) * 0.5, // Type matches count but less
+                idString.includes(normalizedTerm) ? 950 : 0,
+                fuzzyMatchScore(normalizedTerm, typesEn) * 0.5,
                 fuzzyMatchScore(normalizedTerm, typesJp) * 0.5
             ];
 
-            // Use the highest score
-            const maxScore = Math.max(...scores);
-
             return {
                 pokemon,
-                score: maxScore
+                score: Math.max(...scores)
             };
         });
 
@@ -240,6 +246,8 @@ export class PokemonDataManager {
         this.isLoaded = false;
         this.loadingPromise = null;
         this.searchCache.clear();
+        this.pokemonById.clear();
+        this.searchCorpus = [];
         CacheManager.clearAllCaches();
     }
 }
