@@ -9,6 +9,7 @@ import { getTypeClassName } from '../utils/typeMapping.js';
 import { TypeMatchupChart } from './typeMatchupChart.js';
 import { EnhancedStatsDisplay } from './enhancedStatsDisplay.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
+import { formatPokemonHeader, getLocalizedPokemonSnapshot } from '../utils/pokemonPresentation.js';
 
 /**
  * Manages the Pokemon detail modal view
@@ -57,9 +58,7 @@ export class PokemonDetailView {
         const currentLang = this.uiController.getCurrentLanguage();
         const uiText = this.uiController.getCurrentUIText();
         
-        const name = this.dataManager.getPokemonName(pokemon, currentLang);
-        const types = this.dataManager.getPokemonTypes(pokemon, currentLang);
-        const bio = this.dataManager.getPokemonBio(pokemon, currentLang);
+        const { name, types, bio } = getLocalizedPokemonSnapshot(this.dataManager, pokemon, currentLang);
 
         // Create modal content container
         const modalContent = createSafeElement('div');
@@ -155,8 +154,7 @@ export class PokemonDetailView {
         const nameContainer = createSafeElement('div');
         nameContainer.classList.add('detail-name-container');
         
-        const nameElement = createSafeElement('h2', 
-            `${name} (#${String(pokemon.id).padStart(3, '0')})`);
+        const nameElement = createSafeElement('h2', formatPokemonHeader(name, pokemon.id));
         nameElement.classList.add('pokemon-detail-name');
         nameContainer.appendChild(nameElement);
         

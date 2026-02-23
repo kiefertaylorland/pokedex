@@ -6,6 +6,7 @@
 import { ELEMENT_IDS, CSS_CLASSES, UI_TEXT } from '../constants.js';
 import { createSafeElement, sanitizeHTML } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
+import { getLocalizedPokemonSnapshot } from '../utils/pokemonPresentation.js';
 import { createImageWithFallback } from '../utils/imageUtils.js';
 
 /**
@@ -60,8 +61,7 @@ export class PokemonCardRenderer {
      */
     _createPokemonCard(pokemon, onCardClick) {
         const currentLang = this.uiController.getCurrentLanguage();
-        const name = this.dataManager.getPokemonName(pokemon, currentLang);
-        const types = this.dataManager.getPokemonTypes(pokemon, currentLang);
+        const { name, types, number } = getLocalizedPokemonSnapshot(this.dataManager, pokemon, currentLang);
         const uiText = this.uiController.getCurrentUIText();
 
         // Create card container
@@ -90,7 +90,7 @@ export class PokemonCardRenderer {
         }
         
         // Create ID element
-        const idElement = createSafeElement('p', `#${String(pokemon.id).padStart(3, '0')}`);
+        const idElement = createSafeElement('p', number);
         idElement.classList.add('pokemon-id');
         
         // Create types container with romaji
