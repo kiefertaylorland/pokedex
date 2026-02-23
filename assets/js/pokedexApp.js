@@ -31,6 +31,7 @@ export class PokedexApp {
         this.keyboardShortcutsModal = null;
         this.isInitialized = false;
         this.appState = new AppState();
+        this.boundHandlers = new Map();
     }
 
     /**
@@ -118,17 +119,47 @@ export class PokedexApp {
     }
 
     /**
+     * Renders pokemon list with unified click handling
+     * @private
+     * @param {Array} pokemonList - List to render
+     */
+    _renderPokemonList(pokemonList) {
+        this.cardRenderer.renderPokemonCards(
+            pokemonList,
+            (pokemon) => this._handlePokemonCardClick(pokemon)
+        );
+    }
+
+    /**
+     * Gets current filtered pokemon based on search and language
+     * @private
+     * @returns {Array} Filtered pokemon list
+     */
+    _getCurrentFilteredPokemon() {
+        const currentSearchTerm = this.searchController.getCurrentSearchTerm();
+        const currentLanguage = this.uiController.getCurrentLanguage();
+        return this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
+    }
+
+    /**
+     * Applies current filters/sort and re-renders pokemon list
+     * @private
+     */
+    _applyFiltersAndRender() {
+        const results = this._getCurrentFilteredPokemon();
+        const sortedResults = this.sortController.sortPokemon(results);
+        this._renderPokemonList(sortedResults);
+    }
+
+    /**
      * Renders initial Pokemon data
      * @private
      */
     _renderInitialData() {
         const allPokemon = this.dataManager.getAllPokemon();
         const sortedPokemon = this.sortController.sortPokemon(allPokemon);
-        this.cardRenderer.renderPokemonCards(
-            sortedPokemon, 
-            (pokemon) => this._handlePokemonCardClick(pokemon)
-        );
-        
+        this._renderPokemonList(sortedPokemon);
+
         // Enable search and sort
         this.searchController.enable();
         this.sortController.enable();
@@ -143,10 +174,7 @@ export class PokedexApp {
     _handleSearchResults(results, searchTerm) {
         this.appState.set({ searchTerm });
         const sortedResults = this.sortController.sortPokemon(results);
-        this.cardRenderer.renderPokemonCards(
-            sortedResults, 
-            (pokemon) => this._handlePokemonCardClick(pokemon)
-        );
+        this._renderPokemonList(sortedResults);
     }
 
     /**
@@ -156,16 +184,7 @@ export class PokedexApp {
      */
     _handleSortChange(sortOption) {
         this.appState.set({ sortOption });
-        // Re-apply current search with new sort
-        const currentSearchTerm = this.searchController.getCurrentSearchTerm();
-        const currentLanguage = this.uiController.getCurrentLanguage();
-        const results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
-        const sortedResults = this.sortController.sortPokemon(results);
-        
-        this.cardRenderer.renderPokemonCards(
-            sortedResults, 
-            (pokemon) => this._handlePokemonCardClick(pokemon)
-        );
+        this._applyFiltersAndRender();
     }
 
     /**
@@ -246,29 +265,9 @@ export class PokedexApp {
      * @private
      */
     _bindGlobalEvents() {
-        // Surprise button
-        const surpriseButton = document.getElementById(ELEMENT_IDS.SURPRISE_BUTTON);
-        if (surpriseButton) {
-            surpriseButton.addEventListener(EVENTS.CLICK, () => {
-                this._handleSurpriseClick();
-            });
-        }
-
-        // Theme toggle
-        const themeToggle = document.getElementById(ELEMENT_IDS.THEME_TOGGLE);
-        if (themeToggle) {
-            themeToggle.addEventListener(EVENTS.CLICK, () => {
-                this.uiController.toggleTheme();
-            });
-        }
-
-        // Language toggle
-        const langToggle = document.getElementById(ELEMENT_IDS.LANG_TOGGLE);
-        if (langToggle) {
-            langToggle.addEventListener(EVENTS.CLICK, () => {
-                this._handleLanguageToggle();
-            });
-        }
+        this._bindClickAction(ELEMENT_IDS.SURPRISE_BUTTON, () => this._handleSurpriseClick());
+        this._bindClickAction(ELEMENT_IDS.THEME_TOGGLE, () => this.uiController.toggleTheme());
+        this._bindClickAction(ELEMENT_IDS.LANG_TOGGLE, () => this._handleLanguageToggle());
 
         // Window resize handling for responsive design
         window.addEventListener('resize', debounce(() => {
@@ -279,6 +278,23 @@ export class PokedexApp {
         document.addEventListener('visibilitychange', () => {
             this._handleVisibilityChange();
         });
+    }
+
+
+    /**
+     * Binds click action and tracks handler references for cleanup
+     * @private
+     * @param {string} elementId - Element id from constants
+     * @param {Function} handler - Click handler
+     */
+    _bindClickAction(elementId, handler) {
+        const element = document.getElementById(elementId);
+        if (!element) {
+            return;
+        }
+
+        element.addEventListener(EVENTS.CLICK, handler);
+        this.boundHandlers.set(`${elementId}:${EVENTS.CLICK}`, { element, handler, event: EVENTS.CLICK });
     }
 
     /**
@@ -313,15 +329,7 @@ export class PokedexApp {
         this.sortController.updateSortLabels();
         
         // Re-render current search results with sort
-        const currentSearchTerm = this.searchController.getCurrentSearchTerm();
-        const currentLanguage = this.uiController.getCurrentLanguage();
-        const results = this.dataManager.searchPokemon(currentSearchTerm, currentLanguage);
-        const sortedResults = this.sortController.sortPokemon(results);
-        
-        this.cardRenderer.renderPokemonCards(
-            sortedResults, 
-            (pokemon) => this._handlePokemonCardClick(pokemon)
-        );
+        this._applyFiltersAndRender();
         
         // Refresh detail view if open
         if (this.detailView.isDetailVisible()) {
@@ -434,9 +442,12 @@ export class PokedexApp {
      * Destroys the application and cleans up resources
      */
     destroy() {
-        // Clean up event listeners
-        // (In a real app, we'd need to track and remove all listeners)
-        
+        // Clean up tracked event listeners
+        this.boundHandlers.forEach(({ element, handler, event }) => {
+            element.removeEventListener(event, handler);
+        });
+        this.boundHandlers.clear();
+
         // Clear data
         if (this.dataManager) {
             this.dataManager.clearCache();
