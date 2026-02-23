@@ -456,6 +456,21 @@ export class PokedexApp {
         return this.appState.subscribe(listener);
     }
 
+
+    /**
+     * Tears down component instances that expose destroy lifecycle
+     * @private
+     */
+    _teardownComponents() {
+        const destroyables = [this.detailView, this.searchController, this.sortController];
+
+        destroyables.forEach((instance) => {
+            if (instance && typeof instance.destroy === 'function') {
+                instance.destroy();
+            }
+        });
+    }
+
     /**
      * Destroys the application and cleans up resources
      */
@@ -466,21 +481,12 @@ export class PokedexApp {
         });
         this.boundHandlers.clear();
 
-        if (this.searchController && typeof this.searchController.destroy === 'function') {
-            this.searchController.destroy();
-        }
-        if (this.sortController && typeof this.sortController.destroy === 'function') {
-            this.sortController.destroy();
-        }
-
         // Clear data
         if (this.dataManager) {
             this.dataManager.clearCache();
         }
         
-        if (this.detailView && typeof this.detailView.destroy === 'function') {
-            this.detailView.destroy();
-        }
+        this._teardownComponents();
 
         // Reset UI
         if (this.uiController) {
