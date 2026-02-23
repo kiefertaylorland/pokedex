@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "1.1.0",
-  "description": "Interactive Pokédex featuring all Pokémon with detailed stats and multilingual support",
+  "description": "Interactive Pok\u00e9dex featuring all Pok\u00e9mon with detailed stats and multilingual support",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiefertaylorland/pokedex.git"
@@ -14,7 +14,8 @@
     "serve": "python3 -m http.server 8000",
     "test": "python run_tests.py",
     "validate": "python validate_seo_files.py",
-    "generate:types": "python generate_type_effectiveness.py"
+    "generate:types": "python generate_type_effectiveness.py",
+    "test:js": "node tests/js/run-unit-tests.js"
   },
   "devDependencies": {
     "eslint": "^8.50.0"
