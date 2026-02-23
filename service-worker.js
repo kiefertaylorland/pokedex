@@ -3,8 +3,8 @@
  * Provides offline support and caching strategies with size limits
  */
 
-const CACHE_NAME = 'pokedex-v1.1.1';
-const DATA_CACHE_NAME = 'pokedex-data-v1.1.1';
+const CACHE_NAME = 'pokedex-v1.1.2';
+const DATA_CACHE_NAME = 'pokedex-data-v1.1.2';
 
 // Cache configuration
 const CACHE_CONFIG = {
@@ -22,6 +22,7 @@ const STATIC_ASSETS = [
     '/index.html',
     '/assets/style.css',
     '/assets/js/pokedexApp.js',
+    '/assets/js/bootstrap.js',
     '/assets/js/constants.js',
     '/assets/js/managers/dataManager.js',
     '/assets/js/managers/uiController.js',
@@ -30,12 +31,18 @@ const STATIC_ASSETS = [
     '/assets/js/controllers/searchController.js',
     '/assets/js/utils/security.js',
     '/assets/js/utils/debounce.js',
+    '/assets/js/utils/appState.js',
     '/assets/js/utils/typeMapping.js',
+    '/assets/js/utils/fuzzySearch.js',
     '/assets/js/utils/cacheManager.js',
+    '/assets/js/utils/storage.js',
     '/assets/js/utils/urlRouter.js',
+    '/assets/js/utils/searchAnnouncements.js',
     '/assets/js/utils/structuredData.js',
+    '/assets/js/utils/pokemonPresentation.js',
     '/assets/js/utils/lazyLoading.js',
     '/assets/js/utils/config.js',
+    '/assets/js/utils/sorters.js',
     '/assets/Poke_Ball_icon.png'
 ];
 
@@ -225,31 +232,36 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
+    // For document requests use network-first to avoid stale shell
+    if (request.destination === 'document') {
+        event.respondWith((async () => {
+            try {
+                const response = await fetch(request);
+                if (response.status === 200) {
+                    const cache = await caches.open(CACHE_NAME);
+                    await cache.put(request, response.clone());
+                }
+                return response;
+            } catch (_error) {
+                return await caches.match(request) || await caches.match('/index.html');
+            }
+        })());
+        return;
+    }
+
     // For all other requests (cache first, fallback to network)
     event.respondWith((async () => {
         const cachedResponse = await caches.match(request);
         if (cachedResponse) {
             return cachedResponse;
         }
-        
-        try {
-            const response = await fetch(request);
-            
-            // Only cache successful responses for same-origin requests
-            if (response.status === 200 && url.origin === location.origin) {
-                const responseToCache = response.clone();
-                const cache = await caches.open(CACHE_NAME);
-                await cache.put(request, responseToCache);
-            }
-            
-            return response;
-        } catch (error) {
-            // Return a custom offline page if available
-            if (request.destination === 'document') {
-                return await caches.match('/index.html');
-            }
-            throw error;
+
+        const response = await fetch(request);
+        if (response.status === 200 && url.origin === location.origin) {
+            const cache = await caches.open(CACHE_NAME);
+            await cache.put(request, response.clone());
         }
+        return response;
     })());
 });
 

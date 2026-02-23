@@ -19,7 +19,7 @@ export const DATA = {
 };
 
 // App version for cache management and update notifications
-export const APP_VERSION = '1.1.0';
+export const APP_VERSION = '1.1.2';
 
 // Cache settings
 export const CACHE = {
