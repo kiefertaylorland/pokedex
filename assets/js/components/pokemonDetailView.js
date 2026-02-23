@@ -646,6 +646,112 @@ export class PokemonDetailView {
         return container;
     }
 
+
+    /**
+     * Shows detail modal for a pokemon
+     * @param {Object} pokemon - Pokemon data
+     */
+    showPokemonDetail(pokemon) {
+        if (!pokemon || !this.detailView || !this.detailContent) {
+            return;
+        }
+
+        this.currentPokemon = pokemon;
+        this.detailView.setAttribute('data-pokemon-id', String(pokemon.id));
+        this._renderDetailContent(pokemon);
+        this._showModal();
+        this._playPokemonCry(pokemon.id);
+    }
+
+    /**
+     * Renders all detail content for selected pokemon
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     */
+    _renderDetailContent(pokemon) {
+        if (!this.detailContent) {
+            return;
+        }
+
+        const currentLang = this.uiController.getCurrentLanguage();
+        const uiText = this.uiController.getCurrentUIText();
+        const { name, types, bio } = getLocalizedPokemonSnapshot(this.dataManager, pokemon, currentLang);
+
+        this.detailContent.innerHTML = '';
+
+        const modalContent = createSafeElement('div');
+        modalContent.classList.add('detail-modal-content');
+
+        const closeButton = createSafeElement('button', uiText.close || 'Close');
+        closeButton.id = ELEMENT_IDS.CLOSE_DETAIL;
+        closeButton.classList.add('close-detail-btn');
+        closeButton.setAttribute('aria-label', uiText.close || 'Close details');
+
+        const header = createSafeElement('div');
+        header.classList.add('detail-header');
+
+        const imageWrap = createSafeElement('div');
+        imageWrap.classList.add('detail-image-wrap');
+        const img = createImageWithFallback(pokemon.sprite, name, {
+            className: 'detail-pokemon-image',
+            onError: (failedImg) => {
+                const fallback = this._createImageErrorFallback(name);
+                imageWrap.replaceChild(fallback, failedImg);
+            }
+        });
+        imageWrap.appendChild(img);
+
+        const meta = createSafeElement('div');
+        meta.classList.add('detail-meta');
+        meta.appendChild(createSafeElement('h2', formatPokemonHeader(name, pokemon.id)));
+
+        const typesWrap = createSafeElement('div');
+        typesWrap.classList.add('pokemon-types');
+        types.forEach((type) => {
+            const t = createSafeElement('span', type);
+            t.classList.add(`type-${getTypeClassName(type)}`);
+            typesWrap.appendChild(t);
+        });
+        meta.appendChild(typesWrap);
+
+        header.appendChild(imageWrap);
+        header.appendChild(meta);
+
+        modalContent.appendChild(closeButton);
+        modalContent.appendChild(header);
+
+        const bioSection = createSafeElement('div');
+        bioSection.classList.add('detail-section');
+        bioSection.appendChild(createSafeElement('h4', uiText.bio || 'Bio'));
+        bioSection.appendChild(createSafeElement('p', bio || 'No description available.'));
+        modalContent.appendChild(bioSection);
+
+        if (pokemon.height || pokemon.weight || pokemon.genus_en || pokemon.genus_jp) {
+            modalContent.appendChild(this._createPhysicalInfoSection(pokemon, uiText));
+        }
+
+        if (pokemon.abilities?.length) {
+            modalContent.appendChild(this._createAbilitiesSection(pokemon.abilities, uiText));
+        }
+
+        if (pokemon.sprites) {
+            modalContent.appendChild(this._createSpritesSection(pokemon.sprites, name, uiText));
+        }
+
+        const typeSection = this._createTypeEffectivenessSection(pokemon, uiText);
+        if (typeSection) {
+            modalContent.appendChild(typeSection);
+        }
+
+        modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
+
+        if (pokemon.evolution_chain?.length) {
+            modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
+        }
+
+        this.detailContent.appendChild(modalContent);
+    }
+
     /**
      * Shows the modal with transition
      * @private
