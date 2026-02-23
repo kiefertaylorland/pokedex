@@ -472,24 +472,23 @@ export async function createPokedexApp() {
     return app;
 }
 
-// Auto-initialize when DOM is ready (if this script is loaded as main)
-if (typeof window !== 'undefined' && document.readyState === 'loading') {
-    document.addEventListener(EVENTS.DOM_CONTENT_LOADED, async () => {
+/**
+ * Boots app once DOM is ready and attaches instance to window.
+ * @param {Window} targetWindow - Window-like object for dependency injection in tests
+ */
+export function bootPokedexApp(targetWindow = window) {
+    const start = async () => {
         try {
-            window.pokedexApp = await createPokedexApp();
+            targetWindow.pokedexApp = await createPokedexApp();
         } catch (error) {
-            // Critical error - app failed to initialize
             console.error('Failed to auto-initialize Pokedex app:', error);
         }
-    });
-} else if (typeof window !== 'undefined') {
-    // DOM already loaded
-    setTimeout(async () => {
-        try {
-            window.pokedexApp = await createPokedexApp();
-        } catch (error) {
-            // Critical error - app failed to initialize
-            console.error('Failed to auto-initialize Pokedex app:', error);
-        }
-    }, 0);
+    };
+
+    if (typeof targetWindow !== 'undefined' && targetWindow.document.readyState === 'loading') {
+        targetWindow.document.addEventListener(EVENTS.DOM_CONTENT_LOADED, start);
+        return;
+    }
+
+    setTimeout(start, 0);
 }
