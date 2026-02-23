@@ -51,6 +51,319 @@ export class PokemonDetailView {
 
 
     /**
+     * Creates moves section
+     * @private
+     * @param {Array} moves - Pokemon moves array
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Moves section
+     */
+    _createMovesSection(moves, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', uiText.moves);
+        const movesList = createSafeElement('ul');
+        movesList.classList.add('moves-list');
+
+        if (!moves || moves.length === 0) {
+            const noMovesItem = createSafeElement('li', uiText.noMoves);
+            movesList.appendChild(noMovesItem);
+        } else {
+            moves.forEach(move => {
+                const moveItem = this._createMoveItem(move, uiText);
+                movesList.appendChild(moveItem);
+            });
+        }
+
+        section.appendChild(heading);
+        section.appendChild(movesList);
+        return section;
+    }
+
+    /**
+     * Creates individual move item
+     * @private
+     * @param {Object} move - Move data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Move item element
+     */
+    _createMoveItem(move, uiText) {
+        const currentLang = this.uiController.getCurrentLanguage();
+        const moveName = currentLang === 'jp' ? (move.name_jp || move.name_en) : move.name_en;
+        const moveType = currentLang === 'jp' ? (move.type_jp || move.type_en) : move.type_en;
+
+        const listItem = createSafeElement('li');
+        listItem.classList.add('move-item');
+        
+        const moveHeader = createSafeElement('div');
+        moveHeader.classList.add('move-header');
+        
+        const moveNameContainer = createSafeElement('div');
+        moveNameContainer.classList.add('move-name-container');
+        
+        const nameElement = createSafeElement('strong', moveName);
+        moveNameContainer.appendChild(nameElement);
+        
+        // Add romaji for move name if in Japanese mode
+        if (currentLang === 'jp' && move.name_romaji) {
+            const romajiElement = createSafeElement('span', ` (${move.name_romaji})`);
+            romajiElement.classList.add('move-name-romaji');
+            moveNameContainer.appendChild(romajiElement);
+        }
+        
+        // Add level indicator if available
+        if (move.level !== undefined && move.level !== null) {
+            const levelBadge = createSafeElement('span', 
+                move.level === 0 ? '—' : `${uiText.moveLevel || 'Lv.'} ${move.level}`
+            );
+            levelBadge.classList.add('move-level-badge');
+            moveNameContainer.appendChild(levelBadge);
+        }
+        
+        const typeElement = createSafeElement('span', ` `);
+        const typeTextSpan = createSafeElement('span', moveType);
+        typeElement.appendChild(typeTextSpan);
+        
+        // Add romaji for move type if in Japanese mode
+        if (currentLang === 'jp' && move.type_romaji) {
+            const typeRomajiSpan = createSafeElement('span', ` (${move.type_romaji})`);
+            typeRomajiSpan.classList.add('move-type-romaji');
+            typeElement.appendChild(typeRomajiSpan);
+        }
+        
+        moveHeader.appendChild(moveNameContainer);
+        moveHeader.appendChild(typeElement);
+        
+        const detailsElement = createSafeElement('small');
+        
+        const power = move.power || 'N/A';
+        const accuracy = move.accuracy || 'N/A';
+        const pp = move.pp || 'N/A';
+        
+        detailsElement.textContent = `${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}`;
+
+        listItem.appendChild(moveHeader);
+        listItem.appendChild(detailsElement);
+
+        return listItem;
+    }
+
+    /**
+     * Creates evolution chain section
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Evolution chain section
+     */
+    _createEvolutionChainSection(pokemon, uiText) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'evolution-chain-container');
+
+        // Create heading
+        const heading = createSafeElement('h4', uiText.evolutionChain || 'Evolution Chain');
+
+        // Create content container (always visible)
+        const content = createSafeElement('div');
+        content.classList.add('evolution-chain-content', 'expanded');
+        content.setAttribute('role', 'region');
+        content.setAttribute('aria-label', 'Evolution chain details');
+
+        const chainList = createSafeElement('div');
+        chainList.classList.add('evolution-chain-list');
+
+        // Add evolution items
+        pokemon.evolution_chain.forEach((evo, index) => {
+            if (index > 0) {
+                const arrow = createSafeElement('span', '→');
+                arrow.classList.add('evolution-arrow');
+                arrow.setAttribute('aria-hidden', 'true');
+                chainList.appendChild(arrow);
+            }
+
+            const evoItem = this._createEvolutionItem(evo, pokemon.id);
+            chainList.appendChild(evoItem);
+        });
+
+        content.appendChild(chainList);
+
+        section.appendChild(heading);
+        section.appendChild(content);
+        return section;
+    }
+
+    /**
+     * Creates individual evolution item
+     * @private
+     * @param {Object} evolution - Evolution data
+     * @param {number} currentPokemonId - Current Pokemon ID
+     * @returns {HTMLElement} Evolution item element
+     */
+    _createEvolutionItem(evolution, currentPokemonId) {
+        const item = createSafeElement('div');
+        item.classList.add('evolution-item');
+        
+        if (evolution.id === currentPokemonId) {
+            item.classList.add('current');
+            item.setAttribute('aria-current', 'true');
+        } else {
+            // Make non-current evolution items clickable
+            item.setAttribute('role', 'button');
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `View ${evolution.name} details`);
+            item.style.cursor = 'pointer';
+            
+            // Add click handler
+            item.addEventListener(EVENTS.CLICK, (event) => {
+                event.stopPropagation();
+                this._handleEvolutionClick(evolution.id);
+            });
+            
+            // Add keyboard handler for accessibility
+            item.addEventListener(EVENTS.KEYDOWN, (event) => {
+                if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    this._handleEvolutionClick(evolution.id);
+                }
+            });
+        }
+
+        // Create image with error handling and CDN fallback
+        const img = createImageWithFallback(
+            `https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/${evolution.id}.png`,
+            evolution.name,
+            {
+                onError: (failedImg) => {
+                    const errorContainer = this._createImageErrorFallback(evolution.name);
+                    item.replaceChild(errorContainer, failedImg);
+                }
+            }
+        );
+        img.loading = 'lazy';
+
+        const nameSpan = createSafeElement('span', evolution.name);
+        nameSpan.classList.add('evolution-name');
+
+        item.appendChild(img);
+        item.appendChild(nameSpan);
+
+        return item;
+    }
+
+    /**
+     * Handles evolution item click
+     * @private
+     * @param {number} pokemonId - Pokemon ID to show
+     */
+    _handleEvolutionClick(pokemonId) {
+        const pokemon = this.dataManager.getPokemonById(pokemonId);
+        if (pokemon) {
+            this.showPokemonDetail(pokemon);
+        }
+    }
+
+    /**
+     * Creates a generic type effectiveness grid section
+     * @private
+     */
+    _createTypeGridSection({ sectionClass, headingText, entries, multiplierText, titleBuilder }) {
+        const section = createSafeElement('div');
+        section.classList.add('detail-section');
+
+        const heading = createSafeElement('h4', headingText);
+        const grid = createSafeElement('div');
+        grid.classList.add('weaknesses-grid');
+
+        Object.entries(entries).forEach(([type, multiplier]) => {
+            const item = createSafeElement('div');
+            item.classList.add(sectionClass);
+            item.classList.add(`type-${type.toLowerCase()}`);
+
+            const typeText = createSafeElement('span', type);
+            const multiplierSpan = createSafeElement('span', multiplierText(multiplier));
+            multiplierSpan.classList.add('multiplier');
+
+            item.appendChild(typeText);
+            item.appendChild(multiplierSpan);
+            item.setAttribute('title', titleBuilder(type, multiplier));
+
+            grid.appendChild(item);
+        });
+
+        section.appendChild(heading);
+        section.appendChild(grid);
+        return section;
+    }
+
+    /**
+     * Creates compact weaknesses section
+     * @private
+     * @param {Object} weaknesses - Weaknesses object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Weaknesses section
+     */
+    _createWeaknessesSection(weaknesses, uiText) {
+        return this._createTypeGridSection({
+            sectionClass: 'weakness-item',
+            headingText: uiText.weaknesses || 'Weaknesses',
+            entries: weaknesses,
+            multiplierText: (multiplier) => `${multiplier}×`,
+            titleBuilder: (type, multiplier) => `Takes ${multiplier}× damage from ${type} type moves`
+        });
+    }
+
+    /**
+     * Creates type effectiveness section with weaknesses, resistances, and immunities
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement|null} Type effectiveness section or null
+     */
+    _createTypeEffectivenessSection(pokemon, uiText) {
+        const hasWeaknesses = pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0;
+        const hasResistances = pokemon.resistances && Object.keys(pokemon.resistances).length > 0;
+        const hasImmunities = pokemon.immunities && Object.keys(pokemon.immunities).length > 0;
+        
+        if (!hasWeaknesses && !hasResistances && !hasImmunities) {
+            return null;
+        }
+        
+        const container = createSafeElement('div');
+        container.classList.add('type-effectiveness-container');
+        
+        if (hasWeaknesses) {
+            container.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
+        }
+        
+        if (hasResistances) {
+            container.appendChild(this._createResistancesSection(pokemon.resistances, uiText));
+        }
+        
+        if (hasImmunities) {
+            container.appendChild(this._createImmunitiesSection(pokemon.immunities, uiText));
+        }
+        
+        return container;
+    }
+
+    /**
+     * Creates resistances section
+     * @private
+     * @param {Object} resistances - Resistances object
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement} Resistances section
+     */
+    _createResistancesSection(resistances, uiText) {
+        return this._createTypeGridSection({
+            sectionClass: 'resistance-item',
+            headingText: uiText.resistances || 'Resistances',
+            entries: resistances,
+            multiplierText: (multiplier) => `${multiplier}×`,
+            titleBuilder: (type, multiplier) => `Takes ${multiplier}× damage from ${type} type moves`
+        });
+    }
+
+    /**
      * Creates immunities section
      * @private
      * @param {Object} immunities - Immunities object
