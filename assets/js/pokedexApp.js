@@ -10,7 +10,7 @@ import { UIController } from './managers/uiController.js';
 import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
 import { SearchController } from './controllers/searchController.js';
-import { SortController } from './controllers/sortController.js';
+import { SortController } from './controllers/sortController.js?v=1.1.4';
 import { URLRouter } from './utils/urlRouter.js';
 import { StructuredDataGenerator } from './utils/structuredData.js';
 import { KeyboardShortcutsModal } from './components/keyboardShortcutsModal.js';
