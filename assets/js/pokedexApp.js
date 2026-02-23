@@ -14,6 +14,8 @@ import { SortController } from './controllers/sortController.js';
 import { URLRouter } from './utils/urlRouter.js';
 import { StructuredDataGenerator } from './utils/structuredData.js';
 import { KeyboardShortcutsModal } from './components/keyboardShortcutsModal.js';
+import { debounce } from './utils/debounce.js';
+import { AppState } from './utils/appState.js';
 
 /**
  * Main application class that coordinates all components
@@ -28,6 +30,7 @@ export class PokedexApp {
         this.sortController = null;
         this.keyboardShortcutsModal = null;
         this.isInitialized = false;
+        this.appState = new AppState();
     }
 
     /**
@@ -63,6 +66,7 @@ export class PokedexApp {
             this._checkInitialRoute();
             
             this.isInitialized = true;
+            this.appState.set({ isInitialized: true });
             
         } catch (error) {
             console.error('Failed to initialize Pokedex application:', error);
@@ -137,6 +141,7 @@ export class PokedexApp {
      * @param {string} searchTerm - Search term used
      */
     _handleSearchResults(results, searchTerm) {
+        this.appState.set({ searchTerm });
         const sortedResults = this.sortController.sortPokemon(results);
         this.cardRenderer.renderPokemonCards(
             sortedResults, 
@@ -150,6 +155,7 @@ export class PokedexApp {
      * @param {string} sortOption - Sort option that was selected
      */
     _handleSortChange(sortOption) {
+        this.appState.set({ sortOption });
         // Re-apply current search with new sort
         const currentSearchTerm = this.searchController.getCurrentSearchTerm();
         const currentLanguage = this.uiController.getCurrentLanguage();
@@ -170,6 +176,7 @@ export class PokedexApp {
     _handlePokemonCardClick(pokemon) {
         if (this.detailView) {
             this.detailView.showPokemonDetail(pokemon);
+            this.appState.set({ detailViewVisible: true, currentPokemon: pokemon });
             
             // Update URL and SEO metadata
             const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
@@ -193,6 +200,7 @@ export class PokedexApp {
         const pokemon = this.dataManager.getPokemonById(pokemonId);
         if (pokemon && this.detailView) {
             this.detailView.showPokemonDetail(pokemon);
+            this.appState.set({ detailViewVisible: true, currentPokemon: pokemon });
             
             // Update SEO metadata
             const name = this.dataManager.getPokemonName(pokemon, this.uiController.getCurrentLanguage());
@@ -223,6 +231,7 @@ export class PokedexApp {
      * @private
      */
     _handleDetailViewClose() {
+        this.appState.set({ detailViewVisible: false, currentPokemon: null });
         // Update URL when closing detail view
         if (this.urlRouter) {
             this.urlRouter.popPokemonRoute();
@@ -262,7 +271,7 @@ export class PokedexApp {
         }
 
         // Window resize handling for responsive design
-        window.addEventListener('resize', this._debounce(() => {
+        window.addEventListener('resize', debounce(() => {
             this._handleWindowResize();
         }, 250));
 
@@ -352,24 +361,6 @@ export class PokedexApp {
         }
     }
 
-    /**
-     * Simple debounce utility
-     * @private
-     * @param {Function} func - Function to debounce
-     * @param {number} wait - Wait time in milliseconds
-     * @returns {Function} Debounced function
-     */
-    _debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
 
     /**
      * Gets a Pokemon by ID (public API)
@@ -416,16 +407,27 @@ export class PokedexApp {
      * @returns {Object} Application state object
      */
     getState() {
+        const state = this.appState.getState();
         return {
+            ...state,
             isInitialized: this.isInitialized,
             dataLoaded: this.dataManager.isDataLoaded(),
             currentLanguage: this.uiController.getCurrentLanguage(),
             currentTheme: this.uiController.getCurrentTheme(),
-            searchTerm: this.searchController ? this.searchController.getCurrentSearchTerm() : '',
-            sortOption: this.sortController ? this.sortController.getCurrentSortOption() : 'number-asc',
-            detailViewVisible: this.detailView ? this.detailView.isDetailVisible() : false,
-            currentPokemon: this.detailView ? this.detailView.getCurrentPokemon() : null
+            searchTerm: this.searchController ? this.searchController.getCurrentSearchTerm() : state.searchTerm,
+            sortOption: this.sortController ? this.sortController.getCurrentSortOption() : state.sortOption,
+            detailViewVisible: this.detailView ? this.detailView.isDetailVisible() : state.detailViewVisible,
+            currentPokemon: this.detailView ? this.detailView.getCurrentPokemon() : state.currentPokemon
         };
+    }
+
+    /**
+     * Subscribes to app state changes
+     * @param {Function} listener - Listener callback (prevState, nextState)
+     * @returns {Function} Unsubscribe function
+     */
+    subscribeToState(listener) {
+        return this.appState.subscribe(listener);
     }
 
     /**

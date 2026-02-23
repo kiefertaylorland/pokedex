@@ -37,6 +37,7 @@ export class PokemonDataManager {
         try {
             this.allPokemonData = await this.loadingPromise;
             this.isLoaded = true;
+            this.searchCache.clear();
             return this.allPokemonData;
         } catch (error) {
             this.loadingPromise = null;
@@ -181,7 +182,11 @@ export class PokemonDataManager {
 
         const normalizedTerm = searchTerm.toLowerCase().trim();
         const cacheKey = `${normalizedTerm}:${language}`;
-        
+
+        if (this.searchCache.has(cacheKey)) {
+            return this.searchCache.get(cacheKey);
+        }
+
         // Create array of pokemon with match scores
         const pokemonWithScores = this.allPokemonData.map(pokemon => {
             // Search by English name
@@ -216,10 +221,19 @@ export class PokemonDataManager {
         });
 
         // Filter out non-matches and sort by score (descending)
-        return pokemonWithScores
+        const results = pokemonWithScores
             .filter(item => item.score > 0)
             .sort((a, b) => b.score - a.score)
             .map(item => item.pokemon);
+
+        // prevent unbounded growth in long sessions
+        if (this.searchCache.size > 100) {
+            const firstKey = this.searchCache.keys().next().value;
+            this.searchCache.delete(firstKey);
+        }
+        this.searchCache.set(cacheKey, results);
+
+        return results;
     }
 
     /**
