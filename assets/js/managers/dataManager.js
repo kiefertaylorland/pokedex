@@ -5,6 +5,7 @@
 
 import { DATA } from '../constants.js';
 import { CacheManager } from '../utils/cacheManager.js';
+import { fuzzyMatchScore } from '../utils/fuzzySearch.js';
 
 /**
  * Manages Pokemon data operations including fetching and caching
@@ -100,76 +101,6 @@ export class PokemonDataManager {
     }
 
     /**
-     * Calculates fuzzy match score between search term and target string
-     * @private
-     * @param {string} searchTerm - Search term (lowercase)
-     * @param {string} target - Target string to match (lowercase)
-     * @returns {number} Match score (higher is better, 0 means no match)
-     */
-    _fuzzyMatchScore(searchTerm, target) {
-        if (!searchTerm || !target) {
-            return 0;
-        }
-
-        // Exact match gets highest score
-        if (target === searchTerm) {
-            return 1000;
-        }
-
-        // Substring match (consecutive characters) gets high score
-        if (target.includes(searchTerm)) {
-            // Bonus if it starts with the search term
-            if (target.startsWith(searchTerm)) {
-                return 900 + (100 / target.length); // Shorter names rank higher
-            }
-            return 700 + (100 / target.length);
-        }
-
-        // Fuzzy match (non-consecutive characters in order)
-        let searchIndex = 0;
-        let targetIndex = 0;
-        let matchedPositions = [];
-
-        while (searchIndex < searchTerm.length && targetIndex < target.length) {
-            if (searchTerm[searchIndex] === target[targetIndex]) {
-                matchedPositions.push(targetIndex);
-                searchIndex++;
-            }
-            targetIndex++;
-        }
-
-        // If we didn't match all search characters, no match
-        if (searchIndex < searchTerm.length) {
-            return 0;
-        }
-
-        // Calculate score based on how close together the matched characters are
-        // and bonus for matches at the start
-        let score = 500; // Base fuzzy match score
-        
-        // Bonus if first character matches
-        if (matchedPositions[0] === 0) {
-            score += 100;
-        }
-
-        // Calculate average distance between matched characters (lower is better)
-        if (matchedPositions.length > 1) {
-            let totalDistance = 0;
-            for (let i = 1; i < matchedPositions.length; i++) {
-                totalDistance += matchedPositions[i] - matchedPositions[i - 1];
-            }
-            const avgDistance = totalDistance / (matchedPositions.length - 1);
-            // Subtract score based on average distance (max 200 points)
-            score -= Math.min(avgDistance * 10, 200);
-        }
-
-        // Prefer shorter strings
-        score += 100 / target.length;
-
-        return Math.max(score, 1); // Ensure at least 1 for valid fuzzy matches
-    }
-
-    /**
      * Searches Pokemon by name or ID with fuzzy matching
      * @param {string} searchTerm - Search term
      * @param {string} language - Current language ('en' or 'jp')
@@ -204,11 +135,11 @@ export class PokemonDataManager {
 
             // Calculate match scores for each field
             const scores = [
-                this._fuzzyMatchScore(normalizedTerm, nameEn),
-                this._fuzzyMatchScore(normalizedTerm, nameJp),
+                fuzzyMatchScore(normalizedTerm, nameEn),
+                fuzzyMatchScore(normalizedTerm, nameJp),
                 idString.includes(normalizedTerm) ? 950 : 0, // ID matches are prioritized
-                this._fuzzyMatchScore(normalizedTerm, typesEn) * 0.5, // Type matches count but less
-                this._fuzzyMatchScore(normalizedTerm, typesJp) * 0.5
+                fuzzyMatchScore(normalizedTerm, typesEn) * 0.5, // Type matches count but less
+                fuzzyMatchScore(normalizedTerm, typesJp) * 0.5
             ];
 
             // Use the highest score
