@@ -17,7 +17,10 @@ export class SearchController {
         this.onSearchResults = onSearchResults;
         this.searchInput = document.getElementById(ELEMENT_IDS.SEARCH_INPUT);
         this.currentSearchTerm = '';
-        
+        this.boundInputHandler = null;
+        this.boundPasteHandler = null;
+        this.boundKeydownHandler = null;
+
         // Create debounced search function
         this.debouncedSearch = debounce(
             this._performSearch.bind(this), 
@@ -38,24 +41,24 @@ export class SearchController {
             return;
         }
 
-        this.searchInput.addEventListener('input', (event) => {
+        this.boundInputHandler = (event) => {
             this._handleSearchInput(event.target.value);
-        });
-
-        // Handle paste events
-        this.searchInput.addEventListener('paste', (event) => {
+        };
+        this.boundPasteHandler = (event) => {
             setTimeout(() => {
                 this._handleSearchInput(event.target.value);
             }, 0);
-        });
-
-        // Clear search on Escape key
-        this.searchInput.addEventListener('keydown', (event) => {
+        };
+        this.boundKeydownHandler = (event) => {
             if (event.key === 'Escape') {
                 this.clearSearch();
                 event.target.blur();
             }
-        });
+        };
+
+        this.searchInput.addEventListener('input', this.boundInputHandler);
+        this.searchInput.addEventListener('paste', this.boundPasteHandler);
+        this.searchInput.addEventListener('keydown', this.boundKeydownHandler);
     }
 
     /**
@@ -236,4 +239,23 @@ export class SearchController {
             this.searchInput.setAttribute('aria-label', uiText.searchPlaceholder);
         }
     }
+    /**
+     * Removes event listeners and releases references
+     */
+    destroy() {
+        if (!this.searchInput) {
+            return;
+        }
+
+        if (this.boundInputHandler) {
+            this.searchInput.removeEventListener('input', this.boundInputHandler);
+        }
+        if (this.boundPasteHandler) {
+            this.searchInput.removeEventListener('paste', this.boundPasteHandler);
+        }
+        if (this.boundKeydownHandler) {
+            this.searchInput.removeEventListener('keydown', this.boundKeydownHandler);
+        }
+    }
+
 }
