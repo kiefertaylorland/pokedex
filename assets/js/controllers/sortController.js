@@ -4,6 +4,7 @@
  */
 
 import { ELEMENT_IDS, SORT_OPTIONS, STORAGE_KEYS_SORT } from '../constants.js';
+import { Storage } from '../utils/storage.js';
 
 /**
  * Manages sorting functionality for Pokemon display
@@ -15,7 +16,8 @@ export class SortController {
         this.onSortChange = onSortChange;
         this.sortSelect = document.getElementById(ELEMENT_IDS.SORT_SELECT);
         this.currentSortOption = this._loadSortPreference();
-        
+        this.boundChangeHandler = null;
+
         this._bindEvents();
     }
 
@@ -29,9 +31,11 @@ export class SortController {
             return;
         }
 
-        this.sortSelect.addEventListener('change', (event) => {
+        this.boundChangeHandler = (event) => {
             this._handleSortChange(event.target.value);
-        });
+        };
+
+        this.sortSelect.addEventListener('change', this.boundChangeHandler);
     }
 
     /**
@@ -184,7 +188,7 @@ export class SortController {
      */
     _loadSortPreference() {
         try {
-            return localStorage.getItem(STORAGE_KEYS_SORT.SORT_ORDER) || SORT_OPTIONS.NUMBER_ASC;
+            return Storage.get(STORAGE_KEYS_SORT.SORT_ORDER, SORT_OPTIONS.NUMBER_ASC);
         } catch (error) {
             console.warn('Failed to load sort preference:', error);
             return SORT_OPTIONS.NUMBER_ASC;
@@ -198,7 +202,7 @@ export class SortController {
      */
     _saveSortPreference(sortOption) {
         try {
-            localStorage.setItem(STORAGE_KEYS_SORT.SORT_ORDER, sortOption);
+            Storage.set(STORAGE_KEYS_SORT.SORT_ORDER, sortOption);
         } catch (error) {
             console.warn('Failed to save sort preference:', error);
         }
@@ -276,4 +280,13 @@ export class SortController {
             this.sortSelect.disabled = true;
         }
     }
+    /**
+     * Removes sort listeners and internal references
+     */
+    destroy() {
+        if (this.sortSelect && this.boundChangeHandler) {
+            this.sortSelect.removeEventListener('change', this.boundChangeHandler);
+        }
+    }
+
 }

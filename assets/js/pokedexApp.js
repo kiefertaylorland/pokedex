@@ -469,6 +469,9 @@ export class PokedexApp {
         if (this.searchController && typeof this.searchController.destroy === 'function') {
             this.searchController.destroy();
         }
+        if (this.sortController && typeof this.sortController.destroy === 'function') {
+            this.sortController.destroy();
+        }
 
         // Clear data
         if (this.dataManager) {
