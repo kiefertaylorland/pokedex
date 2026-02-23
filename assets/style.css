@@ -1683,6 +1683,59 @@ main { max-width: 1240px; margin: 0 auto; padding: 1.35rem; }
   border: 1px solid var(--oc-border);
 }
 
+/* Detail modal color harmonization with main page */
+.detail-modal-content,
+.detail-modal-content * {
+  color: var(--oc-text);
+}
+
+.detail-modal-content h2,
+.detail-modal-content h3,
+.detail-modal-content h4,
+.detail-modal-content strong {
+  color: #f5f7fb;
+}
+
+.detail-modal-content p,
+.detail-modal-content small,
+.detail-modal-content .move-details,
+.detail-modal-content .info-value,
+.detail-modal-content .sprite-label,
+.detail-modal-content .evolution-name {
+  color: var(--oc-muted);
+}
+
+.detail-modal-content .detail-section,
+.detail-modal-content .detail-header,
+.detail-modal-content .moves-list li,
+.detail-modal-content .ability-item,
+.detail-modal-content .sprite-item,
+.detail-modal-content .evolution-item,
+.detail-modal-content .info-item,
+.detail-modal-content .enhanced-stat-item {
+  background: var(--oc-surface);
+  border-color: var(--oc-border);
+}
+
+.detail-modal-content .moves-list li:hover,
+.detail-modal-content .evolution-item:hover,
+.detail-modal-content .ability-item:hover,
+.detail-modal-content .sprite-item:hover {
+  background: var(--oc-surface-2);
+  border-color: rgba(110,162,255,.45);
+}
+
+#close-detail-view::before,
+#close-detail-view::after {
+  background: var(--oc-text);
+}
+
+#close-detail-view:hover::before,
+#close-detail-view:hover::after {
+  background: #cfe0ff;
+  box-shadow: none;
+}
+
 footer {
   border-top: 1px solid var(--oc-border);
   color: var(--oc-muted);
