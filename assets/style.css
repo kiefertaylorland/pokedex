@@ -1654,12 +1654,16 @@ main { max-width: 1240px; margin: 0 auto; padding: 1.35rem; }
 }
 
 .pokemon-detail-view.show {
-  background: rgba(3,6,13,.72);
+  background: rgba(11,13,23,.55);
   backdrop-filter: blur(8px);
 }
 
 .detail-modal-content {
-  background: rgba(11,13,23,.92);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(37,99,235,.15), transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124,58,237,.10), transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(22,163,74,.06), transparent 45%),
+    var(--oc-bg-alt);
   border: 1px solid var(--oc-border);
   box-shadow: 0 24px 80px -32px rgba(0,0,0,.75);
   border-radius: 22px;
@@ -1673,7 +1677,7 @@ main { max-width: 1240px; margin: 0 auto; padding: 1.35rem; }
 .info-item,
 .enhanced-stat-item,
 #detail-content .moves-list li {
-  background: var(--oc-surface);
+  background: var(--oc-surface-2);
   border: 1px solid var(--oc-border);
   box-shadow: none;
 }
@@ -1713,7 +1717,7 @@ main { max-width: 1240px; margin: 0 auto; padding: 1.35rem; }
 .detail-modal-content .evolution-item,
 .detail-modal-content .info-item,
 .detail-modal-content .enhanced-stat-item {
-  background: var(--oc-surface);
+  background: var(--oc-surface-2);
   border-color: var(--oc-border);
 }
 
@@ -1721,7 +1725,7 @@ main { max-width: 1240px; margin: 0 auto; padding: 1.35rem; }
 .detail-modal-content .evolution-item:hover,
 .detail-modal-content .ability-item:hover,
 .detail-modal-content .sprite-item:hover {
-  background: var(--oc-surface-2);
+  background: rgba(255,255,255,0.12);
   border-color: rgba(110,162,255,.45);
 }
 
