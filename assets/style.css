@@ -439,6 +439,12 @@ body.dark-mode .pokemon-types span {
     margin-bottom: 1rem;
 }
 
+.detail-main-grid > .detail-section {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 768px) {
     .detail-main-grid {
         grid-template-columns: 1fr;
@@ -1468,9 +1474,10 @@ input:focus-visible,
 
 /* Type Effectiveness Sections */
 .type-effectiveness-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .resistance-item,

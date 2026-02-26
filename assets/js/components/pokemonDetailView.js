@@ -720,23 +720,28 @@ export class PokemonDetailView {
         modalContent.appendChild(closeButton);
         modalContent.appendChild(header);
 
+        const mainGrid = createSafeElement('div');
+        mainGrid.classList.add('detail-main-grid');
+
         const bioSection = createSafeElement('div');
         bioSection.classList.add('detail-section');
         bioSection.appendChild(createSafeElement('h4', uiText.bio || 'Bio'));
         bioSection.appendChild(createSafeElement('p', bio || 'No description available.'));
-        modalContent.appendChild(bioSection);
+        mainGrid.appendChild(bioSection);
 
         if (pokemon.height || pokemon.weight || pokemon.genus_en || pokemon.genus_jp) {
-            modalContent.appendChild(this._createPhysicalInfoSection(pokemon, uiText));
+            mainGrid.appendChild(this._createPhysicalInfoSection(pokemon, uiText));
         }
 
         if (pokemon.abilities?.length) {
-            modalContent.appendChild(this._createAbilitiesSection(pokemon.abilities, uiText));
+            mainGrid.appendChild(this._createAbilitiesSection(pokemon.abilities, uiText));
         }
 
         if (pokemon.sprites) {
-            modalContent.appendChild(this._createSpritesSection(pokemon.sprites, name, uiText));
+            mainGrid.appendChild(this._createSpritesSection(pokemon.sprites, name, uiText));
         }
+
+        modalContent.appendChild(mainGrid);
 
         const typeSection = this._createTypeEffectivenessSection(pokemon, uiText);
         if (typeSection) {
