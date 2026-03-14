@@ -35,13 +35,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Validate SEO files
-        run: python validate_seo_files.py
+        run: python scripts/validate_seo_files.py
 
       - name: Check Python syntax
         run: |
           python -m py_compile scripts/pokeapi_fetch.py
           python -m py_compile scripts/generate_type_effectiveness.py
-          python -m py_compile validate_seo_files.py
+          python -m py_compile scripts/validate_seo_files.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

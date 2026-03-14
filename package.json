@@ -13,7 +13,7 @@
     "lint:fix": "eslint assets/js/**/*.js --fix",
     "lint:changed": "bash scripts/lint-changed.sh",
     "serve": "python3 -m http.server 8000",
-    "validate": "python validate_seo_files.py",
+    "validate": "python scripts/validate_seo_files.py",
     "generate:types": "python scripts/generate_type_effectiveness.py"
   },
   "devDependencies": {

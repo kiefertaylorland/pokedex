@@ -30,7 +30,6 @@ python scripts/generate_type_effectiveness.py # Regenerate typeEffectiveness.js 
 
 # Validation
 npm run validate          # Validate SEO files and structured data
-python validate_seo_files.py         # Run SEO validation directly
 ```
 
 ## Architecture

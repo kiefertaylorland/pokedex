@@ -75,18 +75,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive data schema documentation (DATA_SCHEMA.md)
 - Documentation for PokéAPI module purposes (POKEAPI_MODULES.md)
 - Documentation for data file variants (DATA_FILES.md)
-- Known test failures documentation (KNOWN_TEST_FAILURES.md)
 - Data validation in pokeapi_fetch.py with 19 field checks
 - Command-line arguments for pokeapi_fetch.py (--count, --output, --sleep)
-- Type hints to core Python modules (pokeapi.py, pokeapi_fetch.py)
+- Type hints to core Python modules
 - Python logging framework across all scripts
-- Shared pytest fixtures in tests/conftest.py
-- Test coverage reporting with coverage package
 
 ### Changed
 - Refactored service-worker.js to use async/await pattern consistently
-- Moved test_evolution_manual.py to tests/ directory
-- Improved test infrastructure with centralized server management
 - Enhanced copilot-instructions.md with detailed architecture documentation
 
 ### Fixed

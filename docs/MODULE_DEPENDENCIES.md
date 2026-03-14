@@ -489,7 +489,7 @@ Currently all modules load on page load. Future optimization:
 - **Architecture**: `.github/copilot-instructions.md`
 - **Data Schema**: `DATA_SCHEMA.md`
 - **Code Style**: `CONTRIBUTING.md`
-- **Issues**: `issues.md` (see Issue #17, #18, #19, #20)
+- **Issues**: [GitHub Issues](https://github.com/kiefertaylorland/pokedex/issues)
 
 ---
 
