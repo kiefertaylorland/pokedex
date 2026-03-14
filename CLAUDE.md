@@ -192,4 +192,3 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 - `API.md` — Auto-generated JS module API docs (`python generate_api_docs.py`)
 - `KNOWN_TEST_FAILURES.md` — Environment-specific test failures and workarounds
 - `LINTING.md` — Linting strategy and legacy debt
-- `issues.md` — Issue tracker (45 issues, all addressed)
