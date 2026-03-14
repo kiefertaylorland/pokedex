@@ -7,13 +7,13 @@ An interactive web application showcasing all 1025 Pokémon (Generations I-IX) w
 ## Screenshots
 
 ### Main Interface
-![Pokedex Main UI Light Mode](assets/screenshots/home-page-light.png)
-![Pokedex Main UI Dark Mode](assets/screenshots/home-page-dark.png)
+![Pokédex Main UI](assets/screenshots/home-page.png)
 
+### Search & Filter
+![Search by type — Fire-type results](assets/screenshots/search.png)
 
-### Pokemon Details
-![Pokemon Detail View Light Mode](assets/screenshots/details-view-light.png)
-![Pokemon Detail View Dark Mode](assets/screenshots/details-view-dark.png)
+### Pokémon Details
+![Charizard detail view — bio, stats, abilities, and sprites](assets/screenshots/details-view.png)
 
 
 ## Features
