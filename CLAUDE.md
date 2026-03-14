@@ -26,8 +26,7 @@ npm run lint:changed      # Lint only files changed in current branch
 
 # Data management
 python pokeapi_fetch.py              # Regenerate all Pokédex data from PokéAPI (~10 min)
-python generate_type_effectiveness.py # Regenerate typeEffectiveness.js from Python source
-python generate_api_docs.py          # Regenerate API.md from JSDoc comments
+python scripts/generate_type_effectiveness.py # Regenerate typeEffectiveness.js from Python source
 
 # Validation
 npm run validate          # Validate SEO files and structured data
@@ -94,7 +93,7 @@ python pokeapi_fetch.py -c 151   # Gen 1 only
 Type data exists in `pokeapi_fetch.py` (Python dict `TYPE_EFFECTIVENESS`) as the **single source of truth**. `assets/js/utils/typeEffectiveness.js` is **auto-generated** — never edit it manually:
 
 ```bash
-python generate_type_effectiveness.py  # Regenerates typeEffectiveness.js
+python scripts/generate_type_effectiveness.py  # Regenerates typeEffectiveness.js
 ```
 
 ## JavaScript Patterns
@@ -176,7 +175,7 @@ All app docs live in `docs/`:
 - `docs/DATA_SCHEMA.md` — Complete field-by-field schema for `pokedex_data.json`
 - `docs/POKEAPI_MODULES.md` — `pokeapi.py` vs `pokeapi_fetch.py` explained
 - `docs/MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
-- `docs/API.md` — Auto-generated JS module API docs (`python generate_api_docs.py`)
+- `docs/API.md` — JS module API docs (generated from JSDoc comments)
 - `docs/LINTING.md` — Linting strategy and legacy debt
 - `docs/CHANGELOG.md` — Version history
 - `docs/DATA_FILES.md` — Data file variants and usage
