@@ -39,8 +39,7 @@ jobs:
 
       - name: Check Python syntax
         run: |
-          python -m py_compile pokeapi.py
-          python -m py_compile pokeapi_fetch.py
+          python -m py_compile scripts/pokeapi_fetch.py
           python -m py_compile scripts/generate_type_effectiveness.py
           python -m py_compile validate_seo_files.py
 

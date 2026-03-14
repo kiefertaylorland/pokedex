@@ -5,8 +5,8 @@
  * DO NOT EDIT MANUALLY - changes will be overwritten
  * 
  * To update type effectiveness data:
- * 1. Edit TYPE_EFFECTIVENESS in pokeapi_fetch.py
- * 2. Run: python generate_type_effectiveness.py
+ * 1. Edit TYPE_EFFECTIVENESS in scripts/pokeapi_fetch.py
+ * 2. Run: python scripts/generate_type_effectiveness.py
  * 
  * Generated: 2025-11-02 14:04:25
  */

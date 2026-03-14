@@ -25,7 +25,7 @@ npm run lint:fix          # Auto-fix lint issues
 npm run lint:changed      # Lint only files changed in current branch
 
 # Data management
-python pokeapi_fetch.py              # Regenerate all Pokédex data from PokéAPI (~10 min)
+python scripts/pokeapi_fetch.py              # Regenerate all Pokédex data from PokéAPI (~10 min)
 python scripts/generate_type_effectiveness.py # Regenerate typeEffectiveness.js from Python source
 
 # Validation
@@ -76,21 +76,15 @@ document.addEventListener(EVENTS.POKEMON_SELECTED, (e) => { /* ... */ });
 
 ### Two Python Modules (Different Purposes)
 
-**`pokeapi.py`** — Simple read-only loader (30 lines):
-```python
-from pokeapi import fetch_pokemon
-pokemon = fetch_pokemon(25)  # Returns Pikachu from pokedex_data.json
-```
-
-**`pokeapi_fetch.py`** — Full API fetcher (372 lines), generates `pokedex_data.json`:
+**`scripts/pokeapi_fetch.py`** — Full API fetcher (372 lines), generates `pokedex_data.json`:
 ```bash
-python pokeapi_fetch.py          # All 1025 Pokémon (~10 min)
-python pokeapi_fetch.py -c 151   # Gen 1 only
+python scripts/pokeapi_fetch.py          # All 1025 Pokémon (~10 min)
+python scripts/pokeapi_fetch.py -c 151   # Gen 1 only
 ```
 
 ### Type Effectiveness
 
-Type data exists in `pokeapi_fetch.py` (Python dict `TYPE_EFFECTIVENESS`) as the **single source of truth**. `assets/js/utils/typeEffectiveness.js` is **auto-generated** — never edit it manually:
+Type data exists in `scripts/pokeapi_fetch.py` (Python dict `TYPE_EFFECTIVENESS`) as the **single source of truth**. `assets/js/utils/typeEffectiveness.js` is **auto-generated** — never edit it manually:
 
 ```bash
 python scripts/generate_type_effectiveness.py  # Regenerates typeEffectiveness.js
@@ -147,8 +141,8 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 5. Verify keyboard navigation and screen reader support
 
 **Adding new data fields:**
-1. Update `pokeapi_fetch.py`
-2. Regenerate: `python pokeapi_fetch.py`
+1. Update `scripts/pokeapi_fetch.py`
+2. Regenerate: `python scripts/pokeapi_fetch.py`
 3. Update frontend to use new fields
 
 **Deploying:**
@@ -173,7 +167,7 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 All app docs live in `docs/`:
 
 - `docs/DATA_SCHEMA.md` — Complete field-by-field schema for `pokedex_data.json`
-- `docs/POKEAPI_MODULES.md` — `pokeapi.py` vs `pokeapi_fetch.py` explained
+- `docs/POKEAPI_MODULES.md` — `scripts/pokeapi_fetch.py` explained
 - `docs/MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
 - `docs/API.md` — JS module API docs (generated from JSDoc comments)
 - `docs/LINTING.md` — Linting strategy and legacy debt
