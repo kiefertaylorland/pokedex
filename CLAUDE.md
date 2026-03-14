@@ -171,8 +171,12 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 
 ## Documentation Files
 
-- `DATA_SCHEMA.md` — Complete field-by-field schema for `pokedex_data.json`
-- `POKEAPI_MODULES.md` — `pokeapi.py` vs `pokeapi_fetch.py` explained
-- `MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
-- `API.md` — Auto-generated JS module API docs (`python generate_api_docs.py`)
-- `LINTING.md` — Linting strategy and legacy debt
+All app docs live in `docs/`:
+
+- `docs/DATA_SCHEMA.md` — Complete field-by-field schema for `pokedex_data.json`
+- `docs/POKEAPI_MODULES.md` — `pokeapi.py` vs `pokeapi_fetch.py` explained
+- `docs/MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
+- `docs/API.md` — Auto-generated JS module API docs (`python generate_api_docs.py`)
+- `docs/LINTING.md` — Linting strategy and legacy debt
+- `docs/CHANGELOG.md` — Version history
+- `docs/DATA_FILES.md` — Data file variants and usage
