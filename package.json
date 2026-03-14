@@ -11,12 +11,10 @@
   "scripts": {
     "lint": "eslint assets/js/**/*.js",
     "lint:fix": "eslint assets/js/**/*.js --fix",
+    "lint:changed": "bash scripts/lint-changed.sh",
     "serve": "python3 -m http.server 8000",
-    "test": "python run_tests.py",
     "validate": "python validate_seo_files.py",
-    "generate:types": "python generate_type_effectiveness.py",
-    "test:js": "node tests/js/run-unit-tests.js",
-    "lint:changed": "bash scripts/lint-changed.sh"
+    "generate:types": "python generate_type_effectiveness.py"
   },
   "devDependencies": {
     "eslint": "^8.50.0"

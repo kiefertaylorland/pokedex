@@ -24,12 +24,6 @@ npm run lint              # Full lint report
 npm run lint:fix          # Auto-fix lint issues
 npm run lint:changed      # Lint only files changed in current branch
 
-# Testing
-npm run test              # Run all tests (pytest + Selenium)
-npm run test:js           # Run JavaScript unit tests only
-python run_tests.py tests/test_ui.py    # Single test file
-python run_tests.py --keep-server       # Keep HTTP server running after tests
-
 # Data management
 python pokeapi_fetch.py              # Regenerate all Pokédex data from PokéAPI (~10 min)
 python generate_type_effectiveness.py # Regenerate typeEffectiveness.js from Python source
@@ -144,14 +138,6 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 <input id="search-input" aria-describedby="search-help" />
 ```
 
-## Testing
-
-- **Framework**: pytest + Selenium WebDriver (Chrome/Chromium)
-- **Pattern**: Tests use `unittest.TestCase` with pytest fixtures via `tests/conftest.py`
-- **Shared fixtures**: `tests/conftest.py` provides `http_server`, `driver`, `chrome_options`, `app_url` — use these instead of reimplementing server setup
-- **Server port**: Dynamic allocation (8000–8009) via `conftest.py`; do not hardcode ports in new tests
-- Some tests may fail due to timing/environment issues — see `KNOWN_TEST_FAILURES.md`
-
 ## Feature Development Checklist
 
 **Adding a new JS component:**
@@ -165,11 +151,10 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 1. Update `pokeapi_fetch.py`
 2. Regenerate: `python pokeapi_fetch.py`
 3. Update frontend to use new fields
-4. Update `pokedex_data_test.json` if tests need the new fields
 
 **Deploying:**
 - Increment `CACHE_NAME` in `service-worker.js` (e.g. `pokedex-v1.1.0` → `v1.2.0`)
-- GitHub Actions runs tests then auto-deploys to GitHub Pages on push to `main`
+- GitHub Actions validates SEO files + Python syntax, then auto-deploys to GitHub Pages on push to `main`
 
 ## Known Constraints
 
@@ -190,5 +175,4 @@ const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : poke
 - `POKEAPI_MODULES.md` — `pokeapi.py` vs `pokeapi_fetch.py` explained
 - `MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
 - `API.md` — Auto-generated JS module API docs (`python generate_api_docs.py`)
-- `KNOWN_TEST_FAILURES.md` — Environment-specific test failures and workarounds
 - `LINTING.md` — Linting strategy and legacy debt
