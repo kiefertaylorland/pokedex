@@ -24,147 +24,97 @@ npm run lint              # Full lint report
 npm run lint:fix          # Auto-fix lint issues
 npm run lint:changed      # Lint only files changed in current branch
 
-# Testing
-npm run test              # Run all tests (pytest + Selenium)
-npm run test:js           # Run JavaScript unit tests only
-
 # Data management
-npm run generate:types    # Regenerate type effectiveness data
-python pokeapi_fetch.py   # Regenerate all Pokédex data from PokéAPI (~10 min)
+python scripts/pokeapi_fetch.py              # Regenerate all Pokédex data from PokéAPI (~10 min)
+python scripts/generate_type_effectiveness.py # Regenerate typeEffectiveness.js from Python source
 
 # Validation
 npm run validate          # Validate SEO files and structured data
 ```
 
-### Running Specific Tests
-```bash
-python run_tests.py tests/test_ui.py    # Single test file
-python run_tests.py --keep-server       # Keep HTTP server running after tests
-```
-
-## Project Structure
-
-```
-pokedex/
-├── assets/
-│   ├── js/
-│   │   ├── pokedexApp.js               # Main orchestrator
-│   │   ├── constants.js                # IDs, events, configs (source of truth)
-│   │   ├── components/                 # UI components (cards, details, modals)
-│   │   ├── controllers/                # User input handlers (search, sort)
-│   │   ├── managers/                   # Core services (data, UI state)
-│   │   └── utils/                      # Helpers (caching, routing, type logic)
-│   └── css/                            # Styles (light/dark theme support)
-├── pokedex_data.json                   # Main data (2.9MB, don't edit manually)
-├── pokedex_data_test.json              # Test data subset (146KB)
-├── tests/                              # Selenium + unit tests
-├── pokeapi_fetch.py                    # Data fetcher (~372 lines)
-├── pokeapi.py                          # Simple data loader (~30 lines)
-└── run_tests.py                        # Test runner with HTTP server management
-```
-
 ## Architecture
 
-### Data Flow
+### Module Dependency Hierarchy
+
 ```
-PokéAPI → pokeapi_fetch.py → pokedex_data.json → Frontend (JavaScript)
+pokedexApp.js (orchestrator)
+├── PokemonDataManager      — data loading + IndexedDB caching
+├── UIController            — theme, language, DOM state
+├── PokemonCardRenderer     — main grid rendering
+├── PokemonDetailView       — detail modal (1200+ lines, largest file)
+├── SearchController        — search + filtering
+├── SortController          — sorting by ID, name, height, weight, stats
+├── URLRouter               — deep linking and page state
+└── StructuredDataGenerator — SEO metadata
 ```
 
-### Module Organization
-
-**Core Manager Classes** (initialized in `pokedexApp.js`):
-- `PokemonDataManager` - Data loading and caching
-- `UIController` - Theme, language, DOM state management
-- `URLRouter` - Deep linking and page state persistence
-
-**Components** (UI rendering):
-- `PokemonCardRenderer` - Main grid view
-- `pokemonDetailView.js` - Detail modal (1200+ lines, largest component)
-- `PokemonComparison` - Side-by-side comparison view
-- `TeamBuilder` - Team builder with type coverage
-- `EvolutionTreeView` - Evolution chain visualization
-
-**Controllers** (User input):
-- `SearchController` - Search and filtering logic
-- `SortController` - Sorting by ID, name, height, weight, stats
-
-**Utils** (Helpers):
-- `typeEffectiveness.js` - Type matchup logic
-- `fuzzySearch.js` - Search algorithm
-- `cacheManager.js` - IndexedDB caching
-- `structuredData.js` - SEO metadata generation
+**Key architectural decisions:**
+- No frontend frameworks — vanilla JS for zero dependencies
+- No build step — native ES6 modules over HTTP/2 (cached by service worker)
+- `constants.js` is the single source of truth for all event names, element IDs, and configs
 
 ### Critical Pattern: Event-Driven Communication
 
-All components communicate via custom events defined in `constants.js`:
+All inter-component communication uses custom events defined in `constants.js`:
 
 ```javascript
-// Dispatch events
-document.dispatchEvent(new CustomEvent(EVENTS.POKEMON_SELECTED, {
-    detail: { pokemon }
-}));
+// Always dispatch through document
+document.dispatchEvent(new CustomEvent(EVENTS.POKEMON_SELECTED, { detail: { pokemon } }));
 
-// Listen to events
-document.addEventListener(EVENTS.POKEMON_SELECTED, (e) => {
-    console.log(e.detail.pokemon);
-});
+// Always listen on document
+document.addEventListener(EVENTS.POKEMON_SELECTED, (e) => { /* ... */ });
 ```
 
-**All event types must be defined in `constants.js`** - this is the single source of truth for inter-component communication.
+**Never add event types outside `constants.js`.**
+
+### Environment Configuration
+
+`assets/js/utils/config.js` detects environment (dev/prod/test) via hostname and controls debug logging, service worker behavior, and error reporting. Use `config.isDevelopment()` / `config.isProduction()` rather than hardcoding environment checks.
 
 ## Data Management
 
 ### Two Python Modules (Different Purposes)
 
-**`pokeapi.py`** - Simple, fast data loader for queries:
-```python
-from pokeapi import fetch_pokemon
-pokemon = fetch_pokemon(25)  # Returns Pikachu from pokedex_data.json
-```
-
-**`pokeapi_fetch.py`** - Full API fetcher for generating fresh data:
+**`scripts/pokeapi_fetch.py`** — Full API fetcher (372 lines), generates `pokedex_data.json`:
 ```bash
-python pokeapi_fetch.py  # Fetches all 1025 Pokémon (takes ~10 minutes)
+python scripts/pokeapi_fetch.py          # All 1025 Pokémon (~10 min)
+python scripts/pokeapi_fetch.py -c 151   # Gen 1 only
 ```
 
-### Data Files
+### Type Effectiveness
 
-- **`pokedex_data.json`** - Production data (2.9MB), loaded by frontend
-- **`pokedex_data_test.json`** - Test subset (146KB), used by tests
-- **Never manually edit JSON files** - regenerate via `python pokeapi_fetch.py`
+Type data exists in `scripts/pokeapi_fetch.py` (Python dict `TYPE_EFFECTIVENESS`) as the **single source of truth**. `assets/js/utils/typeEffectiveness.js` is **auto-generated** — never edit it manually:
+
+```bash
+python scripts/generate_type_effectiveness.py  # Regenerates typeEffectiveness.js
+```
 
 ## JavaScript Patterns
 
 ### Module Structure
 
-All JavaScript files export named classes/constants:
-
 ```javascript
-// DO: Named export
+// Named exports only — no default exports
 export class MyComponent {
     constructor() {
-        this.elements = {};  // Cache DOM elements
+        this.elements = {};  // Cache DOM elements in constructor
     }
 }
 
-// DO: Always import from constants
-import { EVENTS, ELEMENT_IDS } from './constants.js';
-
-// DON'T: Default exports or direct DOM queries in module scope
+// Always import IDs, events, configs from constants
+import { EVENTS, ELEMENT_IDS, CSS_CLASSES } from './constants.js';
 ```
 
 ### Bilingual Support
 
-All text must support English/Japanese with optional romaji:
+All text must support English/Japanese toggle:
 
 ```javascript
-// Data contains both languages
+// Data always has both
 { name_en: "pikachu", name_ja: "ピカチュウ", name_ja_romaji: "pikachuu" }
 
-// Use UIController.currentLanguage to select
-const name = this.uiController.currentLanguage === 'en'
-    ? pokemon.name_en
-    : pokemon.name_ja;
+// Select via UIController
+const name = this.uiController.currentLanguage === 'en' ? pokemon.name_en : pokemon.name_ja;
 ```
 
 ### Accessibility (Non-Negotiable)
@@ -175,75 +125,50 @@ const name = this.uiController.currentLanguage === 'en'
 - **Theme support**: All styles work in both light and dark themes
 - **Semantic HTML**: Proper heading hierarchy (h1 → h2 → h3)
 
-Example:
 ```html
 <label for="search-input" class="sr-only">Search Pokémon</label>
 <input id="search-input" aria-describedby="search-help" />
 ```
 
-## Testing
+## Feature Development Checklist
 
-### Test Framework
-- **Framework**: pytest + Selenium WebDriver (Chrome/Chromium)
-- **Pattern**: Tests use `unittest.TestCase` (despite pytest being installed)
-- **Server Management**: `run_tests.py` handles HTTP server lifecycle automatically
+**Adding a new JS component:**
+1. Create in `assets/js/components/`, export as named class
+2. Initialize in `pokedexApp.js`
+3. Add any new event types to `constants.js`
+4. Add the new file to the service worker cache list in `service-worker.js`
+5. Verify keyboard navigation and screen reader support
 
-### Test Files
-- `test_ui.py` - Search, theme switching, UI interactions
-- `test_transitions.py` - Animations, image loading, transitions
-- `test_pokeapi.py` - Data loader tests
-- `test_pokeapi_fetch.py`, `test_pokeapi_integration.py` - API fetching
-- `test_evolution_chain.py` - Evolution chain logic
+**Adding new data fields:**
+1. Update `scripts/pokeapi_fetch.py`
+2. Regenerate: `python scripts/pokeapi_fetch.py`
+3. Update frontend to use new fields
 
-### Known Test Issues
-- Some tests may fail due to timing or environment-specific issues
-- Check `KNOWN_TEST_FAILURES.md` for documented failures
-- Tests have hardcoded ports (8000, 8001, 8003) and duplicate server setup code
-- Focus tests on the feature you're changing
+**Deploying:**
+- Increment `CACHE_NAME` in `service-worker.js` (e.g. `pokedex-v1.1.0` → `v1.2.0`)
+- GitHub Actions validates SEO files + Python syntax, then auto-deploys to GitHub Pages on push to `main`
+
+## Known Constraints
+
+- **`pokemonDetailView.js`** is 1200+ lines — large but intentional; avoid growing it further
+- **`pokedex_data.json`** (2.9MB) is committed to git — this is acceptable for this project size
+- **Lint**: New/refactored files must pass `npm run lint`; legacy debt tracked in `LINTING.md`
+- **Don't fix unrelated issues** — focus on the task at hand
 
 ## Style Guide
 
-- **JavaScript**: camelCase for functions/variables, kebab-case for HTML IDs/classes
-- **Python**: snake_case, PEP 8 compliant
-- **JSDoc comments** for all exported functions
-- **Async/await** preferred over `.then()/.catch()`
-
-## Known Issues & Constraints
-
-See `issues.md` for the complete list (45 tracked issues). Key ones relevant to development:
-
-- **Issue #7**: Console logging in production code - remove debug statements
-- **Issue #17**: `pokemonDetailView.js` is 1200+ lines (needs refactoring)
-- **Issue #25**: No lazy loading - all 1025 cards render at once
-- **Issue #29**: Type effectiveness duplicated in Python and JavaScript (keep both in sync)
-- **Issue #38**: No pre-deploy tests in CI/CD pipeline
-
-**Don't fix unrelated issues** - focus on the task at hand.
-
-## Deployment
-
-- GitHub Actions auto-deploys to GitHub Pages on push to `main`
-- No build step - static files deployed as-is
-- **Service Worker Cache Busting**: Update version in `service-worker.js` when deploying:
-  ```javascript
-  const CACHE_NAME = 'pokedex-v1.1.0';  // Increment this
-  ```
-
-## Important Notes for Feature Development
-
-1. **Adding a new component**: Create in `assets/js/components/`, export as named class, initialize in `pokedexApp.js`
-2. **Adding new data fields**: Update `pokeapi_fetch.py`, regenerate with `python pokeapi_fetch.py`, then update frontend code
-3. **Type effectiveness changes**: Keep both `pokeapi_fetch.py` and `assets/js/utils/typeEffectiveness.js` in sync
-4. **Linting**: New/refactored files must pass lint; legacy debt tracked separately in `LINTING.md`
-5. **Cache busting**: Increment `service-worker.js` version when deploying updates
+- **JavaScript**: camelCase functions/variables, kebab-case HTML IDs/classes, single quotes, semicolons
+- **Python**: snake_case, PEP 8, type hints on public functions, `logging` module (not `print`)
+- **JSDoc**: Required on all exported functions
 
 ## Documentation Files
 
-- `README.md` - User-facing features and quick start
-- `CONTRIBUTING.md` - Contribution guidelines
-- `.github/copilot-instructions.md` - Extended architecture documentation
-- `POKEAPI_MODULES.md` - Detailed explanation of `pokeapi.py` vs `pokeapi_fetch.py`
-- `DATA_FILES.md` - Data file variants and usage
-- `LINTING.md` - Linting strategy
-- `issues.md` - Issue tracking and TODOs
-- `KNOWN_TEST_FAILURES.md` - Environment-specific test issues
+All app docs live in `docs/`:
+
+- `docs/DATA_SCHEMA.md` — Complete field-by-field schema for `pokedex_data.json`
+- `docs/POKEAPI_MODULES.md` — `scripts/pokeapi_fetch.py` explained
+- `docs/MODULE_DEPENDENCIES.md` — Full dependency graph and data flow diagrams
+- `docs/API.md` — JS module API docs (generated from JSDoc comments)
+- `docs/LINTING.md` — Linting strategy and legacy debt
+- `docs/CHANGELOG.md` — Version history
+- `docs/DATA_FILES.md` — Data file variants and usage

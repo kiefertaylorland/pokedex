@@ -1,12 +1,7 @@
 # Core dependencies
-requests
-selenium
-
-# Testing
-pytest
-coverage
+requests>=2.32.5
 
 # Code quality
 black>=26.3.1
-flake8
-pre-commit
+flake8>=7.3.0
+pre-commit>=4.3.0

@@ -61,27 +61,17 @@ python3 -m http.server 8000
 pip install -r requirements.txt
 ```
 
-**Run tests:**
-```bash
-python run_tests.py
-
-# Run with coverage reporting
-make coverage
-
-# See KNOWN_TEST_FAILURES.md for environment-specific test issues
-```
-
 **Regenerate data from PokéAPI:**
 ```bash
-python pokeapi_fetch.py
+python scripts/pokeapi_fetch.py
 ```
-This will fetch data for all 1025 Pokémon (Generations I-IX) from the PokeAPI, including their stats, types, moves, evolution chains, and cries.
+This will fetch data for all 1025 Pokémon (Generations I-IX) from the PokéAPI, including their stats, types, moves, evolution chains, and cries.
 
 ## Technology Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6 modules)
 - **Data Source**: [PokéAPI](https://pokeapi.co/)
-- **Backend/Testing**: Python 3.12+ with Selenium
+- **Data Pipeline**: Python 3.12+ scripts
 - **Deployment**: GitHub Pages (static site, no build step)
 - **Architecture**: Event-driven components with service worker PWA support
 
@@ -93,9 +83,9 @@ Whether you're a seasoned developer or just starting out, there are plenty of wa
 
 ### For Developers 👩‍💻👨‍💻
 
-- **Bug Fixes**: Found something broken? We have [45 tracked issues](issues.md) ready to tackle
+- **Bug Fixes**: Found something broken? Open an issue!
 - **New Features**: Want to add animations, performance improvements, or new Pokémon features?
-- **Refactoring**: Help clean up our [1200+ line detail view component](assets/js/components/pokemonDetailView.js)
+- **Refactoring**: Help clean up the [1200+ line detail view component](assets/js/components/pokemonDetailView.js)
 - **Accessibility**: Improve keyboard navigation, screen reader support, or ARIA labels
 - **Internationalization**: Add more languages beyond English/Japanese
 
@@ -109,8 +99,6 @@ python3 -m http.server 8000
 ```
 
 **Good First Issues:**
-- Lazy loading for 1025 Pokémon cards (Issue #25)
-- Remove debug console.log statements (Issue #7)
 - Add loading skeletons for better UX
 - Improve mobile responsiveness
 - Add more keyboard shortcuts
@@ -123,12 +111,6 @@ python3 -m http.server 8000
 - **Localization Testing**: Verify Japanese translations and romaji accuracy
 - **Report Bugs**: Found an issue? [Open a detailed bug report](https://github.com/kiefertaylorland/pokedex/issues/new)
 
-**Running Tests:**
-```bash
-python run_tests.py  # Automated Selenium tests
-# See KNOWN_TEST_FAILURES.md for environment-specific issues
-```
-
 ### For Designers 🎨
 
 - **UI/UX Improvements**: Suggest better layouts or interactions
@@ -139,8 +121,7 @@ python run_tests.py  # Automated Selenium tests
 ### Contributing Guidelines
 
 1. **Read** [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines
-2. **Check** [issues.md](issues.md) for known issues and TODOs
-3. **Follow** our code style (camelCase JS, snake_case Python, semantic HTML)
+2. **Follow** our code style (camelCase JS, snake_case Python, semantic HTML)
 4. **Test** your changes (works in light/dark themes, both languages)
 5. **Document** your code (JSDoc comments, update README if needed)
 

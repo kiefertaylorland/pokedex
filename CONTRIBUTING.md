@@ -52,16 +52,13 @@ The project uses pre-generated data from PokéAPI. You typically don't need to r
 
 ```bash
 # Regenerate all data (takes ~10 minutes)
-python pokeapi_fetch.py
+python scripts/pokeapi_fetch.py
 
 # Fetch specific number of Pokémon
-python pokeapi_fetch.py --count 151  # Gen 1 only
-
-# Use test data for faster development
-# The app automatically uses pokedex_data.json
+python scripts/pokeapi_fetch.py --count 151  # Gen 1 only
 ```
 
-See `DATA_FILES.md` for more information about data file variants.
+See `docs/DATA_FILES.md` for more information about data file variants.
 
 ## Project Structure
 
@@ -73,11 +70,11 @@ pokedex/
 │   │   ├── controllers/     # User input handlers (search, sort)
 │   │   ├── managers/        # Core services (data, UI state)
 │   │   └── utils/           # Helper functions (caching, routing, etc.)
-│   └── style.css           # Global styles
-├── tests/                  # Selenium-based integration tests
-├── pokeapi_fetch.py       # Data generation script
-├── pokeapi.py             # Data loader utility
-└── index.html             # Main entry point
+│   └── style.css            # Global styles
+├── scripts/                 # Data generation and utility scripts
+│   └── pokeapi_fetch.py     # Data generation script
+├── docs/                    # Project documentation
+└── index.html               # Main entry point
 ```
 
 See `.github/copilot-instructions.md` for detailed architecture documentation.
@@ -196,53 +193,11 @@ const name = this.uiController.currentLanguage === 'en'
     : pokemon.name_ja;
 ```
 
-## Testing
-
-### Running Tests
-
-```bash
-# Run all tests
-python run_tests.py
-
-# Run specific test file
-python run_tests.py tests/test_ui.py
-
-# Run with coverage
-make coverage
-
-# Keep server running for debugging
-python run_tests.py --keep-server
-```
-
-### Writing Tests
-
-- Tests use pytest with unittest.TestCase (hybrid approach)
-- Use shared fixtures from `tests/conftest.py`
-- Test files should follow the pattern `test_*.py`
-
-```python
-import unittest
-from tests.conftest import *
-
-class TestMyFeature(unittest.TestCase):
-    @pytest.mark.usefixtures('driver', 'app_url')
-    def test_something(self, driver, app_url):
-        driver.get(app_url)
-        # Test implementation
-```
-
-See `KNOWN_TEST_FAILURES.md` for known environment-specific issues.
-
 ## Submitting Changes
 
 ### Before Submitting
 
-1. **Run tests:**
-   ```bash
-   python run_tests.py
-   ```
-
-2. **Check for errors:**
+1. **Check for errors:**
    - Test in multiple browsers
    - Verify keyboard navigation works
    - Test both light and dark themes
@@ -289,9 +244,7 @@ See `KNOWN_TEST_FAILURES.md` for known environment-specific issues.
 
 ### Pull Request Checklist
 
-- [ ] Tests pass locally
 - [ ] Code follows style guide
-- [ ] New features have tests
 - [ ] Documentation is updated
 - [ ] Commit messages are descriptive
 - [ ] No console.log statements in production code
@@ -327,23 +280,11 @@ If port 8000 is in use, try a different port:
 python3 -m http.server 8001
 ```
 
-### Tests Failing
-See `KNOWN_TEST_FAILURES.md` for known environment-specific test issues.
-
-### Data Loading Slow
-Use the test data file for faster development:
-```bash
-# The app uses pokedex_data.json by default
-# For testing with smaller dataset, temporarily rename files
-mv pokedex_data.json pokedex_data_full.json
-mv pokedex_data_test.json pokedex_data.json
-```
-
 ## Questions?
 
 - Check existing [issues](https://github.com/kiefertaylorland/pokedex/issues)
-- Review `.github/copilot-instructions.md` for architectural details
-- Read `DATA_SCHEMA.md` for data structure documentation
+- Review `CLAUDE.md` for architectural details
+- Read `docs/DATA_SCHEMA.md` for data structure documentation
 
 ## Code of Conduct
 
