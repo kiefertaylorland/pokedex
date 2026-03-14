@@ -12,18 +12,39 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
+def _make_handler():
+    """
+    Returns an HTTP request handler class.
+    If TEST_DATA_FILE env var is set (e.g. 'pokedex_data_test.json'),
+    requests for /pokedex_data.json are redirected to that file,
+    allowing tests to run against a smaller dataset for speed.
+    """
+    test_data_file = os.getenv('TEST_DATA_FILE')
+
+    class Handler(http.server.SimpleHTTPRequestHandler):
+        def do_GET(self):
+            if test_data_file and self.path in ('/pokedex_data.json', '/pokedex_data.json?v=1'):
+                self.path = f'/{test_data_file}'
+            super().do_GET()
+
+        def log_message(self, format, *args):  # noqa: A002
+            pass  # Suppress server access logs during tests
+
+    return Handler
+
+
 class HTTPServerManager:
     """Manages HTTP server lifecycle for testing"""
-    
+
     def __init__(self, port=8000):
         self.port = port
         self.httpd = None
         self.server_thread = None
         self.project_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-    
+
     def start(self):
         """Start the HTTP server on an available port"""
-        handler = http.server.SimpleHTTPRequestHandler
+        handler = _make_handler()
         
         # Change to the project root directory
         os.chdir(self.project_root)
