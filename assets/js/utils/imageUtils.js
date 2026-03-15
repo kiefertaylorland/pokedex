@@ -1,7 +1,7 @@
 /**
  * Image utility functions for handling sprite URLs and fallbacks
  * @module ImageUtils
- * 
+ *
  * NOTE: SRI (Subresource Integrity) hashes are not applicable to dynamically
  * loaded Pokemon sprite images, as each image has a unique hash. SRI is typically
  * used for fixed library files (JS/CSS frameworks). Instead, we rely on:
@@ -19,17 +19,17 @@ export function convertToJsDelivrUrl(url) {
     if (!url || typeof url !== 'string') {
         return url;
     }
-    
+
     // Pattern: https://raw.githubusercontent.com/USER/REPO/BRANCH/path/to/file
     // Convert to: https://cdn.jsdelivr.net/gh/USER/REPO@BRANCH/path/to/file
     const githubRawPattern = /^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/;
     const match = url.match(githubRawPattern);
-    
+
     if (match) {
         const [, user, repo, branch, path] = match;
         return `https://cdn.jsdelivr.net/gh/${user}/${repo}@${branch}/${path}`;
     }
-    
+
     return url;
 }
 
@@ -39,30 +39,30 @@ export function convertToJsDelivrUrl(url) {
  * @param {string} alt - Alt text for the image
  * @param {Object} options - Additional options
  * @param {Function} options.onError - Custom error handler
- * @param {Function} options.onLoad - Custom load handler  
+ * @param {Function} options.onLoad - Custom load handler
  * @param {string} options.className - CSS class to add
  * @returns {HTMLImageElement} - Image element with fallback configured
  */
 export function createImageWithFallback(primaryUrl, alt, options = {}) {
     const img = document.createElement('img');
     img.alt = alt || '';
-    
+
     if (options.className) {
         img.className = options.className;
     }
-    
+
     let attemptedUrls = [];
-    
+
     const tryNextUrl = () => {
         attemptedUrls.push(img.src);
-        
+
         // Try jsDelivr CDN if we haven't already
         const jsdelivrUrl = convertToJsDelivrUrl(primaryUrl);
         if (jsdelivrUrl !== primaryUrl && !attemptedUrls.includes(jsdelivrUrl)) {
             img.src = jsdelivrUrl;
             return;
         }
-        
+
         // Try constructing URL from Pokemon ID if we can extract it
         const idMatch = primaryUrl.match(/\/pokemon\/(\d+)\.png/);
         if (idMatch) {
@@ -73,23 +73,23 @@ export function createImageWithFallback(primaryUrl, alt, options = {}) {
                 return;
             }
         }
-        
+
         // All attempts failed, call custom error handler
         if (options.onError) {
             options.onError(img, attemptedUrls);
         }
     };
-    
+
     img.addEventListener('error', tryNextUrl, { once: true });
-    
+
     if (options.onLoad) {
         img.addEventListener('load', () => options.onLoad(img), { once: true });
     }
-    
+
     // Start with jsDelivr URL as primary (more reliable than githubusercontent)
     const jsdelivrUrl = convertToJsDelivrUrl(primaryUrl);
     img.src = jsdelivrUrl;
-    
+
     return img;
 }
 
@@ -118,7 +118,7 @@ export function preloadImages(urls) {
             img.src = url;
         });
     });
-    
+
     return Promise.all(promises);
 }
 
@@ -133,7 +133,7 @@ export function preloadImages(urls) {
 export function getPokemonSpriteUrl(pokemonId, options = {}) {
     const { shiny = false, back = false } = options;
     const id = String(pokemonId);
-    
+
     let path = 'sprites/pokemon';
     if (shiny && back) {
         path += '/back/shiny';
@@ -142,7 +142,7 @@ export function getPokemonSpriteUrl(pokemonId, options = {}) {
     } else if (back) {
         path += '/back';
     }
-    
+
     // Use jsDelivr CDN for better reliability
     return `https://cdn.jsdelivr.net/gh/PokeAPI/sprites/master/${path}/${id}.png`;
 }

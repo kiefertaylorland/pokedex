@@ -18,11 +18,11 @@ export const STAT_BENCHMARKS = {
     },
     max: {
         hp: 255,      // Blissey
-        attack: 190,  // Mega Mewtwo X
+        attack: 181,  // Highest in current dataset
         defense: 230, // Shuckle
-        'special-attack': 194, // Mega Mewtwo Y
+        'special-attack': 173, // Highest in current dataset
         'special-defense': 230, // Shuckle
-        speed: 180    // Deoxys Speed
+        speed: 200    // Highest in current dataset
     },
     // Top tier threshold (used for legendary/pseudo-legendary comparison)
     topTier: {
@@ -44,7 +44,7 @@ export function calculateStatBenchmarks(allPokemon) {
     if (!allPokemon || allPokemon.length === 0) {
         return STAT_BENCHMARKS;
     }
-    
+
     const statTotals = {
         hp: 0,
         attack: 0,
@@ -53,7 +53,7 @@ export function calculateStatBenchmarks(allPokemon) {
         'special-defense': 0,
         speed: 0
     };
-    
+
     const statMaxes = {
         hp: 0,
         attack: 0,
@@ -62,7 +62,7 @@ export function calculateStatBenchmarks(allPokemon) {
         'special-defense': 0,
         speed: 0
     };
-    
+
     allPokemon.forEach(pokemon => {
         if (pokemon.stats) {
             Object.keys(statTotals).forEach(stat => {
@@ -73,13 +73,13 @@ export function calculateStatBenchmarks(allPokemon) {
             });
         }
     });
-    
+
     const count = allPokemon.length;
     const averages = {};
     Object.keys(statTotals).forEach(stat => {
         averages[stat] = Math.round(statTotals[stat] / count);
     });
-    
+
     return {
         averages,
         max: statMaxes,
@@ -95,20 +95,17 @@ export function calculateStatBenchmarks(allPokemon) {
  * @returns {Object} Comparison data
  */
 export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BENCHMARKS) {
-    
-    
-    
-    
-    
+
+
     const average = benchmarks.averages[statName];
     const max = benchmarks.max[statName];
     const topTier = benchmarks.topTier[statName];
-    
-    const percentOfMax = (statValue / max) * 100;
+
+    const percentOfMax = Math.min((statValue / max) * 100, 100);
     const percentOfAverage = (statValue / average) * 100;
     const aboveAverage = statValue > average;
     const isTopTier = statValue >= topTier;
-    
+
     let rating = 'average';
     if (isTopTier) {
         rating = 'excellent';
@@ -117,7 +114,7 @@ export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BE
     } else if (statValue < average * 0.8) {
         rating = 'poor';
     }
-    
+
     return {
         value: statValue,
         average,
@@ -142,11 +139,11 @@ export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
     if (!stats) {
         return { total: 0, average: 0, rating: 'unknown' };
     }
-    
-    
+
+
     const total = Object.values(stats).reduce((sum, val) => sum + val, 0);
     const averageTotal = Object.values(benchmarks.averages).reduce((sum, val) => sum + val, 0);
-    
+
     let rating;
     if (total >= averageTotal * 1.4) {
         rating = 'legendary';
@@ -159,7 +156,7 @@ export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
     } else {
         rating = 'poor';
     }
-    
+
     return {
         total,
         average: Math.round(total / Object.keys(stats).length),
@@ -177,14 +174,14 @@ export function getOverallStatRating(stats, benchmarks = STAT_BENCHMARKS) {
  */
 export function compareTwoPokemons(pokemon1Stats, pokemon2Stats) {
     const comparison = {};
-    
+
     const statKeys = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
-    
+
     statKeys.forEach(stat => {
         const value1 = pokemon1Stats[stat] || 0;
         const value2 = pokemon2Stats[stat] || 0;
         const difference = value1 - value2;
-        
+
         comparison[stat] = {
             pokemon1: value1,
             pokemon2: value2,
@@ -195,6 +192,6 @@ export function compareTwoPokemons(pokemon1Stats, pokemon2Stats) {
             winner: difference > 0 ? 1 : difference < 0 ? 2 : 0
         };
     });
-    
+
     return comparison;
 }

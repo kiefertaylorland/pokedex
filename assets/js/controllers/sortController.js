@@ -5,7 +5,14 @@
 
 import { ELEMENT_IDS, SORT_OPTIONS, STORAGE_KEYS_SORT } from '../constants.js';
 import { Storage } from '../utils/storage.js';
-import { sortByNumberAsc, sortByNumberDesc, sortByName, sortByStatTotal } from '../utils/sorters.js';
+import {
+    sortByNumberAsc,
+    sortByNumberDesc,
+    sortByName,
+    sortByStatTotal,
+    sortByHeight,
+    sortByWeight
+} from '../utils/sorters.js';
 
 /**
  * Manages sorting functionality for Pokemon display
@@ -77,6 +84,10 @@ export class SortController {
             [SORT_OPTIONS.NUMBER_DESC]: () => sortByNumberDesc(sorted),
             [SORT_OPTIONS.NAME_ASC]: () => sortByName(sorted, currentLanguage, true),
             [SORT_OPTIONS.NAME_DESC]: () => sortByName(sorted, currentLanguage, false),
+            [SORT_OPTIONS.HEIGHT_ASC]: () => sortByHeight(sorted, true),
+            [SORT_OPTIONS.HEIGHT_DESC]: () => sortByHeight(sorted, false),
+            [SORT_OPTIONS.WEIGHT_ASC]: () => sortByWeight(sorted, true),
+            [SORT_OPTIONS.WEIGHT_DESC]: () => sortByWeight(sorted, false),
             [SORT_OPTIONS.STAT_TOTAL]: () => sortByStatTotal(sorted)
         };
 
@@ -92,27 +103,18 @@ export class SortController {
     _announceSortChange(sortOption) {
         const currentLang = this.uiController.getCurrentLanguage();
         const uiText = this.uiController.getCurrentUIText();
-
-        let sortText = '';
-        switch (sortOption) {
-            case SORT_OPTIONS.NUMBER_ASC:
-                sortText = uiText.sortNumberAsc;
-                break;
-            case SORT_OPTIONS.NUMBER_DESC:
-                sortText = uiText.sortNumberDesc;
-                break;
-            case SORT_OPTIONS.NAME_ASC:
-                sortText = uiText.sortNameAsc;
-                break;
-            case SORT_OPTIONS.NAME_DESC:
-                sortText = uiText.sortNameDesc;
-                break;
-            case SORT_OPTIONS.STAT_TOTAL:
-                sortText = uiText.sortStatTotal;
-                break;
-            default:
-                sortText = uiText.sortNumberAsc;
-        }
+        const sortLabelMap = {
+            [SORT_OPTIONS.NUMBER_ASC]: uiText.sortNumberAsc,
+            [SORT_OPTIONS.NUMBER_DESC]: uiText.sortNumberDesc,
+            [SORT_OPTIONS.NAME_ASC]: uiText.sortNameAsc,
+            [SORT_OPTIONS.NAME_DESC]: uiText.sortNameDesc,
+            [SORT_OPTIONS.HEIGHT_ASC]: uiText.sortHeightAsc,
+            [SORT_OPTIONS.HEIGHT_DESC]: uiText.sortHeightDesc,
+            [SORT_OPTIONS.WEIGHT_ASC]: uiText.sortWeightAsc,
+            [SORT_OPTIONS.WEIGHT_DESC]: uiText.sortWeightDesc,
+            [SORT_OPTIONS.STAT_TOTAL]: uiText.sortStatTotal
+        };
+        const sortText = sortLabelMap[sortOption] || uiText.sortNumberAsc;
 
         const message = currentLang === 'jp'
             ? `並び替え: ${sortText}`
@@ -172,24 +174,21 @@ export class SortController {
 
         const uiText = this.uiController.getCurrentUIText();
         const options = this.sortSelect.options;
+        const sortLabelMap = {
+            [SORT_OPTIONS.NUMBER_ASC]: uiText.sortNumberAsc,
+            [SORT_OPTIONS.NUMBER_DESC]: uiText.sortNumberDesc,
+            [SORT_OPTIONS.NAME_ASC]: uiText.sortNameAsc,
+            [SORT_OPTIONS.NAME_DESC]: uiText.sortNameDesc,
+            [SORT_OPTIONS.HEIGHT_ASC]: uiText.sortHeightAsc,
+            [SORT_OPTIONS.HEIGHT_DESC]: uiText.sortHeightDesc,
+            [SORT_OPTIONS.WEIGHT_ASC]: uiText.sortWeightAsc,
+            [SORT_OPTIONS.WEIGHT_DESC]: uiText.sortWeightDesc,
+            [SORT_OPTIONS.STAT_TOTAL]: uiText.sortStatTotal
+        };
 
         for (const option of options) {
-            switch (option.value) {
-                case SORT_OPTIONS.NUMBER_ASC:
-                    option.textContent = uiText.sortNumberAsc;
-                    break;
-                case SORT_OPTIONS.NUMBER_DESC:
-                    option.textContent = uiText.sortNumberDesc;
-                    break;
-                case SORT_OPTIONS.NAME_ASC:
-                    option.textContent = uiText.sortNameAsc;
-                    break;
-                case SORT_OPTIONS.NAME_DESC:
-                    option.textContent = uiText.sortNameDesc;
-                    break;
-                case SORT_OPTIONS.STAT_TOTAL:
-                    option.textContent = uiText.sortStatTotal;
-                    break;
+            if (sortLabelMap[option.value]) {
+                option.textContent = sortLabelMap[option.value];
             }
         }
     }

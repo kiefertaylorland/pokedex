@@ -1,6 +1,6 @@
 /**
  * Error Boundary - Global error handler for the Pokedex application
- * 
+ *
  * Provides:
  * - User-friendly error messages
  * - Error logging
@@ -14,7 +14,7 @@
 const ERROR_BOUNDARY_CONFIG = {
     showErrorDetails: false, // Set to true in development
     maxErrors: 10, // Maximum errors to track
-    errorDisplayDuration: 5000, // 5 seconds
+    errorDisplayDuration: 5000 // 5 seconds
 };
 
 /**
@@ -31,7 +31,7 @@ let errorLog = [];
 function showErrorNotification(message, isRecoverable = true) {
     // Create error container if it doesn't exist
     let errorContainer = document.getElementById('error-boundary-container');
-    
+
     if (!errorContainer) {
         errorContainer = document.createElement('div');
         errorContainer.id = 'error-boundary-container';
@@ -40,35 +40,35 @@ function showErrorNotification(message, isRecoverable = true) {
         errorContainer.setAttribute('aria-live', 'assertive');
         document.body.appendChild(errorContainer);
     }
-    
+
     // Create error notification
     const notification = document.createElement('div');
     notification.className = `error-notification ${isRecoverable ? 'error-recoverable' : 'error-fatal'}`;
-    
+
     const icon = isRecoverable ? '⚠️' : '❌';
     const title = isRecoverable ? 'Something went wrong' : 'Critical Error';
-    
+
     notification.innerHTML = `
         <div class="error-notification-header">
             <span class="error-icon" aria-hidden="true">${icon}</span>
             <strong class="error-title">${title}</strong>
         </div>
         <p class="error-message">${message}</p>
-        ${isRecoverable ? '<button class="error-dismiss-btn" aria-label="Dismiss error">Dismiss</button>' : 
-          '<button class="error-reload-btn" aria-label="Reload page">Reload Page</button>'}
+        ${isRecoverable ? '<button class="error-dismiss-btn" aria-label="Dismiss error">Dismiss</button>' :
+        '<button class="error-reload-btn" aria-label="Reload page">Reload Page</button>'}
     `;
-    
+
     errorContainer.appendChild(notification);
-    
+
     // Add event listeners
     const dismissBtn = notification.querySelector('.error-dismiss-btn');
     const reloadBtn = notification.querySelector('.error-reload-btn');
-    
+
     if (dismissBtn) {
         dismissBtn.addEventListener('click', () => {
             notification.remove();
         });
-        
+
         // Auto-dismiss after duration
         setTimeout(() => {
             if (notification.parentElement) {
@@ -76,7 +76,7 @@ function showErrorNotification(message, isRecoverable = true) {
             }
         }, ERROR_BOUNDARY_CONFIG.errorDisplayDuration);
     }
-    
+
     if (reloadBtn) {
         reloadBtn.addEventListener('click', () => {
             window.location.reload();
@@ -98,23 +98,20 @@ function logError(error, context) {
         userAgent: navigator.userAgent,
         url: window.location.href
     };
-    
+
     errorLog.push(errorEntry);
-    
+
     // Keep only last N errors
     if (errorLog.length > ERROR_BOUNDARY_CONFIG.maxErrors) {
         errorLog.shift();
     }
-    
+
     // In production, you could send this to an error tracking service:
     // sendToErrorTrackingService(errorEntry);
-    
+
     if (ERROR_BOUNDARY_CONFIG.showErrorDetails) {
-        console.group('🚨 Error Boundary');
-        console.error('Error:', error);
-        console.log('Context:', context);
-        console.log('Full error log:', errorLog);
-        console.groupEnd();
+        void error;
+        void context;
     }
 }
 
@@ -125,22 +122,22 @@ function logError(error, context) {
  */
 function getUserFriendlyMessage(error) {
     const errorMessage = error.message.toLowerCase();
-    
+
     // Network errors
     if (errorMessage.includes('fetch') || errorMessage.includes('network')) {
         return 'Unable to load data. Please check your internet connection and try again.';
     }
-    
+
     // Data errors
     if (errorMessage.includes('json') || errorMessage.includes('parse')) {
         return 'There was a problem loading Pokémon data. Please refresh the page.';
     }
-    
+
     // DOM errors
     if (errorMessage.includes('null') || errorMessage.includes('undefined')) {
         return 'A display issue occurred. The page may need to be refreshed.';
     }
-    
+
     // Generic error
     return 'An unexpected error occurred. Please try again or refresh the page.';
 }
@@ -150,23 +147,23 @@ function getUserFriendlyMessage(error) {
  */
 window.addEventListener('error', (event) => {
     errorCount++;
-    
+
     // Prevent infinite error loops
     if (errorCount > ERROR_BOUNDARY_CONFIG.maxErrors) {
         console.error('Too many errors. Stopping error handling.');
         return;
     }
-    
+
     const error = event.error || new Error(event.message);
     const context = `${event.filename}:${event.lineno}:${event.colno}`;
-    
+
     logError(error, context);
-    
+
     const userMessage = getUserFriendlyMessage(error);
     const isRecoverable = errorCount < 5; // Consider fatal after 5 errors
-    
+
     showErrorNotification(userMessage, isRecoverable);
-    
+
     // Prevent default error handling in console for cleaner output
     if (!ERROR_BOUNDARY_CONFIG.showErrorDetails) {
         event.preventDefault();
@@ -178,21 +175,21 @@ window.addEventListener('error', (event) => {
  */
 window.addEventListener('unhandledrejection', (event) => {
     errorCount++;
-    
+
     if (errorCount > ERROR_BOUNDARY_CONFIG.maxErrors) {
         console.error('Too many errors. Stopping error handling.');
         return;
     }
-    
-    const error = event.reason instanceof Error ? 
-        event.reason : 
+
+    const error = event.reason instanceof Error ?
+        event.reason :
         new Error(String(event.reason));
-    
+
     logError(error, 'Unhandled Promise Rejection');
-    
+
     const userMessage = getUserFriendlyMessage(error);
     showErrorNotification(userMessage, true);
-    
+
     // Prevent default (console error)
     if (!ERROR_BOUNDARY_CONFIG.showErrorDetails) {
         event.preventDefault();
@@ -204,12 +201,12 @@ window.addEventListener('unhandledrejection', (event) => {
  */
 function injectErrorBoundaryStyles() {
     const styleId = 'error-boundary-styles';
-    
+
     // Don't inject twice
     if (document.getElementById(styleId)) {
         return;
     }
-    
+
     const styles = document.createElement('style');
     styles.id = styleId;
     styles.textContent = `
@@ -329,7 +326,7 @@ function injectErrorBoundaryStyles() {
             }
         }
     `;
-    
+
     document.head.appendChild(styles);
 }
 
@@ -338,7 +335,7 @@ function injectErrorBoundaryStyles() {
  */
 function initErrorBoundary() {
     injectErrorBoundaryStyles();
-    
+
     // Enable detailed errors in development
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         ERROR_BOUNDARY_CONFIG.showErrorDetails = true;

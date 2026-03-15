@@ -1,6 +1,6 @@
 /**
  * Keyboard Shortcuts Help Modal
- * 
+ *
  * Displays keyboard shortcuts when user presses '?' key
  * Provides comprehensive list of all keyboard navigation options
  */
@@ -13,7 +13,7 @@ export class KeyboardShortcutsModal {
         this.isVisible = false;
         this.init();
     }
-    
+
     /**
      * Initialize keyboard shortcuts modal
      */
@@ -21,7 +21,7 @@ export class KeyboardShortcutsModal {
         this.createModal();
         this.attachEventListeners();
     }
-    
+
     /**
      * Create modal HTML structure
      */
@@ -33,7 +33,7 @@ export class KeyboardShortcutsModal {
         this.modal.setAttribute('aria-labelledby', 'shortcuts-modal-title');
         this.modal.setAttribute('aria-modal', 'true');
         this.modal.style.display = 'none';
-        
+
         this.modal.innerHTML = `
             <div class="modal-backdrop"></div>
             <div class="modal-content keyboard-shortcuts-content">
@@ -79,10 +79,6 @@ export class KeyboardShortcutsModal {
                                 <dd>Focus search input</dd>
                             </div>
                             <div class="shortcut-item">
-                                <dt><kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>Cmd</kbd> + <kbd>F</kbd></dt>
-                                <dd>Focus search input (alternative)</dd>
-                            </div>
-                            <div class="shortcut-item">
                                 <dt><kbd>Enter</kbd></dt>
                                 <dd>Select focused Pokémon card</dd>
                             </div>
@@ -120,7 +116,7 @@ export class KeyboardShortcutsModal {
                             </div>
                             <div class="shortcut-item">
                                 <dt><kbd>Tab</kbd></dt>
-                                <dd>Navigate through tabs and sections</dd>
+                                <dd>Move between interactive controls</dd>
                             </div>
                             <div class="shortcut-item">
                                 <dt><kbd>Enter</kbd></dt>
@@ -154,10 +150,10 @@ export class KeyboardShortcutsModal {
                 </div>
             </div>
         `;
-        
+
         document.body.appendChild(this.modal);
     }
-    
+
     /**
      * Attach event listeners
      */
@@ -168,33 +164,33 @@ export class KeyboardShortcutsModal {
             if (e.target.matches('input, textarea')) {
                 return;
             }
-            
+
             if (e.key === '?' || (e.shiftKey && e.key === '/')) {
                 e.preventDefault();
                 this.toggle();
             }
-            
+
             // Keyboard shortcuts
             if (!this.isVisible && !e.target.matches('input, textarea')) {
                 this.handleGlobalShortcuts(e);
             }
         });
-        
+
         // Close button
         const closeBtn = this.modal.querySelector('#shortcuts-close-btn');
         closeBtn.addEventListener('click', () => this.hide());
-        
+
         // Close on backdrop click
         const backdrop = this.modal.querySelector('.modal-backdrop');
         backdrop.addEventListener('click', () => this.hide());
-        
+
         // Close on Escape key
         this.modal.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 this.hide();
             }
         });
-        
+
         // Trap focus within modal
         this.modal.addEventListener('keydown', (e) => {
             if (e.key === 'Tab') {
@@ -202,51 +198,35 @@ export class KeyboardShortcutsModal {
             }
         });
     }
-    
+
     /**
      * Handle global keyboard shortcuts
      * @param {KeyboardEvent} e - Keyboard event
      */
     handleGlobalShortcuts(e) {
-        switch(e.key.toLowerCase()) {
-            case 't':
-                // Toggle theme
-                const themeToggle = document.getElementById(ELEMENT_IDS.THEME_TOGGLE);
-                if (themeToggle) {
-                    e.preventDefault();
-                    themeToggle.click();
-                }
-                break;
-                
-            case 'l':
-                // Toggle language
-                const langToggle = document.getElementById(ELEMENT_IDS.LANGUAGE_TOGGLE);
-                if (langToggle) {
-                    e.preventDefault();
-                    langToggle.click();
-                }
-                break;
-                
-            case 's':
-                // Focus sort dropdown
-                const sortSelect = document.getElementById(ELEMENT_IDS.SORT_SELECT);
-                if (sortSelect) {
-                    e.preventDefault();
-                    sortSelect.focus();
-                }
-                break;
-                
-            case '/':
-                // Focus search
-                const searchInput = document.getElementById(ELEMENT_IDS.SEARCH_INPUT);
-                if (searchInput) {
-                    e.preventDefault();
-                    searchInput.focus();
-                }
-                break;
+        const shortcutActions = {
+            t: () => document.getElementById(ELEMENT_IDS.THEME_TOGGLE),
+            l: () => document.getElementById(ELEMENT_IDS.LANG_TOGGLE),
+            s: () => document.getElementById(ELEMENT_IDS.SORT_SELECT),
+            '/': () => document.getElementById(ELEMENT_IDS.SEARCH_INPUT)
+        };
+
+        const elementGetter = shortcutActions[e.key.toLowerCase()];
+        if (!elementGetter) {
+            return;
+        }
+
+        const targetElement = elementGetter();
+        if (targetElement) {
+            e.preventDefault();
+            if (targetElement.tagName === 'SELECT' || targetElement.tagName === 'INPUT') {
+                targetElement.focus();
+            } else {
+                targetElement.click();
+            }
         }
     }
-    
+
     /**
      * Trap focus within modal
      * @param {KeyboardEvent} e - Keyboard event
@@ -257,7 +237,7 @@ export class KeyboardShortcutsModal {
         );
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
-        
+
         if (e.shiftKey) {
             if (document.activeElement === firstElement) {
                 e.preventDefault();
@@ -270,34 +250,34 @@ export class KeyboardShortcutsModal {
             }
         }
     }
-    
+
     /**
      * Show modal
      */
     show() {
         this.modal.style.display = 'block';
         this.isVisible = true;
-        
+
         // Focus close button
         setTimeout(() => {
             this.modal.querySelector('#shortcuts-close-btn').focus();
         }, 100);
-        
+
         // Prevent body scrolling
         document.body.style.overflow = 'hidden';
     }
-    
+
     /**
      * Hide modal
      */
     hide() {
         this.modal.style.display = 'none';
         this.isVisible = false;
-        
+
         // Restore body scrolling
         document.body.style.overflow = '';
     }
-    
+
     /**
      * Toggle modal visibility
      */

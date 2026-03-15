@@ -20,38 +20,38 @@ export class EvolutionTreeView {
     static createEvolutionTree(evolutionChain, currentPokemonId, onPokemonClick) {
         const container = createSafeElement('div');
         container.classList.add('evolution-tree');
-        
+
         if (!evolutionChain || evolutionChain.length <= 1) {
             return container; // Don't show for Pokemon without evolutions
         }
-        
+
         const title = createSafeElement('h4', 'Evolution Chain');
         title.classList.add('evolution-tree-title');
         container.appendChild(title);
-        
+
         const chainContainer = createSafeElement('div');
         chainContainer.classList.add('evolution-chain-container');
-        
+
         evolutionChain.forEach((evolution, index) => {
             // Create evolution stage
             const stage = this._createEvolutionStage(
-                evolution, 
+                evolution,
                 evolution.id === currentPokemonId,
                 onPokemonClick
             );
             chainContainer.appendChild(stage);
-            
+
             // Add arrow between stages (except after last one)
             if (index < evolutionChain.length - 1) {
                 const arrow = this._createEvolutionArrow();
                 chainContainer.appendChild(arrow);
             }
         });
-        
+
         container.appendChild(chainContainer);
         return container;
     }
-    
+
     /**
      * Creates an evolution stage (Pokemon in the chain)
      * @private
@@ -66,7 +66,7 @@ export class EvolutionTreeView {
         if (isCurrent) {
             stage.classList.add('evolution-stage-current');
         }
-        
+
         // Make it clickable if not the current Pokemon
         if (!isCurrent && onClick) {
             stage.classList.add('evolution-stage-clickable');
@@ -80,11 +80,11 @@ export class EvolutionTreeView {
                 }
             });
         }
-        
+
         // Pokemon image
         const imageContainer = createSafeElement('div');
         imageContainer.classList.add('evolution-image-container');
-        
+
         const img = createImageWithFallback(
             `https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master/sprites/pokemon/${evolution.id}.png`,
             evolution.name,
@@ -98,27 +98,27 @@ export class EvolutionTreeView {
                 }
             }
         );
-        
+
         imageContainer.appendChild(img);
         stage.appendChild(imageContainer);
-        
+
         // Pokemon name and ID
         const nameContainer = createSafeElement('div');
         nameContainer.classList.add('evolution-name-container');
-        
+
         const name = createSafeElement('div', evolution.name);
         name.classList.add('evolution-name');
-        
+
         const id = createSafeElement('div', `#${String(evolution.id).padStart(3, '0')}`);
         id.classList.add('evolution-id');
-        
+
         nameContainer.appendChild(name);
         nameContainer.appendChild(id);
         stage.appendChild(nameContainer);
-        
+
         return stage;
     }
-    
+
     /**
      * Creates an evolution arrow
      * @private

@@ -1,7 +1,7 @@
 /**
  * Environment Configuration Utility
  * @module Config
- * 
+ *
  * Provides environment-specific configuration for development vs production
  */
 
@@ -23,7 +23,7 @@ export function detectEnvironment() {
     if (window.location.hostname === 'localhost' && window.location.port === '8000') {
         return ENV.TEST;
     }
-    
+
     // Check for development environment
     if (
         window.location.hostname === 'localhost' ||
@@ -33,7 +33,7 @@ export function detectEnvironment() {
     ) {
         return ENV.DEVELOPMENT;
     }
-    
+
     // Production environment
     return ENV.PRODUCTION;
 }
@@ -57,7 +57,7 @@ class Configuration {
             appName: 'Pokédex',
             version: '1.1.0',
             apiUrl: 'https://pokeapi.co/api/v2',
-            cacheVersion: 'v1.1.0',
+            cacheVersion: 'v1.1.0'
         };
 
         const developmentConfig = {
@@ -68,7 +68,7 @@ class Configuration {
             enableServiceWorker: false,
             cacheStrategy: 'network-first',
             errorReporting: false,
-            analyticsEnabled: false,
+            analyticsEnabled: false
         };
 
         const productionConfig = {
@@ -79,7 +79,7 @@ class Configuration {
             enableServiceWorker: true,
             cacheStrategy: 'cache-first',
             errorReporting: true,
-            analyticsEnabled: true,
+            analyticsEnabled: true
         };
 
         const testConfig = {
@@ -90,18 +90,18 @@ class Configuration {
             enableServiceWorker: false,
             cacheStrategy: 'network-only',
             errorReporting: false,
-            analyticsEnabled: false,
+            analyticsEnabled: false
         };
 
         switch (this.environment) {
-            case ENV.DEVELOPMENT:
-                return developmentConfig;
-            case ENV.PRODUCTION:
-                return productionConfig;
-            case ENV.TEST:
-                return testConfig;
-            default:
-                return productionConfig;
+        case ENV.DEVELOPMENT:
+            return developmentConfig;
+        case ENV.PRODUCTION:
+            return productionConfig;
+        case ENV.TEST:
+            return testConfig;
+        default:
+            return productionConfig;
         }
     }
 
@@ -151,9 +151,7 @@ class Configuration {
      * @param {...any} args - Arguments to log
      */
     log(...args) {
-        if (this._config.enableConsoleLogging) {
-            console.log('[Config]', ...args);
-        }
+        void args;
     }
 
     /**
@@ -161,7 +159,7 @@ class Configuration {
      * @param {...any} args - Arguments to log
      */
     error(...args) {
-        console.error('[Config]', ...args);
+        void args;
     }
 
     /**
@@ -169,9 +167,7 @@ class Configuration {
      * @param {...any} args - Arguments to log
      */
     warn(...args) {
-        if (this._config.enableConsoleLogging) {
-            console.warn('[Config]', ...args);
-        }
+        void args;
     }
 
     /**
@@ -211,7 +207,7 @@ class Configuration {
         // Placeholder for error reporting service integration
         // In production, this could send to Sentry, LogRocket, etc.
         this.error('Error reported:', error, context);
-        
+
         // Example integration point:
         // if (window.Sentry) {
         //     window.Sentry.captureException(error, { extra: context });
@@ -229,7 +225,7 @@ let configInstance = null;
 export function getConfig() {
     if (!configInstance) {
         configInstance = new Configuration();
-        
+
         // Log environment on first access
         configInstance.log(`Running in ${configInstance.environment} mode`);
         configInstance.log('Configuration:', configInstance.getAll());

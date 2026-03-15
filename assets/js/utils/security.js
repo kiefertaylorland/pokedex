@@ -24,17 +24,17 @@ export function sanitizeHTML(html) {
  */
 export function createSafeElement(tagName, textContent = '', attributes = {}) {
     const element = document.createElement(tagName);
-    
+
     if (textContent) {
         element.textContent = textContent;
     }
-    
+
     Object.entries(attributes).forEach(([key, value]) => {
         if (typeof value === 'string') {
             element.setAttribute(key, sanitizeHTML(value));
         }
     });
-    
+
     return element;
 }
 
@@ -75,7 +75,7 @@ export function sanitizeSearchInput(input) {
     if (typeof input !== 'string') {
         return '';
     }
-    
+
     return input
         .trim()
         .slice(0, 100) // Limit length

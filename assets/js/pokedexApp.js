@@ -9,6 +9,9 @@ import { PokemonDataManager } from './managers/dataManager.js';
 import { UIController } from './managers/uiController.js';
 import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
+import { PokemonComparison } from './components/pokemonComparison.js';
+import { TeamBuilder } from './components/teamBuilder.js';
+import { PokemonQuickJump } from './components/pokemonQuickJump.js';
 import { SearchController } from './controllers/searchController.js';
 import { SortController } from './controllers/sortController.js?v=1.1.4';
 import { URLRouter } from './utils/urlRouter.js';
@@ -29,6 +32,9 @@ export class PokedexApp {
         this.searchController = null;
         this.sortController = null;
         this.keyboardShortcutsModal = null;
+        this.pokemonComparison = null;
+        this.teamBuilder = null;
+        this.quickJump = null;
         this.isInitialized = false;
         this.appState = new AppState();
         this.boundHandlers = new Map();
@@ -53,6 +59,8 @@ export class PokedexApp {
             
             // Load Pokemon data
             await this.dataManager.loadPokemonData();
+
+            this._initializeAdvancedFeatures();
             
             // Initial render
             this._renderInitialData();
@@ -94,10 +102,20 @@ export class PokedexApp {
         );
 
         // Initialize detail view with close callback
+        this.pokemonComparison = new PokemonComparison(this.dataManager, this.uiController);
+        this.teamBuilder = new TeamBuilder(this.dataManager, this.uiController);
+        this.quickJump = new PokemonQuickJump(this.dataManager, this.uiController, this.cardRenderer);
+
         this.detailView = new PokemonDetailView(
             this.dataManager, 
             this.uiController,
-            () => this._handleDetailViewClose()
+            {
+                onClose: () => this._handleDetailViewClose(),
+                teamBuilder: this.teamBuilder,
+                pokemonComparison: this.pokemonComparison,
+                onCompare: (pokemon) => this._handlePokemonCompareAction(pokemon),
+                onTeamToggle: (pokemon) => this._handlePokemonTeamToggle(pokemon)
+            }
         );
 
         // Initialize search controller
@@ -119,6 +137,19 @@ export class PokedexApp {
     }
 
     /**
+     * Initializes advanced runtime features that depend on loaded data
+     * @private
+     */
+    _initializeAdvancedFeatures() {
+        if (this.teamBuilder) {
+            this.teamBuilder.initialize();
+        }
+        if (this.quickJump) {
+            this.quickJump.initialize();
+        }
+    }
+
+    /**
      * Renders pokemon list with unified click handling
      * @private
      * @param {Array} pokemonList - List to render
@@ -126,8 +157,18 @@ export class PokedexApp {
     _renderPokemonList(pokemonList) {
         this.cardRenderer.renderPokemonCards(
             pokemonList,
-            (pokemon) => this._handlePokemonCardClick(pokemon)
+            (pokemon) => this._handlePokemonCardClick(pokemon),
+            {
+                onCompare: (pokemon) => this._handlePokemonCompareAction(pokemon),
+                onTeamToggle: (pokemon) => this._handlePokemonTeamToggle(pokemon),
+                teamBuilder: this.teamBuilder
+            }
         );
+
+        if (this.quickJump) {
+            const currentSort = this.sortController ? this.sortController.getCurrentSortOption() : null;
+            this.quickJump.refresh(pokemonList, currentSort);
+        }
     }
 
     /**
@@ -228,8 +269,55 @@ export class PokedexApp {
      * @param {Object} pokemon - Pokemon data
      */
     _handlePokemonCardClick(pokemon) {
+        if (this.pokemonComparison && this.pokemonComparison.isSelecting()) {
+            this.pokemonComparison.addToComparison(pokemon.id);
+            return;
+        }
+
         this._openPokemonDetail(pokemon);
         this._updatePokemonSeoAndRoute(pokemon, true);
+    }
+
+    /**
+     * Handles compare action from card/detail entries
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     */
+    _handlePokemonCompareAction(pokemon) {
+        if (!this.pokemonComparison || !pokemon) {
+            return;
+        }
+
+        if (this.pokemonComparison.isSelecting()) {
+            this.pokemonComparison.addToComparison(pokemon.id);
+        } else {
+            this.pokemonComparison.startComparison(pokemon.id);
+        }
+    }
+
+    /**
+     * Handles team add/remove action from card/detail entries
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     */
+    _handlePokemonTeamToggle(pokemon) {
+        if (!this.teamBuilder || !pokemon) {
+            return;
+        }
+
+        if (this.teamBuilder.isInTeam(pokemon.id)) {
+            this.teamBuilder.removeFromTeam(pokemon.id);
+        } else {
+            this.teamBuilder.addToTeam(pokemon.id);
+        }
+
+        this._applyFiltersAndRender();
+        if (this.detailView && this.detailView.isDetailVisible()) {
+            const currentPokemon = this.detailView.getCurrentPokemon();
+            if (currentPokemon && currentPokemon.id === pokemon.id) {
+                this.detailView.refreshContent();
+            }
+        }
     }
 
     /**
@@ -283,6 +371,20 @@ export class PokedexApp {
         this._bindClickAction(ELEMENT_IDS.SURPRISE_BUTTON, () => this._handleSurpriseClick());
         this._bindClickAction(ELEMENT_IDS.THEME_TOGGLE, () => this.uiController.toggleTheme());
         this._bindClickAction(ELEMENT_IDS.LANG_TOGGLE, () => this._handleLanguageToggle());
+        this._bindDocumentEvent('showPokemonDetail', (event) => {
+            const pokemonId = event && event.detail ? event.detail.id : null;
+            if (!pokemonId) {
+                return;
+            }
+
+            const pokemon = this.dataManager.getPokemonById(pokemonId);
+            if (!pokemon) {
+                return;
+            }
+
+            this._openPokemonDetail(pokemon);
+            this._updatePokemonSeoAndRoute(pokemon, true);
+        });
 
         // Window resize handling for responsive design
         window.addEventListener('resize', debounce(() => {
@@ -310,6 +412,17 @@ export class PokedexApp {
 
         element.addEventListener(EVENTS.CLICK, handler);
         this.boundHandlers.set(`${elementId}:${EVENTS.CLICK}`, { element, handler, event: EVENTS.CLICK });
+    }
+
+    /**
+     * Binds document-level events and tracks references for cleanup
+     * @private
+     * @param {string} eventName - Event name
+     * @param {Function} handler - Event handler
+     */
+    _bindDocumentEvent(eventName, handler) {
+        document.addEventListener(eventName, handler);
+        this.boundHandlers.set(`document:${eventName}`, { element: document, handler, event: eventName });
     }
 
     /**
@@ -349,6 +462,18 @@ export class PokedexApp {
         // Refresh detail view if open
         if (this.detailView.isDetailVisible()) {
             this.detailView.refreshContent();
+        }
+
+        if (this.teamBuilder && typeof this.teamBuilder.refreshUI === 'function') {
+            this.teamBuilder.refreshUI();
+        }
+
+        if (this.pokemonComparison && typeof this.pokemonComparison.refreshUI === 'function') {
+            this.pokemonComparison.refreshUI();
+        }
+
+        if (this.quickJump && typeof this.quickJump.refreshUI === 'function') {
+            this.quickJump.refreshUI();
         }
     }
 
@@ -462,7 +587,14 @@ export class PokedexApp {
      * @private
      */
     _teardownComponents() {
-        const destroyables = [this.detailView, this.searchController, this.sortController];
+        const destroyables = [
+            this.detailView,
+            this.searchController,
+            this.sortController,
+            this.pokemonComparison,
+            this.teamBuilder,
+            this.quickJump
+        ];
 
         destroyables.forEach((instance) => {
             if (instance && typeof instance.destroy === 'function') {

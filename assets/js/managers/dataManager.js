@@ -36,7 +36,7 @@ export class PokemonDataManager {
         }
 
         this.loadingPromise = this._fetchPokemonData();
-        
+
         try {
             this.allPokemonData = await this.loadingPromise;
             this.isLoaded = true;
@@ -63,15 +63,14 @@ export class PokemonDataManager {
 
         // Cache miss - fetch from network
         try {
-            console.log('📡 Fetching Pokemon data from network...');
             const response = await fetch(DATA.JSON_FILE);
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const data = await response.json();
-            
+
             if (!Array.isArray(data)) {
                 throw new Error('Invalid data format: expected array');
             }
@@ -81,7 +80,6 @@ export class PokemonDataManager {
 
             return data;
         } catch (error) {
-            console.error('Failed to load Pokemon data:', error);
             throw new Error('Could not load Pokémon data. Please check your connection and try again.');
         }
     }
@@ -211,7 +209,7 @@ export class PokemonDataManager {
         if (!this.isLoaded || this.allPokemonData.length === 0) {
             return null;
         }
-        
+
         const randomIndex = Math.floor(Math.random() * this.allPokemonData.length);
         return this.allPokemonData[randomIndex];
     }
