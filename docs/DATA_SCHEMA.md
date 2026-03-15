@@ -46,7 +46,7 @@ Each Pokemon object in the array has the following structure:
 | `genus_en` | string | Pokemon category in English | `"Mouse Pokemon"` |
 | `genus_jp` | string | Pokemon category in Japanese | `"ねずみポケモン"` |
 | `moves` | array[object] | Move set (up to 4 moves, see below) | `[{...}]` |
-| `evolution_chain` | array[object] | Evolution chain (see below) | `[{...}]` |
+| `evolution_chain` | object or array[object] | Evolution chain graph (see below; legacy array supported) | `{"nodes":[...],"transitions":[...]}` |
 | `weaknesses` | object | Type weaknesses (multiplier ≥ 2.0) | `{"Ground": 2.0}` |
 | `resistances` | object | Type resistances (0 < multiplier < 1.0) | `{"Electric": 0.5}` |
 | `immunities` | object | Type immunities (multiplier = 0) | `{"Ghost": 0}` |
@@ -108,6 +108,8 @@ Up to 4 level-up moves, prioritizing recent game versions. Each move object:
   "name_jp": "でんきショック",
   "type_en": "Electric",
   "type_jp": "でんき",
+  "damage_class": "special",
+  "damage_class_en": "Special",
   "power": 40,
   "accuracy": 100,
   "pp": 30,
@@ -121,33 +123,41 @@ Up to 4 level-up moves, prioritizing recent game versions. Each move object:
 | `name_jp` | string | Move name in Japanese |
 | `type_en` | string | Move type in English |
 | `type_jp` | string | Move type in Japanese |
+| `damage_class` | string or null | Raw PokeAPI damage class (`physical`, `special`, `status`) |
+| `damage_class_en` | string or null | Title-case damage class for display |
 | `power` | integer or null | Base power of the move (null for status moves) |
 | `accuracy` | integer or null | Accuracy percentage (null for moves that never miss) |
 | `pp` | integer | Power Points (number of times move can be used) |
 | `level` | integer | Level at which move is learned |
 
-### Evolution Chain Array
+### Evolution Chain Object
 
-Complete evolution chain for the Pokemon's family:
+Complete evolution graph for the Pokemon's family:
 
 ```json
-[
-  {
-    "name": "Pichu",
-    "id": 172
-  },
-  {
-    "name": "Pikachu",
-    "id": 25
-  },
-  {
-    "name": "Raichu",
-    "id": 26
-  }
-]
+{
+  "nodes": [
+    { "name": "Pichu", "id": 172 },
+    { "name": "Pikachu", "id": 25 },
+    { "name": "Raichu", "id": 26 }
+  ],
+  "transitions": [
+    {
+      "from_id": 172,
+      "to_id": 25,
+      "methods": [
+        {
+          "trigger": "level-up",
+          "min_happiness": 220,
+          "description": "Level-up, Happiness 220+"
+        }
+      ]
+    }
+  ]
+}
 ```
 
-**Note:** All Pokemon in the same evolutionary family share the same evolution chain array.
+Legacy data may still contain a flat `evolution_chain` array; the UI supports both formats.
 
 ### Type Effectiveness Objects
 

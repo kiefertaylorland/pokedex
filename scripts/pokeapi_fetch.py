@@ -276,25 +276,119 @@ def fetch_evolution_chain(evolution_chain_url):
         if not chain_data:
             return []
         
-        evolution_list = []
-        
-        def parse_chain(chain_link):
-            """Recursively parse evolution chain."""
+        evolution_nodes = []
+        evolution_transitions = []
+        seen_nodes = set()
+
+        def format_evolution_method(detail):
+            """Formats a single PokeAPI evolution detail into a compact metadata object."""
+            def nested_name(key):
+                value = detail.get(key)
+                if isinstance(value, dict):
+                    return value.get("name")
+                return None
+
+            trigger = detail.get("trigger", {}).get("name")
+            item = nested_name("item")
+            held_item = nested_name("held_item")
+            known_move = nested_name("known_move")
+            known_move_type = nested_name("known_move_type")
+            location = nested_name("location")
+            party_species = nested_name("party_species")
+            party_type = nested_name("party_type")
+            trade_species = nested_name("trade_species")
+
+            method = {
+                "trigger": trigger,
+                "min_level": detail.get("min_level"),
+                "item": item,
+                "held_item": held_item,
+                "known_move": known_move,
+                "known_move_type": known_move_type,
+                "location": location,
+                "min_happiness": detail.get("min_happiness"),
+                "min_beauty": detail.get("min_beauty"),
+                "min_affection": detail.get("min_affection"),
+                "time_of_day": detail.get("time_of_day"),
+                "gender": detail.get("gender"),
+                "relative_physical_stats": detail.get("relative_physical_stats"),
+                "needs_overworld_rain": detail.get("needs_overworld_rain"),
+                "party_species": party_species,
+                "party_type": party_type,
+                "trade_species": trade_species,
+                "turn_upside_down": detail.get("turn_upside_down", False)
+            }
+
+            description_parts = []
+            if trigger == "level-up":
+                if method["min_level"]:
+                    description_parts.append(f"Level {method['min_level']}")
+                else:
+                    description_parts.append("Level-up")
+            elif trigger == "use-item":
+                description_parts.append(f"Use {item.replace('-', ' ').title()}" if item else "Use item")
+            elif trigger == "trade":
+                description_parts.append("Trade")
+            else:
+                description_parts.append(trigger.replace("-", " ").title() if trigger else "Special")
+
+            if method["time_of_day"]:
+                description_parts.append(method["time_of_day"].title())
+            if method["held_item"]:
+                description_parts.append(f"Holding {method['held_item'].replace('-', ' ').title()}")
+            if method["known_move"]:
+                description_parts.append(f"Knows {method['known_move'].replace('-', ' ').title()}")
+            if method["known_move_type"]:
+                description_parts.append(f"{method['known_move_type'].replace('-', ' ').title()} move")
+            if method["location"]:
+                description_parts.append(f"At {method['location'].replace('-', ' ').title()}")
+            if method["min_happiness"]:
+                description_parts.append(f"Happiness {method['min_happiness']}+")
+            if method["min_beauty"]:
+                description_parts.append(f"Beauty {method['min_beauty']}+")
+            if method["min_affection"]:
+                description_parts.append(f"Affection {method['min_affection']}+")
+            if method["trade_species"]:
+                description_parts.append(f"for {method['trade_species'].replace('-', ' ').title()}")
+            if method["needs_overworld_rain"]:
+                description_parts.append("While raining")
+            if method["turn_upside_down"]:
+                description_parts.append("Upside-down device")
+
+            method["description"] = ", ".join(description_parts)
+            return method
+
+        def parse_chain(chain_link, parent_id=None):
+            """Recursively parse evolution chain and transition methods."""
             species_name = chain_link["species"]["name"]
             species_id = int(chain_link["species"]["url"].rstrip('/').split('/')[-1])
-            
-            evolution_list.append({
-                "name": species_name.capitalize(),
-                "id": species_id
-            })
-            
-            # Parse evolutions
-            if chain_link.get("evolves_to"):
-                for evolution in chain_link["evolves_to"]:
-                    parse_chain(evolution)
-        
+
+            if species_id not in seen_nodes:
+                evolution_nodes.append({
+                    "name": species_name.capitalize(),
+                    "id": species_id
+                })
+                seen_nodes.add(species_id)
+
+            if parent_id is not None:
+                method_details = chain_link.get("evolution_details") or []
+                methods = [format_evolution_method(detail) for detail in method_details]
+                if not methods:
+                    methods = [{"trigger": None, "description": "Unknown method"}]
+                evolution_transitions.append({
+                    "from_id": parent_id,
+                    "to_id": species_id,
+                    "methods": methods
+                })
+
+            for evolution in chain_link.get("evolves_to", []):
+                parse_chain(evolution, species_id)
+
         parse_chain(chain_data["chain"])
-        return evolution_list
+        return {
+            "nodes": evolution_nodes,
+            "transitions": evolution_transitions
+        }
         
     except Exception as e:
         logger.error(f"Error fetching evolution chain: {e}")
@@ -442,6 +536,8 @@ def fetch_and_build_pokedex(pokemon_count=POKEMON_COUNT, base_url=BASE_URL, slee
                     "name_jp": move_name_jp,
                     "type_en": move_type_en,
                     "type_jp": move_type_jp,
+                    "damage_class": move_detail_data["damage_class"]["name"] if move_detail_data.get("damage_class") else None,
+                    "damage_class_en": move_detail_data["damage_class"]["name"].replace("-", " ").title() if move_detail_data.get("damage_class") else None,
                     "power": move_detail_data["power"],
                     "accuracy": move_detail_data["accuracy"],
                     "pp": move_detail_data["pp"],
