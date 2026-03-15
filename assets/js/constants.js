@@ -71,7 +71,12 @@ export const UI_TEXT = {
         moveAccuracy: "Accuracy",
         movePP: "PP",
         moveLevel: "Lv.",
+        moveDamageClass: "Class",
+        damageClassPhysical: "Physical",
+        damageClassSpecial: "Special",
+        damageClassStatus: "Status",
         evolutionChain: "Evolution Chain",
+        evolutionMethod: "Method",
         weaknesses: "Weaknesses",
         resistances: "Resistances",
         immunities: "Immunities",
@@ -97,7 +102,45 @@ export const UI_TEXT = {
         sortNumberDesc: "Number (High to Low)",
         sortNameAsc: "Name (A-Z)",
         sortNameDesc: "Name (Z-A)",
-        sortStatTotal: "Stat Total"
+        sortHeightAsc: "Height (Low to High)",
+        sortHeightDesc: "Height (High to Low)",
+        sortWeightAsc: "Weight (Low to High)",
+        sortWeightDesc: "Weight (High to Low)",
+        sortStatTotal: "Stat Total",
+        comparePokemon: "Compare",
+        addToTeam: "Add to Team",
+        removeFromTeam: "Remove from Team",
+        comparisonSelectTitle: "Select Pokémon to Compare",
+        comparisonSelectedCount: "{selected}/{max} selected. Click a card to add another Pokémon.",
+        comparisonTitle: "Pokémon Comparison",
+        comparisonAddThird: "Add Third Pokémon",
+        comparisonStartOver: "Start Over",
+        comparisonClose: "Close",
+        comparisonCancel: "Cancel",
+        comparisonStats: "Stats",
+        comparisonTypes: "Types",
+        comparisonStatLabel: "Stat",
+        comparisonFull: "Comparison is already full (3 Pokémon).",
+        teamTitle: "My Team",
+        teamToggle: "Toggle team panel",
+        teamViewTitle: "View your team",
+        teamCountLabel: "{count}/6 Pokemon",
+        clearTeam: "Clear Team",
+        teamSlotLabel: "Slot {slot}",
+        teamCoverageTitle: "Type Coverage",
+        teamCoverageEmpty: "Add Pokémon to see coverage analysis.",
+        teamOffensiveCoverage: "Offensive coverage: {covered}/{total}",
+        teamSharedWeaknesses: "Shared weaknesses: {value}",
+        teamSharedWeaknessesNone: "None",
+        teamUncoveredTypes: "Uncovered types: {value}",
+        teamUncoveredTypesNone: "None",
+        teamFull: "Team is full! Maximum 6 Pokémon allowed.",
+        teamAlreadyAdded: "This Pokémon is already in your team!",
+        teamAdded: "Pokémon added to team!",
+        teamRemoved: "Pokémon removed from team!",
+        teamCleared: "Team cleared!",
+        teamClearConfirm: "Are you sure you want to clear your entire team?",
+        teamRemoveAria: "Remove {name} from team"
     },
     [LANGUAGES.JAPANESE]: {
         title: "ポケモン図鑑", // Pokemon Zukan
@@ -118,7 +161,12 @@ export const UI_TEXT = {
         moveAccuracy: "命中", // Meichuu
         movePP: "PP",
         moveLevel: "Lv.",
+        moveDamageClass: "分類",
+        damageClassPhysical: "ぶつり",
+        damageClassSpecial: "とくしゅ",
+        damageClassStatus: "へんか",
         evolutionChain: "進化チェーン", // Shinka Chain
+        evolutionMethod: "進化条件",
         weaknesses: "弱点", // Jakuten
         resistances: "耐性", // Taisei
         immunities: "無効", // Mukou
@@ -144,7 +192,45 @@ export const UI_TEXT = {
         sortNumberDesc: "番号 (降順)",
         sortNameAsc: "名前 (A-Z)",
         sortNameDesc: "名前 (Z-A)",
-        sortStatTotal: "合計能力値"
+        sortHeightAsc: "高さ (昇順)",
+        sortHeightDesc: "高さ (降順)",
+        sortWeightAsc: "重さ (昇順)",
+        sortWeightDesc: "重さ (降順)",
+        sortStatTotal: "合計能力値",
+        comparePokemon: "比較する",
+        addToTeam: "チームに追加",
+        removeFromTeam: "チームから削除",
+        comparisonSelectTitle: "比較するポケモンを選択",
+        comparisonSelectedCount: "{selected}/{max} 匹選択中。カードをクリックして追加してください。",
+        comparisonTitle: "ポケモン比較",
+        comparisonAddThird: "3匹目を追加",
+        comparisonStartOver: "最初からやり直す",
+        comparisonClose: "閉じる",
+        comparisonCancel: "キャンセル",
+        comparisonStats: "能力",
+        comparisonTypes: "タイプ",
+        comparisonStatLabel: "能力値",
+        comparisonFull: "比較はすでに3匹でいっぱいです。",
+        teamTitle: "マイチーム",
+        teamToggle: "チームパネルを切り替え",
+        teamViewTitle: "チームを表示",
+        teamCountLabel: "{count}/6 匹",
+        clearTeam: "チームをクリア",
+        teamSlotLabel: "スロット {slot}",
+        teamCoverageTitle: "タイプ相性分析",
+        teamCoverageEmpty: "ポケモンを追加すると相性分析を表示します。",
+        teamOffensiveCoverage: "攻撃範囲: {covered}/{total}",
+        teamSharedWeaknesses: "共通の弱点: {value}",
+        teamSharedWeaknessesNone: "なし",
+        teamUncoveredTypes: "未カバータイプ: {value}",
+        teamUncoveredTypesNone: "なし",
+        teamFull: "チームは満員です（最大6匹）。",
+        teamAlreadyAdded: "そのポケモンはすでにチームにいます。",
+        teamAdded: "ポケモンをチームに追加しました。",
+        teamRemoved: "ポケモンをチームから外しました。",
+        teamCleared: "チームをクリアしました。",
+        teamClearConfirm: "チームをすべてクリアしますか？",
+        teamRemoveAria: "{name} をチームから外す"
     }
 };
 
@@ -189,7 +275,13 @@ export const EVENTS = {
 export const KEYS = {
     ENTER: 'Enter',
     SPACE: ' ',
-    ESCAPE: 'Escape'
+    ESCAPE: 'Escape',
+    ARROW_LEFT: 'ArrowLeft',
+    ARROW_RIGHT: 'ArrowRight',
+    ARROW_UP: 'ArrowUp',
+    ARROW_DOWN: 'ArrowDown',
+    HOME: 'Home',
+    END: 'End'
 };
 
 // Sort options
@@ -198,6 +290,10 @@ export const SORT_OPTIONS = {
     NUMBER_DESC: 'number-desc',
     NAME_ASC: 'name-asc',
     NAME_DESC: 'name-desc',
+    HEIGHT_ASC: 'height-asc',
+    HEIGHT_DESC: 'height-desc',
+    WEIGHT_ASC: 'weight-asc',
+    WEIGHT_DESC: 'weight-desc',
     STAT_TOTAL: 'stat-total'
 };
 

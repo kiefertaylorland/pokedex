@@ -29,11 +29,11 @@ export class URLRouter {
     /**
      * Handles route changes
      * @private
-     * @param {Object} state - History state object
+     * @param {Object} _state - History state object
      */
-    _handleRouteChange(state) {
+    _handleRouteChange(_state) {
         const pokemonId = this.getPokemonIdFromURL();
-        
+
         if (pokemonId && this.onPokemonRoute) {
             this.onPokemonRoute(pokemonId);
         }
@@ -45,14 +45,14 @@ export class URLRouter {
      */
     getPokemonIdFromURL() {
         const hash = window.location.hash;
-        
+
         // Support formats: #pokemon/25 or #pokemon-25 or #25
         const match = hash.match(/#(?:pokemon[/-])?(\d+)/);
-        
+
         if (match && match[1]) {
             return parseInt(match[1], 10);
         }
-        
+
         return null;
     }
 
@@ -64,10 +64,10 @@ export class URLRouter {
     pushPokemonRoute(pokemonId, pokemonName) {
         const slug = this._createSlug(pokemonName);
         const newHash = `#pokemon/${pokemonId}/${slug}`;
-        
+
         // Update URL without reloading page
         history.pushState(
-            { pokemonId, pokemonName }, 
+            { pokemonId, pokemonName },
             `Pokémon #${pokemonId} - ${pokemonName}`,
             newHash
         );
@@ -118,10 +118,10 @@ export class URLRouter {
      */
     generateMetaDescription(pokemon, language = 'en') {
         const name = language === 'jp' ? (pokemon.name_jp || pokemon.name_en) : pokemon.name_en;
-        const types = language === 'jp' ? 
-            (pokemon.types_jp || pokemon.types_en) : 
+        const types = language === 'jp' ?
+            (pokemon.types_jp || pokemon.types_en) :
             pokemon.types_en;
-        
+
         return `${name} (#${pokemon.id}) - ${types.join('/')} type Pokémon. View detailed stats, moves, evolution chain, and more in our complete Pokédex.`;
     }
 

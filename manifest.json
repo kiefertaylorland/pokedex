@@ -35,14 +35,5 @@
       "type": "image/png",
       "label": "Detailed Pokémon view with stats and information"
     }
-  ],
-  "share_target": {
-    "action": "/",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  }
+  ]
 }

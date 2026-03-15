@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "1.1.0",
-  "description": "Interactive Pok\u00e9dex featuring all Pok\u00e9mon with detailed stats and multilingual support",
+  "description": "Interactive Pokédex featuring all Pokémon with detailed stats and multilingual support",
   "repository": {
     "type": "git",
     "url": "https://github.com/kiefertaylorland/pokedex.git"
@@ -13,10 +13,13 @@
     "lint:fix": "eslint assets/js/**/*.js --fix",
     "lint:changed": "bash scripts/lint-changed.sh",
     "serve": "python3 -m http.server 8000",
-    "validate": "python scripts/validate_seo_files.py",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "validate": "python3 scripts/validate_seo_files.py",
     "generate:types": "python scripts/generate_type_effectiveness.py"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "eslint": "^8.50.0"
   },
   "engines": {

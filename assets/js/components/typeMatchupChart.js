@@ -14,42 +14,42 @@ export class TypeMatchupChart {
     /**
      * Creates the type matchup chart element
      * @param {Array<string>} pokemonTypes - Pokemon's types
-     * @param {Object} uiText - UI text object for localization
+     * @param {Object} _uiText - UI text object for localization
      * @returns {HTMLElement} Type matchup chart element
      */
-    static createChart(pokemonTypes, uiText) {
+    static createChart(pokemonTypes, _uiText) {
         const container = createSafeElement('div');
         container.classList.add('type-matchup-chart');
-        
+
         const matchups = getTypeMatchups(pokemonTypes);
-        
+
         // Title
         const title = createSafeElement('h4', 'Type Matchups');
         title.classList.add('type-matchup-title');
         container.appendChild(title);
-        
+
         // Create sections for weaknesses, resistances, and immunities
         if (Object.keys(matchups.weaknesses).length > 0) {
             container.appendChild(
                 this._createMatchupSection('Weak to', matchups.weaknesses, 'weakness')
             );
         }
-        
+
         if (Object.keys(matchups.resistances).length > 0) {
             container.appendChild(
                 this._createMatchupSection('Resistant to', matchups.resistances, 'resistance')
             );
         }
-        
+
         if (matchups.immunities.length > 0) {
             container.appendChild(
                 this._createImmunitiesSection('Immune to', matchups.immunities)
             );
         }
-        
+
         return container;
     }
-    
+
     /**
      * Creates a matchup section (weaknesses or resistances)
      * @private
@@ -61,28 +61,28 @@ export class TypeMatchupChart {
     static _createMatchupSection(title, matchups, className) {
         const section = createSafeElement('div');
         section.classList.add('matchup-section', `matchup-${className}`);
-        
+
         const sectionTitle = createSafeElement('h5', title);
         sectionTitle.classList.add('matchup-section-title');
         section.appendChild(sectionTitle);
-        
+
         const typeList = createSafeElement('div');
         typeList.classList.add('matchup-type-list');
-        
+
         // Sort by effectiveness (highest first for weaknesses, lowest first for resistances)
         const sortedTypes = Object.entries(matchups).sort((a, b) => {
             return className === 'weakness' ? b[1] - a[1] : a[1] - b[1];
         });
-        
+
         sortedTypes.forEach(([type, effectiveness]) => {
             const typeItem = this._createTypeItem(type, effectiveness);
             typeList.appendChild(typeItem);
         });
-        
+
         section.appendChild(typeList);
         return section;
     }
-    
+
     /**
      * Creates immunities section
      * @private
@@ -93,23 +93,23 @@ export class TypeMatchupChart {
     static _createImmunitiesSection(title, types) {
         const section = createSafeElement('div');
         section.classList.add('matchup-section', 'matchup-immunity');
-        
+
         const sectionTitle = createSafeElement('h5', title);
         sectionTitle.classList.add('matchup-section-title');
         section.appendChild(sectionTitle);
-        
+
         const typeList = createSafeElement('div');
         typeList.classList.add('matchup-type-list');
-        
+
         types.forEach(type => {
             const typeItem = this._createTypeItem(type, 0);
             typeList.appendChild(typeItem);
         });
-        
+
         section.appendChild(typeList);
         return section;
     }
-    
+
     /**
      * Creates a type item with effectiveness indicator
      * @private
@@ -120,20 +120,20 @@ export class TypeMatchupChart {
     static _createTypeItem(type, effectiveness) {
         const item = createSafeElement('div');
         item.classList.add('matchup-type-item');
-        
+
         const typeSpan = createSafeElement('span', type.charAt(0).toUpperCase() + type.slice(1));
         const cssClassName = getTypeClassName(type);
         typeSpan.classList.add('type-badge', `type-${cssClassName}`);
-        
+
         const multiplierSpan = createSafeElement('span', this._formatMultiplier(effectiveness));
         multiplierSpan.classList.add('matchup-multiplier');
-        
+
         item.appendChild(typeSpan);
         item.appendChild(multiplierSpan);
-        
+
         return item;
     }
-    
+
     /**
      * Formats effectiveness multiplier for display
      * @private

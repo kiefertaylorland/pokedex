@@ -21,14 +21,13 @@ export class CacheManager {
                 timestamp: Date.now(),
                 data: pokemonData
             };
-            
+
             localStorage.setItem(CACHE.POKEMON_DATA_KEY, JSON.stringify(cacheData));
             localStorage.setItem(CACHE.POKEMON_DATA_VERSION_KEY, APP_VERSION);
-            
-            console.log(`✅ Cached ${pokemonData.length} Pokemon (v${APP_VERSION})`);
+
             return true;
         } catch (error) {
-            console.warn('Failed to cache Pokemon data:', error);
+            void error;
             // Quota exceeded or other error - clear cache and continue
             this.clearPokemonCache();
             return false;
@@ -42,10 +41,9 @@ export class CacheManager {
     static getCachedPokemonData() {
         try {
             const cachedVersion = localStorage.getItem(CACHE.POKEMON_DATA_VERSION_KEY);
-            
+
             // Check version mismatch
             if (cachedVersion !== APP_VERSION) {
-                console.log('🔄 Cache version mismatch - clearing cache');
                 this.clearPokemonCache();
                 return null;
             }
@@ -56,10 +54,9 @@ export class CacheManager {
             }
 
             const cacheData = JSON.parse(cachedString);
-            
+
             // Validate cache structure
             if (!cacheData.version || !cacheData.timestamp || !Array.isArray(cacheData.data)) {
-                console.warn('Invalid cache structure - clearing cache');
                 this.clearPokemonCache();
                 return null;
             }
@@ -67,17 +64,15 @@ export class CacheManager {
             // Check if cache has expired
             const cacheAge = Date.now() - cacheData.timestamp;
             const maxAge = CACHE.CACHE_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
-            
+
             if (cacheAge > maxAge) {
-                console.log('⏰ Cache expired - clearing cache');
                 this.clearPokemonCache();
                 return null;
             }
 
-            console.log(`✅ Using cached Pokemon data (${cacheData.data.length} Pokemon, ${Math.round(cacheAge / (1000 * 60 * 60))}h old)`);
             return cacheData.data;
         } catch (error) {
-            console.warn('Error reading cache:', error);
+            void error;
             this.clearPokemonCache();
             return null;
         }
@@ -126,7 +121,7 @@ export class CacheManager {
                 localStorage.setItem(CACHE.SEARCH_CACHE_KEY, JSON.stringify(cache));
             }
         } catch (error) {
-            console.warn('Failed to save search cache:', error);
+            void error;
             // Clear cache if quota exceeded
             this.clearSearchCache();
         }
@@ -155,7 +150,7 @@ export class CacheManager {
         try {
             const cache = this._getSearchCache();
             const cached = cache[searchKey];
-            
+
             if (!cached) {
                 return null;
             }
@@ -187,7 +182,6 @@ export class CacheManager {
     static clearAllCaches() {
         this.clearPokemonCache();
         this.clearSearchCache();
-        console.log('🗑️ All caches cleared');
     }
 
     /**
@@ -197,7 +191,7 @@ export class CacheManager {
     static getCacheStats() {
         const pokemonCache = localStorage.getItem(CACHE.POKEMON_DATA_KEY);
         const searchCache = localStorage.getItem(CACHE.SEARCH_CACHE_KEY);
-        
+
         return {
             pokemonCacheSize: pokemonCache ? pokemonCache.length : 0,
             searchCacheSize: searchCache ? searchCache.length : 0,

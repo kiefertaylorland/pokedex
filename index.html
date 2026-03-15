@@ -7,11 +7,8 @@
     <meta name="keywords" content="pokemon, pokedex, all generations, stats, types, japanese, english, complete">
     <meta name="author" content="Kiefer Land">
     
-    <!-- Security headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://cdn.jsdelivr.net data:; media-src 'self' https://raw.githubusercontent.com; connect-src 'self' https://pokeapi.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+    <!-- Security note: enforce CSP/XFO/nosniff via HTTP response headers in production -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://cdn.jsdelivr.net data:; media-src 'self' https://raw.githubusercontent.com; connect-src 'self' https://pokeapi.co; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ff3b30">
@@ -22,13 +19,11 @@
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Pokédex">
     <link rel="apple-touch-icon" href="assets/Poke_Ball_icon.png">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="pokedex_data.json" as="fetch" type="application/json" crossorigin>
 </head>
 <body>
     <!-- Skip link for keyboard navigation -->
@@ -62,6 +57,10 @@
                     <option value="number-desc">Number (High to Low)</option>
                     <option value="name-asc">Name (A-Z)</option>
                     <option value="name-desc">Name (Z-A)</option>
+                    <option value="height-asc">Height (Low to High)</option>
+                    <option value="height-desc">Height (High to Low)</option>
+                    <option value="weight-asc">Weight (Low to High)</option>
+                    <option value="weight-desc">Weight (High to Low)</option>
                     <option value="stat-total">Stat Total</option>
                 </select>
             </div>
