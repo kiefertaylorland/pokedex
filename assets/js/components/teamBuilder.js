@@ -17,6 +17,10 @@ export class TeamBuilder {
         this.team = this._loadTeam();
         this.maxTeamSize = 6;
         this.teamPanel = null;
+        this.teamEdgeTab = null;
+        this.teamToggleButton = null;
+        this.panelToggleButton = null;
+        this.isPanelOpen = false;
     }
 
     /**
@@ -100,9 +104,22 @@ export class TeamBuilder {
      * Toggle team panel visibility
      */
     toggleTeamPanel() {
-        if (this.teamPanel) {
-            this.teamPanel.classList.toggle('team-panel-visible');
+        this.setTeamPanelOpen(!this.isPanelOpen);
+    }
+
+    /**
+     * Set team panel open state and sync all controls
+     * @param {boolean} isOpen - Desired panel visibility
+     */
+    setTeamPanelOpen(isOpen) {
+        if (!this.teamPanel) {
+            return;
         }
+
+        this.isPanelOpen = Boolean(isOpen);
+        this.teamPanel.classList.toggle('team-panel-visible', this.isPanelOpen);
+        this.teamPanel.classList.toggle('team-panel-hidden', !this.isPanelOpen);
+        this._syncToggleAccessibility();
     }
 
     /**
@@ -124,8 +141,10 @@ export class TeamBuilder {
 
         const toggleButton = createSafeElement('button', '◀');
         toggleButton.classList.add('team-panel-toggle');
-        toggleButton.setAttribute('aria-label', uiText.teamToggle || 'Toggle team panel');
+        toggleButton.type = 'button';
+        toggleButton.setAttribute('aria-label', uiText.teamPanelClose || 'Close team panel');
         toggleButton.addEventListener('click', () => this.toggleTeamPanel());
+        this.panelToggleButton = toggleButton;
 
         header.appendChild(title);
         header.appendChild(toggleButton);
@@ -161,9 +180,12 @@ export class TeamBuilder {
         // Add to DOM
         document.body.appendChild(panel);
         this.teamPanel = panel;
+        this.teamPanel.classList.add('team-panel-hidden');
 
         // Add toggle button to header
         this._addTeamToggleButton();
+        this._createTeamEdgeTab();
+        this._syncToggleAccessibility();
     }
 
     /**
@@ -181,7 +203,38 @@ export class TeamBuilder {
             teamButton.title = uiText.teamViewTitle || 'View your team';
             teamButton.addEventListener('click', () => this.toggleTeamPanel());
             header.appendChild(teamButton);
+            this.teamToggleButton = teamButton;
         }
+    }
+
+    /**
+     * Creates the persistent edge tab used to open/close team panel
+     * @private
+     */
+    _createTeamEdgeTab() {
+        const uiText = this._getUIText();
+        const edgeTab = createSafeElement('button');
+        edgeTab.id = 'team-edge-tab';
+        edgeTab.type = 'button';
+        edgeTab.classList.add('team-edge-tab');
+        edgeTab.addEventListener('click', () => this.toggleTeamPanel());
+
+        const icon = createSafeElement('span', '👥');
+        icon.classList.add('team-edge-tab-icon');
+        const label = createSafeElement('span', uiText.teamTitle || 'My Team');
+        label.classList.add('team-edge-tab-label');
+        const count = createSafeElement('span', String(this.team.length));
+        count.classList.add('team-edge-tab-count');
+        count.id = 'team-edge-tab-count';
+        const chevron = createSafeElement('span', '◀');
+        chevron.classList.add('team-edge-tab-chevron');
+
+        edgeTab.appendChild(icon);
+        edgeTab.appendChild(label);
+        edgeTab.appendChild(count);
+        edgeTab.appendChild(chevron);
+        document.body.appendChild(edgeTab);
+        this.teamEdgeTab = edgeTab;
     }
 
     /**
@@ -219,7 +272,12 @@ export class TeamBuilder {
 
         // Update count
         countSpan.textContent = this._formatText(uiText.teamCountLabel || '{count}/6 Pokemon', { count: this.team.length });
+        const edgeTabCount = document.getElementById('team-edge-tab-count');
+        if (edgeTabCount) {
+            edgeTabCount.textContent = String(this.team.length);
+        }
         this._updateCoverageAnalysis();
+        this._syncToggleAccessibility();
     }
 
     /**
@@ -477,17 +535,72 @@ export class TeamBuilder {
             this.teamPanel = null;
         }
 
-        const toggleButton = document.getElementById('team-toggle');
-        if (toggleButton) {
-            toggleButton.remove();
+        if (this.teamToggleButton) {
+            this.teamToggleButton.remove();
+            this.teamToggleButton = null;
         }
+        if (this.teamEdgeTab) {
+            this.teamEdgeTab.remove();
+            this.teamEdgeTab = null;
+        }
+        this.panelToggleButton = null;
     }
 
     /**
      * Refreshes team panel text after language changes.
      */
     refreshUI() {
+        const uiText = this._getUIText();
+        if (this.teamToggleButton) {
+            this.teamToggleButton.setAttribute('aria-label', uiText.teamToggle || 'Toggle team panel');
+            this.teamToggleButton.title = uiText.teamViewTitle || 'View your team';
+        }
+
+        if (this.panelToggleButton) {
+            this.panelToggleButton.setAttribute(
+                'aria-label',
+                this.isPanelOpen
+                    ? (uiText.teamPanelClose || 'Close team panel')
+                    : (uiText.teamPanelOpen || 'Open team panel')
+            );
+            this.panelToggleButton.textContent = this.isPanelOpen ? '▶' : '◀';
+        }
+
+        if (this.teamEdgeTab) {
+            const label = this.teamEdgeTab.querySelector('.team-edge-tab-label');
+            if (label) {
+                label.textContent = uiText.teamTitle || 'My Team';
+            }
+        }
+
         this._updateTeamDisplay();
+    }
+
+    _syncToggleAccessibility() {
+        const uiText = this._getUIText();
+        const expanded = String(this.isPanelOpen);
+        const toggleLabel = this.isPanelOpen
+            ? (uiText.teamPanelClose || 'Close team panel')
+            : (uiText.teamPanelOpen || 'Open team panel');
+
+        if (this.teamToggleButton) {
+            this.teamToggleButton.setAttribute('aria-expanded', expanded);
+            this.teamToggleButton.setAttribute('aria-controls', 'team-panel');
+        }
+
+        if (this.teamEdgeTab) {
+            this.teamEdgeTab.setAttribute('aria-label', toggleLabel);
+            this.teamEdgeTab.setAttribute('aria-expanded', expanded);
+            this.teamEdgeTab.setAttribute('aria-controls', 'team-panel');
+            this.teamEdgeTab.classList.toggle('team-edge-tab-open', this.isPanelOpen);
+        }
+
+        if (this.panelToggleButton) {
+            this.panelToggleButton.textContent = this.isPanelOpen ? '▶' : '◀';
+            this.panelToggleButton.setAttribute('aria-label', toggleLabel);
+            this.panelToggleButton.setAttribute('aria-expanded', expanded);
+            this.panelToggleButton.setAttribute('aria-controls', 'team-panel');
+        }
     }
 
     _getLanguage() {

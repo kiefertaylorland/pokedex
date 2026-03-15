@@ -662,17 +662,13 @@ export class PokemonDetailView {
             spritesGrid.appendChild(artworkContainer);
         }
 
-        // Normal sprites
-        const normalContainer = createSafeElement('div');
-        normalContainer.classList.add('sprite-group');
-
         if (sprites.front_default) {
             const frontItem = this._createSpriteItem(
                 sprites.front_default,
                 `${name} front`,
                 uiText.normalSprite || 'Normal'
             );
-            normalContainer.appendChild(frontItem);
+            spritesGrid.appendChild(frontItem);
         }
 
         if (sprites.back_default) {
@@ -681,16 +677,8 @@ export class PokemonDetailView {
                 `${name} back`,
                 `${uiText.normalSprite || 'Normal'} (Back)`
             );
-            normalContainer.appendChild(backItem);
+            spritesGrid.appendChild(backItem);
         }
-
-        if (normalContainer.children.length > 0) {
-            spritesGrid.appendChild(normalContainer);
-        }
-
-        // Shiny sprites
-        const shinyContainer = createSafeElement('div');
-        shinyContainer.classList.add('sprite-group');
 
         if (sprites.front_shiny) {
             const shinyFrontItem = this._createSpriteItem(
@@ -699,7 +687,7 @@ export class PokemonDetailView {
                 uiText.shinySprite || 'Shiny'
             );
             shinyFrontItem.classList.add('shiny-sprite');
-            shinyContainer.appendChild(shinyFrontItem);
+            spritesGrid.appendChild(shinyFrontItem);
         }
 
         if (sprites.back_shiny) {
@@ -709,11 +697,7 @@ export class PokemonDetailView {
                 `${uiText.shinySprite || 'Shiny'} (Back)`
             );
             shinyBackItem.classList.add('shiny-sprite');
-            shinyContainer.appendChild(shinyBackItem);
-        }
-
-        if (shinyContainer.children.length > 0) {
-            spritesGrid.appendChild(shinyContainer);
+            spritesGrid.appendChild(shinyBackItem);
         }
 
         section.appendChild(heading);

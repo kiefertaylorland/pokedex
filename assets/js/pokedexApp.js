@@ -11,6 +11,7 @@ import { PokemonCardRenderer } from './components/pokemonCardRenderer.js';
 import { PokemonDetailView } from './components/pokemonDetailView.js';
 import { PokemonComparison } from './components/pokemonComparison.js';
 import { TeamBuilder } from './components/teamBuilder.js';
+import { PokemonQuickJump } from './components/pokemonQuickJump.js';
 import { SearchController } from './controllers/searchController.js';
 import { SortController } from './controllers/sortController.js?v=1.1.4';
 import { URLRouter } from './utils/urlRouter.js';
@@ -33,6 +34,7 @@ export class PokedexApp {
         this.keyboardShortcutsModal = null;
         this.pokemonComparison = null;
         this.teamBuilder = null;
+        this.quickJump = null;
         this.isInitialized = false;
         this.appState = new AppState();
         this.boundHandlers = new Map();
@@ -102,6 +104,7 @@ export class PokedexApp {
         // Initialize detail view with close callback
         this.pokemonComparison = new PokemonComparison(this.dataManager, this.uiController);
         this.teamBuilder = new TeamBuilder(this.dataManager, this.uiController);
+        this.quickJump = new PokemonQuickJump(this.dataManager, this.uiController, this.cardRenderer);
 
         this.detailView = new PokemonDetailView(
             this.dataManager, 
@@ -141,6 +144,9 @@ export class PokedexApp {
         if (this.teamBuilder) {
             this.teamBuilder.initialize();
         }
+        if (this.quickJump) {
+            this.quickJump.initialize();
+        }
     }
 
     /**
@@ -158,6 +164,11 @@ export class PokedexApp {
                 teamBuilder: this.teamBuilder
             }
         );
+
+        if (this.quickJump) {
+            const currentSort = this.sortController ? this.sortController.getCurrentSortOption() : null;
+            this.quickJump.refresh(pokemonList, currentSort);
+        }
     }
 
     /**
@@ -460,6 +471,10 @@ export class PokedexApp {
         if (this.pokemonComparison && typeof this.pokemonComparison.refreshUI === 'function') {
             this.pokemonComparison.refreshUI();
         }
+
+        if (this.quickJump && typeof this.quickJump.refreshUI === 'function') {
+            this.quickJump.refreshUI();
+        }
     }
 
     /**
@@ -577,7 +592,8 @@ export class PokedexApp {
             this.searchController,
             this.sortController,
             this.pokemonComparison,
-            this.teamBuilder
+            this.teamBuilder,
+            this.quickJump
         ];
 
         destroyables.forEach((instance) => {

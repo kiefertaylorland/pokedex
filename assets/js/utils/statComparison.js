@@ -18,11 +18,11 @@ export const STAT_BENCHMARKS = {
     },
     max: {
         hp: 255,      // Blissey
-        attack: 190,  // Mega Mewtwo X
+        attack: 181,  // Highest in current dataset
         defense: 230, // Shuckle
-        'special-attack': 194, // Mega Mewtwo Y
+        'special-attack': 173, // Highest in current dataset
         'special-defense': 230, // Shuckle
-        speed: 180    // Deoxys Speed
+        speed: 200    // Highest in current dataset
     },
     // Top tier threshold (used for legendary/pseudo-legendary comparison)
     topTier: {
@@ -101,7 +101,7 @@ export function compareStatToBenchmark(statValue, statName, benchmarks = STAT_BE
     const max = benchmarks.max[statName];
     const topTier = benchmarks.topTier[statName];
 
-    const percentOfMax = (statValue / max) * 100;
+    const percentOfMax = Math.min((statValue / max) * 100, 100);
     const percentOfAverage = (statValue / average) * 100;
     const aboveAverage = statValue > average;
     const isTopTier = statValue >= topTier;

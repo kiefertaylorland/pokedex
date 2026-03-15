@@ -5,6 +5,7 @@
 
 import { createSafeElement } from '../utils/security.js';
 import { getTypeClassName } from '../utils/typeMapping.js';
+import { calculateTypeEffectiveness } from '../utils/typeEffectiveness.js';
 
 const STAT_KEYS = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
 
@@ -167,15 +168,13 @@ export class PokemonComparison {
         title.id = 'comparison-title';
         title.classList.add('comparison-title');
 
-        const headers = this._createPokemonHeaders(pokemons);
-        const stats = this._createStatsTable(pokemons, uiText);
-        const types = this._createTypesRow(pokemons, uiText);
+        const headers = this._createPokemonHeaders(pokemons, uiText);
+        const stats = this._createStatsTable(pokemons, uiText, headers.headerCards);
         const controls = this._createComparisonControls(uiText);
 
         content.appendChild(title);
-        content.appendChild(headers);
+        content.appendChild(headers.container);
         content.appendChild(stats);
-        content.appendChild(types);
         content.appendChild(controls);
         modal.appendChild(content);
 
@@ -190,13 +189,15 @@ export class PokemonComparison {
         }
     }
 
-    _createPokemonHeaders(pokemons) {
+    _createPokemonHeaders(pokemons, uiText) {
         const container = createSafeElement('div');
         container.classList.add('comparison-header-grid');
+        const headerCards = [];
 
-        pokemons.forEach((pokemon) => {
+        pokemons.forEach((pokemon, index) => {
             const card = createSafeElement('div');
             card.classList.add('comparison-pokemon-header');
+            card.setAttribute('data-column-index', String(index));
 
             const image = createSafeElement('img');
             image.src = pokemon.sprite;
@@ -206,15 +207,28 @@ export class PokemonComparison {
             const name = createSafeElement('h3', `${this._getPokemonName(pokemon)} #${String(pokemon.id).padStart(3, '0')}`);
             name.classList.add('comparison-pokemon-name');
 
+            const typeContainer = createSafeElement('div');
+            typeContainer.classList.add('comparison-types-container');
+            this._getPokemonTypes(pokemon).forEach((type) => {
+                const badge = createSafeElement('span', type);
+                badge.classList.add('type-badge', `type-${getTypeClassName(type)}`);
+                typeContainer.appendChild(badge);
+            });
+
+            const matchupContainer = this._createMatchupChips(pokemons, index, uiText);
+
             card.appendChild(image);
             card.appendChild(name);
+            card.appendChild(typeContainer);
+            card.appendChild(matchupContainer);
             container.appendChild(card);
+            headerCards.push(card);
         });
 
-        return container;
+        return { container, headerCards };
     }
 
-    _createStatsTable(pokemons, uiText) {
+    _createStatsTable(pokemons, uiText, headerCards = []) {
         const section = createSafeElement('section');
         section.classList.add('comparison-stats-section');
 
@@ -227,10 +241,16 @@ export class PokemonComparison {
 
         const headerRow = createSafeElement('tr');
         headerRow.appendChild(createSafeElement('th', uiText.comparisonStatLabel || 'Stat'));
+        const columnHeaders = [];
         pokemons.forEach((pokemon) => {
-            headerRow.appendChild(createSafeElement('th', this._getPokemonName(pokemon)));
+            const headerCell = createSafeElement('th', this._getPokemonName(pokemon));
+            headerCell.classList.add('comparison-pokemon-column-header');
+            headerRow.appendChild(headerCell);
+            columnHeaders.push(headerCell);
         });
         table.appendChild(headerRow);
+        const columnWinCounts = new Array(pokemons.length).fill(0);
+        const columnCells = new Array(pokemons.length).fill(null).map(() => []);
 
         STAT_KEYS.forEach((statKey) => {
             const row = createSafeElement('tr');
@@ -239,47 +259,86 @@ export class PokemonComparison {
             const values = pokemons.map((pokemon) => pokemon.stats?.[statKey] || 0);
             const maxValue = Math.max(...values);
 
-            values.forEach((value) => {
+            values.forEach((value, index) => {
                 const cell = createSafeElement('td', String(value));
                 if (value === maxValue && maxValue > 0) {
                     cell.classList.add('comparison-winner');
+                    columnWinCounts[index] += 1;
                 }
+                columnCells[index].push(cell);
                 row.appendChild(cell);
             });
 
             table.appendChild(row);
         });
 
+        const topWinCount = Math.max(...columnWinCounts);
+        if (topWinCount > 0) {
+            columnWinCounts.forEach((wins, index) => {
+                if (wins === topWinCount) {
+                    columnHeaders[index]?.classList.add('comparison-column-winner');
+                    headerCards[index]?.classList.add('comparison-column-winner');
+                    columnCells[index].forEach((cell) => cell.classList.add('comparison-column-winner'));
+                }
+            });
+        }
+
         section.appendChild(table);
         return section;
     }
 
-    _createTypesRow(pokemons, uiText) {
-        const section = createSafeElement('section');
-        section.classList.add('comparison-types-section');
+    _createMatchupChips(pokemons, currentIndex, uiText) {
+        const chipsContainer = createSafeElement('div');
+        chipsContainer.classList.add('comparison-matchup-chips');
 
-        const heading = createSafeElement('h4', uiText.comparisonTypes || 'Types');
-        heading.classList.add('comparison-section-title');
-        section.appendChild(heading);
+        const sourcePokemon = pokemons[currentIndex];
+        const sourceTypes = sourcePokemon?.types_en || [];
+        if (!sourceTypes.length) {
+            return chipsContainer;
+        }
 
-        const row = createSafeElement('div');
-        row.classList.add('comparison-types-grid');
+        pokemons.forEach((targetPokemon, targetIndex) => {
+            if (targetIndex === currentIndex) {
+                return;
+            }
 
-        pokemons.forEach((pokemon) => {
-            const typeContainer = createSafeElement('div');
-            typeContainer.classList.add('comparison-types-container');
+            const targetTypes = targetPokemon?.types_en || [];
+            if (!targetTypes.length) {
+                return;
+            }
 
-            this._getPokemonTypes(pokemon).forEach((type) => {
-                const badge = createSafeElement('span', type);
-                badge.classList.add('type-badge', `type-${getTypeClassName(type)}`);
-                typeContainer.appendChild(badge);
-            });
+            const multipliers = sourceTypes.map((type) => calculateTypeEffectiveness(type, targetTypes));
+            const bestMultiplier = multipliers.length ? Math.max(...multipliers) : 1;
+            const category = this._getMatchupCategory(bestMultiplier);
+            const chipLabelTemplate = this._getMatchupLabel(category, uiText);
+            const chipLabel = this._formatText(chipLabelTemplate, { name: this._getPokemonName(targetPokemon) });
+            const chip = createSafeElement('span', `${chipLabel} (${bestMultiplier}×)`);
 
-            row.appendChild(typeContainer);
+            chip.classList.add('comparison-matchup-chip', `comparison-matchup-${category}`);
+            chipsContainer.appendChild(chip);
         });
 
-        section.appendChild(row);
-        return section;
+        return chipsContainer;
+    }
+
+    _getMatchupCategory(multiplier) {
+        if (multiplier > 1) {
+            return 'strong';
+        }
+        if (multiplier < 1) {
+            return 'weak';
+        }
+        return 'neutral';
+    }
+
+    _getMatchupLabel(category, uiText) {
+        if (category === 'strong') {
+            return uiText.comparisonStrongVs || 'Strong vs {name}';
+        }
+        if (category === 'weak') {
+            return uiText.comparisonWeakVs || 'Weak vs {name}';
+        }
+        return uiText.comparisonNeutralVs || 'Neutral vs {name}';
     }
 
     _createComparisonControls(uiText) {
