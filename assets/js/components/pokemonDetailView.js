@@ -28,6 +28,8 @@ export class PokemonDetailView {
 
         this.teamBuilder = normalizedOptions.teamBuilder || null;
         this.pokemonComparison = normalizedOptions.pokemonComparison || null;
+        this.onCompare = normalizedOptions.onCompare || null;
+        this.onTeamToggle = normalizedOptions.onTeamToggle || null;
         this.onClose = normalizedOptions.onClose || null;
 
         this._boundModalClick = (event) => {
@@ -44,9 +46,6 @@ export class PokemonDetailView {
 
         this._bindEvents();
     }
-
-
-
 
 
     /**
@@ -93,53 +92,54 @@ export class PokemonDetailView {
 
         const listItem = createSafeElement('li');
         listItem.classList.add('move-item');
-        
+
         const moveHeader = createSafeElement('div');
         moveHeader.classList.add('move-header');
-        
+
         const moveNameContainer = createSafeElement('div');
         moveNameContainer.classList.add('move-name-container');
-        
+
         const nameElement = createSafeElement('strong', moveName);
         moveNameContainer.appendChild(nameElement);
-        
+
         // Add romaji for move name if in Japanese mode
         if (currentLang === 'jp' && move.name_romaji) {
             const romajiElement = createSafeElement('span', ` (${move.name_romaji})`);
             romajiElement.classList.add('move-name-romaji');
             moveNameContainer.appendChild(romajiElement);
         }
-        
+
         // Add level indicator if available
         if (move.level !== undefined && move.level !== null) {
-            const levelBadge = createSafeElement('span', 
+            const levelBadge = createSafeElement('span',
                 move.level === 0 ? '—' : `${uiText.moveLevel || 'Lv.'} ${move.level}`
             );
             levelBadge.classList.add('move-level-badge');
             moveNameContainer.appendChild(levelBadge);
         }
-        
-        const typeElement = createSafeElement('span', ` `);
+
+        const typeElement = createSafeElement('span', ' ');
         const typeTextSpan = createSafeElement('span', moveType);
         typeElement.appendChild(typeTextSpan);
-        
+
         // Add romaji for move type if in Japanese mode
         if (currentLang === 'jp' && move.type_romaji) {
             const typeRomajiSpan = createSafeElement('span', ` (${move.type_romaji})`);
             typeRomajiSpan.classList.add('move-type-romaji');
             typeElement.appendChild(typeRomajiSpan);
         }
-        
+
         moveHeader.appendChild(moveNameContainer);
         moveHeader.appendChild(typeElement);
-        
+
         const detailsElement = createSafeElement('small');
-        
+
         const power = move.power || 'N/A';
         const accuracy = move.accuracy || 'N/A';
         const pp = move.pp || 'N/A';
-        
-        detailsElement.textContent = `${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}`;
+        const damageClass = this._formatMoveDamageClass(move, uiText);
+
+        detailsElement.textContent = `${uiText.movePower}: ${power}, ${uiText.moveAccuracy}: ${accuracy}, ${uiText.movePP}: ${pp}${damageClass ? `, ${uiText.moveDamageClass || 'Class'}: ${damageClass}` : ''}`;
 
         listItem.appendChild(moveHeader);
         listItem.appendChild(detailsElement);
@@ -157,37 +157,168 @@ export class PokemonDetailView {
     _createEvolutionChainSection(pokemon, uiText) {
         const section = createSafeElement('div');
         section.classList.add('detail-section', 'evolution-chain-container');
-
-        // Create heading
         const heading = createSafeElement('h4', uiText.evolutionChain || 'Evolution Chain');
-
-        // Create content container (always visible)
         const content = createSafeElement('div');
         content.classList.add('evolution-chain-content', 'expanded');
         content.setAttribute('role', 'region');
         content.setAttribute('aria-label', 'Evolution chain details');
-
-        const chainList = createSafeElement('div');
-        chainList.classList.add('evolution-chain-list');
-
-        // Add evolution items
-        pokemon.evolution_chain.forEach((evo, index) => {
-            if (index > 0) {
-                const arrow = createSafeElement('span', '→');
-                arrow.classList.add('evolution-arrow');
-                arrow.setAttribute('aria-hidden', 'true');
-                chainList.appendChild(arrow);
-            }
-
-            const evoItem = this._createEvolutionItem(evo, pokemon.id);
-            chainList.appendChild(evoItem);
-        });
-
-        content.appendChild(chainList);
+        const normalized = this._normalizeEvolutionChain(pokemon.evolution_chain);
+        const tree = this._createEvolutionTree(normalized, pokemon.id, uiText);
+        content.appendChild(tree);
 
         section.appendChild(heading);
         section.appendChild(content);
         return section;
+    }
+
+    /**
+     * Normalizes legacy and enriched evolution data into a single shape.
+     * @private
+     * @param {Array|Object} evolutionChain - Evolution chain payload
+     * @returns {{nodes: Array, transitions: Array}} Normalized chain
+     */
+    _normalizeEvolutionChain(evolutionChain) {
+        if (evolutionChain && !Array.isArray(evolutionChain)) {
+            return {
+                nodes: evolutionChain.nodes || [],
+                transitions: evolutionChain.transitions || []
+            };
+        }
+
+        const nodes = Array.isArray(evolutionChain) ? evolutionChain : [];
+        const transitions = [];
+        for (let i = 1; i < nodes.length; i += 1) {
+            transitions.push({
+                from_id: nodes[i - 1].id,
+                to_id: nodes[i].id,
+                methods: [{ description: 'Unknown method' }]
+            });
+        }
+        return { nodes, transitions };
+    }
+
+    /**
+     * Creates a branch-capable evolution tree.
+     * @private
+     * @param {Object} chain - Normalized chain data
+     * @param {number} currentPokemonId - Current Pokemon ID
+     * @param {Object} uiText - Localized UI text
+     * @returns {HTMLElement} Tree element
+     */
+    _createEvolutionTree(chain, currentPokemonId, uiText) {
+        const container = createSafeElement('div');
+        container.classList.add('evolution-tree');
+
+        const nodesById = new Map(chain.nodes.map((node) => [node.id, node]));
+        const childrenByParent = new Map();
+        const childIds = new Set();
+
+        chain.transitions.forEach((transition) => {
+            if (!childrenByParent.has(transition.from_id)) {
+                childrenByParent.set(transition.from_id, []);
+            }
+            childrenByParent.get(transition.from_id).push(transition);
+            childIds.add(transition.to_id);
+        });
+
+        const rootNodes = chain.nodes.filter((node) => !childIds.has(node.id));
+        const roots = rootNodes.length > 0 ? rootNodes : chain.nodes.slice(0, 1);
+
+        roots.forEach((root) => {
+            container.appendChild(
+                this._renderEvolutionNode(root, nodesById, childrenByParent, currentPokemonId, uiText)
+            );
+        });
+
+        return container;
+    }
+
+    /**
+     * Renders one node and its child branches recursively.
+     * @private
+     */
+    _renderEvolutionNode(node, nodesById, childrenByParent, currentPokemonId, uiText) {
+        const wrapper = createSafeElement('div');
+        wrapper.classList.add('evolution-node-wrapper');
+        wrapper.appendChild(this._createEvolutionItem(node, currentPokemonId));
+
+        const transitions = childrenByParent.get(node.id) || [];
+        if (transitions.length === 0) {
+            return wrapper;
+        }
+
+        const branches = createSafeElement('div');
+        branches.classList.add('evolution-branches');
+
+        transitions.forEach((transition) => {
+            const child = nodesById.get(transition.to_id);
+            if (!child) {
+                return;
+            }
+
+            const branch = createSafeElement('div');
+            branch.classList.add('evolution-branch');
+
+            const edge = createSafeElement('div');
+            edge.classList.add('evolution-branch-edge');
+            const methodLabel = this._formatEvolutionMethods(transition.methods, uiText);
+            edge.textContent = `→ ${methodLabel}`;
+
+            branch.appendChild(edge);
+            branch.appendChild(
+                this._renderEvolutionNode(child, nodesById, childrenByParent, currentPokemonId, uiText)
+            );
+            branches.appendChild(branch);
+        });
+
+        wrapper.appendChild(branches);
+        return wrapper;
+    }
+
+    /**
+     * Formats evolution method text for display.
+     * @private
+     */
+    _formatEvolutionMethods(methods, uiText) {
+        if (!methods || methods.length === 0) {
+            return `${uiText.evolutionMethod || 'Method'}: Unknown`;
+        }
+
+        const descriptions = methods
+            .map((method) => method.description)
+            .filter(Boolean);
+
+        if (descriptions.length === 0) {
+            return `${uiText.evolutionMethod || 'Method'}: Unknown`;
+        }
+
+        return `${uiText.evolutionMethod || 'Method'}: ${descriptions.join(' / ')}`;
+    }
+
+    /**
+     * Localizes move damage class text.
+     * @private
+     * @param {Object} move - Move data
+     * @param {Object} uiText - Localized text
+     * @returns {string|null} Formatted class name
+     */
+    _formatMoveDamageClass(move, uiText) {
+        const damageClass = (move.damage_class || '').toLowerCase();
+        if (!damageClass) {
+            return null;
+        }
+
+        if (damageClass === 'physical') {
+            return uiText.damageClassPhysical || 'Physical';
+        }
+        if (damageClass === 'special') {
+            return uiText.damageClassSpecial || 'Special';
+        }
+        if (damageClass === 'status') {
+            return uiText.damageClassStatus || 'Status';
+        }
+
+        return move.damage_class_en || move.damage_class;
     }
 
     /**
@@ -200,7 +331,7 @@ export class PokemonDetailView {
     _createEvolutionItem(evolution, currentPokemonId) {
         const item = createSafeElement('div');
         item.classList.add('evolution-item');
-        
+
         if (evolution.id === currentPokemonId) {
             item.classList.add('current');
             item.setAttribute('aria-current', 'true');
@@ -210,13 +341,13 @@ export class PokemonDetailView {
             item.setAttribute('tabindex', '0');
             item.setAttribute('aria-label', `View ${evolution.name} details`);
             item.style.cursor = 'pointer';
-            
+
             // Add click handler
             item.addEventListener(EVENTS.CLICK, (event) => {
                 event.stopPropagation();
                 this._handleEvolutionClick(evolution.id);
             });
-            
+
             // Add keyboard handler for accessibility
             item.addEventListener(EVENTS.KEYDOWN, (event) => {
                 if (event.key === KEYS.ENTER || event.key === KEYS.SPACE) {
@@ -322,26 +453,26 @@ export class PokemonDetailView {
         const hasWeaknesses = pokemon.weaknesses && Object.keys(pokemon.weaknesses).length > 0;
         const hasResistances = pokemon.resistances && Object.keys(pokemon.resistances).length > 0;
         const hasImmunities = pokemon.immunities && Object.keys(pokemon.immunities).length > 0;
-        
+
         if (!hasWeaknesses && !hasResistances && !hasImmunities) {
             return null;
         }
-        
+
         const container = createSafeElement('div');
         container.classList.add('type-effectiveness-container');
-        
+
         if (hasWeaknesses) {
             container.appendChild(this._createWeaknessesSection(pokemon.weaknesses, uiText));
         }
-        
+
         if (hasResistances) {
             container.appendChild(this._createResistancesSection(pokemon.resistances, uiText));
         }
-        
+
         if (hasImmunities) {
             container.appendChild(this._createImmunitiesSection(pokemon.immunities, uiText));
         }
-        
+
         return container;
     }
 
@@ -398,25 +529,25 @@ export class PokemonDetailView {
         abilities.forEach(ability => {
             const abilityItem = createSafeElement('div');
             abilityItem.classList.add('ability-item');
-            
+
             if (ability.is_hidden) {
                 abilityItem.classList.add('hidden-ability');
             }
-            
-            const abilityName = currentLang === 'jp' ? 
+
+            const abilityName = currentLang === 'jp' ?
                 (ability.name_jp || ability.name_en) : ability.name_en;
-            
+
             const nameSpan = createSafeElement('span', abilityName);
             nameSpan.classList.add('ability-name');
-            
+
             abilityItem.appendChild(nameSpan);
-            
+
             if (ability.is_hidden) {
                 const hiddenBadge = createSafeElement('span', uiText.hiddenAbility || 'Hidden');
                 hiddenBadge.classList.add('hidden-badge');
                 abilityItem.appendChild(hiddenBadge);
             }
-            
+
             abilitiesList.appendChild(abilityItem);
         });
 
@@ -444,15 +575,15 @@ export class PokemonDetailView {
         if (pokemon.genus_en || pokemon.genus_jp) {
             const categoryItem = createSafeElement('div');
             categoryItem.classList.add('info-item');
-            
+
             const categoryLabel = createSafeElement('span', `${uiText.category}:`);
             categoryLabel.classList.add('info-label');
-            
-            const genus = currentLang === 'jp' ? 
+
+            const genus = currentLang === 'jp' ?
                 (pokemon.genus_jp || pokemon.genus_en) : pokemon.genus_en;
             const categoryValue = createSafeElement('span', genus);
             categoryValue.classList.add('info-value');
-            
+
             categoryItem.appendChild(categoryLabel);
             categoryItem.appendChild(categoryValue);
             infoGrid.appendChild(categoryItem);
@@ -461,13 +592,13 @@ export class PokemonDetailView {
         if (pokemon.height !== undefined && pokemon.height !== null) {
             const heightItem = createSafeElement('div');
             heightItem.classList.add('info-item');
-            
+
             const heightLabel = createSafeElement('span', `${uiText.height}:`);
             heightLabel.classList.add('info-label');
-            
+
             const heightValue = createSafeElement('span', `${pokemon.height} m`);
             heightValue.classList.add('info-value');
-            
+
             heightItem.appendChild(heightLabel);
             heightItem.appendChild(heightValue);
             infoGrid.appendChild(heightItem);
@@ -476,13 +607,13 @@ export class PokemonDetailView {
         if (pokemon.weight !== undefined && pokemon.weight !== null) {
             const weightItem = createSafeElement('div');
             weightItem.classList.add('info-item');
-            
+
             const weightLabel = createSafeElement('span', `${uiText.weight}:`);
             weightLabel.classList.add('info-label');
-            
+
             const weightValue = createSafeElement('span', `${pokemon.weight} kg`);
             weightValue.classList.add('info-value');
-            
+
             weightItem.appendChild(weightLabel);
             weightItem.appendChild(weightValue);
             infoGrid.appendChild(weightItem);
@@ -513,19 +644,19 @@ export class PokemonDetailView {
         if (sprites.official_artwork) {
             const artworkContainer = createSafeElement('div');
             artworkContainer.classList.add('sprite-item', 'artwork-item');
-            
+
             const artworkLabel = createSafeElement('div', uiText.officialArtwork || 'Official Artwork');
             artworkLabel.classList.add('sprite-label');
-            
+
             const artworkImg = createSafeElement('img');
             artworkImg.src = sprites.official_artwork;
             artworkImg.alt = `${name} official artwork`;
             artworkImg.classList.add('sprite-image', 'artwork-image');
-            
+
             artworkImg.addEventListener('error', () => {
                 artworkContainer.style.display = 'none';
             });
-            
+
             artworkContainer.appendChild(artworkLabel);
             artworkContainer.appendChild(artworkImg);
             spritesGrid.appendChild(artworkContainer);
@@ -534,25 +665,25 @@ export class PokemonDetailView {
         // Normal sprites
         const normalContainer = createSafeElement('div');
         normalContainer.classList.add('sprite-group');
-        
+
         if (sprites.front_default) {
             const frontItem = this._createSpriteItem(
-                sprites.front_default, 
-                `${name} front`, 
+                sprites.front_default,
+                `${name} front`,
                 uiText.normalSprite || 'Normal'
             );
             normalContainer.appendChild(frontItem);
         }
-        
+
         if (sprites.back_default) {
             const backItem = this._createSpriteItem(
-                sprites.back_default, 
-                `${name} back`, 
+                sprites.back_default,
+                `${name} back`,
                 `${uiText.normalSprite || 'Normal'} (Back)`
             );
             normalContainer.appendChild(backItem);
         }
-        
+
         if (normalContainer.children.length > 0) {
             spritesGrid.appendChild(normalContainer);
         }
@@ -560,27 +691,27 @@ export class PokemonDetailView {
         // Shiny sprites
         const shinyContainer = createSafeElement('div');
         shinyContainer.classList.add('sprite-group');
-        
+
         if (sprites.front_shiny) {
             const shinyFrontItem = this._createSpriteItem(
-                sprites.front_shiny, 
-                `${name} shiny front`, 
+                sprites.front_shiny,
+                `${name} shiny front`,
                 uiText.shinySprite || 'Shiny'
             );
             shinyFrontItem.classList.add('shiny-sprite');
             shinyContainer.appendChild(shinyFrontItem);
         }
-        
+
         if (sprites.back_shiny) {
             const shinyBackItem = this._createSpriteItem(
-                sprites.back_shiny, 
-                `${name} shiny back`, 
+                sprites.back_shiny,
+                `${name} shiny back`,
                 `${uiText.shinySprite || 'Shiny'} (Back)`
             );
             shinyBackItem.classList.add('shiny-sprite');
             shinyContainer.appendChild(shinyBackItem);
         }
-        
+
         if (shinyContainer.children.length > 0) {
             spritesGrid.appendChild(shinyContainer);
         }
@@ -601,23 +732,23 @@ export class PokemonDetailView {
     _createSpriteItem(src, alt, label) {
         const item = createSafeElement('div');
         item.classList.add('sprite-item');
-        
+
         const labelDiv = createSafeElement('div', label);
         labelDiv.classList.add('sprite-label');
-        
+
         const img = createSafeElement('img');
         img.src = src;
         img.alt = alt;
         img.classList.add('sprite-image');
         img.loading = 'lazy';
-        
+
         img.addEventListener('error', () => {
             item.style.display = 'none';
         });
-        
+
         item.appendChild(labelDiv);
         item.appendChild(img);
-        
+
         return item;
     }
 
@@ -630,22 +761,80 @@ export class PokemonDetailView {
     _createImageErrorFallback(pokemonName) {
         const container = createSafeElement('div');
         container.classList.add('image-error-container');
-        
+
         const icon = createSafeElement('div', '⚠️');
         icon.classList.add('image-error-icon');
         icon.setAttribute('aria-hidden', 'true');
-        
+
         const text = createSafeElement('div', 'Image not available');
         text.classList.add('image-error-text');
-        
+
         container.appendChild(icon);
         container.appendChild(text);
         container.setAttribute('role', 'img');
         container.setAttribute('aria-label', `${pokemonName} image not available`);
-        
+
         return container;
     }
 
+    /**
+     * Creates comparison/team actions for detail view
+     * @private
+     * @param {Object} pokemon - Pokemon data
+     * @param {Object} uiText - UI text object
+     * @returns {HTMLElement|null} Action section
+     */
+    _createActionSection(pokemon, uiText) {
+        if (!this.teamBuilder && !this.pokemonComparison) {
+            return null;
+        }
+
+        const section = createSafeElement('div');
+        section.classList.add('detail-section', 'detail-action-section');
+
+        const buttonRow = createSafeElement('div');
+        buttonRow.classList.add('detail-action-buttons');
+
+        if (this.pokemonComparison) {
+            const compareButton = createSafeElement('button', uiText.comparePokemon || 'Compare');
+            compareButton.classList.add('detail-action-btn', 'detail-action-compare');
+            compareButton.setAttribute('type', 'button');
+            compareButton.addEventListener(EVENTS.CLICK, () => {
+                if (typeof this.onCompare === 'function') {
+                    this.onCompare(pokemon);
+                } else if (this.pokemonComparison.isSelecting()) {
+                    this.pokemonComparison.addToComparison(pokemon.id);
+                } else {
+                    this.pokemonComparison.startComparison(pokemon.id);
+                }
+            });
+            buttonRow.appendChild(compareButton);
+        }
+
+        if (this.teamBuilder) {
+            const inTeam = this.teamBuilder.isInTeam(pokemon.id);
+            const teamButton = createSafeElement(
+                'button',
+                inTeam ? (uiText.removeFromTeam || 'Remove from Team') : (uiText.addToTeam || 'Add to Team')
+            );
+            teamButton.classList.add('detail-action-btn', 'detail-action-team');
+            teamButton.setAttribute('type', 'button');
+            teamButton.addEventListener(EVENTS.CLICK, () => {
+                if (typeof this.onTeamToggle === 'function') {
+                    this.onTeamToggle(pokemon);
+                } else if (inTeam) {
+                    this.teamBuilder.removeFromTeam(pokemon.id);
+                } else {
+                    this.teamBuilder.addToTeam(pokemon.id);
+                }
+                this._renderDetailContent(pokemon);
+            });
+            buttonRow.appendChild(teamButton);
+        }
+
+        section.appendChild(buttonRow);
+        return section;
+    }
 
     /**
      * Shows detail modal for a pokemon
@@ -726,6 +915,15 @@ export class PokemonDetailView {
         bioSection.appendChild(createSafeElement('p', bio || 'No description available.'));
         modalContent.appendChild(bioSection);
 
+        const actionSection = this._createActionSection(pokemon, uiText);
+        if (actionSection) {
+            modalContent.appendChild(actionSection);
+        }
+
+        if (pokemon.stats) {
+            modalContent.appendChild(EnhancedStatsDisplay.createStatsSection(pokemon.stats, uiText));
+        }
+
         if (pokemon.height || pokemon.weight || pokemon.genus_en || pokemon.genus_jp) {
             modalContent.appendChild(this._createPhysicalInfoSection(pokemon, uiText));
         }
@@ -745,7 +943,16 @@ export class PokemonDetailView {
 
         modalContent.appendChild(this._createMovesSection(pokemon.moves, uiText));
 
-        if (pokemon.evolution_chain?.length) {
+        const hasEvolutionChain =
+            (Array.isArray(pokemon.evolution_chain) && pokemon.evolution_chain.length > 0) ||
+            (
+                pokemon.evolution_chain &&
+                !Array.isArray(pokemon.evolution_chain) &&
+                Array.isArray(pokemon.evolution_chain.nodes) &&
+                pokemon.evolution_chain.nodes.length > 0
+            );
+
+        if (hasEvolutionChain) {
             modalContent.appendChild(this._createEvolutionChainSection(pokemon, uiText));
         }
 

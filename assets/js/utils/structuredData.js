@@ -15,47 +15,47 @@ export class StructuredDataGenerator {
      */
     static generatePokemonSchema(pokemon, language = 'en') {
         const name = language === 'jp' ? (pokemon.name_jp || pokemon.name_en) : pokemon.name_en;
-        const types = language === 'jp' ? 
-            (pokemon.types_jp || pokemon.types_en) : 
+        const types = language === 'jp' ?
+            (pokemon.types_jp || pokemon.types_en) :
             pokemon.types_en;
         const bio = language === 'jp' ? (pokemon.bio_jp || pokemon.bio_en) : pokemon.bio_en;
-        
+
         const baseUrl = window.location.origin + window.location.pathname;
         const pokemonUrl = `${baseUrl}#pokemon/${pokemon.id}/${this._createSlug(name)}`;
 
         return {
-            "@context": "https://schema.org",
-            "@type": "Thing",
-            "name": name,
-            "identifier": pokemon.id,
-            "description": bio || `${name} is a ${types.join('/')} type Pokémon.`,
-            "url": pokemonUrl,
-            "image": pokemon.sprite ? `${baseUrl}${pokemon.sprite}` : undefined,
-            "additionalProperty": [
+            '@context': 'https://schema.org',
+            '@type': 'Thing',
+            'name': name,
+            'identifier': pokemon.id,
+            'description': bio || `${name} is a ${types.join('/')} type Pokémon.`,
+            'url': pokemonUrl,
+            'image': pokemon.sprite ? `${baseUrl}${pokemon.sprite}` : undefined,
+            'additionalProperty': [
                 {
-                    "@type": "PropertyValue",
-                    "name": "National Pokédex Number",
-                    "value": pokemon.id
+                    '@type': 'PropertyValue',
+                    'name': 'National Pokédex Number',
+                    'value': pokemon.id
                 },
                 {
-                    "@type": "PropertyValue",
-                    "name": "Type",
-                    "value": types.join(', ')
+                    '@type': 'PropertyValue',
+                    'name': 'Type',
+                    'value': types.join(', ')
                 },
                 {
-                    "@type": "PropertyValue",
-                    "name": "HP",
-                    "value": pokemon.stats?.hp || 0
+                    '@type': 'PropertyValue',
+                    'name': 'HP',
+                    'value': pokemon.stats?.hp || 0
                 },
                 {
-                    "@type": "PropertyValue",
-                    "name": "Attack",
-                    "value": pokemon.stats?.attack || 0
+                    '@type': 'PropertyValue',
+                    'name': 'Attack',
+                    'value': pokemon.stats?.attack || 0
                 },
                 {
-                    "@type": "PropertyValue",
-                    "name": "Defense",
-                    "value": pokemon.stats?.defense || 0
+                    '@type': 'PropertyValue',
+                    'name': 'Defense',
+                    'value': pokemon.stats?.defense || 0
                 }
             ]
         };
@@ -67,23 +67,23 @@ export class StructuredDataGenerator {
      */
     static generateWebApplicationSchema() {
         const baseUrl = window.location.origin + window.location.pathname;
-        
+
         return {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Pokédex",
-            "description": "Interactive Pokédex featuring all 1025 Pokémon across all generations with detailed stats, types, and multilingual support.",
-            "url": baseUrl,
-            "applicationCategory": "EntertainmentApplication",
-            "operatingSystem": "Any",
-            "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            'name': 'Pokédex',
+            'description': 'Interactive Pokédex featuring all 1025 Pokémon across all generations with detailed stats, types, and multilingual support.',
+            'url': baseUrl,
+            'applicationCategory': 'EntertainmentApplication',
+            'operatingSystem': 'Any',
+            'offers': {
+                '@type': 'Offer',
+                'price': '0',
+                'priceCurrency': 'USD'
             },
-            "author": {
-                "@type": "Person",
-                "name": "Kiefer Land"
+            'author': {
+                '@type': 'Person',
+                'name': 'Kiefer Land'
             }
         };
     }
@@ -98,27 +98,27 @@ export class StructuredDataGenerator {
         const baseUrl = window.location.origin + window.location.pathname;
         const items = [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": baseUrl
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': baseUrl
             }
         ];
 
         if (pokemon) {
             const name = language === 'jp' ? (pokemon.name_jp || pokemon.name_en) : pokemon.name_en;
             items.push({
-                "@type": "ListItem",
-                "position": 2,
-                "name": name,
-                "item": `${baseUrl}#pokemon/${pokemon.id}/${this._createSlug(name)}`
+                '@type': 'ListItem',
+                'position': 2,
+                'name': name,
+                'item': `${baseUrl}#pokemon/${pokemon.id}/${this._createSlug(name)}`
             });
         }
 
         return {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": items
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': items
         };
     }
 
@@ -129,7 +129,7 @@ export class StructuredDataGenerator {
      */
     static injectSchema(schema, id = 'structured-data') {
         let scriptTag = document.getElementById(id);
-        
+
         if (scriptTag) {
             scriptTag.textContent = JSON.stringify(schema);
         } else {

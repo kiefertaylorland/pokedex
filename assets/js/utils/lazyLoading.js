@@ -91,7 +91,7 @@ export class LazyLoadManager {
             img.classList.remove('lazy-loading');
             img.classList.add('lazy-loaded');
             this.unobserve(img);
-            
+
             // Dispatch custom event for tracking
             img.dispatchEvent(new CustomEvent('lazyloaded', {
                 detail: { src }
@@ -102,7 +102,7 @@ export class LazyLoadManager {
             img.classList.remove('lazy-loading');
             img.classList.add('lazy-error');
             this.unobserve(img);
-            
+
             // Dispatch custom event for error tracking
             img.dispatchEvent(new CustomEvent('lazyerror', {
                 detail: { src }

@@ -24,10 +24,10 @@ export class SearchController {
 
         // Create debounced search function
         this.debouncedSearch = debounce(
-            this._performSearch.bind(this), 
+            this._performSearch.bind(this),
             DATA.SEARCH_DEBOUNCE_MS
         );
-        
+
         this._bindEvents();
     }
 
@@ -69,7 +69,7 @@ export class SearchController {
      */
     _handleSearchInput(rawInput) {
         const sanitizedInput = sanitizeSearchInput(rawInput || '');
-        
+
         if (sanitizedInput === this.currentSearchTerm) {
             return; // No change, skip search
         }
@@ -91,7 +91,7 @@ export class SearchController {
         try {
             const currentLanguage = this.uiController.getCurrentLanguage();
             const results = this.dataManager.searchPokemon(searchTerm, currentLanguage);
-            
+
             // Call the results callback
             if (typeof this.onSearchResults === 'function') {
                 this.onSearchResults(results, searchTerm);
@@ -140,11 +140,11 @@ export class SearchController {
      */
     setSearchTerm(searchTerm) {
         const sanitized = sanitizeSearchInput(searchTerm);
-        
+
         if (this.searchInput) {
             this.searchInput.value = sanitized;
         }
-        
+
         this.currentSearchTerm = sanitized;
         this._performSearch(sanitized);
     }

@@ -27,7 +27,7 @@ const TYPE_TO_CLASS_MAP = {
     'ghost': 'ghost',
     'dragon': 'dragon',
     'dark': 'dark',
-    
+
     // Japanese type names mapped to English class names
     'くさ': 'grass',        // Grass
     'どく': 'poison',       // Poison
@@ -58,7 +58,7 @@ export function getTypeClassName(typeName) {
     if (!typeName || typeof typeName !== 'string') {
         return 'normal'; // fallback to normal type
     }
-    
+
     const normalizedType = typeName.toLowerCase().trim();
     return TYPE_TO_CLASS_MAP[normalizedType] || normalizedType.replace(/\s+/g, '-');
 }
@@ -72,6 +72,6 @@ export function getTypeClassNames(types) {
     if (!Array.isArray(types)) {
         return ['normal'];
     }
-    
+
     return types.map(type => getTypeClassName(type));
 }

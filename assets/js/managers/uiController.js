@@ -70,15 +70,15 @@ export class UIController {
      */
     applyTheme(theme) {
         const isDark = theme === THEMES.DARK;
-        
+
         this.elements.body.classList.toggle(CSS_CLASSES.DARK_MODE, isDark);
         this.currentTheme = theme;
-        
+
         Storage.set(STORAGE_KEYS.THEME, theme);
-        
+
         if (this.elements.themeToggle) {
             this.elements.themeToggle.textContent = isDark ? '☀️' : '🌓';
-            this.elements.themeToggle.setAttribute('aria-label', 
+            this.elements.themeToggle.setAttribute('aria-label',
                 isDark ? 'Switch to light mode' : 'Switch to dark mode');
         }
     }
@@ -98,7 +98,7 @@ export class UIController {
     applyLanguage(language) {
         this.currentLanguage = language;
         Storage.set(STORAGE_KEYS.LANGUAGE, language);
-        
+
         this._updateUIText(language);
         this._updateLanguageToggle(language);
     }
@@ -110,16 +110,16 @@ export class UIController {
      */
     _updateUIText(language) {
         const text = UI_TEXT[language];
-        
+
         if (this.elements.appTitle) {
             this.elements.appTitle.textContent = text.title;
         }
-        
+
         if (this.elements.searchInput) {
             this.elements.searchInput.placeholder = text.searchPlaceholder;
             this.elements.searchInput.setAttribute('aria-label', text.searchPlaceholder);
         }
-        
+
         if (this.elements.footerText) {
             this.elements.footerText.textContent = text.footer;
         }
@@ -133,7 +133,7 @@ export class UIController {
     _updateLanguageToggle(language) {
         if (this.elements.langToggle) {
             this.elements.langToggle.textContent = language === LANGUAGES.ENGLISH ? 'EN/日本語' : 'EN/JP';
-            this.elements.langToggle.setAttribute('aria-label', 
+            this.elements.langToggle.setAttribute('aria-label',
                 language === LANGUAGES.ENGLISH ? 'Switch to Japanese' : 'Switch to English');
         }
     }
@@ -142,7 +142,7 @@ export class UIController {
      * Toggles between English and Japanese
      */
     toggleLanguage() {
-        const newLanguage = this.currentLanguage === LANGUAGES.ENGLISH ? 
+        const newLanguage = this.currentLanguage === LANGUAGES.ENGLISH ?
             LANGUAGES.JAPANESE : LANGUAGES.ENGLISH;
         this.applyLanguage(newLanguage);
     }
@@ -156,10 +156,10 @@ export class UIController {
             this.elements.loadingIndicator.style.display = 'flex';
             this.elements.loadingIndicator.setAttribute('aria-hidden', 'false');
         }
-        
+
         const text = UI_TEXT[this.currentLanguage];
         const loadingMessage = message || text.loading;
-        
+
         if (this.elements.pokedexGrid) {
             this.elements.pokedexGrid.innerHTML = `
                 <div class="loading-container">
@@ -186,7 +186,7 @@ export class UIController {
     showError(message) {
         const text = UI_TEXT[this.currentLanguage];
         const errorMessage = message || text.error;
-        
+
         if (this.elements.pokedexGrid) {
             this.elements.pokedexGrid.innerHTML = `
                 <div class="error-container">

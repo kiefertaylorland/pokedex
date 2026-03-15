@@ -27,6 +27,26 @@ export function sortByStatTotal(pokemonArray) {
     return pokemonArray.sort((a, b) => totalStats(b) - totalStats(a));
 }
 
+export function sortByHeight(pokemonArray, ascending = true) {
+    return pokemonArray.sort((a, b) => {
+        const heightA = numericValue(a.height);
+        const heightB = numericValue(b.height);
+        return ascending ? heightA - heightB : heightB - heightA;
+    });
+}
+
+export function sortByWeight(pokemonArray, ascending = true) {
+    return pokemonArray.sort((a, b) => {
+        const weightA = numericValue(a.weight);
+        const weightB = numericValue(b.weight);
+        return ascending ? weightA - weightB : weightB - weightA;
+    });
+}
+
+function numericValue(value) {
+    return Number.isFinite(value) ? value : Number(value) || 0;
+}
+
 export function totalStats(pokemon) {
     if (!pokemon || !pokemon.stats) {
         return 0;

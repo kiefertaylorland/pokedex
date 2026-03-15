@@ -1763,3 +1763,262 @@ footer {
   .pokedex-grid { grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); }
   main { padding: .9rem; }
 }
+
+.pokemon-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.pokemon-card-action-btn,
+.detail-action-btn,
+.comparison-btn,
+.team-clear-button,
+.team-panel-toggle,
+#team-toggle {
+  border: 1px solid var(--oc-border);
+  background: var(--oc-surface);
+  color: var(--oc-text);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+}
+
+.pokemon-card-action-btn:hover,
+.detail-action-btn:hover,
+.comparison-btn:hover,
+.team-clear-button:hover,
+.team-panel-toggle:hover,
+#team-toggle:hover {
+  background: var(--oc-surface-2);
+}
+
+.detail-action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.comparison-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10010;
+}
+
+.comparison-modal-content {
+  width: min(900px, 94vw);
+  max-height: 88vh;
+  overflow: auto;
+  background: var(--oc-bg-alt);
+  border: 1px solid var(--oc-border);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.comparison-selector-overlay {
+  background: transparent;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.comparison-selector-overlay .comparison-modal-content {
+  width: min(560px, 92vw);
+  pointer-events: auto;
+}
+
+.comparison-header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.comparison-pokemon-header {
+  text-align: center;
+  background: var(--oc-surface-2);
+  border: 1px solid var(--oc-border);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.comparison-pokemon-image {
+  width: 72px;
+  height: 72px;
+}
+
+.comparison-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+}
+
+.comparison-stats-table th,
+.comparison-stats-table td {
+  border: 1px solid var(--oc-border);
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.comparison-stats-table td.comparison-winner {
+  color: #6ee7b7;
+  font-weight: 700;
+}
+
+.comparison-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.comparison-types-container {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.comparison-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.team-panel {
+  position: fixed;
+  right: 0;
+  top: 90px;
+  width: 310px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  background: var(--oc-bg-alt);
+  border-left: 1px solid var(--oc-border);
+  border-top: 1px solid var(--oc-border);
+  border-bottom: 1px solid var(--oc-border);
+  border-radius: 14px 0 0 14px;
+  transform: translateX(88%);
+  transition: transform 200ms ease;
+  z-index: 1000;
+  padding: 0.65rem;
+}
+
+.team-panel.team-panel-visible {
+  transform: translateX(0);
+}
+
+.team-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.team-slots-container {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.team-slot {
+  border: 1px solid var(--oc-border);
+  border-radius: 10px;
+  padding: 0.35rem;
+  background: var(--oc-surface);
+}
+
+.team-slot-image {
+  width: 48px;
+  height: 48px;
+}
+
+.team-slot-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.team-slot-remove {
+  border: 0;
+  background: transparent;
+  color: var(--oc-text);
+  cursor: pointer;
+}
+
+.team-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.team-coverage-container {
+  margin-top: 0.7rem;
+  border: 1px solid var(--oc-border);
+  background: var(--oc-surface);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.team-coverage-title {
+  margin: 0 0 0.35rem;
+}
+
+.team-coverage-summary {
+  margin: 0.2rem 0;
+  font-size: 0.86rem;
+}
+
+.team-notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--oc-bg-alt);
+  border: 1px solid var(--oc-border);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 10020;
+}
+
+.team-notification.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.evolution-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.evolution-node-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.evolution-branches {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-left: 1.2rem;
+}
+
+.evolution-branch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.evolution-branch-edge {
+  font-size: 0.82rem;
+  color: var(--oc-muted);
+}
