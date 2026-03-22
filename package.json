@@ -19,7 +19,8 @@
     "generate:types": "python scripts/generate_type_effectiveness.py"
   },
   "devDependencies": {
-    "eslint": "^10.0.3"
+    "eslint": "^10.0.3",
+    "@playwright/test": "^1.58.2"
   },
   "engines": {
     "node": ">=14.0.0",
