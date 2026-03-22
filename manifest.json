@@ -24,13 +24,13 @@
   "categories": ["entertainment", "games", "education"],
   "screenshots": [
     {
-      "src": "assets/screenshots/pokedex-main-ui.png",
+      "src": "assets/screenshots/home-page.png",
       "sizes": "1280x720",
       "type": "image/png",
       "label": "Pokédex main interface showing all Pokémon"
     },
     {
-      "src": "assets/screenshots/pokedex-detail-view.png",
+      "src": "assets/screenshots/details-view.png",
       "sizes": "1280x720",
       "type": "image/png",
       "label": "Detailed Pokémon view with stats and information"

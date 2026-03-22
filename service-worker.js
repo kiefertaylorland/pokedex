@@ -3,8 +3,8 @@
  * Provides offline support and caching strategies with size limits
  */
 
-const CACHE_NAME = 'pokedex-v1.1.2';
-const DATA_CACHE_NAME = 'pokedex-data-v1.1.2';
+const CACHE_NAME = 'pokedex-v1.1.3';
+const DATA_CACHE_NAME = 'pokedex-data-v1.1.3';
 
 // Cache configuration
 const CACHE_CONFIG = {
@@ -20,6 +20,7 @@ const CACHE_CONFIG = {
 const STATIC_ASSETS = [
     '/',
     '/index.html',
+    '/manifest.json',
     '/assets/style.css',
     '/assets/js/pokedexApp.js',
     '/assets/js/bootstrap.js',
@@ -28,11 +29,19 @@ const STATIC_ASSETS = [
     '/assets/js/managers/uiController.js',
     '/assets/js/components/pokemonCardRenderer.js',
     '/assets/js/components/pokemonDetailView.js',
+    '/assets/js/components/pokemonComparison.js',
+    '/assets/js/components/teamBuilder.js',
+    '/assets/js/components/pokemonQuickJump.js',
+    '/assets/js/components/keyboardShortcutsModal.js',
+    '/assets/js/components/enhancedStatsDisplay.js',
     '/assets/js/controllers/searchController.js',
+    '/assets/js/controllers/sortController.js',
+    '/assets/js/utils/errorBoundary.js',
     '/assets/js/utils/security.js',
     '/assets/js/utils/debounce.js',
     '/assets/js/utils/appState.js',
     '/assets/js/utils/typeMapping.js',
+    '/assets/js/utils/typeEffectiveness.js',
     '/assets/js/utils/fuzzySearch.js',
     '/assets/js/utils/cacheManager.js',
     '/assets/js/utils/storage.js',
@@ -43,6 +52,8 @@ const STATIC_ASSETS = [
     '/assets/js/utils/lazyLoading.js',
     '/assets/js/utils/config.js',
     '/assets/js/utils/sorters.js',
+    '/assets/js/utils/imageUtils.js',
+    '/assets/js/utils/statComparison.js',
     '/assets/Poke_Ball_icon.png'
 ];
 
@@ -200,7 +211,16 @@ self.addEventListener('fetch', (event) => {
                 return response;
             } catch (error) {
                 // Network failed, try cache
-                return await caches.match(request);
+                const cached = await caches.match(request);
+                if (cached) {
+                    return cached;
+                }
+                // Neither network nor cache available — return a proper error response
+                return new Response(JSON.stringify({ error: 'Data not available offline' }), {
+                    status: 503,
+                    statusText: 'Service Unavailable',
+                    headers: { 'Content-Type': 'application/json' }
+                });
             }
         })());
         return;
@@ -256,12 +276,21 @@ self.addEventListener('fetch', (event) => {
             return cachedResponse;
         }
 
-        const response = await fetch(request);
-        if (response.status === 200 && url.origin === location.origin) {
-            const cache = await caches.open(CACHE_NAME);
-            await cache.put(request, response.clone());
-        }
-        return response;
+        try {
+            const response = await fetch(request);
+            if (response.status === 200 && url.origin === location.origin) {
+                const cache = await caches.open(CACHE_NAME);
+                await cache.put(request, response.clone());
+            }
+            return response;
+        } catch (_error) {
+                // Network failed and no cache — error details are not needed for a generic
+                // offline fallback; return a minimal error response so fetch() rejects cleanly.
+                return new Response('Resource unavailable offline', {
+                    status: 503,
+                    statusText: 'Service Unavailable'
+                });
+            }
     })());
 });
 
